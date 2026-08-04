@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrepperPapa - Felkészülés józan ésszel, magyar valóságra</title>
+<meta name="description" content="Felszerelés-tesztek valós használatban, gyakorlati útmutatók és tudástár. Áramszünet, víz, hő, kommunikáció. Készülj, de ne félj.">
+<link rel="icon" href="assets/favicon-64.png">
+<meta property="og:title" content="PrepperPapa">
+<meta property="og:description" content="Felkészülés józan ésszel, magyar valóságra.">
+<meta property="og:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<link rel="canonical" href="https://prepperpapa.hu/">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prepperpapa.hu/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:Pacifico;src:url('assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{
+    --bg:#0B110E; --panel:#121B16; --panel2:#16211B; --line:#22302A;
+    --ink:#EDEBE1; --muted:#98A69D;
+    --zold:#7CB342; --borostyan:#FFB340;
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+  .disp{font-family:"Helvetica Neue Condensed","Arial Narrow",Impact,"Haettenschweiler",sans-serif;font-weight:600;letter-spacing:.005em;text-transform:uppercase}
+
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.86);
+         backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:30px;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+  .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;
+             box-shadow:0 0 0 1px rgba(255,179,64,.35),0 0 18px rgba(255,179,64,.16)}
+  .brand span{font-family:Pacifico,cursive;font-size:22px}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  .nav a.link:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;
+       padding:12px 22px;border-radius:6px;font-size:15px;transition:.15s}
+  .btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid #33453B}
+  .btn.ghost:hover{border-color:var(--zold)}
+  .btn.amber{background:var(--borostyan)}
+
+  /* HERO */
+  .hero{position:relative;min-height:640px;display:flex;align-items:center;overflow:hidden;
+        border-bottom:1px solid var(--line)}
+  .hero .bg{position:absolute;inset:0;background:url('assets/hero.jpg') center right/cover no-repeat}
+  .hero .veil{position:absolute;inset:0;
+    background:linear-gradient(100deg,#0B110E 8%,rgba(11,17,14,.93) 34%,rgba(11,17,14,.42) 62%,rgba(11,17,14,.15) 100%)}
+  .hero .wrap{position:relative;z-index:2;width:100%;padding-top:96px;padding-bottom:78px}
+  .eyebrow{color:var(--borostyan);font-size:12.5px;letter-spacing:.26em;margin-bottom:22px}
+  h1.disp{font-size:clamp(38px,5.4vw,64px);line-height:1.03;max-width:15ch}
+  h1 .em{color:var(--borostyan)}
+  .lead{color:#C3CCC5;font-size:19.5px;margin-top:24px;max-width:46ch}
+  .cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+
+  .tenyek{position:relative;z-index:2;border-top:1px solid var(--line);background:rgba(11,17,14,.72)}
+  .tenyek .wrap{display:flex;gap:52px;flex-wrap:wrap;padding-top:20px;padding-bottom:20px}
+  .teny b{display:block;font-family:"Helvetica Neue Condensed","Arial Narrow",Impact,sans-serif;font-weight:600;font-size:27px;line-height:1.1}
+  .teny span{color:var(--muted);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+
+  section.blk{padding:86px 0;border-bottom:1px solid var(--line)}
+  .head{max-width:58ch;margin-bottom:42px}
+  .szam{color:var(--zold);font-family:"Helvetica Neue Condensed","Arial Narrow",Impact,sans-serif;font-size:13px;letter-spacing:.2em;
+        display:block;margin-bottom:12px}
+  h2.disp{font-size:clamp(27px,3.4vw,40px);line-height:1.1}
+  .head p{color:var(--muted);margin-top:14px;font-size:17.5px}
+
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+           border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .card{background:var(--panel);padding:32px 30px}
+  .card:hover{background:var(--panel2)}
+  .card .ikon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:var(--panel2);margin-bottom:14px}
+  .ikon svg{width:24px;height:24px;color:var(--zold)}
+  .card h3{font-size:20px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15.5px}
+
+  .kiemelt{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-bottom:24px}
+  .fo{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .fo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .fo .ra{position:absolute;left:0;right:0;bottom:0;padding:30px 28px 26px;
+          background:linear-gradient(to top,rgba(11,17,14,.96),rgba(11,17,14,.75) 45%,transparent)}
+  .fo .cim{font-size:23px;font-weight:700;line-height:1.25;margin-top:8px}
+  .badge{display:inline-block;background:var(--borostyan);color:#0B110E;font-size:11.5px;
+         font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:4px}
+  .oldal{display:flex;flex-direction:column;gap:24px}
+  .mini{display:flex;gap:15px;align-items:center}
+  .mini img{width:132px;aspect-ratio:16/9;object-fit:cover;border-radius:9px;flex:0 0 auto;
+            border:1px solid var(--line)}
+  .mini .t{font-size:15.5px;font-weight:600;line-height:1.32}
+  .mini:hover .t{color:var(--borostyan)}
+  .tobb{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .vid{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+  .vid img{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .vid .t{padding:17px 19px 21px;font-weight:600;font-size:16px;line-height:1.34}
+  .vid:hover{border-color:var(--zold)}
+
+  .ketto{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .nagy{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:38px 34px;
+        position:relative;overflow:hidden}
+  .nagy::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;
+                background:linear-gradient(90deg,var(--zold),transparent 70%)}
+  .nagy.b::before{background:linear-gradient(90deg,var(--borostyan),transparent 70%)}
+  .nagy h3{font-size:25px;margin-bottom:13px}
+  .nagy p{color:var(--muted);margin-bottom:18px}
+  .lista{list-style:none;margin:18px 0 24px}
+  .lista li{padding-left:26px;position:relative;margin-bottom:9px;color:#B9C3BB;font-size:15.5px}
+  .lista li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:2px;background:var(--zold)}
+  .nagy.b .lista li::before{background:var(--borostyan)}
+  .cimke{display:inline-block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+         font-weight:700;color:var(--borostyan);margin-bottom:14px}
+
+  .zaro{text-align:center;max-width:660px;margin:0 auto}
+  .zaro h2{margin-bottom:16px}
+  .zaro p{color:var(--muted);font-size:17.5px;margin-bottom:28px}
+
+  footer{padding:52px 0 60px;color:var(--muted);font-size:14.5px}
+  .fnav{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:24px}
+  .fnav a:hover{color:var(--ink)}
+  .fbrand{display:flex;align-items:center;gap:11px;margin-bottom:20px}
+  .fbrand img{width:32px;height:32px;border-radius:50%}
+  .fbrand span{font-family:Pacifico,cursive;font-size:19px;color:var(--ink)}
+
+  @media(max-width:920px){
+    .hero{min-height:auto}
+    .hero .veil{background:linear-gradient(180deg,rgba(11,17,14,.86),rgba(11,17,14,.94))}
+    .hero .wrap{padding-top:64px;padding-bottom:52px}
+    .tenyek .wrap{gap:26px}
+    .pillars,.tobb,.ketto,.kiemelt{grid-template-columns:1fr}
+    .nav a.link{display:none}
+    section.blk{padding:60px 0}
+  }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"PrepperPapa",
+"url":"https://prepperpapa.hu/","logo":"https://prepperpapa.hu/assets/logo-96.png",
+"description":"Felkeszules jozan esszel, magyar valosagra. Felszereles-tesztek, gyakorlati utmutatok, tudastar.",
+"sameAs":["https://www.youtube.com/@PrepperPapa","https://www.tiktok.com/@prepperpapa",
+"https://www.facebook.com/prepperpapa","https://www.instagram.com/prepperpapa",
+"https://prepperpapa.blogspot.com/"],
+"email":"prepperpapa@gmail.com"}
+</script>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><img src="assets/logo-96.png" width="40" height="40" alt="PrepperPapa logó"><span>PrepperPapa</span></a>
+    <a class="link" href="#videok">Videók</a>
+    <a class="link" href="#tudastar">Tudástár</a>
+    <a class="link" href="#app">Alkalmazás</a>
+    <a class="link" href="#kapcsolat">Kapcsolat</a>
+    <a class="btn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="bg"></div><div class="veil"></div>
+  <div class="wrap">
+    <div class="eyebrow disp">Készülj, de ne félj</div>
+    <h1 class="disp">Amikor elmegy az áram, <span class="em">már késő tervezni</span></h1>
+    <p class="lead">Felszerelés-tesztek valós használatban, gyakorlati útmutatók és tudástár. Nem világvége-hangulat: az a néhány dolog, ami egy áramszünetben, egy viharban vagy egy túrán tényleg számít.</p>
+    <div class="cta">
+      <a class="btn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Nézd a csatornát</a>
+      <a class="btn ghost" href="#tudastar">Kezdd itt: a tudástár</a>
+    </div>
+  </div>
+</section>
+
+<div class="tenyek">
+  <div class="wrap">
+    <div class="teny"><b>10 700</b><span>feliratkozó</span></div>
+    <div class="teny"><b>539</b><span>videó</span></div>
+    <div class="teny"><b>1,6 millió</b><span>megtekintés</span></div>
+    <div class="teny"><b>2018 óta</b><span>folyamatosan</span></div>
+  </div>
+</div>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="szam disp">01 / Amit itt találsz</span>
+      <h2 class="disp">Minden mögött valódi használat áll</h2>
+      <p>Ha valami nem vált be, az is elhangzik. Ez a csatorna nem katalógus, hanem tapasztalat.</p>
+    </div>
+    <div class="pillars">
+      <div class="card">
+        <div class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pp-fenyszoro"/></svg></div>
+        <h3>Felszerelés-tesztek</h3>
+        <p>Lámpák, kések, táskák, energiaforrások. Nem a doboz adatait olvassuk fel, hanem megmérjük, meddig bírja.</p>
+      </div>
+      <div class="card">
+        <div class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pp-terkep"/></svg></div>
+        <h3>Gyakorlati útmutatók</h3>
+        <p>Víz, hő, energia, kommunikáció. Konkrét lépések, amiket egy hétköznapi lakásban is meg tudsz csinálni.</p>
+      </div>
+      <div class="card">
+        <div class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pp-kommunikacio"/></svg></div>
+        <h3>Amikor nincs hálózat</h3>
+        <p>Morze, SSTV, rádió. A régi módszerek pont akkor működnek, amikor a telefon már nem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="videok">
+  <div class="wrap">
+    <div class="head">
+      <span class="szam disp">02 / Videók</span>
+      <h2 class="disp">Kiemelt darabok a csatornáról</h2>
+    </div>
+
+    <div class="kiemelt">
+      <a class="fo" href="https://www.youtube.com/watch?v=ilmcq8LIhwM" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/ilmcq8LIhwM/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Ezt a 3000 lumenes lámpát nem fogod elhinni">
+        <div class="ra">
+          <span class="badge">Lámpateszt</span>
+          <div class="cim">Ezt a 3000 lumenes lámpát nem fogod elhinni</div>
+        </div>
+      </a>
+      <div class="oldal">
+        <a class="mini" href="https://www.youtube.com/watch?v=zBslQAQUy0c" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/zBslQAQUy0c/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Kempingezés áram nélkül? Ez a napelem megoldás lehet rá">
+          <div class="t">Kempingezés áram nélkül? Ez a napelem megoldás lehet rá</div>
+        </a>
+        <a class="mini" href="https://www.youtube.com/watch?v=RnAH5vN1Qhw" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/RnAH5vN1Qhw/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Megállná a helyét karácsonykor is? MRE kóstoló">
+          <div class="t">Megállná a helyét karácsonykor is? MRE kóstoló</div>
+        </a>
+        <a class="mini" href="https://www.youtube.com/watch?v=qkHA8yC5Mt4" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/qkHA8yC5Mt4/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Erő az árnyékban: lítium-vas-foszfát powerbank">
+          <div class="t">Erő az árnyékban: lítium-vas-foszfát powerbank</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="tobb">
+      <a class="vid" href="https://www.youtube.com/watch?v=LujIqh55xb4" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/LujIqh55xb4/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Isten a frontvonalon: egy katona megrázó beszámolója">
+        <div class="t">Isten a frontvonalon: egy katona megrázó beszámolója</div>
+      </a>
+      <a class="vid" href="https://www.youtube.com/watch?v=bDs3WHPvLV0" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/bDs3WHPvLV0/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Túlélő fény: lámpateszt egy elhagyatott épületben">
+        <div class="t">Túlélő fény: lámpateszt egy elhagyatott épületben</div>
+      </a>
+      <a class="vid" href="https://www.youtube.com/@PrepperPapa/videos" target="_blank" rel="noopener"
+         style="display:flex;align-items:center;justify-content:center;min-height:200px;
+                background:linear-gradient(160deg,#16211B,#121B16)">
+        <div style="text-align:center;padding:26px">
+          <div style="font-size:30px;color:var(--zold);line-height:1">&rarr;</div>
+          <div class="t" style="padding:12px 0 0">Mind az 539 videó</div>
+          <div style="color:var(--muted);font-size:14px">Tesztek, útmutatók, élő adások</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="szam disp">03 / Mélyebben</span>
+      <h2 class="disp">Amikor a videó kevés</h2>
+    </div>
+    <div class="ketto">
+      <div class="nagy" id="tudastar">
+        <div class="cimke">Tudástár</div>
+        <h3>Amit érdemes elolvasni, mielőtt szükség lesz rá</h3>
+        <p>Írásos anyagok ugyanarról, amiről a videók szólnak, csak visszakereshetően, hivatkozható forrásokkal.</p>
+        <ul class="lista">
+          <li>72 óra áram nélkül: mi áll le, és milyen sorrendben</li>
+          <li>Víz a lakásban: mennyi kell, honnan lesz, hogyan tisztítod</li>
+          <li>Fűtés és hűtés áram nélkül, a szén-monoxid csapdájával</li>
+        </ul>
+        <a class="btn ghost" href="/cikkek.html">Olvasd a cikkeket</a>
+      </div>
+      <div class="nagy b" id="app">
+        <div class="cimke">Alkalmazás</div>
+        <h3>PrepperPapa app</h3>
+        <p>Morze-adó és -vevő, SSTV, és a tudástár offline, a zsebedben. Akkor is működik, amikor nincs térerő, mert nem kér hálózatot.</p>
+        <ul class="lista">
+          <li>Morze: gyakorlás és valódi adás-vétel</li>
+          <li>SSTV: kép küldése és fogadása hangon</li>
+          <li>Éjszakai mód, hogy ne rontsa el a sötétadaptációt</li>
+        </ul>
+        <a class="btn amber" href="#kapcsolat">Szólj, ha kész</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="kapcsolat">
+  <div class="wrap zaro">
+    <span class="szam disp">04 / Kapcsolat</span>
+    <h2 class="disp">Együttműködés, kérdés, visszajelzés</h2>
+    <p>Terméktesztre, együttműködésre vagy szakmai kérdéssel keress bátran. Ami bevált, arról szívesen beszélek; ami nem, arról szintén.</p>
+    <a class="btn" href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand"><img src="assets/logo-96.png" width="32" height="32" alt=""><span>PrepperPapa</span></div>
+    <div class="fnav">
+      <a href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/@prepperpapa" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/prepperpapa" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/prepperpapa" target="_blank" rel="noopener">Instagram</a>
+      <a href="/cikkek.html">Cikkek</a>
+    </div>
+    <div>PrepperPapa · Felkészülés józan ésszel, magyar valóságra.</div>
+  </div>
+</footer>
+
+</body>
+</html>
