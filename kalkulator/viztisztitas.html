@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Víztisztítás kalkulátor: mennyi hipó kell a vízhez? | PrepperPapa</title>
+<meta name="description" content="Mennyi háztartási hipó kell egy adott mennyiségű vízhez, és meddig kell forralni? Add meg a liter-mennyiséget, és megmondja. Áramszünetre, túrára, vészhelyzetre.">
+<link rel="canonical" href="https://prepperpapa.hu/kalkulator/viztisztitas.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Víztisztítás kalkulátor: mennyi hipó kell a vízhez?">
+<meta property="og:description" content="Mennyi háztartási hipó kell egy adott mennyiségű vízhez, és meddig kell forralni? Add meg a liter-mennyiséget, és megmondja. Áramszünetre, túrára, vészhelyzetre.">
+<meta property="og:url" content="https://prepperpapa.hu/kalkulator/viztisztitas.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/kalkulator/app.css">
+<style>
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:Pacifico,cursive;font-size:21px}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* HAROM menupont + logo 390 keppontos telefonon nem fer ki egy sorba: merve 102 keppont
+     vizszintes tullogas. NEM elrejtjuk a linkeket (akkor telefonrol nem lehetne a
+     kalkulatorokhoz jutni a fejlecbol), hanem TORDELJUK -- a navigacio megmarad. */
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{color:var(--ink);font-size:18px}
+  .zaro{color:var(--muted);font-size:15px;border-top:1px solid var(--line);
+         margin-top:30px;padding-top:20px}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  /* A KALKULATOR DOBOZA. Az app CSS-e ide van hatarolva (.ppkalk), ezert a lap tobbi
+     resze a weboldal sajat kinezetet tartja meg. */
+  .ppkalk{display:block;background:var(--panel);border:1px solid var(--line);
+          border-radius:12px;padding:20px;margin:26px 0}
+  .kalk-lista{list-style:none;margin:0;padding:0}
+  .kalk-lista li{border-bottom:1px solid var(--line);margin:0}
+  .kalk-lista li:last-child{border-bottom:0}
+  .kalk-lista a{display:block;padding:16px 2px;text-decoration:none;color:var(--ink)}
+  .kalk-lista a:hover{color:var(--zold)}
+  .kalk-lista b{display:block;font-size:18px;margin-bottom:3px}
+  .kalk-lista span{color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav">
+  <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+</nav></header>
+<main>
+<h1>Víztisztítás kalkulátor</h1>
+<p class="beveze">Ha elmegy a víz vagy gyanús a forrás, két bevált út van: forralás vagy klóros fertőtlenítés. Mindkettőnél az arány és az idő számít, és pont ezt szokták fejből elrontani. Add meg, mennyi vizet kezelnél, és megmondja a pontos mennyiséget.</p>
+<div class="ppkalk" id="kalk-viztisztitas">
+<!-- VIZTISZTITAS -- ATKERULT A SAJAT CSEMPEJEBoL A KALKULATOROK KoZE (Fonok, 2026-08-23:
+     "a viztisztito kalkulator pedig megy a kalkulatorokba"). A torzs BETuHIVEN ugyanaz,
+     ES AZ ID-KHEZ SZANDEKOSAN NEM NYULTAM: a szamolo (`vizSzamol` kezeloje) az
+     `#vizLiter`, `#vizAllapot`, `#vizMagas`, `#vizHipo`, `#vizEredmeny` id-kre epul.
+     Egy atnevezes itt NEM hibat adna, hanem NEMA elromlast -- a gomb lefutna, es nem
+     tortenne semmi. Ugyanaz a csapda, mint a csempe `data-go`-janal. -->
+    <label>Mennyi víz</label>
+    <input type="number" id="vizLiter" value="1" min="0.1" step="0.5">
+    <label>Milyen a víz</label>
+    <select id="vizAllapot">
+      <option value="tiszta">Tiszta, átlátszó</option>
+      <option value="zavaros">Zavaros, hideg vagy színes</option>
+    </select>
+    <label>Tengerszint feletti magasság (méter)</label>
+    <input type="number" id="vizMagas" value="150" min="0" step="50">
+    <label>A hipó töménysége (nézd meg az üvegen)</label>
+    <select id="vizHipo">
+      <option value="5">5% nátrium-hipoklorit (a szokásos háztartási)</option>
+      <option value="2.5">2,5%</option>
+      <option value="10">10% (ipari)</option>
+    </select>
+    <div class="row"><button id="vizSzamol" class="primary">Számold ki</button></div>
+    <div id="vizEredmeny" style="display:none"></div>
+
+    <!-- ESOVIZ-GYUJTES (Fonok 2026-08-05). A viztisztitas parja: az megmondja, hogyan
+         lesz ihato, de nem azt, honnan lesz egyaltalan. -->
+</div>
+<div class="zaro"><p>A számítás a hazai gyakorlatban elterjedt arányokon alapul. <b>Zavaros vizet előbb szűrj le</b>, mert a klór a lebegő szennyeződésen elhasználódik. Ha a víz szennyvízzel érintkezhetett, a forralás a biztosabb út.</p></div>
+<h2>Mire jó ez, és mire nem</h2>
+<p>Ez a kalkulátor a <a href="/">PrepperPapa</a> alkalmazásból való, és ott is ingyenes. A számítás a böngésződben fut: nem küldünk sehova semmit, és nem tárolunk adatot róla.</p>
+<script>
+const $ = id => document.getElementById(id);
+// A weboldalon nincs terkep-nezet es nincs mentett hely: az app `ppUtolsoHely`
+// fuggvenye itt ertelmetlen lenne. Budapesti koordinataval szamolunk, es ezt a lap
+// zaro szovege ki is mondja -- az orszag ket szele kozott ez nehany perc elteres.
+function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
+function ppLocale(){ return 'hu-HU'; }
+function ppForditSzoveg(s){ return s; }
+function ppSzam(x){ return Math.round(x).toLocaleString('hu-HU'); }
+
+function vizSzamitas(){
+  const liter=Math.max(0, +$('vizLiter').value || 0);
+  const zavaros=$('vizAllapot').value==='zavaros';
+  const magas=+$('vizMagas').value || 0;
+  const hipo=+$('vizHipo').value || 5;
+  const forralasPerc = magas>2000 ? 3 : 1;
+  const cseppAlap = zavaros ? 4 : 2;               // 5%-os hipora vetitve, literenkent
+  const csepp = cseppAlap * (5/hipo) * liter;
+  const ml = csepp*0.05;
+  const varakozas = zavaros ? 60 : 30;
+  return { liter, zavaros, magas, hipo, forralasPerc,
+           csepp:Math.round(csepp*10)/10, ml:Math.round(ml*100)/100, varakozas };
+}
+
+$('vizSzamol').onclick = ()=>{
+  const v=vizSzamitas();
+  if(!v.liter){ $('vizEredmeny').style.display='none'; return; }
+  const el=$('vizEredmeny');
+  el.innerHTML=
+    '<div class="koorddoboz"><h3>Forralás (ez a legbiztosabb)</h3>'
+    + '<p class="note">Buzgó forrás ' + v.forralasPerc + ' percig'
+    + (v.magas>2000 ? ' — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.' : '.')
+    + ' Hagyd kihűlni fedő alatt.</p></div>'
+    + '<div class="koorddoboz"><h3>Ha nem tudsz forralni: hipó</h3>'
+    + '<p class="note">' + v.liter + ' liter ' + (v.zavaros?'zavaros':'tiszta') + ' vízhez '
+    + v.csepp + ' csepp ' + v.hipo + ' százalékos hipó, ami körülbelül ' + v.ml + ' milliliter. '
+    + 'Keverd el, várj ' + v.varakozas + ' percet, és utána is enyhén klóros szagúnak kell lennie. '
+    + 'Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még ' + v.varakozas + ' percet.</p></div>'
+    + '<div class="vizfigy">'
+    + '<p><b>Zavaros vizet előbb tisztítsd le.</b> Hagyd ülepedni, majd szűrd át ruhán vagy kávéfilteren. A hipó a lebegő szennyeződésre pazarlódik el, és nem jut a kórokozókra.</p>'
+    + '<p><b>Illatosított, sűrített vagy tisztítószeres hipót ne használj.</b> Csak sima nátrium-hipoklorit oldat való bele.</p>'
+    + '<p><b>Amit ez nem old meg:</b> vegyszer, olaj, növényvédőszer, nehézfém, sóstalanítás. Ezeket sem a forralás, sem a hipó nem távolítja el, a forralás inkább töményíti őket. Ipari terület, út menti árok vagy szántóföld melletti vízzel ne is próbálkozz.</p>'
+    + '<p><b>A hipó nem öl meg mindent.</b> A Cryptosporidium ellenáll neki. Ha ilyet gyanítasz (állati ürülékkel érintkezett felszíni víz), forralj, vagy használj arra való szűrőt.</p>'
+    + '</div>';
+  el.style.display='block';
+};
+</script>
+
+<a class="vissza" href="/kalkulator/">&larr; Vissza a kalkulátorokhoz</a>
+</main>
+<footer><div>PrepperPapa &middot; Felkeszules jozan esszel, magyar valosagra</div></footer>
+</body>
+</html>

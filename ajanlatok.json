@@ -1,0 +1,25 @@
+{
+  "frissitve": "",
+  "ajanlatok": {
+    "aram": {
+      "cim": "Áramszünetre: hordozható energia",
+      "szoveg": "Egy powerbank a telefonhoz kevés, ha a router és a lámpa is menne. Nézd meg, mekkora kapacitás kell három napra.",
+      "link": ""
+    },
+    "futes": {
+      "cim": "Fűtés áram nélkül, biztonságosan",
+      "szoveg": "A nyílt lángú fűtés zárt térben szén-monoxidot termel. Ha bent fűtesz, CO-érzékelő nem opció, hanem alapfelszerelés.",
+      "link": ""
+    },
+    "viz": {
+      "cim": "Víz: tárolás és tisztítás",
+      "szoveg": "Napi három liter fejenként, csak ivásra. Mellé egy szűrő vagy klórtabletta, ha a csapvíz eredete kétségessé válik.",
+      "link": ""
+    },
+    "lampa": {
+      "cim": "Fény, ami akkor is megy, amikor semmi más",
+      "szoveg": "Fejlámpa, hogy szabad maradjon a két kezed, és tartalék elem hozzá. A gyertya tűzveszély, nem megoldás.",
+      "link": ""
+    }
+  }
+}

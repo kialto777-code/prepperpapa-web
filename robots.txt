@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prepperpapa.hu/sitemap.xml
+Sitemap: https://prepperpapa.hu/sitemap-cikkek.xml
+Sitemap: https://prepperpapa.hu/sitemap-kalkulator.xml

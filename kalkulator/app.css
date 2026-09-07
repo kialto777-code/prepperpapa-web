@@ -1,0 +1,1479 @@
+/* A PrepperPapa app CSS-e, a .ppkalk dobozra hatarolva. GENERALT -- ne
+   szerkeszd kezzel: az epit-kalkulatorok.py ujra eloallitja. */
+  .ppkalk /* Vegleges taktikai paletta (Agnes + Thomas, .ppkalk kontraszt-ellenorozve) */
+  /* Marka-ZOLD arculat (Agnes vegleges, .ppkalk Fonok jovahagyva 2026-07-31): zold dominal, .ppkalk amber a cselekves/adat, .ppkalk piros KIZAROLAG a veszjelzese. Minden ertek AA a #0D1411 alapon. */
+  :root{ --bg:#0B1613; --panel:rgba(22,43,36,.72); --raised:rgba(31,52,45,.80); --text:#D2D8C8; --muted:#93A088; --dim:#6E7A73;
+    /* A SZoVEGSZIN LAGYITVA (Fonok, 2026-08-24 19:09: "a betuk szine se tokeletes feher
+       legyen hanem lagyitsuk"). #E6E4DA -> #D2D8C8: egy arnyalattal sotetebb es zold fele
+       hajlik, tehat a zold felirat-csaladdal egy csaladba kerul. Merve a csempe tenyleges
+       hatteren: 12,56 -> 10,97, a fo hatteren 14,47 -> 12,65 -- mindketto messze a 4,5-os
+       kuszob folott. TOVABB NEM VITTEM: ez a valtozo a TUDASTAR-cikkek folyoszoveget is
+       adja, es ott a hosszu olvasas mast kivan, mint egy csempe-felirat. */
+    --green:#7CB342; --accent:#FFB340; --accent-press:#E09A2E; --border:#243530; --on:#FFB340;
+    --olive:#7CB342; --olive-ink:#7CB342; --danger:#E05B4B; --danger-ink:#E05B4B; --ok:#7CB342;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --fejlec-tartalek: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+    /* LAGY ZoLD FELIRAT a csempeken es a verzioszamon (Fonok, 2026-08-24 18:58: "a feher
+       feliratok lehetnenek valami enyhebb zold arnyalat ne ennyire elessen feher").
+       KULON valtozo, nem a `--text` atirasa: a `--text` az EGESZ appban a szoveg szine
+       (cikkek, urlapok, listak) -- ott a zold arnyalat olvasast rontana. Merve a csempe
+       tenyleges hatteren (#13251F): 12,56-rol 10,45-re esik a kontraszt, tehat bőven a
+       4,5-os kuszob folott marad. */
+    --csempe-cimke:#BFD9A8; --verzio-szin:#8AA37E;
+    /* A LENYILO LISTA HATTERE -- KULON, ATLATSZATLAN SZIN (Fonok, 2026-08-24 21:51:
+       "ezek a kivalasztok nem neznek ki jol [...] ez a szurke nagyon elut a programtol").
+       NEM a `--panel`-t hasznaljuk ra, mert az FELIG ATLATSZO (`rgba(...,.72)`): a lapon
+       belul ez jo, de a lenyilo lista a bongeszo SAJAT retegen rajzolodik, ott nincs mi
+       alatta legyen -- attol lett szurke. Ez az ertek a `--panel` es a `--bg` osszeolvasott,
+       atlatszatlan megfeleloje, egy arnyalattal vilagosabbra huzva, hogy a lista elvaljon a laptol. */
+    --lista-hatter:#172E27; }
+  .ppkalk /* VOROS ejszakai mod: kulon uzemmod, .ppkalk tiszta feketen csak voros, .ppkalk ejjellatas-orzo. */
+  body.night .tabbar{ background:#000000; }
+  .ppkalk body.night{ --bg:#000000; --panel:rgba(14,2,2,.74); --raised:rgba(24,4,4,.82); --text:#FF3B30; --muted:#FF3B30; --dim:#c0342c;
+    --green:#FF3B30; --accent:#FF3B30; --accent-press:#cc2f26; --border:#2A0606; --on:#FF3B30;
+    /* Az ejszakai mod a ket UJ valtozot is atveszi -- kulonben a csempe-felirat zolden
+       vilagitana pont ott, ahol az egesz uzemmod celja az ejjellatas megorzese. */
+    --csempe-cimke:#FF3B30; --verzio-szin:#c0342c; --lista-hatter:#140404;
+    --olive:#FF3B30; --olive-ink:#FF3B30; --danger:#FF3B30; --danger-ink:#FF3B30; --ok:#FF3B30; }
+  .ppkalk body.night img{ filter: brightness(.45) sepia(1) saturate(6) hue-rotate(-32deg); }
+  .ppkalk body.night .leaflet-tile{ filter: invert(1) grayscale(.35) brightness(.62) contrast(1.15)
+    sepia(1) saturate(7) hue-rotate(-32deg); }
+  .ppkalk /* A zoom- es reteg-vezerlo mar NEM szurovel sotetul (2026-08-04): sajat
+     arculati stilust kapott lentebb, .ppkalk a .maphelyzet/.mapteljes gombok mellett.
+     A regi invert-szuro sargat csinalt a szurke ikonbol, .ppkalk ami ejszakai modban a
+     lehetó legrosszabb inger. Az attribucio marad szures nelkuli atszinezessel. */
+  /* Az attribuciot nem szurjuk, .ppkalk hanem atszinezzuk: a szures sargara vitte, .ppkalk ami
+     ejszakai modban pont a legrosszabb (a sarga a legerosebb inger a szemnek). */
+  body.night .leaflet-control-attribution{ background:rgba(0,0,0,.6) !important; color:#c0342c !important; }
+  .ppkalk body.night .leaflet-control-attribution a{ color:#c0342c !important; }
+  .ppkalk /* A keszultsegi jelolok is voroske valnak: a szin ilyenkor nem hordoz informaciot, .ppkalk azt a SZAM viszi (ugyanaz az elv, .ppkalk mint a kezdolapi gyuruknel). */
+  body.night .pp-keszjelolo > div{ background:#FF3B30 !important; color:#000 !important;
+    border-color:#000 !important; box-shadow:none !important; }
+  .ppkalk *{ box-sizing: border-box; }
+  .ppkalk /* HATTER: iranytu + halvany DOMBORZAT (szintvonalak). Fonok 2026-08-02 21:41, .ppkalk 21:56, .ppkalk 22:07: "legyen egy iranytu ... zolden", .ppkalk "levagja az aljat", .ppkalk "nem hullamokat
+     szerettem volna hanem ... valamilyen domborzatot". Ket reteg: rogzitett iranytu-rozsa
+     es csempezett szintvonalas domborzat. Dekoracio, .ppkalk nem informacio -- ezert nagyon
+     alacsony kontraszt; ejszakai modban vorosre valt. */
+  /* HATTER (Fonok kepe, .ppkalk 2026-08-10, .ppkalk v35.3):
+     HAROM KULON RETEG, .ppkalk es ez nem szepseg-kerdes:
+       1. scrim   -- a hatteret nem nezik, .ppkalk hanem KERESZTULOLVASSAK
+       2. iranytu -- KULON fajl, .ppkalk hogy a HELYE pontosan allithato legyen
+       3. topo    -- a Fonoktol kapott lap, .ppkalk iranytu nelkul, .ppkalk erositett szintvonalakkal
+     MIERT KULON AZ IRANYTU: Fonok kerese szerint a kozepenek pontosan oda kell esnie, .ppkalk ahol a kezdokepernyo csempéinek sarkai talalkoznak ("igy teljes lesz a szimmetria").
+     Ha az iranytu a fenykepbe lenne egetve, .ppkalk a helye a kep méretezésétől (cover) fuggne, .ppkalk tehat keszulekenkent elcsuszna. Kulon retegkent PONTOSAN oda tehető.
+     A fuggoleges helyet a --iranytu-y valtozo adja, .ppkalk amit a kezdokepernyo MEGMER
+     (ppIranytuIgazit) -- kulonben a keszultsegi kartyak szamanak valtozasakor elcsuszna. */
+  :root{ --iranytu-y: 387px; --iranytu-meret: 258px; }
+  .ppkalk{
+    background-image:
+      linear-gradient(rgba(13,20,17,.55), rgba(13,20,17,.55)),
+      url("iranytu.png"),
+      url("hatter-topo.jpg");
+    background-repeat:no-repeat, no-repeat, no-repeat;
+    background-position:center, center var(--iranytu-y), center;
+    background-attachment:fixed, fixed, fixed;
+    background-size:cover, var(--iranytu-meret) auto, cover; }
+  .ppkalk body.night{ background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g fill='none' stroke='%23FF3B30' stroke-opacity='0.14' stroke-width='2.5'><circle cx='100' cy='100' r='94'/><circle cx='100' cy='100' r='78'/><path d='M100 6 V22 M100 178 V194 M6 100 H22 M178 100 H194'/><path d='M100 30 L112 88 L170 100 L112 112 L100 170 L88 112 L30 100 L88 88 Z'/><path d='M100 100 L141 59 M100 100 L141 141 M100 100 L59 141 M100 100 L59 59' stroke-width='1.2'/></g></svg>"),
+                                url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 220'><g fill='none' stroke='%23FF3B30' stroke-opacity='0.11' stroke-width='1.3'><ellipse cx='86' cy='74' rx='17' ry='11' transform='rotate(-18 86 74)'/><ellipse cx='86' cy='74' rx='32' ry='20' transform='rotate(-18 86 74)'/><ellipse cx='86' cy='74' rx='50' ry='32' transform='rotate(-18 86 74)'/><ellipse cx='86' cy='74' rx='70' ry='44' transform='rotate(-18 86 74)'/><ellipse cx='236' cy='150' rx='16' ry='9' transform='rotate(24 236 150)'/><ellipse cx='236' cy='150' rx='32' ry='18' transform='rotate(24 236 150)'/><ellipse cx='236' cy='150' rx='51' ry='28' transform='rotate(24 236 150)'/><path d='M0 196 C 60 178, 120 206, 190 190 S 300 176, 320 194'/><path d='M0 22 C 70 8, 150 34, 220 18 S 300 6, 320 20'/></g></svg>"); }
+  .ppkalk /* EJSZAKAI MODBAN a zold fenykep nem maradhat: a voros uzemmod lenyege, .ppkalk hogy a szem
+     sotethez valo alkalmazkodasat ne rontsuk el. Ott a generalt VOROS rajz all, .ppkalk es a
+     fenykep-reteget kifejezetten ki kell kapcsolni (a fenti szabaly kulonben orokolne). */
+  body.night{ background-attachment:fixed, fixed; background-size:min(70vw,360px) auto, 320px 220px;
+    background-repeat:no-repeat, repeat; background-position:center calc(50% - 40px), center top; }
+  .ppkalk, .ppkalk /* A HOSSZU NYOMASRA NE JELOLODJON KI A SZOVEG (Fonok, .ppkalk 2026-08-24 21:09: "Sok helyen ki
+     tudom jelolni a szoveget hosszu nyomvatartasra. Ez nem jo.").
+     EGY APPBAN a hosszu nyomas mas gesztus, .ppkalk mint egy weblapon: a felhasznalo huzni vagy
+     tartani akar, .ppkalk nem masolni -- es a felugro kijelolo-menu kiviszi az appbol (a Google
+     kereses ajanlata epp ezt tette a fejlec-felirattal).
+     AMI KIVETEL MARAD, .ppkalk es ez szandekos: az urlapmezok (ott a kijeloles a szerkesztes resze)
+     es az OLVASNIVALO -- a tudastar-cikk es a Biblia szovege. Onnan az ember JOGGAL akar
+     idezni, .ppkalk es ott a hosszu nyomas nem gesztus, .ppkalk hanem szandek. */
+  body{ -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
+  .ppkalk input, .ppkalk textarea, .ppkalk select, .ppkalk [contenteditable="true"], .ppkalk #bibleSzoveg, .ppkalk #kbArtBody, .ppkalk .kbcikk, .ppkalk .valaszthato{
+    -webkit-user-select:text; user-select:text; -webkit-touch-callout:default; }
+  .ppkalk{ margin:0; min-height:100%; background-color:var(--bg); color:var(--text);
+    font-family:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif; transition:background .2s,color .2s; }
+  .ppkalk{ padding: max(env(safe-area-inset-top),4px) 14px calc(env(safe-area-inset-bottom) + 92px); max-width:600px; margin:0 auto; font-size:17px; overflow-x:hidden;
+    min-height:100vh; min-height:100dvh; }
+
+  .ppkalk /* --- Felso sav (allando) --- */
+  .topbar{ display:flex; align-items:center; gap:9px; padding:6px 0;
+    /* TAPADO FEJLEC (Fonok, 2026-08-24 19:49: "Gorgetesnel ne tunjon el"), es a hatter
+       RAJZOLATA LATSZODJON ALATTA (ugyanaz nap 20:18). Eloszor 88 szazalekos fedessel es
+       elmosassal csinaltam -- az olvashato volt, de eltakarta a terkep-mintat, vagyis egy
+       sotet savot vagott a lap tetejere. Most a fedes 42 szazalek, es NINCS elmosas: az
+       elmosas epp azt tunteti el, amit lattatni kell.
+       AMIT A FEDES HELYETT AD OLVASHATOSAGOT: a cimen es a verziosoron egy finom sotet
+       arnyek. Igy a szoveg a mintan is ell, de a minta nem tunik el alola. */
+    position:sticky; top:0; z-index:40;
+    background:rgba(11,22,19,.62);
+    /* CSAK a hatterszin megy at, a homalyositas NEM (2026-08-24 21:14: "Szkrolozasnal a
+       fejlec egy picit rezeg"). Ket oka volt a rezgesnek, es mindkettot kivettem:
+       1. a `backdrop-filter` egy TAPADO elemen minden gorgetett kepkockan ujra-komponalja a
+          mogotte levo kepet -- ez a telefonon lathato reszketes. 94 szazalekos fedes mellett
+          amugy sem ad hozza semmit, tehat a homalyositas elhagyhato;
+       2. az atmenet, ami a filterre is futott, minden osztaly-valtasnal ujrarajzolast kert.
+       A `translateZ(0)` sajat retegre teszi a savot, igy a gorgetes nem rajzolja ujra. */
+    transition:background-color .18s linear; transform:translateZ(0); will-change:background-color;
+    margin:0 -14px; padding-left:14px; padding-right:14px; }
+  .ppkalk /* GoRGETESKOR SoTETEDIK (Fonok, .ppkalk 2026-08-24 20:22: "mikor elkezdem szkrolozni, .ppkalk akkor vegye
+     at a korabbi sotet szint. Ha pedig nincs szkrolozva, .ppkalk akkor latszodjon a hatter rajzolata").
+     A NYUGALMI FEDES 42 -> 62 SZAZALEK (ugyanaznap 20:22, .ppkalk egy perccel kesobb: "tulsagosan
+     atlatszo"). A minta igy is atlatszik, .ppkalk de a felirat nem kuzd vele.
+     A ket allapot ket kulon celt szolgal: a lap tetején a fejlec resze a kepnek, .ppkalk gorgetes
+     kozben viszont SZoVEG ES CSEMPE fut el alatta, .ppkalk es ott a fedes az olvashatosagot vedi. */
+  .topbar.gorgetve{ background:rgba(11,22,19,.94); }
+  .ppkalk /* Ha a sugo-gomb is kint van, .ppkalk harom gomb marad a cim mellett -- ilyenkor a cim kisebb.
+     A `text-overflow:ellipsis` tovabbra is ott van vegso vedelemnek, .ppkalk de igy nem sul el. */
+  .topbar.van-sugo .appname{ font-size:21px; letter-spacing:.2px; }
+  .ppkalk /* RAJZLAP */
+  #jegyzetLap{ position:fixed; inset:0; z-index:120; background:var(--bg); display:flex;
+    flex-direction:column; padding:max(env(safe-area-inset-top),8px) 10px calc(env(safe-area-inset-bottom) + 8px); }
+  .ppkalk .jegyzet-fejlec{ display:flex; gap:8px; align-items:center; }
+  .ppkalk .jegyzet-fejlec input{ flex:1; margin:0; }
+  .ppkalk .jegyzet-fejlec button{ flex:none; width:44px; font-size:20px; }
+  .ppkalk .jegyzet-eszkozok{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin:8px 0; }
+  .ppkalk .jegyzet-eszkozok button{ flex:none; padding:8px 10px; }
+  .ppkalk .jegyzet-szinek, .ppkalk .jegyzet-vastag, .ppkalk .jegyzet-mod{ display:flex; gap:5px; }
+  .ppkalk .jegyzet-mod b{ display:inline-flex; align-items:center; justify-content:center; height:30px; padding:0 10px;
+    border-radius:8px; border:2px solid var(--border); background:var(--panel); font-size:13px; cursor:pointer; }
+  .ppkalk .jegyzet-mod b.on{ border-color:var(--green); color:var(--green); }
+  .ppkalk .jegyzet-szovegsor{ margin-bottom:8px; }
+  .ppkalk .jegyzet-szovegsor input{ margin:0; width:100%; }
+  .ppkalk .jegyzet-szinek b, .ppkalk .jegyzet-vastag b{ display:inline-flex; align-items:center; justify-content:center;
+    width:30px; height:30px; border-radius:8px; border:2px solid var(--border); cursor:pointer; }
+  .ppkalk .jegyzet-szinek b.on, .ppkalk .jegyzet-vastag b.on{ border-color:var(--green); }
+  .ppkalk .jegyzet-vastag b{ background:var(--panel); }
+  .ppkalk .jegyzet-vastag i{ display:block; background:var(--text); border-radius:99px; }
+  .ppkalk /* `touch-action:none` -- enelkul az ujj gorgetne a lapot rajzolas helyett. */
+  #jegyzetVaszon{ flex:1; width:100%; border-radius:12px; border:1px solid var(--border);
+    touch-action:none; background:#fff; }
+  .ppkalk .topbar .applogo{ width:64px; height:64px; flex:none; }
+  .ppkalk /* ATLATSZO HATTERu LOGO (Fonok, .ppkalk 2026-08-24 18:31: "Ez nem az atkatszo es legyen nagyobb").
+     A `border-radius` es a `box-shadow` SZANDEKOSAN kikerult: azok a CSEMPES valtozathoz
+     tartoztak. Atlatszo kepnel a lekerekites nem latszik, .ppkalk az arnyek viszont igen -- egy
+     lathatatlan negyzet arnyeka a rajz korul. */
+  .topbar .tt{ flex:1; min-width:0;
+    /* A FEJLEC-SZoVEG NEM JELoLHETo KI (Fonok, 2026-08-24 19:48: "Ne legyen kattinthato a
+       szoveg"). Kepernyokepet kuldott arrol, hogy hosszu nyomasra az Android kijelolte a
+       "PrepperPapa" feliratot, es felajanlotta a Google-kereseset -- vagyis egy velelenul
+       hosszabb koppintas kiviszi a felhasznalot az appbol. Ez NEM link volt: a sima szoveg
+       kijelolese hozta fel a menut.
+       A `user-select:none` a kijelolest, a `-webkit-touch-callout:none` az iOS-es hosszu-nyomas
+       menut zarja ki. A cim es a verziosor egyike sem interaktiv, tehat nincs mit elvenni. */
+    user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+  .ppkalk @font-face{
+    /* OSWALD, SIL Open Font License 1.1 -- a licenc szovege a `oswald-LICENC-OFL.txt`-ben
+       all a lap mellett, ahogy a licenc eloirja. A DIN Condensed (amit Fonok a mintan
+       valasztott) az Apple rendszer-betuje: a keszuleken NINCS meg, es tovabbadni sem szabad.
+       2026-08-24 19:10-kor Fonok az ELSo lapon karikazta be a valasztasat -- az IMPACT, vegyes
+       kis-nagybetuvel --, ami viszont a Monotype tulajdona, szinten nem szallithato. Az ANTON
+       az Impact szabad megfeleloje: ugyanaz a vaskos, plakat-szeru karakter.
+       (Elotte egy korig az Oswald allt itt, a DIN Condensed megfeleloje -- azt a KATONAI lap
+       2-esere ertettem, o viszont az ELSo lap 2-eset kerte. Ket lap, ket kettes: ezert kuldtem
+       ki a ket valtozatot egy kepen, mielott masodszor is rosszat epitek.)
+       A FAJL 2,4 KILOBAJT, mert CSAK a felirathoz kello 35 glifat tartalmazza (a magyar
+       ekezetes nagybetukkel egyutt). A teljes valtozat 172 kilobajt lenne -- az egy offline
+       appban, ami minden fajlt elore letolt, nem arany egyetlen feliratert. */
+    font-family:'PP Felirat';
+    /* A BETuFAJL BE VAN AGYAZVA (data URI), NEM kulon keres (2026-08-24 19:13).
+       Eloszor `url('/anton-felirat.woff')`-kent kotottem be, es a telefonon NEM toltodott be:
+       a felirat a rendszer-betuvel jott, vekonyan. Fonok egy szoval jelezte: "Nem vastag".
+       Egy kulon fajl HAROM helyen tud elakadni ebben az appban -- a belepteto kapun, a
+       service worker gyorsitotaran, es a bongeszo sajat taran --, es MINDHAROM csendben:
+       a lap felepul, csak mas betuvel. A beagyazas mindharmat kikeruli, es 2,4 kilobajtnal
+       ez arányos ar. A `.woff` fajl es a licenc a lap mellett marad, hogy a forras lathato
+       legyen. */
+    src:url(data:font/woff;base64,d09GRgABAAAAAAlEAA4AAAAADDwAAh2yAAAAAAAAAAAAAAAAAAAAAAAAAABHREVGAAAIvAAAADsAAABMAM4AxUdQT1MAAAj4AAAAIAAAACBEdkx1R1NVQgAACRgAAAApAAAAKrj6uPRPUy8yAAAG1AAAAEkAAABgnPGNimNtYXAAAAcgAAAAigAAANwKzQw0Z2FzcAAACLQAAAAIAAAACAAAABBnbHlmAAABRAAABF0AAAYoDwzN5mhlYWQAAAYUAAAANgAAADYgbeqyaGhlYQAABrQAAAAgAAAAJBKuBctobXR4AAAGTAAAAGYAAACScO0D02xvY2EAAAXEAAAATgAAAE4dbhwXbWF4cAAABaQAAAAdAAAAIAA3ALpuYW1lAAAHrAAAAPMAAAHKJ1Q9inBvc3QAAAigAAAAEwAAACD+0ABmeJxtVFtMHFUYPmdm9yy0mMx0dpZSEJld2AVBMXsrNoaLQSCkpdxF1tqIK5G0KxA0gSamBuSh0aSKb5WEjaGLoNZqlWi0jcbLwyYaKBeTCmWD1gdsybZJxQJ7xn/Ozk4fNJvZmfnO+b/zf9/5ziAO5SLE/0BiyIL2IuSRFEnhHbzk4R25M1zbFL2UtWgrDR8RSOxeHs6hf3A+/rSqJqvSfuGcCCMEtfvQFDbBcwPgBcCmcYmK8WvgvqURfJh+jvtJjH5Ep+kXNESnETCxCsbE60wDjKkcITwGTHySqRy3ai1AhboNI0uswpysUCeggkOVapyfJHH0ANqPkNnu9Ilev8dtk0Ur4d3w4rDDow3fWVhbXVpaXZtrbOgoFNTbfPX6xsb67je3VVz9Hh8YHt2NNNdqnTE+to5F72wGmww8ZOBWZDbwaPoLBr4fjbK+NIURUJKBZKbFbbPJVkIcDlH0uP0+r9PhaMDzYx/Wl0+MnbV2lRQ3ukhsOB4J3xpO1PJ3Xz4RDIEfjwP7O8Ai6doU0GKDej97JPjGyhxu35NfWJSfjtvnhK24OX3HXNLk9TSXmHa2t+Jb0CHjYIoydEXjrPMkHjJwq7pl4H8xRRm6oghTVAT4uPkmeggVsW6cPq/ff/CgT7NYVpxeHzMenFd8hEigUSRElq34mddGHvOPDFw/Wkcn8cKNwSu9dPzAYGVJXn2z8Er09TOf9LkOnxvq6kzLEmJft0VO7Zz57LkgttUX4/dzAx3fjWq7wta2XIOeBF3DBXjCKEBEzm+JanmRfAViAP9GxLVr9DyERd1HRHQrOcbD2Ob9MQ49SSr4tyw9MAa7hvW8ck7cvTuLu0kFfpguaxfiaADezqdmSvrMiv9MBM4noMcL4E8OKtD90aKYJ8pWS2rbfD5FCwHv0fbfTmR8M3ylOX4VXzQl/tnjcJXl4GDLj3/PFBYWlwqD6xNcYP5X2hH6qZpeLzzifr7h7bYPfh/gz0abaqtbNVfYipYouGJjrkhYRVonjaSGfyrtuK7OJWVqF5cfWd1IfBr58k9ScwivnaQt2j8oXCI1OJqaLemzp/93MqxpAsY1tmZ2ck10B+7JkztpXrl/crvNK9v5KV8ugy97USb4kiemDqiAtYykDugurdy8urBJKx5xtba6BDzPdS4mEouJCC3F1io3tzoyknC4q3TVl1kWcnTVCSQY+JCBy/iugcfSeg08i7NBdjhUpxL+e+hLhESjTFGR/akPB3HYXSJLcHKboL86fFJ5NfTuUNWbfWNVbWWZmWWHsrO3yXK45djyx4ncga9OXKTdHO5r5upbevubErNN/ZordWDArHlTO0me5AqiHU6FCHQH3giWnHrWvDL1dBddkhTrzijMr4ZeZ8FFaypBWnK04Gixg2OFewZPP4pfyvGWPYhfpOfsx4XgpUHTsZ2fO2uDR03Kdn64vVPbJcbDdsme9IiDL7aB9xi4jO8ZOGTAwLM4uP0LZH68iwAAAHicY2BkYGBQY4hgYGdIYGBlAPEQgIWBEQAV1wDyAAAAAAAAAAAbACcAQABMAFkAZQCNAJkApQCxANQA9gECAQ4BGgFYAWQBcgGAAZUBqgHjAe8CBgIdAikCNgJeAmoCdgKCArQCzALwAvwDCAMUAAAAAQAAAAIdsi6RTfxfDzz1AA8IAAAAAADb/9K6AAAAANwHrKz9lf1lC60LOgAAAAYAAgAAAAAAAHicY/7H4Mf8iEEOjL2BbCBmvMBgx3jh/y/mJwwOKPg4UP4UgyUKvsegCcJMXQzRDAz/hZgvMDgxMPyLZn7BYAPGUxkCgPyrjI8YWIDYjvknUAwJszAzeDAdY/Bg/sfgAoEA0j8oDgAAeJxjYGRg4Mz8G8fAwH3979Q/RdxrGYAiKEAZAJ6LBo14nGNgYV7FOIGBlYGB1ZjlLAMDwywIzXSWIY25hQEVsCNz8lLLSxgOMAQwFnJm/o1jYOC2YVoEFGYEybHeYXsApBQYmAGCVg2aAAAAeJyNizEOAQEURN9nIyISzfY0kiWIEMVG5QbrCAr9rouhVukoVBKFaJQKlWQLkYzPCXZ+5s0vZoASUHaHTvtnwMGzR8u/OgkLlqSs2HPkxJkLV27cefDkRc6bj80tk3xVrJ1YKmmntbbaOGeaKtZEY7+Rhhqor64idRTxk1FMFarOGk0atL8lyjznAAB4nF2QMWsCQRCFv1OjxCJYW12pRc5oQEQrEayDyBXpTNA7RV3RO0P+VOr8gvwk67xbt1hlmN03M2/e7CxQ450yQeUR+JFfcUBd0RWXeOLX4TIv/DlcocnF4QemQcPhKs0gZoLhwDdH1iSkZIT01F14yFyZpe4xe1WMzpA3cQ0b5T8te0yuO1XuyElxy6pkUj0xpCNLpF0wcj6I1GXY2ayRJWyltLLamTo63qypy0ZOoe3VZupKpLhlobk9cbqyPiPVlnyJNfLYz3d8f5/bSqyo2GPtqr5yaPdaiZfb7lSsvf2DFmdxIgby15t33k3+B4eARv0AeJxjYGYAg39nGdIYsAAAMxYCNQAAAQAB//8AD3icJcRLCoAwAAPRSZEifhZuKggiUnr/KzpgHhkCbPwrLL4QJoWqMLPancM2Tnsp3Dz2VegM8gEkUwGUAAABAAAACgAcAB4AAURGTFQACAAEAAAAAP//AAAAAAAAeJxjYGRgYOBiUGPQYGBycfMJYeDLSSzJY5BgYAGKM/z/zwAHAG2XBV0AAAA=) format('woff');
+    font-weight:400; font-style:normal; font-display:swap; }
+  .ppkalk .topbar .appname{ font-size:27px; font-weight:800; letter-spacing:.6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    color:var(--green);
+    font-family:'PP Felirat',Impact,"Arial Narrow Bold",var(--fejlec-tartalek);
+    /* VEGYES KIS-NAGYBETu es SZuK ritkitas: a bekarikazott minta ilyen volt. A csupa nagybetu
+       + 2,4 keppontos ritkitas a KATONAI laphoz tartozott, es ide mar nem illik -- az Anton
+       vaskossaga onmagaban ad sulyt, a ritkitas csak szethuzna. */
+    letter-spacing:.4px; font-weight:400;
+    text-shadow:0 1px 3px rgba(0,0,0,.75), 0 0 10px rgba(0,0,0,.45); }
+  .ppkalk /* A FEJLEC-FELIRAT (Fonok, .ppkalk 2026-08-24 18:49: "a Prepper Papa felirat is legyen ugyanilyen
+     zold szinu es valamilyen jol kinezo fonttal"). Harom dontes all mogotte:
+     1. A szin `var(--green)`, .ppkalk NEM a `#7CB342` beegetve -- igy az EJSZAKAI modban (`body.night`)
+        magatol vorosre valt a felirat is, .ppkalk a tobbi zold elemmel egyutt. Egy beegetett zold
+        ott vilagitana, .ppkalk ahol epp az a cel, .ppkalk hogy ne.
+     2. A betutipus RENDSZER-fontokbol all, .ppkalk nem letoltott webfontbol: az app offline is mukodik, .ppkalk es egy hianyzo font-fajl nemán a rendszer-alapertelmezesre esne vissza. A keskenyitett
+        valtozatok (Roboto Condensed Androidon, .ppkalk Avenir Next Condensed iOS-en) adjak a "terepes"
+        jelleget; ha egyik sincs, .ppkalk a `--fejlec-tartalek` a sima rendszer-stack.
+     3. 19-rol 24 keppontra nott, .ppkalk mert a logo is 44-rol 64-re -- egy 19 keppontos felirat egy
+        64 keppontos ikon mellett aranytalanul kicsi. */
+  /* Az alcim (verzio + build-ido) 390px-en pont a hataron volt: nulla tartalek, .ppkalk egy
+     karakterrel hosszabb szoveg mar levagodott (Thomas merte: szoveg 203px, .ppkalk doboz 203px).
+     Kisebb betu + betukoz-nullazas ad ~15% tartalekot. */
+  .topbar .appver{ text-shadow:0 1px 3px rgba(0,0,0,.75); color:var(--verzio-szin); font-size:11px; letter-spacing:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .ppkalk .nightbtn{ flex:none; width:44px; height:44px; min-width:0; min-height:0; padding:0; border-radius:12px; border:1px solid var(--border);
+    background:var(--panel); color:var(--green); font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+
+  .ppkalk /* --- Kezdolap csempek --- */
+  /* A racs egy leheletnyivel szorosabb (Fonok 2026-08-05: a fooldalnak egy kepernyore
+     kell ferni). Negy sornal a 4 px sormagassag es az 1 px koz osszesen ~19 px-et hoz, .ppkalk es az erintesi cel igy is 62 px, .ppkalk boven a 44 px-es minimum folott. */
+  .tiles{ display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-top:4px; }
+  .ppkalk /* A CSEMPE-FELIRAT MARAD. 2026-08-05-en egyszer levettem, .ppkalk mert a "tavolitsuk el a
+     szovegeket" kerest a csempekre ertettem -- Fonok helyesbitett: "ne a gombok szoveget
+     tavolitsd el, .ppkalk hanem a csempek kozotti szoveget es legfelulrol is". A `title` attributum
+     bent maradt, .ppkalk mert az ingyen van es hosszu nyomasra megmutatja a nevet. */
+  .tiles .tile{ display:flex; flex-direction:column; gap:5px; align-items:center; justify-content:center;
+    background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:8px 3px; min-height:62px;
+    color:var(--csempe-cimke); cursor:pointer; text-align:center; letter-spacing:0; min-width:0; overflow:hidden; }
+  .ppkalk /* A Forum-csempe <a>, .ppkalk nem <button> (kulso cimre visz). A bongeszo az <a>-nak
+     alahuzast es sajat linkszint ad -- ezek nelkul kilogna a tobbi csempe kozul. */
+  .tiles a.tile{ text-decoration:none; }
+  .ppkalk /* A NAGYBETUSITES EDDIG A GOMB-SZABALYBOL JOTT, .ppkalk nem innen -- ezert a <a>-csempe
+     feliratának kisbetus maradt, .ppkalk a tobbi 15 mellett. Meressel derult ki (2026-08-11):
+     'KOMMUNIKÁCIÓ, .ppkalk TÉRKÉP, .ppkalk ... VÍZTISZTÍTÁS, .ppkalk Fórum'. Itt kimondva mar nem fugg attol, .ppkalk hogy a csempe gomb-e vagy link. */
+  /* A CSEMPE-FELIRAT: KET SOR MEGENGEDETT, .ppkalk DE A CSEMPE MAGASSAGA FIX.
+     (Fonok, .ppkalk 2026-08-24 08:39 -> 08:40, .ppkalk ket lepesben.)
+     ELSo KEROM az egy soros alak volt (`nowrap` + `ellipsis`). Magyarul bevalt, .ppkalk ANGOLUL NEM:
+     a `Knowledge base` es az `Emergency card` LEVAGODOTT. Fonok szava: *"Angolul nem valt be
+     ez az egysoros kinezet."* Igaza van -- egy levagott felirat hasznalhatatlan, .ppkalk a torott csak
+     ket soros.
+     A HELYES MEGOLDAS NEM A SZoVEGEN VAN, .ppkalk HANEM A CSEMPEN: `min-height` a csempere, .ppkalk igy egy
+     ket soros felirat NEM nyujtja meg a szomszedjait, .ppkalk es a racs sormagassaga sem ugral.
+     Ezzel egyszerre teljesul mindket keres: a lap alja nem csuszik le, .ppkalk es a szoveg olvashato.
+     `hyphens:none` + `overflow-wrap:normal`: SZOHATARON tor, .ppkalk nem szotagol -- a `KOMMUNIKA-CIO`
+     alak volt az, .ppkalk ami a 08:39-es kepen zavarta. */
+  .tiles .tile{ min-height:74px; justify-content:center; }
+  .ppkalk .tiles .tile .tl{ font-size:clamp(8px, 2.6vw, 10px); font-weight:700; line-height:1.15;
+    /* `break-word` ES `hyphens:none`: a KoZoS szavas felirat (`Knowledge base`) szohataron tor,
+       az EGYSZAVAS (`Kommunikacio`, `Vagyonkezelo`) pedig a szo belsejeben -- de KoToJEL NELKUL.
+       Miert ez a ketto egyutt: `normal` mellett az egyszavas felirat NEM tort, hanem LEVAGODOTT
+       (mert 12-13 karakter), `hyphens:auto` mellett viszont csunya `KOMMUNIKA-CIO` lett belole,
+       amit Fonok a 08:39-es kepen kifogasolt. A ket keres kozott ez az egyetlen alak all meg. */
+    max-width:100%; white-space:normal; hyphens:none; overflow-wrap:break-word; word-break:normal;
+    letter-spacing:-.01em; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+    overflow:hidden; text-transform:uppercase; }
+  .ppkalk .tiles .tileicn{ width:23px; height:23px; }
+  .ppkalk .tile:active{ transform:scale(.98); }
+  .ppkalk .tile .ic{ font-size:26px; line-height:1; }
+  .ppkalk .tile .tl{ font-size:15px; font-weight:700; }
+  .ppkalk .tile .td{ font-size:11.5px; color:var(--muted); line-height:1.3; }
+  .ppkalk .tile.sos{ grid-column:1 / -1; background:var(--danger); border-color:var(--danger); color:#0D1411; min-height:64px; flex-direction:row; align-items:center; gap:12px; box-shadow:0 0 18px rgba(224,91,75,.55); }
+  .ppkalk .tile.sos .ic{ font-size:30px; }
+  .ppkalk .tile.sos .li-t{ min-width:0; }
+  .ppkalk .tile.sos .td{ color:rgba(13,20,17,.78); overflow-wrap:anywhere; }
+  .ppkalk .tile .tl{ overflow-wrap:anywhere; }
+
+  .ppkalk /* --- Kepernyok (nezetek) --- */
+  .screen{ display:none; }
+  .ppkalk .screen.active{ display:block; }
+  .ppkalk .screen-head{ display:flex; align-items:center; gap:12px; margin:2px 0 14px; }
+  .ppkalk .back{ flex:none; width:40px; height:40px; border-radius:11px; border:1px solid var(--border);
+    background:var(--panel); color:var(--text); font-size:20px; cursor:pointer; }
+  .ppkalk .screen-head h2{ font-size:16px; margin:0; font-weight:700; text-transform:uppercase; letter-spacing:.14em; }
+
+  .ppkalk h1{ font-size:19px; margin:6px 0 2px; letter-spacing:.12em; text-transform:uppercase; }
+  .ppkalk .sub{ color:var(--muted); font-size:14px; margin:0 0 16px; }
+  .ppkalk label{ display:block; font-size:12px; color:var(--muted); margin:16px 0 6px; text-transform:uppercase; letter-spacing:.12em; font-weight:600; }
+  .ppkalk textarea, .ppkalk select, .ppkalk input[type=text], .ppkalk input[type=number], .ppkalk input[type=search], .ppkalk input[type=password], .ppkalk input[type=tel], .ppkalk input[type=email], .ppkalk input[type=url], .ppkalk input[type=date], .ppkalk input[type=time]{
+    width:100%; background:var(--panel); color:var(--text); color-scheme:dark;
+    border:1px solid var(--border); border-radius:12px; padding:12px; font-size:16px; resize:vertical;
+    -webkit-appearance:none; appearance:none; }
+  .ppkalk textarea:focus, .ppkalk select:focus, .ppkalk input:focus{ outline:none; border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(232,114,12,.18); }
+  .ppkalk body.night textarea:focus, .ppkalk body.night select:focus, .ppkalk body.night input:focus{
+    border-color:var(--danger); box-shadow:0 0 0 3px rgba(255,59,48,.18); }
+  .ppkalk input::placeholder, .ppkalk textarea::placeholder{ color:var(--dim); }
+  .ppkalk /* A LENYILO LISTA AZ EGESZ APPBAN (Fonok, .ppkalk 2026-08-24 21:51). Ket panasz volt ra, .ppkalk es
+     KULON okuk van:
+       1. "tul nagyok a betuk, .ppkalk ezert tobb sorba sorolja" -- a lenyilo lista a `select`
+          betumeretet orokli, .ppkalk az pedig 16 px volt (a 310. sor kozos urlap-szabalyabol).
+          A 15 px-es ertek MEG NEM valt ki iOS-en fokusz-nagyitast (az csak a szoveges
+          beviteli mezokre all fenn, .ppkalk a `select`-re nem), .ppkalk viszont a hosszabb tetelek mar
+          egy sorba ferenek.
+       2. "ez a szurke nagyon elut a programtol" -- ez NEM a mi szinunk volt, .ppkalk hanem a
+          bongeszo alapertelmezese: az `option` elem szinet a `select`-rol NEM orokli, .ppkalk kulon kell megadni. Androidon ez mukodik; iOS-en a rendszer sajat gorgo-valasztot
+          rajzol, .ppkalk azt CSS-bol nem lehet szinezni -- ott a betumeret javitasa marad meg. */
+  /* A LENYILO-JELOLES MINDEN VALASZTON OTT VAN (Fonok, .ppkalk 2026-08-24 22:37: "a cella
+     legordulo jeloles az legyen ott"). Eddig csak az aram-kalkulator harom szuk mezojenel
+     rajzoltuk ki, .ppkalk mert OTT ket megszolalasig hasonlo szammezo mellett allt.
+     **Most viszont MINDENHOL kell, .ppkalk es ezt a sajat valtoztatasom hozta magaval:** amiota a
+     natív lenyilot a sajat listank valtja ki, .ppkalk a bongeszo SEMMILYEN sajat jelet nem tesz a
+     mezore -- a `select` ugy nez ki, .ppkalk mint egy sima szovegmezo. A jel nem disz, .ppkalk hanem az
+     egyetlen, .ppkalk ami megmondja, .ppkalk hogy ez koppintasra nyilik. */
+  select{ font-size:15px; padding-right:34px;
+    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%239AA39C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M1.5 2 L6 6.4 L10.5 2'/></svg>");
+    background-repeat:no-repeat; background-position:right 12px center; background-size:12px 8px; }
+  .ppkalk option, .ppkalk optgroup{ background-color:var(--lista-hatter); color:var(--text); font-size:15px; }
+  .ppkalk optgroup{ color:var(--muted); font-weight:700; font-style:normal; }
+  .ppkalk /* A SAJAT VALASZTO (lasd `ppValasztoBekot` a fajl vegen). Azert kell, .ppkalk mert a natív lenyilot
+     a bongeszo sajat retegen rajzolja, .ppkalk es a fenti `option` szabalyt Chrome Androidon
+     figyelmen kivul hagyja -- a lista ott rendszerszurke marad. Ez a reteg a LAPON BELuL van, .ppkalk tehat itt tenyleg a mi szineink es a mi betumeretunk ervenyes. */
+  /* A `z-index` a TABBAR foле megy (az 10001): egy modalis reteg ala nem rajzolhat be az
+     also savon a navigacio -- ugy nezne ki, .ppkalk mintha a lista mogotte folytatodna. */
+  /* A LISTA A MEZo MELLETT NYILIK, .ppkalk NEM ALULROL (Fonok, .ppkalk 2026-08-24 22:31: "jobb lenne, .ppkalk hogyha
+     pont az ujjam alatt nyilna fol, .ppkalk nem pedig lent kene matatni a folgordulessel").
+     Az elso valtozat also lap volt -- az egy MODALIS forma, .ppkalk ami akkor jo, .ppkalk ha a valasztas maga
+     a feladat. Itt viszont egy urlap KoZEPEN allunk, .ppkalk es a szem mar a mezon van: a lista
+     alulrol felcsuszva elszakitja a valasztast attol, .ppkalk amire vonatkozik, .ppkalk es az ujjnak vissza
+     kell utaznia a kepernyo aljara. A pozíciot JS szamolja (`ppValasztoBekot`), .ppkalk mert a mezo
+     helye futasidoben derul ki -- a CSS csak a keretet adja.
+     A `z-index` a TABBAR fole megy (az 10001), .ppkalk kulonben az also sav rarajzolna a listara. */
+  .valaszto-hatter{ position:fixed; inset:0; z-index:10040; background:rgba(0,0,0,.35); }
+  .ppkalk .valaszto-lap{ position:fixed; display:flex; flex-direction:column;
+    background:var(--lista-hatter); border:1px solid var(--border);
+    border-radius:14px; box-shadow:0 10px 34px rgba(0,0,0,.55); padding:6px; }
+  .ppkalk .valaszto-lista{ overflow-y:auto; -webkit-overflow-scrolling:touch; }
+  .ppkalk .valaszto-csoport{ font-size:11.5px; color:var(--muted); text-transform:uppercase;
+    letter-spacing:.12em; font-weight:700; padding:12px 12px 6px; }
+  .ppkalk /* A HAROM UTOLSO TULAJDONSAG A GLOBALIS `button` SZABALYT vonja vissza (nagybetusites, .ppkalk ritkitas, .ppkalk felkover) -- egy valaszthato tetel NEM gomb-felirat, .ppkalk hanem olvasando szoveg.
+     Ugyanez a reset all a `.szobacsempe`-n is, .ppkalk ugyanebbol az okbol. */
+  .valaszto-tetel{ display:block; width:100%; min-width:0; min-height:0; text-align:left;
+    padding:13px 12px; font-size:15.5px; line-height:1.25; color:var(--text);
+    background:transparent; border:0; border-radius:10px;
+    text-transform:none; letter-spacing:normal; font-weight:400; }
+  .ppkalk .valaszto-tetel.aktiv{ background:var(--raised); color:var(--green); font-weight:700; }
+  .ppkalk .valaszto-tetel.tiltott{ color:var(--dim); }
+  .ppkalk .valaszto-tetel:active{ background:var(--panel); }
+  .ppkalk body.valaszto-nyitva{ overflow:hidden; }
+  .ppkalk /* A PIN kozepre igazitva es ritkitva olvashato -- ez negy karakter, .ppkalk nem mondat. */
+  #walletPin{ text-align:center; letter-spacing:.55em; font-size:22px; font-family:var(--mono); padding:14px 12px; }
+  .ppkalk textarea{ min-height:64px; }
+  .ppkalk .morse-out{ background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    padding:12px; margin-top:8px; font-size:20px; letter-spacing:2px; min-height:30px; word-break:break-word; color:var(--accent); font-family:var(--mono); }
+  .ppkalk .row{ display:flex; gap:10px; align-items:center; margin-top:14px; flex-wrap:wrap; }
+  .ppkalk /* SZOBA-CSEMPEK (Fonok 2026-08-13 16:55: "csempeformaba... es csempebe jol nez ki").
+     KET OSZLOP, .ppkalk es nem tobb: 390 px szeles telefonon egy harmadik oszlopnal a szoba neve
+     mar tordelne, .ppkalk a taglétszam pedig a kep ala csuszna. Az `auto-fill` itt szandekosan
+     nincs -- szeles kepernyon a szobak nem sorolodnak vegtelen sorba, .ppkalk mert a lista nem
+     galeria: par elemre kell attekintheto maradnia. */
+  .szobacsempek{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+  .ppkalk .szobacsempe{ background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    overflow:hidden; display:flex; flex-direction:column; text-align:left; padding:0; min-height:0;
+    text-transform:none; letter-spacing:normal; font-weight:400; }
+  .ppkalk .szobacsempe .kepdoboz{ aspect-ratio:16/10; background:var(--bg); overflow:hidden; }
+  .ppkalk .szobacsempe .kepdoboz img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .ppkalk /* KEP NELKULI SZOBA: nem ures lyuk, .ppkalk hanem a szoba kezdobetuje. Igy a racs akkor is
+     rendezett marad, .ppkalk ha a gazda meg nem toltott fel kepet -- es latszik, .ppkalk hogy ide kep valo. */
+  .szobacsempe .kepdoboz.ures{ display:flex; align-items:center; justify-content:center;
+    font-size:30px; font-weight:700; color:var(--dim); font-family:var(--mono); }
+  .ppkalk .szobacsempe .szoveg{ padding:10px 11px 12px; }
+  .ppkalk .szobacsempe .cnev{ font-size:15px; font-weight:700; line-height:1.25; word-break:break-word; }
+  .ppkalk /* AZ ADATSOR NEM A --dim-et HASZNALJA, .ppkalk ES EZ MERT DONTES (Thomas, .ppkalk 2026-08-13 19:29).
+     A --dim-mel a 12 px-es sor kontrasztja a csempe tenyleges hatteren 3, .ppkalk 58:1 volt -- a
+     WCAG AA 4, .ppkalk 5-ot ker nem-nagy szoveghez. A lelet lenyege nem a szabvany-szam, .ppkalk hanem hogy
+     EPP EZ A KET ADAT (hanyan vannak, .ppkalk ki inditotta) az, .ppkalk AMIERT Fonok a csempet kerte, .ppkalk es a
+     csempen ez lett a leghalvanyabb sor; napfenyben telefonon pont ezt nem olvasta volna el.
+     A most beallitott szurke ugyanezen a hatteren ~5, .ppkalk 9:1 -- a nev (15 px, .ppkalk felkover, .ppkalk 14:1)
+     tovabbra is erosebb, .ppkalk tehat a sorrend nem borul fel. */
+  .szobacsempe .cadat{ font-size:12px; color:rgb(148,161,154); margin-top:5px; line-height:1.35; }
+  .ppkalk .szobacsempe .cvar{ font-size:12px; color:var(--accent); margin-top:5px; }
+  .ppkalk button{ flex:1; min-width:96px; min-height:52px; border:1px solid var(--border); background:var(--panel); color:var(--text);
+    border-radius:12px; padding:13px 14px; font-size:14px; font-weight:600; cursor:pointer; text-transform:uppercase; letter-spacing:.08em; }
+  .ppkalk button.primary{ background:var(--accent); border-color:var(--accent); color:var(--bg); }
+  .ppkalk button.sos{ background:var(--danger); border-color:var(--danger); color:#0D1411; }
+  .ppkalk /* Fonok 2026-07-31 (1.1 es 2.2): NINCS kulon "allj" gomb -- a gomb maga kapcsol be-ki, .ppkalk es az allapot MAGAN A GOMBON latszik. Fut kozben: halvanyabb toltes, .ppkalk lukteto keret. */
+  button.on{ box-shadow:0 0 0 3px var(--danger), 0 0 14px rgba(224,91,75,.5); animation:ppPulse 1.1s ease-in-out infinite; }
+  .ppkalk /* KIVALASZTAS (jelolo-gombok: kik jonnek, .ppkalk hova, .ppkalk melyik keszlet, .ppkalk allergia, .ppkalk tulajdonos):
+     nyugodt kiemeles, .ppkalk se villogas, .ppkalk se voros riasztas-szin. */
+  .hely.on, .ppkalk .kit.on, .ppkalk .bibfej.on{
+    box-shadow:none; animation:none;
+    background:var(--accent); border-color:var(--accent); color:var(--bg); font-weight:700; }
+  .ppkalk body.night .hely.on, .ppkalk body.night .kit.on{ background:var(--danger); border-color:var(--danger); color:#000; }
+  .ppkalk button.sos.on{ background:#0D1411; color:var(--danger); border-color:var(--danger); }
+  .ppkalk @keyframes ppPulse{ 0%,100%{ opacity:1 } 50%{ opacity:.72 } }
+  .ppkalk @media (prefers-reduced-motion: reduce){ button.on { animation:none } }
+  .ppkalk button:active{ transform: scale(.98); }
+  .ppkalk /* Fonok 2026-07-31 (2.1): telefonon a jobb szel LEVAGVA -- a Hangmagassag csuszka, .ppkalk az SOS gomb es a also sav Keszlet felirata. GYOKER-OK (2026-08-02, .ppkalk 375px es 390px
+     szelessegen reprodukalva): a .sliders sor NEM tordelt, .ppkalk es a flex-elemek alapertelmezett
+     min-width:auto miatt nem tudnak a tartalmuk ala szukulni -- a ket range-input intrinsic
+     szelessege szetfeszitette a tartalom-dobozt. A body overflow-x:hidden ezt nem javitotta, .ppkalk csak ELREJTETTE: ezert latszott levagasnak, .ppkalk es nem lehetett oldalra gorgetni sem.
+     Javitas: wrap + min-width:0 (+ flex-basis, .ppkalk hogy keskeny kepernyon egymas ala keruljenek). */
+  .sliders{ display:flex; flex-wrap:wrap; gap:16px; margin-top:14px; }
+  .ppkalk .sliders > div{ flex:1 1 170px; min-width:0; }
+  .ppkalk input[type=range]{ width:100%; min-width:0; }
+  .ppkalk .val{ color:var(--accent); font-weight:600; font-family:var(--mono); }
+  .ppkalk .lamp{ width:100%; height:46px; border-radius:12px; background:#0a0d11; border:1px solid var(--border);
+    margin-top:14px; transition: background .02s linear; }
+  .ppkalk .lamp.on{ background:var(--on); box-shadow:0 0 24px var(--on); }
+  .ppkalk .opts{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px; font-size:14px; }
+  .ppkalk /* A cimke-gombok (tarolasi hely, .ppkalk keszlet-tipus) a SAJAT szelessegukre alljanak, .ppkalk ne
+     osszanak egyenloen. Az altalanos "button{ flex:1 }.ppkalk " miatt a hosszabb szo (pl.
+     MENEKULOZSAK) nem fert a ra juto savba, .ppkalk es kicsuszott a gombbol. Merve 2026-08-02:
+     a felirat 146 px volt, .ppkalk a gomb 109. (Fonok: "kicsusznak a betuk".) */
+  .opts button{ flex:0 0 auto; min-width:0; padding:11px 13px; letter-spacing:.04em; }
+  .ppkalk /* A csuszkak sajat alapszelessege 4 px-szel tullogott a soron. */
+  input[type=range]{ width:100%; max-width:100%; min-width:0; }
+  .ppkalk /* A csuszka-sav (.sliders) es a benne levo oszlopok 4 px-szel tullogtak szuk
+     kepernyon, .ppkalk mert a range alap-szelessege nem zsugorodott a flex-sávban. */
+  .sliders, .ppkalk .sliders > *{ min-width:0; max-width:100%; }
+  .ppkalk .row > *{ min-width:0; }
+  .ppkalk /* SZOBA-AJANLO SOR (2026-08-18, .ppkalk Thomas merese a nyilvanos peldanyon).
+     A "Gyulekezo · 4 tag · PrepperPapa inditotta" + gomb EGY sorban 456 px-t kert, .ppkalk a hely 362 px volt -- es a gomb zsugorodott 41 px-re, .ppkalk amibol a feliratbol csak
+     "CSA" latszott. 41 px a 44 px-es tapinthato minimum ALATT is van.
+     MIERT NEM TORDELT a .row `flex-wrap: wrap`-je: mert a GOMB engedett helyette
+     (alapertelmezett `flex-shrink: 1`). A sor igy "kifert", .ppkalk csak olvashatatlanul --
+     a wrap sosem lepett muködésbe, .ppkalk mert nem volt mit tordelni.
+     EZ AZ UJ FELHASZNALO ELSo KEPERNYoJE: aki mar tagja egy szobanak, .ppkalk az a csempes
+     elrendezest kapja, .ppkalk es ott nincs baj. Vagyis pont az akadt el ezen, .ppkalk akit most
+     hivunk meg. */
+  .szobaajanlo{ align-items:stretch; }
+  .ppkalk .szobaajanlo > span:first-child{ flex:1 1 100%; }
+  .ppkalk .szobaajanlo > button{ flex:0 0 auto; width:100%; min-height:44px; }
+  .ppkalk .opts label.inline{ display:inline-flex; align-items:center; gap:6px; margin:0; color:var(--text); }
+  .ppkalk /* Szuk kepernyon (320 px) a negyelemes valaszto utolso gombja ("Mindketto") kilogott
+     a kepernyorol -- merve 2026-08-02: jobb szel 354 px egy 320 px-es lapon, .ppkalk tehat nem
+     is lehetett megnyomni. A gombok mostantol zsugorodhatnak es a sav torhet. */
+  .seg{ display:inline-flex; flex-wrap:wrap; max-width:100%; border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+  .ppkalk .seg button{ flex:1 1 auto; min-width:0; }
+  .ppkalk .seg button{ flex:none; min-width:0; border:0; border-right:1px solid var(--border); border-radius:0;
+    padding:8px 12px; font-size:13px; font-weight:600; background:var(--panel); color:var(--muted); }
+  .ppkalk .seg button:last-child{ border-right:0; }
+  .ppkalk .seg button.active{ background:var(--accent); color:var(--bg); }
+  .ppkalk .section{ border-top:1px solid var(--border); margin-top:22px; padding-top:6px; }
+  .ppkalk /* AZ ELSo SZAKASZ NEM KAP ELVALASZTOT (Fonok, .ppkalk 2026-08-24 18:51: "az elso bekezdes a
+     csempekkel egyutt mehetne fojebb"). A `.section` 22 keppont felso margot ES egy
+     valasztovonalat ad -- annak a KET szakasz KoZE valo elvalasztas a dolga. A kepernyo
+     legelso szakasza folott viszont nincs mit elvalasztani: ott a fejlec all, .ppkalk es a vonal
+     csak egy ures savot nyit. Ez a 28 keppont pont annyi, .ppkalk hogy a also csempesor a hajtas
+     ala csusszon. (Ugyanez a hibafajta mar egyszer elofordult 2026-08-05-en, .ppkalk akkor ket
+     magyarazo bekezdes ette el a felso felet -- lasd a `homeKesz` kornyeki kommentet.) */
+  .screen > .section:first-child, .ppkalk #homeKesz > .section:first-child{ border-top:0; margin-top:0; padding-top:0; }
+  .ppkalk .note{ color:var(--muted); font-size:12px; margin-top:18px; line-height:1.5; }
+  .ppkalk .titokradio{border-left:3px solid #C9A24A;padding-left:10px;margin-top:10px}
+  .ppkalk .ujverzio{position:fixed;left:10px;right:10px;bottom:64px;z-index:9999;display:flex;align-items:center;gap:10px;justify-content:space-between;background:#1b2a1f;border:1px solid #C9A24A;border-radius:10px;padding:10px 12px;font-size:13px;color:#e8e6df}
+  .ppkalk .ujverzio button{background:#C9A24A;color:#12180f;border:0;border-radius:8px;padding:7px 12px;font-weight:700}
+  .ppkalk .tag{ display:inline-block; background:var(--panel); border:1px solid var(--border); color:var(--muted);
+    font-size:11px; padding:2px 8px; border-radius:999px; }
+  .ppkalk .stub{ background:var(--panel); border:1px dashed var(--border); border-radius:14px; padding:16px; color:var(--muted); line-height:1.6; margin-top:6px; }
+  .ppkalk .stub b{ color:var(--text); }
+  .ppkalk /* Tudastar: sorszam-horgony + cikk-fejlec fatyollal */
+  .kbnum{ font-family:var(--mono); color:var(--accent); font-size:14px; min-width:26px; flex:none; font-weight:600; }
+  .ppkalk .kbhead{ position:relative; height:170px; overflow:hidden; border-radius:12px; margin-bottom:14px; }
+  .ppkalk .kbhead img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .ppkalk .kbscrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,22,26,0) 0%, rgba(18,22,26,.55) 45%, rgba(18,22,26,.92) 100%); }
+  .ppkalk .kbtitle{ position:absolute; left:14px; bottom:12px; right:14px; color:#fff; font-size:19px; font-weight:700; letter-spacing:.06em; }
+  .ppkalk .article{ line-height:1.7; font-size:16px; color:var(--text); }
+  .ppkalk .article p{ margin:0 0 12px; }
+  .ppkalk /* A tudastar-torzs egy sima szovegtomb volt: minden sor <br>-rel egy bekezdesbe
+     omlott. A kbBody() most cimekre/listakra bontja, .ppkalk ezek a hozza tartozo stilusok. */
+  .article .lead{ color:var(--muted); font-size:15px; border-left:3px solid var(--accent);
+    padding-left:12px; margin:0 0 20px; }
+  .ppkalk .article h3{ font-size:16px; font-weight:700; color:var(--accent); letter-spacing:.01em;
+    line-height:1.35; margin:26px 0 10px; }
+  .ppkalk .article h3:first-child{ margin-top:4px; }
+  .ppkalk .article ul, .ppkalk .article ol{ margin:0 0 14px; padding-left:22px; }
+  .ppkalk .article li{ margin:0 0 8px; padding-left:2px; }
+  .ppkalk .article li::marker{ color:var(--accent); font-weight:600; }
+  .ppkalk /* Felvezeto sor (kettospontra vegzodik): tapadjon az alatta levo listahoz. */
+  .article p.kblead-in{ margin-bottom:7px; }
+
+  .ppkalk /* --- TIPOGRAFIA (Fonok kerese, .ppkalk 2026-08-10) --- */
+  /* ELVALASZTAS: a magyar szoveg hosszu szavakat hoz ("felkeszultseg", .ppkalk "aramszunet"), .ppkalk es egy 390 pixeles telefonon ezek csunya lyukakat vagnak a
+     sorvegekbe. A `hyphens:auto` CSAK akkor mukodik, .ppkalk ha a lap nyelve ki van
+     mondva -- ezert kellett a <html lang="hu">. */
+  .article{ hyphens:auto; -webkit-hyphens:auto; text-wrap:pretty;
+    line-height:1.72; letter-spacing:.003em; }
+  .ppkalk /* A cim ne szakadjon ugy, .ppkalk hogy egyetlen szo maradjon az utolso soron. */
+  .article h3, .ppkalk .screen-head h2, .ppkalk .kbcikk .kc{ text-wrap:balance; }
+  .ppkalk .article p{ margin:0 0 13px; }
+  .ppkalk .article h3{ margin:28px 0 9px; letter-spacing:.005em; }
+  .ppkalk /* A bevezeto (lead) a torzstol MERETBEN es SZINBEN is valjon el, .ppkalk ne csak a vonaltol. */
+  .article .lead{ font-size:15.5px; line-height:1.65; letter-spacing:.004em; }
+  .ppkalk /* Az adat-szamok monospace-ben allnak; ott a betukoz artana, .ppkalk ezert visszavesszuk. */
+  .article code, .ppkalk .mono, .ppkalk [class*="mono"]{ letter-spacing:0; }
+
+  .ppkalk /* ===== JOGOSULTSAG: probaido-sav, .ppkalk feloldo-kartya, .ppkalk cikk-lista (spec 07f4e3d7) ===== */
+  /* A sav SOHA nem takar es SOHA nem all utba: egy sor a kepernyo tetejen. A funkcio
+     a probaido lejarta utan sem gyengul -- csak a figyelmeztetes erosodik (Fonok elve:
+     senki ne szembesuljon varatlanul azzal, .ppkalk hogy epp most nem megy). */
+  .jogsav{ font-size:13px; color:var(--dim); line-height:1.5; margin:0 0 12px; }
+  .ppkalk .jogsav.kozel{ color:var(--accent); }
+  .ppkalk .jogkartya{ border:1px solid var(--border); background:var(--raised); border-radius:12px;
+    padding:12px 13px; margin:0 0 14px; }
+  .ppkalk .jogkartya.eros{ border-color:var(--accent); }
+  .ppkalk .jogkartya b{ display:block; color:var(--accent); font-size:14px; letter-spacing:.02em; margin-bottom:6px; }
+  .ppkalk .jogkartya p{ margin:0 0 10px; font-size:14px; color:var(--muted); line-height:1.55; }
+  .ppkalk .jogkartya p:last-child{ margin-bottom:0; }
+  .ppkalk .jogkartya .row{ margin:0; }
+  .ppkalk .jogmodul{ font-family:var(--mono); font-size:12px; color:var(--green); }
+  .ppkalk /* Cikk-sor a temán belul. Gomb, .ppkalk tehat felul kell irni a globalis uppercase-t. */
+  .kbcikk{ display:block; width:100%; text-align:left; padding:12px 13px; margin:0 0 8px;
+    background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    min-width:0; min-height:0; text-transform:none; letter-spacing:0; }
+  .ppkalk .kbcikk:active{ border-color:var(--green); }
+  .ppkalk .kbcikk .kc{ font-size:15px; font-weight:700; color:var(--text); line-height:1.35; }
+  .ppkalk .kbcikk .kb2{ font-size:13px; color:var(--muted); line-height:1.5; margin-top:5px;
+    overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  .ppkalk .kbcikk .kt{ font-size:11px; color:var(--dim); letter-spacing:.06em; text-transform:uppercase; }
+  .ppkalk /* CIKKBELI ABRA. A kep a szoveg RESZE, .ppkalk nem dekoracio: teljes szelesseg, .ppkalk sajat
+     legterrel, .ppkalk es a leiras az `alt`-ban all (felolvasonak es kep-hiba eseten is). */
+  .cikkkep{ margin:18px 0; padding:0; }
+  .ppkalk .cikkkep img{ width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--border); }
+  .ppkalk body.night .cikkkep img{ display:none; }
+  .ppkalk .kbzar{ float:right; margin-left:10px; color:var(--accent); font-size:12px;
+    font-family:var(--mono); display:inline-flex; align-items:center; gap:4px; }
+  .ppkalk .kbzar svg{ width:14px; height:14px; }
+  .ppkalk /* AZ IRATTARCA KET GOMBSORA LATHATOAN VALJON EL (Thomas merese, .ppkalk 2026-08-11).
+     Eddig ket majdnem azonos gombsor allt egymas alatt, .ppkalk UGYANAZOKKAL a nevekkel: a felso
+     SZuR (mit mutassunk), .ppkalk az also BESOROL (kihez mentjuk). Kinezetre azonosak voltak, .ppkalk kb.
+     150 px-re egymastol -- es a "kozos" fent GOMB volt, .ppkalk lent viszont az uresen hagyas.
+     Ugyanaz a szo, .ppkalk ket mechanika. A keret + a pontositott cimkek valasztjak szet oket. */
+  .wallet-uj{ border:1px solid var(--border); border-radius:12px; padding:10px 12px 4px;
+    margin-top:14px; }
+  .ppkalk .wallet-uj > label:first-child{ margin-top:0; }
+
+  .ppkalk .kbcard .kbc-zar{ position:absolute; top:8px; right:10px; color:var(--accent);
+    display:inline-flex; align-items:center; gap:3px; font-family:var(--mono); font-size:11px;
+    background:rgba(13,20,17,.62); border-radius:7px; padding:2px 5px; }
+  .ppkalk .kbcard .kbc-zar svg{ width:12px; height:12px; }
+
+  .ppkalk .backicn{ width:20px; height:20px; color:var(--text); }
+  .ppkalk .nightbtn svg{ width:22px; height:22px; }
+  .ppkalk .nightbtn.on{ color:var(--danger-ink); }
+
+  .ppkalk /* --- Fooldali keszultsegi kartyak (helyszinenkent, .ppkalk grafikusan) --- */
+  /* A KESZULTSEG EGY SORBAN, .ppkalk OLDALRA GORGETVE (Fonok 2026-08-05: "amit most latunk, .ppkalk annak ki kene ferni egy nyito oldalra"). Racsban negy helyszin ket sort tolt, .ppkalk ami
+     293 px -- ez maga volt a 100 px tullogas. Egy vizszintes sor ugyanezt egy sormagassagbol
+     hozza, .ppkalk es tobb helyszinnel sem no tovabb: ott mar gorgetni kell oldalra. A kartya
+     TARTALMA valtozatlan (gyuru, .ppkalk nev, .ppkalk savok), .ppkalk csak a kiosztas mas. */
+  /* NEM CSUSZKAL (Fonok 2026-08-05: "a kockazatelemzo csempek csuszkalnak"). Elobb
+     vizszintesen gorgethetove tettem, .ppkalk hogy egy sorba ferjen -- de egy oldalra gorgo sav
+     a fuggolegesen gorgetett lapon elkapja a ferde huzast, .ppkalk es a kartyak elcsusznak az
+     ujjad alatt. Helyette FIX RACS, .ppkalk ami magatol egy sor marad: negy oszlop, .ppkalk kisebb
+     gyuru, .ppkalk keskenyebb savok. Semmi nem tunt el a kartyarol. */
+  .ppgrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:8px; }
+  .ppkalk /* ============================================================================
+     KIS MAGASSAGU KIJELZo: A NYITo LAP FERJEN KI (Fonok, .ppkalk 2026-08-24 08:51:
+     *"A nyito lap csuszkal fol le"*).
+     MEGMERVE: 667 px magas kijelzon a lap 770 px -- **103 px tullogas**. A 800, .ppkalk 844 es 915 px-es
+     kijelzokon NULLA. Vagyis ez NEM altalanos hiba, .ppkalk hanem a legkisebb elterjedt meret hataran
+     jelentkezik -- es ott a legrosszabb fajtaja: annyival log tul, .ppkalk hogy PATTOG, .ppkalk de nem annyival, .ppkalk hogy egyertelmuen gorgetheto lap legyen belole.
+     AZERT MEDIA QUERY, .ppkalk ES NEM GLOBALIS ZSUGORITAS: egy 915 px-es kijelzon boven van hely, .ppkalk ott
+     a kisebb csempe csak veszteseg. A hatar 780 px -- a 800-as meret (ahol mar 0 a tullogas)
+     szandekosan KIVUL van rajta, .ppkalk hogy ne nyuljunk oda, .ppkalk ahol nincs baj.
+     ============================================================================ */
+  @media (max-height: 799px){
+    /* A ToMoRITES MERTEKE ANNYI LEGYEN, AMENNYI KELL -- HARMADIK KoR (Fonok, 2026-08-24 09:04:
+       *"Kicsit beszukult az en kinezetem szerint."*).
+       MEGMERVE: az elso valtozatom kb. 115 px-et nyert, holott a 786 px-es kijelzon 1 px kellett.
+       Az eredmeny: a tartalom alja es az also sav kozott **114 px URES HELY** allt -- vagyis
+       megoldottam a tullogast, es helyette csinaltam egy uresen tatongo lapot.
+       Ez ugyanaz a hibafajta, mint a tul szeles ovintezkedes egy meronel: a bajt megszuntettem,
+       de tobbet vettem el, mint amennyi a baj volt.
+       Most a 799-es sav ENYHE (kb. 25 px), a 700-as sav marad eros -- ott 103 px a tartozas. */
+    .ppgrid .ppcard { min-height:142px; padding:7px 4px 6px; }
+    .tiles .tile { min-height:70px; }
+    .tiles { gap:5px; }
+    .ppgrid { gap:5px; }
+  }
+
+  .ppkalk /* A LEGKISEBB ELTERJEDT MERET (iPhone SE, .ppkalk 667 px). A 799-es savban meg 20 px tullogas maradt --
+     kevesnek tunik, .ppkalk de pont ennyi az, .ppkalk ami PATTOG. Itt mar a csempe-ikon es a gyuru is kisebb;
+     ennel tovabb nem erdemes menni, .ppkalk mert a felirat olvashatosaga a kovetkezo, .ppkalk ami esik. */
+  /* HAROM SAV, .ppkalk MERT HAROM KULoNBoZo TARTOZAS VAN (megmerve, .ppkalk 2026-08-24 09:0x):
+       786-799 px -> 1 px tullogas  -> ENYHE savot kap (fentebb)
+       730 px     -> 21 px          -> KoZEPES
+       667 px     -> 19 px a kozepes felett is -> EROS
+     Egy sav nem eleg: ha a legerosebbet adom mindenkinek, .ppkalk a 786-oson 114 px ures hely lesz
+     (ez tortent az elso korben, .ppkalk es Fonok ezt nevezte "beszukultnek"). Ha a legenyhebbet, .ppkalk akkor
+     a 667-es pattog. **A ToMoRITES MERTEKE A TARTOZASHOZ IGAZODIK, .ppkalk nem egyetlen kuszobhoz.** */
+  @media (max-height: 760px){
+    .ppgrid .ppcard { min-height:132px; padding:6px 4px 5px; }
+    .ppgrid .ppring { max-width:clamp(32px, 10vw, 40px); }
+    .tiles .tile { min-height:64px; }
+    .tiles .tileicn { width:20px; height:20px; }
+    .tiles { gap:4px; }
+    .ppgrid { gap:4px; margin-top:6px; }
+  }
+
+  .ppkalk @media (max-height: 700px){
+    .ppgrid .ppcard { min-height:112px; padding:5px 3px 5px; }
+    .ppgrid .ppring { max-width:clamp(26px, 8.5vw, 32px); }
+    .ppgrid .ppcard-s { font-size:8px; white-space:nowrap; -webkit-line-clamp:1;
+      overflow:hidden; text-overflow:ellipsis; }
+    .ppgrid .ppcard-s.allapot { white-space:normal; -webkit-line-clamp:2; font-size:7.5px; }
+    .ppgrid .ppbar { font-size:9px; margin-top:3px; }
+    .tiles .tile { min-height:54px; }
+    .tiles .tileicn { width:17px; height:17px; }
+    .tiles .tile .tl { font-size:clamp(7.5px, 2.4vw, 9px); }
+    .tiles { gap:3px; }
+    .ppgrid { gap:3px; margin-top:5px; }
+  }
+
+  .ppkalk /* NEGYEDIK SAV: 680 px alatt (iPhone SE es hasonlo). A 700-as sav ott meg 8 px-szel tullo -- 
+     kevesnek tunik, .ppkalk de eppen az a mennyiseg, .ppkalk ami pattog. Innen mar a gyuru es az ikon is
+     kisebb; ennel tovabb nem megyek, .ppkalk mert a kovetkezo, .ppkalk ami esik, .ppkalk az az OLVASHATOSAG. */
+  /* ============================================================================
+     NAGY KIJELZo: A SZABAD HELY KIHASZNALASA (Fonok, .ppkalk 2026-08-24 09:11:
+     *"Amelyik nagyobb kijelzo, .ppkalk ott nyugodtan az also csempe mutathat harom sorban
+     informaciot. Legyen a csempe is responsiv."*)
+     MEGMERVE: 870 px magas kijelzon **112 px**, .ppkalk 915-on **157 px** kihasznalatlan hely allt a
+     tartalom alja es az also sav kozott. A `.tippszoveg` 2 sorra volt vagva -- a komment szerint
+     (790. sor) eppen azert, .ppkalk mert a harmadik sor 19 px-e nem fert ki. **Nagy kijelzon kifer.**
+     A ket sav NoVEL, .ppkalk nem szukit -- a ToMoRITo savok (max-height) alatta allnak, .ppkalk es azok
+     kisebb kijelzore szolnak. A ketto sosem all egyszerre.
+     ============================================================================ */
+  @media (min-height: 840px){
+    /* `#homeTipp` PREFIX KELL, NEM PUSZTA `.tippszoveg` -- es ezt a kod kommentje MAR LEIRTA
+       (a `.tippszoveg` definiciojanal, ~793. sor): *"egy szabalyban az UTOLSO nyer"*.
+       Ez a media-blokk a fajlban KORABBAN all, mint az alap-szabaly, tehat azonos
+       specificitas mellett az ALAP nyerte volna -- megmerve: a clamp mind a het meretnel
+       2 maradt, vagyis a javitasom NEM ERT SEMMIT, es semmi nem jelezte.
+       Az id-szelektor specifikusabb, tehat a sorrend tobbe nem dont. */
+    #homeTipp .tippszoveg { -webkit-line-clamp:3; }
+    .tiles .tile { min-height:82px; }
+    .tiles .tileicn { width:25px; height:25px; }
+    .ppgrid .ppcard { min-height:160px; }
+    .ppgrid .ppring { max-width:60px; }
+  }
+  .ppkalk @media (min-height: 900px){
+    #homeTipp .tippszoveg { -webkit-line-clamp:4; }
+    .tiles .tile { min-height:88px; }
+    .tiles .tileicn { width:27px; height:27px; }
+    .ppgrid .ppcard { min-height:168px; }
+  }
+
+  .ppkalk @media (max-height: 680px){
+    .ppgrid .ppcard { min-height:104px; }
+    .ppgrid .ppring { max-width:clamp(24px, 8vw, 30px); }
+    .tiles .tile { min-height:50px; }
+    .tiles .tileicn { width:16px; height:16px; }
+  }
+
+  .ppkalk /* `min-width:0` + FIX MAGASSAG -- KETToT ORVOSOL EGYSZERRE (Fonok, .ppkalk 2026-08-24 08:44:
+     *"Valoszinu azert, .ppkalk mert az autonal nincs adat beirva, .ppkalk es az elnyulik"*).
+     1. SZELESSEG: a `Teszt auto` kartyan a "nincs ide rendelt keszlet" (24 karakter) a `nowrap`
+        miatt nem tort, .ppkalk es a grid-cella MINIMALIS szelessege ettol megnott -- az a kartya
+        SZELESEBB lett, .ppkalk a masik harom keskenyebb. A `1fr` NEM ved ettol: a `fr` a MARADEK
+        helyet osztja, .ppkalk de a cella minimuma a tartalomtol jon. `min-width:0` nelkul a leghosszabb
+        szoveg diktalja a racsot. **A szelesseget eddig nem is mertem -- csak a magassagot.**
+     2. MAGASSAG: a `min-height` miatt egy ket soros allapot-szoveg (vagy a `futes keves` fajta
+        plusz sor) tobbe nem nyujtja a szomszedjait. Ez ugyanaz a vedelem, .ppkalk mint amit a csempeknel
+        mar bevezettem -- ott is Fonok kepe hozta elo. */
+  .ppgrid .ppcard{ padding:8px 4px 7px; min-width:0; min-height:148px;
+    display:flex; flex-direction:column; }
+  .ppkalk .ppgrid .ppring{ max-width:52px; }
+  .ppkalk .ppgrid .ppcard-n{ font-size:12px; }
+  .ppkalk .ppgrid .ppcard-s{ font-size:10.5px; }
+  .ppkalk .ppgrid .ppbar-t{ font-size:9.5px; }
+  .ppkalk .ppcard{ background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    padding:9px 7px 8px; text-align:center; cursor:pointer; }
+  .ppkalk .ppring{ width:100%; max-width:70px; height:auto; display:block; margin:0 auto 5px; }
+  .ppkalk .ppring-bg{ fill:none; stroke:var(--border); stroke-width:9; }
+  .ppkalk .ppring-arc{ fill:none; stroke-width:9; stroke-linecap:round; }
+  .ppkalk .ppring-t{ fill:var(--text); font:700 27px/1 -apple-system,system-ui,sans-serif; }
+  .ppkalk .ppring-t.kicsi{ font-size:17px; fill:var(--muted); }
+  .ppkalk .ppcard-n{ font-weight:600; font-size:13px; }
+  .ppkalk .ppcard-s{ color:var(--muted); font-size:10.5px; font-family:var(--mono); margin-top:1px; }
+  .ppkalk .ppbar{ display:flex; align-items:center; gap:5px; margin-top:5px; font-size:10px;
+    font-family:var(--mono); color:var(--muted); }
+  .ppkalk .ppbar-l{ flex:none; width:24px; text-align:left; }
+  .ppkalk .ppbar-t{ flex:1; height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+  .ppkalk .ppbar-t i{ display:block; height:100%; border-radius:3px; }
+  .ppkalk .ppbar-v{ flex:none; width:28px; text-align:right; }
+  .ppkalk /* Profilkep-avatar a chipeken es a listasorokban (Fonok kerese 2026-08-03). */
+  .chipicn{ width:17px; height:17px; vertical-align:-3px; margin-right:6px; }
+  .ppkalk /* Ajanlott eszkoz a hianyhoz. Halvany, .ppkalk keretes doboz -- lathato, .ppkalk de nem kiabal, .ppkalk es a "Hirdetés" cimke MINDIG ott van a tetejen. */
+  .ajanlat{ border:1px dashed var(--border); border-radius:12px; padding:10px 12px; margin-top:10px;
+    background:rgba(255,179,64,.05); }
+  .ppkalk .ajanlat-cimke{ font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+  .ppkalk .ajanlat-cim{ font-weight:600; font-size:13.5px; margin-top:3px; color:var(--accent); }
+  .ppkalk .ajanlat-szoveg{ font-size:12.5px; color:var(--muted); line-height:1.45; margin-top:3px; }
+  .ppkalk .ajanlat-link{ display:inline-block; margin-top:7px; font-size:12.5px; color:var(--accent); }
+  .ppkalk .helyikn{ width:18px; height:18px; vertical-align:-4px; margin-right:7px; color:var(--green); }
+  .ppkalk .ppfigy{ margin-top:6px; font-size:10.5px; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; }
+  .ppkalk /* A FIGYELMEZTETETT SAV (Fonok, .ppkalk 2026-08-24 05:59). A `fűtés kevés` kulon SORA megnyujtotta
+     azt az egy csempet, .ppkalk amelyiken megjelent -- es mert a racs sormagassaga a legmagasabbhoz
+     igazodik, .ppkalk MIND A NEGY megnyult, .ppkalk a lap alja pedig lecsuszott a kijelzorol.
+     A jelzes igy nulla plusz magassagot kер: a cimke es a szazalek valt amberre, .ppkalk felkoverre. */
+  .ppbar.figy .ppbar-l, .ppkalk .ppbar.figy .ppbar-v{ color:var(--accent); font-weight:700; }
+  .ppkalk body.night .ppbar.figy .ppbar-l, .ppkalk body.night .ppbar.figy .ppbar-v{ color:var(--danger); }
+  .ppkalk /* RESPONSIVE BELSo MERETEK (ugyanaz a kerese: "responsivva tenni, .ppkalk hogy szepen mutasson
+     minden telefon aranyban"). A racs SZANDEKOSAN marad fix negy oszlop -- Fonok 2026-08-05-i
+     kerese szerint nem csuszkalhat --, .ppkalk de a betuk es a savok a szelesseghez skalazodnak, .ppkalk igy egy 360 px-es kijelzon sem tornek at.
+     A `clamp()` also erteke a legkisebb OLVASHATO meret, .ppkalk nem a legkisebb lehetseges. */
+  .ppgrid .ppcard-n{ font-size:clamp(10.5px, 3.1vw, 12px); line-height:1.2; }
+  .ppkalk /* A "4 fő · 30 nap" EGY SORBAN maradjon (Fonok kepernyokepe, .ppkalk 2026-08-24 08:35: az `otthon`
+     kartyan kettetort, .ppkalk a masik haromnal nem -- mert ott rovidebb a szam).
+     A ket sorba tores nem csak csunya: az ADOTT kartyat magasitja, .ppkalk es a racs sormagassaga a
+     legmagasabbhoz igazodik -- vagyis ugyanaz a hibafajta, .ppkalk mint a `futes keves` kulon sora volt.
+     A `nowrap` mellé `clamp` also erteket vittem le 8, .ppkalk 5px-re: inkabb egy hajszalnyival kisebb
+     betu, .ppkalk mint egy plusz sor. Ha valaha megis nem fer ki, .ppkalk a `·` szeparator elott tor. */
+  /* A "4 fő · 30 nap" alaku sor EGY SORBAN marad (`nowrap`), .ppkalk az ALLAPOT-szoveg viszont
+     ("nincs ide rendelt keszlet") tordelhet ket sorba -- azt levagni ertelmetlen lenne.
+     A `min-width:0` a kartyan gondoskodik rolla, .ppkalk hogy egyik se szelesitsen. */
+  /* NEM `nowrap` (Fonok kepe, .ppkalk 2026-08-24 08:51: a "4 fő · 30 n…" LEVAGODOTT a telefonjan, .ppkalk holott a merőmben 360 es 375 px-en kifert -- nala nagyobb a rendszer-betumeret, .ppkalk es ez ellen
+     a levagas nem vedhető). A tores viszont mar NEM baj: a kartya `min-height`-je fix, .ppkalk tehat
+     egy ket soros sor sem nyujtja meg a szomszedjait. **Levagni informaciot rosszabb, .ppkalk mint
+     ket sorba tordelni** -- a "30 n…" olvashatatlan, .ppkalk a ket soros "30 nap" nem. */
+  .ppgrid .ppcard-s{ font-size:clamp(8.5px, 2.5vw, 10.5px); white-space:normal;
+    overflow-wrap:break-word; display:-webkit-box; -webkit-line-clamp:2;
+    -webkit-box-orient:vertical; overflow:hidden; }
+  .ppkalk .ppgrid .ppcard-s.allapot{ white-space:normal; overflow-wrap:break-word; text-overflow:clip;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  .ppkalk .ppgrid .ppbar{ font-size:clamp(8.5px, 2.4vw, 10px); gap:3px; margin-top:4px; }
+  .ppkalk /* A CIMKE SZELESSEGET AZ ANGOL SZOVEG SZABJA MEG, .ppkalk NEM A MAGYAR (2026-08-24, .ppkalk Fonok
+     kepernyokepe a v36.79-rol). Elso valtozatomban `clamp(18px, .ppkalk 5.6vw, .ppkalk 24px)` allt itt --
+     az a magyar "Fűtés"-hez (5 karakter) eleg, .ppkalk de az angol "Heating" (7) TULNYULT rajta, .ppkalk es rafutott a savra: a kepen a "Heati g 19%" olvashatatlan volt.
+     **A magyar szovegre meretezett elrendezes a forditas utan eltorik** -- es ez a hiba
+     pont attol keletkezett, .ppkalk hogy ugyanabban a korben forditottam ES szukitettem.
+     A `nowrap` + `ellipsis` a vedelem: ha valaha egy meg hosszabb nyelv jon (az ukran
+     "Опалення" 8 karakter), .ppkalk a cimke levagodik, .ppkalk de nem tor at a savon. */
+  /* A CSEMPEN NINCS SAVDIAGRAM (Fonok, .ppkalk 2026-08-24 08:35) -- csak a cimke es a SZINES szazalek.
+     Amit ezzel nyerunk: a sav ~40-60% vizszintes helyet vitt el, .ppkalk es emiatt kellett a cimket
+     `Heat`-re roviditeni es a betut `clamp`-elni. A sav nelkul a TELJES szo kifer, .ppkalk nagyobb
+     betuvel, .ppkalk es a szazalek is olvashatobb. A szin tovabbra is hordozza az allapotot -- most
+     mar a SZAMON, .ppkalk nem a savon (lasd `ppSav`).
+     A kockazatelemzesen (`.riskfej`) a sav valtozatlanul ott van. */
+  .ppgrid .ppbar-t{ display:none; }
+  .ppkalk .ppgrid .ppbar{ justify-content:space-between; gap:4px; font-size:clamp(9.5px, 2.9vw, 11.5px); }
+  .ppkalk .ppgrid .ppbar-l{ flex:0 1 auto; width:auto; min-width:0;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .ppkalk .ppgrid .ppbar-v{ flex:0 0 auto; width:auto; white-space:nowrap; font-weight:600; }
+  .ppkalk .ppgrid .ppring{ max-width:clamp(38px, 12vw, 52px); }
+  .ppkalk /* A HOSSZU HELYSZIN-NEV EDDIG KET SORBA ToRT, .ppkalk es ugyanugy nyujtott, .ppkalk mint a figyelmezteto
+     sor. Ket sor a maximum, .ppkalk utana harom pont -- a teljes nev a kockazatelemzesen ott all. */
+  .ppgrid .ppcard-n{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+    overflow:hidden; min-height:2.4em; }
+  .ppkalk /* Kockazatelemzes: UGYANAZ a grafikus fej, .ppkalk mint a fooldali kartyan (gyuru + savok), .ppkalk alatta a helyszin adatlapja. Fonok kerese 2026-08-03: "tegyuk semasabbra mint a
+     fooldalon, .ppkalk ott mindegyik hely szerepeljen, .ppkalk az alatt pedig legyen az adatlapja". */
+  .riskfej{ display:flex; align-items:center; gap:14px; margin:10px 0 12px; }
+  .ppkalk .riskfej .ppring{ max-width:88px; margin:0; flex:0 0 88px; }
+  .ppkalk .riskfej-t{ flex:1; min-width:0; }
+  .ppkalk .riskfej-n{ font-size:12.5px; color:var(--muted); font-family:var(--mono); margin-bottom:3px; }
+  .ppkalk .riskfej .ppbar{ font-size:11px; }
+  .ppkalk .riskfej .ppbar-l{ width:34px; }
+  .ppkalk .riskfej .ppbar-v{ width:34px; }
+  .ppkalk body.night .ppfigy{ color:var(--danger); }
+  .ppkalk /* Ejszakai modban a szin nem hordozhat informaciot: marad az ivhossz, .ppkalk a szam es a savhossz. */
+  body.night .ppring-arc{ stroke:#FF3B30 !important; }
+  .ppkalk body.night .ppbar-t i{ background:#FF3B30 !important; }
+
+  .ppkalk /* Teljes kepernyos terkep: a doboz kilep a lapbol, .ppkalk a talca elrejtozik, .ppkalk es egy nagy
+     kilepo-gomb marad. A terkep-vezerlok (Hol vagyok, .ppkalk eszak-jel) vele mennek. */
+  .mapteljes{ position:absolute; right:10px; top:62px; z-index:500; width:40px; height:40px;
+    min-width:0; min-height:0; padding:0; border-radius:10px; background:rgba(13,20,17,.85);
+    border:1px solid var(--border); color:var(--text); display:flex; align-items:center; justify-content:center; }
+  .ppkalk .mapteljes svg{ width:20px; height:20px; }
+  .ppkalk body.terkep-teljes #mapEl{ position:fixed !important; inset:0 !important; z-index:9000;
+    height:100% !important; width:100% !important; max-width:none; border-radius:0; margin:0; }
+  .ppkalk body.terkep-teljes .tabbar{ display:none; }
+  .ppkalk body.terkep-teljes .mapteljes{ top:calc(env(safe-area-inset-top) + 62px); }
+  .ppkalk body.terkep-teljes .maphelyzet{ bottom:calc(env(safe-area-inset-bottom) + 72px); }
+  .ppkalk body.terkep-teljes .mapiranytu{ bottom:calc(env(safe-area-inset-bottom) + 72px); }
+
+  .ppkalk /* Fogantyu a terkep alatt: jelzi, .ppkalk hogy lejjebb is van tartalom, .ppkalk es rajta huzva a LAP
+     gordul (a terkepen huzva a terkep mozdulna). */
+  .mapfogo{ display:flex; align-items:center; justify-content:center; height:26px; margin-top:4px;
+    touch-action:pan-y; cursor:grab; }
+  .ppkalk .mapfogo span{ display:block; width:56px; height:5px; border-radius:3px; background:var(--border); }
+  .ppkalk .mapfogo:active{ cursor:grabbing; }
+  .ppkalk .mapfogo:active span{ background:var(--accent); }
+
+  .ppkalk /* "Hol vagyok" a terkep sarkaban, .ppkalk nem kulon sorban (Fonok 2026-08-02 23:29). */
+  .maphelyzet{ position:absolute; left:10px; bottom:64px; z-index:500; width:46px; height:46px;
+    min-width:0; min-height:0; padding:0; border-radius:50%; background:var(--accent);
+    border:0; color:#0D1411; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.5); }
+  .ppkalk .maphelyzet svg{ width:24px; height:24px; }
+  .ppkalk body.night .maphelyzet{ background:var(--danger); color:#000; }
+
+  .ppkalk /* A LEAFLET SAJAT VEZERLOI AZ APP ARCULATABA (Fonok 2026-08-04: "a retegek es a
+     zoomolas ikonok igazodjanak a designhoz"). Alapbol feher, .ppkalk szogletes dobozok
+     ulnek a sotet taktikai felulet tetejen -- ket vilagos folt a sarkokban.
+     Ugyanazt a formanyelvet kapjak, .ppkalk mint a sajat terkep-gombjaink (.mapteljes):
+     40x40, .ppkalk 10px lekerekites, .ppkalk atlatszo sotet lap, .ppkalk vekony keret. Nem szurovel
+     (filter: invert), .ppkalk mert az a szurke ikonbol sargat csinal, .ppkalk es ejszakai modban
+     pont a sarga a legrosszabb -- a szinek a valtozokbol jonnek, .ppkalk igy a voros
+     ejszakai mod magatol koveti oket. */
+  .leaflet-touch .leaflet-bar, .ppkalk .leaflet-control-zoom{ border:0 !important; box-shadow:none !important; background:transparent !important; }
+  .ppkalk /* A ket zoom-gomb kerekitese !important-tal, .ppkalk mert a leaflet.css a
+     `.leaflet-touch .leaflet-bar a:first-child` / `:last-child` szabalyokkal
+     CSAK a felso ket, .ppkalk illetve CSAK az also ket sarkot kerekiti (2px) -- tehat a
+     ket gomb egymas tukorkepe lett, .ppkalk felul szogletes/alul kerek es forditva.
+     Fonok pontosan ezt szurta ki: "a hatter grafika forditva van igazitva, .ppkalk nem
+     egyseges" (2026-08-04). A `border-bottom:none` ugyanabbol a keszletbol a
+     also gomb also keretet is levette. */
+  .leaflet-control-zoom a.leaflet-control-zoom-in, .ppkalk .leaflet-control-zoom a.leaflet-control-zoom-out{
+    width:40px; height:40px; line-height:38px; font-size:22px; font-weight:600;
+    background:rgba(13,20,17,.85); color:var(--text);
+    border:1px solid var(--border) !important;
+    border-radius:10px !important; }
+  .ppkalk .leaflet-control-zoom a.leaflet-control-zoom-in{ margin-bottom:6px; }
+  .ppkalk .leaflet-control-zoom a:hover, .ppkalk .leaflet-control-zoom a:active{ background:rgba(13,20,17,.95); color:var(--accent); }
+  .ppkalk .leaflet-control-zoom a.leaflet-disabled{ color:var(--dim); background:rgba(13,20,17,.55); }
+
+  .ppkalk /* Reteg-valaszto: osszecsukva egy gomb, .ppkalk kinyitva egy sotet lap. */
+  .leaflet-control-layers{ background:transparent !important; border:0 !important; box-shadow:none !important; }
+  .ppkalk .leaflet-control-layers-toggle{
+    width:40px !important; height:40px !important; border-radius:10px;
+    background-color:rgba(13,20,17,.85); border:1px solid var(--border);
+    background-size:22px 22px; background-position:center; background-repeat:no-repeat;
+    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E6E4DA' stroke-width='1.7' stroke-linejoin='round'><path d='M12 3 2 8l10 5 10-5-10-5Z'/><path d='M2 13l10 5 10-5'/></svg>"); }
+  .ppkalk body.night .leaflet-control-layers-toggle{
+    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF3B30' stroke-width='1.7' stroke-linejoin='round'><path d='M12 3 2 8l10 5 10-5-10-5Z'/><path d='M2 13l10 5 10-5'/></svg>"); }
+  .ppkalk .leaflet-control-layers-expanded{
+    background:rgba(13,20,17,.94) !important; border:1px solid var(--border) !important;
+    border-radius:12px; color:var(--text); padding:10px 12px; font-size:15px; }
+  .ppkalk .leaflet-control-layers-expanded .leaflet-control-layers-toggle{ display:none; }
+  .ppkalk .leaflet-control-layers-base label{ display:flex; align-items:center; gap:8px; padding:4px 0; }
+  .ppkalk .leaflet-control-layers-base input[type=radio]{ accent-color:var(--accent); }
+  .ppkalk .leaflet-control-layers-separator{ border-top:1px solid var(--border); }
+
+  .ppkalk /* Eszak-jel a terkep sarkaban (Fonok 2026-08-02 22:43: iranytu, .ppkalk de nem kulon funkcio) */
+  .mapiranytu{ position:absolute; right:10px; bottom:64px; z-index:500; width:44px; height:44px;
+    border-radius:50%; background:rgba(13,20,17,.72); border:1px solid var(--border);
+    display:none; align-items:center; justify-content:center; pointer-events:none; }
+  .ppkalk .mapiranytu .tu{ width:100%; height:100%; position:relative; transition:transform .18s linear; }
+  .ppkalk .mapiranytu .tu::before{ content:''; position:absolute; left:50%; top:5px; transform:translateX(-50%);
+    border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:13px solid var(--danger); }
+  .ppkalk .mapiranytu .tu::after{ content:''; position:absolute; left:50%; bottom:5px; transform:translateX(-50%);
+    border-left:6px solid transparent; border-right:6px solid transparent; border-top:13px solid var(--muted); }
+  .ppkalk .mapiranytu .e{ position:absolute; left:50%; top:19px; transform:translateX(-50%);
+    font:700 10px/1 system-ui,sans-serif; color:var(--text); }
+
+  .ppkalk /* TESZT-JELZES: elesben ez a stilus es a hozza tartozo szoveg is torlendo. */
+  .pp-teszt-pin{ color:var(--accent) !important; border:1px dashed var(--accent); border-radius:10px;
+    padding:8px 10px; margin-top:8px; }
+  .ppkalk body.night .pp-teszt-pin{ color:var(--danger) !important; border-color:var(--danger); }
+
+  .ppkalk .tokensugo{ margin-top:14px; background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:10px 12px; }
+  .ppkalk .tokensugo summary{ color:var(--accent); font-size:13px; font-weight:700; cursor:pointer; }
+  .ppkalk body.night .tokensugo summary{ color:var(--danger); }
+  .ppkalk .tokensugo .sugotorzs{ margin-top:8px; font-size:13.5px; line-height:1.5; color:var(--text); }
+  .ppkalk .tokensugo .sugotorzs p{ margin:0 0 9px; }
+  .ppkalk /* A GIRA-LEIRAS TOBB NYITHATO BLOKK, .ppkalk NEM EGY HOSSZU SZOVEG (Fonok kerese, .ppkalk 2026-08-11: "kellene egy komolyabb leiras a girahoz a tokentarcaba").
+     Telefonon egy 1500 szavas folyoszoveget senki nem gorget vegig -- viszont a
+     "mi ez egyaltalan" es a "hogy fizetek" ket kulon pillanatban kell, .ppkalk es ritkan
+     ugyanakkor. Ezert temankent kulon nyithato, .ppkalk es alapbol MIND ZARVA van: aki
+     csak fizetni akar, .ppkalk annak a keperynon a fizetes-urlap maradjon a fo dolog. */
+  .gira-blokk{ margin-top:8px; border-top:1px solid var(--border); padding-top:8px; }
+  .ppkalk .gira-blokk:first-of-type{ border-top:0; padding-top:0; }
+  .ppkalk .gira-blokk > summary{ color:var(--text); font-size:13.5px; font-weight:700;
+    cursor:pointer; padding:4px 0; }
+  .ppkalk body.night .gira-blokk > summary{ color:var(--text); }
+  .ppkalk .gira-blokk ul{ margin:6px 0 9px; padding-left:18px; }
+  .ppkalk .gira-blokk li{ margin:0 0 5px; }
+  .ppkalk /* A KORLAT-LISTA KIEMELVE. Ezek nem apro betus reszek: a kettos koltes, .ppkalk a nem
+     hiteles nev es az elveszett kulcs mind olyan, .ppkalk amit UTOLAG megtudni draga. */
+  .gira-korlat{ background:rgba(180,60,40,.10); border:1px solid rgba(180,60,40,.35);
+    border-radius:10px; padding:8px 10px; margin:6px 0 9px; }
+  .ppkalk body.night .gira-korlat{ background:rgba(180,60,40,.16); }
+
+  .ppkalk /* Gira arculat (Agnes, .ppkalk 2026-08-03): a piktogram a galamb olajaggal, .ppkalk a G betube olvadva.
+     Az arany valtozat megy (elsodleges). A vilagos LAPKA nem dekoracio: a piktogram
+     vilagos hatterre keszult (#F7F8F3), .ppkalk es a melyzold galamb a sotet panelen sima
+     atlatszo PNG-kent szinte eltunt -- lapkaval a madar is olvashato. Ellenorizve
+     headless Chrome-mal, .ppkalk 430px szeles keperynon. */
+  .tokenegyenleg{ display:flex; align-items:center; gap:12px; margin-top:6px; }
+  .ppkalk /* MATRICA-forma (Fonok 2026-08-03): korbevagva, .ppkalk vekony vilagos karimaval, .ppkalk nem negyzetes
+     feher lapon. A kep nagyobb, .ppkalk mint a korong, .ppkalk igy az arany G a vagasig er -- a piktogram
+     korul amugy atlatszo margo van, .ppkalk es kozepre igazitva a korong belul ures maradna. */
+  .tokenegyenleg .giralapka{ width:52px; height:52px; flex:0 0 auto; border-radius:50%;
+    background:#F7F8F3; display:inline-flex; align-items:center; justify-content:center;
+    overflow:hidden; box-shadow:0 0 0 3px #F7F8F3, 0 2px 6px rgba(0,0,0,.5); margin:3px; }
+  .ppkalk .tokenegyenleg .giralapka img{ width:62px; height:62px; display:block; }
+  .ppkalk .tokenegyenleg .ossz{ font:700 34px/1 -apple-system,system-ui,sans-serif; color:var(--accent); }
+  .ppkalk body.night .tokenegyenleg .ossz{ color:var(--danger); }
+  .ppkalk .tokenegyenleg .egys{ color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.14em; }
+  .ppkalk .tokentitok{ font-family:var(--mono); word-break:break-all; color:var(--accent); }
+  .ppkalk body.night .tokentitok{ color:var(--danger); }
+
+  .ppkalk /* Csomag-checklista */
+  .li.pakk{ cursor:pointer; }
+  .ppkalk .li.pakk .pipabox{ flex:none; width:26px; height:26px; border:2px solid var(--border); border-radius:7px;
+    display:flex; align-items:center; justify-content:center; color:var(--ok); font-weight:700; font-size:15px; }
+  .ppkalk .li.pakk.pipalva{ opacity:.62; }
+  .ppkalk .li.pakk.pipalva .pipabox{ border-color:var(--ok); }
+  .ppkalk .li.pakk.pipalva .li-name{ text-decoration:line-through; }
+
+  .ppkalk /* Biblia */
+  .bibgrid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(46px,1fr)); gap:6px; margin-top:8px; }
+  .ppkalk .bibfej{ min-width:0; min-height:44px; padding:0; font-size:14px; letter-spacing:0; }
+  .ppkalk .bibszoveg{ margin-top:8px; }
+  .ppkalk .bibvers{ margin:0 0 11px; font-size:var(--bibmeret,18px); line-height:1.62; }
+  .ppkalk .bibvers b{ color:var(--muted); font-size:12.5px; vertical-align:super; margin-right:3px; font-family:var(--mono); }
+  .ppkalk .bibvers.kiemelt{ background:rgba(232,114,12,.16); border-left:3px solid var(--accent); padding:4px 8px; border-radius:6px; }
+  .ppkalk body.night .bibvers.kiemelt{ background:rgba(255,59,48,.16); border-left-color:var(--danger); }
+
+  .ppkalk /* --- SAJAT KIEMELES (Fonok kerese, .ppkalk 2026-08-10) ---
+     A `.kiemelt` a KERESO talalatat jeloli (mulekony, .ppkalk egy megnyitasra szol); ez a
+     `.jel-*` a FELHASZNALO sajat, .ppkalk MARADANDO kiemelese. Szandekosan ket kulon dolog, .ppkalk es ezert nezhet ki maskepp: a talalat sav nelkul vilagit, .ppkalk a sajat kiemeles
+     szinezett sav + halvany hatter.
+     A SZINEK ATLATSZOAK, .ppkalk nem tomorek: a sotet lapon egy tomor szinmezo elnyomna a
+     betut, .ppkalk es a kiemeles pont az olvasast szolgalna. A PIROS SZANDEKOSAN NINCS
+     KOZTUK -- az az appban a vesz szine (SOS), .ppkalk es ha a Bibliaban is hasznalnank, .ppkalk elveszne a jelentese. */
+  /* KIS IKON-GOMB. A globalis `button{ min-width:96px }.ppkalk ` kulonben 96 pixelre
+     nyujtja, .ppkalk es a mellette allo szoveges gomb feliratat kiszoritja -- pontosan ez
+     tort ket sorba a Biblia gombsoraban. (Ugyanez a buktato mar szerepelt a
+     fejlec-gomboknal 2026-07-31-en.) */
+  .ikongomb{ flex:0 0 58px; min-width:0; min-height:0; padding:0; height:52px; }
+  .ppkalk .bibvers.jel{ padding:5px 9px; border-radius:7px; border-left:3px solid; }
+  .ppkalk .bibvers.jel-sarga{ background:rgba(255,179,64,.17);  border-left-color:#FFB340; }
+  .ppkalk .bibvers.jel-zold{ background:rgba(124,179,66,.17);  border-left-color:#7CB342; }
+  .ppkalk .bibvers.jel-kek{ background:rgba(90,160,220,.17);  border-left-color:#5AA0DC; }
+  .ppkalk .bibvers.jel-lila{ background:rgba(168,130,220,.17); border-left-color:#A882DC; }
+  .ppkalk .bibvers.jel-rozsa{ background:rgba(224,130,170,.17); border-left-color:#E082AA; }
+  .ppkalk /* Ejszakai modban minden szin tompul: a voros uzemmod lenyege a szem kimelese. */
+  body.night .bibvers.jel{ background:rgba(255,59,48,.10); border-left-color:rgba(255,59,48,.55); }
+  .ppkalk /* A szinvalaszto a vers ALATT nyilik, .ppkalk nem felugro ablakban -- igy nem takarja el
+     azt a verset, .ppkalk amit epp jelolsz. */
+  .jelsav{ display:flex; gap:8px; align-items:center; margin:-4px 0 12px; padding-left:9px; flex-wrap:wrap; }
+  .ppkalk .jelsav button{ min-width:0; min-height:0; width:32px; height:32px; padding:0; border-radius:50%;
+    border:2px solid transparent; flex:0 0 auto; }
+  .ppkalk .jelsav button.aktiv{ border-color:var(--text); }
+  .ppkalk .jelsav .jt{ font-size:12px; color:var(--muted); letter-spacing:.04em; }
+  .ppkalk .jelsav .torol{ width:auto; padding:0 12px; height:32px; border-radius:999px; font-size:12px;
+    letter-spacing:.06em; border:1px solid var(--border); }
+
+  .ppkalk /* Vonalkod-olvaso */
+  #scanScreen{ position:fixed; inset:0; z-index:10050; background:#000; display:none; }
+  .ppkalk #scanScreen.show{ display:block; }
+  .ppkalk #scanVideo{ width:100%; height:100%; object-fit:cover; }
+  .ppkalk #scanScreen .scankeret{ position:absolute; left:8%; right:8%; top:34%; height:22%;
+    border:2px solid var(--accent); border-radius:14px; box-shadow:0 0 0 100vmax rgba(0,0,0,.45); }
+  .ppkalk body.beolvas .tabbar{ display:none; }
+  .ppkalk #scanScreen .scanctl{ position:absolute; left:0; right:0; bottom:calc(env(safe-area-inset-bottom) + 28px);
+    display:flex; flex-direction:column; align-items:center; gap:10px; padding:0 16px; }
+  .ppkalk #scanScreen .scanmsg{ color:#fff; font-size:14px; text-align:center; background:rgba(0,0,0,.55);
+    padding:8px 12px; border-radius:10px; }
+  .ppkalk #scanScreen .scanctl button{ max-width:220px; }
+
+  .ppkalk /* A rendszer datummezoje alapbol vilagos hatteru es olvashatatlan a sotet temaban.
+     A naptar-ikont invertaljuk, .ppkalk hogy latszodjon; a mezo maga ugyanugy nez ki, .ppkalk mint a
+     tobbi beviteli mezo. (Fonok 2026-08-02 22:14: "nagyon csunya".) */
+  input[type="date"]{ color-scheme:dark; appearance:none; -webkit-appearance:none;
+    min-height:52px; font-family:var(--mono); }
+  .ppkalk input[type="date"]::-webkit-calendar-picker-indicator{ filter:invert(.7) sepia(1) saturate(3) hue-rotate(45deg);
+    opacity:.9; cursor:pointer; }
+  .ppkalk body.night input[type="date"]{ color-scheme:dark; }
+  .ppkalk body.night input[type="date"]::-webkit-calendar-picker-indicator{ filter:invert(.5) sepia(1) saturate(9) hue-rotate(-30deg); }
+
+  .ppkalk /* Tomor tudastar-tipp a kezdolapon: harom sorra vagva, .ppkalk nagy gombok nelkul. */
+  .tippkartya{ background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    padding:9px 11px 10px; cursor:pointer; }
+  .ppkalk .tippfej{ display:flex; align-items:center; gap:8px; color:var(--muted); font-size:11px;
+    text-transform:uppercase; letter-spacing:.1em; font-weight:600; }
+  .ppkalk .tippfej span{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .ppkalk .tippmas{ flex:0 0 28px; width:28px; max-width:28px; min-width:0; height:28px; min-height:0; padding:0; background:transparent;
+    border:1px solid var(--border); border-radius:8px; color:var(--muted);
+    display:flex; align-items:center; justify-content:center; }
+  .ppkalk .tippmas .btnicn{ width:15px; height:15px; margin:0; }
+  .ppkalk /* A tipp-kartya KET sorra korlatozva, .ppkalk hogy a fooldal egy kepernyore ferjen. A teljes
+     szoveget a kartyara koppintva a Tudastarban olvasod. */
+  /* KET sor, .ppkalk nem harom (Fonok 2026-08-05: a fooldalnak egy kepernyore kell ferni).
+     A harmadik sor 19 px, .ppkalk es pont annyi hianyzott. A teljes szoveget a kartyara
+     koppintva a Tudastarban olvasod. Itt korabban ket clamp allt egymas alatt: az
+     also (3) felulirta a felsot (2) -- egy szabalyban az UTOLSO nyer. */
+  .tippszoveg{ margin:5px 0 0; font-size:13.5px; line-height:1.4;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+  .ppkalk /* --- Imadsag (Biblia-nezet teteje) ---
+     A gomb felirata a TELJES cim, .ppkalk tobb sorban is: ebbol valaszt az ember, .ppkalk tehat
+     nem szabad harom pontra vagni. Az ima szovege sem kap sorkorlatot: inkabb
+     gorgessen, .ppkalk mint hogy egy felbevagott imadsag alljon a kepernyon. */
+  /* A tobbi gomb felirata nagybetus cimke; ez viszont egy MONDAT, .ppkalk ami az embert
+     szolitja meg ("Amikor ejszaka nem hagy aludni a felelem"). Nagybetuvel
+     kiabalasnak hatna, .ppkalk pont abban a helyzetben, .ppkalk amiert itt van. */
+  .imagomb{ display:block; width:100%; text-align:left; white-space:normal;
+    text-transform:none; letter-spacing:0; font-weight:600; font-size:15px;
+    line-height:1.35; margin-top:8px; }
+  .ppkalk .imagomb.aktiv{ border-color:var(--zold, #4a7c59); }
+  .ppkalk /* IMA-SZOVEG: OLVASHATOSAGRA, .ppkalk NEM SuRuSEGRE (Fonok, .ppkalk 2026-08-11).
+     Nagyobb betu (16px) es tagabb sorkoz (1.75), .ppkalk mint a tobbi szovegnel -- ez az
+     egyetlen hely az appban, .ppkalk ahol valaki ejjel, .ppkalk feszulten olvas, .ppkalk es nem informaciot
+     keres, .ppkalk hanem kovet egy szoveget. A mondatonkenti tordelest a kod vegzi
+     (imaRender), .ppkalk itt csak a mondatok kozotti levego all. */
+  .imaszoveg{ margin:12px 2px 4px; font-size:16px; line-height:1.75; }
+  .ppkalk .imaszoveg p{ margin:0 0 12px; }
+  .ppkalk .imaszoveg p:last-child{ margin-bottom:0; }
+
+  .ppkalk /* --- Listak (tudastar, .ppkalk keszlet) --- */
+  .list{ margin-top:8px; }
+  .ppkalk .li{ display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--border);
+    border-radius:12px; padding:13px 14px; margin-top:9px; cursor:pointer; }
+  .ppkalk .li .li-t{ flex:1; min-width:0; }
+  .ppkalk .li .li-t .li-name{ font-weight:600; font-size:15px; }
+  .ppkalk .li .li-t .li-sub{ color:var(--muted); font-size:12px; margin-top:2px; font-family:var(--mono); }
+  .ppkalk .li .chev{ color:var(--muted); font-size:18px; flex:none; }
+  .ppkalk .li .del{ flex:none; min-width:0; width:38px; padding:8px; background:transparent; border:0; color:var(--muted); font-size:16px; }
+  .ppkalk .li.warn{ border-color:var(--danger-ink); }
+  .ppkalk .li.warn .li-sub{ color:var(--danger-ink); }
+  .ppkalk /* Fonok 2026-07-31 (4.3): HAROM lejarat-kategoria, .ppkalk kulon szinretegben.
+     lejart > 1 honapon belul > fel even belul. A bal szel-sav a gyors leolvasas. */
+  .li.exp-lejart{ border-color:#e05b4b; background:linear-gradient(90deg, rgba(224,91,75,.20), transparent 42%); }
+  .ppkalk .li.exp-1ho{ border-color:#e8a13a; background:linear-gradient(90deg, rgba(232,161,58,.18), transparent 42%); }
+  .ppkalk .li.exp-6ho{ border-color:#d8cf4a; background:linear-gradient(90deg, rgba(216,207,74,.13), transparent 42%); }
+  .ppkalk .li .exp-cimke{ font-weight:700; }
+  .ppkalk .li.exp-lejart .exp-cimke{ color:#e05b4b; }
+  .ppkalk .li.exp-1ho    .exp-cimke{ color:#e8a13a; }
+  .ppkalk .li.exp-6ho    .exp-cimke{ color:#d8cf4a; }
+  .ppkalk /* Fonok (4.8): a torles ne legyen veletlenul megnyomhato. A kuka a sor SZELERE kerul, .ppkalk kisebb es halvany; egy koppintas "Torol?" allapotba teszi, .ppkalk es csak a masodik torol. */
+  .li .del{ opacity:.42; }
+  .ppkalk .li .del.kerdes{ opacity:1; color:#e05b4b; border:1px solid #e05b4b; border-radius:8px; width:auto; padding:6px 9px; font-size:12px; font-weight:700; }
+  .ppkalk .inv-sulyosszeg{ font-weight:700; }
+  .ppkalk /* A natív datum-mezo alapbol VILAGOS hatteret kap, .ppkalk ami a sotet temaban kiabal (2026-08-02). */
+  input[type=date]{ color-scheme: dark; }
+  .ppkalk input[type=date]::-webkit-calendar-picker-indicator{ filter: invert(1) opacity(.7); }
+  .ppkalk .field-grid{ display:flex; flex-direction:column; }
+  .ppkalk .saved{ color:var(--ok); font-size:12px; margin-top:8px; height:14px; }
+  .ppkalk /* Tobbsoros visszajelzes: NEM fix magassagu, .ppkalk tehat nem takarja el, .ppkalk ami alatta van. */
+  .saved.tobbsoros{ height:auto; min-height:14px; line-height:1.45; }
+
+  .ppkalk /* KOORDINATA-DOBOZ. A koordinata SZAM, .ppkalk tehat monospace es kijelolheto: ha nincs
+     megosztas-lap es nincs vagolap (regi keszulek, .ppkalk nem biztonsagos kapcsolat), .ppkalk akkor
+     is le lehet olvasni, .ppkalk papirra irni vagy radion bemondani. A vagolap nem bizonyitek. */
+  .koorddoboz{ margin-top:8px; padding:10px 12px; border:1px solid var(--border);
+    border-radius:10px; background:var(--raised); }
+  .ppkalk .koorddoboz pre{ margin:0; font-family:var(--mono); font-size:14px; color:var(--accent);
+    white-space:pre-wrap; word-break:break-all; user-select:text; -webkit-user-select:text; }
+  .ppkalk .koorddoboz .row{ margin-top:10px; }
+  .ppkalk .koorddoboz .note{ margin-top:8px; }
+  .ppkalk .koordfigy{ color:var(--danger); }
+  .ppkalk /* TAJOLO. A tu a kepernyo kozepen, .ppkalk nagyban: terepen egy pillantasbol kell leolvasni, .ppkalk nem hunyorogva. A szam a tu KOZEPEN all, .ppkalk mert az iranyt es a fokot egyszerre nezi
+     az ember. */
+  .tajkor{ position:relative; width:240px; height:240px; max-width:78vw; max-height:78vw;
+    margin:14px auto 6px; border-radius:50%; border:2px solid var(--border);
+    background:var(--panel); display:flex; align-items:center; justify-content:center; }
+  .ppkalk .tajkor .tajtu{ position:absolute; inset:0; display:flex; align-items:flex-start;
+    justify-content:center; transition:transform .12s linear; }
+  .ppkalk .tajkor .tajtu .e{ display:block; margin-top:8px; font-size:20px; font-weight:800;
+    color:var(--danger); letter-spacing:.1em; }
+  .ppkalk .tajkor .tajszam{ font-family:var(--mono); font-size:34px; font-weight:700; color:var(--accent); }
+  .ppkalk .tajcel{ position:absolute; inset:0; display:flex; align-items:flex-start; justify-content:center;
+    transition:transform .12s linear; }
+  .ppkalk .tajcel .c{ display:block; margin-top:6px; width:0; height:0; border-left:9px solid transparent;
+    border-right:9px solid transparent; border-bottom:16px solid var(--green); }
+  .ppkalk body.night .tajkor .tajtu .e{ color:#FF3B30; }
+  .ppkalk body.night .tajcel .c{ border-bottom-color:#FF3B30; }
+  .ppkalk /* Viztisztitas: a figyelmeztetes NEM apro betus labjegyzet, .ppkalk mert eppen az a resz, .ppkalk amitol valaki megbetegszik. */
+  .vizfigy{ border:1px solid var(--danger); border-radius:12px; padding:10px 12px; margin-top:12px; }
+  .ppkalk .vizfigy p{ margin:0 0 6px; font-size:13px; line-height:1.45; }
+  .ppkalk .vizfigy p:last-child{ margin-bottom:0; }
+  .ppkalk /* NAP ES HOLD GRAFIKUSAN (Fonok 2026-08-05: "a napfelkelte, .ppkalk napnyugta egy kicsit
+     lehetne grafikusabb"). Az ido-adat szamokkal is ott van, .ppkalk de az IV mondja meg egy
+     pillantasbol, .ppkalk ami szamokbol csak fejszamolassal jon ki: hol tart a nap a palyajan, .ppkalk es mennyi maradt. A szinek CSS-valtozokbol jonnek, .ppkalk ezert a voros ejszakai mod
+     magatol koveti oket. */
+  .egidoboz{ margin-top:6px; }
+  .ppkalk .napiv{ display:block; width:100%; height:auto; margin:2px 0 4px; overflow:visible; }
+  .ppkalk .napiv .iv{ fill:none; stroke:var(--border); stroke-width:2; }
+  .ppkalk .napiv .horizont{ stroke:var(--border); stroke-width:2; }
+  .ppkalk .napiv .iv-megtett{ fill:none; stroke:var(--accent); stroke-width:3; opacity:.55; stroke-linecap:round; }
+  .ppkalk .napiv .nap{ fill:var(--accent); }
+  .ppkalk .napiv .nap-le{ fill:var(--dim); }
+  .ppkalk .napiv .sugar{ stroke:var(--accent); stroke-width:2; stroke-linecap:round; }
+  .ppkalk .napiv .cimke{ fill:var(--muted); font-size:12px; font-family:var(--mono); }
+  .ppkalk .napiv .cimke-fo{ fill:var(--accent); font-size:13px; font-family:var(--mono); font-weight:700; }
+  .ppkalk .eginagy{ margin:2px 0 10px; font-size:15px; font-weight:700; color:var(--text); }
+  .ppkalk .holdsor{ display:flex; gap:12px; align-items:center; margin-top:4px;
+    border-top:1px solid var(--border); padding-top:12px; }
+  .ppkalk .holdkor{ width:54px; height:54px; flex:none; }
+  .ppkalk .holdkor .sotet{ fill:var(--raised); stroke:var(--border); stroke-width:1.5; }
+  .ppkalk .holdkor .vilagos{ fill:var(--accent); }
+  .ppkalk .holdsor .hnev{ font-size:14px; font-weight:700; color:var(--text); }
+  .ppkalk /* ELHUZHATO KAPCSOLO (Fonok 2026-08-05: "az ertesites engedelyezese elhuzhato ikon
+     legyen"). Gomb helyett allapot: a kapcsolo maga MUTATJA, .ppkalk hogy be van-e kapcsolva, .ppkalk nem kell mellé felirat. A bongeszo engedelyet nem lehet visszavonni JS-bol, .ppkalk ezert
+     kikapcsolaskor ezt meg is mondjuk, .ppkalk nem teszunk ugy, .ppkalk mintha visszavontuk volna. */
+  .kapcssor{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:14px; }
+  .ppkalk .kapcssor .k-cim{ font-size:14px; font-weight:600; color:var(--text); }
+  .ppkalk .kapcssor .k-alcim{ font-size:12px; color:var(--muted); margin-top:2px; }
+  .ppkalk .kapcs{ position:relative; flex:none; width:54px; height:32px; min-width:0; min-height:0; padding:0;
+    border-radius:16px; background:var(--raised); border:1px solid var(--border); cursor:pointer;
+    transition:background .15s linear, border-color .15s linear; }
+  .ppkalk .kapcs .gomb{ position:absolute; top:3px; left:3px; width:24px; height:24px; border-radius:50%;
+    background:var(--muted); transition:transform .15s ease, background .15s linear; }
+  .ppkalk .kapcs.on{ background:var(--accent); border-color:var(--accent); }
+  .ppkalk .kapcs.on .gomb{ transform:translateX(22px); background:#0D1411; }
+  .ppkalk body.night .kapcs.on .gomb{ background:#000; }
+  .ppkalk .legrajz{ display:block; width:100%; height:auto; margin:6px 0 2px; }
+  .ppkalk .legrajz .vonal{ fill:none; stroke:var(--accent); stroke-width:2; stroke-linejoin:round; }
+  .ppkalk .legrajz .cimke{ fill:var(--muted); font-size:10px; font-family:var(--mono); }
+  .ppkalk .holdsor .hleir{ font-size:12.5px; color:var(--muted); line-height:1.4; margin-top:2px; }
+  .ppkalk /* TUDASTAR-LISTA (Fonok 2026-08-05: "ez igy hat annyira nem tetszik, .ppkalk raadasul a
+     kereso is szinte belecsimbul"). Ket kulon baja volt:
+       (1) a kereso ODATAPADT az elso sorhoz -- nem volt alatta hely, .ppkalk ezert ugy nezett
+           ki, .ppkalk mintha a listaba lognan bele;
+       (2) tizennyolc egyforma, .ppkalk teljes szelessegu sor kovetkezett. Egy fal, .ppkalk amin a
+           szemnek nincs mit megfogni, .ppkalk es egy kepernyore tiz fert belole.
+     A KEPEK MAR MEGVOLTAK (kb/app-NN-*.jpg), .ppkalk csak a cikk fejlecebe voltak betemetve --
+     a listaban hozzak a legtobbet: ket hasabban tobb tema latszik, .ppkalk es a kep onmagaban
+     megmondja, .ppkalk mirol szol. */
+  /* A KERESOMEZO VALJON EL A GOMBOKTOL (Fonok, .ppkalk 2026-08-10): az alap input-stilus
+     ugyanazt a --panel hatteret es ugyanazt a keretet hasznalja, .ppkalk mint a csempek es a
+     kartyak, .ppkalk tehat a kereso egy volt a sok sotet doboz kozul. Itt nem szinezni kell, .ppkalk hanem MAS FORMAT adni neki: bemelyedo (belso arnyek), .ppkalk teljesen lekerekitett, .ppkalk es
+     egy nagyito-ikon a mezoben. Az elso ketto attol mukodik, .ppkalk hogy a lapon MINDEN MAS
+     kiemelkedo es szogletesebb -- a kulonbseg igy akkor is latszik, .ppkalk ha valaki nem
+     nezi kulon. */
+  /* A KERESOMEZO-FORMA MINDKET KERESORE. Elso korben csak a tudastarra tettem ra, .ppkalk es a Bibliaban ugyanaz maradt a baj, .ppkalk amit Fonok jelzett -- ugyanaz a hiba ket
+     helyen, .ppkalk es csak az egyiket javitottam. */
+  #kbSearch, .ppkalk #bibleKeres{
+    margin-bottom:16px; border-radius:999px; padding:13px 16px 13px 42px;
+    background:#0A100D; border-color:#2E4038;
+    box-shadow:inset 0 2px 5px rgba(0,0,0,.45);
+    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239AA39C' stroke-width='2' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><path d='M20 20l-4.2-4.2'/></svg>");
+    background-repeat:no-repeat; background-position:14px center; background-size:18px 18px; }
+  .ppkalk #kbSearch:focus, .ppkalk #bibleKeres:focus{ border-color:var(--green); box-shadow:inset 0 2px 5px rgba(0,0,0,.45), 0 0 0 3px rgba(124,179,66,.18); }
+  .ppkalk #kbSearch::-webkit-search-cancel-button{ -webkit-appearance:none; appearance:none;
+    width:18px; height:18px; cursor:pointer;
+    background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239AA39C' stroke-width='2.2' stroke-linecap='round'><path d='M6 6l12 12M18 6L6 18'/></svg>") center/contain no-repeat; }
+  .ppkalk body.night #kbSearch, .ppkalk body.night #bibleKeres{ background-color:#120806; border-color:#40201C; }
+  .ppkalk body.night #kbSearch:focus, .ppkalk body.night #bibleKeres:focus{ border-color:var(--danger); box-shadow:inset 0 2px 5px rgba(0,0,0,.45), 0 0 0 3px rgba(255,59,48,.18); }
+  .ppkalk /* ARAM-KALKULATOR fogyaszto-sorai: nev + harom szuk szammezö. Nincs benne hozzaad/torol
+     gomb -- fix lista, .ppkalk mert blackoutban nem szerkeszteni akar az ember, .ppkalk hanem beirni ket
+     szamot. */
+  .arafogy{display:flex;flex-direction:column;gap:6px}
+  .ppkalk .arasor{display:flex;align-items:center;gap:8px}
+  .ppkalk .arasor .aranev{flex:1;min-width:0;font-size:14px}
+  .ppkalk .arasor input{width:5.5em;flex:none}
+  .ppkalk /* A NEV A MEZoK FoLE KERUL, .ppkalk HALVANY FELIRATKENT (Fonok, .ppkalk 2026-08-24 21:19: "A szoveg
+     nem fer ki, .ppkalk halvany felirat legyen"). Elotte a nev es a harom mezo EGY sorban allt:
+     telefonon a nev-oszlopra ~9 karakternyi hely maradt, .ppkalk es a hosszabb tetelek
+     ("Szivattyu, .ppkalk kut (motoros)", .ppkalk "Vizforralo") rafolytak az elso beviteli mezore.
+     A szuk oszlop szukitese nem megoldas -- a nev kap sajat sort, .ppkalk teljes szelessegben, .ppkalk ugyanabban a halvany, .ppkalk ritkitott stilusban, .ppkalk mint a lap tobbi felirata (lasd `label`, .ppkalk 307. sor). A harom mezo igy szelesebb is lett, .ppkalk ami telefonon konnyebben talalhato.
+     CSAK a generalt fogyaszto-listara vonatkozik: a "Kapacitas (Wh)" es a "Panel" sor
+     rovid nevu, .ppkalk azok maradnak egysorosak. */
+  .arafogy .arasor{flex-wrap:wrap;row-gap:3px}
+  .ppkalk .arafogy .arasor .aranev{flex:0 0 100%;font-size:11.5px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.1em;font-weight:600;line-height:1.35}
+  .ppkalk .arafogy .arasor .aranev small{text-transform:none;letter-spacing:.02em;font-weight:500}
+  .ppkalk .arafogy .arasor input{flex:1 1 0;width:auto;min-width:0}
+  .ppkalk /* A napi hasznalat valaszto, .ppkalk nem szammezo (lasd ARA_ORAK). Szelesebb a ket szammezonel, .ppkalk mert a leghosszabb tetel ("nem használom") kiirva all benne, .ppkalk nem roviditve.
+     A NYILAT ITT KIRAJZOLJUK, .ppkalk holott az app tobbi valasztoja csupasz: ez a mezo KET, .ppkalk megszolalasig hasonlo szammezo MELLETT all, .ppkalk es nelkule ugy nez ki, .ppkalk mint a harmadik
+     beirando ertek. Ott, .ppkalk ahol a valaszto egyedul all egy soron, .ppkalk ez a kerdes fel sem merul. */
+  /* A rajzot a globalis `select` szabaly adja; itt csak a SZuKEBB helyhez igazitunk. */
+  .arafogy .arasor select{flex:1.7 1 0;width:auto;min-width:0;margin:0;padding-right:26px;
+    background-position:right 9px center; background-size:11px 8px}
+  .ppkalk /* SAJAT ESZKoZ SORA: a nev itt beirhato, .ppkalk nem statikus felirat, .ppkalk es mellette a torlo gomb. */
+  .arafogy .araegyeni .aranev-szerk{display:flex;align-items:center;gap:6px}
+  .ppkalk .arafogy .araegyeni .aranevbe{flex:1 1 auto;width:auto;min-width:0;margin:0;padding:4px 8px;
+    font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;
+    border-radius:8px;background:transparent;border:1px dashed var(--border);color:var(--muted)}
+  .ppkalk .arafogy .araegyeni .aranevbe::placeholder{text-transform:none;letter-spacing:0;font-weight:500}
+  .ppkalk /* A `min-width:96px; min-height:52px` a GLOBALIS `button` szabalybol jon (351. sor):
+     ujjra meretezett gombokhoz keszult, .ppkalk es jo is ugy. Egy sor-torlo ikonnal viszont az
+     egesz sort szetfeszitette -- ezert kell a ket `min-*` KIFEJEZETTEN nullazni; a
+     `width`/`height` onmagaban NEM irja felul. */
+  .arafogy .araegyeni .aratorol{flex:none;width:34px;height:34px;min-width:0;min-height:0;
+    padding:0;line-height:1;font-size:18px;border-radius:9px;background:transparent;
+    border:1px solid var(--border);color:var(--muted)}
+  .ppkalk .arahozzaad{width:100%;margin-top:8px;padding:10px;font-size:14px;font-weight:600;
+    background:transparent;border:1px dashed var(--border);border-radius:12px;color:var(--muted)}
+  .ppkalk /* AJANLO-LINK a partner boltjaba. Nem gomb: nem az elsodleges muvelet a lapon. */
+  .apajanlo{display:inline-block;margin:8px 0 2px;font-size:13px;font-weight:600;
+    color:var(--green);text-decoration:none;border-bottom:1px solid rgba(124,193,74,.4);
+    padding-bottom:1px}
+  .ppkalk .aratabla{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+  .ppkalk .aratabla td{padding:3px 0;border-bottom:1px solid rgba(128,128,128,.25)}
+
+  .ppkalk /* KALKULATOR-NYITOLAP: kartya-racs sajat rajzzal. Ugyanaz a formanyelv, .ppkalk mint a
+     tudastarnal, .ppkalk csak fenykep helyett vonalas abra -- itt nincs mit fenykepezni. */
+  .kalkgrid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+  .ppkalk .kalkcard{ display:flex; flex-direction:column; align-items:flex-start; gap:6px;
+    min-height:118px; padding:12px 12px 11px; text-align:left; letter-spacing:0;
+    background:var(--panel); border:1px solid var(--border); border-radius:14px; min-width:0; }
+  .ppkalk .kalkikon{ width:30px; height:30px; color:var(--green); flex:none; }
+  .ppkalk .kalkcard .kalk-c{ font-size:14.5px; font-weight:700; color:var(--text); text-transform:none; }
+  .ppkalk .kalkcard .kalk-s{ font-size:11.5px; line-height:1.3; color:var(--muted); text-transform:none;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .ppkalk .kalkcard:active{ border-color:var(--green); }
+  .ppkalk .kalkpanel .section:first-child{ margin-top:4px; }
+  .ppkalk /* SZAMOLOGEP */
+  .szg-szalag{ height:78px; overflow-y:auto; background:var(--panel); border:1px solid var(--border);
+    border-radius:12px; padding:6px 10px; font-family:var(--mono); font-size:12.5px; color:var(--muted);
+    line-height:1.5; margin-bottom:6px; }
+  .ppkalk .szg-kijelzo{ position:relative; background:var(--raised); border:1px solid var(--border); border-radius:12px;
+    padding:10px 12px; text-align:right; font-family:var(--mono); font-size:30px; font-weight:700;
+    color:var(--green); overflow-x:auto; white-space:nowrap; margin-bottom:8px; }
+  .ppkalk .szg-mem{ position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:12px; color:var(--accent); }
+  .ppkalk /* A KET RACS `minmax(0, .ppkalk 1fr)`-t HASZNAL, .ppkalk ES A GOMBOK `min-width:0`-t (Fonok, .ppkalk 2026-08-24
+     21:53: "A kalkulator szetesik").
+     KET LEPESBEN kellett javitani, .ppkalk es EGYIK ONMAGABAN NEM ELEG:
+       1. a `1fr` valojaban `minmax(auto, .ppkalk 1fr)`, .ppkalk es az `auto` also hatarat a benne levo elem
+          sajat legkisebb merete adja -- vagyis a savok nem tudtak 96 px ala menni;
+       2. a 96 px a GLOBALIS `button{min-width:96px}.ppkalk `-bol jott (a 351. sor), .ppkalk ezert a savot
+          hiaba engedjuk el, .ppkalk a GOMB tovabbra is szetfeszitene a cellajat.
+     Igy a memoria-sor 5 x 96 + 4 x 6 = 504 px-et kert egy 390 px-es telefonon: az egesz lap
+     vizszintesen elcsuszott, .ppkalk es a szamologep bal oszlopa kifutott a kepernyorol. Ugyanez az
+     alak all a `.kbcard`-nal is nehany sorral lejjebb -- ott mar ki van vedve. */
+  .szg-memsor{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; margin-bottom:8px; }
+  .ppkalk .szg-memsor button{ padding:8px 0; font-size:12.5px; background:var(--panel); border:1px solid var(--border);
+    border-radius:10px; color:var(--text); min-width:0; min-height:0; }
+  .ppkalk .szg-racs{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+  .ppkalk .szg-racs button{ height:62px; font-size:22px; font-weight:700; border-radius:14px;
+    border:1px solid var(--border); background:var(--raised); color:var(--text);
+    min-width:0; min-height:0; }
+  .ppkalk .szg-racs .szg-muv{ background:var(--panel); color:var(--green); }
+  .ppkalk .szg-racs .szg-mas{ background:var(--panel); color:var(--muted); font-size:19px; }
+  .ppkalk .szg-racs .szg-egyenlo{ background:var(--green); color:#0B1613; }
+  .ppkalk .szg-racs button:active, .ppkalk .szg-memsor button:active{ border-color:var(--green); }
+  .ppkalk .kbgrid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .ppkalk .kbgrid .ures{ grid-column:1 / -1; }
+  .ppkalk .kbcard{ position:relative; height:112px; padding:0; width:100%; min-width:0; min-height:0;
+    border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--raised);
+    text-align:left; display:block; }
+  .ppkalk /* A KEP LATSZODJON (Fonok 2026-08-10: "a tudastar kepei nagyon sotetek").
+     Ket dolog sotetitett egyszerre: a kep 55%-os atlatszatlansaga ES egy szinte
+     teljes lapot befedo sotet atlatszo reteg. A kettő egymasra rakodott, .ppkalk ezert
+     tunt el a fenykep.
+     MOSTANTOL: a kep majdnem teljes erovel latszik, .ppkalk a sotetites pedig CSAK ott
+     van, .ppkalk ahol a szoveg all -- a kartya aljan. A cim olvashatosaga igy nem a kep
+     eltuntetesebol jon, .ppkalk hanem egy also savbol es egy finom arnyekbol. */
+  .kbcard img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.88; }
+  .ppkalk .kbcard .kbc-scrim{ position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(13,20,17,0) 0%, rgba(13,20,17,.12) 40%,
+      rgba(13,20,17,.62) 72%, rgba(13,20,17,.88) 100%); }
+  .ppkalk .kbcard .kbc-sz{ position:absolute; top:8px; left:11px; font-family:var(--mono);
+    font-size:12px; font-weight:700; color:var(--accent);
+    /* A szam a kep VILAGOS reszere is eshet, ott a scrim mar nem véd.
+       2026-08-11 (Thomas merese): eddig itt CSAK arnyek allt, a mellette levo lakat
+       (.kbc-zar) viszont TOMOR alatetet kapott -- ket egymas melletti jelveny ket
+       kulonbozo erossegu vedelmet. Es a scrim ALULROL erosodik, a szam meg FELUL van,
+       tehat epp ott a leggyengebb, ahol a szam all. Vilagos kepnel (04, 10) a szam
+       beleolvadt, a lakat nem. Most a szam UGYANAZT az alatetet kapja, mint a lakat --
+       az arnyek marad, mert a ketto egyutt olvashato marad a sotet kepeken is. */
+    background:rgba(13,20,17,.62); border-radius:7px; padding:2px 6px;
+    text-shadow:0 1px 3px rgba(0,0,0,.9), 0 0 2px rgba(0,0,0,.7); }
+  .ppkalk /* A cim NEM nagybetus: a globalis `button` szabaly uppercase-t es betukozt tesz ra, .ppkalk amitol a hosszabb temacimek (Jelek es idojaras olvasasa) harom sorra nottek es
+     kilogtak a kartya aljan. Normal irasmoddal ketto ele fernek, .ppkalk es a cikk fejlecevel
+     is egyezik. A ket sor kemeny korlat, .ppkalk hogy egy jovobeli hosszabb cim se torje el. */
+  .kbcard .kbc-c{ position:absolute; left:11px; right:11px; bottom:9px;
+    font-size:14px; font-weight:700; line-height:1.22; color:var(--text);
+    text-transform:none; letter-spacing:0; text-shadow:0 1px 3px rgba(0,0,0,.85);
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .ppkalk .kbcard:active{ border-color:var(--green); }
+  .ppkalk /* EJSZAKAI MODBAN NINCS KEP: egy szines fenykep tonkreteszi a sotethez szokott
+     szemet, .ppkalk es a voros mod pont ez ellen van. Marad a szam es a cim. */
+  body.night .kbcard img{ display:none; }
+  .ppkalk /* Titkos QR: a kep vilagos hatteren alljon, .ppkalk kulonben a sotet lapon a fekete modulok
+     beleolvadnak, .ppkalk es a szkenner nem talalja meg. */
+  .titokqr{ margin-top:10px; text-align:center; background:#fff; padding:12px; border-radius:12px; }
+  .ppkalk .titokqr img{ max-width:100%; height:auto; image-rendering:pixelated; }
+  .ppkalk .titokkod{ margin-top:8px; font-family:var(--mono); font-size:12px; color:var(--accent);
+    white-space:pre-wrap; word-break:break-all; user-select:text; -webkit-user-select:text; }
+  .ppkalk /* A terkep-buborekban is lathato a koordinata, .ppkalk ugyanabban a monospace alakban. */
+  .leaflet-popup-content .popkoord{ display:block; margin-top:4px; font-family:var(--mono);
+    font-size:12px; color:var(--accent); user-select:text; -webkit-user-select:text; }
+
+  .ppkalk /* Ikonok */
+  .btnicn{ width:18px; height:18px; vertical-align:-3px; margin-right:7px; }
+  .ppkalk .tileicn{ width:26px; height:26px; color:var(--green); }
+  .ppkalk /* Markajel csempen: kepkent, .ppkalk ezert nem orokol currentColort. */
+  .tilekep{ object-fit:contain; border-radius:4px; }
+  .ppkalk .rowicn{ width:24px; height:24px; color:var(--green); flex:none; }
+  .ppkalk /* Also tab-bar (allando, .ppkalk kozep-SOS kiemelt) */
+  .tabbar{ position:fixed; left:0; right:0; bottom:0; z-index:10001; display:flex; gap:2px;
+    background:#0B1613; border-top:1px solid var(--border);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    padding:6px 6px calc(env(safe-area-inset-bottom) + 6px); max-width:600px; margin:0 auto; }
+  .ppkalk .tabbar button{ flex:1; min-width:0; min-height:0; background:transparent; border:0; border-radius:10px;
+    padding:6px 2px; display:flex; flex-direction:column; align-items:center; gap:3px; color:var(--muted);
+    text-transform:uppercase; letter-spacing:.05em; font-size:10px; font-weight:700; }
+  .ppkalk .tabbar button svg{ width:26px; height:26px; }
+  .ppkalk .tabbar button.active{ color:var(--green); }
+  .ppkalk .tabbar .tsos, .ppkalk .tabbar .tsos.active{ color:var(--danger-ink); }
+  .ppkalk .tabbar .tsos svg{ width:32px; height:32px; filter:drop-shadow(0 0 6px rgba(224,91,75,.7)); }
+  .ppkalk /* Teljes kepernyos SOS-villogtatas */
+  #flash{ position:fixed; inset:0; z-index:9999; background:#fff; display:none; }
+  .ppkalk #flash.show{ display:block; }
+  .ppkalk #flash .exit{ position:fixed; top:calc(env(safe-area-inset-top) + 12px); right:14px; z-index:10000;
+    background:rgba(0,0,0,.6); color:#fff; border:0; border-radius:10px; padding:10px 14px; font-size:15px; }
+  .ppkalk #lampScreen{ position:fixed; inset:0; z-index:9998; background:#fff; display:none; touch-action:none; user-select:none; }
+  .ppkalk #lampScreen.show{ display:block; }
+  .ppkalk body.lampa .tabbar{ opacity:.35; background:rgba(0,0,0,.8); }
+  .ppkalk body.lampa .tabbar button{ color:#888; }
+  .ppkalk body.lampa .tabbar button.active{ color:var(--accent); opacity:1; }
+  .ppkalk #lampScreen .lamphint{ position:fixed; top:calc(env(safe-area-inset-top) + 16px); left:50%; transform:translateX(-50%);
+    background:rgba(0,0,0,.55); color:#fff; font-size:13px; padding:8px 14px; border-radius:12px; max-width:88vw; text-align:center; transition:opacity .4s; z-index:10000; }
+  .ppkalk #lampScreen .lampctl{ position:fixed; left:50%; transform:translateX(-50%);
+    bottom:calc(env(safe-area-inset-bottom) + 112px);
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:center;
+    max-width:92vw; background:rgba(0,0,0,.72); border:1px solid rgba(255,255,255,.14);
+    padding:10px 12px; border-radius:16px; z-index:10000;
+    opacity:0; pointer-events:none; transition:opacity .25s; }
+  .ppkalk #lampScreen .lampctl.vis{ opacity:1; pointer-events:auto; }
+  .ppkalk /* Tompa gombok: a lampa-modban egy vilagos gombsor pont azt rontja el, .ppkalk amiert a mod
+     letezik. Kicsi, .ppkalk sotet, .ppkalk halvany kerettel. */
+  #lampScreen .lampctl button{ background:rgba(255,255,255,.12); color:#ddd; border:1px solid rgba(255,255,255,.22);
+    border-radius:10px; padding:9px 12px; font-size:13px; min-height:0; min-width:0; flex:none;
+    text-transform:none; letter-spacing:0; font-weight:600; }
+  .ppkalk #lampScreen .lampctl button[data-lampcol]{ width:40px; height:40px; padding:0; font-size:0; border-radius:50%; }
+  .ppkalk #lampScreen .lampctl button[data-lampcol="r"]{ background:#c0342c; }
+  .ppkalk #lampScreen .lampctl button[data-lampcol="g"]{ background:#2e7d32; }
+  .ppkalk #lampScreen .lampctl button[data-lampcol="w"]{ background:#d8d8d8; }
+  .ppkalk #lampScreen .lampctl label{ color:#bbb; font-size:12px; }
+  .ppkalk /* ===== UZENETEK gyujto: csoport-cimek a kartya-racs folott ===== */
+  .uz-csoport{ display:flex; align-items:baseline; gap:8px; margin:18px 0 2px;
+    padding-bottom:6px; border-bottom:1px solid var(--border);
+    font-size:12px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--green); }
+  .ppkalk .uz-csoport .uz-csoport-alcim{ font-size:11px; font-weight:600; letter-spacing:.02em;
+    text-transform:none; color:var(--dim); }
+  .ppkalk /* ===== HELYI UZENETEK ===== */
+  .helyi-allapot{ display:flex; align-items:center; gap:8px; padding:8px 12px; margin-bottom:10px;
+    background:var(--panel); border:1px solid var(--border); border-radius:10px;
+    font-size:13px; color:var(--muted); }
+  .ppkalk .helyi-pont{ width:9px; height:9px; border-radius:50%; background:var(--dim); flex:none; }
+  .ppkalk .helyi-pont.el{ background:var(--green); }
+  .ppkalk .helyi-pont.baj{ background:var(--danger); }
+  .ppkalk .helyi-tagok{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .ppkalk .helyi-tag{ background:var(--raised); border:1px solid var(--border); border-radius:999px;
+    padding:6px 12px; font-size:13px; color:var(--text); min-height:0; min-width:0;
+    text-transform:none; letter-spacing:0; font-weight:600; flex:none; }
+  .ppkalk .helyi-tag.en{ color:var(--muted); border-style:dashed; }
+  .ppkalk .helyi-tag.valasztott{ border-color:var(--accent); color:var(--accent); }
+  .ppkalk .helyi-cimzett{ display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:#2A2416; border:1px solid var(--accent); border-radius:10px;
+    padding:7px 12px; margin-bottom:6px; font-size:13px; color:var(--accent); }
+  .ppkalk .helyi-cimzett button{ background:transparent; border:0; color:var(--muted); font-size:12px;
+    min-height:0; min-width:0; padding:2px 6px; text-transform:none; letter-spacing:0; flex:none; }
+  .ppkalk .helyi-lista{ display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
+  .ppkalk .helyi-uz{ background:var(--raised); border:1px solid var(--border); border-radius:12px;
+    padding:9px 12px; max-width:86%; align-self:flex-start; }
+  .ppkalk .helyi-uz.enyem{ align-self:flex-end; border-color:#2E4A3E; background:#1A2C25; }
+  .ppkalk .helyi-uz.surgos{ border-color:var(--danger); }
+  .ppkalk .helyi-uz .helyi-fej{ display:flex; gap:8px; align-items:baseline; margin-bottom:3px; }
+  .ppkalk .helyi-uz .helyi-ki{ font-size:12px; font-weight:700; color:var(--green); letter-spacing:.03em; }
+  .ppkalk .helyi-uz.surgos .helyi-ki{ color:var(--danger); }
+  .ppkalk .helyi-uz .helyi-ido{ font-size:11px; color:var(--dim); font-family:var(--mono); }
+  .ppkalk .helyi-uz .helyi-torzs{ font-size:16px; line-height:1.4; white-space:pre-wrap; word-break:break-word; }
+  .ppkalk .helyi-uz.rendszer{ align-self:center; background:transparent; border:0; color:var(--dim);
+    font-size:12px; padding:2px 0; text-align:center; }
+  .ppkalk .helyi-uz.szemelyes{ border-color:var(--accent); }
+  .ppkalk .helyi-uz.zart{ border-style:dashed; }
+  .ppkalk .helyi-uz.zart .helyi-torzs{ color:var(--dim); font-style:italic; }
+  .ppkalk .helyi-uz .helyi-cimke{ font-size:10.5px; font-weight:700; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--accent); }
+  .ppkalk .helyi-iras{ position:sticky; bottom:calc(env(safe-area-inset-bottom) + var(--tabbar-h, 62px) + 10px); z-index:5;
+    background:var(--bg); padding-top:6px; }
+  .ppkalk .helyi-iras textarea{ margin-bottom:6px; }
+  .ppkalk .helyi-gombsor{ align-items:center; }
+  .ppkalk .helyi-surgos{ display:flex; align-items:center; gap:7px; font-size:14px; color:var(--muted);
+    text-transform:none; letter-spacing:0; flex:none; }
+  .ppkalk .helyi-surgos input{ width:20px; height:20px; min-height:0; margin:0; flex:none; }
+
+  .ppkalk /* ===== BEIRO SAV: a KULDES a mezo MELLETT, .ppkalk a SURGoS kulon jelzo-gombban =====
+     Fonok kerese 2026-08-17 14:18 (kepernyokeppel): "A kuldes tegyen az uzenet melletti
+     beiromezobe, .ppkalk es akkor felszabadul egy nagy resz, .ppkalk es a surgos is mashol legyen
+     megjelenitve, .ppkalk es szebb negyzetbe."
+     Eddig a gomb es a jelolonegyzet EGY TELJES SORT vitt el a szoveg alatt -- a beiro sav
+     ragadt (`position:sticky`), .ppkalk tehat az az egy sor MINDIG ott allt, .ppkalk es a lathato
+     uzenetekbol vett el helyet. Most a gomb a mezo mellé kerul (fuggolegesen kitolti), .ppkalk a Surgos pedig egy kompakt jelzo-gomb a mezo alatt, .ppkalk ami BEKAPCSOLVA szinnel jelez --
+     igy nem kell kulon jelolonegyzetet keresni a szemnek. */
+  /* A min-height azert kell, .ppkalk hogy a KULDES gomb erintheto maradjon: az oszlopban a
+     Surgos jelzo (~26px) es a res (6px) levon a magassagbol, .ppkalk tehat 80 pixelnel a gomb
+     ~48 marad. Az elso valtozatban 30 pixel lett, .ppkalk ami telefonon, .ppkalk hideg kezzel keves. */
+  .iras-sor{ display:flex; gap:8px; align-items:stretch; min-height:80px; }
+  .ppkalk .iras-sor textarea{ flex:1; margin-bottom:0; }
+  .ppkalk /* A gomb ES a Surgos EGY OSZLOPBAN, .ppkalk a mezo mellett -- igy a szoveg alatt NEM marad
+     kulon sor. Elso valtozatban a Surgos meg a mezo ALATT allt: megmertem, .ppkalk a beiro sav
+     110 pixel maradt, .ppkalk vagyis alig szabadult fel hely -- pedig epp az volt a keres. */
+  .iras-oldal{ flex:none; width:96px; display:flex; flex-direction:column; gap:6px; }
+  .ppkalk /* A Surgos a SOR FoLoTT all, .ppkalk nem a gomb alatt: ott a rogzitett menusav levagta
+     (megmerve: 3 px a jelzobol es 9 px a szovegmezobol a sav moge kerult), .ppkalk es a
+     sarga gomb alatti vekony pirula amugy is zsufoltnak latszott. Fenn a sor
+     felett olvasasi sorrendben is helyen van: eloszor bejelolod, .ppkalk aztan irsz. */
+  .surgos-sor{ display:flex; justify-content:flex-end; margin-bottom:6px; }
+  .ppkalk /* NEM a flex-elosztasra bizzuk a magassagot: megmertem, .ppkalk a gomb igy 30 pixel lett
+     (a jelzo tobbet vitt el, .ppkalk mint amennyire szamitottam). Telefonon a fo muvelet
+     erintheto merete a fontosabb, .ppkalk ezert EXPLICIT also hatar all rajta. */
+  .kuld-gomb{ flex:none; width:96px; min-height:44px; padding:6px 8px; line-height:1.15;
+    display:flex; align-items:center; justify-content:center; text-align:center; }
+  .ppkalk .surgos-jelzo{ display:flex; align-items:center; justify-content:center; gap:6px;
+    flex:none; padding:5px 6px; border:1px solid var(--vonal, #2c3a30); border-radius:10px;
+    font-size:12px; color:var(--muted); text-transform:none; letter-spacing:0;
+    cursor:pointer; user-select:none; background:transparent;
+    transition:background .12s ease, border-color .12s ease, color .12s ease; }
+  .ppkalk .surgos-jelzo input{ position:absolute; opacity:0; width:0; height:0; margin:0; }
+  .ppkalk /* A pont a jelzes: uresen halvany kor, .ppkalk bekapcsolva tomor piros. */
+  .surgos-jelzo .pont{ width:11px; height:11px; border-radius:50%; flex:none;
+    border:1.5px solid currentColor; background:transparent; }
+  .ppkalk .surgos-jelzo:has(input:checked){ border-color:#e5534b; color:#e5534b;
+    background:rgba(229,83,75,.12); }
+  .ppkalk .surgos-jelzo:has(input:checked) .pont{ background:#e5534b; border-color:#e5534b; }
+  .ppkalk /* Tartalek azoknak a bongeszoknek, .ppkalk ahol a :has() meg nincs meg (regi iOS):
+     ott a szoveg felkoveredik, .ppkalk tehat a bekapcsolt allapot ATTOL MEG LATSZIK. */
+  .surgos-jelzo input:checked ~ .cimke{ font-weight:700; }
+
+  .ppkalk /* ================= SUGO (rajzolt animacio) =================
+     Fonok dontese 2026-08-10: rajzolt animacio, .ppkalk NEM video. Az app halozat nelkul
+     mukodik, .ppkalk tehat a sugonak a telefonon kell lennie -- egy videó tobb szaz MB-ot
+     jelentene az app mai 504 kB-ja mellett, .ppkalk felhobol streamelve pedig pont akkor
+     nem menne, .ppkalk amikor kell. A rajzolt jelenetet a telefon rajzolja ki, .ppkalk darabja par
+     kB, .ppkalk es felulet-valtozaskor egy sor atirasa, .ppkalk nem ujraforgatas.
+     Terv: tools/prepperpapa/docs/sugo-rendszer.md */
+  /* IRAT-NEZo: A DOKUMENTUM AZ APPON BELUL NYILIK, .ppkalk NEM UJ ABLAKBAN.
+     Fonok merese, .ppkalk 2026-08-11 este, .ppkalk KET korben. Eddig a lista-tetel `window.open()`-nel
+     nyitott egy about:blank lapot, .ppkalk es oda irtuk a lapokat. Ket kulon baj jott belole:
+       1. iframe-ben, .ppkalk natural meretben -> a telefonnal szelesebb okmany jobb szele LEVAGODOTT
+       2. utana <img width:100%>-ra javitva a kepek APROK lettek (a kepernyo ~24%-a)
+     A masodikat lemertem headless Chrome-mal, .ppkalk 390x844-en: a kiirt lap MINDKET valtozata
+     teljes szelessegben rendelodik (97% es 100%). Vagyis a CSS JO VOLT -- a felugro ablak
+     viewportja nem 390 szeles. In-app bongeszoben (Messenger, .ppkalk Chrome Custom Tab) a
+     `window.open()` ablak merete nem a mienk, .ppkalk es CSS-bol nem is javithato.
+     EZERT nem a stilust igazitottam megint, .ppkalk hanem a nezot hoztam BE az appba: itt a
+     viewport a sajat lapunke, .ppkalk tehat merheto es kiszamithato. */
+  .irat-hatter{ position:fixed; inset:0; z-index:70; background:#0b0d0c;
+    display:none; flex-direction:column; }
+  .ppkalk .irat-hatter.nyit{ display:flex; }
+  .ppkalk .irat-fej{ display:flex; align-items:center; gap:10px; padding:10px 12px;
+    padding-top:calc(env(safe-area-inset-top) + 10px);
+    background:var(--panel); border-bottom:1px solid var(--border); }
+  .ppkalk .irat-fej .irat-cim{ flex:1; font-size:14px; font-weight:700; overflow:hidden;
+    text-overflow:ellipsis; white-space:nowrap; }
+  .ppkalk .irat-lapok{ flex:1; overflow:auto; -webkit-overflow-scrolling:touch;
+    padding:10px calc(env(safe-area-inset-right) + 10px)
+            calc(env(safe-area-inset-bottom) + 20px) calc(env(safe-area-inset-left) + 10px); }
+  .ppkalk .irat-lapok img{ display:block; width:100%; height:auto; margin:0 0 10px;
+    border-radius:8px; background:#000; }
+  .ppkalk .irat-lapok iframe{ display:block; width:100%; height:78vh; border:0; margin:0 0 10px;
+    border-radius:8px; background:#000; }
+  .ppkalk .sugo-hatter{ position:fixed; inset:0; z-index:60; background:rgba(0,0,0,.72);
+    display:none; align-items:flex-end; justify-content:center; padding:0; }
+  .ppkalk .sugo-hatter.nyit{ display:flex; }
+  .ppkalk /* A TABBAR RATAKAR: az also gombsor fix, .ppkalk ezert a lap aljara annyi hely kell, .ppkalk hogy a szoveg es a gombsor NE csusszon ala (merve headless Chrome-mal, .ppkalk 2026-08-10: a "Kihagyom / Tovabb" sor a tabbar mogott vegzodott). */
+  .sugo-lap{ width:100%; max-width:560px; background:var(--panel); border:1px solid var(--border);
+    border-bottom:0; border-radius:18px 18px 0 0;
+    padding:14px 16px calc(env(safe-area-inset-bottom) + 76px);
+    max-height:84vh; overflow-y:auto; animation:sugoFel .18s ease-out; }
+  .ppkalk @keyframes sugoFel{ from { transform:translateY(14px); opacity:.4; } to { transform:none; opacity:1; } }
+  .ppkalk .sugo-fej{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .ppkalk .sugo-fej .sugo-cim{ font-size:15px; font-weight:800; letter-spacing:.02em; flex:1; }
+  .ppkalk .sugo-zar{ flex:none; width:36px; height:36px; min-height:0; padding:0; border-radius:10px;
+    border:1px solid var(--border); background:transparent; color:var(--muted); font-size:20px; line-height:1; }
+  .ppkalk .sugo-szinpad{ background:var(--bg); border:1px solid var(--border); border-radius:14px;
+    padding:8px; margin-bottom:11px; }
+  .ppkalk .sugo-szinpad svg{ display:block; width:100%; height:auto; max-height:132px; }
+  .ppkalk .sugo-szoveg{ font-size:14.5px; line-height:1.55; color:var(--text); margin:0 0 11px; }
+  .ppkalk .sugo-fontos{ border-left:3px solid var(--danger); background:rgba(0,0,0,.16);
+    padding:8px 10px; border-radius:0 10px 10px 0; font-size:13.5px; line-height:1.5;
+    color:var(--text); margin:0 0 11px; }
+  .ppkalk .sugo-labsor{ display:flex; align-items:center; gap:10px; }
+  .ppkalk .sugo-pontok{ display:flex; gap:6px; flex:1; }
+  .ppkalk .sugo-pontok i{ width:7px; height:7px; border-radius:50%; background:var(--border); display:block; }
+  .ppkalk .sugo-pontok i.aktiv{ background:var(--accent); }
+  .ppkalk .sugo-labsor button{ flex:none; min-height:40px; padding:0 15px; border-radius:11px; font-size:14px; font-weight:700; }
+  .ppkalk .sugo-tovabb{ background:var(--accent); border:0; color:#fff; }
+  .ppkalk .sugo-ugras{ background:transparent; border:1px solid var(--border); color:var(--muted); }
+  .ppkalk body.night .sugo-tovabb{ background:var(--danger); }
+  .ppkalk body.night .sugo-pontok i.aktiv{ background:var(--danger); }
+  .ppkalk /* A rajzolt jelenet elemei. Minden mozgas CSS-bol jon, .ppkalk kep nincs. */
+  .sg-vaz{ fill:none; stroke:var(--dim); stroke-width:2; }
+  .ppkalk .sg-toll{ fill:none; stroke:var(--accent); stroke-width:2.4; stroke-linecap:round; }
+  .ppkalk .sg-tomor{ fill:var(--accent); }
+  .ppkalk .sg-halk{ fill:var(--dim); font-size:9px; font-family:inherit; }
+  .ppkalk .sg-cimke{ fill:var(--text); font-size:9.5px; font-weight:700; font-family:inherit; }
+  .ppkalk body.night .sg-toll, .ppkalk body.night .sg-tomor{ stroke:var(--danger); fill:var(--danger); }
+  .ppkalk body.night .sg-toll{ fill:none; }
+  .ppkalk .sg-ujj{ animation:sgKoppint 2.1s ease-in-out infinite; transform-origin:center; }
+  .ppkalk @keyframes sgKoppint{ 0%,60%,100% { opacity:0; transform:translateY(6px) scale(.9); }
+    12%,44% { opacity:1; transform:none; } }
+  .ppkalk .sg-hullam{ animation:sgHullam 2.1s ease-out infinite; transform-origin:center; }
+  .ppkalk @keyframes sgHullam{ 0%,12% { opacity:0; r:4; } 22% { opacity:.8; } 46%,100% { opacity:0; r:15; } }
+  .ppkalk .sg-be{ animation:sgBe 2.1s steps(1,end) infinite; }
+  .ppkalk @keyframes sgBe{ 0%,45% { opacity:0; } 46%,100% { opacity:1; } }
+  .ppkalk .sg-ki{ animation:sgBe 2.1s steps(1,end) infinite reverse; }
+  .ppkalk .sg-csuszo{ animation:sgCsuszo 2.6s ease-in-out infinite alternate; }
+  .ppkalk @keyframes sgCsuszo{ from { transform:translateX(0); } to { transform:translateX(46px); } }
+  .ppkalk .sg-erkezo{ animation:sgErkezo 2.4s ease-out infinite; }
+  .ppkalk @keyframes sgErkezo{ 0% { opacity:0; transform:translateY(-13px); } 22%,100% { opacity:1; transform:none; } }
+  .ppkalk .sg-forgo{ animation:sgForgo 3.4s ease-in-out infinite alternate; transform-origin:50% 50%; }
+  .ppkalk @keyframes sgForgo{ from { transform:rotate(-38deg); } to { transform:rotate(46deg); } }
+  .ppkalk .sg-villog{ animation:sgVillog 1.5s ease-in-out infinite; }
+  .ppkalk @keyframes sgVillog{ 0%,100% { opacity:.25; } 50% { opacity:1; } }
