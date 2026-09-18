@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Áram kalkulátor: meddig visz el a powerbank? | PrepperPapa</title>
+<meta name="description" content="Meddig működik a telefonod, a lámpád vagy a rádiód egy adott kapacitású powerbankról vagy akkumulátorról? Add meg a kapacitást és a fogyasztást.">
+<link rel="canonical" href="https://prepperpapa.hu/kalkulator/aram.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Áram kalkulátor: meddig visz el a powerbank?">
+<meta property="og:description" content="Meddig működik a telefonod, a lámpád vagy a rádiód egy adott kapacitású powerbankról vagy akkumulátorról? Add meg a kapacitást és a fogyasztást.">
+<meta property="og:url" content="https://prepperpapa.hu/kalkulator/aram.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/kalkulator/app.css">
+<style>
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:Pacifico,cursive;font-size:21px}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* HAROM menupont + logo 390 keppontos telefonon nem fer ki egy sorba: merve 102 keppont
+     vizszintes tullogas. NEM elrejtjuk a linkeket (akkor telefonrol nem lehetne a
+     kalkulatorokhoz jutni a fejlecbol), hanem TORDELJUK -- a navigacio megmarad. */
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{color:var(--ink);font-size:18px}
+  .zaro{color:var(--muted);font-size:15px;border-top:1px solid var(--line);
+         margin-top:30px;padding-top:20px}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  /* A KALKULATOR DOBOZA. Az app CSS-e ide van hatarolva (.ppkalk), ezert a lap tobbi
+     resze a weboldal sajat kinezetet tartja meg. */
+  .ppkalk{display:block;background:var(--panel);border:1px solid var(--line);
+          border-radius:12px;padding:20px;margin:26px 0}
+  .kalk-lista{list-style:none;margin:0;padding:0}
+  .kalk-lista li{border-bottom:1px solid var(--line);margin:0}
+  .kalk-lista li:last-child{border-bottom:0}
+  .kalk-lista a{display:block;padding:16px 2px;text-decoration:none;color:var(--ink)}
+  .kalk-lista a:hover{color:var(--zold)}
+  .kalk-lista b{display:block;font-size:18px;margin-bottom:3px}
+  .kalk-lista span{color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav">
+  <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+</nav></header>
+<main>
+<h1>Áram kalkulátor</h1>
+<p class="beveze">Áramszünetben az első kérdés nem az, hogy van-e powerbankod, hanem hogy meddig elég. Add meg a kapacitást és azt, mit hajtanál róla, és megkapod az órákat.</p>
+<div class="ppkalk" id="kalk-aram">    <div class="section">
+      <label>Áram: mit tudsz róla üzemeltetni, és meddig</label>
+
+      <label>Áramforrás</label>
+      <select id="araGep"></select>
+      <a id="araGepLink" class="apajanlo" target="_blank" rel="noopener sponsored" style="display:none"></a>
+      <div id="araKeziWrap" style="display:none">
+        <div class="arasor">
+          <span class="aranev">Kapacitás (Wh)</span>
+          <input type="number" id="araKap" min="1" step="50" value="1000">
+        </div>
+        <div class="arasor">
+          <span class="aranev">Max. teljesítmény (W)</span>
+          <input type="number" id="araMaxW" min="0" step="50" value="600">
+        </div>
+      </div>
+      <p class="note" id="araGepInfo"></p>
+      <p class="note"><b>A wattóra és a watt nem ugyanaz, és ezt szokás összekeverni.</b>
+        A wattóra (Wh) azt mondja meg, MEDDIG megy; a watt (W) azt, hogy MIT tudsz egyáltalán
+        ráakasztani. Egy 2000 wattórás gép sem indít el egy 2000 wattos vízforralót, ha csak
+        600 wattot tud leadni — akkor sem, ha tele van.</p>
+
+      <label style="margin-top:14px">Mit üzemeltetnél? (hány darab · watt · naponta mennyit)</label>
+      <div id="araFogyLista" class="arafogy"></div>
+      <div id="araEgyeniLista" class="arafogy"></div>
+      <button type="button" id="araPlusz" class="arahozzaad">+ Saját eszköz hozzáadása</button>
+
+      <label style="margin-top:14px">Hány napra kell?</label>
+      <input type="number" id="araNap" min="0.5" step="0.5" value="3">
+
+      <label style="margin-top:14px">Van napelemed?</label>
+      <select id="araPanel"></select>
+      <a id="araPanelLink" class="apajanlo" target="_blank" rel="noopener sponsored" style="display:none"></a>
+      <div id="araPanelWrap" style="display:none">
+        <div id="araSajatPanelWrap" style="display:none">
+          <label>A panel névleges teljesítménye (W)</label>
+          <input type="number" id="araSajatPanelW" min="0" step="10" placeholder="összesen W">
+        </div>
+        <label style="margin-top:12px">Melyik évszakban?</label>
+        <select id="araEvszak"></select>
+        <label style="margin-top:12px">Milyen idő van?</label>
+        <select id="araIdojaras"></select>
+      </div>
+
+      <div class="row"><button id="araSzamol" class="primary">Számold ki</button></div>
+      <div id="araEredmeny" style="display:none"></div>
+    </div></div>
+<div class="zaro"><p>A számítás a tárolt energiából indul, és két veszteséget is levon: az átalakítóét és a hidegét. A gyakorlatban ezért jön ki kevesebb, mint amit a dobozon írt kapacitásból fejben számolnánk.</p></div>
+<h2>Mire jó ez, és mire nem</h2>
+<p>Ez a kalkulátor a <a href="/">PrepperPapa</a> alkalmazásból való, és ott is ingyenes. A számítás a böngésződben fut: nem küldünk sehova semmit, és nem tárolunk adatot róla.</p>
+<script>
+const $ = id => document.getElementById(id);
+// A weboldalon nincs terkep-nezet es nincs mentett hely: az app `ppUtolsoHely`
+// fuggvenye itt ertelmetlen lenne. Budapesti koordinataval szamolunk, es ezt a lap
+// zaro szovege ki is mondja -- az orszag ket szele kozott ez nehany perc elteres.
+function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
+function ppLocale(){ return 'hu-HU'; }
+function ppForditSzoveg(s){ return s; }
+function ppSzam(x){ return Math.round(x).toLocaleString('hu-HU'); }
+
+const ALLPOWERS_BOLT = 'https://iallpowers.eu/products/';
+
+const ALLPOWERS_REF  = 'prepperpapa';
+
+function apTeljesNev(x){ return x ? x.nev : ''; }
+
+function ppNevelo(nev){
+  var b = (nev || '').trim().charAt(0).toLowerCase();
+  return ('aáeéiíoóöőuúüű'.indexOf(b) >= 0) ? 'az ' : 'a ';
+}
+
+function apLink(slug){
+  if(!slug) return '';
+  const u = ALLPOWERS_BOLT + slug;
+  return u + (u.indexOf('?') >= 0 ? '&' : '?') + 'ref=' + ALLPOWERS_REF;
+}
+
+const ARA_GEPEK = [
+  {id:'kezi', nev:'Saját / kézi megadás',            wh:0,    w:0},
+  // -- ALLPOWERS (a partnerunk; a `slug` a bolt termek-azonositoja, ebbol lesz az ajanlo-link)
+  {id:'ap-p100',  nev:'ALLPOWERS P100 (99 Wh)',            wh:99,   w:128,  ap:'solax-p100'},
+  {id:'ap-s200',  nev:'ALLPOWERS S200 (154 Wh)',           wh:154,  w:200,  ap:'allpowers-s200-portable-power-bank-200w-154wh'},
+  {id:'ap-p300',  nev:'ALLPOWERS VOLIX P300 (256 Wh)',     wh:256,  w:300,  ap:'volix-p300'},
+  {id:'ap-s300',  nev:'ALLPOWERS S300 Plus (288 Wh)',      wh:288,  w:300,  ap:'allpowers-s300-portable-power-station-300w-288wh'},
+  {id:'ap-r600',  nev:'ALLPOWERS R600 (299 Wh)',           wh:299,  w:600,  ap:'allpowers-r600-portable-power-station-600w-299wh-with-lifep04-battery-1'},
+  {id:'ap-s700',  nev:'ALLPOWERS S700 (604 Wh)',           wh:604,  w:700,  ap:'allpowers-s700-portable-power-station-700w-606wh'},
+  {id:'ap-p1800', nev:'ALLPOWERS P1800 (1024 Wh)',         wh:1024, w:1800, ap:'p1800'},
+  {id:'ap-r15l',  nev:'ALLPOWERS R1500 LITE (1056 Wh)',    wh:1056, w:1600, ap:'allpowers-r1500-lite-portable-power-station'},
+  {id:'ap-s1500', nev:'ALLPOWERS S1500 PLUS (1092 Wh)',    wh:1092, w:1500, ap:'allpowers-s1500-portable-power-station-1500w-1092wh'},
+  {id:'ap-r1500', nev:'ALLPOWERS R1500 (1152 Wh)',         wh:1152, w:1800, ap:'allpowers-r1500-portable-home-backup-power-station-1800w-1152wh-lifep04-battery'},
+  {id:'ap-b1000', nev:'ALLPOWERS B1000 bővítő akku (1152 Wh)', wh:1152, w:0, ap:'allpowers-b1000-expansion-battery-1152wh'},
+  {id:'ap-s2000', nev:'ALLPOWERS S2000 Pro (1451 Wh)',     wh:1451, w:2400, ap:'allpowers-s2000-pro-portable-power-station-2400w-1500wh'},
+  {id:'ap-r25v2', nev:'ALLPOWERS R2500 V2 (1920 Wh)',      wh:1920, w:2500, ap:'allpowers-r2500-portable-home-backup-power-station-2500w-2016wh'},
+  {id:'ap-r25p',  nev:'ALLPOWERS R2500 PLUS (2016 Wh)',    wh:2016, w:2500, ap:'r2500-plus'},
+  {id:'ap-r35',   nev:'ALLPOWERS R3500 V2 (2880 Wh)',      wh:2880, w:3500, ap:'allpowers-r3500-home-backup-power-station-3500w-3168wh'},
+  {id:'ap-r40v2', nev:'ALLPOWERS R4000 V2 (2880 Wh)',      wh:2880, w:4000, ap:'r4000-v2'},
+  {id:'ap-b3000', nev:'ALLPOWERS B3000 bővítő akku (3168 Wh)', wh:3168, w:0, ap:'allpowers-b3000-expansion-battery-3168wh'},
+  {id:'ap-r4000', nev:'ALLPOWERS R4000 (3456 Wh)',         wh:3456, w:4000, ap:'allpowers-r4000-portable-power-station-4000w-3600wh'},
+  // -- EGYEB GYARTOK, tajekoztato adatokkal (nem a partnerunk, nincs hozzajuk linkunk)
+  {id:'pb20', nev:'Powerbank 20 000 mAh (~74 Wh)',   wh:74,   w:22},
+  {id:'j240', nev:'Jackery Explorer 240',            wh:240,  w:200},
+  {id:'e300', nev:'EcoFlow River 2 (256 Wh)',        wh:256,  w:300},
+  {id:'a521', nev:'Anker 521 PowerHouse (256 Wh)',   wh:256,  w:200},
+  {id:'b700', nev:'Bluetti EB70 (716 Wh)',           wh:716,  w:1000},
+  {id:'e800', nev:'EcoFlow River 2 Pro (768 Wh)',    wh:768,  w:800},
+  {id:'j1000',nev:'Jackery Explorer 1000',           wh:1002, w:1000},
+  {id:'d1500',nev:'EcoFlow Delta 2 (1024 Wh)',       wh:1024, w:1800},
+  {id:'b2000',nev:'Bluetti AC200L (2048 Wh)',        wh:2048, w:2400},
+  {id:'pmax', nev:'PowerMax 2400 Pro',               wh:2400, w:2400},
+  {id:'akku', nev:'Autó-/szünetmentes akku 100 Ah',  wh:1200, w:0,  savos:true},
+  {id:'lifepo',nev:'LiFePO4 100 Ah (12 V)',          wh:1200, w:0,  lifepo:true},
+];
+
+const ARA_EVSZAK = [
+  {id:'nyar',   nev:'nyár (június-augusztus)',    psh:5.5},
+  {id:'tavasz', nev:'tavasz (március-május)',     psh:4.0},
+  {id:'osz',    nev:'ősz (szeptember-november)',  psh:2.3},
+  {id:'tel',    nev:'tél (december-február)',     psh:1.2},
+];
+
+const ARA_IDOJARAS = [
+  {id:'napos',  nev:'derült, napos',        szorzo:1.0},
+  {id:'valtozo',nev:'változó, felhős',      szorzo:0.55},
+  {id:'borult', nev:'borult, esős',         szorzo:0.2},
+];
+
+const ARA_PANEL_HATASFOK = 0.7;
+
+const ARA_PANELEK = [
+  {id:'nincs', nev:'nincs napelem',                    w:0},
+  {id:'sp001', nev:'ALLPOWERS SP001 (21 W)',           w:21,  ap:'allpowers-sp001-5v-21w-portable-foldable-solar-panel'},
+  {id:'sp002', nev:'ALLPOWERS SP002 (21 W, akkus)',    w:21,  ap:'allpowers-sp002-solar-panel-built-in-10000mah-battery-5v-21w'},
+  {id:'se60',  nev:'ALLPOWERS SE60 (60 W)',            w:60,  ap:'solax-se60'},
+  {id:'sp020', nev:'ALLPOWERS SP020 (60 W)',           w:60,  ap:'allpowers-sp020-solar-panel-60w-monocrystalline-cells'},
+  {id:'sp026', nev:'ALLPOWERS SP026 (60 W)',           w:60,  ap:'allpowers-sp026-60w-foldable-solar-panelpolysilicon-cells'},
+  {id:'sf100', nev:'ALLPOWERS SF100 (100 W, hajlékony)',w:100, ap:'allpowers-sf100-flexible-solar-panel-100w'},
+  {id:'se100', nev:'ALLPOWERS SE100 (100 W)',          w:100, ap:'solax-se100'},
+  {id:'sp012', nev:'ALLPOWERS SP012 (100 W, terepszínű)',w:100,ap:'allpowers-sp012-solar-panel-100w'},
+  {id:'sp027', nev:'ALLPOWERS SP027 (100 W)',          w:100, ap:'allpowers-sp027-solar-panel-100w-polycrystalline-cells'},
+  {id:'sp034', nev:'ALLPOWERS SP034 (120 W)',          w:120, ap:'allpowers-sp034-portable-solar-panel-120w'},
+  {id:'sp029', nev:'ALLPOWERS SP029 (140 W)',          w:140, ap:'allpowers-sp029-portable-solar-panel-140w-polycrystalline-cells'},
+  {id:'sf200', nev:'ALLPOWERS SF200 (200 W, hajlékony)',w:200, ap:'allpowers-sf200-flexible-solar-panel-200w'},
+  {id:'se200', nev:'ALLPOWERS SE200 (200 W)',          w:200, ap:'solax-se200'},
+  {id:'sp033', nev:'ALLPOWERS SP033 (200 W)',          w:200, ap:'allpowers-sp033-portable-solar-panel-200w-polycrystalline-cells'},
+  {id:'sp035', nev:'ALLPOWERS SP035 (200 W)',          w:200, ap:'allpowers-sp035-foldable-solar-panel-200w'},
+  {id:'sp037', nev:'ALLPOWERS SP037 (400 W)',          w:400, ap:'allpowers-sp037-portable-solar-panel-400w'},
+  {id:'sp039', nev:'ALLPOWERS SP039 (600 W)',          w:600, ap:'allpowers-sp039-600w-monocrystalline-portable-solar-panel'},
+  {id:'sajat', nev:'saját panel — megadom a wattot',   w:0},
+];
+
+function araNapelemEpit(){
+  const p=$('araPanel');
+  if(p && !p.dataset.kesz){
+    p.innerHTML = ARA_PANELEK.map(x=>'<option value="'+x.id+'">'+x.nev+'</option>').join('');
+    p.dataset.kesz='1'; p.onchange = araPanelValt;
+  }
+  const e=$('araEvszak');
+  if(e && !e.dataset.kesz){
+    e.innerHTML = ARA_EVSZAK.map(x=>'<option value="'+x.id+'">'+x.nev+'</option>').join('');
+    e.dataset.kesz='1';
+  }
+  const i=$('araIdojaras');
+  if(i && !i.dataset.kesz){
+    i.innerHTML = ARA_IDOJARAS.map(x=>'<option value="'+x.id+'">'+x.nev+'</option>').join('');
+    i.dataset.kesz='1';
+  }
+  araPanelValt();
+}
+
+function araPanelValt(){
+  const p=ARA_PANELEK.find(x=>x.id===($('araPanel')||{}).value) || ARA_PANELEK[0];
+  const van = p.id!=='nincs';
+  const w=$('araPanelWrap'); if(w) w.style.display = van ? '' : 'none';
+  const s=$('araSajatPanelWrap'); if(s) s.style.display = (p.id==='sajat') ? '' : 'none';
+  const l=$('araPanelLink');
+  if(l){
+    if(p.ap){ l.href=apLink(p.ap); l.style.display=''; l.textContent='Megnézem a boltban ↗'; }
+    else { l.style.display='none'; l.removeAttribute('href'); }
+  }
+}
+
+function araNapelemAdat(){
+  const p=ARA_PANELEK.find(x=>x.id===($('araPanel')||{}).value) || ARA_PANELEK[0];
+  if(p.id==='nincs') return {w:0, wh:0, nev:'', psh:0, evszak:'', ido:''};
+  const w = (p.id==='sajat') ? (+($('araSajatPanelW')||{}).value||0) : p.w;
+  const ev = ARA_EVSZAK.find(x=>x.id===($('araEvszak')||{}).value) || ARA_EVSZAK[0];
+  const id = ARA_IDOJARAS.find(x=>x.id===($('araIdojaras')||{}).value) || ARA_IDOJARAS[0];
+  const ora = ev.psh * id.szorzo;
+  return {w, wh: w*ora*ARA_PANEL_HATASFOK, nev:(p.id==='sajat'?'saját panel':apTeljesNev(p)),
+          psh:ora, evszak:ev.nev, ido:id.nev};
+}
+
+let araEgyeniek = [];    // [{kulcs, nev}] -- a mezoi `araD_e1`, `araW_e1`, `araO_e1`
+
+let araEgyeniSzamlalo = 0;
+
+function araEgyeniSor(nev){
+  const kulcs = 'e'+(++araEgyeniSzamlalo);
+  araEgyeniek.push({kulcs, nev: nev||''});
+  const wrap=document.createElement('div');
+  wrap.className='arasor araegyeni';
+  wrap.dataset.kulcs=kulcs;
+  wrap.innerHTML =
+      '<span class="aranev aranev-szerk">'
+    +   '<input type="text" id="araN_'+kulcs+'" class="aranevbe" value="'+(nev||'').replace(/"/g,'&quot;')+'" placeholder="Mi ez? (pl. oxigénkoncentrátor)" aria-label="az eszköz neve">'
+    +   '<button type="button" class="aratorol" aria-label="sor törlése">&times;</button>'
+    + '</span>'
+    + '<input type="number" id="araD_'+kulcs+'" min="0" step="1" value="1" aria-label="hány darab">'
+    + '<input type="number" id="araW_'+kulcs+'" min="0" step="1" value="" placeholder="W" aria-label="watt darabonként">'
+    + '<select id="araO_'+kulcs+'" aria-label="naponta mennyit megy">'
+    +   ARA_ORAK.map(([ertek,szoveg])=>'<option value="'+ertek+'"'+(ertek===2?' selected':'')+'>'+szoveg+'</option>').join('')
+    + '</select>';
+  wrap.querySelector('.aratorol').onclick = ()=>{
+    araEgyeniek = araEgyeniek.filter(x=>x.kulcs!==kulcs);
+    wrap.remove();
+  };
+  $('araEgyeniLista').appendChild(wrap);
+  // A frissen felvett sor neve az elso dolog, amit ki kell tolteni -- oda tesszuk a kurzort.
+  const be=wrap.querySelector('.aranevbe'); if(be) be.focus();
+  return kulcs;
+}
+
+const ARA_FOGYASZTOK = [
+  {id:'huto', nev:'Hűtő',              db:1, w:40,   ora:24, motor:true},
+  {id:'tel',  nev:'Telefon töltés',    db:2, w:6,    ora:2},
+  {id:'led',  nev:'LED lámpa',         db:6, w:8,    ora:5},
+  {id:'wifi', nev:'Wifi router',       db:0, w:10,   ora:24},
+  {id:'radio',nev:'Rádió, PMR',        db:0, w:3,    ora:2},
+  {id:'lap',  nev:'Laptop',            db:0, w:45,   ora:2},
+  {id:'cpap', nev:'CPAP',              db:0, w:30,   ora:8},
+  {id:'tv',   nev:'TV',                db:0, w:80,   ora:0},
+  {id:'agy',  nev:'Ágyfűtés',          db:0, w:60,   ora:0},
+  {id:'sziv', nev:'Szivattyú, kút',    db:0, w:800,  ora:0, motor:true},
+  {id:'vizf', nev:'Vízforraló',        db:0, w:2000, ora:0},
+  {id:'egyeb',nev:'Egyéb',             db:0, w:0,    ora:0},
+];
+
+const ARA_ORAK = [
+  [0,'nem használom'], [0.25,'negyed óra'], [0.5,'fél óra'], [1,'1 óra'], [2,'2 óra'],
+  [3,'3 óra'], [4,'4 óra'], [5,'5 óra'], [6,'6 óra'], [8,'8 óra'], [10,'10 óra'],
+  [12,'12 óra'], [16,'16 óra'], [24,'egész nap'],
+];
+
+function araListaEpit(){
+  const el=$('araFogyLista');
+  if(el && !el.dataset.kesz){
+    el.innerHTML = ARA_FOGYASZTOK.map(f =>
+      '<div class="arasor"><span class="aranev">'+f.nev+(f.motor?' <small>(motoros)</small>':'')+'</span>'
+      + '<input type="number" id="araD_'+f.id+'" min="0" step="1" value="'+f.db+'" title="darab" aria-label="hány darab">'
+      + '<input type="number" id="araW_'+f.id+'" min="0" step="1" value="'+(f.w||'')+'" title="watt darabonként" aria-label="watt darabonként" placeholder="W">'
+      + '<select id="araO_'+f.id+'" title="naponta mennyit megy" aria-label="naponta mennyit megy">'
+      +   ARA_ORAK.map(([ertek,szoveg]) =>
+            '<option value="'+ertek+'"'+((+(f.ora||0))===ertek?' selected':'')+'>'+szoveg+'</option>').join('')
+      + '</select>'
+      + '</div>').join('');
+    el.dataset.kesz='1';
+  }
+  const g=$('araGep');
+  if(g && !g.dataset.kesz){
+    // CSOPORTOSITVA, mert a lista harminc tetel fole nott: az ALLPOWERS-modellek egy
+    // blokkban allnak, a tobbi gyarto egy masikban. Csoport nelkul a partner modelljei
+    // elvesznenek a felsorolasban, es a valasztas veletlenszeruve valna.
+    const opt = x => '<option value="'+x.id+'"'+(x.id==='ap-p1800'?' selected':'')+'>'+x.nev+'</option>';
+    g.innerHTML = opt(ARA_GEPEK[0])
+      + '<optgroup label="ALLPOWERS">'+ARA_GEPEK.filter(x=>x.ap).map(opt).join('')+'</optgroup>'
+      + '<optgroup label="Egyéb gyártók">'+ARA_GEPEK.filter(x=>!x.ap && x.id!=='kezi').map(opt).join('')+'</optgroup>';
+    g.dataset.kesz='1';
+    g.onchange = araGepValt;
+  }
+  araNapelemEpit();
+  araGepValt();
+}
+
+function araGepValt(){
+  const g=ARA_GEPEK.find(x=>x.id===$('araGep').value) || ARA_GEPEK[0];
+  $('araKeziWrap').style.display = (g.id==='kezi') ? '' : 'none';
+  $('araGepInfo').textContent = (g.id==='kezi') ? ''
+    : apTeljesNev(g)+': '+g.wh+' Wh tárolt energia'+(g.w?', '+g.w+' W folyamatos kimenet':', a kimenet az inverteren múlik');
+  // AZ AJANLO-LINK CSAK AKKOR LATSZIK, HA VAN. A tobbi gyartohoz nincs linkunk, es egy
+  // "megnezem" gomb, ami sehova nem visz, rosszabb, mint a hianya.
+  const l=$('araGepLink');
+  if(l){
+    if(g.ap){ l.href=apLink(g.ap); l.style.display=''; l.textContent='Megnézem a boltban ↗'; }
+    else { l.style.display='none'; l.removeAttribute('href'); }
+  }
+}
+
+function araForrasAdat(){
+  const g=ARA_GEPEK.find(x=>x.id===$('araGep').value) || ARA_GEPEK[0];
+  if(g.id==='kezi'){
+    const wh=+$('araKap').value||0;
+    return {nev:'saját megadás', wh, maxW:+$('araMaxW').value||0, hasznos:wh*0.9,
+            megj:'A megadott wattórából 10 százalékot levonunk átalakítási veszteségre.'};
+  }
+  if(g.savos)  return {nev:apTeljesNev(g), wh:g.wh, maxW:0, hasznos:g.wh*0.5*0.85,
+    megj:'A savas akkut csak félig szabad lemeríteni, különben tönkremegy, és az átalakító is elvisz 15 százalékot. Ezért a névlegesnek nagyjából 42 százalékával számolunk.'};
+  if(g.lifepo) return {nev:apTeljesNev(g), wh:g.wh, maxW:0, hasznos:g.wh*0.8*0.9,
+    megj:'A LiFePO4-et 80 százalékig le lehet meríteni (a savasat csak felére), az átalakító 10 százalékot visz.'};
+  return {nev:apTeljesNev(g), wh:g.wh, maxW:g.w, hasznos:g.wh*0.9,
+    megj:'A tárolt energiából kb. 10 százalékot elvisz az átalakítás, ezért nem a teljes wattóra használható fel.'};
+}
+
+function araSzamitas(){
+  const f0=araForrasAdat();
+  const tetelek=[]; let napiWh=0, csucsW=0, induloW=0;
+  // A ket lista EGY halmazkent szamit: a fix keszulekek es a kezzel felvett sajat eszkozok.
+  // A sajat sornal a NEV is mezobol jon, es ha ures maradt, akkor sem ejtjuk ki a szamitasbol
+  // -- a fogyasztas akkor is fogyasztas, ha az ember nem irta be, minek hivjak.
+  const sorok = ARA_FOGYASZTOK.map(f=>({kulcs:f.id, nev:f.nev, motor:!!f.motor}))
+    .concat(araEgyeniek.map(x=>({kulcs:x.kulcs,
+      nev: (($('araN_'+x.kulcs)||{}).value||'').trim() || 'saját eszköz', motor:false})));
+  sorok.forEach(f=>{
+    const db=+($('araD_'+f.kulcs)||{}).value||0;
+    const w =+($('araW_'+f.kulcs)||{}).value||0;
+    const o =+($('araO_'+f.kulcs)||{}).value||0;
+    if(db>0 && w>0 && o>0){
+      const e=db*w*o; napiWh+=e; csucsW+=db*w;
+      const ind = f.motor ? w*3 : w;          // az indulasi csucs EGY darabra ertendo
+      if(ind>induloW) induloW=ind;
+      tetelek.push({nev:f.nev, db, w, ora:o, wh:e, motor:!!f.motor});
+    }
+  });
+  const nap=araNapelemAdat();
+  const panelW=nap.w, napelemWh=nap.wh;
+  const nettoNap = napiWh - napelemWh;                       // amennyi naponta tenyleg fogy
+  const napok = nettoNap>0 ? f0.hasznos/nettoNap : Infinity;
+  const kertNap = +$('araNap').value||0;
+  const kellWh = nettoNap>0 ? nettoNap*kertNap : 0;          // ennyi TAROLT energia kell
+  const kellNevleges = kellWh/0.9;                            // a vesztesseggel egyutt
+  // csucs-indito: a legnagyobb indulasi csucs + a tobbi folyamatos fogyasztasa
+  const csucsIndulassal = csucsW + Math.max(0, induloW - (tetelek.find(t=>t.motor)?.w||0));
+  // A NAPELEM MASIK KERDESE (Fonok: "melyik eszkozt akarjuk tolteni"): mennyi ido, amig a
+  // panel TELETOLTI a valasztott gepet. A gep nevleges wattorajaval szamolunk, mert a
+  // toltes a teljes kapacitast tolti, nem a hasznosat.
+  const toltesNap = (napelemWh>0 && f0.wh>0) ? f0.wh/napelemWh : Infinity;
+  return {...f0, tetelek, napiWh, napelemWh, nettoNap, napok, kertNap, kellWh, kellNevleges,
+          csucsW, induloW, csucsIndulassal, panelW, nap, toltesNap};
+}
+
+$('araSzamol').onclick = ()=>{
+  const r=araSzamitas(), el=$('araEredmeny');
+  if(!r.tetelek.length){
+    el.innerHTML='<p class="note koordfigy">Tölts ki legalább egy sort: hány darab, hány watt, hány óra naponta.</p>';
+    el.style.display='block'; return;
+  }
+  const fej = (r.napok===Infinity) ? 'Nem fogy el'
+    : (r.napok>=1 ? Math.round(r.napok*10)/10+' nap' : Math.round(r.napok*24)+' óra');
+
+  // 1) A TELJESITMENY-KORLAT -- ez fog meg azonnal, meg mielott a wattora szamitana
+  let fig='';
+  if(r.maxW>0 && r.csucsW>r.maxW){
+    fig += '<p class="note koordfigy"><b>Ez nem fér el egyszerre.</b> A felsorolt fogyasztók együtt '
+      + Math.round(r.csucsW)+' wattot kérnek, a gép '+r.maxW+' wattot tud leadni. '
+      + 'Nem attól múlik, hogy mekkora a wattórája — ennyit egyszerre nem bír. '
+      + 'Vagy nagyobb teljesítményű gép kell, vagy nem egyszerre kell működtetni őket.</p>';
+  } else if(r.maxW>0 && r.induloW>r.maxW){
+    fig += '<p class="note koordfigy"><b>Az indulási áram kiviheti.</b> A folyamatos fogyasztás belefér, '
+      + 'de a motoros készülék induláskor kb. '+Math.round(r.induloW)+' wattot húz pár másodpercig, '
+      + 'a gép '+r.maxW+' wattos. Ilyenkor a gép lekapcsol, pedig „papíron belefért volna".</p>';
+  }
+
+  // 2) A KERT NAPOKHOZ MENNYI KELL, es melyik gep tudja
+  let ajanl='';
+  if(r.kertNap>0 && r.nettoNap>0){
+    const eleg = r.hasznos >= r.kellWh;
+    const jok = ARA_GEPEK.filter(g=>g.id!=='kezi' && g.wh*0.9 >= r.kellWh && (!g.w || g.w >= r.csucsW));
+    ajanl = '<p class="note"><b>'+r.kertNap+' napra '+Math.round(r.kellWh)+' Wh valóban felhasználható energia kell</b> '
+      + '(névlegesen kb. '+Math.round(r.kellNevleges)+' Wh, a veszteség miatt). '
+      + (eleg ? 'A választott gép ezt tudja.' : 'A választott gép ehhez kevés.')+'</p>';
+    if(!eleg && jok.length) ajanl += '<p class="note">Ezek elegendők lennének erre a listára: '
+      + jok.slice(0,3).map(apTeljesNev).join(', ')+'.</p>';
+  }
+
+  const sorok = r.tetelek.map(t=>'<tr><td>'+t.nev+(t.motor?' <small>(motoros)</small>':'')
+    +'</td><td style="text-align:right">'+t.db+' × '+t.w+' W</td>'
+    +'<td style="text-align:right">'+t.ora+' ó</td>'
+    +'<td style="text-align:right">'+Math.round(t.wh)+' Wh</td></tr>').join('');
+
+  el.innerHTML='<div class="koorddoboz"><p class="eginagy">'+fej+'</p>'
+    + '<p class="note">'+(r.napok===Infinity
+        ? 'A napelem naponta '+Math.round(-r.nettoNap)+' wattórával többet ad, mint amennyit elhasználsz. Ez így önfenntartó — de csak amíg süt: két borús nap '+Math.round(2*r.napiWh)+' wattórát vinne el a tartalékból.'
+        : 'Ennyi ideig tart '+ppNevelo(r.nev)+r.nev+' ezzel a listával.')+'</p>'
+    + fig
+    + '<p class="note"><b>Napi fogyasztás: '+Math.round(r.napiWh)+' Wh</b>'
+    + (r.panelW ? ' &nbsp;|&nbsp; <b>napelem: +'+Math.round(r.napelemWh)+' Wh</b>' : '')
+    + ' &nbsp;|&nbsp; <b>csúcsterhelés: '+Math.round(r.csucsW)+' W</b>'
+    + (r.maxW ? ' (a gép '+r.maxW+' W)' : '')+'</p>'
+    + '<table class="aratabla"><tbody>'+sorok+'</tbody></table>'
+    + ajanl
+    + '<p class="note">'+Math.round(r.wh)+' Wh névlegesből '+Math.round(r.hasznos)+' Wh a valóban felhasználható. '+r.megj+'</p>'
+    + (r.panelW ? '<p class="note"><b>A napelem: '+r.nap.nev+', '+r.nap.evszak+', '+r.nap.ido+'.</b> '
+        + 'Ez nagyjából '+(Math.round(r.nap.psh*10)/10).toString().replace('.',',')+' napfényórának felel meg, tehát napi kb. '
+        + Math.round(r.napelemWh)+' Wh jön be. A névleges teljesítmény 70 százalékával számolunk: '
+        + 'az állásszög, a hő és a töltésvezérlő mind levesz belőle. '
+        + (isFinite(r.toltesNap)
+            ? '<b>'+(ppNevelo(r.nev)==='az '?'Az ':'A ')+r.nev+' teletöltése ilyen időben '
+              + (r.toltesNap<1 ? Math.round(r.toltesNap*24)+' óra' : (Math.round(r.toltesNap*10)/10).toString().replace('.',',')+' nap')
+              + '</b>, ha közben nem használod.'
+            : '')
+        + '</p>'
+      : '')
+    + '</div>';
+  el.style.display='block';
+};
+araListaEpit();
+if($('araPlusz')) $('araPlusz').onclick = ()=>araEgyeniSor('');
+</script>
+
+<a class="vissza" href="/kalkulator/">&larr; Vissza a kalkulátorokhoz</a>
+</main>
+<footer><div>PrepperPapa &middot; Felkeszules jozan esszel, magyar valosagra</div></footer>
+</body>
+</html>

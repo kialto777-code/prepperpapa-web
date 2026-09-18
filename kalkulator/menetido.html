@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menetidő kalkulátor: meddig tart gyalog? | PrepperPapa</title>
+<meta name="description" content="Meddig tart gyalog egy adott táv, terepen, teherrel, emelkedéssel? És odaérsz-e világosban? Naismith szabályára épül.">
+<link rel="canonical" href="https://prepperpapa.hu/kalkulator/menetido.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Menetidő kalkulátor: meddig tart gyalog?">
+<meta property="og:description" content="Meddig tart gyalog egy adott táv, terepen, teherrel, emelkedéssel? És odaérsz-e világosban? Naismith szabályára épül.">
+<meta property="og:url" content="https://prepperpapa.hu/kalkulator/menetido.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/kalkulator/app.css">
+<style>
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:Pacifico,cursive;font-size:21px}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* HAROM menupont + logo 390 keppontos telefonon nem fer ki egy sorba: merve 102 keppont
+     vizszintes tullogas. NEM elrejtjuk a linkeket (akkor telefonrol nem lehetne a
+     kalkulatorokhoz jutni a fejlecbol), hanem TORDELJUK -- a navigacio megmarad. */
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{color:var(--ink);font-size:18px}
+  .zaro{color:var(--muted);font-size:15px;border-top:1px solid var(--line);
+         margin-top:30px;padding-top:20px}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  /* A KALKULATOR DOBOZA. Az app CSS-e ide van hatarolva (.ppkalk), ezert a lap tobbi
+     resze a weboldal sajat kinezetet tartja meg. */
+  .ppkalk{display:block;background:var(--panel);border:1px solid var(--line);
+          border-radius:12px;padding:20px;margin:26px 0}
+  .kalk-lista{list-style:none;margin:0;padding:0}
+  .kalk-lista li{border-bottom:1px solid var(--line);margin:0}
+  .kalk-lista li:last-child{border-bottom:0}
+  .kalk-lista a{display:block;padding:16px 2px;text-decoration:none;color:var(--ink)}
+  .kalk-lista a:hover{color:var(--zold)}
+  .kalk-lista b{display:block;font-size:18px;margin-bottom:3px}
+  .kalk-lista span{color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav">
+  <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+</nav></header>
+<main>
+<h1>Menetidő kalkulátor</h1>
+<p class="beveze">Ha autó nélkül kell hazajutni, a távolság önmagában semmit nem mond. Add meg a kilométert és a terepet, és megkapod az időt -- azzal együtt, hogy odaérsz-e világosban.</p>
+<div class="ppkalk" id="kalk-menetido">    <div class="section">
+      <label>Menetidő gyalog</label>
+      <label>Távolság (km)</label>
+      <input type="number" id="menTav" value="8" min="0.1" step="0.5">
+      <label>Emelkedés összesen (m)</label>
+      <input type="number" id="menEmel" value="200" min="0" step="10">
+      <label>Milyen terep</label>
+      <select id="menTerep">
+        <option value="5">Jó út, sík (5 km/h)</option>
+        <option value="4" selected>Ösvény, erdei út (4 km/h)</option>
+        <option value="3">Nehéz terep, hó, sár (3 km/h)</option>
+      </select>
+      <label>Mit viszel</label>
+      <select id="menTeher">
+        <option value="1">Könnyű, napi cucc</option>
+        <option value="0.85">Megpakolt hátizsák</option>
+        <option value="0.7">Nehéz teher vagy gyerekkel</option>
+      </select>
+      <div class="row"><button id="menSzamol" class="primary">Számold ki</button></div>
+      <div id="menEredmeny" style="display:none"></div>
+    </div></div>
+<div class="zaro"><p>A napnyugta a lapon budapesti koordinátával számol, mert a böngésző helyadatát nem kérjük el. Az ország két széle között ez néhány perc eltérést jelent. Pihenő nincs a menetidőben.</p></div>
+<h2>Mire jó ez, és mire nem</h2>
+<p>Ez a kalkulátor a <a href="/">PrepperPapa</a> alkalmazásból való, és ott is ingyenes. A számítás a böngésződben fut: nem küldünk sehova semmit, és nem tárolunk adatot róla.</p>
+<script>
+const $ = id => document.getElementById(id);
+// A weboldalon nincs terkep-nezet es nincs mentett hely: az app `ppUtolsoHely`
+// fuggvenye itt ertelmetlen lenne. Budapesti koordinataval szamolunk, es ezt a lap
+// zaro szovege ki is mondja -- az orszag ket szele kozott ez nehany perc elteres.
+function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
+function ppLocale(){ return 'hu-HU'; }
+function ppForditSzoveg(s){ return s; }
+function ppSzam(x){ return Math.round(x).toLocaleString('hu-HU'); }
+
+function ppNapIdok(datum, lat, lng){
+  const rad=Math.PI/180;
+  // A NAPSZAM KEREKITVE, NEM LEFELE VAGVA (2026-08-17, Laszlo tesztelo jelentesebol).
+  //
+  // A julian nap DELBEN vall napot, nem ejfelkor. Ezert a `Math.floor` minden 12:00 UTC
+  // ELoTTI idopontra az ELoZo nap napadatait szamolta ki -- vagyis magyar ido szerint
+  // reggel 2 es delutan 2 kozott VEGIG a tegnapi napkeltet/nyugtat adta.
+  //
+  // MIERT NEM VETTE ESZRE SENKI FEL EVIG: a kiirt IDoPONT majdnem jo maradt (a tegnapi es
+  // a mai napnyugta ket percre van egymastol), tehat a kepernyon 19:49 allt, ami hihetо.
+  // Csak a SZAMOLAS bukott le: a menetido-becslo a "mennyi van hatra napnyugtaig" ertekre
+  // -14,5 orat kapott, es abbol azt irta ki egy 2 ora 20 perces turara, hogy
+  // "16 ora 58 perc mar sotetben lenne". A kiirt ertek volt hihetо, a szamolt nem.
+  //
+  // MEGMERVE a bejelentett esetre (2026-08-17 10:29, Budapest):
+  //   floor -> nyugta 08-16 19:55, hatra -14,55 h, "SoTETBEN 16,88 h"   <- a hibas
+  //   round -> nyugta 08-17 19:54, hatra  +9,42 h, "vilagosban odaersz" <- a helyes
+  const nap=Math.round(datum.getTime()/86400000 + 2440587.5 - 2451545.0 + 0.0008) - lng/360;
+  const M=(357.5291 + 0.98560028*nap) % 360;
+  const C=1.9148*Math.sin(M*rad) + 0.0200*Math.sin(2*M*rad) + 0.0003*Math.sin(3*M*rad);
+  const lam=(M + C + 180 + 102.9372) % 360;
+  const Jt=2451545.0 + nap + 0.0053*Math.sin(M*rad) - 0.0069*Math.sin(2*lam*rad);
+  const dek=Math.asin(Math.sin(lam*rad)*Math.sin(23.44*rad));
+  const w=(szog)=>{
+    const c=(Math.sin(szog*rad) - Math.sin(lat*rad)*Math.sin(dek)) / (Math.cos(lat*rad)*Math.cos(dek));
+    if(c>1 || c<-1) return null;           // sarkkori eset: nincs kelte vagy nyugta
+    return Math.acos(c)/rad;
+  };
+  const jd2d=(j)=> new Date((j - 2440587.5)*86400000);
+  const w0=w(-0.833), w6=w(-6);            // -0.833 = korong pereme + refrakcio; -6 = polgari szurkulet
+  return {
+    delben: jd2d(Jt),
+    kelte:  w0==null ? null : jd2d(Jt - w0/360),
+    nyugta: w0==null ? null : jd2d(Jt + w0/360),
+    hajnal: w6==null ? null : jd2d(Jt - w6/360),
+    szurkulet: w6==null ? null : jd2d(Jt + w6/360),
+    orokNap: w0==null && lat*Math.sin(dek)>0
+  };
+}
+
+function ppOra(d){
+  return d ? d.toLocaleTimeString(ppLocale(),{ hour:'2-digit', minute:'2-digit' }) : null;
+}
+
+function ppFmtOra(ora){
+  if(!isFinite(ora) || ora<=0) return '0 perc';
+  const o=Math.floor(ora), p=Math.round((ora-o)*60);
+  if(o>=24){ const n=Math.floor(o/24); return n+' nap '+(o-n*24)+' óra'; }
+  return o ? (o+' óra '+p+' perc') : (p+' perc');
+}
+
+$('menSzamol').onclick = ()=>{
+  const tav=+$('menTav').value||0, emel=+$('menEmel').value||0;
+  const seb=(+$('menTerep').value||4) * (+$('menTeher').value||1);
+  const el=$('menEredmeny');
+  if(!tav){ el.innerHTML='<p class="note koordfigy">Add meg a távolságot.</p>'; el.style.display='block'; return; }
+  const ora = tav/seb + emel/600;
+  const erk = new Date(Date.now()+ora*3600*1000);
+  // A NAPNYUGTA ITT VAN FELETTE a kepernyon: rogton megmondjuk, odaersz-e vilagosban.
+  let feny='';
+  const hely=ppUtolsoHely();
+  if(hely){
+    const n=ppNapIdok(new Date(), hely.lat, hely.lng);
+    if(n.nyugta){
+      const hatra=(n.nyugta.getTime()-Date.now())/3600000;
+      feny = (ora<=hatra)
+        ? '<p class="note">Napnyugta '+ppOra(n.nyugta)+', tehát világosban odaérsz, '+ppFmtOra(hatra-ora)+' tartalékkal.</p>'
+        : '<p class="note koordfigy">Napnyugta '+ppOra(n.nyugta)+': ebből '+ppFmtOra(ora-hatra)+' már sötétben lenne. Vagy indulj hamarabb, vagy vigyél lámpát.</p>';
+    }
+  }
+  el.innerHTML='<div class="koorddoboz"><p class="eginagy">'+ppFmtOra(ora)+'</p>'
+    + '<p class="note">'+tav+' kilométer '+Math.round(seb*10)/10+' km/h-val, plusz '+emel+' méter emelkedés. '
+    + 'Az emelkedés minden hatszáz métere egy órát ad hozzá. Most indulva '
+    + erk.toLocaleTimeString(ppLocale(),{hour:'2-digit',minute:'2-digit'})+'-kor érnél oda.</p>'
+    + feny
+    + '<p class="note">Pihenő nincs benne. Hosszabb úton számolj óránként tíz perccel, és étkezéssel.</p></div>';
+  el.style.display='block';
+};
+</script>
+
+<a class="vissza" href="/kalkulator/">&larr; Vissza a kalkulátorokhoz</a>
+</main>
+<footer><div>PrepperPapa &middot; Felkeszules jozan esszel, magyar valosagra</div></footer>
+</body>
+</html>
