@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PrepperPapa alkalmazás: használati útmutató</title>
-<meta name="description" content="A PrepperPapa alkalmazás első lépései: belépés, prémium kód beváltása, a család felvétele, és hogy hol mit találsz.">
+<meta name="description" content="A PrepperPapa alkalmazás minden funkciója képernyőről képernyőre: készlet, háztartás, térkép, tájoló, vészkártya, tudástár, Biblia, Morze, SOS, lámpa és a többi.">
 <link rel="canonical" href="https://prepperpapa.hu/utmutato/">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon-64.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PrepperPapa alkalmazás: használati útmutató">
-<meta property="og:description" content="A PrepperPapa alkalmazás első lépései: belépés, prémium kód beváltása, a család felvétele, és hogy hol mit találsz.">
+<meta property="og:description" content="A PrepperPapa alkalmazás minden funkciója képernyőről képernyőre: készlet, háztartás, térkép, tájoló, vészkártya, tudástár, Biblia, Morze, SOS, lámpa és a többi.">
 <meta property="og:url" content="https://prepperpapa.hu/utmutato/">
 <meta property="og:site_name" content="PrepperPapa">
 <meta property="og:locale" content="hu_HU">
@@ -73,53 +73,235 @@
   footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
   footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
   footer a{color:var(--muted)}
+
+  main.utm{max-width:820px}
+  .tartalom{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 30px}
+  .tartalom ol{columns:2;column-gap:26px;margin:8px 0 0 20px;font-size:15px}
+  .tartalom a{color:var(--ink);text-decoration:none}
+  .tartalom a:hover{color:var(--borostyan)}
+  .lap{border-top:1px solid var(--line);padding:26px 0 8px;scroll-margin-top:12px}
+  .lap h2{margin:0 0 12px;font-size:24px}
+  .lap h2 .sz{color:var(--borostyan);margin-right:8px}
+  .hol{background:var(--panel);border-left:3px solid var(--zold);padding:8px 14px;border-radius:0 8px 8px 0;font-size:15px}
+  .tipp{border-left:3px solid var(--borostyan);padding:4px 0 4px 14px;font-size:15px;color:#cfd6cf}
+  .dij{background:rgba(255,179,64,.07);border:1px solid rgba(255,179,64,.35);border-radius:10px;padding:10px 14px;font-size:15px}
+  .lap .kepek figure{flex:0 0 220px}
+  .lap .kepek img{width:220px}
+  .lap .kepek.egy figure{flex:0 0 260px}
+  .lap .kepek.egy img{width:260px}
+  @media (max-width:560px){.tartalom ol{columns:1}}
 </style>
 </head>
 <body>
 <header><nav class="nav">
   <span class="brand"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></span>
 </nav></header>
-<main>
+<main class="utm">
 <h1>Használati útmutató</h1>
-<p class="beveze">A PrepperPapa alkalmazás első lépései, és hogy hol mit találsz. Minden funkcióhoz az alkalmazásban is van súgó: a képernyő fejlécében a kérdőjel.</p>
-
-<h2>1. Első lépések</h2>
-<h3>Belépés</h3>
-<p>Ha az alkalmazás belépést kér:</p>
+<p class="beveze">A PrepperPapa alkalmazás minden funkciója képernyőről képernyőre: hol találod, mire való, és hogyan használd. Az alkalmazásban is van súgó: a képernyő fejlécében a kérdőjel.</p>
+<h3>Ha az alkalmazás belépést kér</h3>
 <ol>
 <li>Írd be az e-mail címedet.</li>
 <li>Kérj egy kódot. Pár percen belül megérkezik egy hatjegyű kód e-mailben.</li>
 <li>Írd be a kódot. Jelszó nem kell.</li>
 </ol>
-<h3>Prémium kód beváltása</h3>
-<p>Ha prémium kódot kaptál, a <b>Beállítások</b> képernyőn, a <b>Feloldás</b> részben írd be. A beváltáshoz hálózat kell, utána a feloldott részek internet nélkül is működnek.</p>
-<h3>A család felvétele</h3>
-<p>Kezdd a <b>Háztartás</b> képernyővel: vedd fel, kik élnek veletek. Ebből számol a készültség, a fejadag és a „Mit vigyek?” csomaglista.</p>
-
-<h2>2. Hol mit találsz?</h2>
-<h3>Készültség és készlet</h3>
-<p>A készletbe felveszed, mi van otthon, hol tárolod és mikor jár le. A kezdőképernyő helyszínenként, százalékban mutatja a víz, az élelem, a fűtés és az áram állását. A narancs szín azt jelzi, hogy valamit pótolni kell.</p>
-<h3>Tudástár</h3>
-<p>21 téma. Minden cikknek látod a címét és a bevezetőjét. A prémium cikkek teljes szövege a kód beváltása után nyílik meg, és utána internet nélkül is olvasható.</p>
-<h3>Térkép</h3>
-<p>A térképen látod a helyzetedet. Koppintással új pontot veszel fel.</p>
-<h3>Tájoló</h3>
-<p>Vedd fel az irányt, amerre menned kell, és indítsd a hangvezetést. Ha jó felé mész, mély, lassú hang szól, ha letérsz, magasabb és sűrűbb. Androidon kikapcsolt képernyővel, zsebben is működik.</p>
-<h3>Esés-érzékelés</h3>
-<p>Ha a telefon zuhanás és ütközés után egy percig mozdulatlan, 30 másodperces hangos visszaszámlálás indul. A „Jól vagyok” gombbal lemondhatod. Ha nem mondod le, SOS üzenet megy a helyzeteddel a szobáidba, és megszólal a vészsíp. Az érzékelés internet nélkül működik, az üzenethez szoba-kapcsolat kell.</p>
-<h3>Helyi üzenetek</h3>
-<ol>
-<li>Legyen közös háló: egy működő router vagy egy telefon hotspotja. Internet-előfizetés nem kell.</li>
-<li>Mindenki csatlakozzon rá, és nyissa meg az alkalmazást.</li>
-<li>Az Üzenetek csempén belül válaszd a Helyi szobát.</li>
-</ol>
-<h3>Titkos QR</h3>
-<p>A kezdőképernyő Titkos QR csempéjén üzenetet, helyzetet vagy listát teszel QR-kódba. Aki beolvassa, értelmetlen betűsort lát. A PrepperPapa csak a családi jelszóval fejti vissza.</p>
-<h3>Vészkártya</h3>
-<p>Vércsoport, allergia, gyógyszer, betegség, a saját telefonszámod és a vészhelyzeti kontakt. A „Saját telefonszám” a kártya tulajdonosáé. A hívandó ember száma alatta, a „Vészhelyzeti kontakt” mezőkbe kerül.</p>
-
-<h2>3. Ha elakadtál</h2>
-<p>Írj nekünk az alkalmazásból: a felső sávban a szövegbuborék ikon, vagy a Rólam oldalon a „Visszajelzés küldése” gomb. Írd meg, mit csináltál, mit láttál, és milyen telefonon.</p>
+<p class="dij"><b>Ingyenes és prémium röviden:</b> a zseblámpa, az SOS, a Morze, a vészkártya és a tudástár alapcikkei mindenkinek ingyenesek, és internet nélkül is működnek. Ingyen legfeljebb 2 családtag és 50 termék vehető fel, a térképen hetente 2 útvonaltervezés. A prémium kód ezeket korlátlanra emeli, letölthető offline térképet és bővített tudástárat ad.</p>
+<nav class="tartalom" aria-label="Tartalom"><b>Tartalom</b><ol>
+<li><a href="#f1">Kezdőképernyő</a></li>
+<li><a href="#f2">Háztartás</a></li>
+<li><a href="#f3">Családtag adatlapja</a></li>
+<li><a href="#f4">Készlet</a></li>
+<li><a href="#f5">Mit vigyek? (csomaglista)</a></li>
+<li><a href="#f6">Kockázatelemzés</a></li>
+<li><a href="#f7">Térkép</a></li>
+<li><a href="#f8">Tájoló</a></li>
+<li><a href="#f9">Vészkártya</a></li>
+<li><a href="#f10">Tudástár</a></li>
+<li><a href="#f11">Biblia</a></li>
+<li><a href="#f12">Kommunikáció</a></li>
+<li><a href="#f13">Morze</a></li>
+<li><a href="#f14">Fax</a></li>
+<li><a href="#f15">Helyi szobák és Szobák</a></li>
+<li><a href="#f16">Titkos QR</a></li>
+<li><a href="#f17">Eszközök</a></li>
+<li><a href="#f18">Kalkulátorok</a></li>
+<li><a href="#f19">Vad- és rovarriasztó</a></li>
+<li><a href="#f20">SOS (vészhelyzet)</a></li>
+<li><a href="#f21">Esés-érzékelés</a></li>
+<li><a href="#f22">Lámpa</a></li>
+<li><a href="#f23">Éjszakai mód</a></li>
+<li><a href="#f24">Beállítások</a></li>
+<li><a href="#f25">Prémium kód beváltása</a></li>
+<li><a href="#f26">Ha hiányzik egy engedély</a></li>
+<li><a href="#f27">Visszajelzés küldése</a></li>
+<li><a href="#f28">Vagyonkezelő</a></li>
+</ol></nav>
+<section class="lap" id="f1"><h2><span class="sz">1.</span>Kezdőképernyő</h2>
+<p class="hol"><b>Hol:</b> az alsó menü bal szélső gombja, <b>Kezdő</b>.</p>
+<p><b>Mit tud:</b> felül a helyszíneid készültsége százalékban (otthon, nyaraló, autó), alattuk a csempék minden funkcióhoz, legalul egy napi ige vagy tudástár-gondolat.</p>
+<ol><li>Az első indításkor a <b>Bemutató-adatok betöltése</b> gombbal kipróbálhatod az appot egy minta-családdal.</li><li>Koppints egy helyszín körére: megmutatja, mi hiányzik onnan.</li><li>A csempékről érsz el mindent: Háztartás, Készlet, Mit vigyek, Kockázat, Kommunikáció, Térkép, Tájoló, Vészkártya, Tudástár, Biblia, Gyülekező, Eszközök, Irattárca, Titkos QR, Token tárca, Vagyonkezelő.</li></ol>
+<p class="tipp"><b>Tipp:</b> a zöld szám jó, a narancs és a piros azt jelzi, hogy valamit pótolni kell.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/01-kezdolap.jpg" alt="Kezdőképernyő" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f2"><h2><span class="sz">2.</span>Háztartás</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Háztartás</b> csempe.</p>
+<p><b>Mit tud:</b> itt adod meg, kik tartoznak hozzátok, és hol vannak a helyszíneid. A készültség, a fejadag és a csomaglista ebből számol.</p>
+<ol><li>Négy rész van: <b>Családtagok</b>, <b>Háziállatok</b>, <b>Járművek</b>, <b>Helyszínek</b>.</li><li>Bármelyikre koppintva látod a listát, a sárga <b>+</b> gombbal újat veszel fel.</li><li>A helyszíneknél megadod, ki és hány napra érkezik oda.</li></ol>
+<p class="tipp"><b>Tipp:</b> az ingyenes változatban 2 családtagot vehetsz fel, a prémium kóddal korlátlant.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/02-haztartas.jpg" alt="Háztartás" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/03-csaladtagok.jpg" alt="Háztartás" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f3"><h2><span class="sz">3.</span>Családtag adatlapja</h2>
+<p class="hol"><b>Hol:</b> Háztartás &gt; Családtagok &gt; koppints egy névre.</p>
+<p><b>Mit tud:</b> név, születési dátum, ki ő (felnőtt, gyerek, csecsemő), teherbírás, és az egészségügyi adatok a vészkártyához.</p>
+<ol><li>Töltsd ki a nevet és a születési dátumot, válaszd ki, ki ő.</li><li>Add meg a teherbírást kilóban: ebből tudja a csomaglista, ki mennyit vihet.</li><li>Az <b>Egészségügyi adatok</b> részben koppints az allergiákra, írd be a gyógyszert és a betegséget.</li><li>Töltsd ki: „A kártya tulajdonosának telefonszáma”, „Vész esetén értesítendő személy” és „Vész esetén értesítendő telefonszáma”.</li><li>Pipáld be: <b>Az én adataim jelenjenek meg a vészkártyán</b>, ha ez a te adatlapod.</li></ol>
+<p class="tipp"><b>Tipp:</b> a kártya másnak is kitölthető, ezért a tulajdonos számát és az értesítendő ember számát külön mezőbe írd.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/04-csaladtag-adatlap.jpg" alt="Családtag adatlapja" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f4"><h2><span class="sz">4.</span>Készlet</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Készlet</b> csempe.</p>
+<p><b>Mit tud:</b> a felszerelésed és az élelmed nyilvántartása lejárat-figyelővel. Látod a tételek számát, az össztömeget és azt, hogy mi jár le egy hónapon belül.</p>
+<ol><li>Szűrhetsz kategóriára, helyre és készletre.</li><li>A sárga <b>+</b> gombbal új tételt veszel fel: megnevezés, mennyiség, kategória, lejárat, kié, hol tárolod.</li><li>A <b>Vonalkód / QR beolvasása</b> gombbal a csomagolásról is felveheted.</li><li>A <b>Mi hiányzik?</b> gomb megmutatja, mit érdemes pótolni.</li><li>A <b>72h csomag</b> gomb összeállítja a 72 órás alapcsomagot.</li></ol>
+<p class="tipp"><b>Tipp:</b> az ingyenes változatban 50 tételt vehetsz fel, a prémium kóddal korlátlant.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/05-keszlet.jpg" alt="Készlet" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/06-keszlet-uj-tetel.jpg" alt="Készlet" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f5"><h2><span class="sz">5.</span>Mit vigyek? (csomaglista)</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Mit vigyek</b> csempe.</p>
+<p><b>Mit tud:</b> személyre szabott csomaglistát állít össze abból, hogy kik mennek, hogyan, milyen útra és hány napra.</p>
+<ol><li>Jelöld ki, kik mennek (a háziállat is választható).</li><li>Válaszd ki, hogyan mentek (autóval, gyalog, hátizsákkal) és milyen útra.</li><li>Add meg, hány napra, és milyen vízadaggal számoljon.</li><li>Az app összeállítja a listát, a súlykeretre figyelve.</li></ol>
+<p class="tipp"><b>Tipp:</b> a teherbírást a családtagok adatlapján állítsd be, akkor a lista szét is osztja a terhet.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/07-mit-vigyek.jpg" alt="Mit vigyek? (csomaglista)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f6"><h2><span class="sz">6.</span>Kockázatelemzés</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Kockázat</b> csempe.</p>
+<p><b>Mit tud:</b> helyszínenként mutatja, kik érkeznek oda, hány napra, és elég-e az ott lévő víz, élelem, fűtés és áram.</p>
+<ol><li>Nézd meg a helyszínek köreit: a százalék a készültséget mutatja.</li><li>A piros sor jelzi, miből van kevés.</li><li>A hiányt a Készletben pótolhatod, és a tételt az adott helyszínhez rendelheted.</li></ol>
+<p class="tipp"><b>Tipp:</b> a kockázat-kép csak annyira pontos, amennyire a Háztartás és a Készlet ki van töltve.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/08-kockazat.jpg" alt="Kockázatelemzés" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f7"><h2><span class="sz">7.</span>Térkép</h2>
+<p class="hol"><b>Hol:</b> az alsó menü <b>Térkép</b> gombja, vagy Kezdő &gt; Térkép csempe.</p>
+<p><b>Mit tud:</b> turistautak, források, kutak, menedékházak, csúcsok, kilátók és más turistapontok egységes, színes ikonokkal. A helyszíneid készültsége is látszik rajta. Kereshetsz, útvonalat tervezhetsz.</p>
+<ol><li>Felül a keresőbe írd be, mit keresel (turistaút, csúcs, forrás, település).</li><li>A bal alsó célkereszt gombbal a saját helyzetedre ugrasz.</li><li>A <b>+</b> és <b>−</b> gombbal nagyítasz, a réteg-gombbal térképnézetet váltasz.</li><li>Útvonaltervezés: add meg, honnan hová mész, és az app kiírja a távot, a menetidőt, a szintemelkedést és a követendő jelzéseket.</li></ol>
+<p class="dij"><b>Ingyenes és prémium:</b> ingyen az online térkép és hetente 2 útvonaltervezés. A prémium kóddal korlátlan az útvonaltervezés, és letölthetsz offline térképeket (magyar régiókat és külföldi országokat), amelyek internet nélkül is működnek.</p>
+<p class="tipp"><b>Tipp:</b> éjszakai módban a térkép-ikonok is vörösek, így nem vakítanak.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/09-terkep.jpg" alt="Térkép" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/10-terkep-nagyitva.jpg" alt="Térkép" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f8"><h2><span class="sz">8.</span>Tájoló</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Tájoló</b> csempe.</p>
+<p><b>Mit tud:</b> iránytű fokszámmal és égtájjal, irány felvétele, hangvezetés, napkelte, napnyugta és holdfázis.</p>
+<ol><li>Fordulj arra, amerre menned kell, és koppints az <b>Irány felvétele</b> gombra.</li><li>Indítsd el a <b>Hangvezetést</b>: ha jó felé mész, mély, lassú hang szól, ha letérsz, magasabb és sűrűbb.</li><li>A telefon mehet a zsebedbe, a hang vezet.</li><li>A <b>Nap és hold</b> részben látod a napkeltét, a napnyugtát és a holdfázist.</li></ol>
+<p class="tipp"><b>Tipp:</b> a Törlés gombbal új irányt vehetsz fel. Ha a telefonodban nincs iránytű, a nap és hold rész akkor is működik.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/11-tajolo.jpg" alt="Tájoló" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f9"><h2><span class="sz">9.</span>Vészkártya</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Vészkártya</b> csempe, és az SOS képernyő alján is.</p>
+<p><b>Mit tud:</b> a családtagok egészségügyi vészhelyzeti adatai (vércsoport, allergia, gyógyszer, betegség, értesítendő személy) egy kártyán, amit a mentős egy QR-kóddal be is olvashat. Internet nélkül is működik.</p>
+<ol><li>Az adatok a Háztartásból jönnek: ott töltsd ki a családtagok adatlapját.</li><li>Ha valakinél „Hiányzik: kontakt” áll, pótold az adatlapján az értesítendő személyt.</li><li>A <b>Nyomtatás</b> gombbal személyenként, a <b>Mind nyomtatása</b> gombbal mindenkiét kinyomtathatod.</li><li>A <b>Családi kártya (egy QR)</b> egyetlen kódba teszi az egész családot.</li></ol>
+<p class="tipp"><b>Tipp:</b> nyomtasd ki, és tedd a pénztárcába vagy az autóba is.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/12-veszkartya.jpg" alt="Vészkártya" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f10"><h2><span class="sz">10.</span>Tudástár</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Tudástár</b> csempe.</p>
+<p><b>Mit tud:</b> témákba rendezett cikkek az alapismeretektől az élelmen, vízen, egészségügyön át a városi túlélésig és a tájékozódásig. Az alapcikkek internet nélkül is olvashatók.</p>
+<ol><li>Koppints egy témára, például az <b>Alapismeretekre</b>.</li><li>Válassz egy cikket a listából.</li><li>Felül a keresővel minden cikkben kereshetsz.</li><li>A lakattal jelölt („zárt”) cikkek a bővített tudástár részei: a prémium kód beváltása után nyílnak meg.</li></ol>
+<p class="tipp"><b>Tipp:</b> a kezdőképernyő alján naponta más tudástár-gondolat jelenik meg.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/13-tudastar.jpg" alt="Tudástár" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/14-tudastar-tema.jpg" alt="Tudástár" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/15-tudastar-cikk.jpg" alt="Tudástár" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f11"><h2><span class="sz">11.</span>Biblia</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Biblia</b> csempe.</p>
+<p><b>Mit tud:</b> a Károli-fordítás felolvasással, imák, megvallások, olvasási terv, vészhelyzeti igék, próféciák, kiemelések és saját kommentárok.</p>
+<ol><li>Koppints a <b>Biblia</b> csempére, és az első alkalommal a <b>Biblia letöltése</b> gombbal tedd a telefonodra. Utána a telefonodon marad.</li><li>Válassz könyvet, fejezetet és verset.</li><li>A hangszóró ikonnal felolvastathatod.</li><li>A többi csempén imákat, olvasási tervet és vészhelyzeti igéket találsz.</li></ol>
+<p class="tipp"><b>Tipp:</b> egy versre koppintva kiemelheted, vagy megjegyzést írhatsz hozzá.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/16-biblia.jpg" alt="Biblia" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/17-biblia-olvaso.jpg" alt="Biblia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f12"><h2><span class="sz">12.</span>Kommunikáció</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Kommunikáció</b> csempe.</p>
+<p><b>Mit tud:</b> egy helyen az összes mód, amivel üzenni tudsz, amikor a telefonhálózat nem segít.</p>
+<ol><li><b>Digitális üzenet:</b> Helyi szoba (szöveg a közeledben lévőknek, közös Wi-Fi-n, hotspoton vagy Bluetooth-on) és Szobák (zárt csoportok interneten, belépés a szoba gazdájának jóváhagyásával).</li><li><b>Hangüzenet:</b> Morze (rövid üzenet hanggal vagy fénnyel) és Fax (kép átküldése hangban, rádión is).</li></ol>
+<p class="tipp"><b>Tipp:</b> ha nincs semmilyen hálózat, a Morze és a fax akkor is működik.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/18-kommunikacio.jpg" alt="Kommunikáció" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f13"><h2><span class="sz">13.</span>Morze</h2>
+<p class="hol"><b>Hol:</b> Kommunikáció &gt; <b>Morze</b>. Ingyenes.</p>
+<p><b>Mit tud:</b> szöveg adása hanggal és fénnyel, vétel kamerából (villogó fény) és mikrofonból (síphang), gyakorló és alapismeretek.</p>
+<ol><li><b>Adás:</b> írd be a szöveget, és nyomd meg a <b>Lejátszás</b> gombot. Az <b>SOS</b> gomb egy koppintással adja a vészjelet.</li><li><b>Olvasás fényből:</b> a kamerát fordítsd a villogó fény felé, az app szöveggé alakítja.</li><li><b>Olvasás hangból:</b> a mikrofon a síphangot alakítja szöveggé.</li><li><b>Morze gyakorló:</b> hallás után, kézi kulccsal vagy kopogással gyakorolhatsz betűt, számot, szót.</li></ol>
+<p class="tipp"><b>Tipp:</b> a Morze alapok rész elmagyarázza az időzítést és a sebességet.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/19-morze.jpg" alt="Morze" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/20-morze-adas.jpg" alt="Morze" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/21-morze-gyakorlo.jpg" alt="Morze" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f14"><h2><span class="sz">14.</span>Fax</h2>
+<p class="hol"><b>Hol:</b> Kommunikáció &gt; <b>Fax</b>. Ingyenes.</p>
+<p><b>Mit tud:</b> kép átküldése hangban, akár rádión keresztül is.</p>
+<ol><li><b>Küldés:</b> válassz egy képet, és az app hanggá alakítja. A másik telefon vevőjébe kell szólnia.</li><li><b>Vétel:</b> a vevő telefon soronként rajzolja ki a képet a hallott hangból.</li></ol>
+<p class="tipp"><b>Tipp:</b> csendes helyen, a két telefont közel tartva megy a legjobban.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/22-fax.jpg" alt="Fax" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f15"><h2><span class="sz">15.</span>Helyi szobák és Szobák</h2>
+<p class="hol"><b>Hol:</b> Kommunikáció &gt; <b>Helyi szoba</b> vagy <b>Szobák</b>.</p>
+<p><b>Mit tud:</b> a Helyi szoba szöveget visz a közeledben lévőknek közös Wi-Fi-n, telefon hotspotján vagy Bluetooth-on, internet-előfizetés nélkül. A Szobák zárt csoportok interneten keresztül.</p>
+<ol><li>Először a <b>Profil</b> képernyőn add meg a neved (és ha szeretnéd, egy profilképet): így látnak a többiek.</li><li>Helyi szoba: legyen közös háló (egy router vagy egy telefon hotspotja), mindenki csatlakozzon rá, és nyissa meg az appot.</li><li>A sárga <b>+</b> gombbal új szobát nyitsz, vagy megvárod, amíg egy közeli szoba megjelenik.</li><li>Szobák: a <b>+</b> gombbal létrehozol egyet, vagy kóddal csatlakozol egy meglévőhöz. A belépést a szoba gazdája hagyja jóvá.</li></ol>
+<p class="dij"><b>Ingyenes és prémium:</b> a Helyi szoba mindenkinek ingyenes. Szobákból ingyen 1 sajátot hozhatsz létre, és 3 szobának lehetsz tagja; a prémium kóddal 10 saját szobát, és korlátlan számú szobának lehetsz tagja.</p>
+<p class="tipp"><b>Tipp:</b> egy hosszan nyomva tartott üzenetet elmenthetsz, és a Profil képernyőn később is megtalálod.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/23-helyi-szobak.jpg" alt="Helyi szobák és Szobák" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/24-profil.jpg" alt="Helyi szobák és Szobák" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/25-szobak.jpg" alt="Helyi szobák és Szobák" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f16"><h2><span class="sz">16.</span>Titkos QR</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Titkos QR</b> csempe.</p>
+<p><b>Mit tud:</b> üzenetet, helyzetet, listát vagy személyes adatot tesz QR-kódba, amit csak az olvas el, aki ismeri a családi jelszavatokat.</p>
+<ol><li>Állítsd be a <b>Családi jelszót</b> (felül, ha még „nincs beállítva”).</li><li>Válaszd ki, mit teszel bele, és írd be az üzenetet.</li><li>Nyomd meg a <b>QR készítése</b> gombot.</li><li>Beolvasás: <b>Beolvasás kamerával</b>, <b>Betöltés fájlból</b>, vagy írd be a betűsort, ha Morzéval vagy faxszal kaptad.</li></ol>
+<p class="tipp"><b>Tipp:</b> a jelszót szóban beszéljétek meg előre, ne üzenetben.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/26-titkos-qr.jpg" alt="Titkos QR" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f17"><h2><span class="sz">17.</span>Eszközök</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Eszközök</b> csempe.</p>
+<p><b>Mit tud:</b> Kalkulátorok, Fémdetektor (vas és acél a falban vagy a földben), Tükör (előlapi kamera fénykerettel, sérülés megnézéséhez), Vad- és rovarriasztó.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/27-eszkozok.jpg" alt="Eszközök" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f18"><h2><span class="sz">18.</span>Kalkulátorok</h2>
+<p class="hol"><b>Hol:</b> Eszközök &gt; <b>Kalkulátorok</b>.</p>
+<p><b>Mit tud:</b> Számológép (nagy gombok, szalag, memória, kesztyűben és sötétben is), Áram (meddig visz el egy powerbank vagy akku), Kalória (meddig elég az élelem), Rádió-hatótáv, Fűtés (mennyi fa vagy gáz kell), Esővíz (mennyi gyűlik a tetőről), Menetidő (odaérsz-e világosban), Villám (milyen messze a vihar), Víztisztítás (mennyi hipó kell, meddig forralj), Lámpa-üzemidő.</p>
+<ol><li>Koppints a kalkulátorra.</li><li>Add meg az adatokat, az eredmény azonnal megjelenik.</li></ol>
+<p class="tipp"><b>Tipp:</b> a számológép szalagján minden lépés visszanézhető, így terepen sem tévedsz el a számolásban.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/28-kalkulatorok.jpg" alt="Kalkulátorok" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f19"><h2><span class="sz">19.</span>Vad- és rovarriasztó</h2>
+<p class="hol"><b>Hol:</b> Eszközök &gt; <b>Vad- és rovarriasztó</b>.</p>
+<p><b>Mit tud:</b> magas hangot ad a vadak és a szúnyogok ellen.</p>
+<ol><li>Válaszd ki: <b>Vadak ellen</b> vagy <b>Szúnyogok ellen</b>.</li><li>A csúszkával állíthatod a frekvenciát.</li><li>A <b>Próbahang</b> gomb egy rövid, jól hallható sípot ad: így ellenőrizheted, hogy szól a hangszóró. A futó riasztót nem állítja le.</li></ol>
+<p class="tipp"><b>Tipp:</b> a riasztó hangja szándékosan hallhatatlanul magas. Ha semmit nem hallasz, az a normális.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/29-riaszto.jpg" alt="Vad- és rovarriasztó" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f20"><h2><span class="sz">20.</span>SOS (vészhelyzet)</h2>
+<p class="hol"><b>Hol:</b> az alsó menü közepén a piros <b>SOS</b> gomb. Ingyenes, internet nélkül is működik.</p>
+<p><b>Mit tud:</b> fény-SOS a képernyővel vagy a vakuval, hangos vészsíp, újraélesztés-ütem, 112 hívása, esés-érzékelés és gyors vészkártya.</p>
+<ol><li><b>Fény-SOS (képernyő)</b> vagy <b>Fény-SOS (vaku)</b>: egy koppintás indítja, még egy leállítja.</li><li><b>Vészsíp:</b> Sípolás vagy Folyamatos, a hangmagasság állítható. Tekerd fel a hangerőt.</li><li><b>Újraélesztés-ütem:</b> hang diktálja az ütemet, hogy pánikban se kelljen számolni.</li><li><b>112 hívása:</b> egységes európai segélyhívó.</li><li>Legalul a <b>Gyors vészkártya</b>.</li></ol>
+<p class="tipp"><b>Tipp:</b> a vészsíp 3-4 kHz körül a legjobban hallható, ezért hallják a mentők is messzebbről.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/30-sos.jpg" alt="SOS (vészhelyzet)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f21"><h2><span class="sz">21.</span>Esés-érzékelés</h2>
+<p class="hol"><b>Hol:</b> SOS képernyő &gt; <b>Esés-érzékelés</b>.</p>
+<p><b>Mit tud:</b> ha a telefon nagy ütést érez, és utána egy percig nem mozdul, felkapcsolja a kijelzőt, és hangosan visszaszámol. Ha nem nyomod meg a <b>Jól vagyok</b> gombot, SOS üzenetet küld a helyzeteddel a szobáidba, és megszólal a vészsíp.</p>
+<ol><li>Pipáld be: <b>Esés után automatikus SOS</b>.</li><li>Add meg az engedélyt, ha az app kéri.</li><li>Ha tévesen indul, nyomd meg a nagy <b>Jól vagyok</b> gombot.</li></ol>
+<p class="tipp"><b>Tipp:</b> az üzenethez kapcsolat kell a szobáiddal, a visszaszámlálás és a vészsíp anélkül is működik.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/31-eses-erzekeles.jpg" alt="Esés-érzékelés" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f22"><h2><span class="sz">22.</span>Lámpa</h2>
+<p class="hol"><b>Hol:</b> az alsó menü <b>Lámpa</b> gombja. Ingyenes, internet nélkül is működik.</p>
+<p><b>Mit tud:</b> zseblámpa a vakuval vagy a képernyővel, állítható színnel és fényerővel, vörös éjszakai fénnyel.</p>
+<ol><li>Koppints a <b>Lámpa</b> gombra: bekapcsol a vaku, a kijelző sötét marad.</li><li>Koppints még egyszer: csak a vaku világít.</li><li>Képernyő-fénynél húzd az ujjad: vízszintesen a színt, függőlegesen a fényerőt állítod. Koppintással jönnek elő a gombok.</li></ol>
+<p class="tipp"><b>Tipp:</b> a vörös fény nem vakítja el a sötéthez szokott szemet.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/32-lampa.jpg" alt="Lámpa" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f23"><h2><span class="sz">23.</span>Éjszakai mód</h2>
+<p class="hol"><b>Hol:</b> a felső sávban a hold ikon.</p>
+<p><b>Mit tud:</b> az egész app vörösre vált, így sötétben nem vakít, és nem rontja az éjszakai látást. A térkép és a lámpa is vörös marad.</p>
+<ol><li>Koppints a hold ikonra a bekapcsoláshoz, még egyszer a kikapcsoláshoz.</li></ol>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/33-ejszakai-mod.jpg" alt="Éjszakai mód" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f24"><h2><span class="sz">24.</span>Beállítások</h2>
+<p class="hol"><b>Hol:</b> az alsó menü jobb szélső gombja, <b>Beállít</b>. Ingyenes.</p>
+<p><b>Mit tud:</b> értesítés a lejáró élelmiszerről és készletről, rezgő visszajelzés, nyelv, betűméret, súgó, adatkezelés, prémium kód beváltása.</p>
+<ol><li><b>Értesítések:</b> pipáld be, és válaszd ki, mennyivel előre szóljon (3 nap, 1 hét, 2 hét, 1 hónap). A <b>Próbaértesítés</b> gombbal kipróbálhatod.</li><li><b>Nyelv</b> és <b>Betűméret:</b> állítsd be, ahogy kényelmes.</li><li><b>Súgó:</b> minden képernyőn a fejléc kérdőjele is súgót nyit.</li></ol>
+<p class="tipp"><b>Tipp:</b> ha az értesítés le van tiltva, az app kiírja, hol kapcsolhatod be a telefon beállításaiban.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/34-beallitasok.jpg" alt="Beállítások" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f25"><h2><span class="sz">25.</span>Prémium kód beváltása</h2>
+<p class="hol"><b>Hol:</b> Beállítások &gt; <b>Feloldás</b>.</p>
+<p><b>Mit tud:</b> itt váltod be a prémium kódot.</p>
+<ol><li>Írd be a kódot a mezőbe.</li><li>Nyomd meg a <b>Kód beváltása</b> gombot. A beváltáshoz internet kell.</li><li>Utána korlátlan a családtagok és a készlet száma, megnyílik a bővített tudástár, és korlátlan a térkép útvonaltervezése, letölthető offline térképekkel.</li></ol>
+<p class="tipp"><b>Tipp:</b> egy kóddal legfeljebb két készülékeden használhatod.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/35-feloldas.jpg" alt="Prémium kód beváltása" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f26"><h2><span class="sz">26.</span>Ha hiányzik egy engedély</h2>
+<p class="hol"><b>Hol:</b> magától jelenik meg, amikor egy funkcióhoz engedély kell (kamera, mikrofon, helymeghatározás, értesítés, mozgásérzékelő, Bluetooth).</p>
+<p><b>Mit tud:</b> megmondja, mi hiányzik, mire kell, és mi a teendő.</p>
+<ol><li>Koppints az <b>Engedély kérése</b> gombra, és válaszd az Engedélyezés lehetőséget.</li><li>Ha nem jön kérdés, az <b>Alkalmazás beállításai</b> gomb egy koppintással megnyitja a telefon beállításait.</li><li>Ha megadtad, térj vissza: az app magától újrapróbálja.</li></ol>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/36-engedely.jpg" alt="Ha hiányzik egy engedély" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f27"><h2><span class="sz">27.</span>Visszajelzés küldése</h2>
+<p class="hol"><b>Hol, két helyen:</b></p>
+<ul><li>a felső sávban a <b>szövegbuborék ikon</b> (felirat nélkül),</li><li>a <b>Rólam</b> oldalon a <b>Visszajelzés küldése</b> gomb.</li></ul>
+<p><b>Mit tud:</b> hibát vagy ötletet küldhetsz nekünk, képernyőképpel együtt.</p>
+<ol><li>Válaszd ki a típust (hiba vagy ötlet) és azt a részt, amelyikről szól.</li><li>Írd meg, mit csináltál, mit láttál, és mit vártál.</li><li>Ha kell, csatolj képernyőképet.</li><li>Nyomd meg a <b>Küldés</b> gombot.</li></ol>
+<p class="tipp"><b>Tipp:</b> a <b>Bejelentéseim</b> gombbal visszanézheted, mit küldtél, az <b>Újdonságok</b> gombbal pedig azt, mi változott az appban.</p>
+<div class="kepek"><figure><img src="/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Visszajelzés küldése" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Visszajelzés küldése" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Visszajelzés küldése" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f28"><h2><span class="sz">28.</span>Vagyonkezelő</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Vagyonkezelő</b> csempe.</p>
+<p>A Vagyonkezelő külön termék. Az alkalmazásban ingyenesen és prémiummal is 10 tételig kipróbálható, a teljes használatához külön kell megvenni a Google Play áruházban és az App Store-ban. Ha megveszed, a PrepperPapában is teljes értékűen működik.</p></section>
+<section class="lap"><h2>Ha elakadtál</h2>
+<p>Írj nekünk az alkalmazásból: a felső sávban a szövegbuborék ikon, vagy a Rólam oldalon a „Visszajelzés küldése” gomb. Írd meg, mit csináltál, mit láttál, és milyen telefonon.</p></section>
 
 </main>
 <footer><div>PrepperPapa &middot; Használati útmutató
