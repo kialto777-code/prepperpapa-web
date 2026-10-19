@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PrepperPapa - Felkészülés józan ésszel, magyar valóságra</title>
+<title>PrepperPapa - Felkészülés józan ésszel, a valós életre</title>
 <meta name="description" content="Felszerelés-tesztek valós használatban, gyakorlati útmutatók és tudástár. Áramszünet, víz, hő, kommunikáció. Készülj, de ne félj.">
 <link rel="icon" href="assets/favicon-64.png">
 <meta property="og:title" content="PrepperPapa">
-<meta property="og:description" content="Felkészülés józan ésszel, magyar valóságra.">
+<meta property="og:description" content="Felkészülés józan ésszel, a valós életre.">
 <meta property="og:image" content="https://prepperpapa.hu/assets/hero.jpg">
 <link rel="canonical" href="https://prepperpapa.hu/">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -179,6 +179,13 @@
        0 0 0 1px #3a4a40 inset,0 0 60px rgba(255,179,64,.08)}
   .tel img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;background:#0B110E}
   .ketto.egyedul{grid-template-columns:1fr}
+  /* app motifs (Fonok 21:35): topo background and compass, only in a few places */
+  .topo{background-image:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.76)),url('assets/hatter-topo.jpg');
+        background-size:cover;background-position:center}
+  .telhely{position:relative;display:flex;justify-content:center;align-items:center;padding:30px 0}
+  .telhely::before{content:"";position:absolute;left:50%;top:50%;width:min(470px,108vw);aspect-ratio:1;
+        transform:translate(-50%,-50%);background:url('assets/iranytu.png') center/contain no-repeat;opacity:.30;pointer-events:none}
+  .telhely .tel{position:relative}
   /* reveal */
   .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
   .rv.lat{opacity:1;transform:none}
@@ -212,10 +219,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"PrepperPapa",
 "url":"https://prepperpapa.hu/","logo":"https://prepperpapa.hu/assets/logo-96.png",
-"description":"Felkeszules jozan esszel, magyar valosagra. Felszereles-tesztek, gyakorlati utmutatok, tudastar.",
+"description":"Felkészülés józan ésszel, a valós életre. Felszerelés-tesztek, gyakorlati útmutatók, tudástár.",
 "sameAs":["https://www.youtube.com/@PrepperPapa","https://www.tiktok.com/@prepperpapa",
-"https://www.facebook.com/prepperpapa","https://www.instagram.com/prepperpapa",
-"https://prepperpapa.blogspot.com/"],
+"https://www.facebook.com/prepperpapa","https://www.instagram.com/prepperpapa"],
 "email":"prepperpapa@gmail.com"}
 </script>
 </head>
@@ -281,7 +287,7 @@
   </div>
 </div>
 
-<section class="blk">
+<section class="blk topo">
   <div class="wrap">
     <div class="head rv">
       <span class="szam disp">01 / Amit itt találsz</span>
@@ -397,11 +403,11 @@
       </ul>
       <a class="btn amber" href="/app/">Részletek és prémium</a>
     </div>
-    <a class="tel rv" href="/app/" aria-label="PrepperPapa app"><img src="/app/kepek/1-kezdolap.jpg" width="480" height="946" loading="lazy" alt="PrepperPapa app"></a>
+    <div class="telhely rv"><a class="tel" href="/app/" aria-label="PrepperPapa app"><img src="/app/kepek/1-kezdolap.jpg" width="480" height="946" loading="lazy" alt="PrepperPapa app"></a></div>
   </div>
 </section>
 
-<section class="blk" id="kapcsolat">
+<section class="blk topo" id="kapcsolat">
   <div class="wrap zaro rv">
     <span class="szam disp">04 / Kapcsolat</span>
     <h2 class="disp">Együttműködés, kérdés, visszajelzés</h2>
@@ -423,7 +429,7 @@
       <a href="/kalkulator/">Kalkulátorok</a>
       <a href="/adatkezeles.html">Adatkezelés</a>
     </div>
-    <div>PrepperPapa · Felkészülés józan ésszel, magyar valóságra.</div>
+    <div>PrepperPapa · Felkészülés józan ésszel, a valós életre.</div>
   </div>
 </footer>
 
