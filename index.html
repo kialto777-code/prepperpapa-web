@@ -146,8 +146,51 @@
   .fbrand img{width:32px;height:32px;border-radius:50%}
   .fbrand span{font-family:Pacifico,cursive;font-size:19px;color:var(--ink)}
 
+  /* ===== 2026-10-19: arculat igazitasa az /app/ oldalhoz (Fonok 21:29) ===== */
+  h1.disp,h2.disp{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+                  font-weight:800;text-transform:none;letter-spacing:-.01em}
+  h1.disp{font-size:clamp(40px,8.6vw,76px);line-height:1.04;max-width:14ch}
+  h2.disp{font-size:clamp(30px,5.4vw,48px);line-height:1.08}
+  .eyebrow,.szam{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+                 font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+  .szam{color:var(--borostyan)}
+  .hero{min-height:100svh}
+  .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:3;color:var(--muted);font-size:13px;
+          letter-spacing:.15em;text-transform:uppercase;animation:lebeg 2.2s ease-in-out infinite}
+  @keyframes lebeg{50%{transform:translate(-50%,6px)}}
+  .btn{border-radius:10px;padding:13px 24px;letter-spacing:.02em}
+  .teny b{font-family:inherit;font-weight:800;font-size:30px}
+  section.blk{padding:110px 0}
+  .head{margin-bottom:48px}
+  .pillars{gap:16px;background:none;border:0;border-radius:0;overflow:visible}
+  .card{background:linear-gradient(160deg,#1c2a21,#121B16);border:1px solid #2c3d33;border-radius:18px}
+  .card:hover{background:linear-gradient(160deg,#21322a,#141f19)}
+  .fo,.vid{border-radius:18px}
+  .mini img{border-radius:12px}
+  .nagy{border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16);border-color:#2c3d33}
+  /* app showcase */
+  .appsav{background:radial-gradient(120% 80% at 80% 30%,#1d2c22 0%,#0B110E 60%);overflow:hidden}
+  .appsav .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .appsav p.lead{margin-top:16px}
+  .appsav .lista{margin:22px 0 28px}
+  .appsav .lista li::before{background:var(--borostyan)}
+  .tel{width:min(270px,62vw);aspect-ratio:480/946;border-radius:38px;padding:9px;margin:0 auto;transform:rotate(-4deg);
+       background:linear-gradient(145deg,#2b3a31,#0d1410);box-shadow:0 30px 80px rgba(0,0,0,.6),
+       0 0 0 1px #3a4a40 inset,0 0 60px rgba(255,179,64,.08)}
+  .tel img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;background:#0B110E}
+  .ketto.egyedul{grid-template-columns:1fr}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .rv.lat{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.lefele{animation:none}}
   @media(max-width:920px){
-    .hero{min-height:auto}
+    .appsav .wrap{grid-template-columns:1fr}
+    .tel{width:min(230px,60vw)}
+    section.blk{padding:72px 0}
+  }
+
+  @media(max-width:920px){
+    .hero{min-height:100svh}
     .hero .veil{background:linear-gradient(180deg,rgba(11,17,14,.86),rgba(11,17,14,.94))}
     .hero .wrap{padding-top:64px;padding-bottom:52px}
     .tenyek .wrap{gap:26px}
@@ -223,6 +266,7 @@
       <a class="btn ghost" href="#tudastar">Kezdd itt: a tudástár</a>
     </div>
   </div>
+  <a class="lefele" href="#videok">Görgess &darr;</a>
 </section>
 
 <div class="tenyek">
@@ -236,23 +280,23 @@
 
 <section class="blk">
   <div class="wrap">
-    <div class="head">
+    <div class="head rv">
       <span class="szam disp">01 / Amit itt találsz</span>
       <h2 class="disp">Minden mögött valódi használat áll</h2>
       <p>Ha valami nem vált be, az is elhangzik. Ez a csatorna nem katalógus, hanem tapasztalat.</p>
     </div>
     <div class="pillars">
-      <div class="card">
+      <div class="card rv">
         <div class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pp-fenyszoro"/></svg></div>
         <h3>Felszerelés-tesztek</h3>
         <p>Lámpák, kések, táskák, energiaforrások. Nem a doboz adatait olvassuk fel, hanem megmérjük, meddig bírja.</p>
       </div>
-      <div class="card">
+      <div class="card rv">
         <div class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pp-terkep"/></svg></div>
         <h3>Gyakorlati útmutatók</h3>
         <p>Víz, hő, energia, kommunikáció. Konkrét lépések, amiket egy hétköznapi lakásban is meg tudsz csinálni.</p>
       </div>
-      <div class="card">
+      <div class="card rv">
         <div class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pp-kommunikacio"/></svg></div>
         <h3>Amikor nincs hálózat</h3>
         <p>Morze, SSTV, rádió. A régi módszerek pont akkor működnek, amikor a telefon már nem.</p>
@@ -263,12 +307,12 @@
 
 <section class="blk" id="videok">
   <div class="wrap">
-    <div class="head">
+    <div class="head rv">
       <span class="szam disp">02 / Videók</span>
       <h2 class="disp">Kiemelt darabok a csatornáról</h2>
     </div>
 
-    <div class="kiemelt">
+    <div class="kiemelt rv">
       <a class="fo" href="https://www.youtube.com/watch?v=ilmcq8LIhwM" target="_blank" rel="noopener">
         <img src="https://i.ytimg.com/vi/ilmcq8LIhwM/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Ezt a 3000 lumenes lámpát nem fogod elhinni">
         <div class="ra">
@@ -292,7 +336,7 @@
       </div>
     </div>
 
-    <div class="tobb">
+    <div class="tobb rv">
       <a class="vid" href="https://www.youtube.com/watch?v=LujIqh55xb4" target="_blank" rel="noopener">
         <img src="https://i.ytimg.com/vi/LujIqh55xb4/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Isten a frontvonalon: egy katona megrázó beszámolója">
         <div class="t">Isten a frontvonalon: egy katona megrázó beszámolója</div>
@@ -316,11 +360,11 @@
 
 <section class="blk">
   <div class="wrap">
-    <div class="head">
+    <div class="head rv">
       <span class="szam disp">03 / Mélyebben</span>
       <h2 class="disp">Amikor a videó kevés</h2>
     </div>
-    <div class="ketto">
+    <div class="ketto egyedul rv">
       <div class="nagy" id="tudastar">
         <div class="cimke">Tudástár</div>
         <h3>Amit érdemes elolvasni, mielőtt szükség lesz rá</h3>
@@ -332,23 +376,30 @@
         </ul>
         <a class="btn ghost" href="/cikkek.html">Olvasd a cikkeket</a>
       </div>
-      <div class="nagy b" id="app">
-        <div class="cimke">Alkalmazás</div>
-        <h3>PrepperPapa app</h3>
-        <p>Felkészülés a zsebedben, a legfontosabbak internet nélkül is. Kiszámolja, mennyire vagytok felkészülve, és segít ott, ahol épp kell: áramszünetben, térerő nélkül vagy terepen.</p>
-        <ul class="lista">
-          <li>Készültség helyszínenként, készlet lejárat-figyelővel</li>
-          <li>Térkép turistautakkal és túratervezéssel, tájoló hangvezetéssel</li>
-          <li>Vészkártya, esés-érzékelés SOS-sel, tudástár és Biblia offline</li>
-        </ul>
-        <a class="btn amber" href="/app/">Részletek és prémium</a>
-      </div>
+</div>
     </div>
   </div>
 </section>
 
+<section class="blk appsav" id="app">
+  <div class="wrap">
+    <div class="rv">
+      <span class="szam">Alkalmazás</span>
+      <h2 class="disp">PrepperPapa app</h2>
+      <p class="lead">Felkészülés a zsebedben, a legfontosabbak internet nélkül is. Kiszámolja, mennyire vagytok felkészülve, és segít ott, ahol épp kell: áramszünetben, térerő nélkül vagy terepen.</p>
+      <ul class="lista">
+        <li>Készültség helyszínenként, készlet lejárat-figyelővel</li>
+        <li>Térkép turistautakkal és túratervezéssel, tájoló hangvezetéssel</li>
+        <li>Vészkártya, esés-érzékelés SOS-sel, tudástár és Biblia offline</li>
+      </ul>
+      <a class="btn amber" href="/app/">Részletek és prémium</a>
+    </div>
+    <a class="tel rv" href="/app/" aria-label="PrepperPapa app"><img src="/app/kepek/1-kezdolap.jpg" width="480" height="946" loading="lazy" alt="PrepperPapa app"></a>
+  </div>
+</section>
+
 <section class="blk" id="kapcsolat">
-  <div class="wrap zaro">
+  <div class="wrap zaro rv">
     <span class="szam disp">04 / Kapcsolat</span>
     <h2 class="disp">Együttműködés, kérdés, visszajelzés</h2>
     <p>Terméktesztre, együttműködésre vagy szakmai kérdéssel keress bátran. Ami bevált, arról szívesen beszélek; ami nem, arról szintén.</p>
@@ -373,5 +424,11 @@
   </div>
 </footer>
 
+<script>
+(function(){var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('lat');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lat');io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(e){io.observe(e);});})();
+</script>
 </body>
 </html>
