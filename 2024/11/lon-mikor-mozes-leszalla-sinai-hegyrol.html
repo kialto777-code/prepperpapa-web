@@ -53,8 +53,37 @@
   .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
   .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
   .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
   footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
 </head>
 <body>
@@ -72,7 +101,12 @@
 <header><nav class="nav">
   <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
   <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="/app/">Alkalmazás</a>
   <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+  <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/app/">PrepperPapa app</a><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="https://www.youtube.com/@PrepperPapa">Csatorna</a></nav>
+  </details>
 </nav></header>
 <main>
 <h1>És lőn, mikor Mózes leszálla a Sinai hegyről</h1>
@@ -80,8 +114,11 @@
 <p>&nbsp;„És lőn, mikor Mózes leszálla a Sinai hegyről, és a bizonyság két táblája Mózes kezében vala, mikor leszálla a hegyről, nem tudta, hogy az ő orczája bőre fénylik, mivelhogy Ővele beszélt.”&nbsp;&nbsp;</p><p>Elgondolkodtatok már azon, miért világított Mózes arca? Nos, azért, hogy az éjszakai teljesítménytúra során baleset ne érje! Ez az Isteni gondviselés tökéletes példája! 😄&nbsp;&nbsp;</p><p>Ha Mózes ma élne, valószínűleg egy prémium fejlámpát választana, de akkoriban Isten maga gondoskodott róla, hogy minden lépése fényben járjon. Ez a történet nemcsak a hitéletünkről szól, hanem arról is, hogy milyen fontos az előrelátás és a biztonság – még a hegyek között is.&nbsp;&nbsp;</p><p>Hát nem csodálatos, hogy a „fény” szó szerint és átvitt értelemben is velünk lehet? 🌟&nbsp;&nbsp;</p><p>Te melyik fejlámpát vinnéd magaddal egy Sínai-hegyi túrára? 🗻💡 Kommentelj! 👇</p><p style="text-align: center;"><a href="https://flashlightgo.com/?ref=Prepperpapa&amp;fbclid=IwY2xjawGthENleHRuA2FlbQIxMQABHThcRK331o2SaSuLlO2LlQ2U1HzYTopxTI6oei_ghMvK0jOD-sMoUkupBA_aem_cOMNvOLAXmJkSM0dre1TXA" target="_blank" rel="nofollow sponsored">BLACK FRIDAY&nbsp;</a></p><p><br /></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge-B6XAwZDVqdtFRN0TP3BJ5BMlsalikwKVhTi9UZr0IlfPXV7O2TlxyKuAuUK_HQcxrNPLRppJiLFtOUwyV3iSiAos8VGlpVJdfhkEYhszfGMU-icbR8yL0N8_hB0ns2bXxxdoLB0d-j9uS4HTPmjxyFcx3k5X1ilvEskQC3sUxvJKztF8_B9ARaJNomp/s1024/DALL%C2%B7E%202024-11-18%2019.17.35%20-%20Moses%20descending%20from%20Mount%20Sinai%20holding%20two%20stone%20tablets%20with%20the%20Ten%20Commandments,%20wearing%20a%20modern%20headlamp%20on%20his%20head.%20The%20headlamp%20emits%20only%20.webp" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1024" height="351" src="/kepek/daa489fc25.jpg" width="400" /></a></div><br /><p></p>
 <div class="cimkek"><span class="cimke">Lámpák és fény</span></div>
 
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Felkészülés a zsebedben</h3>
+<p>Készlet lejárat-figyelővel, vészkártya, tájoló, térkép és tudástár egy alkalmazásban. A legfontosabbak internet nélkül is működnek.</p>
+<a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
 <a class="vissza" href="/cikkek.html">&larr; Vissza a cikkekhez</a>
 </main>
-<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
 </body>
 </html>

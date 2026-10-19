@@ -400,11 +400,11 @@
     if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Az értesítéshez kérjük, jelöld be a hozzájárulást.';return;}
     b.disabled=true; b.textContent='Küldés...';
     fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email:email,hozzajarul:true,forras:'app-oldal'})})
+      body:JSON.stringify({email:email,hozzajarul:true,forras:'app-oldal',nyelv:'hu'})})
     .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
     .then(function(x){
       if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Köszönjük! Szólunk, amikor a PrepperPapa megvásárolható.';}
-      else if(x.s===429){u.className='hiba';u.textContent='Túl sok próbálkozás. Kérjük, próbáld újra pár perc múlva.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Túl sok próbálkozás. Kérjük, próbáld újra pár perc múlva.';}
       else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Most nem sikerült elküldeni. Kérjük, próbáld újra később.';}
     })
     .catch(function(){u.className='hiba';u.textContent='Most nem sikerült elküldeni. Ellenőrizd a kapcsolatot, és próbáld újra.';})

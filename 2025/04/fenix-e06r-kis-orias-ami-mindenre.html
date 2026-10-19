@@ -53,8 +53,37 @@
   .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
   .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
   .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
   footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
 </head>
 <body>
@@ -72,7 +101,12 @@
 <header><nav class="nav">
   <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
   <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="/app/">Alkalmazás</a>
   <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+  <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/app/">PrepperPapa app</a><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="https://www.youtube.com/@PrepperPapa">Csatorna</a></nav>
+  </details>
 </nav></header>
 <main>
 <h1> Fenix E06R: A Kis Óriás, Ami Mindenre Felkészít!</h1>
@@ -80,8 +114,11 @@
 <p>A Fenix ismét bebizonyította, hogy a méret nem minden! Bemutatjuk a legújabb kompakt erőművüket, a Fenix E06R újratölthető elemlámpát, ami a közkedvelt E03R V2.0 továbbfejlesztett változata. Ez a kis méretű lámpa elképesztő, akár 700 lumenes fényerővel képes megvilágítani az éjszakát, ráadásul 110 méteres hatótávolsággal rendelkezik.</p><p data-sourcepos="13:1-13:519">De a Fenix E06R nem csak az erejével nyűgöz le. A beépített 750 mAh-s akkumulátor kényelmesen tölthető a modern USB-C porton keresztül, így búcsút inthetsz az eldobható elemeknek. És ez még nem minden! Ez a sokoldalú eszköz nem kevesebb, mint négyféle fehér fény módot kínál a mindennapi használatra, egy 365 nm-es UV fényt a különböző ellenőrzésekhez, egy piros lézerpointert prezentációkhoz vagy jelzéshez, és egy egyedi "Lélegző fény" módot, ami a kapcsoló körül pulzáló fénnyel segít megtalálni a lámpát a sötétben.</p><p data-sourcepos="15:1-15:355">A Fenix E06R a praktikusság jegyében született. A masszív klipsz segítségével könnyedén rögzítheted a zsebedre vagy a hátizsákodra, a mágneses talp pedig lehetővé teszi, hogy fém felületeken rögzítsd, így mindkét kezed szabadon maradhat. A strapabíró kialakításnak köszönhetően víz- és ütésálló, így bátran viheted magaddal a legkülönbözőbb kalandokra is.</p><p data-sourcepos="17:1-17:230">Ne feledkezzünk meg az olyan okos funkciókról sem, mint az akkumulátor töltöttségjelző, ami mindig tájékoztat a rendelkezésre álló energiáról, és a beépített túlmelegedés elleni védelem, ami biztosítja a lámpa hosszú élettartamát.</p><p data-sourcepos="19:1-19:210">Ha egy olyan kompakt, erős és sokoldalú elemlámpát keresel, ami a mindennapi használattól a különleges feladatokig mindenben társad lehet, akkor a Fenix E06R a tökéletes választás! Ne hagyd ki ezt a kis óriást!</p><p data-sourcepos="19:1-19:210"><br /></p><div class="separator" style="clear: both; text-align: center;"><div class="video"><iframe allowfullscreen="" class="BLOG_video_class" src="https://www.youtube-nocookie.com/embed/Qz9vvbAf-rA" youtube-src-id="Qz9vvbAf-rA"></iframe></div></div><br /><p data-sourcepos="19:1-19:210"><br /></p>
 <div class="cimkek"><span class="cimke">Lámpák és fény</span><span class="cimke">EDC és eszközök</span><span class="cimke">Teszt</span></div>
 
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Felkészülés a zsebedben</h3>
+<p>Készlet lejárat-figyelővel, vészkártya, tájoló, térkép és tudástár egy alkalmazásban. A legfontosabbak internet nélkül is működnek.</p>
+<a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
 <a class="vissza" href="/cikkek.html">&larr; Vissza a cikkekhez</a>
 </main>
-<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
 </body>
 </html>

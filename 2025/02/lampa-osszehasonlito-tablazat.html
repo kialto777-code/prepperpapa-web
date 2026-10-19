@@ -53,8 +53,37 @@
   .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
   .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
   .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
   footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
 </head>
 <body>
@@ -72,7 +101,12 @@
 <header><nav class="nav">
   <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
   <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="/app/">Alkalmazás</a>
   <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+  <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/app/">PrepperPapa app</a><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="https://www.youtube.com/@PrepperPapa">Csatorna</a></nav>
+  </details>
 </nav></header>
 <main>
 <h1>Lámpák a nagyító alatt: Folyamatosan bővülő táblázat a tesztjeimről!</h1>
@@ -84,8 +118,11 @@
 </div><div style="overflow: auto;"><br /></div><div style="overflow: auto;"><div style="overflow: auto;">Lencse típusok és rövidítéseik:</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Konvex lencse (Convex Lens)</div><div style="overflow: auto;">Rövidítés: CVX</div><div style="overflow: auto;">Leírás: A konvex lencse a fényt a központi fókuszpontra irányítja, általában a távoli fényforrásoknál használt.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Konkáv lencse (Concave Lens)</div><div style="overflow: auto;">Rövidítés: CCV</div><div style="overflow: auto;">Leírás: A konkáv lencse szétszórja a fényt, gyakran használják optikai rendszerekben a képek kisebbé tételéhez.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Polikarbonát lencse (Polycarbonate Lens)</div><div style="overflow: auto;">Rövidítés: PC</div><div style="overflow: auto;">Leírás: Nagyon ütésálló és könnyű, gyakran használják zseblámpák, védőfelszerelések és fényképezőgépek lencséjeként.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Aszférikus lencse (Aspheric Lens)</div><div style="overflow: auto;">Rövidítés: ASP</div><div style="overflow: auto;">Leírás: Aszférikus lencse, amely csökkenti a torzítást és javítja a képminőséget, gyakran használják optikai és fényképezési rendszerekben.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">TIR (Total Internal Reflection) lencse</div><div style="overflow: auto;">Rövidítés: TIR</div><div style="overflow: auto;">Leírás: A TIR lencse fényt irányít úgy, hogy az teljes belső visszaverődés elvén működik, hatékony fényirányításhoz.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Biconvex lencse (Biconvex Lens)</div><div style="overflow: auto;">Rövidítés: BCVX</div><div style="overflow: auto;">Leírás: Két konvex lencse egyesülése, amely egy erőteljesebb fókuszáló rendszert eredményez.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Edzett üveg lencse (Tempered Glass Lens)</div><div style="overflow: auto;">Rövidítés: TGL</div><div style="overflow: auto;">Leírás: Az edzett üveg lencse különösen ütésálló, és nagyon jól ellenáll a mechanikai sérüléseknek. Főként zseblámpák, fényképezőgépek és más technikai eszközök esetében alkalmazzák.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Fresnel mint az írásvetitőkön</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">A diffúziós réteg rövidítése általában DF (Diffusion Filter) vagy DL (Diffusion Layer), de az iparágtól függően más jelölések is előfordulhatnak.</div><div style="overflow: auto;">A diffúziós réteg egy speciális bevonat vagy szerkezeti kialakítás egy lencsén, amely a fény egyenletesebb szórását biztosítja, csökkentve a vakítást és a fényfoltokat</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;"><div style="overflow: auto;">Tükör típusok és rövidítéseik:</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Parabolikus tükör (Parabolic Reflector)</div><div style="overflow: auto;">Rövidítés: PR</div><div style="overflow: auto;">Leírás: A parabolikus tükör gömb alakú, és tökéletesen összegyűjti a fényt egy központi fókuszpontba.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Sima tükör (Smooth Reflector)</div><div style="overflow: auto;">Rövidítés: SMO</div><div style="overflow: auto;">Leírás: A sima tükör felülete sima és fényes, hogy a fényt koncentrálja, hosszú hatótávolságot biztosít.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Texturált tükör (Orange Peel Reflector)</div><div style="overflow: auto;">Rövidítés: OP</div><div style="overflow: auto;">Leírás: A texturált felület, amely hasonlít az "narancshéjra", finoman szórja a fényt, így egyenletesebbé teszi a fénysugarat.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Hybrid tükör (Hybrid Reflector)</div><div style="overflow: auto;">Rövidítés: HYB</div><div style="overflow: auto;">Leírás: A hybrid tükör egyesíti a sima és texturált felületek előnyeit, mind a hosszú hatótávolságot, mind az árnyékmentes szórást biztosítva.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Elliptikus tükör (Elliptical Reflector)</div><div style="overflow: auto;">Rövidítés: ER</div><div style="overflow: auto;">Leírás: Az elliptikus tükör két fókuszpontot hoz létre, és a fényt különböző irányokba irányítja.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">Polírozott tükör (Polished Reflector)</div><div style="overflow: auto;">Rövidítés: PLR</div><div style="overflow: auto;">Leírás: A polírozott tükör felülete nagyon sima és fényes, hogy maximális fényvisszaverődést érjen el.</div><div style="overflow: auto;"><br /></div><div style="overflow: auto;">TIR (Total Internal Reflection) rendszer (TIR Optics)</div><div style="overflow: auto;">Rövidítés: TIR</div><div style="overflow: auto;">Leírás: A TIR rendszer a fényt belső visszaverődéssel irányítja, és a fényt egy zárt optikai rendszeren keresztül továbbítja.</div><div style="overflow: auto;">Kevesebb megjelenítése</div><div><br /></div></div></div>
 <div class="cimkek"><span class="cimke">Lámpák és fény</span><span class="cimke">Teszt</span></div>
 
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Felkészülés a zsebedben</h3>
+<p>Készlet lejárat-figyelővel, vészkártya, tájoló, térkép és tudástár egy alkalmazásban. A legfontosabbak internet nélkül is működnek.</p>
+<a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
 <a class="vissza" href="/cikkek.html">&larr; Vissza a cikkekhez</a>
 </main>
-<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
 </body>
 </html>

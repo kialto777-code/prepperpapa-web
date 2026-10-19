@@ -53,8 +53,37 @@
   .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
   .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
   .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
   footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
 </head>
 <body>
@@ -72,7 +101,12 @@
 <header><nav class="nav">
   <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
   <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="/app/">Alkalmazás</a>
   <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+  <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/app/">PrepperPapa app</a><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="https://www.youtube.com/@PrepperPapa">Csatorna</a></nav>
+  </details>
 </nav></header>
 <main>
 <h1> Fedezd fel az Allpowers PB100 Hordozható Power Bankot és Napelemes Panelt!</h1>
@@ -80,8 +114,11 @@
 Ha szeretsz a természetben lenni, és szükséged van egy megbízható energiaforrásra, akkor az Allpowers PB100 Kit tökéletes választás számodra. Ebben a cikkben bemutatom a terméket, amelyet nemrég teszteltem egy outdoor környezetben. A készlet tartalmaz egy PB100 Plus típusú powerbankot és egy PB-SP-001 típusú 21 wattos szolárpanelt, amelyet a természetjárók, kempingezők és túrázók igényei szerint terveztek.<div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1Rzf8wJlNS4XANJG_NOJVOQEXg9YZUwds0fTJfCipPCeP4MKXcd0xmHU4dXGjzTTg33VrrHOPXhXm9vCAf0X0_Yp4WqGzpdSSAgdTgV3sJVqCc757m8ZImfGHdV6agr7C1-v0P_O_zOfzC9VczQarzCtdHEsvkdsrLf3zgLahomrrVGUXwvWCWuOFGvqP/s1400/allpowers_pb100_and_sp001_solar_panel_5.webp" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="700" data-original-width="1400" height="320" src="/kepek/92969fc053.jpg" width="640" /></a></div><p><br /></p><h3>Mit nyújt az Allpowers PB100 Kit?</h3>Az Allpowers PB100 powerbank egy 24000mAh kapacitású eszköz, amely elegendő energiát biztosít a telefonod, tableted vagy akár laptopod többszöri feltöltésére. Ráadásul a 100W-os teljesítményének köszönhetően gyorsan és hatékonyan tölti az eszközeidet. A hozzá tartozó 21 wattos szolárpanel lehetővé teszi az energia megújítását ott is, ahol nincs elektromos hálózat.</div><div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRC_JTB6MvX9Jl3oWJRBMh63TZsGItLbqkjyjSez3vLzt2aPPGuWovvWcz_ws6XJaB9yf9KWA115_5Dy-0HajjMkQkeVxsZcuIEMzUQteeJK4QOPJ-ptsf_-MFqDDIhgt-_w3HBoRhyphenhyphenxAvNLvLnl1ck6yik30cwzsd9Vh1zzaPjTtRul66r8AMrPezv7zQ/s1400/allpowers_pb100_and_sp001_solar_panel_1.webp" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="700" data-original-width="1400" height="320" src="/kepek/4478653456.jpg" width="640" /></a></div><h3 style="text-align: left;">Tesztelés a gyakorlatban</h3>A tesztelés során a PB100 Kit-et különböző helyzetekben próbáltam ki:<br /><ul style="text-align: left;"><li>Számítógép feltöltése: A powerbank problémamentesen működött, gyorsan és megbízhatóan töltötte a laptopomat.</li><li>Világítási képességek: A PB100 Powerbank tartalmaz egy LED panelt, így éjszakai kempingezéshez vagy áramszünet esetén is ideális.</li><li>Szolárpanel hatékonysága: A 21 wattos panel meglepően jól teljesített, még felhős időben is képes volt energiát gyűjteni.</li></ul><h3 style="text-align: left;">Ár-érték arány</h3><div style="text-align: left;">Meglepő, hogy a piacon található hasonló kategóriájú termékek akár kétszer annyiba is kerülhetnek. Az Allpowers PB100 Kit kedvező áron kínálja mindazt, amit egy modern outdoor energiaforrástól elvárhatunk.</div><div style="text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtkAgbcClJCb-mfzstoKLBPHvdHzPqg4Y5xDMCLOrx-Yg3vWRTt338sdLmBKdTztEkmGuOGWC-NZ4R9LB-bIDw6PIQPqrpFaYS0eueRQxv0e6nMV5ZeTlRTK4lsDj47cx4Z1Jgo0rmP0T_oF0oKJIZ-5yNPWC9FK19ZNaMZkKXTu8A6bGK1AWRHXb3xWnF/s1400/allpowers_pb100_and_sp001_solar_panel_6.webp" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="700" data-original-width="1400" height="320" src="/kepek/d22089fc0a.jpg" width="640" /></a></div><br /><p>Miért válaszd az Allpowers PB100 Kit-et?</p><ol data-spread="false" start="1"><li><p><strong>Hordozhatóság</strong>: Kompakt méretének és könnyű súlyának köszönhetően bárhová magaddal viheted.</p></li><li><p><strong>Környezetbarát megoldás</strong>: A szolárpanel használatával csökkentheted az ökológiai lábnyomodat.</p></li><li><p><strong>Megbízhatóság</strong>: Nagy kapacitású akkumulátor és tartós anyaghasználat biztosítja a hosszú távú használatot.</p></li></ol><h3>Nézd meg a videómat!</h3><p>Részletesen bemutatom, hogyan működik az Allpowers PB100 Kit, és megosztom a tapasztalataimat a termékkel kapcsolatban. Ha kíváncsi vagy, mire képes ez a praktikus szett, kattints ide:</p><p><br /></p><p><strong><a href="https://youtu.be/HKM1qkMIJJw" target="_blank">PB100 Kit bemutató videó</a></strong></p><div class="separator" style="clear: both; text-align: center;"><div class="video"><iframe allowfullscreen="" class="BLOG_video_class" src="https://www.youtube-nocookie.com/embed/HKM1qkMIJJw" youtube-src-id="HKM1qkMIJJw"></iframe></div></div><br /><p><br /></p><h3><br /></h3><h3>Promóciós ajánlat</h3><p>Ne hagyd ki a lehetőséget! Használd a <strong><span style="font-size: large;">prepperpapa</span></strong> kuponkódot, és 6% kedvezményt kapsz még az akciós árból is!</p><ul data-spread="false"><li><p><strong>PB100 Kit</strong>: <a disabled="false" href="https://iallpowers.eu/products/allpowers-pb100-portable-power-bank-100w-24000mah?ref=prepperpapa" rel="nofollow sponsored">https://iallpowers.eu/products/allpowers-pb100-portable-power-bank-100w-24000mah?ref=prepperpapa</a></p></li><li><p><strong>PB100 Powerbank</strong>: <a disabled="false" href="https://iallpowers.eu/products/allpowers-pb100-portable-power-bank-100w-24000mah-1?ref=prepperpapa" rel="nofollow sponsored">https://iallpowers.eu/products/allpowers-pb100-portable-power-bank-100w-24000mah-1?ref=prepperpapa</a></p></li></ul><h3><br /></h3><h3>Csatlakozz a közösséghez</h3><p>Ha érdekelnek az outdoor eszközök és az energiafüggetlenség, kövess engem a YouTube csatornámon vagy a közösségi médiában. További hasznos tippek és termékbemutatók várnak rád!</p><p><br /></p><p><br /></p><p><strong>#ALLPOWERS #PowerBank #PortableEnergy #SolarPanel #OutdoorGear #SustainableEnergy #24000mAh #21WSolarPanel #OffGridPower #HikingEssentials #CampingGear #GreenEnergy #SolarCharger #EnergyIndependence #TechReview</strong></p></div>
 <div class="cimkek"><span class="cimke">Áram és energia</span><span class="cimke">Teszt</span></div>
 
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Felkészülés a zsebedben</h3>
+<p>Készlet lejárat-figyelővel, vészkártya, tájoló, térkép és tudástár egy alkalmazásban. A legfontosabbak internet nélkül is működnek.</p>
+<a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
 <a class="vissza" href="/cikkek.html">&larr; Vissza a cikkekhez</a>
 </main>
-<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
 </body>
 </html>

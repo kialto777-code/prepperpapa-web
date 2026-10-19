@@ -67,6 +67,43 @@
   .kalk-lista a:hover{color:var(--zold)}
   .kalk-lista b{display:block;font-size:18px;margin-bottom:3px}
   .kalk-lista span{color:var(--muted);font-size:15px}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}
+    .nav{flex-wrap:nowrap;height:70px;padding:0 16px}.brand{width:auto;margin-right:auto}}
+  .k-szem{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);font-weight:700;margin-bottom:6px}
+  .ppkalk{border-radius:18px;border-color:#2c3d33;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .lapfej{margin:-44px -22px 30px;padding:56px 22px 40px;border-bottom:1px solid var(--line);
+     background:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.86)),url('/assets/hatter-topo.jpg') center/cover}
+  .lapfej h1{font-size:clamp(38px,8vw,60px);margin:8px 0 10px}
+  .kalk-lista{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .kalk-lista li{border:1px solid #2c3d33 !important;border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .kalk-lista a{padding:18px 20px}
+  @media(max-width:640px){.kalk-lista{grid-template-columns:1fr}}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
 </head>
 <body>
@@ -85,9 +122,14 @@
   <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
   <a class="link" href="/cikkek.html">Cikkek</a>
   <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="/app/">Alkalmazás</a>
   <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
+  <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/app/">PrepperPapa app</a><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="https://www.youtube.com/@PrepperPapa">Csatorna</a></nav>
+  </details>
 </nav></header>
 <main>
+<div class="k-szem">Kalkulátor</div>
 <h1>Rádió hatótáv kalkulátor</h1>
 <p class="beveze">A dobozon írt hatótáv sík terepre és ideális körülményekre vonatkozik. Add meg a sávot és a terepet, és reálisabb számot kapsz.</p>
 <div class="ppkalk" id="kalk-radio-hatotav">    <div class="section">
@@ -271,8 +313,11 @@ radEpit();
 if($('radSav')) $('radSav').onchange = radSavValt;
 </script>
 
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Ugyanez a zsebedben, internet nélkül</h3>
+<p>Ezek a kalkulátorok az alkalmazásban is megvannak, ingyen, és hálózat nélkül is számolnak. Mellettük készlet, vészkártya, tájoló és tudástár.</p>
+<a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
 <a class="vissza" href="/kalkulator/">&larr; Vissza a kalkulátorokhoz</a>
 </main>
-<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
 </body>
 </html>
