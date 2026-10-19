@@ -155,6 +155,27 @@
   .letolt .badges{justify-content:center;margin:22px 0 8px}
   .gyik{display:block;min-height:auto}
   .gyik .in{max-width:760px}
+  /* premium tiles + comparison table */
+  .elonyok{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+  .elony{background:linear-gradient(160deg,#1c2a21,#121B16);border:1px solid #2c3d33;border-radius:18px;padding:20px}
+  .elony h3{color:var(--borostyan);font-size:19px;margin:0 0 8px}
+  .elony p{font-size:15px;color:#cfd6cf;margin:0}
+  .osszevet{display:block;min-height:auto}
+  .tabla{overflow-x:auto;margin:22px 0 14px;border:1px solid var(--line);border-radius:16px}
+  .tabla table{width:100%;border-collapse:collapse;font-size:15px}
+  .tabla th,.tabla td{padding:12px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+  .tabla thead th{background:var(--panel);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tabla thead th.prem{color:var(--borostyan)}
+  .tabla tbody th{font-weight:600}
+  .tabla td{text-align:center;white-space:nowrap;width:24%}
+  .tabla td.pipa{color:var(--zold);font-weight:800;font-size:18px}
+  .tabla td.nincs{color:#5d6b62}
+  .tabla td.korlat{color:#cfd6cf}
+  .tabla td:last-child{background:rgba(255,179,64,.05)}
+  .tabla td.korlat:last-child{color:var(--borostyan);font-weight:700}
+  .tabla tr:last-child th,.tabla tr:last-child td{border-bottom:0}
+  .kieg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}
+  .kieg h3{margin:0 0 8px;font-size:22px}
   /* reveal */
   .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
   .rv.lat{opacity:1;transform:none}
@@ -170,6 +191,8 @@
     .dia p{font-size:16px}
     .dia .tel{width:min(190px,50vw);order:2}
     .kartyak,.csomag{grid-template-columns:1fr}
+    .elonyok{grid-template-columns:1fr}
+    .tabla th,.tabla td{padding:11px 9px;font-size:14px}
     .sec{min-height:auto}
     .hero{min-height:100svh}
   }
@@ -187,7 +210,7 @@
 <div class="rv lat">
 <div class="kicsi">PrepperPapa alkalmazás</div>
 <h1 class="nagy">Felkészülés a zsebedben. <em>Internet nélkül is.</em></h1>
-<p class="lead">Ami egy áramszünetben, egy elakadt autó mellett vagy egy erdei túrán kell, egy helyen van. A legfontosabb része akkor is működik, amikor a net és a térerő már nem.</p>
+<p class="lead">Ami egy áramszünetben, egy elakadt autó mellett vagy egy erdei túrán kell, egy helyen van. A teljes változat a térképpel együtt akkor is működik, amikor a net és a térerő már nem.</p>
 <div class="cta"><a class="btn amber" href="#vasarlas">Szólj, ha indul</a><a class="btn ghost" href="#bemutato">Nézd meg, mit tud</a></div>
 <div class="hamar">Hamarosan</div>
 <div class="badges">
@@ -205,13 +228,13 @@
 <h3>Egy pillantás, és tudod, hol tartotok.</h3><p>Víz, élelem, fűtés, áram: helyszínenként, százalékban. Ha valamiből kevés van, azt is látod, mit kell pótolni.</p></div>
 <div class="tel"><img src="/app/kepek/1-kezdolap.jpg" alt="Készültség" loading="eager" width="480" height="946"></div></div>
 <div class="dia"><div><div class="szam">02 &middot; Térkép</div>
-<h3>Az erdőben is tudod, merre.</h3><p>Turistautak, források, menedékházak. Túraterv távval, menetidővel és szintemelkedéssel. Prémiummal internet nélkül is.</p></div>
+<h3>Az erdőben is tudod, merre.</h3><p>Turistautak, források, menedékházak. Túraterv távval, menetidővel és szintemelkedéssel, letöltött térképpel térerő nélkül is.</p></div>
 <div class="tel"><img src="/app/kepek/2-terkep.jpg" alt="Térkép" loading="lazy" width="480" height="946"></div></div>
 <div class="dia"><div><div class="szam">03 &middot; Készlet</div>
 <h3>A kamra a zsebedben.</h3><p>Mi van otthon, hol tárolod, mikor jár le. A lejáró tételek színnel jeleznek.</p></div>
 <div class="tel"><img src="/app/kepek/8-keszlet.jpg" alt="Készlet" loading="lazy" width="480" height="946"></div></div>
 <div class="dia"><div><div class="szam">04 &middot; Tudástár</div>
-<h3>Tudás, ami térerő nélkül is ott van.</h3><p>21 téma a víztől az elsősegélyig, internet nélkül is olvasható.</p></div>
+<h3>Tudás, ami térerő nélkül is ott van.</h3><p>21 téma a víztől az elsősegélyig, a mélyebb, részletes cikkekkel, internet nélkül is olvasható.</p></div>
 <div class="tel"><img src="/app/kepek/3-tudastar.jpg" alt="Tudástár" loading="lazy" width="480" height="946"></div></div>
 <div class="dia"><div><div class="szam">05 &middot; Tájoló</div>
 <h3>A telefon a zsebben, a hang vezet.</h3><p>Felveszed az irányt, és hanggal vezet. Kiírja a visszautat is.</p></div>
@@ -233,35 +256,24 @@
 <section class="sec tudas"><div class="in">
 <div class="rv"><div class="kicsi">Mit tud?</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Hat helyzet, tizennyolc funkció.</h2></div>
 <div class="kartyak">
-<div class="kartya rv"><h3>Ha elmegy a net</h3><ul><li><b>Készültség-számítás</b>Megadod, kik élnek veletek (a háziállatot is), és mi van a kamrában. Az app helyszínenként, százalékban mutatja, hogy áll a víz, az élelem, a fűtés és az áram. Ha valamiből kevés van, látod, mit kell pótolni.</li><li><b>Tudástár internet nélkül</b>21 téma a víztől az elsősegélyig. Az alapcikkek internet nélkül is olvashatók, mindenkinek.</li><li><b>Helyi üzenetek</b>Szöveges üzenet a környezetedben lévőknek internet nélkül, egy közös hálón, akár egy telefon hotspotján.</li></ul></div>
+<div class="kartya rv"><h3>Ha elmegy a net</h3><ul><li><b>Készültség-számítás</b>Megadod, kik élnek veletek (a háziállatot is), és mi van a kamrában. Az app helyszínenként, százalékban mutatja, hogy áll a víz, az élelem, a fűtés és az áram. Ha valamiből kevés van, látod, mit kell pótolni.</li><li><b>Tudástár internet nélkül</b>21 téma a víztől az elsősegélyig, a mélyebb, részletes cikkekkel együtt. Ami a telefonodra került, az térerő nélkül is olvasható.</li><li><b>Helyi üzenetek</b>Szöveges üzenet a környezetedben lévőknek internet nélkül, egy közös hálón, akár egy telefon hotspotján.</li></ul></div>
 <div class="kartya rv"><h3>Áramszünet</h3><ul><li><b>Zseblámpa és vörös éjszakai fény</b>A vörös fény nem vakítja el a sötéthez szokott szemet.</li><li><b>Áram- és fűtés-kalkulátor</b>Meddig visz el a powerbank vagy az erőmű, és mennyi tüzelő kell a télre.</li><li><b>Készletlista</b>Mi van otthon, hol tárolod, és mikor jár le. A lejáró tételek színnel jeleznek.</li></ul></div>
 <div class="kartya rv"><h3>Víz és élelem</h3><ul><li><b>Víztisztítás-számoló</b>Mennyi hipó vagy tabletta kell egy adott mennyiségű víz fertőtlenítéséhez.</li><li><b>Esővíz-kalkulátor</b>Mennyi vizet gyűjthetsz a tetőről egy adott esőből.</li><li><b>„Mit vigyek?” csomaglista</b>A családtagjaidból áll össze, súlykerettel, hogy a csomag vihető maradjon.</li></ul></div>
 <div class="kartya rv"><h3>Nincs térerő</h3><ul><li><b>Morze és fax</b>Morzejel hanggal és villogó fénnyel, és kép küldése hangon.</li><li><b>Titkos QR</b>Üzenet, helyzet vagy lista QR-kódban, amit csak az olvas el, aki ismeri a családi jelszavatokat.</li></ul></div>
-<div class="kartya rv"><h3>Terepen</h3><ul><li><b>Térkép és túratervezés</b>Turistautak, források, csúcsok. Megadod, honnan hová mész, és az app kiírja a távot, a menetidőt, a szintemelkedést és a követendő jelzéseket. Ingyen interneten, hetente két útvonaltervezéssel. A prémiummal korlátlan, és a térkép internet nélküli használatra is letölthető.</li><li><b>Tájoló hangvezetéssel</b>Felveszed az irányt, és az app hanggal vezet, a telefon mehet a zsebedbe. Kiírja a visszautat is, és mutatja a napkeltét és a holdfázist.</li><li><b>Esés-érzékelés</b>Ha zuhanás és ütközés után mozdulatlan maradsz, visszaszámlálás indul, és ha nem mondod le, SOS üzenet megy a helyzeteddel, és megszólal a vészsíp.</li><li><b>Menetidő és villám</b>Mennyi idő gyalog a cél, és milyen messze csapott le a villám.</li></ul></div>
+<div class="kartya rv"><h3>Terepen</h3><ul><li><b>Térkép és túratervezés</b>Turistautak, források, csúcsok. Megadod, honnan hová mész, és az app kiírja a távot, a menetidőt, a szintemelkedést és a követendő jelzéseket. A térképet letöltheted, és az erdő közepén, térerő nélkül is megy.</li><li><b>Tájoló hangvezetéssel</b>Felveszed az irányt, és az app hanggal vezet, a telefon mehet a zsebedbe. Kiírja a visszautat is, és mutatja a napkeltét és a holdfázist.</li><li><b>Esés-érzékelés</b>Ha zuhanás és ütközés után mozdulatlan maradsz, visszaszámlálás indul, és ha nem mondod le, SOS üzenet megy a helyzeteddel, és megszólal a vészsíp.</li><li><b>Menetidő és villám</b>Mennyi idő gyalog a cél, és milyen messze csapott le a villám.</li></ul></div>
 <div class="kartya rv"><h3>Család és lélek</h3><ul><li><b>Család és vészkártya</b>Itt veszed fel a családot: ebből számol a készültség és a csomaglista. A vészkártyán ott a vércsoport, az allergia, a gyógyszer és a vészhelyzeti kontakt.</li><li><b>Biblia internet nélkül</b>A Károli-fordítás a telefonodon, felolvasással.</li><li><b>Vészsíp és újraélesztés-ütem</b>Hangos vészsíp, és az újraélesztés ütemét diktáló hang, hogy pánikban se kelljen számolni.</li></ul></div>
 </div>
 </div></section>
 
 <section class="sec arsec" id="vasarlas"><div class="in">
-<div class="rv"><div class="kicsi">Ingyenes és prémium</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">A nagy része ingyenes. És az is marad.</h2></div>
-<div class="csomag rv">
-<div><h3>Ingyenes</h3><ul>
-<li>Zseblámpa, SOS és beállítások, korlát nélkül</li>
-<li>Térkép interneten, hetente két útvonaltervezéssel</li>
-<li>Morze és fax, korlát nélkül</li>
-<li>Készültség-számítás, kalkulátorok, tájoló, vészkártya</li>
-<li>A tudástár alapcikkei</li>
-<li>Legfeljebb 2 családtag és 50 termék a készletben</li>
-</ul></div>
-<div><h3>Prémium kód</h3><ul>
-<li>Korlátlan útvonaltervezés</li>
-<li>Letölthető térképek internet nélküli használatra: magyar tájegységek és külföldi országok</li>
-<li>Korlátlan családtag és készlet</li>
-<li>A bővített tudástár: a mélyebb, részletes cikkek</li>
-<li>Egy kóddal legfeljebb két készülékeden</li>
-</ul></div>
+<div class="rv"><div class="kicsi">Prémium</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">A teljes PrepperPapa, <em>egyetlen kóddal.</em></h2>
+<p class="lead">A prémium kód mindent felold, amit az alkalmazás tud: térképet térerő nélkül, korlátlan útvonalat, az egész családot, a teljes kamrát és a bővített tudástárat.</p></div>
+<div class="elonyok">
+<div class="elony rv"><h3>Térkép térerő nélkül</h3><p>Letöltheted a magyar tájegységeket és külföldi országokat, és az erdő közepén is látod, merre vagy.</p></div>
+<div class="elony rv"><h3>Korlátlan útvonaltervezés</h3><p>Távval, menetidővel és szintemelkedéssel, annyi túrára, ahányra csak kell.</p></div>
+<div class="elony rv"><h3>Az egész család, a teljes kamra</h3><p>Korlátlan családtag és korlátlan termék a készletben, hogy a számítás mindenkire kiterjedjen.</p></div>
+<div class="elony rv"><h3>Bővített tudástár</h3><p>A mélyebb, részletes cikkek, amelyek internet nélkül is olvashatók.</p></div>
 </div>
-<p class="rv">A <b>Vagyonkezelő</b> külön termék, hamarosan a Google Play áruházban és az App Store-ban. Az alkalmazásban kipróbálható, és ha megveszed, a PrepperPapában is teljes értékűen működik.</p>
 <div class="vasarlas rv" id="pp-premium-vasarlas">
 <p class="ar">39,90 €</p>
 <p class="halk">Bevezető ár, később 49,90 €. Ha egy partnerünk kuponkódjával érkezel, további 5% kedvezményt kapsz.</p>
@@ -277,6 +289,35 @@
 </form>
 </div>
 </div>
+</div></section>
+
+<section class="sec osszevet" id="osszevetes"><div class="in">
+<div class="rv"><div class="kicsi">Összevetés</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Ingyenes és prémium</h2></div>
+<div class="tabla rv"><table>
+<thead><tr><th scope="col">Funkció</th><th scope="col">Ingyenes</th><th scope="col" class="prem">Prémium</th></tr></thead>
+<tbody>
+<tr><th scope="row">Térkép és turistautak, interneten</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Útvonaltervezés</th><td class="korlat">heti 2</td><td class="korlat">korlátlan</td></tr>
+<tr><th scope="row">Letölthető térkép internet nélküli használatra (magyar tájegységek, külföldi országok)</th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Háztartás: családtagok</th><td class="korlat">2 fő</td><td class="korlat">korlátlan</td></tr>
+<tr><th scope="row">Készlet</th><td class="korlat">50 termék</td><td class="korlat">korlátlan</td></tr>
+<tr><th scope="row">Tudástár: alapcikkek</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Bővített tudástár</th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">SOS és zseblámpa</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Vészkártya</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Morze</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Fax: kép küldése hangon</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Készültség-számítás és kockázat</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">„Mit vigyek?” csomaglista</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Kalkulátorok</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Tájoló</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Biblia felolvasással</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Helyi üzenetek internet nélkül</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Titkos QR</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+</tbody></table></div>
+<p class="halk rv">Ami ingyenes, az ingyenes is marad, és egyetlen funkció sem áll le, ha nem veszel kódot.</p>
+<div class="kieg rv"><div class="kicsi">Kiegészítő</div><h3>Vagyonkezelő</h3>
+<p>Külön termék, hamarosan a Google Play áruházban és az App Store-ban. Az alkalmazásban kipróbálható, és ha megveszed, a PrepperPapában is teljes értékűen működik.</p></div>
 </div></section>
 
 <section class="sec letolt" id="letoltes"><div class="in rv">
