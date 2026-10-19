@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aplikacja PrepperPapa: instrukcja obsługi</title>
+<meta name="description" content="Wszystkie funkcje aplikacji PrepperPapa, ekran po ekranie: zapas, gospodarstwo domowe, mapa, kompas, karta ratunkowa, baza wiedzy, Biblia, Morse, SOS, latarka i cała reszta.">
+<link rel="canonical" href="https://prepperpapa.hu/pl/utmutato/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aplikacja PrepperPapa: instrukcja obsługi">
+<meta property="og:description" content="Wszystkie funkcje aplikacji PrepperPapa, ekran po ekranie: zapas, gospodarstwo domowe, mapa, kompas, karta ratunkowa, baza wiedzy, Biblia, Morse, SOS, latarka i cała reszta.">
+<meta property="og:url" content="https://prepperpapa.hu/pl/utmutato/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="pl_PL">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  main.utm{max-width:820px}
+  .tartalom{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 30px}
+  .tartalom ol{columns:2;column-gap:26px;margin:8px 0 0 20px;font-size:15px}
+  .tartalom a{color:var(--ink);text-decoration:none}
+  .tartalom a:hover{color:var(--borostyan)}
+  .lap{border-top:1px solid var(--line);padding:26px 0 8px;scroll-margin-top:12px}
+  .lap h2{margin:0 0 12px;font-size:24px}
+  .lap h2 .sz{color:var(--borostyan);margin-right:8px}
+  .hol{background:var(--panel);border-left:3px solid var(--zold);padding:8px 14px;border-radius:0 8px 8px 0;font-size:15px}
+  .tipp{border-left:3px solid var(--borostyan);padding:4px 0 4px 14px;font-size:15px;color:#cfd6cf}
+  .dij{background:rgba(255,179,64,.07);border:1px solid rgba(255,179,64,.35);border-radius:10px;padding:10px 14px;font-size:15px}
+  .lap .kepek figure{flex:0 0 220px}
+  .lap .kepek img{width:220px}
+  .lap .kepek.egy figure{flex:0 0 260px}
+  .lap .kepek.egy img{width:260px}
+  @media (max-width:560px){.tartalom ol{columns:1}}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/utmutato/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/utmutato/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/utmutato/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/utmutato/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/utmutato/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/utmutato/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/utmutato/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/utmutato/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/utmutato/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<header><nav class="nav"><span class="brand"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></span><details class="nyelvv sarok"><summary aria-label="Język"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>PL</span></summary><ul><li><a href="/utmutato/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/utmutato/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/utmutato/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/utmutato/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/utmutato/" hreflang="pl" lang="pl" data-nyelv="pl" aria-current="true">Polski</a></li><li><a href="/ro/utmutato/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/utmutato/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/utmutato/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details></nav></header>
+<main class="utm">
+<h1>Instrukcja obsługi</h1>
+<p class="beveze">Wszystkie funkcje aplikacji PrepperPapa, ekran po ekranie: gdzie je znajdziesz, do czego służą i jak z nich korzystać. W aplikacji też jest pomoc: znak zapytania w nagłówku ekranu.</p>
+<h3>Jeśli aplikacja prosi o zalogowanie</h3>
+<ol>
+<li>Wpisz swój adres e-mail.</li>
+<li>Poproś o kod. W ciągu kilku minut dostaniesz e-mailem sześciocyfrowy kod.</li>
+<li>Wpisz kod. Hasło nie jest potrzebne.</li>
+</ol>
+<p class="dij"><b>Wersja darmowa i premium w skrócie:</b> latarka, SOS, Morse, karta ratunkowa i podstawowe artykuły bazy wiedzy są darmowe dla wszystkich i działają bez internetu. Za darmo możesz dodać najwyżej 2 członków rodziny i 50 produktów, a na mapie zaplanować 2 trasy tygodniowo. Kod premium znosi te limity, daje mapy offline do pobrania i rozszerzoną bazę wiedzy.</p>
+<nav class="tartalom" aria-label="Spis treści"><b>Spis treści</b><ol>
+<li><a href="#f1">Ekran startowy</a></li>
+<li><a href="#f2">Gospodarstwo domowe</a></li>
+<li><a href="#f3">Karta członka rodziny</a></li>
+<li><a href="#f4">Zapas</a></li>
+<li><a href="#f5">Co zabrać? (lista pakowania)</a></li>
+<li><a href="#f6">Analiza ryzyka</a></li>
+<li><a href="#f7">Mapa</a></li>
+<li><a href="#f8">Kompas</a></li>
+<li><a href="#f9">Karta ratunkowa</a></li>
+<li><a href="#f10">Baza wiedzy</a></li>
+<li><a href="#f11">Biblia</a></li>
+<li><a href="#f12">Komunikacja</a></li>
+<li><a href="#f13">Morse</a></li>
+<li><a href="#f14">Faks</a></li>
+<li><a href="#f15">Pokoje lokalne i Pokoje</a></li>
+<li><a href="#f16">Tajny QR</a></li>
+<li><a href="#f17">Narzędzia</a></li>
+<li><a href="#f18">Kalkulatory</a></li>
+<li><a href="#f19">Odstraszacz zwierząt i owadów</a></li>
+<li><a href="#f20">SOS (sytuacja awaryjna)</a></li>
+<li><a href="#f21">Wykrywanie upadku</a></li>
+<li><a href="#f22">Światło</a></li>
+<li><a href="#f23">Tryb nocny</a></li>
+<li><a href="#f24">Ustawienia</a></li>
+<li><a href="#f25">Realizacja kodu premium</a></li>
+<li><a href="#f26">Gdy brakuje uprawnienia</a></li>
+<li><a href="#f27">Wyślij opinię</a></li>
+<li><a href="#f28">Majątek</a></li>
+</ol></nav>
+<section class="lap" id="f1"><h2><span class="sz">1.</span>Ekran startowy</h2>
+<p class="hol"><b>Gdzie:</b> skrajny lewy przycisk dolnego menu, <b>Start</b>.</p>
+<p><b>Co potrafi:</b> na górze gotowość twoich miejsc w procentach (dom, domek letniskowy, samochód), pod nimi kafelki wszystkich funkcji, a na samym dole werset na dziś albo myśl z bazy wiedzy.</p>
+<ol><li>Przy pierwszym uruchomieniu możesz przyciskiem <b>Wczytaj dane demonstracyjne</b> wypróbować aplikację na przykładowej rodzinie.</li><li>Dotknij koła miejsca: zobaczysz, czego tam brakuje.</li><li>Z kafelków dostaniesz się do wszystkiego: Rodzina, Zapas, Pakowanie, Ryzyko, Łączność, Mapa, Kompas, Ratunek, Wiedza, Biblia, Zbiórka, Narzędzia, Dokumenty, Tajny QR, Portfel, Majątek.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> zielona liczba jest dobra, pomarańczowa i czerwona oznaczają, że coś trzeba uzupełnić.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/01-kezdolap.jpg" alt="Ekran startowy" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f2"><h2><span class="sz">2.</span>Gospodarstwo domowe</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Rodzina</b>.</p>
+<p><b>Co potrafi:</b> tutaj podajesz, kto należy do waszego domu i gdzie są twoje miejsca. Na tej podstawie liczona jest gotowość, racje żywnościowe i lista pakowania.</p>
+<ol><li>Są cztery części: <b>Członkowie rodziny</b>, <b>Zwierzęta domowe</b>, <b>Pojazdy</b>, <b>Miejsca</b>.</li><li>Po dotknięciu dowolnej z nich widzisz listę, a żółtym przyciskiem <b>+</b> dodajesz nową pozycję.</li><li>Przy miejscach podajesz, kto tam przyjedzie i na ile dni.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> w wersji darmowej możesz dodać 2 członków rodziny, z kodem premium dowolnie wielu.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/02-haztartas.jpg" alt="Gospodarstwo domowe" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/03-csaladtagok.jpg" alt="Gospodarstwo domowe" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f3"><h2><span class="sz">3.</span>Karta członka rodziny</h2>
+<p class="hol"><b>Gdzie:</b> Gospodarstwo domowe &gt; Członkowie rodziny &gt; dotknij imienia.</p>
+<p><b>Co potrafi:</b> imię, data urodzenia, kim jest ta osoba (dorosły, dziecko, niemowlę), udźwig oraz dane zdrowotne do karty ratunkowej.</p>
+<ol><li>Wpisz imię i datę urodzenia, wybierz, kim jest ta osoba.</li><li>Podaj udźwig w kilogramach: z tego lista pakowania wie, kto ile może nieść.</li><li>W części <b>Dane zdrowotne</b> dotknij alergii, wpisz leki i choroby.</li><li>Wypełnij pola: „Numer telefonu właściciela karty”, „Osoba do powiadomienia w nagłym wypadku” i „Telefon osoby do powiadomienia w nagłym wypadku”.</li><li>Zaznacz <b>Moje dane mają się pojawić na karcie ratunkowej</b>, jeśli to twoja karta.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> kartę można wypełnić także dla kogoś innego, dlatego numer właściciela i numer osoby do powiadomienia wpisz w osobnych polach.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/04-csaladtag-adatlap.jpg" alt="Karta członka rodziny" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f4"><h2><span class="sz">4.</span>Zapas</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Zapas</b>.</p>
+<p><b>Co potrafi:</b> ewidencja twojego sprzętu i jedzenia z kontrolą dat ważności. Widzisz liczbę pozycji, masę łączną i to, co straci ważność w ciągu miesiąca.</p>
+<ol><li>Możesz filtrować według kategorii, miejsca i zapasu.</li><li>Żółtym przyciskiem <b>+</b> dodajesz nową pozycję: nazwa, ilość, kategoria, data ważności, czyja jest, gdzie ją trzymasz.</li><li>Przyciskiem <b>Skanuj kod kreskowy / QR</b> dodasz ją także prosto z opakowania.</li><li>Przycisk <b>Czego brakuje?</b> pokazuje, co warto uzupełnić.</li><li>Przycisk <b>Torba na 72 godziny</b> kompletuje podstawowy zestaw na 72 godziny.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> w wersji darmowej możesz dodać 50 pozycji, z kodem premium dowolnie wiele.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/05-keszlet.jpg" alt="Zapas" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/06-keszlet-uj-tetel.jpg" alt="Zapas" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f5"><h2><span class="sz">5.</span>Co zabrać? (lista pakowania)</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Pakowanie</b>.</p>
+<p><b>Co potrafi:</b> układa spersonalizowaną listę pakowania na podstawie tego, kto jedzie, czym, na jaką wyprawę i na ile dni.</p>
+<ol><li>Zaznacz, kto jedzie (można wybrać też zwierzę).</li><li>Wybierz, jak się przemieszczacie (samochodem, pieszo, z plecakiem) i na jaką wyprawę.</li><li>Podaj, na ile dni i z jaką racją wody ma liczyć.</li><li>Aplikacja układa listę, pilnując limitu wagi.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> ustaw udźwig na kartach członków rodziny, wtedy lista rozdzieli też ciężar.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/07-mit-vigyek.jpg" alt="Co zabrać? (lista pakowania)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f6"><h2><span class="sz">6.</span>Analiza ryzyka</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Ryzyko</b>.</p>
+<p><b>Co potrafi:</b> dla każdego miejsca pokazuje, kto tam przyjedzie, na ile dni i czy wystarczy znajdującej się tam wody, jedzenia, ogrzewania i prądu.</p>
+<ol><li>Spójrz na koła miejsc: procent pokazuje gotowość.</li><li>Czerwony wiersz pokazuje, czego jest za mało.</li><li>Braki uzupełnisz w Zapasie, a pozycję możesz przypisać do danego miejsca.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> obraz ryzyka jest tylko tak dokładny, jak dokładnie wypełnione są Gospodarstwo domowe i Zapas.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/08-kockazat.jpg" alt="Analiza ryzyka" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f7"><h2><span class="sz">7.</span>Mapa</h2>
+<p class="hol"><b>Gdzie:</b> przycisk <b>Mapa</b> w dolnym menu albo Start &gt; kafelek Mapa.</p>
+<p><b>Co potrafi:</b> szlaki turystyczne, źródła, studnie, schroniska, szczyty, punkty widokowe i inne punkty turystyczne z jednolitymi, kolorowymi ikonami. Widać na niej też gotowość twoich miejsc. Możesz wyszukiwać i planować trasy.</p>
+<ol><li>W wyszukiwarce na górze wpisz, czego szukasz (szlak, szczyt, źródło, miejscowość).</li><li>Przyciskiem z celownikiem w lewym dolnym rogu przechodzisz do swojej lokalizacji.</li><li>Przyciskami <b>+</b> i <b>−</b> powiększasz i pomniejszasz, a przyciskiem warstw zmieniasz widok mapy.</li><li>Planowanie trasy: podaj, skąd dokąd idziesz, a aplikacja pokaże odległość, czas przejścia, przewyższenie i oznakowanie, którym należy iść.</li></ol>
+<p class="dij"><b>Wersja darmowa i premium:</b> za darmo masz mapę online i 2 zaplanowane trasy tygodniowo. Z kodem premium planowanie tras jest nieograniczone i możesz pobierać mapy offline (węgierskie regiony i kraje zagraniczne), które działają bez internetu.</p>
+<p class="tipp"><b>Wskazówka:</b> w trybie nocnym także ikony na mapie są czerwone, więc nie oślepiają.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/09-terkep.jpg" alt="Mapa" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/10-terkep-nagyitva.jpg" alt="Mapa" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f8"><h2><span class="sz">8.</span>Kompas</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Kompas</b>.</p>
+<p><b>Co potrafi:</b> kompas ze stopniami i kierunkami świata, zapisywanie azymutu, prowadzenie dźwiękiem, wschód i zachód słońca oraz faza księżyca.</p>
+<ol><li>Obróć się w stronę, w którą masz iść, i dotknij przycisku <b>Zapisz azymut</b>.</li><li>Włącz <b>Prowadzenie dźwiękiem</b>: gdy idziesz w dobrą stronę, słychać niski, powolny dźwięk, a gdy zbaczasz, wyższy i szybszy.</li><li>Telefon może zostać w kieszeni, prowadzi cię dźwięk.</li><li>W części <b>Słońce i księżyc</b> widzisz wschód i zachód słońca oraz fazę księżyca.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> przyciskiem Usuń możesz zapisać nowy kierunek. Jeśli twój telefon nie ma kompasu, część o słońcu i księżycu i tak działa.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/11-tajolo.jpg" alt="Kompas" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f9"><h2><span class="sz">9.</span>Karta ratunkowa</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Ratunek</b>, a także na dole ekranu SOS.</p>
+<p><b>Co potrafi:</b> medyczne dane alarmowe członków rodziny (grupa krwi, alergie, leki, choroby, osoba do powiadomienia) na jednej karcie, którą ratownik może też odczytać z kodu QR. Działa bez internetu.</p>
+<ol><li>Dane pochodzą z Gospodarstwa domowego: tam wypełnij karty członków rodziny.</li><li>Jeśli przy kimś widnieje „Brakuje: kontakt”, uzupełnij na jego karcie osobę do powiadomienia.</li><li>Przyciskiem <b>Drukuj</b> wydrukujesz kartę jednej osoby, a przyciskiem <b>Drukuj wszystkie</b> karty wszystkich.</li><li><b>Karta rodzinna (jeden QR)</b> zapisuje całą rodzinę w jednym kodzie.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> wydrukuj ją i włóż do portfela albo do samochodu.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/12-veszkartya.jpg" alt="Karta ratunkowa" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f10"><h2><span class="sz">10.</span>Baza wiedzy</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Wiedza</b>.</p>
+<p><b>Co potrafi:</b> artykuły pogrupowane tematycznie, od podstaw przez jedzenie, wodę i zdrowie po przetrwanie w mieście i orientację w terenie. Artykuły podstawowe przeczytasz także bez internetu.</p>
+<ol><li>Dotknij tematu, na przykład <b>Podstawy</b>.</li><li>Wybierz artykuł z listy.</li><li>Wyszukiwarką na górze przeszukasz wszystkie artykuły.</li><li>Artykuły oznaczone kłódką („zablokowane”) należą do rozszerzonej bazy wiedzy: otwierają się po zrealizowaniu kodu premium.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> na dole ekranu startowego codziennie pojawia się inna myśl z bazy wiedzy.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/13-tudastar.jpg" alt="Baza wiedzy" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/14-tudastar-tema.jpg" alt="Baza wiedzy" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/15-tudastar-cikk.jpg" alt="Baza wiedzy" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f11"><h2><span class="sz">11.</span>Biblia</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Biblia</b>.</p>
+<p><b>Co potrafi:</b> Biblia Gdańska z czytaniem na głos, modlitwy, wyznania wiary, plan czytania, wersety na sytuacje kryzysowe, proroctwa, zaznaczenia i własne komentarze.</p>
+<ol><li>Dotknij kafelka <b>Biblia</b>, a za pierwszym razem pobierz ją na telefon przyciskiem <b>Pobierz Biblię</b>. Potem zostaje już w telefonie.</li><li>Wybierz księgę, rozdział i werset.</li><li>Ikoną głośnika włączysz czytanie na głos.</li><li>Na pozostałych kafelkach znajdziesz modlitwy, plan czytania i wersety na sytuacje kryzysowe.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> po dotknięciu wersetu możesz go zaznaczyć albo dopisać do niego notatkę.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/16-biblia.jpg" alt="Biblia" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/17-biblia-olvaso.jpg" alt="Biblia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f12"><h2><span class="sz">12.</span>Komunikacja</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Łączność</b>.</p>
+<p><b>Co potrafi:</b> w jednym miejscu wszystkie sposoby przekazania wiadomości, gdy sieć komórkowa nie pomaga.</p>
+<ol><li><b>Wiadomość cyfrowa:</b> Pokój lokalny (tekst do osób w pobliżu, przez wspólne Wi-Fi, hotspot lub Bluetooth) i Pokoje (zamknięte grupy przez internet, wejście za zgodą gospodarza pokoju).</li><li><b>Wiadomość dźwiękowa:</b> Morse (krótka wiadomość dźwiękiem lub światłem) i Faks (przesyłanie obrazu dźwiękiem, także przez radio).</li></ol>
+<p class="tipp"><b>Wskazówka:</b> gdy nie ma żadnej sieci, Morse i faks nadal działają.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/18-kommunikacio.jpg" alt="Komunikacja" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f13"><h2><span class="sz">13.</span>Morse</h2>
+<p class="hol"><b>Gdzie:</b> Łączność &gt; <b>Morse</b>. Za darmo.</p>
+<p><b>Co potrafi:</b> nadawanie tekstu dźwiękiem i światłem, odbiór z aparatu (migające światło) i z mikrofonu (dźwięk gwizdka), trener i podstawy.</p>
+<ol><li><b>Nadawanie:</b> wpisz tekst i naciśnij przycisk <b>Odtwarzanie</b>. Przycisk <b>SOS</b> jednym dotknięciem nadaje sygnał alarmowy.</li><li><b>Odczyt ze światła:</b> skieruj aparat na migające światło, a aplikacja zamieni je na tekst.</li><li><b>Odczyt z dźwięku:</b> mikrofon zamienia dźwięk gwizdka na tekst.</li><li><b>Trener Morsea:</b> możesz ćwiczyć litery, cyfry i słowa ze słuchu, kluczem ręcznym albo stukaniem.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> część Podstawy Morsea wyjaśnia rytm i prędkość.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/19-morze.jpg" alt="Morse" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/20-morze-adas.jpg" alt="Morse" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/21-morze-gyakorlo.jpg" alt="Morse" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f14"><h2><span class="sz">14.</span>Faks</h2>
+<p class="hol"><b>Gdzie:</b> Łączność &gt; <b>Faks</b>. Za darmo.</p>
+<p><b>Co potrafi:</b> przesyłanie obrazu dźwiękiem, nawet przez radio.</p>
+<ol><li><b>Wysyłanie:</b> wybierz obraz, a aplikacja zamieni go na dźwięk. Dźwięk musi trafić do odbiornika drugiego telefonu.</li><li><b>Odbiór:</b> telefon odbierający rysuje obraz wiersz po wierszu z usłyszanego dźwięku.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> najlepiej działa w cichym miejscu, z oboma telefonami trzymanymi blisko siebie.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/22-fax.jpg" alt="Faks" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f15"><h2><span class="sz">15.</span>Pokoje lokalne i Pokoje</h2>
+<p class="hol"><b>Gdzie:</b> Łączność &gt; <b>Pokój lokalny</b> lub <b>Pokoje</b>.</p>
+<p><b>Co potrafi:</b> Pokój lokalny przenosi tekst do osób w pobliżu przez wspólne Wi-Fi, hotspot telefonu lub Bluetooth, bez abonamentu internetowego. Pokoje to zamknięte grupy przez internet.</p>
+<ol><li>Najpierw na ekranie <b>Profil</b> podaj swoje imię (i jeśli chcesz, zdjęcie profilowe): tak widzą cię inni.</li><li>Pokój lokalny: potrzebna jest wspólna sieć (router albo hotspot jednego telefonu), wszyscy muszą się z nią połączyć i otworzyć aplikację.</li><li>Żółtym przyciskiem <b>+</b> otwierasz nowy pokój albo czekasz, aż pojawi się pokój w pobliżu.</li><li>Pokoje: przyciskiem <b>+</b> tworzysz nowy albo dołączasz kodem do istniejącego. Wejście zatwierdza gospodarz pokoju.</li></ol>
+<p class="dij"><b>Wersja darmowa i premium:</b> Pokój lokalny jest darmowy dla wszystkich. W Pokojach za darmo możesz utworzyć 1 własny pokój i być członkiem 3 pokoi; z kodem premium możesz mieć 10 własnych pokoi i być członkiem dowolnej liczby pokoi.</p>
+<p class="tipp"><b>Wskazówka:</b> wiadomość przytrzymaną dłużej palcem możesz zapisać, a potem znajdziesz ją na ekranie Profil.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/23-helyi-szobak.jpg" alt="Pokoje lokalne i Pokoje" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/24-profil.jpg" alt="Pokoje lokalne i Pokoje" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/25-szobak.jpg" alt="Pokoje lokalne i Pokoje" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f16"><h2><span class="sz">16.</span>Tajny QR</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Tajny QR</b>.</p>
+<p><b>Co potrafi:</b> zapisuje wiadomość, położenie, listę lub dane osobowe w kodzie QR, który odczyta tylko ktoś, kto zna wasze hasło rodzinne.</p>
+<ol><li>Ustaw <b>Hasło rodzinne</b> (na górze, jeśli widnieje jeszcze „nie ustawiono”).</li><li>Wybierz, co chcesz zapisać, i wpisz wiadomość.</li><li>Naciśnij przycisk <b>Utwórz QR</b>.</li><li>Odczyt: <b>Skanuj aparatem</b>, <b>Wczytaj z pliku</b> albo wpisz ciąg znaków, jeśli dostałeś go Morse’em lub faksem.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> hasło ustalcie wcześniej ustnie, nie w wiadomości.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/26-titkos-qr.jpg" alt="Tajny QR" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f17"><h2><span class="sz">17.</span>Narzędzia</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Narzędzia</b>.</p>
+<p><b>Co potrafi:</b> Kalkulatory, Wykrywacz metalu (żelazo i stal w ścianie lub w ziemi), Lusterko (przedni aparat z ramką świetlną, do obejrzenia urazu), Odstraszacz zwierząt i owadów.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/27-eszkozok.jpg" alt="Narzędzia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f18"><h2><span class="sz">18.</span>Kalkulatory</h2>
+<p class="hol"><b>Gdzie:</b> Narzędzia &gt; <b>Kalkulatory</b>.</p>
+<p><b>Co potrafi:</b> Kalkulator (duże przyciski, taśma, pamięć, także w rękawiczkach i po ciemku), Prąd (na jak długo wystarczy powerbank lub akumulator), Kalorie (na jak długo starczy jedzenia), Zasięg radia, Ogrzewanie (ile potrzeba drewna lub gazu), Woda deszczowa (ile zbierze się z dachu), Czas przejścia (czy dotrzesz przed zmrokiem), Piorun (jak daleko jest burza), Uzdatnianie wody (ile potrzeba wybielacza, jak długo gotować), Czas pracy latarki.</p>
+<ol><li>Dotknij kalkulatora.</li><li>Podaj dane, a wynik pojawi się od razu.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> na taśmie kalkulatora możesz przejrzeć każdy krok, więc nawet w terenie nie pogubisz się w obliczeniach.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/28-kalkulatorok.jpg" alt="Kalkulatory" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f19"><h2><span class="sz">19.</span>Odstraszacz zwierząt i owadów</h2>
+<p class="hol"><b>Gdzie:</b> Narzędzia &gt; <b>Odstraszacz zwierząt i owadów</b>.</p>
+<p><b>Co potrafi:</b> emituje wysoki dźwięk przeciw zwierzynie i komarom.</p>
+<ol><li>Wybierz: <b>Przeciw zwierzynie</b> albo <b>Przeciw komarom</b>.</li><li>Suwakiem ustawisz częstotliwość.</li><li>Przycisk <b>Dźwięk testowy</b> daje krótki, dobrze słyszalny pisk: tak sprawdzisz, czy głośnik działa. Nie wyłącza działającego odstraszacza.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> dźwięk odstraszacza jest celowo tak wysoki, że niesłyszalny. Jeśli nic nie słyszysz, to normalne.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/29-riaszto.jpg" alt="Odstraszacz zwierząt i owadów" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f20"><h2><span class="sz">20.</span>SOS (sytuacja awaryjna)</h2>
+<p class="hol"><b>Gdzie:</b> czerwony przycisk <b>SOS</b> pośrodku dolnego menu. Za darmo, działa bez internetu.</p>
+<p><b>Co potrafi:</b> SOS światłem z ekranu lub lampy błyskowej, głośny gwizdek ratunkowy, rytm resuscytacji, połączenie z 112, wykrywanie upadku i szybka karta ratunkowa.</p>
+<ol><li><b>SOS światłem (ekran)</b> lub <b>SOS światłem (lampa)</b>: jedno dotknięcie uruchamia, kolejne zatrzymuje.</li><li><b>Gwizdek ratunkowy:</b> Gwizdek albo Ciągły, wysokość dźwięku można regulować. Podkręć głośność.</li><li><b>Rytm resuscytacji:</b> głos podaje rytm, żeby nawet w panice nie trzeba było liczyć.</li><li><b>Połączenie z 112:</b> jednolity europejski numer alarmowy.</li><li>Na samym dole <b>Szybka karta ratunkowa</b>.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> gwizdek ratunkowy najlepiej słychać w okolicy 3-4 kHz, dlatego ratownicy usłyszą go z większej odległości.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/30-sos.jpg" alt="SOS (sytuacja awaryjna)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f21"><h2><span class="sz">21.</span>Wykrywanie upadku</h2>
+<p class="hol"><b>Gdzie:</b> ekran SOS &gt; <b>Wykrywanie upadku</b>.</p>
+<p><b>Co potrafi:</b> jeśli telefon wyczuje silne uderzenie, a potem przez minutę się nie porusza, włącza ekran i głośno odlicza. Jeśli nie naciśniesz przycisku <b>Nic mi nie jest</b>, wysyła wiadomość SOS z twoją lokalizacją do twoich pokoi i włącza gwizdek ratunkowy.</p>
+<ol><li>Zaznacz: <b>Automatyczny SOS po upadku</b>.</li><li>Udziel uprawnienia, jeśli aplikacja o nie poprosi.</li><li>Jeśli uruchomi się przez pomyłkę, naciśnij duży przycisk <b>Nic mi nie jest</b>.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> do wysłania wiadomości potrzebne jest połączenie z twoimi pokojami, ale odliczanie i gwizdek ratunkowy działają także bez niego.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/31-eses-erzekeles.jpg" alt="Wykrywanie upadku" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f22"><h2><span class="sz">22.</span>Światło</h2>
+<p class="hol"><b>Gdzie:</b> przycisk <b>Światło</b> w dolnym menu. Za darmo, działa bez internetu.</p>
+<p><b>Co potrafi:</b> latarka z lampy błyskowej albo z ekranu, z regulacją koloru i jasności, z czerwonym światłem nocnym.</p>
+<ol><li>Dotknij przycisku <b>Światło</b>: włącza się lampa błyskowa, a ekran pozostaje ciemny.</li><li>Dotknij jeszcze raz: świeci tylko lampa błyskowa.</li><li>Przy świetle z ekranu przesuwaj palcem: w poziomie zmieniasz kolor, w pionie jasność. Dotknięcie wyświetla przyciski.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> czerwone światło nie oślepia oczu przyzwyczajonych do ciemności.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/32-lampa.jpg" alt="Światło" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f23"><h2><span class="sz">23.</span>Tryb nocny</h2>
+<p class="hol"><b>Gdzie:</b> ikona księżyca na górnym pasku.</p>
+<p><b>Co potrafi:</b> cała aplikacja zmienia kolor na czerwony, więc w ciemności nie oślepia i nie psuje widzenia nocnego. Mapa i latarka również pozostają czerwone.</p>
+<ol><li>Dotknij ikony księżyca, aby włączyć tryb, i jeszcze raz, aby go wyłączyć.</li></ol>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/33-ejszakai-mod.jpg" alt="Tryb nocny" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f24"><h2><span class="sz">24.</span>Ustawienia</h2>
+<p class="hol"><b>Gdzie:</b> skrajny prawy przycisk dolnego menu, <b>Ustaw.</b> Za darmo.</p>
+<p><b>Co potrafi:</b> powiadomienia o kończącej się dacie ważności jedzenia i zapasów, wibracje, język, rozmiar czcionki, pomoc, ochrona danych, realizacja kodu premium.</p>
+<ol><li><b>Powiadomienia:</b> zaznacz je i wybierz, z jakim wyprzedzeniem mają przychodzić (3 dni, 1 tydzień, 2 tygodnie, 1 miesiąc). Przyciskiem <b>Powiadomienie testowe</b> możesz to wypróbować.</li><li><b>Język</b> i <b>Rozmiar czcionki:</b> ustaw tak, jak ci wygodnie.</li><li><b>Pomoc:</b> na każdym ekranie pomoc otwiera też znak zapytania w nagłówku.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> jeśli powiadomienia są zablokowane, aplikacja podpowie, gdzie je włączyć w ustawieniach telefonu.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/34-beallitasok.jpg" alt="Ustawienia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f25"><h2><span class="sz">25.</span>Realizacja kodu premium</h2>
+<p class="hol"><b>Gdzie:</b> Ustawienia &gt; <b>Odblokuj</b>.</p>
+<p><b>Co potrafi:</b> tutaj realizujesz kod premium.</p>
+<ol><li>Wpisz kod w pole.</li><li>Naciśnij przycisk <b>Zrealizuj kod</b>. Do realizacji kodu potrzebny jest internet.</li><li>Od tej chwili liczba członków rodziny i pozycji w zapasie jest nieograniczona, otwiera się rozszerzona baza wiedzy, a planowanie tras na mapie jest bez limitu, z mapami offline do pobrania.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> jednego kodu możesz używać najwyżej na dwóch swoich urządzeniach.</p>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/35-feloldas.jpg" alt="Realizacja kodu premium" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f26"><h2><span class="sz">26.</span>Gdy brakuje uprawnienia</h2>
+<p class="hol"><b>Gdzie:</b> pojawia się samo, gdy funkcja potrzebuje uprawnienia (aparat, mikrofon, lokalizacja, powiadomienia, czujnik ruchu, Bluetooth).</p>
+<p><b>Co potrafi:</b> mówi, czego brakuje, do czego jest to potrzebne i co trzeba zrobić.</p>
+<ol><li>Dotknij przycisku <b>Poproś o uprawnienie</b> i wybierz Zezwól.</li><li>Jeśli pytanie się nie pojawi, przycisk <b>Ustawienia aplikacji</b> jednym dotknięciem otworzy ustawienia telefonu.</li><li>Gdy już udzielisz uprawnienia, wróć: aplikacja sama spróbuje ponownie.</li></ol>
+<div class="kepek egy"><figure><img src="/pl/utmutato/kepek/36-engedely.jpg" alt="Gdy brakuje uprawnienia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f27"><h2><span class="sz">27.</span>Wyślij opinię</h2>
+<p class="hol"><b>Gdzie, w dwóch miejscach:</b></p>
+<ul><li>na górnym pasku <b>ikona dymku</b> (bez podpisu),</li><li>na stronie <b>O mnie</b> przycisk <b>Wyślij opinię</b>.</li></ul>
+<p><b>Co potrafi:</b> możesz wysłać nam zgłoszenie błędu lub pomysł, razem ze zrzutem ekranu.</p>
+<ol><li>Wybierz rodzaj (błąd lub pomysł) i część aplikacji, której dotyczy.</li><li>Napisz, co zrobiłeś, co zobaczyłeś i czego się spodziewałeś.</li><li>W razie potrzeby dołącz zrzut ekranu.</li><li>Naciśnij przycisk <b>Wyślij</b>.</li></ol>
+<p class="tipp"><b>Wskazówka:</b> przyciskiem <b>Moje zgłoszenia</b> przejrzysz, co wysłałeś, a przyciskiem <b>Nowości</b> zobaczysz, co zmieniło się w aplikacji.</p>
+<div class="kepek"><figure><img src="/pl/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Wyślij opinię" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Wyślij opinię" loading="lazy" width="480"></figure><figure><img src="/pl/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Wyślij opinię" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f28"><h2><span class="sz">28.</span>Majątek</h2>
+<p class="hol"><b>Gdzie:</b> Start &gt; kafelek <b>Majątek</b>.</p>
+<p>Majątek to osobny produkt. W aplikacji możesz go wypróbować do 10 pozycji, zarówno w wersji darmowej, jak i z premium, a do pełnego korzystania trzeba go kupić osobno w sklepie Google Play lub w App Store. Jeśli go kupisz, działa w pełni także w PrepperPapie.</p></section>
+<section class="lap"><h2>Jeśli utknąłeś</h2>
+<p>Napisz do nas z aplikacji: ikona dymku na górnym pasku albo przycisk „Wyślij opinię” na stronie O mnie. Napisz, co zrobiłeś, co zobaczyłeś i na jakim telefonie.</p></section>
+
+</main>
+<footer><div>PrepperPapa &middot; Instrukcja obsługi &middot; <a href="/pl/adatkezeles.html">Ochrona danych</a></div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>

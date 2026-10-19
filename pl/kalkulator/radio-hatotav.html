@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator zasięgu radia: jak daleko cię słychać? | PrepperPapa</title>
+<meta name="description" content="Jak daleko cię słychać w danym paśmie, przy danej mocy, w danym terenie? Zasięg z pudełka dotyczy płaskiego terenu, a tutaj dostaniesz bardziej realną liczbę.">
+<link rel="canonical" href="https://prepperpapa.hu/pl/kalkulator/radio-hatotav.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kalkulator zasięgu radia: jak daleko cię słychać?">
+<meta property="og:description" content="Jak daleko cię słychać w danym paśmie, przy danej mocy, w danym terenie? Zasięg z pudełka dotyczy płaskiego terenu, a tutaj dostaniesz bardziej realną liczbę.">
+<meta property="og:url" content="https://prepperpapa.hu/pl/kalkulator/radio-hatotav.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/kalkulator/app.css">
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* HAROM menupont + logo 390 keppontos telefonon nem fer ki egy sorba: merve 102 keppont
+     vizszintes tullogas. NEM elrejtjuk a linkeket (akkor telefonrol nem lehetne a
+     kalkulatorokhoz jutni a fejlecbol), hanem TORDELJUK -- a navigacio megmarad. */
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{color:var(--ink);font-size:18px}
+  .zaro{color:var(--muted);font-size:15px;border-top:1px solid var(--line);
+         margin-top:30px;padding-top:20px}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  /* A KALKULATOR DOBOZA. Az app CSS-e ide van hatarolva (.ppkalk), ezert a lap tobbi
+     resze a weboldal sajat kinezetet tartja meg. */
+  .ppkalk{display:block;background:var(--panel);border:1px solid var(--line);
+          border-radius:12px;padding:20px;margin:26px 0}
+  .kalk-lista{list-style:none;margin:0;padding:0}
+  .kalk-lista li{border-bottom:1px solid var(--line);margin:0}
+  .kalk-lista li:last-child{border-bottom:0}
+  .kalk-lista a{display:block;padding:16px 2px;text-decoration:none;color:var(--ink)}
+  .kalk-lista a:hover{color:var(--zold)}
+  .kalk-lista b{display:block;font-size:18px;margin-bottom:3px}
+  .kalk-lista span{color:var(--muted);font-size:15px}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}
+    .nav{flex-wrap:nowrap;height:70px;padding:0 16px}.brand{width:auto;margin-right:auto}}
+  .k-szem{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);font-weight:700;margin-bottom:6px}
+  .ppkalk{border-radius:18px;border-color:#2c3d33;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .lapfej{margin:-44px -22px 30px;padding:56px 22px 40px;border-bottom:1px solid var(--line);
+     background:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.86)),url('/assets/hatter-topo.jpg') center/cover}
+  .lapfej h1{font-size:clamp(38px,8vw,60px);margin:8px 0 10px}
+  .kalk-lista{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .kalk-lista li{border:1px solid #2c3d33 !important;border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .kalk-lista a{padding:18px 20px}
+  @media(max-width:640px){.kalk-lista{grid-template-columns:1fr}}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/kalkulator/radio-hatotav.html">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav">
+  <a class="brand" href="/pl/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/cikkek.html">Artykuły</a>
+  <a class="link" href="/pl/kalkulator/">Kalkulatory</a>
+  <a class="link" href="/pl/app/">Aplikacja</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Kanał</a>
+  <details class="nyelvv"><summary aria-label="Język"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>PL</span></summary><ul><li><a href="/kalkulator/radio-hatotav.html" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/kalkulator/radio-hatotav.html" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/kalkulator/radio-hatotav.html" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/kalkulator/radio-hatotav.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/kalkulator/radio-hatotav.html" hreflang="pl" lang="pl" data-nyelv="pl" aria-current="true">Polski</a></li><li><a href="/ro/kalkulator/radio-hatotav.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/kalkulator/radio-hatotav.html" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/kalkulator/radio-hatotav.html" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+    <details class="mmenu"><summary aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/pl/app/">Aplikacja PrepperPapa</a><a href="/pl/">Strona główna</a><a href="/cikkek.html">Artykuły</a><a href="/pl/kalkulator/">Kalkulatory</a><a href="https://forum.prepperpapa.hu">Forum</a><a href="https://www.youtube.com/@PrepperPapa">Kanał</a></nav>
+  </details>
+</nav></header>
+<main>
+<div class="k-szem">Kalkulator</div>
+<h1>Kalkulator zasięgu radia</h1>
+<p class="beveze">Zasięg podany na pudełku dotyczy płaskiego terenu i idealnych warunków. Podaj pasmo i teren, a dostaniesz bardziej realną liczbę.</p>
+<div class="ppkalk" id="kalk-radio-hatotav">    <div class="section">
+      <label>Rádió: meddig hallanak</label>
+      <p class="note">A hatótávot HÁROM dolog dönti el, és a watt csak az egyik — rendszerint
+        a legkisebb súlyú. A másik kettő: hogy MILYEN SÁVON adsz, és hogy MI van közted és a
+        másik között. Ezért nem lehet egy rádióra egyetlen kilométer-számot mondani.</p>
+
+      <label style="margin-top:14px">Milyen sávon?</label>
+      <select id="radSav"></select>
+      <p class="note" id="radSavInfo"></p>
+
+      <label style="margin-top:14px">Adóteljesítmény (watt)</label>
+      <input type="number" id="radW" min="0.1" step="0.5" value="5">
+
+      <label style="margin-top:14px">Milyen terepen?</label>
+      <select id="radTerep"></select>
+
+      <label style="margin-top:14px">Milyen magasan van az antennád? (méter)</label>
+      <input type="number" id="radMag1" min="0" step="1" value="2">
+      <label>És a másiké?</label>
+      <input type="number" id="radMag2" min="0" step="1" value="2">
+
+      <label style="margin-top:14px">Mekkora távolságot szeretnél áthidalni? (km, üresen hagyhatod)</label>
+      <input type="number" id="radCel" min="0" step="1" placeholder="pl. 15">
+
+      <div class="row"><button id="radSzamol" class="primary">Számold ki</button></div>
+      <div id="radEredmeny" style="display:none"></div>
+    </div></div>
+<div class="zaro"><p>Zasięg pokazujemy jako przedział, a nie jedną liczbę: wartość z dokładnością do jednego miejsca po przecinku wyglądałaby na dokładniejszą, niż da się przewidzieć łączność radiową. Wysokość anteny liczy się tak samo jak waty.</p></div>
+<h2>Do czego się przydaje, a do czego nie</h2>
+<p>Ten kalkulator pochodzi z aplikacji <a href="/pl/">PrepperPapa</a> i tam też jest darmowy. Obliczenia odbywają się w twojej przeglądarce: niczego nigdzie nie wysyłamy i nie przechowujemy na ten temat żadnych danych.</p>
+<script src="/assets/i18n/pl.js"></script>
+<script src="/assets/i18n/fordito.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+// A weboldalon nincs terkep-nezet es nincs mentett hely: az app `ppUtolsoHely`
+// fuggvenye itt ertelmetlen lenne. Budapesti koordinataval szamolunk, es ezt a lap
+// zaro szovege ki is mondja -- az orszag ket szele kozott ez nehany perc elteres.
+function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
+function ppLocale(){ return 'pl-PL'; }
+function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
+
+const RAD_SAVOK = [
+  {id:'pmr',  nev:'PMR446 (446 MHz) — engedély nélküli kézirádió', mhz:446, oszlop:'uhf', maxW:0.5,
+   info:'Magyarországon engedély nélkül használható, de a törvény MAXIMUM 0,5 wattot és gyári, nem cserélhető antennát enged. Ezért van, hogy a doboz 10 kilométert ígér, a valóság meg 1-3.'},
+  {id:'cb',   nev:'CB (27 MHz) — polgári sáv',                      mhz:27,  oszlop:'hf27', maxW:4,
+   info:'Engedély nélküli, 4 watt AM/FM (SSB-n 12). Nagy antennát kíván, de a hosszú hullám jobban hajlik a domb mögé, mint bármelyik kézirádió.'},
+  {id:'vhf',  nev:'2 méter (145 MHz) — amatőr',                     mhz:145, oszlop:'vhf', maxW:0,
+   info:'ENGEDÉLYKÖTELES: vizsga és hívójel kell hozzá. Vészhelyzetben az életveszély elhárítására a törvény enged kivételt, de arra épülő tervet ne csinálj -- a vizsga előre megszerezhető.'},
+  {id:'uhf',  nev:'70 cm (435 MHz) — amatőr',                       mhz:435, oszlop:'uhf', maxW:0,
+   info:'ENGEDÉLYKÖTELES, mint a 2 méter. Beépítésben, épületek között jobb, mint a 2 méter; nyílt terepen rosszabb.'},
+  {id:'hf40', nev:'40 méter (7 MHz) — amatőr, rövidhullám',         mhz:7,   oszlop:'hf', maxW:0,
+   info:'ENGEDÉLYKÖTELES. Itt NEM a rálátás dönt: nappal 100-400 km-re, éjjel akár több ezerre visz az ionoszféráról visszaverődve. Ezt a kalkulátor nem modellezi -- lásd a figyelmeztetést az eredménynél.'},
+  {id:'hf80', nev:'80 méter (3,6 MHz) — amatőr, rövidhullám',       mhz:3.6, oszlop:'hf', maxW:0,
+   info:'ENGEDÉLYKÖTELES. Éjszakai sáv, a környék (50-300 km) megbízható lefedésére a legjobb -- ez a klasszikus "megyényi" összeköttetés.'},
+];
+
+const RAD_TEREPEK = [
+  {id:'nyilt',   nev:'nyílt, sík terep',      alap:1.0,  hf27:1.30, vhf:1.15, uhf:1.00,
+   info:'Mező, tópart, autópálya. Itt a rálátás a korlát, nem a terep.'},
+  {id:'dombos',  nev:'dombos, hullámos',      alap:0.60, hf27:1.60, vhf:1.25, uhf:1.00,
+   info:'A domb mögé a jel behajlik, de gyengülve. Egy dombtetőre felsétálni többet ér, mint tízszeres teljesítmény.'},
+  {id:'erdo',    nev:'erdő, sűrű növényzet',  alap:0.45, hf27:1.70, vhf:1.30, uhf:0.90,
+   info:'A lombozat a rövid hullámot nyeli el jobban, ezért itt a 70 centi a leggyengébb.'},
+  {id:'varos',   nev:'város, beépített',      alap:0.30, hf27:0.80, vhf:0.95, uhf:1.15,
+   info:'Itt fordul meg a sorrend: a 70 centi jobban jut át épületek között, a CB-nek meg antennája sincs hova.'},
+  {id:'hegy',    nev:'hegyvidék, völgyben',   alap:0.25, hf27:1.50, vhf:1.20, uhf:1.00,
+   info:'Völgyben ülve a rálátás nulla. Itt a megoldás nem a watt, hanem az átjátszó vagy a gerincre feljutás.'},
+];
+
+const RAD_K = 3.0;
+
+function radEpit(){
+  const s=$('radSav');
+  if(s && !s.dataset.kesz){
+    s.innerHTML = RAD_SAVOK.map(x=>'<option value="'+x.id+'"'+(x.id==='pmr'?' selected':'')+'>'+x.nev+'</option>').join('');
+    s.dataset.kesz='1'; s.onchange = radSavValt;
+  }
+  const t=$('radTerep');
+  if(t && !t.dataset.kesz){
+    t.innerHTML = RAD_TEREPEK.map(x=>'<option value="'+x.id+'">'+x.nev+'</option>').join('');
+    t.dataset.kesz='1';
+  }
+  radSavValt();
+}
+
+function radSavValt(){
+  const s=RAD_SAVOK.find(x=>x.id===($('radSav')||{}).value) || RAD_SAVOK[0];
+  const el=$('radSavInfo'); if(el) el.textContent = s.info;
+  // A PMR-nel a torvenyi 0,5 W-ot ALAPERTELMEZESKENT beallitjuk, de nem kenyszeritjuk:
+  // aki tudni akarja, mi lenne 5 watttal, kiprobalhatja -- csak megmondjuk, hogy tilos.
+  const w=$('radW');
+  if(w && s.maxW) w.value = s.maxW;
+}
+
+function radSzamitas(){
+  const s=RAD_SAVOK.find(x=>x.id===$('radSav').value) || RAD_SAVOK[0];
+  const t=RAD_TEREPEK.find(x=>x.id===$('radTerep').value) || RAD_TEREPEK[0];
+  const w=Math.max(0.01, +$('radW').value||0);
+  const h1=Math.max(0, +$('radMag1').value||0), h2=Math.max(0, +$('radMag2').value||0);
+  const cel=+$('radCel').value||0;
+
+  const fSzorzo = t[s.oszlop] || 1.0;
+  // A HF (7 es 3,6 MHz) oszlopa nincs a terep-tablaban: ott a ralatas nem is korlat.
+  // Ilyenkor a `hf27` erteket hasznaljuk kozelitesnek a talajhullamra, es KULON kiirjuk,
+  // hogy az igazi hatotavot az ionoszfera adja, amit ez a szamolas NEM modellez.
+  const hf = (s.oszlop==='hf');
+  const szorzo = hf ? (t.hf27||1.0) : fSzorzo;
+
+  const ralatas = 4.12*(Math.sqrt(h1)+Math.sqrt(h2));       // km, a Fold gorbuletebol
+  const terepTav = RAD_K * t.alap * szorzo * Math.pow(w, 0.25);
+  const varhato = hf ? terepTav*3 : Math.min(ralatas, terepTav);
+  const korlat = hf ? 'talajhullám' : (terepTav < ralatas ? 'terep és teljesítmény' : 'rálátás (a Föld görbülete)');
+
+  // AMENNYI TELJESITMENY KELLENE A MEGADOTT TAVHOZ. Ha a cel a ralatason TUL van, a valasz
+  // nem egy szam: ott a watt nem segit, es ezt ki kell mondani, nem egy nagy szamot kiirni.
+  let kellW = null, celTul = false;
+  if(cel > 0){
+    if(!hf && cel > ralatas){ celTul = true; }
+    else { kellW = Math.pow(cel / (RAD_K * t.alap * szorzo * (hf?3:1)), 4); }
+  }
+  return {s, t, w, h1, h2, cel, ralatas, terepTav, varhato, korlat, kellW, celTul, hf};
+}
+
+$('radSzamol').onclick = ()=>{
+  const r=radSzamitas(), el=$('radEredmeny');
+  // A HATOTAVOT SAVKENT irjuk ki, nem egyetlen szamkent. Egy "14,2 km" pontosnak latszik,
+  // es epp ezert veszelyes: terepen a szoras konnyen ketszeres. A also/felso hatar a
+  // becsult ertek 0,6- es 1,4-szerese -- ez a nagysagrendet adja at, nem hamis pontossagot.
+  const also = r.varhato*0.6, felso = r.varhato*1.4;
+  const km = x => (x<10 ? (Math.round(x*10)/10).toString().replace('.',',') : Math.round(x).toString());
+
+  let fig='';
+  if(r.s.id==='pmr' && r.w > r.s.maxW){
+    fig += '<p class="note koordfigy"><b>Ez a teljesítmény PMR446-on nem legális.</b> A sávon '
+      + 'maximum 0,5 watt engedélyezett, gyári antennával. A számot kiszámoltuk, de egy '
+      + 'erősebb adóval a saját frekvenciádon te zavarod meg azokat, akikkel beszélni akarsz.</p>';
+  }
+  if(r.s.maxW===0){
+    fig += '<p class="note koordfigy"><b>Ez a sáv engedélyköteles.</b> '+r.s.nev+' használatához '
+      + 'vizsga és hívójel kell. A vizsga előre megszerezhető — és pont ez a lényeg: '
+      + 'egy vészhelyzetben már késő elkezdeni.</p>';
+  }
+
+  let celSor='';
+  if(r.celTul){
+    celSor = '<p class="note koordfigy"><b>'+km(r.cel)+' kilométerre ezen a sávon a teljesítmény '
+      + 'nem elég — bármennyi.</b> A rálátásod '+km(r.ralatas)+' kilométer, és a Föld görbülete '
+      + 'mögé a VHF/UHF jel nem hajlik be. Amin múlik: <b>magasság</b> (menj fel egy dombra vagy '
+      + 'tedd fel az antennát), <b>átjátszó</b>, vagy <b>alacsonyabb sáv</b> (CB vagy rövidhullám).</p>';
+  } else if(r.kellW != null){
+    const kw = r.kellW;
+    celSor = '<p class="note"><b>'+km(r.cel)+' kilométerhez kb. '
+      + (kw<1 ? (Math.round(kw*100)/100).toString().replace('.',',') : ppSzam(kw))
+      + ' watt kellene</b> ezen a sávon és ezen a terepen'
+      + (kw > 100 ? ' — ami már nem kézirádió-kategória, és rendszerint olcsóbb feljebb vinni az antennát.' : '.')
+      + '</p>';
+  }
+
+  el.innerHTML='<div class="koorddoboz"><p class="eginagy">'+km(also)+'–'+km(felso)+' km</p>'
+    + '<p class="note">Ennyire várható összeköttetés '+r.s.nev.split(' — ')[0]+'-on, '
+    + r.t.nev+' terepen, '+String(r.w).replace('.',',')+' watttal, '
+    + r.h1+' és '+r.h2+' méter antennamagassággal.</p>'
+    + '<p class="note"><b>Amin most múlik: '+r.korlat+'.</b> '
+    + (r.hf ? 'Rövidhullámon a talajhullámmal számoltunk.'
+            : 'A rálátásod '+km(r.ralatas)+' km, a terep és a teljesítmény '+km(r.terepTav)+' km-t enged — a kettő közül a kisebbik számít.')
+    + '</p>'
+    + fig
+    + celSor
+    + '<p class="note"><b>A watt a leggyengébb eszközöd.</b> A távolság a teljesítmény negyedik '
+    + 'gyökével nő: négyszer annyi watt másfélszer nagyobb távolság. Egy méterrel feljebb tett '
+    + 'antenna rendszerint többet ad, mint a teljesítmény megduplázása — és nem fogyaszt.</p>'
+    + (r.hf ? '<p class="note"><b>Rövidhullámon ez a szám csak a talajhullám.</b> A 7 és a 3,6 '
+        + 'megahertzes sáv igazi hatótávját az ionoszféra adja: napszaktól és napfolt-tevékenységtől '
+        + 'függően 100-tól több ezer kilométerig. Azt ez a kalkulátor nem modellezi — arra '
+        + 'terjedési előrejelzés kell.</p>' : '')
+    + '</div>';
+  el.style.display='block';
+};
+radEpit();
+if($('radSav')) $('radSav').onchange = radSavValt;
+</script>
+
+<div class="appdoboz"><div class="k">Aplikacja PrepperPapa</div><h3>To samo w kieszeni, bez internetu</h3>
+<p>Te kalkulatory są też w aplikacji, za darmo, i liczą nawet bez sieci. Obok nich znajdziesz zapas, kartę ratunkową, kompas i bazę wiedzy.</p>
+<a class="gomb" href="/pl/app/">Zobacz, co potrafi</a></div>
+<a class="vissza" href="/pl/kalkulator/">&larr; Powrót do kalkulatorów</a>
+</main>
+<footer><div class="lab"><div class="fnav"><a href="/pl/">Strona główna</a><a href="/cikkek.html">Artykuły</a><a href="/pl/kalkulator/">Kalkulatory</a><a href="/pl/app/">Aplikacja</a><a href="https://forum.prepperpapa.hu">Forum</a><a href="/pl/adatkezeles.html">Ochrona danych</a></div><span>PrepperPapa &middot; Przygotowanie z rozsądkiem, na prawdziwe życie</span></div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>

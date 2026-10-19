@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrepperPapa app: user guide</title>
+<meta name="description" content="Every feature of the PrepperPapa app, screen by screen: stock, household, map, compass, emergency card, knowledge base, Bible, Morse, SOS, light and more.">
+<link rel="canonical" href="https://prepperpapa.hu/en/utmutato/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PrepperPapa app: user guide">
+<meta property="og:description" content="Every feature of the PrepperPapa app, screen by screen: stock, household, map, compass, emergency card, knowledge base, Bible, Morse, SOS, light and more.">
+<meta property="og:url" content="https://prepperpapa.hu/en/utmutato/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="en_US">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  main.utm{max-width:820px}
+  .tartalom{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 30px}
+  .tartalom ol{columns:2;column-gap:26px;margin:8px 0 0 20px;font-size:15px}
+  .tartalom a{color:var(--ink);text-decoration:none}
+  .tartalom a:hover{color:var(--borostyan)}
+  .lap{border-top:1px solid var(--line);padding:26px 0 8px;scroll-margin-top:12px}
+  .lap h2{margin:0 0 12px;font-size:24px}
+  .lap h2 .sz{color:var(--borostyan);margin-right:8px}
+  .hol{background:var(--panel);border-left:3px solid var(--zold);padding:8px 14px;border-radius:0 8px 8px 0;font-size:15px}
+  .tipp{border-left:3px solid var(--borostyan);padding:4px 0 4px 14px;font-size:15px;color:#cfd6cf}
+  .dij{background:rgba(255,179,64,.07);border:1px solid rgba(255,179,64,.35);border-radius:10px;padding:10px 14px;font-size:15px}
+  .lap .kepek figure{flex:0 0 220px}
+  .lap .kepek img{width:220px}
+  .lap .kepek.egy figure{flex:0 0 260px}
+  .lap .kepek.egy img{width:260px}
+  @media (max-width:560px){.tartalom ol{columns:1}}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/utmutato/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/utmutato/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/utmutato/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/utmutato/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/utmutato/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/utmutato/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/utmutato/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/utmutato/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/utmutato/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<header><nav class="nav"><span class="brand"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></span><details class="nyelvv sarok"><summary aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>EN</span></summary><ul><li><a href="/utmutato/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/utmutato/" hreflang="en" lang="en" data-nyelv="en" aria-current="true">English</a></li><li><a href="/de/utmutato/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/utmutato/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/utmutato/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/utmutato/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/utmutato/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/utmutato/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details></nav></header>
+<main class="utm">
+<h1>User guide</h1>
+<p class="beveze">Every feature of the PrepperPapa app, screen by screen: where to find it, what it is for and how to use it. The app has help built in as well: the question mark in the screen header.</p>
+<h3>If the app asks you to sign in</h3>
+<ol>
+<li>Enter your e-mail address.</li>
+<li>Request a code. A six-digit code arrives by e-mail within a few minutes.</li>
+<li>Enter the code. No password needed.</li>
+</ol>
+<p class="dij"><b>Free and premium in short:</b> the torch, SOS, Morse, the emergency card and the basic knowledge base articles are free for everyone and work without internet. The free version lets you add up to 2 family members and 50 items, and plan 2 routes a week on the map. A premium code makes these unlimited and adds downloadable offline maps and the extended knowledge base.</p>
+<nav class="tartalom" aria-label="Contents"><b>Contents</b><ol>
+<li><a href="#f1">Home screen</a></li>
+<li><a href="#f2">Household</a></li>
+<li><a href="#f3">Family member profile</a></li>
+<li><a href="#f4">Stock</a></li>
+<li><a href="#f5">What to pack? (packing list)</a></li>
+<li><a href="#f6">Risk analysis</a></li>
+<li><a href="#f7">Map</a></li>
+<li><a href="#f8">Compass</a></li>
+<li><a href="#f9">Emergency card</a></li>
+<li><a href="#f10">Knowledge base</a></li>
+<li><a href="#f11">Bible</a></li>
+<li><a href="#f12">Comms</a></li>
+<li><a href="#f13">Morse</a></li>
+<li><a href="#f14">Fax</a></li>
+<li><a href="#f15">Local rooms and Rooms</a></li>
+<li><a href="#f16">Secret QR</a></li>
+<li><a href="#f17">Tools</a></li>
+<li><a href="#f18">Calculators</a></li>
+<li><a href="#f19">Wildlife and insect repeller</a></li>
+<li><a href="#f20">SOS (emergency)</a></li>
+<li><a href="#f21">Fall detection</a></li>
+<li><a href="#f22">Light</a></li>
+<li><a href="#f23">Night mode</a></li>
+<li><a href="#f24">Settings</a></li>
+<li><a href="#f25">Redeeming a premium code</a></li>
+<li><a href="#f26">If a permission is missing</a></li>
+<li><a href="#f27">Send feedback</a></li>
+<li><a href="#f28">Asset Manager</a></li>
+</ol></nav>
+<section class="lap" id="f1"><h2><span class="sz">1.</span>Home screen</h2>
+<p class="hol"><b>Where:</b> the leftmost button in the bottom menu, <b>Home</b>.</p>
+<p><b>What it does:</b> at the top, the readiness of your locations as a percentage (home, holiday home, car); below them, tiles for every feature; at the very bottom, a daily Bible verse or a knowledge base thought.</p>
+<ol><li>On first launch, use the <b>Load demo data</b> button to try the app with a sample family.</li><li>Tap a location's circle to see what is missing there.</li><li>The tiles take you everywhere: Household, Stock, What to pack, Risk, Comms, Map, Compass, Emergency card, Knowledge base, Bible, Gathering, Tools, Document wallet, Secret QR, Token wallet, Assets.</li></ol>
+<p class="tipp"><b>Tip:</b> a green number is good; orange and red mean something needs restocking.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/01-kezdolap.jpg" alt="Home screen" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f2"><h2><span class="sz">2.</span>Household</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Household</b> tile.</p>
+<p><b>What it does:</b> this is where you enter who belongs to your household and where your locations are. Readiness, daily rations and the packing list are all calculated from it.</p>
+<ol><li>There are four sections: <b>Family members</b>, <b>Pets</b>, <b>Vehicles</b>, <b>Places</b>.</li><li>Tap any of them to see the list, and use the yellow <b>+</b> button to add a new one.</li><li>For places, you enter who arrives there and for how many days.</li></ol>
+<p class="tipp"><b>Tip:</b> the free version lets you add 2 family members; with a premium code, unlimited.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/02-haztartas.jpg" alt="Household" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/03-csaladtagok.jpg" alt="Household" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f3"><h2><span class="sz">3.</span>Family member profile</h2>
+<p class="hol"><b>Where:</b> Household &gt; Family members &gt; tap a name.</p>
+<p><b>What it does:</b> name, date of birth, who they are (adult, child, infant), load capacity, and the health data for the emergency card.</p>
+<ol><li>Fill in the name and date of birth, and choose who they are.</li><li>Enter the load capacity in kilograms: the packing list uses it to work out who can carry how much.</li><li>In the <b>Health data</b> section, tap the allergies, and enter medication and medical conditions.</li><li>Fill in: “Card owner's phone number”, “Emergency contact (person to notify)” and “Emergency contact phone number”.</li><li>Tick <b>Show my details on the emergency card</b> if this is your own profile.</li></ol>
+<p class="tipp"><b>Tip:</b> the card can be filled in for someone else too, so enter the owner's number and the emergency contact's number in separate fields.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/04-csaladtag-adatlap.jpg" alt="Family member profile" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f4"><h2><span class="sz">4.</span>Stock</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Stock</b> tile.</p>
+<p><b>What it does:</b> a record of your gear and food with expiry tracking. You see the number of items, the total weight and what expires within a month.</p>
+<ol><li>You can filter by category, place and stock.</li><li>Use the yellow <b>+</b> button to add a new item: name, quantity, category, expiry date, whose it is, where you keep it.</li><li>With the <b>Scan barcode / QR</b> button you can add it straight from the packaging.</li><li>The <b>What's missing?</b> button shows what is worth restocking.</li><li>The <b>72h kit</b> button puts together the basic 72-hour kit.</li></ol>
+<p class="tipp"><b>Tip:</b> the free version lets you add 50 items; with a premium code, unlimited.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/05-keszlet.jpg" alt="Stock" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/06-keszlet-uj-tetel.jpg" alt="Stock" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f5"><h2><span class="sz">5.</span>What to pack? (packing list)</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>What to pack</b> tile.</p>
+<p><b>What it does:</b> builds a personalised packing list based on who is going, how, on what kind of trip and for how many days.</p>
+<ol><li>Select who is going (pets can be selected too).</li><li>Choose how you are travelling (by car, on foot, with a backpack) and what kind of trip it is.</li><li>Enter how many days, and what water ration to plan with.</li><li>The app puts the list together, keeping to the weight limit.</li></ol>
+<p class="tipp"><b>Tip:</b> set the load capacity on the family members' profiles, and the list will also share out the load.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/07-mit-vigyek.jpg" alt="What to pack? (packing list)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f6"><h2><span class="sz">6.</span>Risk analysis</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Risk</b> tile.</p>
+<p><b>What it does:</b> shows, for each location, who is arriving there, for how many days, and whether the water, food, heating and power there are enough.</p>
+<ol><li>Look at the location circles: the percentage shows the readiness.</li><li>A red row shows what is running low.</li><li>You can restock the shortfall in Stock and assign the item to that location.</li></ol>
+<p class="tipp"><b>Tip:</b> the risk picture is only as accurate as your Household and Stock entries.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/08-kockazat.jpg" alt="Risk analysis" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f7"><h2><span class="sz">7.</span>Map</h2>
+<p class="hol"><b>Where:</b> the <b>Map</b> button in the bottom menu, or Home &gt; Map tile.</p>
+<p><b>What it does:</b> hiking trails, springs, wells, mountain huts, peaks, lookout towers and other points of interest with consistent, colourful icons. The readiness of your locations is shown on it too. You can search and plan routes.</p>
+<ol><li>Type what you are looking for into the search box at the top (trail, peak, spring, town).</li><li>The crosshair button at the bottom left jumps to your own position.</li><li>Use the <b>+</b> and <b>−</b> buttons to zoom, and the layers button to switch map views.</li><li>Route planning: enter where you are going from and to, and the app shows the distance, walking time, elevation gain and the trail markings to follow.</li></ol>
+<p class="dij"><b>Free and premium:</b> the online map and 2 route plans a week are free. With a premium code, route planning is unlimited and you can download offline maps (Hungarian regions and foreign countries) that work without internet.</p>
+<p class="tipp"><b>Tip:</b> in night mode the map icons turn red too, so they do not dazzle.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/09-terkep.jpg" alt="Map" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/10-terkep-nagyitva.jpg" alt="Map" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f8"><h2><span class="sz">8.</span>Compass</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Compass</b> tile.</p>
+<p><b>What it does:</b> compass with degrees and cardinal directions, bearing recording, audio guidance, sunrise, sunset and moon phase.</p>
+<ol><li>Face the direction you need to go and tap the <b>Record bearing</b> button.</li><li>Start <b>Audio guidance</b>: if you are heading the right way, a deep, slow tone plays; if you drift off course, it gets higher and faster.</li><li>Your phone can go in your pocket; the sound guides you.</li><li>In the <b>Sun and moon</b> section you can see sunrise, sunset and the moon phase.</li></ol>
+<p class="tipp"><b>Tip:</b> use the Delete button to record a new bearing. If your phone has no compass sensor, the sun and moon section still works.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/11-tajolo.jpg" alt="Compass" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f9"><h2><span class="sz">9.</span>Emergency card</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Emergency card</b> tile, and also at the bottom of the SOS screen.</p>
+<p><b>What it does:</b> your family members' emergency health details (blood type, allergies, medication, medical conditions, emergency contact) on one card, which paramedics can also read with a QR code. Works without internet.</p>
+<ol><li>The data comes from Household: fill in the family members' profiles there.</li><li>If someone's card shows “Missing: contact”, add the emergency contact on their profile.</li><li>Use the <b>Print</b> button to print one person's card, or <b>Print all</b> to print everyone's.</li><li>The <b>Family card (one QR)</b> puts the whole family into a single code.</li></ol>
+<p class="tipp"><b>Tip:</b> print it out and keep a copy in your wallet and in the car too.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/12-veszkartya.jpg" alt="Emergency card" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f10"><h2><span class="sz">10.</span>Knowledge base</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Knowledge base</b> tile.</p>
+<p><b>What it does:</b> articles organised by topic, from the basics through food, water and health to urban survival and navigation. The basic articles can be read without internet.</p>
+<ol><li>Tap a topic, for example <b>Basics</b>.</li><li>Choose an article from the list.</li><li>Use the search box at the top to search all articles.</li><li>Articles marked with a padlock (“locked”) are part of the extended knowledge base: they open once you redeem a premium code.</li></ol>
+<p class="tipp"><b>Tip:</b> a different knowledge base thought appears at the bottom of the home screen every day.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/13-tudastar.jpg" alt="Knowledge base" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/14-tudastar-tema.jpg" alt="Knowledge base" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/15-tudastar-cikk.jpg" alt="Knowledge base" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f11"><h2><span class="sz">11.</span>Bible</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Bible</b> tile.</p>
+<p><b>What it does:</b> the King James Version with read-aloud, prayers, confessions, a reading plan, verses for emergencies, prophecies, highlights and your own comments.</p>
+<ol><li>Tap the <b>Bible</b> tile, and the first time use the <b>Download the Bible</b> button to put it on your phone. After that it stays on your phone.</li><li>Choose a book, chapter and verse.</li><li>Tap the speaker icon to have it read aloud.</li><li>The other tiles hold prayers, a reading plan and verses for emergencies.</li></ol>
+<p class="tipp"><b>Tip:</b> tap a verse to highlight it or add a note to it.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/16-biblia.jpg" alt="Bible" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/17-biblia-olvaso.jpg" alt="Bible" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f12"><h2><span class="sz">12.</span>Comms</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Comms</b> tile.</p>
+<p><b>What it does:</b> every way you can send a message when the mobile network cannot help, in one place.</p>
+<ol><li><b>Digital message:</b> Local room (text to people near you, over shared Wi-Fi, a hotspot or Bluetooth) and Rooms (closed groups over the internet, joining approved by the room's host).</li><li><b>Voice message:</b> Morse (a short message by sound or light) and Fax (sending a picture as sound, even over radio).</li></ol>
+<p class="tipp"><b>Tip:</b> even with no network at all, Morse and fax still work.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/18-kommunikacio.jpg" alt="Comms" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f13"><h2><span class="sz">13.</span>Morse</h2>
+<p class="hol"><b>Where:</b> Comms &gt; <b>Morse</b>. Free.</p>
+<p><b>What it does:</b> sends text by sound and light, receives from the camera (flashing light) and the microphone (tone), plus a trainer and the basics.</p>
+<ol><li><b>Sending:</b> type your text and press the <b>Play</b> button. The <b>SOS</b> button sends the distress signal with one tap.</li><li><b>Reading from light:</b> point the camera at the flashing light and the app turns it into text.</li><li><b>Reading from sound:</b> the microphone turns the tone into text.</li><li><b>Morse trainer:</b> practise letters, numbers and words by ear, with a hand key or by tapping.</li></ol>
+<p class="tipp"><b>Tip:</b> the Morse basics section explains timing and speed.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/19-morze.jpg" alt="Morse" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/20-morze-adas.jpg" alt="Morse" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/21-morze-gyakorlo.jpg" alt="Morse" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f14"><h2><span class="sz">14.</span>Fax</h2>
+<p class="hol"><b>Where:</b> Comms &gt; <b>Fax</b>. Free.</p>
+<p><b>What it does:</b> sends a picture as sound, even over a radio.</p>
+<ol><li><b>Sending:</b> choose a picture and the app turns it into sound. It has to play into the receiving phone.</li><li><b>Receiving:</b> the receiving phone draws the picture line by line from the sound it hears.</li></ol>
+<p class="tipp"><b>Tip:</b> it works best in a quiet place with the two phones held close together.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/22-fax.jpg" alt="Fax" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f15"><h2><span class="sz">15.</span>Local rooms and Rooms</h2>
+<p class="hol"><b>Where:</b> Comms &gt; <b>Local room</b> or <b>Rooms</b>.</p>
+<p><b>What it does:</b> Local room carries text to people near you over shared Wi-Fi, a phone hotspot or Bluetooth, without an internet subscription. Rooms are closed groups over the internet.</p>
+<ol><li>First enter your name on the <b>Profile</b> screen (and a profile picture if you like): this is how others see you.</li><li>Local room: you need a shared network (a router or a phone's hotspot); everyone connects to it and opens the app.</li><li>Use the yellow <b>+</b> button to open a new room, or wait for a nearby room to appear.</li><li>Rooms: use the <b>+</b> button to create one, or join an existing one with a code. The room's host approves who joins.</li></ol>
+<p class="dij"><b>Free and premium:</b> Local room is free for everyone. With Rooms, the free version lets you create 1 room of your own and be a member of 3 rooms; with a premium code you can create 10 rooms and be a member of any number of rooms.</p>
+<p class="tipp"><b>Tip:</b> long-press a message to save it, and you can find it later on the Profile screen.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/23-helyi-szobak.jpg" alt="Local rooms and Rooms" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/24-profil.jpg" alt="Local rooms and Rooms" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/25-szobak.jpg" alt="Local rooms and Rooms" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f16"><h2><span class="sz">16.</span>Secret QR</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Secret QR</b> tile.</p>
+<p><b>What it does:</b> puts a message, location, list or personal details into a QR code that only someone who knows your family password can read.</p>
+<ol><li>Set the <b>Family password</b> (at the top, if it still says “not set”).</li><li>Choose what to put in it and type the message.</li><li>Press the <b>Create QR</b> button.</li><li>Reading: <b>Scan with camera</b>, <b>Load from file</b>, or type in the string of characters if you received it by Morse or fax.</li></ol>
+<p class="tipp"><b>Tip:</b> agree on the password in person beforehand, not in a message.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/26-titkos-qr.jpg" alt="Secret QR" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f17"><h2><span class="sz">17.</span>Tools</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Tools</b> tile.</p>
+<p><b>What it does:</b> Calculators, Metal detector (iron and steel in a wall or in the ground), Mirror (front camera with a light frame, for checking an injury), Wildlife and insect repeller.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/27-eszkozok.jpg" alt="Tools" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f18"><h2><span class="sz">18.</span>Calculators</h2>
+<p class="hol"><b>Where:</b> Tools &gt; <b>Calculators</b>.</p>
+<p><b>What it does:</b> Calculator (big buttons, tape, memory, usable with gloves and in the dark), Power (how long a power bank or battery lasts), Calories (how long the food lasts), Radio range, Heating (how much wood or gas you need), Rainwater (how much collects from the roof), Travel time (will you get there in daylight), Lightning (how far away the storm is), Water purification (how much bleach you need, how long to boil), Lamp runtime.</p>
+<ol><li>Tap a calculator.</li><li>Enter the data and the result appears instantly.</li></ol>
+<p class="tipp"><b>Tip:</b> every step can be reviewed on the calculator's tape, so you will not lose track of your sums in the field.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/28-kalkulatorok.jpg" alt="Calculators" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f19"><h2><span class="sz">19.</span>Wildlife and insect repeller</h2>
+<p class="hol"><b>Where:</b> Tools &gt; <b>Wildlife and insect repeller</b>.</p>
+<p><b>What it does:</b> plays a high-pitched tone to keep wildlife and mosquitoes away.</p>
+<ol><li>Choose: <b>Against wildlife</b> or <b>Against mosquitoes</b>.</li><li>Use the slider to adjust the frequency.</li><li>The <b>Test tone</b> button plays a short, clearly audible beep, so you can check that the speaker works. It does not stop a repeller that is running.</li></ol>
+<p class="tipp"><b>Tip:</b> the repeller tone is deliberately too high to hear. If you hear nothing, that is normal.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/29-riaszto.jpg" alt="Wildlife and insect repeller" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f20"><h2><span class="sz">20.</span>SOS (emergency)</h2>
+<p class="hol"><b>Where:</b> the red <b>SOS</b> button in the middle of the bottom menu. Free, works without internet.</p>
+<p><b>What it does:</b> light SOS with the screen or the flash, a loud emergency whistle, CPR rhythm, calling the emergency number 112, fall detection and a quick emergency card.</p>
+<ol><li><b>Light SOS (screen)</b> or <b>Light SOS (flash)</b>: one tap starts it, another stops it.</li><li><b>Emergency whistle:</b> Whistle or Continuous, with adjustable pitch. Turn the volume up.</li><li><b>CPR rhythm:</b> a sound sets the pace, so you do not have to count in a panic.</li><li><b>Call emergency services (112 in the EU):</b> the single European emergency number.</li><li>At the very bottom, the <b>Quick emergency card</b>.</li></ol>
+<p class="tipp"><b>Tip:</b> the emergency whistle carries best at around 3-4 kHz, which is why rescuers can hear it from further away.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/30-sos.jpg" alt="SOS (emergency)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f21"><h2><span class="sz">21.</span>Fall detection</h2>
+<p class="hol"><b>Where:</b> SOS screen &gt; <b>Fall detection</b>.</p>
+<p><b>What it does:</b> if the phone senses a hard impact and then does not move for a minute, it turns the screen on and counts down out loud. If you do not press the <b>I'm OK</b> button, it sends an SOS message with your location to your rooms and sounds the emergency whistle.</p>
+<ol><li>Tick <b>Automatic SOS after a fall</b>.</li><li>Grant the permission if the app asks for it.</li><li>If it goes off by mistake, press the big <b>I'm OK</b> button.</li></ol>
+<p class="tipp"><b>Tip:</b> the message needs a connection to your rooms; the countdown and the emergency whistle work without one.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/31-eses-erzekeles.jpg" alt="Fall detection" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f22"><h2><span class="sz">22.</span>Light</h2>
+<p class="hol"><b>Where:</b> the <b>Light</b> button in the bottom menu. Free, works without internet.</p>
+<p><b>What it does:</b> a torch using the flash or the screen, with adjustable colour and brightness, and a red night light.</p>
+<ol><li>Tap the <b>Light</b> button: the flash turns on and the screen stays dark.</li><li>Tap once more: only the flash stays lit.</li><li>For screen light, swipe: horizontally to change the colour, vertically to change the brightness. Tap to bring up the buttons.</li></ol>
+<p class="tipp"><b>Tip:</b> red light does not dazzle eyes that have adjusted to the dark.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/32-lampa.jpg" alt="Light" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f23"><h2><span class="sz">23.</span>Night mode</h2>
+<p class="hol"><b>Where:</b> the moon icon in the top bar.</p>
+<p><b>What it does:</b> the whole app turns red, so it does not dazzle you in the dark or spoil your night vision. The map and the light stay red too.</p>
+<ol><li>Tap the moon icon to turn it on, and tap again to turn it off.</li></ol>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/33-ejszakai-mod.jpg" alt="Night mode" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f24"><h2><span class="sz">24.</span>Settings</h2>
+<p class="hol"><b>Where:</b> the rightmost button in the bottom menu, <b>Settings</b>. Free.</p>
+<p><b>What it does:</b> notifications about expiring food and stock, vibration feedback, language, text size, help, privacy, redeeming a premium code.</p>
+<ol><li><b>Notifications:</b> tick the box and choose how far ahead to be reminded (3 days, 1 week, 2 weeks, 1 month). Try it with the <b>Test notification</b> button.</li><li><b>Language</b> and <b>Text size:</b> set them however suits you.</li><li><b>Help:</b> on every screen, the question mark in the header opens help too.</li></ol>
+<p class="tipp"><b>Tip:</b> if notifications are blocked, the app tells you where to turn them on in your phone's settings.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/34-beallitasok.jpg" alt="Settings" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f25"><h2><span class="sz">25.</span>Redeeming a premium code</h2>
+<p class="hol"><b>Where:</b> Settings &gt; <b>Unlock</b>.</p>
+<p><b>What it does:</b> this is where you redeem your premium code.</p>
+<ol><li>Enter the code in the field.</li><li>Press the <b>Redeem code</b> button. Redeeming needs an internet connection.</li><li>After that, family members and stock are unlimited, the extended knowledge base opens, and map route planning becomes unlimited, with downloadable offline maps.</li></ol>
+<p class="tipp"><b>Tip:</b> one code works on up to two of your devices.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/35-feloldas.jpg" alt="Redeeming a premium code" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f26"><h2><span class="sz">26.</span>If a permission is missing</h2>
+<p class="hol"><b>Where:</b> it appears by itself when a feature needs a permission (camera, microphone, location, notifications, motion sensors, Bluetooth).</p>
+<p><b>What it does:</b> tells you what is missing, what it is needed for and what to do.</p>
+<ol><li>Tap the <b>Ask for permission</b> button and choose Allow.</li><li>If no prompt appears, the <b>App settings</b> button opens your phone's settings with one tap.</li><li>Once you have granted it, come back: the app tries again by itself.</li></ol>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/36-engedely.jpg" alt="If a permission is missing" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f27"><h2><span class="sz">27.</span>Send feedback</h2>
+<p class="hol"><b>Where, in two places:</b></p>
+<ul><li>the <b>speech bubble icon</b> in the top bar (no label),</li><li>the <b>Send feedback</b> button on the <b>Who am I?</b> page.</li></ul>
+<p><b>What it does:</b> lets you send us a bug report or an idea, together with a screenshot.</p>
+<ol><li>Choose the type (bug or idea) and the part of the app it is about.</li><li>Describe what you did, what you saw and what you expected.</li><li>Attach a screenshot if needed.</li><li>Press the <b>Send</b> button.</li></ol>
+<p class="tipp"><b>Tip:</b> use the <b>My reports</b> button to look back at what you have sent, and the <b>What's new</b> button to see what has changed in the app.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Send feedback" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Send feedback" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Send feedback" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f28"><h2><span class="sz">28.</span>Asset Manager</h2>
+<p class="hol"><b>Where:</b> Home &gt; <b>Assets</b> tile.</p>
+<p>The Asset Manager is a separate product. Inside the app you can try it with up to 10 items, on both the free and the premium version; for full use you buy it separately on Google Play and the App Store. Once you buy it, it also works fully inside PrepperPapa.</p></section>
+<section class="lap"><h2>If you get stuck</h2>
+<p>Write to us from the app: the speech bubble icon in the top bar, or the “Send feedback” button on the “Who am I?” page. Tell us what you did, what you saw, and what phone you are using.</p></section>
+
+</main>
+<footer><div>PrepperPapa &middot; User guide &middot; <a href="/en/adatkezeles.html">Privacy</a></div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>

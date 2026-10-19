@@ -18,6 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face{font-family:'PP Felirat';src:url('assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
   @font-face{font-family:Pacifico;src:url('assets/pacifico.woff2') format('woff2');
              font-display:swap;font-weight:400;font-style:normal}
   :root{
@@ -42,7 +43,8 @@
   .brand{display:flex;align-items:center;gap:12px;margin-right:auto}
   .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;
              box-shadow:0 0 0 1px rgba(255,179,64,.35),0 0 18px rgba(255,179,64,.16)}
-  .brand span{font-family:Pacifico,cursive;font-size:22px}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:27px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0;box-shadow:none;object-fit:contain}
   .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
   .nav a.link:hover{color:var(--ink)}
   .btn{display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;
@@ -143,8 +145,8 @@
   .fnav{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:24px}
   .fnav a:hover{color:var(--ink)}
   .fbrand{display:flex;align-items:center;gap:11px;margin-bottom:20px}
-  .fbrand img{width:32px;height:32px;border-radius:50%}
-  .fbrand span{font-family:Pacifico,cursive;font-size:19px;color:var(--ink)}
+  .fbrand img{width:32px;height:32px;border-radius:0}
+  .fbrand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:22px;letter-spacing:.4px;color:#7CB342}
 
   /* ===== 2026-10-19: arculat igazitasa az /app/ oldalhoz (Fonok 21:29) ===== */
   h1.disp,h2.disp{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -218,12 +220,51 @@
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"PrepperPapa",
-"url":"https://prepperpapa.hu/","logo":"https://prepperpapa.hu/assets/logo-96.png",
+"url":"https://prepperpapa.hu/","logo":"https://prepperpapa.hu/assets/applogo-192.png",
 "description":"Felkészülés józan ésszel, a valós életre. Felszerelés-tesztek, gyakorlati útmutatók, tudástár.",
 "sameAs":["https://www.youtube.com/@PrepperPapa","https://www.tiktok.com/@prepperpapa",
 "https://www.facebook.com/prepperpapa","https://www.instagram.com/prepperpapa"],
 "email":"prepperpapa@gmail.com"}
 </script>
+<script>
+(function(){try{
+  if(location.pathname!=='/'||/bot|crawl|spider|slurp|google|bing|yandex|baidu|duckduck|facebookexternalhit/i.test(navigator.userAgent))return;
+  var L=['en','de','es','pl','ro','ru','uk'],v=null;
+  try{v=localStorage.getItem('pp-nyelv');}catch(e){}
+  if(v==='hu')return;
+  if(v&&L.indexOf(v)>=0){location.replace('/'+v+'/'+location.hash);return;}
+  var n=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'hu']);
+  for(var i=0;i<n.length;i++){var c=String(n[i]).toLowerCase().slice(0,2);
+    if(c==='hu')return; if(L.indexOf(c)>=0){location.replace('/'+c+'/'+location.hash);return;}}
+}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
 </head>
 <body>
 <svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -240,7 +281,7 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#"><img src="assets/logo-96.png" width="40" height="40" alt="PrepperPapa logó"><span>PrepperPapa</span></a>
+    <a class="brand" href="#"><img src="assets/applogo-96.png" width="40" height="40" alt="PrepperPapa logó"><span>PrepperPapa</span></a>
     <a class="link" href="#videok">Videók</a>
     <a class="link" href="#tudastar">Tudástár</a>
     <a class="link" href="/kalkulator/">Kalkulátorok</a>
@@ -248,6 +289,7 @@
     <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező</a>
     <a class="link" href="#kapcsolat">Kapcsolat</a>
     <a class="btn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
+    <details class="nyelvv"><summary aria-label="Nyelv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>HU</span></summary><ul><li><a href="/" hreflang="hu" lang="hu" data-nyelv="hu" aria-current="true">Magyar</a></li><li><a href="/en/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
     <details class="mmenu">
       <summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
       <nav onclick="this.parentNode.open=false">
@@ -280,9 +322,9 @@
 
 <div class="tenyek">
   <div class="wrap">
-    <div class="teny"><b>10 700</b><span>feliratkozó</span></div>
-    <div class="teny"><b>539</b><span>videó</span></div>
-    <div class="teny"><b>1,6 millió</b><span>megtekintés</span></div>
+    <div class="teny"><b>10 800</b><span>feliratkozó</span></div>
+    <div class="teny"><b>560</b><span>videó</span></div>
+    <div class="teny"><b>1,7 millió</b><span>megtekintés</span></div>
     <div class="teny"><b>2018 óta</b><span>folyamatosan</span></div>
   </div>
 </div>
@@ -359,7 +401,7 @@
                 background:linear-gradient(160deg,#16211B,#121B16)">
         <div style="text-align:center;padding:26px">
           <div style="font-size:30px;color:var(--zold);line-height:1">&rarr;</div>
-          <div class="t" style="padding:12px 0 0">Mind az 539 videó</div>
+          <div class="t" style="padding:12px 0 0">Mind az 560 videó</div>
           <div style="color:var(--muted);font-size:14px">Tesztek, útmutatók, élő adások</div>
         </div>
       </a>
@@ -418,7 +460,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="fbrand"><img src="assets/logo-96.png" width="32" height="32" alt=""><span>PrepperPapa</span></div>
+    <div class="fbrand"><img src="assets/applogo-96.png" width="32" height="32" alt=""><span>PrepperPapa</span></div>
     <div class="fnav">
       <a href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">YouTube</a>
       <a href="https://www.tiktok.com/@prepperpapa" target="_blank" rel="noopener">TikTok</a>
@@ -438,6 +480,10 @@
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('lat');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lat');io.unobserve(e.target);}});},{threshold:.12});
   els.forEach(function(e){io.observe(e);});})();
+</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
 </script>
 </body>
 </html>

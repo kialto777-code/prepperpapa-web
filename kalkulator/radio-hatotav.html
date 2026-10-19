@@ -17,6 +17,7 @@
 <link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/kalkulator/app.css">
 <style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
   @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
              font-display:swap;font-weight:400;font-style:normal}
   :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
@@ -31,7 +32,8 @@
         gap:18px;height:70px}
   .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
   .brand img{width:38px;height:38px;border-radius:50%;margin:0}
-  .brand span{font-family:Pacifico,cursive;font-size:21px}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
   .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
                text-decoration:none}
   .nav a.link:hover{color:var(--ink)}
@@ -105,6 +107,33 @@
   footer .fnav a{color:var(--muted);text-decoration:none}
   footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/kalkulator/radio-hatotav.html">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/kalkulator/radio-hatotav.html">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
 </head>
 <body>
 <svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -119,12 +148,13 @@
 </defs>
 </svg>
 <header><nav class="nav">
-  <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="brand" href="/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
   <a class="link" href="/cikkek.html">Cikkek</a>
   <a class="link" href="/kalkulator/">Kalkulátorok</a>
   <a class="link" href="/app/">Alkalmazás</a>
   <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
-  <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+  <details class="nyelvv"><summary aria-label="Nyelv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>HU</span></summary><ul><li><a href="/kalkulator/radio-hatotav.html" hreflang="hu" lang="hu" data-nyelv="hu" aria-current="true">Magyar</a></li><li><a href="/en/kalkulator/radio-hatotav.html" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/kalkulator/radio-hatotav.html" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/kalkulator/radio-hatotav.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/kalkulator/radio-hatotav.html" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/kalkulator/radio-hatotav.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/kalkulator/radio-hatotav.html" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/kalkulator/radio-hatotav.html" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+    <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
     <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/app/">PrepperPapa app</a><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="https://www.youtube.com/@PrepperPapa">Csatorna</a></nav>
   </details>
 </nav></header>
@@ -318,6 +348,10 @@ if($('radSav')) $('radSav').onchange = radSavValt;
 <a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
 <a class="vissza" href="/kalkulator/">&larr; Vissza a kalkulátorokhoz</a>
 </main>
-<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a></div><span>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</span></div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
 </body>
 </html>
