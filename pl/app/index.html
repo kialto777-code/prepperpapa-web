@@ -108,11 +108,10 @@
         font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
   .badge[aria-disabled="true"]{cursor:default}
   /* phone mockup */
-  .tel{width:min(270px,62vw);aspect-ratio:480/946;border-radius:38px;padding:9px;margin:0 auto;
-       background:linear-gradient(145deg,#2b3a31,#0d1410);box-shadow:0 30px 80px rgba(0,0,0,.6),
-       0 0 0 1px #3a4a40 inset,0 0 60px rgba(255,179,64,.08);position:relative}
-  .tel img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;display:block;background:#0B110E}
-  .hero .tel{transform:rotate(-4deg)}
+  /* real app screenshot, shown flat: no tilt, no drawn phone body (Boss 22:31) */
+  .tel{display:block;width:min(270px,62vw);aspect-ratio:480/1038;margin:0 auto;position:relative;border-radius:22px;overflow:hidden;
+       border:1px solid #3a4a40;box-shadow:0 24px 60px rgba(0,0,0,.55);background:#0B110E}
+  .tel img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
   .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
           letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
   @keyframes lebeg{50%{transform:translate(-50%,6px)}}
@@ -256,7 +255,7 @@
 <a class="badge appstore" id="pp-badge-appstore" aria-disabled="true" title="Wkrótce w App Store"><img src="/app/kepek/app-store-pl.svg" alt="Pobierz z App Store (wkrótce)" width="151" height="40"></a>
 </div>
 </div>
-<div class="telhely rv lat"><div class="tel"><img src="/pl/app/kepek/1-kezdolap.jpg" alt="Ekran startowy PrepperPapa" width="480" height="946"></div></div>
+<div class="telhely rv lat"><div class="tel"><img src="/pl/app/kepek/1-kezdolap.jpg" alt="Ekran startowy PrepperPapa" width="480" height="1038"></div></div>
 </div><a class="lefele" href="#bemutato">Przewiń &darr;</a></section>
 
 <section class="sec slider" id="bemutato"><div class="in">
@@ -264,22 +263,22 @@
 <div class="sav" aria-roledescription="lapozó">
 <div class="dia"><div><div class="szam">01 &middot; Gotowość</div>
 <h3>Jedno spojrzenie i wiesz, na czym stoicie.</h3><p>Woda, jedzenie, ogrzewanie, prąd: dla każdego miejsca, w procentach. Jeśli czegoś jest za mało, widzisz też, co trzeba uzupełnić.</p></div>
-<div class="tel"><img src="/pl/app/kepek/1-kezdolap.jpg" alt="Gotowość" loading="eager" width="480" height="946"></div></div>
+<div class="tel"><img src="/pl/app/kepek/1-kezdolap.jpg" alt="Gotowość" loading="eager" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">02 &middot; Mapa</div>
 <h3>Nawet w lesie wiesz, dokąd iść.</h3><p>Szlaki turystyczne, źródła, schroniska. Plan wędrówki z odległością, czasem przejścia i przewyższeniem, a z pobraną mapą także bez zasięgu.</p></div>
-<div class="tel"><img src="/pl/app/kepek/2-terkep.jpg" alt="Mapa" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/pl/app/kepek/2-terkep.jpg" alt="Mapa" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">03 &middot; Zapas</div>
 <h3>Spiżarnia w kieszeni.</h3><p>Co masz w domu, gdzie to trzymasz i kiedy traci ważność. Pozycje, którym kończy się termin, są oznaczone kolorem.</p></div>
-<div class="tel"><img src="/pl/app/kepek/8-keszlet.jpg" alt="Zapas" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/pl/app/kepek/8-keszlet.jpg" alt="Zapas" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">04 &middot; Baza wiedzy</div>
 <h3>Wiedza, która jest pod ręką także bez zasięgu.</h3><p>21 tematów od wody po pierwszą pomoc, z pogłębionymi, szczegółowymi artykułami, do przeczytania także bez internetu.</p></div>
-<div class="tel"><img src="/pl/app/kepek/3-tudastar.jpg" alt="Baza wiedzy" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/pl/app/kepek/3-tudastar.jpg" alt="Baza wiedzy" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">05 &middot; Kompas</div>
 <h3>Telefon w kieszeni, prowadzi cię dźwięk.</h3><p>Ustawiasz kierunek, a dźwięk cię prowadzi. Pokazuje też drogę powrotną.</p></div>
-<div class="tel"><img src="/pl/app/kepek/4-tajolo.jpg" alt="Kompas" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/pl/app/kepek/4-tajolo.jpg" alt="Kompas" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">06 &middot; Biblia</div>
 <h3>Siła na trudne dni.</h3><p>Biblia Gdańska w twoim telefonie, z czytaniem na głos, bez internetu.</p></div>
-<div class="tel"><img src="/pl/app/kepek/6-biblia.jpg" alt="Biblia" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/pl/app/kepek/6-biblia.jpg" alt="Biblia" loading="lazy" width="480" height="1038"></div></div>
 </div>
 <div class="pottyok"></div>
 <div class="nyilak"><button type="button" id="dia-elozo" aria-label="Poprzedni">&larr;</button><button type="button" id="dia-kov" aria-label="Następny">&rarr;</button></div>

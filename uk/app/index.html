@@ -108,11 +108,10 @@
         font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
   .badge[aria-disabled="true"]{cursor:default}
   /* phone mockup */
-  .tel{width:min(270px,62vw);aspect-ratio:480/946;border-radius:38px;padding:9px;margin:0 auto;
-       background:linear-gradient(145deg,#2b3a31,#0d1410);box-shadow:0 30px 80px rgba(0,0,0,.6),
-       0 0 0 1px #3a4a40 inset,0 0 60px rgba(255,179,64,.08);position:relative}
-  .tel img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;display:block;background:#0B110E}
-  .hero .tel{transform:rotate(-4deg)}
+  /* real app screenshot, shown flat: no tilt, no drawn phone body (Boss 22:31) */
+  .tel{display:block;width:min(270px,62vw);aspect-ratio:480/1038;margin:0 auto;position:relative;border-radius:22px;overflow:hidden;
+       border:1px solid #3a4a40;box-shadow:0 24px 60px rgba(0,0,0,.55);background:#0B110E}
+  .tel img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
   .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
           letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
   @keyframes lebeg{50%{transform:translate(-50%,6px)}}
@@ -256,7 +255,7 @@
 <a class="badge appstore" id="pp-badge-appstore" aria-disabled="true" title="Незабаром в App Store"><img src="/app/kepek/app-store-en.svg" alt="Завантажити в App Store (незабаром)" width="151" height="40"></a>
 </div>
 </div>
-<div class="telhely rv lat"><div class="tel"><img src="/uk/app/kepek/1-kezdolap.jpg" alt="Головний екран PrepperPapa" width="480" height="946"></div></div>
+<div class="telhely rv lat"><div class="tel"><img src="/uk/app/kepek/1-kezdolap.jpg" alt="Головний екран PrepperPapa" width="480" height="1038"></div></div>
 </div><a class="lefele" href="#bemutato">Гортай &darr;</a></section>
 
 <section class="sec slider" id="bemutato"><div class="in">
@@ -264,22 +263,22 @@
 <div class="sav" aria-roledescription="lapozó">
 <div class="dia"><div><div class="szam">01 &middot; Готовність</div>
 <h3>Один погляд, і ти знаєш, на якому ви етапі.</h3><p>Вода, їжа, опалення, електрика: за кожним місцем, у відсотках. Якщо чогось мало, ти бачиш, що треба поповнити.</p></div>
-<div class="tel"><img src="/uk/app/kepek/1-kezdolap.jpg" alt="Готовність" loading="eager" width="480" height="946"></div></div>
+<div class="tel"><img src="/uk/app/kepek/1-kezdolap.jpg" alt="Готовність" loading="eager" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">02 &middot; Карта</div>
 <h3>Навіть у лісі ти знаєш, куди йти.</h3><p>Туристичні стежки, джерела, притулки. План походу з відстанню, часом у дорозі та набором висоти, із завантаженою картою навіть без мобільного зв’язку.</p></div>
-<div class="tel"><img src="/uk/app/kepek/2-terkep.jpg" alt="Карта" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/uk/app/kepek/2-terkep.jpg" alt="Карта" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">03 &middot; Запаси</div>
 <h3>Комора у твоїй кишені.</h3><p>Що є вдома, де це зберігається, коли закінчується термін придатності. Позиції, у яких спливає термін, позначаються кольором.</p></div>
-<div class="tel"><img src="/uk/app/kepek/8-keszlet.jpg" alt="Запаси" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/uk/app/kepek/8-keszlet.jpg" alt="Запаси" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">04 &middot; База знань</div>
 <h3>Знання, які з тобою навіть без мобільного зв’язку.</h3><p>21 тема від води до першої допомоги, з глибшими, докладними статтями, які можна читати без інтернету.</p></div>
-<div class="tel"><img src="/uk/app/kepek/3-tudastar.jpg" alt="База знань" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/uk/app/kepek/3-tudastar.jpg" alt="База знань" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">05 &middot; Орієнтування</div>
 <h3>Телефон у кишені, веде звук.</h3><p>Ти записуєш напрямок, і застосунок веде тебе звуком. Показує й зворотний шлях.</p></div>
-<div class="tel"><img src="/uk/app/kepek/4-tajolo.jpg" alt="Орієнтування" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/uk/app/kepek/4-tajolo.jpg" alt="Орієнтування" loading="lazy" width="480" height="1038"></div></div>
 <div class="dia"><div><div class="szam">06 &middot; Біблія</div>
 <h3>Сила на важкі дні.</h3><p>Переклад Кароля на твоєму телефоні, з читанням уголос, без інтернету.</p></div>
-<div class="tel"><img src="/uk/app/kepek/6-biblia.jpg" alt="Біблія" loading="lazy" width="480" height="946"></div></div>
+<div class="tel"><img src="/uk/app/kepek/6-biblia.jpg" alt="Біблія" loading="lazy" width="480" height="1038"></div></div>
 </div>
 <div class="pottyok"></div>
 <div class="nyilak"><button type="button" id="dia-elozo" aria-label="Назад">&larr;</button><button type="button" id="dia-kov" aria-label="Далі">&rarr;</button></div>
