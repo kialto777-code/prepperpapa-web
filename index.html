@@ -52,6 +52,19 @@
   .btn.ghost:hover{border-color:var(--zold)}
   .btn.amber{background:var(--borostyan)}
 
+  /* mobile menu (phones: the .nav links are hidden) */
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:6px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+  .mmenu nav a:hover{background:var(--panel2)}
+  .mmenu nav a.kiemelt{color:var(--borostyan);font-weight:700}
+
   /* HERO */
   .hero{position:relative;min-height:640px;display:flex;align-items:center;overflow:hidden;
         border-bottom:1px solid var(--line)}
@@ -139,6 +152,9 @@
     .tenyek .wrap{gap:26px}
     .pillars,.tobb,.ketto,.kiemelt{grid-template-columns:1fr}
     .nav a.link{display:none}
+    .mmenu{display:block}
+    .nav{gap:12px}
+    .nav .btn{padding:10px 14px;font-size:14px}
     section.blk{padding:60px 0}
   }
 </style>
@@ -175,6 +191,17 @@
     <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező</a>
     <a class="link" href="#kapcsolat">Kapcsolat</a>
     <a class="btn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
+    <details class="mmenu">
+      <summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+      <nav onclick="this.parentNode.open=false">
+        <a class="kiemelt" href="/app/">PrepperPapa app</a>
+        <a href="#videok">Videók</a>
+        <a href="#tudastar">Tudástár</a>
+        <a href="/kalkulator/">Kalkulátorok</a>
+        <a href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -186,6 +213,7 @@
     <p class="lead">Felszerelés-tesztek valós használatban, gyakorlati útmutatók és tudástár. Nem világvége-hangulat: az a néhány dolog, ami egy áramszünetben, egy viharban vagy egy túrán tényleg számít.</p>
     <div class="cta">
       <a class="btn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Nézd a csatornát</a>
+      <a class="btn amber" href="/app/">PrepperPapa app</a>
       <a class="btn ghost" href="#tudastar">Kezdd itt: a tudástár</a>
     </div>
   </div>
