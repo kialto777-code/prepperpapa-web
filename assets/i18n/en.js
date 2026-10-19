@@ -18,6 +18,13 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  // ===== 2026-10-19 v43.313 (card 6b4458db) =====
+  "(sérült üzenet — egy 2026. 10. 12. előtti szerverhiba levágta, nem állítható helyre)": "(damaged message — cut off by a server fault before 12 Oct 2026, cannot be restored)",
+  "Ezen a készüléken a böngésző nem támogatja a rezgést (iPhone-on a Safari nem tudja). A kapcsoló ezért nem aktív.": "This device's browser does not support vibration (Safari on iPhone cannot do it). The switch is therefore inactive.",
+  "Bejelentéseim": "My reports",
+  "Újdonságok": "What's new",
+  "Facebook-csoport": "Facebook group",
+  "Facebook-oldal": "Facebook page",
   // ===== 2026-10-19: sugo-szovegek a kepernyokhoz igazitva (kartya eaaba276, Fonok 1a) =====
   "A gyűrű a jelen lévő típusok átlagát mutatja, a színe a leggyengébbet. A sávokon látod, melyik terület gyenge: egy alacsony érték az átlag mögött is ott lehet.": "The ring shows the average of the types present, and its colour shows the weakest one. The bars show which area is weak: a low value can hide behind the average.",
   "Nyelv: az app felületének nyelve. A tartalom (tudástár, Biblia) egyelőre nem változik tőle; a Biblia fordítását a Biblia fejlécében választod.": "Language: the language of the app interface. The content (knowledge base, Bible) does not change with it yet; you choose the Bible translation in the Bible header.",

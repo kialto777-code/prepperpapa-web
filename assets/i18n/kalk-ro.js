@@ -82,6 +82,10 @@ function dur(s){ var d=/(\d+) nap/.exec(s), h=/(\d+) óra/.exec(s), m=/(\d+) per
   if(d) o.push(P(d[1],DAY)); if(h) o.push(P(h[1],HOUR)); if(m) o.push(P(m[1],MIN)); return o.length ? o.join(' ') : s; }
 function nodash(s){ return String(s).replace(/\s*—\s*/g, ', '); }
 function band(s){ return String(s).replace(/(\d+) méter/, function(_,n){ return P(n,METRE); }); }
+function dur(s){ var d=/(\d+) nap/.exec(s), h=/(\d+) óra/.exec(s), m=/(\d+) perc/.exec(s), o=[];
+  if(d) o.push(P(d[1],DAY)); if(h) o.push(P(h[1],HOUR)); if(m) o.push(P(m[1],MIN)); return o.length ? o.join(' și ') : s; }
+
+S[ny]["ALLPOWERS SP002 (21 W, akkus)"]="ALLPOWERS SP002 (21 W, cu acumulator)";
 var M=(window.PP_FORD_MINTAK=window.PP_FORD_MINTAK||{}); M[ny]=M[ny]||[];
 var R=[
   [/^Ennyi ideig tart a saját megadás ezzel a listával\.$/, [], T("Atât rezistă sursa ta proprie de energie cu această listă.")], // ennyi_sajat
@@ -134,7 +138,7 @@ var R=[
   [/^(\d(?:[\d.,\s]*\d)?) kilométer (\d(?:[\d.,\s]*\d)?) km\/h-val, plusz (\d(?:[\d.,\s]*\d)?) méter emelkedés\. Az emelkedés minden hatszáz métere egy órát ad hozzá\. Most indulva (.+?)-kor érnél oda\.$/, [0, 1, 2], T("$1 km cu $2 km/h, plus $3 m de urcare. Fiecare șase sute de metri de urcare adaugă o oră. Dacă pleci acum, ajungi la $4.")], // menet
   [/^Napnyugta (.+?), tehát világosban odaérsz, (.+) tartalékkal\.$/, [], function(_,t,d){ return "Apusul e la "+t+", deci ajungi pe lumină, cu o rezervă de "+dur(d)+"."; }], // vilagos
   [/^Napnyugta (.+?): ebből (.+) már sötétben lenne\. Vagy indulj hamarabb, vagy vigyél lámpát\.$/, [], function(_,t,d){ return "Apusul e la "+t+": "+dur(d)+" din drum ar fi deja pe întuneric. Ori pleci mai devreme, ori iei o lanternă."; }], // sotet
-  [/^Ennyire várható összeköttetés (.+?)-on, (nyílt, sík terep|dombos, hullámos|erdő, sűrű növényzet|város, beépített|hegyvidék, völgyben) terepen, (\d(?:[\d.,\s]*\d)?) watttal, (\d(?:[\d.,\s]*\d)?) és (\d(?:[\d.,\s]*\d)?) méter antennamagassággal\.$/, [2, 3, 4], function(_,b,t,w,h1,h2){ return "Raza de legătură așteptată pe "+band(b)+", teren: "+t+", cu "+w+" W, la "+h1+" și "+h2+" m înălțime a antenelor."; }], // ossze
+  [/^Ennyire várható összeköttetés (.+?)-on, (nyílt, sík terep|dombos, hullámos|erdő, sűrű növényzet|város, beépített|hegyvidék, völgyben) terepen, (\d(?:[\d.,\s]*\d)?) watttal, (\d(?:[\d.,\s]*\d)?) és (\d(?:[\d.,\s]*\d)?) méter antennamagassággal\.$/, [2, 3, 4], function(_,b,t,w,h1,h2){ return "Raza de legătură așteptată pe "+band(b)+", condiții: "+t+", cu "+w+" W, la "+h1+" și "+h2+" m înălțime a antenelor."; }], // ossze
   [/^Amin most múlik: (.+)\.$/, [], T("Ce o limitează acum: $1.")], // amin
   [/^A rálátásod (\d(?:[\d.,\s]*\d)?) km, a terep és a teljesítmény (\d(?:[\d.,\s]*\d)?) km-t enged — a kettő közül a kisebbik számít\.$/, [0, 1], T("Vizibilitatea ta directă e de $1 km, iar terenul și puterea permit $2 km: contează cea mai mică dintre ele.")], // ralat_km
   [/^(.+) használatához vizsga és hívójel kell\. A vizsga előre megszerezhető — és pont ez a lényeg: egy vészhelyzetben már késő elkezdeni\.$/, [], function(_,b){ return "Pentru "+band(b.split(" \u2014 ")[0])+" îți trebuie examen și indicativ. Examenul se poate lua din timp, și exact asta e ideea: într-o urgență e prea târziu să începi."; }], // engedely

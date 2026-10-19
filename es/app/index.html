@@ -108,10 +108,33 @@
         font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
   .badge[aria-disabled="true"]{cursor:default}
   /* phone mockup */
-  /* real app screenshot, shown flat: no tilt, no drawn phone body (Boss 22:31) */
-  .tel{display:block;width:min(270px,62vw);aspect-ratio:480/1038;margin:0 auto;position:relative;border-radius:22px;overflow:hidden;
-       border:1px solid #3a4a40;box-shadow:0 24px 60px rgba(0,0,0,.55);background:#0B110E}
-  .tel img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  /* realistic upright phone frames around the real app screenshots (Boss 22:54 via Marveen 23822):
+     Android with a punch-hole camera at the top of the page, iPhone with the Dynamic Island further down.
+     A status bar sits above the screenshot so the camera never covers the app header. */
+  .tel{display:block;position:relative;width:min(270px,62vw);margin:0 auto;padding:7px;border-radius:36px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .tel .kij{display:block;position:relative;overflow:hidden;border-radius:29px;background:#0B110E}
+  .tel .sb{display:flex;justify-content:space-between;align-items:center;height:26px;padding:0 16px 0 20px;
+       background:#0B110E;color:#e8efe9;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .tel .sb::before{content:"12:45"}
+  .tel .sb svg{height:9px;width:auto;fill:#e8efe9;display:block}
+  .tel .sb::after{content:"";position:absolute;left:50%;top:8px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022}
+  .tel img{display:block;width:100%;height:auto}
+  .tel .kij{padding-bottom:9px}
+  .tel .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .tel.iphone{padding:9px;border-radius:46px;background:linear-gradient(160deg,#6b6862,#2c2b29 42%,#57544f);
+       box-shadow:0 0 0 1px #8a867f,0 0 0 2.5px #111,0 26px 60px rgba(0,0,0,.6)}
+  .tel.iphone::before{right:-3.5px;top:24%;height:13%;background:#77736c}
+  .tel.iphone::after{content:"";position:absolute;left:-3.5px;top:18%;width:3px;height:7%;border-radius:3px 0 0 3px;background:#77736c;
+       box-shadow:0 calc(min(270px,62vw)*.2) 0 #77736c}
+  .tel.iphone .kij{border-radius:37px;padding-bottom:18px}
+  .tel.iphone .kij::after{bottom:6px;height:4px;width:34%;margin-left:-17%}
+  .tel.iphone .sb{height:34px;padding:0 22px 0 28px}
+  .tel.iphone .sb::before{content:"9:41"}
+  .tel.iphone .sb::after{top:8px;width:26%;height:20px;margin-left:-13%;border-radius:12px;box-shadow:none}
   .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
           letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
   @keyframes lebeg{50%{transform:translate(-50%,6px)}}
@@ -255,7 +278,7 @@
 <a class="badge appstore" id="pp-badge-appstore" aria-disabled="true" title="Próximamente en la App Store"><img src="/app/kepek/app-store-es.svg" alt="Descárgala en la App Store (próximamente)" width="151" height="40"></a>
 </div>
 </div>
-<div class="telhely rv lat"><div class="tel"><img src="/es/app/kepek/1-kezdolap.jpg" alt="Pantalla de inicio de PrepperPapa" width="480" height="1038"></div></div>
+<div class="telhely rv lat"><div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/es/app/kepek/1-kezdolap.jpg" alt="Pantalla de inicio de PrepperPapa" width="480" height="1038"></span></div></div>
 </div><a class="lefele" href="#bemutato">Desplázate &darr;</a></section>
 
 <section class="sec slider" id="bemutato"><div class="in">
@@ -263,22 +286,22 @@
 <div class="sav" aria-roledescription="lapozó">
 <div class="dia"><div><div class="szam">01 &middot; Preparación</div>
 <h3>Un vistazo y sabes cómo estáis.</h3><p>Agua, comida, calefacción, electricidad: por lugar y en porcentaje. Si falta algo, también ves qué hay que reponer.</p></div>
-<div class="tel"><img src="/es/app/kepek/1-kezdolap.jpg" alt="Preparación" loading="eager" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/es/app/kepek/1-kezdolap.jpg" alt="Preparación" loading="eager" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">02 &middot; Mapa</div>
 <h3>También en el bosque sabes por dónde ir.</h3><p>Rutas de senderismo, fuentes, refugios. Plan de ruta con distancia, tiempo de marcha y desnivel, y con el mapa descargado, también sin cobertura.</p></div>
-<div class="tel"><img src="/es/app/kepek/2-terkep.jpg" alt="Mapa" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/es/app/kepek/2-terkep.jpg" alt="Mapa" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">03 &middot; Reserva</div>
 <h3>La despensa en tu bolsillo.</h3><p>Qué tienes en casa, dónde lo guardas y cuándo caduca. Lo que está a punto de caducar se marca con color.</p></div>
-<div class="tel"><img src="/es/app/kepek/8-keszlet.jpg" alt="Reserva" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/es/app/kepek/8-keszlet.jpg" alt="Reserva" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">04 &middot; Base de conocimientos</div>
 <h3>Conocimiento que está ahí incluso sin cobertura.</h3><p>21 temas, del agua a los primeros auxilios, con artículos más profundos y detallados que se pueden leer sin internet.</p></div>
-<div class="tel"><img src="/es/app/kepek/3-tudastar.jpg" alt="Base de conocimientos" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/es/app/kepek/3-tudastar.jpg" alt="Base de conocimientos" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">05 &middot; Brújula</div>
 <h3>El teléfono en el bolsillo, el sonido te guía.</h3><p>Registras el rumbo y te guía con sonido. También te muestra el camino de vuelta.</p></div>
-<div class="tel"><img src="/es/app/kepek/4-tajolo.jpg" alt="Brújula" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/es/app/kepek/4-tajolo.jpg" alt="Brújula" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">06 &middot; Biblia</div>
 <h3>Fuerza para los días difíciles.</h3><p>La Biblia en tu teléfono, con lectura en voz alta y sin internet.</p></div>
-<div class="tel"><img src="/es/app/kepek/6-biblia.jpg" alt="Biblia" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/es/app/kepek/6-biblia.jpg" alt="Biblia" loading="lazy" width="480" height="1038"></span></div></div>
 </div>
 <div class="pottyok"></div>
 <div class="nyilak"><button type="button" id="dia-elozo" aria-label="Anterior">&larr;</button><button type="button" id="dia-kov" aria-label="Siguiente">&rarr;</button></div>
@@ -293,7 +316,7 @@
 <section class="sec tudas"><div class="in">
 <div class="rv"><div class="kicsi">¿Qué hace?</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Seis situaciones, dieciocho funciones.</h2></div>
 <div class="kartyak">
-<div class="kartya rv"><h3>Si se cae internet</h3><ul><li><b>Cálculo de preparación</b>Indicas quién vive con vosotros (mascotas incluidas) y qué hay en la despensa. La app muestra por lugar y en porcentaje cómo andáis de agua, comida, calefacción y electricidad. Si falta algo, ves qué hay que reponer.</li><li><b>Base de conocimientos sin internet</b>21 temas, del agua a los primeros auxilios, junto con los artículos más profundos y detallados. Lo que ya está en tu teléfono se puede leer sin cobertura.</li><li><b>Mensajes locales</b>Mensajes de texto a quienes están cerca de ti, sin internet, a través de una red común, incluso con el punto de acceso de un teléfono.</li></ul></div>
+<div class="kartya rv"><h3>Si se cae internet</h3><ul><li><b>Cálculo de preparación</b>Indicas quién vive con vosotros (mascotas incluidas) y qué hay en la despensa. La app muestra por lugar y en porcentaje cómo andáis de agua, comida, calefacción y electricidad. Si falta algo, ves qué hay que reponer.</li><li><b>Base de conocimientos sin internet</b>21 temas, del agua a los primeros auxilios, junto con los artículos más profundos y detallados. Lo que ya está en tu teléfono se puede leer sin cobertura.</li><li><b>Mensajes locales</b>Mensajes de texto a quienes están cerca de ti, sin internet, a través de una red común, incluso con el punto de acceso de un teléfono.</li><li><b>Noah, inteligencia artificial sin internet</b>Funciona en el propio teléfono, no en la nube, así que responde incluso sin cobertura. Pregúntale sobre la base de conocimientos, la Biblia y tus propias reservas, por ejemplo qué ha caducado. Funciona en la app de Android; el modelo de lenguaje se descarga una sola vez.</li></ul></div>
 <div class="kartya rv"><h3>Apagón</h3><ul><li><b>Linterna y luz roja nocturna</b>La luz roja no deslumbra el ojo acostumbrado a la oscuridad.</li><li><b>Calculadora de energía y calefacción</b>Cuánto te dura el powerbank o la estación de energía, y cuánta leña necesitas para el invierno.</li><li><b>Lista de reserva</b>Qué tienes en casa, dónde lo guardas y cuándo caduca. Lo que está a punto de caducar se marca con color.</li></ul></div>
 <div class="kartya rv"><h3>Agua y comida</h3><ul><li><b>Calculadora de potabilización</b>Cuánta lejía o cuántas pastillas hacen falta para desinfectar una cantidad de agua.</li><li><b>Calculadora de agua de lluvia</b>Cuánta agua puedes recoger del tejado con una lluvia determinada.</li><li><b>Lista de equipaje «¿Qué llevo?»</b>Se arma a partir de los miembros de tu familia, con un límite de peso para que la carga siga siendo transportable.</li></ul></div>
 <div class="kartya rv"><h3>Sin cobertura</h3><ul><li><b>Morse y fax</b>Señales Morse con sonido y luz intermitente, y envío de imágenes por sonido.</li><li><b>QR secreto</b>Un mensaje, una ubicación o una lista en un código QR que solo puede leer quien conoce vuestra contraseña familiar.</li></ul></div>

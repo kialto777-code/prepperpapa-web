@@ -15,6 +15,13 @@
 // `app-nyelvi-valtozat-hianypotlas` skill irja le.
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.uk = {
+  // ===== 2026-10-19 v43.313 (card 6b4458db) =====
+  "(sérült üzenet — egy 2026. 10. 12. előtti szerverhiba levágta, nem állítható helyre)": "(пошкоджене повідомлення — обрізане помилкою сервера до 12.10.2026, відновити неможливо)",
+  "Ezen a készüléken a böngésző nem támogatja a rezgést (iPhone-on a Safari nem tudja). A kapcsoló ezért nem aktív.": "Браузер цього пристрою не підтримує вібрацію (Safari на iPhone цього не вміє). Тому перемикач неактивний.",
+  "Bejelentéseim": "Мої повідомлення",
+  "Újdonságok": "Новини",
+  "Facebook-csoport": "Група у Facebook",
+  "Facebook-oldal": "Сторінка у Facebook",
   // ===== 2026-10-19: sugo-szovegek a kepernyokhoz igazitva (kartya eaaba276, Fonok 1a) =====
   "A gyűrű a jelen lévő típusok átlagát mutatja, a színe a leggyengébbet. A sávokon látod, melyik terület gyenge: egy alacsony érték az átlag mögött is ott lehet.": "Кільце показує середнє значення наявних типів, а його колір показує найслабший. На смугах видно, яка ділянка слабка: низьке значення може ховатися за середнім.",
   "Nyelv: az app felületének nyelve. A tartalom (tudástár, Biblia) egyelőre nem változik tőle; a Biblia fordítását a Biblia fejlécében választod.": "Мова: мова інтерфейсу застосунку. Вміст (база знань, Біблія) від цього поки не змінюється; переклад Біблії обирається в заголовку Біблії.",

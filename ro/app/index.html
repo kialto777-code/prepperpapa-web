@@ -108,10 +108,33 @@
         font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
   .badge[aria-disabled="true"]{cursor:default}
   /* phone mockup */
-  /* real app screenshot, shown flat: no tilt, no drawn phone body (Boss 22:31) */
-  .tel{display:block;width:min(270px,62vw);aspect-ratio:480/1038;margin:0 auto;position:relative;border-radius:22px;overflow:hidden;
-       border:1px solid #3a4a40;box-shadow:0 24px 60px rgba(0,0,0,.55);background:#0B110E}
-  .tel img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  /* realistic upright phone frames around the real app screenshots (Boss 22:54 via Marveen 23822):
+     Android with a punch-hole camera at the top of the page, iPhone with the Dynamic Island further down.
+     A status bar sits above the screenshot so the camera never covers the app header. */
+  .tel{display:block;position:relative;width:min(270px,62vw);margin:0 auto;padding:7px;border-radius:36px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .tel .kij{display:block;position:relative;overflow:hidden;border-radius:29px;background:#0B110E}
+  .tel .sb{display:flex;justify-content:space-between;align-items:center;height:26px;padding:0 16px 0 20px;
+       background:#0B110E;color:#e8efe9;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .tel .sb::before{content:"12:45"}
+  .tel .sb svg{height:9px;width:auto;fill:#e8efe9;display:block}
+  .tel .sb::after{content:"";position:absolute;left:50%;top:8px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022}
+  .tel img{display:block;width:100%;height:auto}
+  .tel .kij{padding-bottom:9px}
+  .tel .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .tel.iphone{padding:9px;border-radius:46px;background:linear-gradient(160deg,#6b6862,#2c2b29 42%,#57544f);
+       box-shadow:0 0 0 1px #8a867f,0 0 0 2.5px #111,0 26px 60px rgba(0,0,0,.6)}
+  .tel.iphone::before{right:-3.5px;top:24%;height:13%;background:#77736c}
+  .tel.iphone::after{content:"";position:absolute;left:-3.5px;top:18%;width:3px;height:7%;border-radius:3px 0 0 3px;background:#77736c;
+       box-shadow:0 calc(min(270px,62vw)*.2) 0 #77736c}
+  .tel.iphone .kij{border-radius:37px;padding-bottom:18px}
+  .tel.iphone .kij::after{bottom:6px;height:4px;width:34%;margin-left:-17%}
+  .tel.iphone .sb{height:34px;padding:0 22px 0 28px}
+  .tel.iphone .sb::before{content:"9:41"}
+  .tel.iphone .sb::after{top:8px;width:26%;height:20px;margin-left:-13%;border-radius:12px;box-shadow:none}
   .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
           letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
   @keyframes lebeg{50%{transform:translate(-50%,6px)}}
@@ -255,7 +278,7 @@
 <a class="badge appstore" id="pp-badge-appstore" aria-disabled="true" title="În curând în App Store"><img src="/app/kepek/app-store-ro.svg" alt="Descarcă din App Store (în curând)" width="151" height="40"></a>
 </div>
 </div>
-<div class="telhely rv lat"><div class="tel"><img src="/ro/app/kepek/1-kezdolap.jpg" alt="Ecranul de start al aplicației PrepperPapa" width="480" height="1038"></div></div>
+<div class="telhely rv lat"><div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/1-kezdolap.jpg" alt="Ecranul de start al aplicației PrepperPapa" width="480" height="1038"></span></div></div>
 </div><a class="lefele" href="#bemutato">Derulează &darr;</a></section>
 
 <section class="sec slider" id="bemutato"><div class="in">
@@ -263,22 +286,22 @@
 <div class="sav" aria-roledescription="lapozó">
 <div class="dia"><div><div class="szam">01 &middot; Grad de pregătire</div>
 <h3>O privire și știi unde vă aflați.</h3><p>Apă, hrană, încălzire, curent: pe fiecare loc, în procente. Dacă ceva nu ajunge, vezi și ce trebuie completat.</p></div>
-<div class="tel"><img src="/ro/app/kepek/1-kezdolap.jpg" alt="Grad de pregătire" loading="eager" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/1-kezdolap.jpg" alt="Grad de pregătire" loading="eager" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">02 &middot; Hartă</div>
 <h3>Și în pădure știi încotro.</h3><p>Trasee turistice, izvoare, cabane. Plan de tură cu distanță, durată și diferență de nivel, iar cu harta descărcată merge și fără semnal.</p></div>
-<div class="tel"><img src="/ro/app/kepek/2-terkep.jpg" alt="Hartă" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/2-terkep.jpg" alt="Hartă" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">03 &middot; Rezervă</div>
 <h3>Cămara în buzunarul tău.</h3><p>Ce ai acasă, unde îl păstrezi, când expiră. Articolele care urmează să expire sunt marcate cu culori.</p></div>
-<div class="tel"><img src="/ro/app/kepek/8-keszlet.jpg" alt="Rezervă" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/8-keszlet.jpg" alt="Rezervă" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">04 &middot; Bază de cunoștințe</div>
 <h3>Cunoștințe care sunt la îndemână și fără semnal.</h3><p>21 de teme, de la apă la primul ajutor, cu articole aprofundate și detaliate, care se pot citi și fără internet.</p></div>
-<div class="tel"><img src="/ro/app/kepek/3-tudastar.jpg" alt="Bază de cunoștințe" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/3-tudastar.jpg" alt="Bază de cunoștințe" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">05 &middot; Busolă</div>
 <h3>Telefonul în buzunar, sunetul te ghidează.</h3><p>Înregistrezi direcția și te ghidează prin sunet. Îți arată și drumul înapoi.</p></div>
-<div class="tel"><img src="/ro/app/kepek/4-tajolo.jpg" alt="Busolă" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/4-tajolo.jpg" alt="Busolă" loading="lazy" width="480" height="1038"></span></div></div>
 <div class="dia"><div><div class="szam">06 &middot; Biblia</div>
 <h3>Putere pentru zilele grele.</h3><p>Biblia pe telefonul tău (traducerea Cornilescu), cu citire cu voce tare, fără internet.</p></div>
-<div class="tel"><img src="/ro/app/kepek/6-biblia.jpg" alt="Biblia" loading="lazy" width="480" height="1038"></div></div>
+<div class="tel iphone"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/6-biblia.jpg" alt="Biblia" loading="lazy" width="480" height="1038"></span></div></div>
 </div>
 <div class="pottyok"></div>
 <div class="nyilak"><button type="button" id="dia-elozo" aria-label="Anterior">&larr;</button><button type="button" id="dia-kov" aria-label="Următor">&rarr;</button></div>
@@ -293,7 +316,7 @@
 <section class="sec tudas"><div class="in">
 <div class="rv"><div class="kicsi">Ce poate?</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Șase situații, optsprezece funcții.</h2></div>
 <div class="kartyak">
-<div class="kartya rv"><h3>Când pică internetul</h3><ul><li><b>Calculul gradului de pregătire</b>Introduci cine locuiește cu voi (și animalele de companie) și ce aveți în cămară. Aplicația arată, pe fiecare loc, în procente, cum stați cu apa, hrana, încălzirea și curentul. Dacă ceva nu ajunge, vezi ce trebuie completat.</li><li><b>Bază de cunoștințe fără internet</b>21 de teme, de la apă la primul ajutor, împreună cu articolele aprofundate și detaliate. Ce a ajuns pe telefonul tău se poate citi și fără semnal.</li><li><b>Mesaje locale</b>Mesaje text pentru cei din jurul tău, fără internet, printr-o rețea comună, chiar și prin hotspotul unui telefon.</li></ul></div>
+<div class="kartya rv"><h3>Când pică internetul</h3><ul><li><b>Calculul gradului de pregătire</b>Introduci cine locuiește cu voi (și animalele de companie) și ce aveți în cămară. Aplicația arată, pe fiecare loc, în procente, cum stați cu apa, hrana, încălzirea și curentul. Dacă ceva nu ajunge, vezi ce trebuie completat.</li><li><b>Bază de cunoștințe fără internet</b>21 de teme, de la apă la primul ajutor, împreună cu articolele aprofundate și detaliate. Ce a ajuns pe telefonul tău se poate citi și fără semnal.</li><li><b>Mesaje locale</b>Mesaje text pentru cei din jurul tău, fără internet, printr-o rețea comună, chiar și prin hotspotul unui telefon.</li><li><b>Noah, inteligență artificială fără internet</b>Rulează pe telefon, nu în cloud, așa că răspunde și fără semnal. O poți întreba despre baza de cunoștințe, Biblie și propriile provizii, de exemplu ce a expirat. Funcționează în aplicația Android; modelul de limbaj se descarcă o singură dată.</li></ul></div>
 <div class="kartya rv"><h3>Pană de curent</h3><ul><li><b>Lanternă și lumină roșie de noapte</b>Lumina roșie nu orbește ochiul obișnuit cu întunericul.</li><li><b>Calculator de curent și încălzire</b>Cât te ține un powerbank sau o stație de alimentare și cât combustibil îți trebuie pentru iarnă.</li><li><b>Lista de rezerve</b>Ce ai acasă, unde îl păstrezi și când expiră. Articolele care urmează să expire sunt marcate cu culori.</li></ul></div>
 <div class="kartya rv"><h3>Apă și hrană</h3><ul><li><b>Calculator pentru purificarea apei</b>Câtă soluție de clor sau câte tablete îți trebuie pentru a dezinfecta o anumită cantitate de apă.</li><li><b>Calculator pentru apa de ploaie</b>Câtă apă poți colecta de pe acoperiș la o anumită cantitate de ploaie.</li><li><b>Lista de bagaje „Ce să iau?”</b>Se alcătuiește pe baza membrilor familiei tale, cu o limită de greutate, ca bagajul să rămână ușor de purtat.</li></ul></div>
 <div class="kartya rv"><h3>Fără semnal</h3><ul><li><b>Morse și fax</b>Semnale Morse prin sunet și lumină intermitentă, plus trimiterea de imagini prin sunet.</li><li><b>QR secret</b>Mesaj, poziție sau listă într-un cod QR pe care îl poate citi doar cine cunoaște parola voastră de familie.</li></ul></div>

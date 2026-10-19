@@ -13,6 +13,13 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-19 v43.313 (card 6b4458db) =====
+  "(sérült üzenet — egy 2026. 10. 12. előtti szerverhiba levágta, nem állítható helyre)": "(mesaj deteriorat — trunchiat de o eroare de server dinainte de 12.10.2026, nu poate fi recuperat)",
+  "Ezen a készüléken a böngésző nem támogatja a rezgést (iPhone-on a Safari nem tudja). A kapcsoló ezért nem aktív.": "Browserul acestui dispozitiv nu acceptă vibrația (Safari pe iPhone nu poate). De aceea comutatorul nu este activ.",
+  "Bejelentéseim": "Raportările mele",
+  "Újdonságok": "Noutăți",
+  "Facebook-csoport": "Grup de Facebook",
+  "Facebook-oldal": "Pagină de Facebook",
   // ===== 2026-10-19: sugo-szovegek a kepernyokhoz igazitva (kartya eaaba276, Fonok 1a) =====
   "A gyűrű a jelen lévő típusok átlagát mutatja, a színe a leggyengébbet. A sávokon látod, melyik terület gyenge: egy alacsony érték az átlag mögött is ott lehet.": "Inelul arată media tipurilor prezente, iar culoarea lui pe cel mai slab. Pe bare vezi ce domeniu e slab: o valoare mică se poate ascunde în spatele mediei.",
   "Nyelv: az app felületének nyelve. A tartalom (tudástár, Biblia) egyelőre nem változik tőle; a Biblia fordítását a Biblia fejlécében választod.": "Limba: limba interfeței aplicației. Conținutul (baza de cunoștințe, Biblia) deocamdată nu se schimbă odată cu ea; traducerea Bibliei o alegi în antetul Bibliei.",

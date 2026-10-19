@@ -82,6 +82,9 @@ function dur(s){ var d=/(\d+) nap/.exec(s), h=/(\d+) óra/.exec(s), m=/(\d+) per
   if(d) o.push(P(d[1],DAY)); if(h) o.push(P(h[1],HOUR)); if(m) o.push(P(m[1],MIN)); return o.length ? o.join(' ') : s; }
 function nodash(s){ return String(s).replace(/\s*—\s*/g, ', '); }
 function band(s){ return String(s).replace(/(\d+) méter/, function(_,n){ return P(n,METRE); }); }
+
+
+S[ny]["ALLPOWERS SP002 (21 W, akkus)"]="ALLPOWERS SP002 (21 W, with battery)";
 var M=(window.PP_FORD_MINTAK=window.PP_FORD_MINTAK||{}); M[ny]=M[ny]||[];
 var R=[
   [/^Ennyi ideig tart a saját megadás ezzel a listával\.$/, [], T("This is how long your own power source lasts with this list.")], // ennyi_sajat

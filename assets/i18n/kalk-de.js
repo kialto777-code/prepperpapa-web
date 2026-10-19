@@ -82,6 +82,9 @@ function dur(s){ var d=/(\d+) nap/.exec(s), h=/(\d+) óra/.exec(s), m=/(\d+) per
   if(d) o.push(P(d[1],DAY)); if(h) o.push(P(h[1],HOUR)); if(m) o.push(P(m[1],MIN)); return o.length ? o.join(' ') : s; }
 function nodash(s){ return String(s).replace(/\s*—\s*/g, ', '); }
 function band(s){ return String(s).replace(/(\d+) méter/, function(_,n){ return P(n,METRE); }); }
+
+
+S[ny]["ALLPOWERS SP002 (21 W, akkus)"]="ALLPOWERS SP002 (21 W, mit Akku)";
 var M=(window.PP_FORD_MINTAK=window.PP_FORD_MINTAK||{}); M[ny]=M[ny]||[];
 var R=[
   [/^Ennyi ideig tart a saját megadás ezzel a listával\.$/, [], T("So lange hält deine eigene Stromquelle mit dieser Liste durch.")], // ennyi_sajat
@@ -134,7 +137,7 @@ var R=[
   [/^(\d(?:[\d.,\s]*\d)?) kilométer (\d(?:[\d.,\s]*\d)?) km\/h-val, plusz (\d(?:[\d.,\s]*\d)?) méter emelkedés\. Az emelkedés minden hatszáz métere egy órát ad hozzá\. Most indulva (.+?)-kor érnél oda\.$/, [0, 1, 2], T("$1 km mit $2 km/h, plus $3 m Anstieg. Alle sechshundert Meter Anstieg kommt eine Stunde dazu. Wenn du jetzt losgehst, bist du um $4 dort.")], // menet
   [/^Napnyugta (.+?), tehát világosban odaérsz, (.+) tartalékkal\.$/, [], function(_,t,d){ return "Sonnenuntergang ist um "+t+", du kommst also bei Tageslicht an, mit "+dur(d)+" Reserve."; }], // vilagos
   [/^Napnyugta (.+?): ebből (.+) már sötétben lenne\. Vagy indulj hamarabb, vagy vigyél lámpát\.$/, [], function(_,t,d){ return "Sonnenuntergang ist um "+t+": "+dur(d)+" davon wärst du schon im Dunkeln unterwegs. Brich früher auf oder nimm eine Lampe mit."; }], // sotet
-  [/^Ennyire várható összeköttetés (.+?)-on, (nyílt, sík terep|dombos, hullámos|erdő, sűrű növényzet|város, beépített|hegyvidék, völgyben) terepen, (\d(?:[\d.,\s]*\d)?) watttal, (\d(?:[\d.,\s]*\d)?) és (\d(?:[\d.,\s]*\d)?) méter antennamagassággal\.$/, [2, 3, 4], function(_,b,t,w,h1,h2){ return "Erwartete Reichweite auf "+band(b)+", Gelände: "+t+", mit "+w+" W, bei "+h1+" und "+h2+" m Antennenhöhe."; }], // ossze
+  [/^Ennyire várható összeköttetés (.+?)-on, (nyílt, sík terep|dombos, hullámos|erdő, sűrű növényzet|város, beépített|hegyvidék, völgyben) terepen, (\d(?:[\d.,\s]*\d)?) watttal, (\d(?:[\d.,\s]*\d)?) és (\d(?:[\d.,\s]*\d)?) méter antennamagassággal\.$/, [2, 3, 4], function(_,b,t,w,h1,h2){ return "Erwartete Reichweite auf "+band(b)+", Umgebung: "+t+", mit "+w+" W, bei "+h1+" und "+h2+" m Antennenhöhe."; }], // ossze
   [/^Amin most múlik: (.+)\.$/, [], T("Was sie gerade begrenzt: $1.")], // amin
   [/^A rálátásod (\d(?:[\d.,\s]*\d)?) km, a terep és a teljesítmény (\d(?:[\d.,\s]*\d)?) km-t enged — a kettő közül a kisebbik számít\.$/, [0, 1], T("Deine Sichtverbindung beträgt $1 km, Gelände und Leistung erlauben $2 km: Es zählt der kleinere der beiden Werte.")], // ralat_km
   [/^(.+) használatához vizsga és hívójel kell\. A vizsga előre megszerezhető — és pont ez a lényeg: egy vészhelyzetben már késő elkezdeni\.$/, [], function(_,b){ return "Für "+band(b.split(" \u2014 ")[0])+" brauchst du eine Prüfung und ein Rufzeichen. Die Prüfung kann man vorher ablegen, und genau das ist der Punkt: Im Notfall ist es zu spät, damit anzufangen."; }], // engedely

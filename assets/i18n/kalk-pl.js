@@ -26,7 +26,7 @@ Object.assign(S[ny], {
  "A Cryptosporidium ellenáll neki. Ha ilyet gyanítasz (állati ürülékkel érintkezett felszíni víz), forralj, vagy használj arra való szűrőt.": "Cryptosporidium jest na niego odporny. Jeśli tego podejrzewasz (woda powierzchniowa mająca kontakt z odchodami zwierząt), gotuj albo użyj odpowiedniego filtra.",
  "saját panel": "własny panel",
  "Egyéb gyártók": "Inni producenci",
- "Az indulási áram kiviheti.": "Prąd rozruchowy może go wyłączyć.",
+ "Az indulási áram kiviheti.": "Prąd rozruchowy może je wyłączyć.",
  "Ez nem fér el egyszerre.": "To się nie zmieści naraz.",
  ", ha közben nem használod.": ", jeśli w tym czasie z niego nie korzystasz.",
  ", vagy": ", albo",
@@ -85,6 +85,8 @@ function nodash(s){ return String(s).replace(/\s*—\s*/g, ', '); }
 function band(s){ return String(s).replace(/(\d+) méter/, "$1 m"); }
 function durA(s){ var d=/(\d+) nap/.exec(s), h=/(\d+) óra/.exec(s), m=/(\d+) perc/.exec(s), o=[];
   if(d) o.push(P(d[1],DAY)); if(h) o.push(P(h[1],HOUR_A)); if(m) o.push(P(m[1],MIN_A)); return o.length ? o.join(' ') : s; }
+
+S[ny]["ALLPOWERS SP002 (21 W, akkus)"]="ALLPOWERS SP002 (21 W, z akumulatorem)";
 var M=(window.PP_FORD_MINTAK=window.PP_FORD_MINTAK||{}); M[ny]=M[ny]||[];
 var R=[
   [/^Ennyi ideig tart a saját megadás ezzel a listával\.$/, [], T("Tyle wytrzyma twoje własne źródło zasilania przy tej liście.")], // ennyi_sajat
@@ -137,12 +139,12 @@ var R=[
   [/^(\d(?:[\d.,\s]*\d)?) kilométer (\d(?:[\d.,\s]*\d)?) km\/h-val, plusz (\d(?:[\d.,\s]*\d)?) méter emelkedés\. Az emelkedés minden hatszáz métere egy órát ad hozzá\. Most indulva (.+?)-kor érnél oda\.$/, [0, 1, 2], T("$1 km z prędkością $2 km/h, plus $3 m podejścia. Każde sześćset metrów podejścia dodaje godzinę. Jeśli wyjdziesz teraz, będziesz na miejscu o $4.")], // menet
   [/^Napnyugta (.+?), tehát világosban odaérsz, (.+) tartalékkal\.$/, [], function(_,t,d){ return "Zachód słońca o "+t+", więc dotrzesz za dnia. Zapas: "+dur(d)+"."; }], // vilagos
   [/^Napnyugta (.+?): ebből (.+) már sötétben lenne\. Vagy indulj hamarabb, vagy vigyél lámpát\.$/, [], function(_,t,d){ return "Zachód słońca o "+t+": przez "+durA(d)+" trzeba by iść już po ciemku. Albo wyjdź wcześniej, albo weź latarkę."; }], // sotet
-  [/^Ennyire várható összeköttetés (.+?)-on, (nyílt, sík terep|dombos, hullámos|erdő, sűrű növényzet|város, beépített|hegyvidék, völgyben) terepen, (\d(?:[\d.,\s]*\d)?) watttal, (\d(?:[\d.,\s]*\d)?) és (\d(?:[\d.,\s]*\d)?) méter antennamagassággal\.$/, [2, 3, 4], function(_,b,t,w,h1,h2){ return "Spodziewany zasięg w paśmie "+band(b)+", teren: "+t+", przy "+w+" W i wysokości anten "+h1+" i "+h2+" m."; }], // ossze
+  [/^Ennyire várható összeköttetés (.+?)-on, (nyílt, sík terep|dombos, hullámos|erdő, sűrű növényzet|város, beépített|hegyvidék, völgyben) terepen, (\d(?:[\d.,\s]*\d)?) watttal, (\d(?:[\d.,\s]*\d)?) és (\d(?:[\d.,\s]*\d)?) méter antennamagassággal\.$/, [2, 3, 4], function(_,b,t,w,h1,h2){ return "Spodziewany zasięg w paśmie "+band(b)+", warunki: "+t+", przy "+w+" W i wysokości anten "+h1+" i "+h2+" m."; }], // ossze
   [/^Amin most múlik: (.+)\.$/, [], T("Co teraz ogranicza: $1.")], // amin
   [/^A rálátásod (\d(?:[\d.,\s]*\d)?) km, a terep és a teljesítmény (\d(?:[\d.,\s]*\d)?) km-t enged — a kettő közül a kisebbik számít\.$/, [0, 1], T("Twoja widoczność to $1 km, a teren i moc pozwalają na $2 km: liczy się mniejsza z tych wartości.")], // ralat_km
   [/^(.+) használatához vizsga és hívójel kell\. A vizsga előre megszerezhető — és pont ez a lényeg: egy vészhelyzetben már késő elkezdeni\.$/, [], function(_,b){ return "Do korzystania z pasma "+band(b.split(" \u2014 ")[0])+" potrzebny jest egzamin i znak wywoławczy. Egzamin można zdać wcześniej i właśnie o to chodzi: w sytuacji awaryjnej jest już za późno, żeby zaczynać."; }], // engedely
   [/^(\d(?:[\d.,\s]*\d)?) kilométerhez kb\. (\d(?:[\d.,\s]*\d)?) watt kellene$/, [0, 1], T("Na $1 km potrzeba by ok. $2 W")], // kellw
-  [/^(\d(?:[\d.,\s]*\d)?) kilométerre ezen a sávon a teljesítmény nem elég — bármennyi\.$/, [0], T("Na $1 km w tym paśmie moc nie wystarczy, żadna.")], // celtul
+  [/^(\d(?:[\d.,\s]*\d)?) kilométerre ezen a sávon a teljesítmény nem elég — bármennyi\.$/, [0], T("Na $1 km w tym paśmie moc nie wystarczy, niezależnie od wartości.")], // celtul
   [/^A rálátásod (\d(?:[\d.,\s]*\d)?) kilométer, és a Föld görbülete mögé a VHF\/UHF jel nem hajlik be\. Amin múlik:$/, [0], T("Twoja widoczność to $1 km, a sygnał VHF/UHF nie zagina się za krzywiznę Ziemi. Od czego to zależy:")], // ralat_kil
   [/^(\d(?:[\d.,\s]*\d)?) másodperc telt el\. A hang három másodperc alatt tesz meg egy kilométert\.$/, [0], function(_,n){ return "Między błyskiem a grzmotem: "+P(n,SEC)+". Dźwięk pokonuje kilometr w trzy sekundy."; }], // mp
   [/^Buzgó forrás (\d(?:[\d.,\s]*\d)?) percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont\. Hagyd kihűlni fedő alatt\.$/, [0], function(_,n){ return "Intensywne wrzenie: "+P(n,MIN)+". Jesteś powyżej dwóch tysięcy metrów, tam potrzeba dłużej, bo temperatura wrzenia jest niższa. Zostaw do ostygnięcia pod przykryciem."; }], // forr_mag

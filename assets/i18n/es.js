@@ -12,6 +12,13 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.es = {
+  // ===== 2026-10-19 v43.313 (card 6b4458db) =====
+  "(sérült üzenet — egy 2026. 10. 12. előtti szerverhiba levágta, nem állítható helyre)": "(mensaje dañado — un fallo del servidor anterior al 12/10/2026 lo cortó, no se puede recuperar)",
+  "Ezen a készüléken a böngésző nem támogatja a rezgést (iPhone-on a Safari nem tudja). A kapcsoló ezért nem aktív.": "El navegador de este dispositivo no admite la vibración (Safari en iPhone no puede). Por eso el interruptor no está activo.",
+  "Bejelentéseim": "Mis informes",
+  "Újdonságok": "Novedades",
+  "Facebook-csoport": "Grupo de Facebook",
+  "Facebook-oldal": "Página de Facebook",
   // ===== 2026-10-19: sugo-szovegek a kepernyokhoz igazitva (kartya eaaba276, Fonok 1a) =====
   "A gyűrű a jelen lévő típusok átlagát mutatja, a színe a leggyengébbet. A sávokon látod, melyik terület gyenge: egy alacsony érték az átlag mögött is ott lehet.": "El anillo muestra el promedio de los tipos presentes, y su color muestra el más débil. En las barras ves qué área es débil: un valor bajo puede esconderse detrás del promedio.",
   "Nyelv: az app felületének nyelve. A tartalom (tudástár, Biblia) egyelőre nem változik tőle; a Biblia fordítását a Biblia fejlécében választod.": "Idioma: el idioma de la interfaz de la app. El contenido (base de conocimientos, Biblia) de momento no cambia con él; la traducción de la Biblia la eliges en la cabecera de la Biblia.",
