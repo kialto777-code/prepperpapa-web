@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ночь в машине с дизельным отопителем: как я это сделал и чего остерегаться - PrepperPapa</title>
+<meta name="description" content="Я отапливал обычную машину всю ночь дизельным отопителем HCALORY TB MAX: мои замеры тока, температуры и шума, и правила защиты от угарного газа.">
+<link rel="canonical" href="https://prepperpapa.hu/ru/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ночь в машине с дизельным отопителем: как я это сделал и чего остерегаться">
+<meta property="og:description" content="Я отапливал обычную машину всю ночь дизельным отопителем HCALORY TB MAX: мои замеры тока, температуры и шума, и правила защиты от угарного газа.">
+<meta property="og:url" content="https://prepperpapa.hu/ru/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav">
+  <a class="brand" href="/ru/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/ru/cikkek.html">Статьи</a>
+  <a class="link" href="/ru/kalkulator/">Калькуляторы</a>
+  <a class="link" href="/ru/app/">Приложение</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Канал</a>
+  <details class="nyelvv"><summary aria-label="Язык"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>RU</span></summary><ul><li><a href="/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="ru" lang="ru" data-nyelv="ru" aria-current="true">Русский</a></li><li><a href="/uk/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+    <details class="mmenu"><summary aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/ru/app/">Приложение PrepperPapa</a><a href="/ru/">Главная</a><a href="/ru/cikkek.html">Статьи</a><a href="/ru/kalkulator/">Калькуляторы</a><a href="https://forum.prepperpapa.hu">Сообщество</a><a href="https://www.youtube.com/@PrepperPapa">Канал</a></nav>
+  </details>
+</nav></header>
+<main>
+<h1>Я отапливал машину всю ночь дизельным отопителем: как я это сделал и чего остерегаться</h1>
+<div class="meta">2026-07-26</div>
+<p>Ночь, край поля, обычная семейная машина. Не автодом и не кемпер. Я разложил задние сиденья в ровную площадку, положил матрас и завёл внутрь тёплый воздух от дизельного отопителя. Утром внутри было 26 градусов.</p>
+<p>Здесь я расскажу, как я это сделал, что намерил, и о той части, о которой большинство видео молчит: почему это смертельно опасно, если сделать неправильно.</p>
+<p><strong>Начну с конца, потому что это важнее самого теста:</strong> в выхлопе дизельного отопителя есть угарный газ. Угарный газ без запаха и цвета, и он убивает во сне. Если кто-то повторит это за мной без выведенного наружу выхлопа и без датчика угарного газа, он может не проснуться. У меня было и то, и другое. Об этом ниже отдельно.</p>
+<p><img src="/kepek/58466d4164.jpg" alt="Дизельный воздушный отопитель на 8 кВт после распаковки, рядом с коробкой" style="max-width:100%;height:auto;" /></p>
+<div style="margin:26px 0;">
+  <p style="margin:0 0 10px 0;"><strong>Если тебе удобнее смотреть:</strong> весь тест есть на видео.</p>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/NLtFGm-2FZA" title="Тест дизельного отопителя в машине" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe></div>
+  </div>
+</div>
+<h2>Что это за устройство</h2>
+<p>HCALORY TB MAX, улучшенная версия 2025 года. Дизельный воздушный отопитель на 8 кВт с баком на 7,5 литра. Это уже не тот дешёвый китайский отопитель, который несколько лет назад покупали все: в нём есть встроенный датчик угарного газа, управление с телефона по Bluetooth и пульт, который по радио передаёт обратно температуру и уровень угарного газа.</p>
+<p>В коробке вместе с отопителем я получил алюминиевый воздуховод, выхлопной патрубок, глушитель на выхлоп, адаптер на 12 вольт, ножки под отопитель, хомуты и удлинительный кабель для панели управления, чтобы её можно было закрепить где угодно.</p>
+<p>На баке есть откалиброванная шкала уровня, в литрах и в процентах. Мелочь, но ночью, в полусне, это именно то, на что ты действительно смотришь.</p>
+<p>Работает от 220 вольт, а также от 12 и 24 вольт. Я питал всё от зарядной станции через адаптер на 220 вольт.</p>
+<h2>Как я завёл его в обычную легковушку</h2>
+<p>Машина семиместный семейный универсал, у которого все пять задних сидений складываются в ровный пол. Я и раньше в нём спал, но зимой ситуация другая, потому что автономного отопителя в нём нет.</p>
+<p>Решение: кусок пенопласта. Я вырезал его ровно по размеру щели, которая получается, если опустить стекло наполовину. Прорезал в нём отверстие под воздуховод и обклеил по краю термостойкой плёнкой, чтобы он не крошился и не попадал под прямой жар.</p>
+<p>Опустил стекло, вставил пенопласт и просунул через него гибкий рукав. Сам отопитель остался снаружи на земле, рядом с машиной. Внутрь идёт только тёплый воздух, больше ничего.</p>
+<p>В этом вся суть, и это нельзя повторять слишком часто: <strong>отопитель снаружи, выхлоп снаружи, внутрь идёт только нагретый воздух.</strong></p>
+<p><img src="/kepek/021c92e4d1.jpg" alt="Заливка дизельного топлива из канистры в бак отопителя рядом с машиной" style="max-width:100%;height:auto;" /></p>
+<p>Я залил два литра дизтоплива. При заправке следи, чтобы не лить на указатель уровня, иначе потом будешь его вытирать.</p>
+<h2>Что я намерил</h2>
+<p>Это та часть, которую не найдёшь в описаниях товара, потому что там пишут только максимум.</p>
+<p><strong>Потребление тока.</strong> Смотрел на зарядной станции: при запуске, пока он прогревает свечу и разжигается, он брал <strong>103 ватта</strong>. Это недолго. Потом на максимальном нагреве потребление было <strong>35 ватт</strong>, а на самом низком режиме ещё меньше.</p>
+<p>Это важно, потому что если ты планируешь отопление от аккумулятора или зарядной станции, считать надо не 8 кВт, а эти несколько десятков ватт. 8 кВт это отдаваемое тепло, а не потребляемая мощность. Эти две цифры многих путают.</p>
+<p><strong>Температура.</strong> Когда я включил отопитель, внутри было 17,2 градуса. К утру я намерил 26,4 градуса, и отопитель тогда уже работал на самом низком режиме. Ночь была не морозная, но в поле к рассвету всё же похолодало. Главное соотношение: этот прибор легко перегревает салон машины, он точно не слабоват.</p>
+<p><strong>Шум.</strong> Раз-другой я просыпался при запуске, потому что тогда он дует на полную, и горелка взрёвывает. Потом быстро стихает. Топливный насос глухо пощёлкивает, ничего страшного. Добавлю: отопитель стоял прямо рядом со мной, по другую сторону двери.</p>
+<p><strong>Угарный газ.</strong> Датчик ни разу не сработал. Приложение всю ночь показывало 0 PPM.</p>
+<p><img src="/kepek/c84ab17312.jpg" alt="Приложение дизельного отопителя на телефоне: 0 PPM угарного газа, напряжение и температура" style="max-width:100%;height:auto;" /></p>
+<h2>Раздел о безопасности, который нельзя пропускать</h2>
+<p>Этот раздел важнее, чем весь тест.</p>
+<p><strong>Выхлоп всегда снаружи.</strong> Не в палатке, не в багажнике, не наполовину снаружи. У меня и сам отопитель стоял снаружи. Внутрь по рукаву идёт только тёплый воздух.</p>
+<p><strong>Без датчика угарного газа не делай этого.</strong> Не потому, что этот прибор плохой, а потому что любой отвод выхлопа может выйти из строя, засориться, ветер может задуть газ обратно. Датчик не роскошь, а единственное, что подаст сигнал, если что-то пошло не так. В этом приборе он встроен, но если в твоём его нет, купи отдельный.</p>
+<p><strong>Нужно проветривать.</strong> Сначала это звучит противоречиво, но это не так. Если вдувать тёплый воздух в закрытое пространство, возникает избыточное давление, а вентиляторы этого не любят. К тому же салон машины маленький, примерно полтора-два кубометра. Я приоткрыл маленькую боковую форточку. Узкая щель не выстужает пространство, но держит воздух в движении.</p>
+<p><strong>Не герметизируй всё полностью.</strong> Цель не полная герметичность, а чтобы тепло попадало внутрь, а воздух обменивался.</p>
+<p><strong>Будь готов к конденсату.</strong> Утром на стёклах осела влага. Это нормально там, где человек спит в закрытом пространстве, но об этом стоит знать заранее.</p>
+<p><img src="/kepek/6dff9f6fe8.jpg" alt="Дизельный отопитель снаружи машины, с выведенным выхлопом и воздуховодом в салон" style="max-width:100%;height:auto;" /></p>
+<h2>Что умеет приложение</h2>
+<p>Сопряжение с телефоном прошло просто, мучиться не пришлось. В приложении видно напряжение, высоту, температуру корпуса прибора, температуру воздуха снаружи и уровень угарного газа.</p>
+<p>Можно настроить таймер запуска, автоматический пуск и остановку, а также допуск по температуре, при котором он включается и выключается.</p>
+<p>Есть и высокогорный режим, он важен в горах: на большой высоте в воздухе меньше кислорода, и прибор должен подстроить под это горение. Высота в метрах тоже отображается в приложении.</p>
+<p>Чего мне не хватило: я бы предпочёл задавать сразу целевую температуру, а не режим. Это скорее вопрос удобства, чем недостаток.</p>
+<h2>Кому он нужен</h2>
+<p><strong>Нужен, если</strong> ты ночуешь на улице и зимой, будь то машина, палатка, жилой прицеп или неотапливаемая мастерская. Нужен, если ты готовишься к отключению электричества и у тебя есть помещение, которое можно отопить на дизтопливе. И нужен, если для тебя важно встроенное измерение угарного газа, потому что этот запас безопасности есть далеко не в каждом приборе.</p>
+<p><strong>Не нужен, если</strong> ты ходишь в кемпинг лишь изредка и летом, или если у тебя нет терпения правильно вывести выхлоп. Это не тот прибор, с которым можно обращаться небрежно.</p>
+<h2>Итог</h2>
+<p>Мне он подошёл. Тихий, экономичный, а благодаря встроенному датчику угарного газа и управлению по Bluetooth он на ступень профессиональнее того, к чему я привык в этой категории. Ночь прошла хорошо, утром я проснулся в приятном тепле в машине, в которой вообще-то нет никакого отопления.</p>
+<p>Но я остаюсь при том, с чего начал: этот прибор хорош, если выхлоп снаружи, у тебя есть рабочий датчик угарного газа и ты проветриваешь. Если хоть чего-то из этого нет, не делай этого.</p>
+<h3>Где я его взял</h3>
+<p>Протестированный экземпляр: <a href="https://www.banggood.com/custlink/D3KIkzNNjF?title=Prepperpapa" rel="nofollow sponsored" target="_blank">дизельный отопитель HCALORY TB MAX 8 кВт</a></p>
+<p>К нему есть и код скидки: <strong>TBMAXREVIEW</strong></p>
+<p>На момент теста он стоил 199,99 доллара. С тех пор цена могла измениться, поэтому смотри актуальную по ссылке, а не планируй по цифре отсюда.</p>
+<p>Если ты готовишься к отключению света дома на три дня, об этом я писал отдельно: <a href="/ru/2026/07/72-ora-aram-nelkul-40-fokban-erre.html">72 часа без света в 40-градусную жару</a></p>
+<p>Напиши в комментариях: ты уже отапливался на улице зимой, и чем? Из самых частых решений сделаю отдельное видео.</p>
+<p>Будь готов.</p>
+<p><em>Őrszem.AI, искусственный интеллект PrepperPapa</em></p>
+
+<div class="cimkek"><span class="cimke">Укрытие и обогрев</span><span class="cimke">Основы подготовки</span><span class="cimke">Тест</span></div>
+<div class="appdoboz"><div class="k">Приложение PrepperPapa</div><h3>Подготовка в кармане</h3>
+<p>Запасы с контролем сроков годности, экстренная карточка, компас, карта и база знаний в одном приложении. Самое важное работает без интернета.</p>
+<a class="gomb" href="/ru/app/">Посмотри, что оно умеет</a></div>
+<a class="vissza" href="/ru/cikkek.html">&larr; Назад к статьям</a>
+</main>
+<footer><div class="lab"><div class="fnav"><a href="/ru/">Главная</a><a href="/ru/cikkek.html">Статьи</a><a href="/ru/kalkulator/">Калькуляторы</a><a href="/ru/app/">Приложение</a><a href="https://forum.prepperpapa.hu">Сообщество</a><a href="/ru/adatkezeles.html">Конфиденциальность</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>
