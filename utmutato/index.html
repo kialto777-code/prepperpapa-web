@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrepperPapa alkalmazás: használati útmutató</title>
+<meta name="description" content="A PrepperPapa alkalmazás első lépései: belépés, prémium kód beváltása, a család felvétele, és hogy hol mit találsz.">
+<link rel="canonical" href="https://prepperpapa.hu/utmutato/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PrepperPapa alkalmazás: használati útmutató">
+<meta property="og:description" content="A PrepperPapa alkalmazás első lépései: belépés, prémium kód beváltása, a család felvétele, és hogy hol mit találsz.">
+<meta property="og:url" content="https://prepperpapa.hu/utmutato/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:Pacifico,cursive;font-size:21px}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><nav class="nav">
+  <span class="brand"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></span>
+</nav></header>
+<main>
+<h1>Használati útmutató</h1>
+<p class="beveze">A PrepperPapa alkalmazás első lépései, és hogy hol mit találsz. Minden funkcióhoz az alkalmazásban is van súgó: a képernyő fejlécében a kérdőjel.</p>
+
+<h2>1. Első lépések</h2>
+<h3>Belépés</h3>
+<p>Ha az alkalmazás belépést kér:</p>
+<ol>
+<li>Írd be az e-mail címedet.</li>
+<li>Kérj egy kódot. Pár percen belül megérkezik egy hatjegyű kód e-mailben.</li>
+<li>Írd be a kódot. Jelszó nem kell.</li>
+</ol>
+<h3>Prémium kód beváltása</h3>
+<p>Ha prémium kódot kaptál, a <b>Beállítások</b> képernyőn, a <b>Feloldás</b> részben írd be. A beváltáshoz hálózat kell, utána a feloldott részek internet nélkül is működnek. Ha ugyanazon a telefonon újra beváltod (például újratelepítés után), az nem hiba.</p>
+<h3>A család felvétele</h3>
+<p>Kezdd a <b>Háztartás</b> képernyővel: vedd fel, kik élnek veletek. Ebből számol a készültség, a fejadag és a „Mit vigyek?” csomaglista.</p>
+
+<h2>2. Hol mit találsz?</h2>
+<h3>Készültség és készlet</h3>
+<p>A készletbe felveszed, mi van otthon, hol tárolod és mikor jár le. A kezdőképernyő helyszínenként, százalékban mutatja a víz, az élelem, a fűtés és az áram állását. A narancs szín azt jelzi, hogy valamit pótolni kell.</p>
+<h3>Tudástár</h3>
+<p>21 téma. Minden cikknek látod a címét és a bevezetőjét. A prémium cikkek teljes szövege a kód beváltása után nyílik meg, és utána internet nélkül is olvasható.</p>
+<h3>Térkép</h3>
+<p>A térképen látod a helyzetedet. Koppintással új pontot veszel fel.</p>
+<h3>Tájoló</h3>
+<p>Vedd fel az irányt, amerre menned kell, és indítsd a hangvezetést. Ha jó felé mész, mély, lassú hang szól, ha letérsz, magasabb és sűrűbb. Androidon kikapcsolt képernyővel, zsebben is működik.</p>
+<h3>Esés-érzékelés</h3>
+<p>Ha a telefon zuhanás és ütközés után egy percig mozdulatlan, 30 másodperces hangos visszaszámlálás indul. A „Jól vagyok” gombbal lemondhatod. Ha nem mondod le, SOS üzenet megy a helyzeteddel a szobáidba, és megszólal a vészsíp. Az érzékelés internet nélkül működik, az üzenethez szoba-kapcsolat kell.</p>
+<h3>Helyi üzenetek</h3>
+<ol>
+<li>Legyen közös háló: egy működő router vagy egy telefon hotspotja. Internet-előfizetés nem kell.</li>
+<li>Mindenki csatlakozzon rá, és nyissa meg az alkalmazást.</li>
+<li>Az Üzenetek csempén belül válaszd a Helyi szobát.</li>
+</ol>
+<h3>Titkos QR</h3>
+<p>A kezdőképernyő Titkos QR csempéjén üzenetet, helyzetet vagy listát teszel QR-kódba. Aki beolvassa, értelmetlen betűsort lát. A PrepperPapa csak a családi jelszóval fejti vissza.</p>
+<h3>Vészkártya</h3>
+<p>Vércsoport, allergia, gyógyszer, betegség, a saját telefonszámod és a vészhelyzeti kontakt. A „Saját telefonszám” a kártya tulajdonosáé. A hívandó ember száma alatta, a „Vészhelyzeti kontakt” mezőkbe kerül.</p>
+
+<h2>3. Ha elakadtál</h2>
+<p>Írj nekünk az alkalmazásból: a felső sávban a szövegbuborék ikon, vagy a Rólam oldalon a „Visszajelzés küldése” gomb. Írd meg, mit csináltál, mit láttál, és milyen telefonon.</p>
+
+</main>
+<footer><div>PrepperPapa &middot; Használati útmutató
+&middot; <a href="/adatkezeles.html">Adatkezelés</a></div></footer>
+</body>
+</html>

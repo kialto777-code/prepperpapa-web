@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrepperPapa alkalmazás: felkészülés internet nélkül</title>
+<meta name="description" content="Készültség-számítás, tudástár, térkép, tájoló, zseblámpa, Morze és vészkártya egy alkalmazásban, internet nélkül is. A PrepperPapa alkalmazás bemutatója.">
+<link rel="canonical" href="https://prepperpapa.hu/app/">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PrepperPapa alkalmazás: felkészülés internet nélkül">
+<meta property="og:description" content="Készültség-számítás, tudástár, térkép, tájoló, zseblámpa, Morze és vészkártya egy alkalmazásban, internet nélkül is. A PrepperPapa alkalmazás bemutatója.">
+<meta property="og:url" content="https://prepperpapa.hu/app/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:Pacifico,cursive;font-size:21px}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><nav class="nav">
+  <a class="brand" href="/"><img src="/assets/logo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/cikkek.html">Cikkek</a>
+  <a class="link" href="/kalkulator/">Kalkulátorok</a>
+  <a class="link" href="/app/">Alkalmazás</a>
+</nav></header>
+<main>
+<h1>PrepperPapa alkalmazás</h1>
+<p class="beveze">Felkészülés a zsebedben, internet nélkül. Ami egy áramszünetben, egy elakadt autó mellett vagy egy erdei túrán kell, az egy helyen van, és akkor is működik, amikor a net és a térerő már nem.</p>
+<p>A PrepperPapa csatorna évek óta mutatja, hogyan lehet józanul felkészülni. Az alkalmazás ezt teszi a telefonodra: kiszámolja, mennyire vagytok felkészülve, és segít ott, ahol épp kell.</p>
+<div class="kepek">
+<figure><img src="/app/kepek/1-kezdolap.jpg" alt="Kezdőlap: készültség helyszínenként" loading="lazy" width="480" height="1038"><figcaption>Készültség helyszínenként</figcaption></figure>
+<figure><img src="/app/kepek/2-terkep.jpg" alt="Térkép túratervvel" loading="lazy" width="480" height="1038"><figcaption>Túraterv a térképen</figcaption></figure>
+<figure><img src="/app/kepek/8-keszlet.jpg" alt="Készletlista lejárat-figyelővel" loading="lazy" width="480" height="1038"><figcaption>Készlet és lejárat</figcaption></figure>
+<figure><img src="/app/kepek/3-tudastar.jpg" alt="Tudástár" loading="lazy" width="480" height="1038"><figcaption>Tudástár</figcaption></figure>
+<figure><img src="/app/kepek/4-tajolo.jpg" alt="Tájoló hangvezetéssel" loading="lazy" width="480" height="1038"><figcaption>Tájoló</figcaption></figure>
+<figure><img src="/app/kepek/6-biblia.jpg" alt="Biblia internet nélkül" loading="lazy" width="480" height="1038"><figcaption>Biblia</figcaption></figure>
+</div>
+<h2>Mit tud? Hat helyzet, tizennyolc funkció</h2>
+<div class="helyzet"><h3>Ha elmegy a net</h3><ul>
+<li><b>Készültség-számítás.</b> Megadod, kik élnek veletek (a háziállatot is), és mi van a kamrában. Az app helyszínenként, százalékban mutatja, hogy áll a víz, az élelem, a fűtés és az áram. Ha valamiből kevés van, látod, mit kell pótolni.</li>
+<li><b>Tudástár internet nélkül.</b> 21 téma a víztől az elsősegélyig. Ami a telefonodra került, az térerő nélkül is olvasható.</li>
+<li><b>Térkép és túratervezés.</b> Turistautak, források, csúcsok. Megadod, honnan hová mész, és az app kiírja a távot, a menetidőt, a szintemelkedést és a követendő jelzéseket, GPX-be is. A letöltött terület internet nélkül is megy, a GPS-pontjaiddal együtt.</li>
+</ul></div>
+<div class="helyzet"><h3>Áramszünet</h3><ul>
+<li><b>Zseblámpa és vörös éjszakai fény.</b> A vörös fény nem vakítja el a sötéthez szokott szemet.</li>
+<li><b>Áram- és fűtés-kalkulátor.</b> Meddig visz el a powerbank vagy az erőmű, és mennyi tüzelő kell a télre.</li>
+<li><b>Készletlista.</b> Mi van otthon, hol tárolod, és mikor jár le. A lejáró tételek színnel jeleznek.</li>
+</ul></div>
+<div class="helyzet"><h3>Víz és élelem</h3><ul>
+<li><b>Víztisztítás-számoló.</b> Mennyi hipó vagy tabletta kell egy adott mennyiségű víz fertőtlenítéséhez.</li>
+<li><b>Esővíz-kalkulátor.</b> Mennyi vizet gyűjthetsz a tetőről egy adott esőből.</li>
+<li><b>„Mit vigyek?” csomaglista.</b> A családtagjaidból áll össze, súlykerettel, hogy a csomag vihető maradjon.</li>
+</ul></div>
+<div class="helyzet"><h3>Nincs térerő</h3><ul>
+<li><b>Helyi üzenetek.</b> Szöveges üzenet a környezetedben lévőknek internet nélkül, egy közös hálón, akár egy telefon hotspotján.</li>
+<li><b>Morze és fax.</b> Morzejel hanggal és villogó fénnyel, és kép küldése hangon (SSTV).</li>
+<li><b>Titkos QR.</b> Üzenet, helyzet vagy lista QR-kódban, amit csak az olvas el, aki ismeri a családi jelszavatokat.</li>
+</ul></div>
+<div class="helyzet"><h3>Terepen</h3><ul>
+<li><b>Tájoló hangvezetéssel.</b> Felveszed az irányt, és az app hanggal vezet, a telefon mehet a zsebedbe. Kiírja a visszautat is, és mutatja a napkeltét és a holdfázist.</li>
+<li><b>Esés-érzékelés.</b> Ha zuhanás és ütközés után mozdulatlan maradsz, visszaszámlálás indul, és ha nem mondod le, SOS üzenet megy a helyzeteddel, és megszólal a vészsíp.</li>
+<li><b>Menetidő és villám.</b> Mennyi idő gyalog a cél, és milyen messze csapott le a villám.</li>
+</ul></div>
+<div class="helyzet"><h3>Család és lélek</h3><ul>
+<li><b>Család és vészkártya.</b> Itt veszed fel a családot: ebből számol a készültség és a csomaglista. A vészkártyán ott a vércsoport, az allergia, a gyógyszer és a vészhelyzeti kontakt.</li>
+<li><b>Biblia internet nélkül.</b> A Károli-fordítás a telefonodon, felolvasással.</li>
+<li><b>Vészsíp és újraélesztés-ütem.</b> Hangos vészsíp, és az újraélesztés ütemét diktáló hang, hogy pánikban se kelljen számolni.</li>
+</ul></div>
+<h2>Hálózat nélkül sem áll le</h2>
+<p class="igeret">Ez vészhelyzeti alkalmazás. Ezért egy szabály mindenek felett áll: <b>a funkció nem áll le akkor, amikor a legnagyobb szükséged van rá.</b> Nincs olyan pillanat, amikor bajban megnyitod, és azt kéri, hogy előbb fizess.</p>
+<p>Ami a telefonodra került, az ott is marad. Amit feloldottál, az internet nélkül is feloldva marad.</p>
+<h2>Mi ingyenes, és mit old fel a prémium kód?</h2>
+<p>Az alkalmazás nagy része ingyenes, és az is marad: a készültség-számítás, a kalkulátorok, a térkép, a tájoló, a zseblámpa, a vészkártya és a tudástár alapcikkei.</p>
+<p>A <b>prémium kód</b> feloldja a bővített tudástárat (a mélyebb, részletes cikkeket) és a Vagyonkezelőt. A kódot az alkalmazás Beállítások képernyőjén, a Feloldás részben váltod be.</p>
+<h2 id="vasarlas">Prémium kód</h2>
+<div class="vasarlas" id="pp-premium-vasarlas">
+<p class="ar">39,90 €</p>
+<p class="halk">Bevezető ár, később 49,90 €. Ha egy partnerünk kuponkódjával érkezel, további 5% kedvezményt kapsz.</p>
+<p>A kód a fiókodhoz kötődik, és legfeljebb két készülékeden működik. Internet nélkül soha nem zár le semmit.</p>
+<!-- CHECKOUT HOOK (Marveen): a vásárlási űrlap/gomb ennek az elemnek a HELYÉRE kerül, amikor a pp-vasarlas élesbe áll.
+     Addig a "Hamarosan" értesítő látszik. Element id: pp-checkout -->
+<div id="pp-checkout">
+<p><b>Hamarosan megvásárolható.</b> Ha szólunk, amikor indul, írj egy rövid levelet.</p>
+<a class="btn amber" href="mailto:prepperpapa@gmail.com?subject=Sz%C3%B3lj%2C%20ha%20megv%C3%A1s%C3%A1rolhat%C3%B3%20a%20PrepperPapa%20pr%C3%A9mium">Szólj, ha indul</a>
+</div>
+</div>
+<h2 id="letoltes">Letöltés</h2>
+<p><b>Android:</b> a Google Play áruházban hamarosan. Addig az alkalmazás zárt tesztelés alatt áll, és a tesztelők a belépés után innen töltik le: <a href="https://app.prepperpapa.hu/letoltes/prepperpapa.apk">app.prepperpapa.hu/letoltes/prepperpapa.apk</a></p>
+<p><b>iPhone:</b> a böngészőből fut, webes alkalmazásként, telepítés nélkül.</p>
+<!-- TESZTELŐI VÉLEMÉNYEK: a tesztelési menet végén kérjük (26c3272b), engedéllyel.
+     Amíg nincs közzétehető vélemény, a szakasz rejtve marad (hidden), üres szakasz nem megy ki. -->
+<section id="velemenyek" hidden>
+<h2>Akik már kipróbálták</h2>
+</section>
+<h2>Gyakori kérdések</h2>
+<details><summary>Milyen telefonon működik?</summary><p>Androidon telepíthető alkalmazásként, iPhone-on a böngészőből, webes alkalmazásként.</p></details>
+<details><summary>Kell hozzá internet?</summary><p>A használatához nem. Internet a letöltéshez, a frissítésekhez és a kód beváltásához kell. Ami egyszer a telefonodra került, az hálózat nélkül is működik.</p></details>
+<details><summary>Hol vannak az adataim?</summary><p>A telefonodon. Az alkalmazás a prémium kód azonosítóján és a Szobákon (üzenetküldés) kívül nem gyűjt rólad azonosításra alkalmas adatot. A Szobáknak külön szabályzata van.</p></details>
+<details><summary>Leáll valami, ha nem veszek kódot?</summary><p>Nem. Az ingyenes rész ingyenes marad, és egyetlen funkció sem áll le.</p></details>
+<details><summary>Hol találom a használati útmutatót?</summary><p>Itt: <a href="/utmutato/">prepperpapa.hu/utmutato</a>. Az alkalmazás Súgójából is elérhető.</p></details>
+<p class="halk" style="margin-top:28px">Az alkalmazás jelenleg zárt tesztelés alatt áll.</p>
+</main>
+<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, magyar valóságra
+&middot; <a href="/adatkezeles.html">Adatkezelés</a></div></footer>
+</body>
+</html>
