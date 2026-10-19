@@ -45,6 +45,9 @@
              box-shadow:0 0 0 1px rgba(255,179,64,.35),0 0 18px rgba(255,179,64,.16)}
   .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:27px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
   .brand img{border-radius:0;box-shadow:none;object-fit:contain}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:52px;height:52px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:21px}}
   .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
   .nav a.link:hover{color:var(--ink)}
   .btn{display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;
@@ -269,7 +272,7 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#"><img src="/assets/applogo-96.png" width="40" height="40" alt="PrepperPapa logó"><span>PrepperPapa</span></a>
+    <a class="brand" href="#"><img src="/assets/applogo-96.png" width="52" height="52" alt="PrepperPapa logó"><span>PrepperPapa</span></a>
     <a class="link" href="#videok">Відео</a>
     <a class="link" href="#tudastar">База знань</a>
     <a class="link" href="/uk/kalkulator/">Калькулятори</a>
@@ -298,9 +301,9 @@
 
 <div class="tenyek">
   <div class="wrap">
-    <div class="teny"><b>10,800</b><span>subscribers</span></div>
-    <div class="teny"><b>560</b><span>videos</span></div>
-    <div class="teny"><b>1.7 million</b><span>views</span></div>
+    <div class="teny"><b>10 800</b><span>підписників</span></div>
+    <div class="teny"><b>560</b><span>відео</span></div>
+    <div class="teny"><b>1,7 млн</b><span>переглядів</span></div>
     <div class="teny"><b>З 2018 року</b><span>без перерви</span></div>
   </div>
 </div>
@@ -377,7 +380,7 @@
                 background:linear-gradient(160deg,#16211B,#121B16)">
         <div style="text-align:center;padding:26px">
           <div style="font-size:30px;color:var(--zold);line-height:1">&rarr;</div>
-          <div class="t" style="padding:12px 0 0">All 560 videos</div>
+          <div class="t" style="padding:12px 0 0">Усі 560 відео</div>
           <div style="color:var(--muted);font-size:14px">Тести, посібники, прямі ефіри</div>
         </div>
       </a>
