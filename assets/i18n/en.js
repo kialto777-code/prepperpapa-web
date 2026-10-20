@@ -2569,8 +2569,7 @@ window.PP_FORD_SZOTAR.en = {
     'The ring shows the weakest link, not the average. One missing item drags the whole thing down — and that is deliberate.',
   'A vétel és az adás ugyanazzal a gombbal kapcsol. Amíg megy, hagyd a telefont nyugton.':
     'Receiving and transmitting toggle with the same button. While it runs, leave the phone still.',
-  'Egy témán belül két réteg van. Az alapréteg mindenkinek elérhető, ingyen.':
-    'Each topic has two layers. The base layer is available to everyone, free of charge.',
+  "Egy témán belül két réteg van. Az alap- és az életmentő cikkek ingyenesek, mindenkinek.": "Each topic has two layers. The basic and the life-saving articles are free, for everyone.",
   'Ezt látja az, aki megtalálja a telefonodat. Csak azt írd bele, amit egy idegen is láthat.':
     'This is what someone who finds your phone will see. Only put in what a stranger may see.',
   'Felveszed az azimutot, és a tájoló megmutatja a visszautat is — nem kell fejben tartanod.':
@@ -3136,7 +3135,7 @@ window.PP_FORD_SZOTAR.en = {
   "Pont ide, ahol vagyok: a GPS helyedet menti. Helyzetem küldése: elküldöd valakinek, hol vagy.": "A point right here: it saves your GPS position. Send my position: you send someone where you are.",
   "Pontok kimentése (GPX): a pontjaid fájlba, más térképbe is.": "Export points (GPX): your points into a file, for other maps too.",
   "Terület letöltése: a térkép offline is meglesz. Ha nem kell már, a Tárolt térkép törlése felszabadítja a helyet.": "Download area: the map will be there offline as well. If you no longer need it, Delete stored map frees up the space.",
-  "A bővített, részletes anyag előfizetéshez kötött. A cikk elején látod, meddig tart az ingyenes rész és hol kezdődik a bővített.": "The extended, detailed material requires a subscription. At the start of the article you see where the free part ends and the extended one begins.",
+  "A bővített tudástár a Prémium része: prémium kóddal, egyszeri feloldással, véglegesen. A cikk elején látod, meddig tart az ingyenes rész és hol kezdődik a bővített.": "The extended knowledge base is part of Premium: unlocked once with a premium code, for good. At the start of the article you see where the free part ends and the extended one begins.",
   "Kereséssel gyorsabban odaérsz, mint görgetéssel.": "Searching gets you there faster than scrolling.",
   "Új tétel: mi az, mennyi, hol tartod, mikor jár le. A lejárat színe magától változik.": "New item: what it is, how much, where you keep it, when it expires. The colour of the expiry changes by itself.",
   "Szűrés kategóriára, helyszínre és készlet-fajtára: a 72 órás csomagot például külön látod.": "Filter by category, location and stock type: the 72-hour pack, for instance, you see separately.",
