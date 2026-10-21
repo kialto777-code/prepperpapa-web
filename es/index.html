@@ -394,6 +394,33 @@
           <div class="cim">No te vas a creer esta linterna de 3000 lúmenes</div>
         </div>
       </a>
+      <!-- featured video rotation (Boss 2026-10-21 13:24): weighted pick on every load; pool entries are
+           real channel videos, kept as text so the translation layer translates title and badge -->
+      <div class="fo-pool" hidden aria-hidden="true">
+        <div class="fp" data-v="Y9JSWGVUnA8" data-w="3"><div class="fb">Prueba de linternas</div><div class="fc">Wuben E8: por fin un fabricante que escucha a los probadores</div></div>
+        <div class="fp" data-v="RHMeCnSrHEw" data-w="3"><div class="fb">Prueba de linternas</div><div class="fc">Wuben X1 Pro: brillo extremo para bici y montaña</div></div>
+        <div class="fp" data-v="NUqHw8jcHx8" data-w="3"><div class="fb">Prueba de linternas</div><div class="fc">¿Casi perfecta? Prueba de la linterna frontal Wuben H4</div></div>
+        <div class="fp" data-v="8SkZnTG_cL0" data-w="3"><div class="fb">Prueba de linternas</div><div class="fc">¿De verdad vale lo que cuesta la Wuben X4?</div></div>
+        <div class="fp" data-v="ay4i1A0FOd8" data-w="3"><div class="fb">Prueba de linternas</div><div class="fc">Es hora de cambiar: linterna frontal Wurkkos HD03</div></div>
+        <div class="fp" data-v="E9y_E855Jf0" data-w="3"><div class="fb">Prueba de linternas</div><div class="fc">Un monstruo de luz de colores contra la oscuridad: prueba de la Wurkkos HD01 Pro</div></div>
+        <div class="fp" data-v="CCw6nX4-pzI" data-w="3"><div class="fb">Prueba de linternas</div><div class="fc">Wurkkos HD16: linterna frontal con rueda de mezcla</div></div>
+        <div class="fp" data-v="7aF31789v_w" data-w="2"><div class="fb">Solar</div><div class="fc">Prueba de un panel solar de 200 W: ¿cuánto produce realmente al aire libre?</div></div>
+        <div class="fp" data-v="NLtFGm-2FZA" data-w="2"><div class="fb">Camping</div><div class="fc">Este calefactor cambia la acampada de invierno</div></div>
+        <div class="fp" data-v="bxZ_sZlBuWE" data-w="2"><div class="fb">Estación de energía</div><div class="fc">Blackview Oscal PowerMax 2400 Pro: ¿esta estación de energía portátil puede con todo?</div></div>
+        <div class="fp" data-v="N9QoCwcaVvw" data-w="2"><div class="fb">Camping</div><div class="fc">Prueba de la tienda Decathlon MT500: no la compres sin ver esto</div></div>
+        <div class="fp" data-v="-39ckM39b2s" data-w="2"><div class="fb">Estación de energía</div><div class="fc">Prueba de la estación de energía Allpowers R1500: comida con freidora de aire en el camping</div></div>
+        <div class="fp" data-v="ilmcq8LIhwM" data-w="2"><div class="fb">Prueba de linternas</div><div class="fc">No te vas a creer esta linterna de 3000 lúmenes</div></div>
+      </div>
+      <script>
+      (function(){try{
+        var fo=document.querySelector('.kiemelt .fo'),ps=document.querySelectorAll('.fo-pool .fp');if(!fo||!ps.length)return;
+        var tot=0,i;for(i=0;i<ps.length;i++)tot+=(+ps[i].dataset.w||1);
+        var r=Math.random()*tot,p=ps[ps.length-1];for(i=0;i<ps.length;i++){r-=(+ps[i].dataset.w||1);if(r<0){p=ps[i];break;}}
+        var v=p.dataset.v,c=p.querySelector('.fc').textContent,b=p.querySelector('.fb').textContent,img=fo.querySelector('img');
+        fo.href='https://www.youtube.com/watch?v='+v;img.src='https://i.ytimg.com/vi/'+v+'/maxresdefault.jpg';img.alt=c;
+        fo.querySelector('.badge').textContent=b;fo.querySelector('.cim').textContent=c;
+      }catch(e){}})();
+      </script>
       <div class="oldal">
         <a class="mini" href="https://www.youtube.com/watch?v=zBslQAQUy0c" target="_blank" rel="noopener">
           <img src="https://i.ytimg.com/vi/zBslQAQUy0c/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="¿Acampar sin electricidad? Este panel solar podría ser la solución">

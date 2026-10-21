@@ -418,6 +418,33 @@
           <div class="cim">Ezt a 3000 lumenes lámpát nem fogod elhinni</div>
         </div>
       </a>
+      <!-- featured video rotation (Boss 2026-10-21 13:24): weighted pick on every load; pool entries are
+           real channel videos, kept as text so the translation layer translates title and badge -->
+      <div class="fo-pool" hidden aria-hidden="true">
+        <div class="fp" data-v="Y9JSWGVUnA8" data-w="3"><div class="fb">Lámpateszt</div><div class="fc">Wuben E8: végre egy gyártó, aki hallgat a tesztelőkre</div></div>
+        <div class="fp" data-v="RHMeCnSrHEw" data-w="3"><div class="fb">Lámpateszt</div><div class="fc">Wuben X1 Pro: extrém fényerő bringára és terepre</div></div>
+        <div class="fp" data-v="NUqHw8jcHx8" data-w="3"><div class="fb">Lámpateszt</div><div class="fc">Majdnem tökéletes? Wuben H4 fejlámpa teszt</div></div>
+        <div class="fp" data-v="8SkZnTG_cL0" data-w="3"><div class="fb">Lámpateszt</div><div class="fc">Ez a Wuben X4 tényleg megéri az árát?</div></div>
+        <div class="fp" data-v="ay4i1A0FOd8" data-w="3"><div class="fb">Lámpateszt</div><div class="fc">Eljött az idő cserélni: Wurkkos HD03 fejlámpa</div></div>
+        <div class="fp" data-v="E9y_E855Jf0" data-w="3"><div class="fb">Lámpateszt</div><div class="fc">Színes fényszörny a sötétség ellen: Wurkkos HD01 Pro teszt</div></div>
+        <div class="fp" data-v="CCw6nX4-pzI" data-w="3"><div class="fb">Lámpateszt</div><div class="fc">Wurkkos HD16: fejlámpa keverő gombbal</div></div>
+        <div class="fp" data-v="7aF31789v_w" data-w="2"><div class="fb">Napelem</div><div class="fc">200 W-os napelem teszt: mennyit termel valójában a szabadban?</div></div>
+        <div class="fp" data-v="NLtFGm-2FZA" data-w="2"><div class="fb">Kemping</div><div class="fc">Ez a fűtő megváltoztatja a téli kempingezést</div></div>
+        <div class="fp" data-v="bxZ_sZlBuWE" data-w="2"><div class="fb">Erőmű</div><div class="fc">Blackview Oscal PowerMax 2400 Pro: ez a hordozható erőmű mindent visz?</div></div>
+        <div class="fp" data-v="N9QoCwcaVvw" data-w="2"><div class="fb">Kemping</div><div class="fc">Decathlon MT500 sátorteszt: ne vedd meg, amíg ezt nem láttad</div></div>
+        <div class="fp" data-v="-39ckM39b2s" data-w="2"><div class="fb">Erőmű</div><div class="fc">Allpowers R1500 erőmű teszt: ebéd air fryerrel a kempingben</div></div>
+        <div class="fp" data-v="ilmcq8LIhwM" data-w="2"><div class="fb">Lámpateszt</div><div class="fc">Ezt a 3000 lumenes lámpát nem fogod elhinni</div></div>
+      </div>
+      <script>
+      (function(){try{
+        var fo=document.querySelector('.kiemelt .fo'),ps=document.querySelectorAll('.fo-pool .fp');if(!fo||!ps.length)return;
+        var tot=0,i;for(i=0;i<ps.length;i++)tot+=(+ps[i].dataset.w||1);
+        var r=Math.random()*tot,p=ps[ps.length-1];for(i=0;i<ps.length;i++){r-=(+ps[i].dataset.w||1);if(r<0){p=ps[i];break;}}
+        var v=p.dataset.v,c=p.querySelector('.fc').textContent,b=p.querySelector('.fb').textContent,img=fo.querySelector('img');
+        fo.href='https://www.youtube.com/watch?v='+v;img.src='https://i.ytimg.com/vi/'+v+'/maxresdefault.jpg';img.alt=c;
+        fo.querySelector('.badge').textContent=b;fo.querySelector('.cim').textContent=c;
+      }catch(e){}})();
+      </script>
       <div class="oldal">
         <a class="mini" href="https://www.youtube.com/watch?v=zBslQAQUy0c" target="_blank" rel="noopener">
           <img src="https://i.ytimg.com/vi/zBslQAQUy0c/maxresdefault.jpg" width="1280" height="720" loading="lazy" alt="Kempingezés áram nélkül? Ez a napelem megoldás lehet rá">
