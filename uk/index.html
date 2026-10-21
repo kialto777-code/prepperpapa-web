@@ -191,6 +191,14 @@
     .card:hover .ikon{opacity:1;transform:translateY(-50%) scale(1.03)}
     .card h3,.card p{max-width:calc(100% - min(190px,38%))}
   }
+  /* desktop browser only (Boss 2026-10-21 13:38): fainter, on the LEFT of the text. Phones (portrait and
+     landscape) keep the released look: hover:hover + pointer:fine + wide viewport never matches a phone. */
+  @media (min-width:921px) and (hover:hover) and (pointer:fine){
+    .card{padding-left:clamp(110px,30%,150px)}
+    .card .ikon{left:22px;right:auto;bottom:auto;top:50%;height:52%;max-height:104px;transform:translateY(-50%);opacity:.12}
+    .card:hover .ikon{opacity:.18;transform:translateY(-50%) scale(1.03)}
+    .card h3,.card p{max-width:none}
+  }
   .fo,.vid{border-radius:18px}
   .mini img{border-radius:12px}
   .nagy{border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16);border-color:#2c3d33}
