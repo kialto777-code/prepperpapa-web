@@ -5,10 +5,12 @@
 // A SZERKEZET AZONOS AZ `en.js`-EVEL: a kulcs MAGA A MAGYAR SZoVEG.
 // HAROM SZoTAR VAN: ez + `i18n/vagyon-ro.js` (KET peldanyban) + `PP_SZOTAR.ro` az index.html-ben.
 //
-// AZ oT BIBLIAI IGEVERS A KIADOTT SZoVEGBoL VAN: Cornilescu (`cornilescu.json`,
-// getbible v2), szo szerint masolva a letoltott fajlbol.
-// A ZSOLTAR HIVATKOZASA "Psalmii 46,1-2", NEM "46,2-3": a magyar Karoli a feliratot is
-// versnek szamolja, a Cornilescu nem. Ez NEM elgepeles.
+// AZ oT BIBLIAI IGEVERS A KIADOTT SZoVEGBoL VAN: 2026-10-21 (v43.334) ota Biblia 1914, a Szent Szinodus
+// kiadasa (`biblia1914.json`, archive.org biblia-1914-v123, Public Domain Mark), szo szerint masolva.
+// ELOZMENY: addig a Cornilescu (EU-ban 2045-ig vedett) szovege allt itt.
+// A ZSOLTAR HIVATKOZASA "Psalmii 46,1-2", NEM "46,2-3": a magyar Karoli a feliratot is versnek szamolja,
+// az app roman Bibliaja nem (a fajl a heber/KJV szerkezetet koveti; a nyomtatott 1914-es kiadasban
+// ez a Szeptuaginta szerinti 45. zsoltar). Ez NEM elgepeles.
 
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
@@ -1142,8 +1144,8 @@ window.PP_FORD_SZOTAR.ro = {
     "Ținând apăsat un mesaj poți răspunde cu emoji, îl poți salva, iar pe al tău îl poți modifica sau șterge.",
   "A fejlécben a fogaskerék nyitja a szoba beállításait: értesítés, tagok, belépési kérelmek, a szoba kódja.":
     "În antet, rotița deschide setările camerei: notificări, membri, cereri de intrare, codul camerei.",
-  "Az üzenetek végponttól végpontig titkosítva mennek — a szerver csak a titkosított bájtokat látja.":
-    "Mesajele sunt criptate end-to-end — serverul vede doar octeții criptați.",
+  "Az üzenetek szövege és képei végponttól végpontig titkosítva mennek: a szerver ezeket nem tudja elolvasni. A neveket, a profilképeket, a szoba képét, a reakciókat és az időpontokat viszont látja.":
+    "Textul și imaginile mesajelor sunt criptate end-to-end: serverul nu le poate citi. Vede însă numele, pozele de profil, imaginea camerei, reacțiile și orele.",
   "Kezdőlap":
     "Pagina de start",
   "Előbb add meg a neved — így látnak a többiek a szobákban.":
@@ -2381,16 +2383,16 @@ window.PP_FORD_SZOTAR.ro = {
   "ÉNy": "NV",
   "DK": "SE",
   "DNy": "SV",
-  "Példabeszédek 22,3": "Proverbe 22,3",
-  "Az eszes meglátja a bajt és elrejti magát; a bolondok pedig neki mennek és kárát vallják.": "Omul chibzuit vede nenorocirea şi se ascunde, dar cei proşti merg înainte şi sunt pedepsiţi.",
+  "Példabeszédek 22,3": "Proverbe 27,12",  // v43.335: the LXX-based 1914 Prov 22:3 says something else; the same Hebrew proverb stands in 27:12 (card 6b287cfb, 11.4 source)
+  "Az eszes meglátja a bajt és elrejti magát; a bolondok pedig neki mennek és kárát vallják.": "Istețul când îi vin rele se ascunde; iar cei fără de minte umblând se păgubesc.",
   "2Timóteus 1,7": "2 Timotei 1,7",
-  "Mert nem félelemnek lelkét adott nékünk az Isten; hanem erőnek és szeretetnek és józanságnak lelkét.": "Căci Dumnezeu nu ne-a dat un duh de frică, ci de putere, de dragoste şi de chibzuinţă.",
+  "Mert nem félelemnek lelkét adott nékünk az Isten; hanem erőnek és szeretetnek és józanságnak lelkét.": "Că nu ne-au dat nouă Dumnezeu duhul temerei; ci al puterei și al dragostei și al întregei înțelepciuni.",
   "Máté 6,34": "Matei 6,34",
-  "Ne aggodalmaskodjatok tehát a holnap felől; mert a holnap majd aggodalmaskodik a maga dolgai felől. Elég minden napnak a maga baja.": "Nu vă îngrijoraţi dar de ziua de mâine; căci ziua de mâine se va îngrijora de ea însăşi. Ajunge zilei necazul ei.",
+  "Ne aggodalmaskodjatok tehát a holnap felől; mert a holnap majd aggodalmaskodik a maga dolgai felől. Elég minden napnak a maga baja.": "Drept aceea, nu vă grijiți de ziua de mâine, că ziua de mâine va grijì de ale sale. Ajunge’i zilei răutatea ei.",
   "Zsoltárok 46,2-3": "Psalmii 46,1-2",
-  "Isten a mi oltalmunk és erősségünk! igen bizonyos segítség a nyomorúságban. Azért nem félünk, ha elváltoznék is a föld, ha hegyek omlanának is a tenger közepébe.": "Dumnezeu este adăpostul şi sprijinul nostru, un ajutor care nu lipseşte niciodată în nevoi. De aceea nu ne temem chiar dacă s-ar zgudui pământul şi s-ar clătina munţii în inima mărilor.",
+  "Isten a mi oltalmunk és erősségünk! igen bizonyos segítség a nyomorúságban. Azért nem félünk, ha elváltoznék is a föld, ha hegyek omlanának is a tenger közepébe.": "Dumnezeu este scăparea noastră și puterea, ajutor întru necazurile cele ce ne-au aflat pre noi foarte. Pentru aceasta nu ne vom teme când se va turburà pământul și se vor mutà munții în inimile mărilor.",
   "Jakab 1,3": "Iacov 1,3",
-  "Tudván, hogy a ti hiteteknek megpróbáltatása kitartást szerez.": "ca unii care ştiţi că încercarea credinţei voastre lucrează răbdare.",
+  "Tudván, hogy a ti hiteteknek megpróbáltatása kitartást szerez.": "Știind că lămurirea credinței voastre lucrează răbdare.",
   "Uram, Te látod, mi nyomaszt engem. Ma éjjel nem tudom megoldani, és nem is akarom azt hazudni Neked, hogy nem félek. Kérlek, vedd le rólam a holnap terhét, és adj erőt ahhoz, amit ma kell elhordoznom. Csendesíts le. Te őrködsz, én alhatok. Jézus nevében, ámen.": "Doamne, Tu vezi ce mă apasă. În noaptea aceasta nu pot rezolva, și nici nu vreau să Te mint că nu mi-e frică. Te rog, ia de pe mine povara zilei de mâine și dă-mi putere pentru ceea ce trebuie să duc astăzi. Liniștește-mă. Tu veghezi, eu pot dormi. În numele lui Isus, amin.",
   "Uram, most kell döntenem, és nincs időm. Adj tiszta fejet, és őrizz meg a pániktól. Mutasd meg a következő egy lépést, nem az egészet, csak a következőt. Legyen erőm megtenni. Jézus nevében, ámen.": "Doamne, trebuie să decid acum și nu am timp. Dă-mi minte limpede și păzește-mă de panică. Arată-mi următorul pas, nu totul — doar pe următorul. Dă-mi putere să îl fac. În numele lui Isus, amin.",
   "Mennyei Atyám! Az Úr Jézus Krisztus nevében megyek eléd. Elismerem, hogy mindenható, örökkévaló Isten vagy, az egész világmindenségnek a teremtője. Én is a Te teremtményed vagyok. Elismerem, hogy bűnös ember vagyok, és sokat vétkeztem ellened. De én ma elhatározom, hogy megtérek és elfogadom a Názáreti Jézus áldozatát, és elismerem, hogy erre az áldozatra nekem is szükségem van. Ezért a szívemet, életemet megnyitom. Kérlek Uram, jöjj a szívembe. Bocsásd meg a bűneimet, szabadíts meg engem a bűntől és annak minden következményétől! Hiszek Benned Jézus. Hiszem, hogy Te vagy az élő Istennek a Fia, ki meghaltál az én bűneimért és feltámadtál a halálból, hogy megigazítsál engem. Elfogadlak Uramnak, Megváltómnak, Szabadítómnak és átadom az életemet, szívemet Neked. Szabadíts meg Uram! Tiszta szívet teremts bennem! Te azt ígérted, hogy a zörgetőnek ajtó nyittatik. Én Isten jelenlétébe akarok kerülni, és Te vagy az Út. Kérlek, vezess engem a Mindenható jelenlétébe! Dicsérlek és áldalak. Szeretlek Uram szívemből, lelkemből, erőmből, a Názáreti Jézus nevében. Dicsőség Istennek, most és mindörökké! Ámen!": "Tată ceresc! În numele Domnului Isus Hristos vin înaintea Ta. Recunosc că ești Dumnezeul atotputernic și veșnic, Creatorul întregului univers. Și eu sunt făptura Ta. Recunosc că sunt om păcătos și am greșit mult împotriva Ta. Dar astăzi hotărăsc să mă pocăiesc și să primesc jertfa lui Isus din Nazaret, și recunosc că și eu am nevoie de această jertfă. De aceea îmi deschid inima și viața. Te rog, Doamne, vino în inima mea. Iartă-mi păcatele, izbăvește-mă de păcat și de toate urmările lui! Cred în Tine, Isuse. Cred că Tu ești Fiul Dumnezeului celui viu, care ai murit pentru păcatele mele și ai înviat din morți ca să mă îndreptățești. Te primesc ca Domn, Mântuitor și Izbăvitor al meu și Îți dau viața și inima mea. Izbăvește-mă, Doamne! Zidește în mine o inimă curată! Tu ai făgăduit că celui ce bate i se va deschide. Vreau să ajung în prezența lui Dumnezeu, iar Tu ești Calea. Te rog, condu-mă înaintea Celui Atotputernic! Te laud și Te binecuvântez. Te iubesc, Doamne, din toată inima, din tot sufletul, din toată puterea, în numele lui Isus din Nazaret. Slavă lui Dumnezeu, acum și în veci! Amin!",
@@ -3825,4 +3827,83 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Szól, de hallhatatlanul magas. Ha semmit nem hallasz, az normális.": "Sună, dar este prea înalt pentru a fi auzit. Dacă nu auzi nimic, este normal.",
   "Próbahang": "Sunet de test",
   "A próbahang nem indult el.": "Sunetul de test nu a pornit."
+});
+// ===== 2026-10-20 v43.326 (card 6b287cfb): PIN recovery code, reminder sentence, PIN setup without a default PIN =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Írd be a PIN-kódod": "Introdu PIN-ul",
+  "Írd be még egyszer": "Introdu-l din nou",
+  "A PIN még egyszer": "PIN-ul încă o dată",
+  "Elfelejtettem a PIN-t": "Am uitat PIN-ul",
+  "Állíts be egy PIN-kódot (6 számjegy)": "Setează un PIN (6 cifre)",
+  "A PIN 6 számjegy legyen.": "PIN-ul trebuie să aibă 6 cifre.",
+  "A két PIN nem egyezik.": "Cele două PIN-uri nu coincid.",
+  "Válassz másik PIN-kódot.": "Alege alt PIN.",
+  "Mentési kód a PIN-hez": "Cod de recuperare pentru PIN",
+  "Ha elfelejted a PIN-t, ezzel a kóddal nyithatod meg a tárat, és állíthatsz be új PIN-t. Írd le papírra, és tartsd biztonságos helyen. Csak most látod: a telefon nem őrzi meg, és sehova nem küldjük el.": "Dacă uiți PIN-ul, acest cod deschide spațiul de stocare și îți permite să setezi un PIN nou. Scrie-l pe hârtie și păstrează-l într-un loc sigur. Îl vezi doar acum: telefonul nu îl păstrează și nu îl trimitem nicăieri.",
+  "Emlékeztető mondat (nem kötelező; titkosítás nélkül tárolódik, ne írd bele a PIN-t)": "Propoziție de reamintire (opțională; se păstrează necriptat, nu scrie PIN-ul în ea)",
+  "A kód utolsó négy karaktere (ellenőrzéshez)": "Ultimele patru caractere ale codului (pentru verificare)",
+  "Leírtam": "L-am notat",
+  "Később": "Mai târziu",
+  "Mentve. A mentési kód mostantól érvényes.": "Salvat. Codul de recuperare este valabil de acum.",
+  "Nem egyezik a kód utolsó négy karakterével. Nézd meg újra a leírt kódot.": "Nu se potrivește cu ultimele patru caractere ale codului. Uită-te din nou la codul notat.",
+  "A mentés nem sikerült, próbáld újra.": "Salvarea nu a reușit, încearcă din nou.",
+  "Rendben, a következő belépéskor újra felajánljuk.": "În regulă, îl oferim din nou la următoarea autentificare.",
+  "Emlékeztető mondat:": "Propoziție de reamintire:",
+  "Új PIN ujjlenyomattal": "PIN nou cu amprenta",
+  "Mentési kód": "Cod de recuperare",
+  "Ehhez a tárhoz még nincs mentési kód, és az ujjlenyomatos feloldás sincs bekapcsolva, ezért a PIN nem állítható vissza.": "Acest spațiu de stocare nu are încă un cod de recuperare, iar deblocarea cu amprenta nu este activată, deci PIN-ul nu poate fi recuperat.",
+  "Új PIN beállítása": "Setează un PIN nou",
+  "Az ujjlenyomat rendben. Add meg az új PIN-t.": "Amprenta este în regulă. Introdu PIN-ul nou.",
+  "Az ujjlenyomatos feloldás most nem sikerült.": "Deblocarea cu amprenta nu a reușit acum.",
+  "Hibás mentési kód.": "Cod de recuperare greșit.",
+  "Az új PIN beállítása nem sikerült, a régi PIN maradt érvényben.": "PIN-ul nou nu a putut fi setat; PIN-ul vechi rămâne valabil.",
+  "A dokumentumok CSAK ezen az eszközön tárolódnak, a PIN-edből képzett kulccsal titkosítva (AES-256) — a vészkártyával ellentétben ezt csak te nyithatod meg. A PIN-t nem tároljuk. Ha elfelejted, a mentési kóddal vagy ujjlenyomattal állíthatsz be újat; ezek nélkül a dokumentumok nem állíthatók vissza.": "Documentele sunt păstrate DOAR pe acest dispozitiv, criptate cu o cheie creată din PIN-ul tău (AES-256) — spre deosebire de cardul de urgență, doar tu le poți deschide. PIN-ul nu este păstrat. Dacă îl uiți, poți seta unul nou cu codul de recuperare sau cu amprenta; fără acestea documentele nu pot fi recuperate.",
+  "A kódok titkosítva tárolódnak ezen az eszközön: a kulcs a PIN-edből készül (AES-256), magát a PIN-t nem tároljuk. Ha elfelejted a PIN-t, a mentési kóddal vagy ujjlenyomattal állíthatsz be újat; ezek nélkül a tartalom nem állítható vissza, ezért a seed-mondatról tarts papírmásolatot is. A teljes mentésbe ez a rész SOSEM kerül bele.": "Codurile sunt păstrate criptat pe acest dispozitiv: cheia este creată din PIN-ul tău (AES-256), PIN-ul în sine nu este păstrat. Dacă uiți PIN-ul, poți seta unul nou cu codul de recuperare sau cu amprenta; fără acestea conținutul nu poate fi recuperat, așa că păstrează și o copie pe hârtie a frazei seed. Această parte NU intră NICIODATĂ în copia de rezervă completă."
+});
+// ===== 2026-10-20 v43.327 (card 6b287cfb): wallet-creation acknowledgement (HU text approved by the owner 21:39) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Értem, hogy a tárcám kulcsait (PIN, helyreállító kód, seed phrase) csak én ismerem. Ha elveszítem őket, a tárcám tartalma végleg elveszhet, és a PrepperPapa nem tudja visszaállítani. A kulcsok biztonságos megőrzése az én felelősségem.": "Înțeleg că doar eu cunosc cheile portofelului meu (PIN, cod de recuperare, frază seed). Dacă le pierd, conținutul portofelului se poate pierde definitiv, iar PrepperPapa nu îl poate restaura. Păstrarea în siguranță a cheilor este responsabilitatea mea.",
+  "Rendben": "În regulă",
+  "A tárca létrehozásához jelöld be, hogy tudomásul vetted a fenti szöveget.": "Pentru a crea portofelul, bifează caseta ca să confirmi că ai luat la cunoștință textul de mai sus."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): "Fontos tudnivaló" notice (HU approved by the owner 21:47, TG 28515) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Fontos tudnivaló az Irattárcáról és a tárcáról": "Informație importantă despre Portofelul de documente și portofel",
+  "Az adataid csak a te eszközödön vannak, titkosítva. A PrepperPapa nem fér hozzájuk, és nem tudja visszaállítani őket.": "Datele tale sunt doar pe dispozitivul tău, criptate. PrepperPapa nu are acces la ele și nu le poate restaura.",
+  "A PIN-kódod, a helyreállító kódod és a tárcád kulcsai (seed phrase) kizárólag nálad vannak. Ha elveszíted, megosztod vagy illetéktelen megszerzi őket, az adataid és a tárcád tartalma végleg elveszhet.": "PIN-ul, codul de recuperare și cheile portofelului tău (fraza seed) sunt exclusiv la tine. Dacă le pierzi, le împarți sau le obține cineva neautorizat, datele tale și conținutul portofelului se pot pierde definitiv.",
+  "Ha a helyreállító kódot e-mailben is kéred, a hozzáférésed csak olyan biztonságos, mint a postafiókod.": "Dacă ceri codul de recuperare și prin e-mail, accesul tău este doar atât de sigur cât căsuța ta de e-mail.",
+  "A kulcsok, a kód, a postafiók és az eszköz biztonságos megőrzéséért, valamint a mentésekért te felelsz. A PrepperPapa nem felel az ebből eredő kárért, kivéve azt a felelősséget, amelyet jogszabály nem enged kizárni.": "Tu răspunzi de păstrarea în siguranță a cheilor, a codului, a căsuței de e-mail și a dispozitivului, precum și de copiile de rezervă. PrepperPapa nu răspunde pentru daunele rezultate de aici, cu excepția răspunderii pe care legea nu permite să fie exclusă.",
+  "Elolvastam, értem.": "Am citit și am înțeles."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): Gíra paragraph (HU approved by the owner 21:58, TG 28530) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A gíra a közösségen belüli elszámolás egysége, nem pénz és nem fizetőeszköz. A PrepperPapa nem váltja át pénzre, nem garantálja az értékét, és nem részese a tagok közötti ügyleteknek. A tagok közötti vitákat és elszámolást a felhasználók egymás közt rendezik. Az offline fizetésnél előfordulhat, hogy ugyanazt a gírát kétszer költik el; ennek kockázata a felhasználókat terheli.": "Gíra este o unitate de decontare în cadrul comunității, nu este bani și nici mijloc de plată. PrepperPapa nu o schimbă în bani, nu îi garantează valoarea și nu este parte la tranzacțiile dintre membri. Disputele și decontările dintre membri le rezolvă utilizatorii între ei. La plățile offline se poate întâmpla ca aceeași gíra să fie cheltuită de două ori; acest risc îl poartă utilizatorii."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): SOS fail-closed -- nothing goes out unencrypted =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Az SOS NEM ment el: a titkosítás nem sikerült, ezért nyíltan nem küldöm el. Életveszélyben hívd a 112-t! A vészsíp szól.": "SOS-ul NU a fost trimis: criptarea a eșuat, de aceea nu îl trimit necriptat. În caz de pericol de moarte, sună la 112! Fluierul de urgență sună.",
+  "{n} helyre NEM ment el, mert a titkosítás nem sikerült. Életveszélyben hívd a 112-t!": "Către {n} destinație(i) NU a fost trimis, pentru că criptarea a eșuat. În caz de pericol de moarte, sună la 112!"
+});
+// ===== 2026-10-20 v43.329 (card 6b287cfb): room chat fail-closed -- nothing goes out unencrypted =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Az üzenet nem ment el: a titkosítás nem sikerült, vagy ezen a telefonon hiányzik a szoba kulcsa. Titkosítatlanul nem küldöm el. A szöveg megmaradt: lépj be újra a szobába (vagy kérj új meghívót a gazdától), és küldd újra.": "Mesajul NU a fost trimis: criptarea a eșuat sau pe acest telefon lipsește cheia camerei. Nu se trimite necriptat. Textul tău a rămas: intră din nou în cameră (sau cere gazdei o invitație nouă) și trimite-l din nou.",
+  "A kép nem ment el: a titkosítás nem sikerült, vagy hiányzik a szoba kulcsa. Titkosítatlanul nem küldöm el. Lépj be újra a szobába.": "Imaginea NU a fost trimisă: criptarea a eșuat sau lipsește cheia camerei. Nu se trimite necriptată. Intră din nou în cameră."
+});
+// ===== 2026-10-20 v43.329 (card 6b287cfb): SOS / fall-detection notices (HU approved by the owner, TG 28555) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Ez nem segélyhívás. Az SOS-jelzés és az esés-érzékelés csak a te szobáidba, az ott lévő tagoknak küld értesítést. Nem hívja a mentőket, a rendőrséget vagy a tűzoltókat, és nem biztos, hogy bárki időben meglátja. Az esés-érzékelés nem pontos: téves riasztást adhat, és előfordulhat, hogy egy esést nem érzékel. Életveszélyben, balesetnél, rosszullétnél hívd a 112-t. A PrepperPapa nem segélyszolgálat, és nem garantálja, hogy a jelzés célba ér.": "Acesta nu este un apel de urgență. Semnalul SOS și detectarea căderii trimit o notificare doar în camerele tale, membrilor de acolo. Nu sună ambulanța, poliția sau pompierii și nu este sigur că cineva o va vedea la timp. Detectarea căderii nu este precisă: poate da o alarmă falsă și se poate întâmpla să nu detecteze o cădere. În pericol de moarte, la un accident sau dacă îți este rău, sună la 112. PrepperPapa nu este un serviciu de urgență și nu garantează că semnalul ajunge la destinație.",
+  "Az SOS elküldi a pontos helyedet, és ha bejelölted, a Vészkártyád adatait (vércsoport, allergia, gyógyszer, betegség, kontakt) is az összes szobádnak.": "SOS-ul trimite locația ta exactă și, dacă ai bifat, și datele Cardului tău de urgență (grupa sanguină, alergie, medicament, boală, contact) în toate camerele tale.",
+  "A Vészkártya adataimat is küldjétek az SOS-szal.": "Trimiteți și datele Cardului meu de urgență cu SOS-ul.",
+  "Ez nem hívja a mentőket. Életveszélyben hívd a 112-t.": "Aceasta nu sună ambulanța. În pericol de moarte, sună la 112.",
+  "%s SOS-jelzést küldött. Ha nem éred el, és veszélyben lehet, hívd a 112-t.": "%s a trimis un semnal SOS. Dacă nu reușești să dai de persoana respectivă și ar putea fi în pericol, sună la 112.",
+  "(zárt kép — ehhez a szobához nincs meg a kulcs)": "(imagine criptată — lipsește cheia acestei camere)",
+  "Fontos tudnivaló az SOS-ról és az esés-érzékelésről": "Informații importante despre SOS și detectarea căderii",
+  "Nem kell megnyomnod: a telefon két percenként magától egyeztet. A gomb csak azonnali egyeztetésre való.": "Nu trebuie să-l apeși: telefonul sincronizează singur la fiecare două minute. Butonul e doar pentru o sincronizare imediată.",
+  "Nincs elérhető Gíra-szoba: egy szoba gazdája kapcsolhatja be a szoba beállításaiban („Gíra-közösség”).": "Nu există nicio cameră Gíra disponibilă: proprietarul unei camere o poate activa în setările camerei („Comunitate Gíra”).",
+  "Automatikus egyeztetés bekapcsolva, de most nincs elérhető Gíra-szoba": "Sincronizare automată pornită, dar acum nu este accesibilă nicio cameră Gíra",
+  "utoljára próbálva": "ultima încercare",
+  "Automatikus egyeztetés bekapcsolva": "Sincronizare automată pornită",
+  "utoljára ellenőrizve": "ultima verificare",
+  "Utolsó változás elküldve": "Ultima modificare trimisă",
+  "Utolsó beérkezett könyv": "Ultima carte primită"
 });

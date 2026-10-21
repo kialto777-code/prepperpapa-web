@@ -11,8 +11,9 @@
 // A 3. NEM fajl, tehat fajl-szintu grep nem talalja meg. Ha barmelyik hianyzik, a felulet
 // NEM hibat ad, hanem csendben magyarul marad.
 //
-// AZ oT BIBLIAI IGEVERS A KIADOTT SZoVEGBoL VAN, NEM TOLEM. Forras: Updated Gdansk Bible
-// (`gdanska.json`, getbible v2 / polugdanska), szo szerint masolva a letoltott fajlbol.
+// AZ oT BIBLIAI IGEVERS A KIADOTT SZoVEGBoL VAN, NEM TOLEM. Forras 2026-10-21 (v43.331, D7) ota: Biblia
+// Gdanska 1881 (`gdanska1881.json`, getbible v2 / polgdanska, Public Domain), szo szerint masolva (a Ps 46
+// felirata nelkul). ELOZMENY: addig az Updated Gdansk Bible (UBG 2017, vedett) szovege allt itt.
 //
 // A ZSOLTAR HIVATKOZASA SZANDEKOSAN "46:1-2", NEM "46,2-3": a magyar Karoli a feliratot is
 // versnek szamolja, a lengyel Gdanska nem -- ugyanaz a szoveg egy szammal feljebb all.
@@ -1150,8 +1151,8 @@ window.PP_FORD_SZOTAR.pl = {
     "Przytrzymując wiadomość, możesz odpowiedzieć emoji, zapisać ją, a swoją edytować lub usunąć.",
   "A fejlécben a fogaskerék nyitja a szoba beállításait: értesítés, tagok, belépési kérelmek, a szoba kódja.":
     "Koło zębate w nagłówku otwiera ustawienia pokoju: powiadomienia, członkowie, prośby o dołączenie, kod pokoju.",
-  "Az üzenetek végponttól végpontig titkosítva mennek — a szerver csak a titkosított bájtokat látja.":
-    "Wiadomości są szyfrowane end-to-end — serwer widzi tylko zaszyfrowane bajty.",
+  "Az üzenetek szövege és képei végponttól végpontig titkosítva mennek: a szerver ezeket nem tudja elolvasni. A neveket, a profilképeket, a szoba képét, a reakciókat és az időpontokat viszont látja.":
+    "Tekst i zdjęcia wiadomości są szyfrowane end-to-end: serwer nie może ich odczytać. Widzi jednak imiona, zdjęcia profilowe, obraz pokoju, reakcje i godziny.",
   "Kezdőlap":
     "Strona startowa",
   "Előbb add meg a neved — így látnak a többiek a szobákban.":
@@ -2390,15 +2391,15 @@ window.PP_FORD_SZOTAR.pl = {
   "DK": "SE",
   "DNy": "SW",
   "Példabeszédek 22,3": "Przypowieści 22,3",
-  "Az eszes meglátja a bajt és elrejti magát; a bolondok pedig neki mennek és kárát vallják.": "Roztropny dostrzega zło i ukrywa się, ale prości idą dalej i ponoszą karę.",
+  "Az eszes meglátja a bajt és elrejti magát; a bolondok pedig neki mennek és kárát vallják.": "Ostrożny widząc złe ukrywa się; ale prostacy wprost idąc wpadają w szkodę.",
   "2Timóteus 1,7": "2 Tymoteusza 1,7",
-  "Mert nem félelemnek lelkét adott nékünk az Isten; hanem erőnek és szeretetnek és józanságnak lelkét.": "Nie dał nam bowiem Bóg ducha bojaźni, lecz mocy i miłości, i zdrowego umysłu.",
+  "Mert nem félelemnek lelkét adott nékünk az Isten; hanem erőnek és szeretetnek és józanságnak lelkét.": "Albowiem nie dał nam Bóg Ducha bojaźni, ale mocy i miłości, i zdrowego zmysłu.",
   "Máté 6,34": "Mateusza 6,34",
-  "Ne aggodalmaskodjatok tehát a holnap felől; mert a holnap majd aggodalmaskodik a maga dolgai felől. Elég minden napnak a maga baja.": "Dlatego nie troszczcie się o dzień jutrzejszy, gdyż dzień jutrzejszy sam się zatroszczy o swoje potrzeby. Dosyć ma dzień swego utrapienia.",
+  "Ne aggodalmaskodjatok tehát a holnap felől; mert a holnap majd aggodalmaskodik a maga dolgai felől. Elég minden napnak a maga baja.": "Przetoż nie troszczcie się o jutrzejszy dzień: albowiem jutrzejszy dzień troskać się będzie o swoje potrzeby. Dosyćci ma dzień na swojem utrapieniu.",
   "Zsoltárok 46,2-3": "Psalmy 46:1-2",
-  "Isten a mi oltalmunk és erősségünk! igen bizonyos segítség a nyomorúságban. Azért nem félünk, ha elváltoznék is a föld, ha hegyek omlanának is a tenger közepébe.": "Bóg jest naszą ucieczką i siłą, najpewniejszą pomocą w utrapieniu. Dlatego nie będziemy się bać, choćby się poruszyła ziemia, choćby się przeniosły góry w sam środek morza;",
+  "Isten a mi oltalmunk és erősségünk! igen bizonyos segítség a nyomorúságban. Azért nem félünk, ha elváltoznék is a föld, ha hegyek omlanának is a tenger közepébe.": "Bóg jest ucieczką i siłą naszą, ratunkiem we wszelkim ucisku najpewniejszym. Przetoż się bać nie będziemy, choćby się poruszyła ziemia, choćby się przeniosły góry w pośród morza;",
   "Jakab 1,3": "Jakuba 1,3",
-  "Tudván, hogy a ti hiteteknek megpróbáltatása kitartást szerez.": "Wiedząc, że doświadczenie waszej wiary wyrabia cierpliwość.",
+  "Tudván, hogy a ti hiteteknek megpróbáltatása kitartást szerez.": "Wiedząc, iż doświadczenie wiary waszej sprawuje cierpliwość;",
   "Uram, Te látod, mi nyomaszt engem. Ma éjjel nem tudom megoldani, és nem is akarom azt hazudni Neked, hogy nem félek. Kérlek, vedd le rólam a holnap terhét, és adj erőt ahhoz, amit ma kell elhordoznom. Csendesíts le. Te őrködsz, én alhatok. Jézus nevében, ámen.": "Panie, Ty widzisz, co mnie przygniata. Dziś w nocy nie potrafię tego rozwiązać i nie chcę Ci kłamać, że się nie boję. Proszę, zdejmij ze mnie ciężar jutra i daj siłę do tego, co mam unieść dzisiaj. Ucisz mnie. Ty czuwasz, ja mogę spać. W imię Jezusa, amen.",
   "Uram, most kell döntenem, és nincs időm. Adj tiszta fejet, és őrizz meg a pániktól. Mutasd meg a következő egy lépést, nem az egészet, csak a következőt. Legyen erőm megtenni. Jézus nevében, ámen.": "Panie, muszę teraz zdecydować, a nie mam czasu. Daj mi jasną głowę i zachowaj mnie od paniki. Pokaż mi następny jeden krok, nie całość — tylko następny. Daj mi siłę, bym go zrobił. W imię Jezusa, amen.",
   "Mennyei Atyám! Az Úr Jézus Krisztus nevében megyek eléd. Elismerem, hogy mindenható, örökkévaló Isten vagy, az egész világmindenségnek a teremtője. Én is a Te teremtményed vagyok. Elismerem, hogy bűnös ember vagyok, és sokat vétkeztem ellened. De én ma elhatározom, hogy megtérek és elfogadom a Názáreti Jézus áldozatát, és elismerem, hogy erre az áldozatra nekem is szükségem van. Ezért a szívemet, életemet megnyitom. Kérlek Uram, jöjj a szívembe. Bocsásd meg a bűneimet, szabadíts meg engem a bűntől és annak minden következményétől! Hiszek Benned Jézus. Hiszem, hogy Te vagy az élő Istennek a Fia, ki meghaltál az én bűneimért és feltámadtál a halálból, hogy megigazítsál engem. Elfogadlak Uramnak, Megváltómnak, Szabadítómnak és átadom az életemet, szívemet Neked. Szabadíts meg Uram! Tiszta szívet teremts bennem! Te azt ígérted, hogy a zörgetőnek ajtó nyittatik. Én Isten jelenlétébe akarok kerülni, és Te vagy az Út. Kérlek, vezess engem a Mindenható jelenlétébe! Dicsérlek és áldalak. Szeretlek Uram szívemből, lelkemből, erőmből, a Názáreti Jézus nevében. Dicsőség Istennek, most és mindörökké! Ámen!": "Ojcze niebieski! W imię Pana Jezusa Chrystusa przychodzę przed Ciebie. Wyznaję, że jesteś wszechmogącym, wiecznym Bogiem, Stwórcą całego wszechświata. Ja także jestem Twoim stworzeniem. Wyznaję, że jestem człowiekiem grzesznym i wiele przeciw Tobie zawiniłem. Ale dziś postanawiam się nawrócić i przyjąć ofiarę Jezusa z Nazaretu, i uznaję, że tej ofiary potrzebuję również ja. Dlatego otwieram moje serce i moje życie. Proszę Cię, Panie, przyjdź do mojego serca. Przebacz mi grzechy, uwolnij mnie od grzechu i wszystkich jego skutków! Wierzę w Ciebie, Jezu. Wierzę, że jesteś Synem Boga żywego, który umarł za moje grzechy i zmartwychwstał, aby mnie usprawiedliwić. Przyjmuję Cię jako mojego Pana, Zbawiciela i Wybawiciela, i oddaję Ci moje życie i moje serce. Wybaw mnie, Panie! Stwórz we mnie czyste serce! Obiecałeś, że kołaczącemu będzie otworzone. Chcę wejść w obecność Boga, a Ty jesteś Drogą. Proszę, prowadź mnie przed oblicze Wszechmogącego! Chwalę Cię i błogosławię. Kocham Cię, Panie, z całego serca, z całej duszy, ze wszystkich sił, w imię Jezusa z Nazaretu. Chwała Bogu, teraz i na wieki! Amen!",
@@ -3836,4 +3837,83 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Szól, de hallhatatlanul magas. Ha semmit nem hallasz, az normális.": "Dźwięk jest odtwarzany, ale jest za wysoki, by go usłyszeć. Jeśli nic nie słyszysz, to normalne.",
   "Próbahang": "Dźwięk testowy",
   "A próbahang nem indult el.": "Dźwięk testowy się nie uruchomił."
+});
+// ===== 2026-10-20 v43.326 (card 6b287cfb): PIN recovery code, reminder sentence, PIN setup without a default PIN =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Írd be a PIN-kódod": "Wpisz swój PIN",
+  "Írd be még egyszer": "Wpisz ponownie",
+  "A PIN még egyszer": "PIN jeszcze raz",
+  "Elfelejtettem a PIN-t": "Nie pamiętam PIN-u",
+  "Állíts be egy PIN-kódot (6 számjegy)": "Ustaw PIN (6 cyfr)",
+  "A PIN 6 számjegy legyen.": "PIN musi mieć 6 cyfr.",
+  "A két PIN nem egyezik.": "Oba PIN-y się różnią.",
+  "Válassz másik PIN-kódot.": "Wybierz inny PIN.",
+  "Mentési kód a PIN-hez": "Kod odzyskiwania PIN-u",
+  "Ha elfelejted a PIN-t, ezzel a kóddal nyithatod meg a tárat, és állíthatsz be új PIN-t. Írd le papírra, és tartsd biztonságos helyen. Csak most látod: a telefon nem őrzi meg, és sehova nem küldjük el.": "Jeśli zapomnisz PIN-u, ten kod otworzy magazyn i pozwoli ustawić nowy PIN. Zapisz go na papierze i trzymaj w bezpiecznym miejscu. Widzisz go tylko teraz: telefon go nie przechowuje i nigdzie go nie wysyłamy.",
+  "Emlékeztető mondat (nem kötelező; titkosítás nélkül tárolódik, ne írd bele a PIN-t)": "Zdanie przypominające (opcjonalne; zapisane bez szyfrowania, nie wpisuj w nie PIN-u)",
+  "A kód utolsó négy karaktere (ellenőrzéshez)": "Ostatnie cztery znaki kodu (do sprawdzenia)",
+  "Leírtam": "Zapisałem",
+  "Később": "Później",
+  "Mentve. A mentési kód mostantól érvényes.": "Zapisano. Kod odzyskiwania obowiązuje od teraz.",
+  "Nem egyezik a kód utolsó négy karakterével. Nézd meg újra a leírt kódot.": "Nie zgadza się z czterema ostatnimi znakami kodu. Sprawdź ponownie zapisany kod.",
+  "A mentés nem sikerült, próbáld újra.": "Nie udało się zapisać, spróbuj ponownie.",
+  "Rendben, a következő belépéskor újra felajánljuk.": "Dobrze, zaproponujemy to ponownie przy następnym logowaniu.",
+  "Emlékeztető mondat:": "Zdanie przypominające:",
+  "Új PIN ujjlenyomattal": "Nowy PIN odciskiem palca",
+  "Mentési kód": "Kod odzyskiwania",
+  "Ehhez a tárhoz még nincs mentési kód, és az ujjlenyomatos feloldás sincs bekapcsolva, ezért a PIN nem állítható vissza.": "Ten magazyn nie ma jeszcze kodu odzyskiwania, a odblokowanie odciskiem palca nie jest włączone, więc PIN-u nie da się odzyskać.",
+  "Új PIN beállítása": "Ustaw nowy PIN",
+  "Az ujjlenyomat rendben. Add meg az új PIN-t.": "Odcisk palca w porządku. Wpisz nowy PIN.",
+  "Az ujjlenyomatos feloldás most nem sikerült.": "Odblokowanie odciskiem palca teraz się nie udało.",
+  "Hibás mentési kód.": "Błędny kod odzyskiwania.",
+  "Az új PIN beállítása nem sikerült, a régi PIN maradt érvényben.": "Nie udało się ustawić nowego PIN-u; stary PIN nadal obowiązuje.",
+  "A dokumentumok CSAK ezen az eszközön tárolódnak, a PIN-edből képzett kulccsal titkosítva (AES-256) — a vészkártyával ellentétben ezt csak te nyithatod meg. A PIN-t nem tároljuk. Ha elfelejted, a mentési kóddal vagy ujjlenyomattal állíthatsz be újat; ezek nélkül a dokumentumok nem állíthatók vissza.": "Dokumenty są przechowywane TYLKO na tym urządzeniu, zaszyfrowane kluczem utworzonym z twojego PIN-u (AES-256) — w przeciwieństwie do karty awaryjnej tylko ty możesz je otworzyć. PIN-u nie przechowujemy. Jeśli go zapomnisz, nowy ustawisz kodem odzyskiwania lub odciskiem palca; bez nich dokumentów nie da się odzyskać.",
+  "A kódok titkosítva tárolódnak ezen az eszközön: a kulcs a PIN-edből készül (AES-256), magát a PIN-t nem tároljuk. Ha elfelejted a PIN-t, a mentési kóddal vagy ujjlenyomattal állíthatsz be újat; ezek nélkül a tartalom nem állítható vissza, ezért a seed-mondatról tarts papírmásolatot is. A teljes mentésbe ez a rész SOSEM kerül bele.": "Kody są przechowywane w postaci zaszyfrowanej na tym urządzeniu: klucz powstaje z twojego PIN-u (AES-256), sam PIN nie jest przechowywany. Jeśli zapomnisz PIN-u, nowy ustawisz kodem odzyskiwania lub odciskiem palca; bez nich zawartości nie da się odzyskać, dlatego trzymaj też papierową kopię frazy seed. Ta część NIGDY nie trafia do pełnej kopii zapasowej."
+});
+// ===== 2026-10-20 v43.327 (card 6b287cfb): wallet-creation acknowledgement (HU text approved by the owner 21:39) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Értem, hogy a tárcám kulcsait (PIN, helyreállító kód, seed phrase) csak én ismerem. Ha elveszítem őket, a tárcám tartalma végleg elveszhet, és a PrepperPapa nem tudja visszaállítani. A kulcsok biztonságos megőrzése az én felelősségem.": "Rozumiem, że tylko ja znam klucze mojego portfela (PIN, kod odzyskiwania, fraza seed). Jeśli je utracę, zawartość portfela może przepaść na zawsze, a PrepperPapa nie może jej przywrócić. Bezpieczne przechowywanie kluczy jest moją odpowiedzialnością.",
+  "Rendben": "OK",
+  "A tárca létrehozásához jelöld be, hogy tudomásul vetted a fenti szöveget.": "Aby utworzyć portfel, zaznacz pole, potwierdzając, że zapoznałeś się z powyższym tekstem."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): "Fontos tudnivaló" notice (HU approved by the owner 21:47, TG 28515) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Fontos tudnivaló az Irattárcáról és a tárcáról": "Ważna informacja o Teczce dokumentów i portfelu",
+  "Az adataid csak a te eszközödön vannak, titkosítva. A PrepperPapa nem fér hozzájuk, és nem tudja visszaállítani őket.": "Twoje dane są tylko na twoim urządzeniu, zaszyfrowane. PrepperPapa nie ma do nich dostępu i nie może ich przywrócić.",
+  "A PIN-kódod, a helyreállító kódod és a tárcád kulcsai (seed phrase) kizárólag nálad vannak. Ha elveszíted, megosztod vagy illetéktelen megszerzi őket, az adataid és a tárcád tartalma végleg elveszhet.": "Twój PIN, kod odzyskiwania i klucze portfela (fraza seed) są wyłącznie u ciebie. Jeśli je zgubisz, udostępnisz albo zdobędzie je osoba nieuprawniona, twoje dane i zawartość portfela mogą przepaść na zawsze.",
+  "Ha a helyreállító kódot e-mailben is kéred, a hozzáférésed csak olyan biztonságos, mint a postafiókod.": "Jeśli poprosisz także o kod odzyskiwania e-mailem, twój dostęp jest tylko tak bezpieczny jak twoja skrzynka pocztowa.",
+  "A kulcsok, a kód, a postafiók és az eszköz biztonságos megőrzéséért, valamint a mentésekért te felelsz. A PrepperPapa nem felel az ebből eredő kárért, kivéve azt a felelősséget, amelyet jogszabály nem enged kizárni.": "Odpowiadasz za bezpieczne przechowywanie kluczy, kodu, skrzynki pocztowej i urządzenia oraz za kopie zapasowe. PrepperPapa nie odpowiada za wynikłe z tego szkody, z wyjątkiem odpowiedzialności, której prawo nie pozwala wyłączyć.",
+  "Elolvastam, értem.": "Przeczytałem i rozumiem."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): Gíra paragraph (HU approved by the owner 21:58, TG 28530) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "A gíra a közösségen belüli elszámolás egysége, nem pénz és nem fizetőeszköz. A PrepperPapa nem váltja át pénzre, nem garantálja az értékét, és nem részese a tagok közötti ügyleteknek. A tagok közötti vitákat és elszámolást a felhasználók egymás közt rendezik. Az offline fizetésnél előfordulhat, hogy ugyanazt a gírát kétszer költik el; ennek kockázata a felhasználókat terheli.": "Gíra to jednostka rozliczeniowa wewnątrz społeczności, nie pieniądz i nie środek płatniczy. PrepperPapa nie wymienia jej na pieniądze, nie gwarantuje jej wartości i nie jest stroną transakcji między członkami. Spory i rozliczenia między członkami użytkownicy załatwiają między sobą. Przy płatnościach offline może się zdarzyć, że ta sama gíra zostanie wydana dwa razy; ryzyko to ponoszą użytkownicy."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): SOS fail-closed -- nothing goes out unencrypted =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Az SOS NEM ment el: a titkosítás nem sikerült, ezért nyíltan nem küldöm el. Életveszélyben hívd a 112-t! A vészsíp szól.": "SOS NIE został wysłany: szyfrowanie się nie powiodło, więc nie zostanie wysłany bez szyfrowania. W zagrożeniu życia dzwoń pod 112! Gwizdek alarmowy działa.",
+  "{n} helyre NEM ment el, mert a titkosítás nem sikerült. Életveszélyben hívd a 112-t!": "Do {n} miejsc(a) NIE został wysłany, bo szyfrowanie się nie powiodło. W zagrożeniu życia dzwoń pod 112!"
+});
+// ===== 2026-10-20 v43.329 (card 6b287cfb): room chat fail-closed -- nothing goes out unencrypted =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Az üzenet nem ment el: a titkosítás nem sikerült, vagy ezen a telefonon hiányzik a szoba kulcsa. Titkosítatlanul nem küldöm el. A szöveg megmaradt: lépj be újra a szobába (vagy kérj új meghívót a gazdától), és küldd újra.": "Wiadomość NIE została wysłana: szyfrowanie się nie powiodło albo na tym telefonie brakuje klucza pokoju. Bez szyfrowania nie zostanie wysłana. Twój tekst został zachowany: dołącz ponownie do pokoju (lub poproś gospodarza o nowe zaproszenie) i wyślij ją jeszcze raz.",
+  "A kép nem ment el: a titkosítás nem sikerült, vagy hiányzik a szoba kulcsa. Titkosítatlanul nem küldöm el. Lépj be újra a szobába.": "Zdjęcie NIE zostało wysłane: szyfrowanie się nie powiodło albo brakuje klucza pokoju. Bez szyfrowania nie zostanie wysłane. Dołącz ponownie do pokoju."
+});
+// ===== 2026-10-20 v43.329 (card 6b287cfb): SOS / fall-detection notices (HU approved by the owner, TG 28555) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Ez nem segélyhívás. Az SOS-jelzés és az esés-érzékelés csak a te szobáidba, az ott lévő tagoknak küld értesítést. Nem hívja a mentőket, a rendőrséget vagy a tűzoltókat, és nem biztos, hogy bárki időben meglátja. Az esés-érzékelés nem pontos: téves riasztást adhat, és előfordulhat, hogy egy esést nem érzékel. Életveszélyben, balesetnél, rosszullétnél hívd a 112-t. A PrepperPapa nem segélyszolgálat, és nem garantálja, hogy a jelzés célba ér.": "To nie jest połączenie alarmowe. Sygnał SOS i wykrywanie upadku wysyłają powiadomienie tylko do twoich pokoi, do ich członków. Nie wzywają karetki, policji ani straży pożarnej i nie ma pewności, że ktoś zobaczy je na czas. Wykrywanie upadku nie jest dokładne: może dać fałszywy alarm i może się zdarzyć, że nie wykryje upadku. W zagrożeniu życia, przy wypadku lub złym samopoczuciu dzwoń pod 112. PrepperPapa nie jest służbą ratunkową i nie gwarantuje, że sygnał dotrze do celu.",
+  "Az SOS elküldi a pontos helyedet, és ha bejelölted, a Vészkártyád adatait (vércsoport, allergia, gyógyszer, betegség, kontakt) is az összes szobádnak.": "SOS wysyła twoją dokładną lokalizację, a jeśli to zaznaczyłeś, także dane twojej Karty ratunkowej (grupa krwi, alergia, leki, choroba, kontakt) do wszystkich twoich pokoi.",
+  "A Vészkártya adataimat is küldjétek az SOS-szal.": "Wysyłajcie z SOS także dane mojej Karty ratunkowej.",
+  "Ez nem hívja a mentőket. Életveszélyben hívd a 112-t.": "To nie wzywa karetki. W zagrożeniu życia dzwoń pod 112.",
+  "%s SOS-jelzést küldött. Ha nem éred el, és veszélyben lehet, hívd a 112-t.": "%s wysłał(a) sygnał SOS. Jeśli nie możesz się z nim/nią skontaktować, a może być w niebezpieczeństwie, dzwoń pod 112.",
+  "(zárt kép — ehhez a szobához nincs meg a kulcs)": "(zaszyfrowany obraz — brak klucza do tego pokoju)",
+  "Fontos tudnivaló az SOS-ról és az esés-érzékelésről": "Ważne informacje o SOS i wykrywaniu upadku",
+  "Nem kell megnyomnod: a telefon két percenként magától egyeztet. A gomb csak azonnali egyeztetésre való.": "Nie musisz go naciskać: telefon sam synchronizuje co dwie minuty. Przycisk służy tylko do natychmiastowej synchronizacji.",
+  "Nincs elérhető Gíra-szoba: egy szoba gazdája kapcsolhatja be a szoba beállításaiban („Gíra-közösség”).": "Brak dostępnego pokoju Gíra: właściciel pokoju może to włączyć w ustawieniach pokoju („Społeczność Gíra”).",
+  "Automatikus egyeztetés bekapcsolva, de most nincs elérhető Gíra-szoba": "Automatyczna synchronizacja włączona, ale teraz żaden pokój Gíra nie jest dostępny",
+  "utoljára próbálva": "ostatnia próba",
+  "Automatikus egyeztetés bekapcsolva": "Automatyczna synchronizacja włączona",
+  "utoljára ellenőrizve": "ostatnio sprawdzono",
+  "Utolsó változás elküldve": "Ostatnia zmiana wysłana",
+  "Utolsó beérkezett könyv": "Ostatnia otrzymana księga"
 });

@@ -1151,8 +1151,8 @@ window.PP_FORD_SZOTAR.ru = {
     "Долгим нажатием на сообщение можно ответить эмодзи, сохранить его, изменить или удалить своё.",
   "A fejlécben a fogaskerék nyitja a szoba beállításait: értesítés, tagok, belépési kérelmek, a szoba kódja.":
     "Шестерёнка в заголовке открывает настройки комнаты: уведомления, участники, заявки на вступление, код комнаты.",
-  "Az üzenetek végponttól végpontig titkosítva mennek — a szerver csak a titkosított bájtokat látja.":
-    "Сообщения шифруются сквозным шифрованием — сервер видит только зашифрованные байты.",
+  "Az üzenetek szövege és képei végponttól végpontig titkosítva mennek: a szerver ezeket nem tudja elolvasni. A neveket, a profilképeket, a szoba képét, a reakciókat és az időpontokat viszont látja.":
+    "Текст и изображения сообщений зашифрованы сквозным шифрованием: сервер не может их прочитать. Но он видит имена, фото профиля, изображение комнаты, реакции и время.",
   "Kezdőlap":
     "Главная",
   "Előbb add meg a neved — így látnak a többiek a szobákban.":
@@ -3841,4 +3841,83 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Szól, de hallhatatlanul magas. Ha semmit nem hallasz, az normális.": "Звук идёт, но он слишком высокий, чтобы его услышать. Если вы ничего не слышите, это нормально.",
   "Próbahang": "Пробный сигнал",
   "A próbahang nem indult el.": "Пробный сигнал не запустился."
+});
+// ===== 2026-10-20 v43.326 (card 6b287cfb): PIN recovery code, reminder sentence, PIN setup without a default PIN =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Írd be a PIN-kódod": "Введите PIN-код",
+  "Írd be még egyszer": "Введите ещё раз",
+  "A PIN még egyszer": "PIN-код ещё раз",
+  "Elfelejtettem a PIN-t": "Я забыл PIN-код",
+  "Állíts be egy PIN-kódot (6 számjegy)": "Задайте PIN-код (6 цифр)",
+  "A PIN 6 számjegy legyen.": "PIN-код должен состоять из 6 цифр.",
+  "A két PIN nem egyezik.": "Два PIN-кода не совпадают.",
+  "Válassz másik PIN-kódot.": "Выберите другой PIN-код.",
+  "Mentési kód a PIN-hez": "Код восстановления PIN-кода",
+  "Ha elfelejted a PIN-t, ezzel a kóddal nyithatod meg a tárat, és állíthatsz be új PIN-t. Írd le papírra, és tartsd biztonságos helyen. Csak most látod: a telefon nem őrzi meg, és sehova nem küldjük el.": "Если вы забудете PIN-код, этот код откроет хранилище и позволит задать новый PIN-код. Запишите его на бумаге и храните в надёжном месте. Вы видите его только сейчас: телефон его не хранит, и мы никуда его не отправляем.",
+  "Emlékeztető mondat (nem kötelező; titkosítás nélkül tárolódik, ne írd bele a PIN-t)": "Фраза-подсказка (необязательно; хранится без шифрования, не пишите в неё PIN-код)",
+  "A kód utolsó négy karaktere (ellenőrzéshez)": "Последние четыре символа кода (для проверки)",
+  "Leírtam": "Я записал",
+  "Később": "Позже",
+  "Mentve. A mentési kód mostantól érvényes.": "Сохранено. Код восстановления действует с этого момента.",
+  "Nem egyezik a kód utolsó négy karakterével. Nézd meg újra a leírt kódot.": "Не совпадает с последними четырьмя символами кода. Посмотрите ещё раз на записанный код.",
+  "A mentés nem sikerült, próbáld újra.": "Не удалось сохранить, попробуйте ещё раз.",
+  "Rendben, a következő belépéskor újra felajánljuk.": "Хорошо, предложим снова при следующем входе.",
+  "Emlékeztető mondat:": "Фраза-подсказка:",
+  "Új PIN ujjlenyomattal": "Новый PIN-код по отпечатку",
+  "Mentési kód": "Код восстановления",
+  "Ehhez a tárhoz még nincs mentési kód, és az ujjlenyomatos feloldás sincs bekapcsolva, ezért a PIN nem állítható vissza.": "У этого хранилища ещё нет кода восстановления, и разблокировка по отпечатку не включена, поэтому PIN-код восстановить нельзя.",
+  "Új PIN beállítása": "Задать новый PIN-код",
+  "Az ujjlenyomat rendben. Add meg az új PIN-t.": "Отпечаток подтверждён. Введите новый PIN-код.",
+  "Az ujjlenyomatos feloldás most nem sikerült.": "Разблокировка по отпечатку сейчас не удалась.",
+  "Hibás mentési kód.": "Неверный код восстановления.",
+  "Az új PIN beállítása nem sikerült, a régi PIN maradt érvényben.": "Не удалось задать новый PIN-код; старый PIN-код остаётся в силе.",
+  "A dokumentumok CSAK ezen az eszközön tárolódnak, a PIN-edből képzett kulccsal titkosítva (AES-256) — a vészkártyával ellentétben ezt csak te nyithatod meg. A PIN-t nem tároljuk. Ha elfelejted, a mentési kóddal vagy ujjlenyomattal állíthatsz be újat; ezek nélkül a dokumentumok nem állíthatók vissza.": "Документы хранятся ТОЛЬКО на этом устройстве, зашифрованные ключом, созданным из вашего PIN-кода (AES-256) — в отличие от экстренной карты, открыть их можете только вы. PIN-код не хранится. Если вы его забудете, новый можно задать кодом восстановления или отпечатком пальца; без них документы восстановить нельзя.",
+  "A kódok titkosítva tárolódnak ezen az eszközön: a kulcs a PIN-edből készül (AES-256), magát a PIN-t nem tároljuk. Ha elfelejted a PIN-t, a mentési kóddal vagy ujjlenyomattal állíthatsz be újat; ezek nélkül a tartalom nem állítható vissza, ezért a seed-mondatról tarts papírmásolatot is. A teljes mentésbe ez a rész SOSEM kerül bele.": "Коды хранятся на этом устройстве в зашифрованном виде: ключ создаётся из вашего PIN-кода (AES-256), сам PIN-код не хранится. Если вы забудете PIN-код, новый можно задать кодом восстановления или отпечатком пальца; без них содержимое восстановить нельзя, поэтому храните и бумажную копию сид-фразы. Эта часть НИКОГДА не попадает в полную резервную копию."
+});
+// ===== 2026-10-20 v43.327 (card 6b287cfb): wallet-creation acknowledgement (HU text approved by the owner 21:39) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Értem, hogy a tárcám kulcsait (PIN, helyreállító kód, seed phrase) csak én ismerem. Ha elveszítem őket, a tárcám tartalma végleg elveszhet, és a PrepperPapa nem tudja visszaállítani. A kulcsok biztonságos megőrzése az én felelősségem.": "Я понимаю, что ключи моего кошелька (PIN-код, код восстановления, сид-фраза) знаю только я. Если я их потеряю, содержимое кошелька может быть утрачено навсегда, и PrepperPapa не сможет его восстановить. Надёжное хранение ключей — моя ответственность.",
+  "Rendben": "Хорошо",
+  "A tárca létrehozásához jelöld be, hogy tudomásul vetted a fenti szöveget.": "Чтобы создать кошелёк, отметьте, что вы ознакомились с текстом выше."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): "Fontos tudnivaló" notice (HU approved by the owner 21:47, TG 28515) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Fontos tudnivaló az Irattárcáról és a tárcáról": "Важная информация о Кошельке документов и кошельке",
+  "Az adataid csak a te eszközödön vannak, titkosítva. A PrepperPapa nem fér hozzájuk, és nem tudja visszaállítani őket.": "Ваши данные хранятся только на вашем устройстве, в зашифрованном виде. PrepperPapa не имеет к ним доступа и не может их восстановить.",
+  "A PIN-kódod, a helyreállító kódod és a tárcád kulcsai (seed phrase) kizárólag nálad vannak. Ha elveszíted, megosztod vagy illetéktelen megszerzi őket, az adataid és a tárcád tartalma végleg elveszhet.": "Ваш PIN-код, код восстановления и ключи кошелька (сид-фраза) есть только у вас. Если вы их потеряете, передадите кому-то или их получит посторонний, ваши данные и содержимое кошелька могут быть утрачены навсегда.",
+  "Ha a helyreállító kódot e-mailben is kéred, a hozzáférésed csak olyan biztonságos, mint a postafiókod.": "Если вы также запросите код восстановления по электронной почте, ваш доступ будет защищён не лучше, чем ваш почтовый ящик.",
+  "A kulcsok, a kód, a postafiók és az eszköz biztonságos megőrzéséért, valamint a mentésekért te felelsz. A PrepperPapa nem felel az ebből eredő kárért, kivéve azt a felelősséget, amelyet jogszabály nem enged kizárni.": "Вы отвечаете за надёжное хранение ключей, кода, почтового ящика и устройства, а также за резервные копии. PrepperPapa не несёт ответственности за возникший из-за этого ущерб, за исключением ответственности, которую закон не позволяет исключить.",
+  "Elolvastam, értem.": "Я прочитал(а) и понимаю."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): Gíra paragraph (HU approved by the owner 21:58, TG 28530) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "A gíra a közösségen belüli elszámolás egysége, nem pénz és nem fizetőeszköz. A PrepperPapa nem váltja át pénzre, nem garantálja az értékét, és nem részese a tagok közötti ügyleteknek. A tagok közötti vitákat és elszámolást a felhasználók egymás közt rendezik. Az offline fizetésnél előfordulhat, hogy ugyanazt a gírát kétszer költik el; ennek kockázata a felhasználókat terheli.": "Гира — единица взаимных расчётов внутри сообщества, не деньги и не платёжное средство. PrepperPapa не обменивает её на деньги, не гарантирует её стоимость и не является стороной сделок между участниками. Споры и расчёты между участниками пользователи решают между собой. При офлайн-платежах одна и та же гира может быть потрачена дважды; этот риск несут пользователи."
+});
+// ===== 2026-10-20 v43.328 (card 6b287cfb): SOS fail-closed -- nothing goes out unencrypted =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Az SOS NEM ment el: a titkosítás nem sikerült, ezért nyíltan nem küldöm el. Életveszélyben hívd a 112-t! A vészsíp szól.": "SOS НЕ отправлен: шифрование не удалось, поэтому без шифрования он не отправляется. При угрозе жизни звони 112! Сигнальный свисток звучит.",
+  "{n} helyre NEM ment el, mert a titkosítás nem sikerült. Életveszélyben hívd a 112-t!": "В {n} мест(а) он НЕ отправлен, потому что шифрование не удалось. При угрозе жизни звони 112!"
+});
+// ===== 2026-10-20 v43.329 (card 6b287cfb): room chat fail-closed -- nothing goes out unencrypted =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Az üzenet nem ment el: a titkosítás nem sikerült, vagy ezen a telefonon hiányzik a szoba kulcsa. Titkosítatlanul nem küldöm el. A szöveg megmaradt: lépj be újra a szobába (vagy kérj új meghívót a gazdától), és küldd újra.": "Сообщение НЕ отправлено: шифрование не удалось, или на этом телефоне нет ключа комнаты. Без шифрования оно не отправляется. Твой текст сохранён: войди в комнату заново (или попроси у хозяина новое приглашение) и отправь ещё раз.",
+  "A kép nem ment el: a titkosítás nem sikerült, vagy hiányzik a szoba kulcsa. Titkosítatlanul nem küldöm el. Lépj be újra a szobába.": "Изображение НЕ отправлено: шифрование не удалось, или нет ключа комнаты. Без шифрования оно не отправляется. Войди в комнату заново."
+});
+// ===== 2026-10-20 v43.329 (card 6b287cfb): SOS / fall-detection notices (HU approved by the owner, TG 28555) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Ez nem segélyhívás. Az SOS-jelzés és az esés-érzékelés csak a te szobáidba, az ott lévő tagoknak küld értesítést. Nem hívja a mentőket, a rendőrséget vagy a tűzoltókat, és nem biztos, hogy bárki időben meglátja. Az esés-érzékelés nem pontos: téves riasztást adhat, és előfordulhat, hogy egy esést nem érzékel. Életveszélyben, balesetnél, rosszullétnél hívd a 112-t. A PrepperPapa nem segélyszolgálat, és nem garantálja, hogy a jelzés célba ér.": "Это не экстренный вызов. Сигнал SOS и определение падения отправляют уведомление только в твои комнаты, их участникам. Они не вызывают скорую помощь, полицию или пожарных, и нет уверенности, что кто-то вовремя его увидит. Определение падения неточно: оно может дать ложную тревогу и может не распознать падение. При угрозе жизни, несчастном случае или плохом самочувствии звони 112. PrepperPapa не является экстренной службой и не гарантирует, что сигнал дойдёт до адресата.",
+  "Az SOS elküldi a pontos helyedet, és ha bejelölted, a Vészkártyád adatait (vércsoport, allergia, gyógyszer, betegség, kontakt) is az összes szobádnak.": "SOS отправляет твоё точное местоположение и, если ты отметил(а), данные твоей Карточки экстренной помощи (группа крови, аллергия, лекарство, болезнь, контакт) во все твои комнаты.",
+  "A Vészkártya adataimat is küldjétek az SOS-szal.": "Отправляйте вместе с SOS и данные моей Карточки экстренной помощи.",
+  "Ez nem hívja a mentőket. Életveszélyben hívd a 112-t.": "Это не вызывает скорую помощь. При угрозе жизни звони 112.",
+  "%s SOS-jelzést küldött. Ha nem éred el, és veszélyben lehet, hívd a 112-t.": "%s отправил(а) сигнал SOS. Если ты не можешь связаться с этим человеком и он может быть в опасности, звони 112.",
+  "(zárt kép — ehhez a szobához nincs meg a kulcs)": "(зашифрованное изображение — нет ключа этой комнаты)",
+  "Fontos tudnivaló az SOS-ról és az esés-érzékelésről": "Важная информация об SOS и обнаружении падения",
+  "Nem kell megnyomnod: a telefon két percenként magától egyeztet. A gomb csak azonnali egyeztetésre való.": "Нажимать не нужно: телефон сам синхронизирует каждые две минуты. Кнопка нужна только для немедленной синхронизации.",
+  "Nincs elérhető Gíra-szoba: egy szoba gazdája kapcsolhatja be a szoba beállításaiban („Gíra-közösség”).": "Нет доступной комнаты Gíra: владелец комнаты может включить это в настройках комнаты («Сообщество Gíra»).",
+  "Automatikus egyeztetés bekapcsolva, de most nincs elérhető Gíra-szoba": "Автосинхронизация включена, но сейчас ни одна комната Gíra недоступна",
+  "utoljára próbálva": "последняя попытка",
+  "Automatikus egyeztetés bekapcsolva": "Автосинхронизация включена",
+  "utoljára ellenőrizve": "последняя проверка",
+  "Utolsó változás elküldve": "Последнее изменение отправлено",
+  "Utolsó beérkezett könyv": "Последняя полученная книга"
 });

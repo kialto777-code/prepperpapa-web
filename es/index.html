@@ -176,6 +176,21 @@
   .pillars{gap:16px;background:none;border:0;border-radius:0;overflow:visible}
   .card{background:linear-gradient(160deg,#1c2a21,#121B16);border:1px solid #2c3d33;border-radius:18px}
   .card:hover{background:linear-gradient(160deg,#21322a,#141f19)}
+  /* tile pictogram (Boss 2026-10-21 13:21): large and BEHIND the text on narrow tiles (watermark),
+     to the RIGHT of the text on wide tiles. Decided by the tile's own width (container query),
+     so a phone in landscape (single wide column) gets the side layout, desktop 3-column the watermark. */
+  .card{position:relative;overflow:hidden;isolation:isolate;container-type:inline-size;min-height:200px}
+  .card .ikon{position:absolute;z-index:-1;right:-6%;bottom:-10%;width:auto;height:78%;max-height:200px;aspect-ratio:1;
+              margin:0;border:0;border-radius:0;background:none;opacity:.14;pointer-events:none;
+              transition:opacity .3s ease,transform .4s ease}
+  .card .ikon svg{width:100%;height:100%}
+  .card:hover .ikon{opacity:.2;transform:scale(1.03)}
+  .card h3,.card p{position:relative}
+  @container (min-width:520px){
+    .card .ikon{right:4%;bottom:auto;top:50%;height:76%;max-height:170px;transform:translateY(-50%);opacity:.85}
+    .card:hover .ikon{opacity:1;transform:translateY(-50%) scale(1.03)}
+    .card h3,.card p{max-width:calc(100% - min(190px,38%))}
+  }
   .fo,.vid{border-radius:18px}
   .mini img{border-radius:12px}
   .nagy{border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16);border-color:#2c3d33}
