@@ -11,9 +11,10 @@
 // A 3. NEM fajl, tehat fajl-szintu grep nem talalja meg. Ha barmelyik hianyzik, a felulet
 // NEM hibat ad, hanem csendben magyarul marad.
 //
-// AZ oT BIBLIAI IGEVERS A KIADOTT SZoVEGBoL VAN, NEM TOLEM. Forras 2026-10-21 (v43.331, D7) ota: Biblia
-// Gdanska 1881 (`gdanska1881.json`, getbible v2 / polgdanska, Public Domain), szo szerint masolva (a Ps 46
-// felirata nelkul). ELOZMENY: addig az Updated Gdansk Bible (UBG 2017, vedett) szovege allt itt.
+// AZ oT BIBLIAI IGEVERS A KIADOTT SZoVEGBoL VAN, NEM TOLEM. Forras 2026-10-22 (v43.344) ota ujra: Uwspolczesniona
+// Biblia Gdanska (UBG 2017, `ubg2017.json`, a Fundacja Wrota Nadziei irasos engedelyevel, az o .txt-jukbol),
+// szo szerint masolva (a Ps 46 felirata nelkul). ELOZMENY: v43.331-v43.343 kozott a Biblia Gdanska 1881 szovege
+// allt itt (az engedely megerkezeseig), elotte is az UBG.
 //
 // A ZSOLTAR HIVATKOZASA SZANDEKOSAN "46:1-2", NEM "46,2-3": a magyar Karoli a feliratot is
 // versnek szamolja, a lengyel Gdanska nem -- ugyanaz a szoveg egy szammal feljebb all.
@@ -2391,15 +2392,15 @@ window.PP_FORD_SZOTAR.pl = {
   "DK": "SE",
   "DNy": "SW",
   "Példabeszédek 22,3": "Przypowieści 22,3",
-  "Az eszes meglátja a bajt és elrejti magát; a bolondok pedig neki mennek és kárát vallják.": "Ostrożny widząc złe ukrywa się; ale prostacy wprost idąc wpadają w szkodę.",
+  "Az eszes meglátja a bajt és elrejti magát; a bolondok pedig neki mennek és kárát vallják.": "Roztropny dostrzega zło i ukrywa się, ale prości idą dalej i ponoszą karę.",
   "2Timóteus 1,7": "2 Tymoteusza 1,7",
-  "Mert nem félelemnek lelkét adott nékünk az Isten; hanem erőnek és szeretetnek és józanságnak lelkét.": "Albowiem nie dał nam Bóg Ducha bojaźni, ale mocy i miłości, i zdrowego zmysłu.",
+  "Mert nem félelemnek lelkét adott nékünk az Isten; hanem erőnek és szeretetnek és józanságnak lelkét.": "Nie dał nam bowiem Bóg ducha bojaźni, lecz mocy i miłości, i zdrowego umysłu.",
   "Máté 6,34": "Mateusza 6,34",
-  "Ne aggodalmaskodjatok tehát a holnap felől; mert a holnap majd aggodalmaskodik a maga dolgai felől. Elég minden napnak a maga baja.": "Przetoż nie troszczcie się o jutrzejszy dzień: albowiem jutrzejszy dzień troskać się będzie o swoje potrzeby. Dosyćci ma dzień na swojem utrapieniu.",
+  "Ne aggodalmaskodjatok tehát a holnap felől; mert a holnap majd aggodalmaskodik a maga dolgai felől. Elég minden napnak a maga baja.": "Dlatego nie troszczcie się o dzień jutrzejszy, gdyż dzień jutrzejszy sam się zatroszczy o swoje potrzeby. Dosyć ma dzień swego utrapienia.",
   "Zsoltárok 46,2-3": "Psalmy 46:1-2",
-  "Isten a mi oltalmunk és erősségünk! igen bizonyos segítség a nyomorúságban. Azért nem félünk, ha elváltoznék is a föld, ha hegyek omlanának is a tenger közepébe.": "Bóg jest ucieczką i siłą naszą, ratunkiem we wszelkim ucisku najpewniejszym. Przetoż się bać nie będziemy, choćby się poruszyła ziemia, choćby się przeniosły góry w pośród morza;",
+  "Isten a mi oltalmunk és erősségünk! igen bizonyos segítség a nyomorúságban. Azért nem félünk, ha elváltoznék is a föld, ha hegyek omlanának is a tenger közepébe.": "Bóg jest naszą ucieczką i siłą, najpewniejszą pomocą w utrapieniu. Dlatego nie będziemy się bać, choćby się poruszyła ziemia, choćby się przeniosły góry w sam środek morza;",
   "Jakab 1,3": "Jakuba 1,3",
-  "Tudván, hogy a ti hiteteknek megpróbáltatása kitartást szerez.": "Wiedząc, iż doświadczenie wiary waszej sprawuje cierpliwość;",
+  "Tudván, hogy a ti hiteteknek megpróbáltatása kitartást szerez.": "Wiedząc, że doświadczenie waszej wiary wyrabia cierpliwość.",
   "Uram, Te látod, mi nyomaszt engem. Ma éjjel nem tudom megoldani, és nem is akarom azt hazudni Neked, hogy nem félek. Kérlek, vedd le rólam a holnap terhét, és adj erőt ahhoz, amit ma kell elhordoznom. Csendesíts le. Te őrködsz, én alhatok. Jézus nevében, ámen.": "Panie, Ty widzisz, co mnie przygniata. Dziś w nocy nie potrafię tego rozwiązać i nie chcę Ci kłamać, że się nie boję. Proszę, zdejmij ze mnie ciężar jutra i daj siłę do tego, co mam unieść dzisiaj. Ucisz mnie. Ty czuwasz, ja mogę spać. W imię Jezusa, amen.",
   "Uram, most kell döntenem, és nincs időm. Adj tiszta fejet, és őrizz meg a pániktól. Mutasd meg a következő egy lépést, nem az egészet, csak a következőt. Legyen erőm megtenni. Jézus nevében, ámen.": "Panie, muszę teraz zdecydować, a nie mam czasu. Daj mi jasną głowę i zachowaj mnie od paniki. Pokaż mi następny jeden krok, nie całość — tylko następny. Daj mi siłę, bym go zrobił. W imię Jezusa, amen.",
   "Mennyei Atyám! Az Úr Jézus Krisztus nevében megyek eléd. Elismerem, hogy mindenható, örökkévaló Isten vagy, az egész világmindenségnek a teremtője. Én is a Te teremtményed vagyok. Elismerem, hogy bűnös ember vagyok, és sokat vétkeztem ellened. De én ma elhatározom, hogy megtérek és elfogadom a Názáreti Jézus áldozatát, és elismerem, hogy erre az áldozatra nekem is szükségem van. Ezért a szívemet, életemet megnyitom. Kérlek Uram, jöjj a szívembe. Bocsásd meg a bűneimet, szabadíts meg engem a bűntől és annak minden következményétől! Hiszek Benned Jézus. Hiszem, hogy Te vagy az élő Istennek a Fia, ki meghaltál az én bűneimért és feltámadtál a halálból, hogy megigazítsál engem. Elfogadlak Uramnak, Megváltómnak, Szabadítómnak és átadom az életemet, szívemet Neked. Szabadíts meg Uram! Tiszta szívet teremts bennem! Te azt ígérted, hogy a zörgetőnek ajtó nyittatik. Én Isten jelenlétébe akarok kerülni, és Te vagy az Út. Kérlek, vezess engem a Mindenható jelenlétébe! Dicsérlek és áldalak. Szeretlek Uram szívemből, lelkemből, erőmből, a Názáreti Jézus nevében. Dicsőség Istennek, most és mindörökké! Ámen!": "Ojcze niebieski! W imię Pana Jezusa Chrystusa przychodzę przed Ciebie. Wyznaję, że jesteś wszechmogącym, wiecznym Bogiem, Stwórcą całego wszechświata. Ja także jestem Twoim stworzeniem. Wyznaję, że jestem człowiekiem grzesznym i wiele przeciw Tobie zawiniłem. Ale dziś postanawiam się nawrócić i przyjąć ofiarę Jezusa z Nazaretu, i uznaję, że tej ofiary potrzebuję również ja. Dlatego otwieram moje serce i moje życie. Proszę Cię, Panie, przyjdź do mojego serca. Przebacz mi grzechy, uwolnij mnie od grzechu i wszystkich jego skutków! Wierzę w Ciebie, Jezu. Wierzę, że jesteś Synem Boga żywego, który umarł za moje grzechy i zmartwychwstał, aby mnie usprawiedliwić. Przyjmuję Cię jako mojego Pana, Zbawiciela i Wybawiciela, i oddaję Ci moje życie i moje serce. Wybaw mnie, Panie! Stwórz we mnie czyste serce! Obiecałeś, że kołaczącemu będzie otworzone. Chcę wejść w obecność Boga, a Ty jesteś Drogą. Proszę, prowadź mnie przed oblicze Wszechmogącego! Chwalę Cię i błogosławię. Kocham Cię, Panie, z całego serca, z całej duszy, ze wszystkich sił, w imię Jezusa z Nazaretu. Chwała Bogu, teraz i na wieki! Amen!",
