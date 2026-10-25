@@ -109,6 +109,12 @@
   footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
   footer .fnav a{color:var(--muted);text-decoration:none}
   footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+  /* Boss 2026-10-25 16:34: calculator icons, the same SVG symbols as the app's calculator tiles */
+  .kikon{width:34px;height:34px;color:var(--zold);flex:none}
+  .kfej{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+  .kfej h1{margin:0}
+  .kfej .kikon{width:52px;height:52px}
+  @media(max-width:480px){.kfej .kikon{width:42px;height:42px}}
 </style>
 <link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/kalkulator/aram.html">
 <link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/calculators/power.html">
@@ -143,13 +149,11 @@
 <defs>
 <symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
 <symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
-<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
 <symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
-<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
 <symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
 <symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
 </defs>
-</svg>
+</svg><svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="pp-viz" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2.8 C12 2.8 5.6 10.6 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.6 12 2.8 12 2.8 Z"/><path d="M9.2 14.8 A2.8 2.8 0 0 0 12 17.6"/></g></symbol><symbol id="pp-akku" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="7" width="16" height="10"/><path d="M18.5 10.5 H21.5 V13.5 H18.5"/></g><g fill="currentColor"><path d="M11.6 8.6 L7.6 13.2 H10.4 L9.6 15.8 L13.8 11 H11 Z"/></g></symbol><symbol id="pp-lang" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.2 C8.2 21.2 5.6 18.6 5.6 15.2 C5.6 11 9.6 9.4 10.6 2.8 C14 5.6 15.2 9.2 14 12 C15.4 11.6 16.2 10.4 16.4 8.8 C18 10.8 18.4 13 18.4 15.2 C18.4 18.6 15.8 21.2 12 21.2 Z"/></g></symbol><symbol id="pp-eso" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M2.5 10.5 L12 4 L21.5 10.5"/><path d="M6 15.5 V19"/><path d="M12 15 V20"/><path d="M18 15.5 V19"/></g></symbol><symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol><symbol id="pp-lepes" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 20.5 L9 12.5 L13.5 16 L21 5.5"/></g><g fill="currentColor"><circle cx="9" cy="12.5" r="1.6"/><circle cx="21" cy="5.5" r="1.6"/></g></symbol><symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol><symbol id="pp-villam" viewBox="0 0 24 24"><g fill="currentColor"><path d="M13.6 2 L5.6 13.4 H10.8 L9.4 22 L18.4 10.2 H12.8 Z"/></g></symbol><symbol id="pp-vercsepp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2.5 C12 2.5 5 10.5 5 15 A7 7 0 0 0 19 15 C19 10.5 12 2.5 12 2.5 Z"/><path d="M9 15.5 A3 3 0 0 0 12 18.5"/></g></symbol></defs></svg>
 <header><nav class="nav">
   <a class="brand" href="/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
   <a class="link" href="/cikkek.html">Cikkek</a>
@@ -162,8 +166,10 @@
   </details>
 </nav></header>
 <main>
+<div class="kfej"><svg class="kikon" aria-hidden="true"><use href="#pp-akku"/></svg><div>
 <div class="k-szem">Kalkulátor</div>
 <h1>Áram kalkulátor</h1>
+</div></div>
 <p class="beveze">Áramszünetben az első kérdés nem az, hogy van-e powerbankod, hanem hogy meddig elég. Add meg a kapacitást és azt, mit hajtanál róla, és megkapod az órákat.</p>
 <div class="ppkalk" id="kalk-aram">    <div class="section">
       <label>Áram: mit tudsz róla üzemeltetni, és meddig</label>
