@@ -3298,6 +3298,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Biblia: itt a könyvek rácsa és a keresés. A teljes szöveg egyszer letöltendő, utána internet nélkül is olvasható.": "Bible: the book grid and search are here. Download the full text once, then you can read it offline.",
   "Imák: mindig elérhetők, letöltés nélkül is. Koppints egy címre, és olvasd.": "Prayers: always available, even without a download. Tap a title and read.",
   "Vészhelyzeti igék és próféciák: válogatott szakaszok, egy koppintással.": "Emergency verses and prophecies: selected passages, one tap away.",
+  "Az app bibliaolvasót tartalmaz. A lelki felkészültség rész keresztény szemszögből készült.": "The app includes a Bible reader. The spiritual preparedness section is written from a Christian perspective.",
   "Tartsd nyomva egy verset: keresés, kiemelés, kommentár, könyvjelző és megosztás. Amit így jelölsz, a Kiemeléseim és a Kommentárjaim alatt visszatalálod.": "Press and hold a verse: search, highlight, comment, bookmark and share. Whatever you mark this way, you will find under My highlights and My comments.",
   "Beállítások: a felolvasó hang, a letöltés internet nélküli felolvasáshoz, és a kereszthivatkozások bekapcsolása.": "Settings: the reading voice, downloading for offline reading, and turning on cross-references.",
 });
@@ -4051,6 +4052,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Apokrifek ↓": "Apocrypha ↓",
   "Apokrif könyvek letöltése": "Download the apocryphal books",
   "Deuterokanonikus könyvek": "Deuterocanonical books",
+  "Ószövetségi apokrifek": "Old Testament apocrypha",
   "További ószövetségi apokrifek": "Other Old Testament apocrypha",
   "Pszeudepigráfák": "Pseudepigrapha",
   "Apostoli atyák": "Apostolic Fathers",
@@ -4321,5 +4323,19 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "ennek a telefonnak a memóriáját nem sikerült lekérdezni": "the memory of this phone could not be read",
  "Processzor:": "Processor:",
  "kb. 8 GB-os telefon kell": "a phone of about 8 GB is needed",
- "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "This needs a phone with Android 11 or newer, about 8 GB of (nominal) memory, and 6-8 GB of free space."
+ "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "This needs a phone with Android 11 or newer, about 8 GB of (nominal) memory, and 6-8 GB of free space.",
+  "Becslés a légnyomás-trendből (Zambretti-módszer), a félgömb és az évszak szerint igazítva. Szelet és felhőzetet nem lát, ezért csak tájékoztató.": "Estimate from the air pressure trend (Zambretti method), adjusted for hemisphere and season. It cannot see wind or clouds, so it is for guidance only.",
+  "Magasság nélkül csak a trendet veszi figyelembe, a nyomás szintjét nem.": "Without altitude it uses only the trend, not the pressure level.",
+  "A trópusokon a légnyomás napi ingadozása elfedi a frontokat, ezért itt a becslés kevésbé megbízható.": "In the tropics the daily pressure swing masks weather fronts, so the estimate is less reliable here.",
+  "A sarkvidéken a módszer kevésbé megbízható.": "In polar regions the method is less reliable.",
+  "Becslés": "Estimate",
+  "Napos, nyugodt idő": "Sunny, settled",
+  "Változékony idő": "Changeable",
+  "Eső valószínű": "Rain likely",
+  "Vihar, sok eső": "Storm, heavy rain",
+  "Gyorsan emelkedik": "Rising fast",
+  "Lassan emelkedik": "Rising slowly",
+  "Állandó": "Steady",
+  "Lassan süllyed": "Falling slowly",
+  "Gyorsan süllyed": "Falling fast"
 });

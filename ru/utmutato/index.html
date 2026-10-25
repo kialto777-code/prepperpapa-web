@@ -100,6 +100,38 @@
   .lap .kepek.egy figure{flex:0 0 260px}
   .lap .kepek.egy img{width:260px}
   @media (max-width:560px){.tartalom ol{columns:1}}
+
+  .utmdemo{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:8px 0 30px;padding:22px;
+       border:1px solid var(--line);border-radius:22px;background:radial-gradient(120% 90% at 20% 30%,#1d2c23,#0d1511 70%)}
+  .utmdemo .tel{position:relative;width:min(230px,58vw);padding:7px;border-radius:34px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .utmdemo .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .utmdemo .kij{display:block;position:relative;overflow:hidden;border-radius:27px;background:#0B110E;padding:22px 0 8px}
+  .utmdemo .kepdoboz{display:block;position:relative;aspect-ratio:480/1038}
+  .utmdemo .kij::before{content:"";position:absolute;left:50%;top:6px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022;z-index:3}
+  .utmdemo .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .utmdemo .kij img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;
+       transform:scale(1.04);transition:opacity .8s ease,transform 5s ease}
+  .utmdemo .kij img.akt{opacity:1;transform:none}
+  .utmdemo .feliratok{position:relative;min-height:150px}
+  .utmdemo .felirat{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .utmdemo .felirat.akt{opacity:1;transform:none;position:relative}
+  .utmdemo .felirat .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .utmdemo .felirat h2{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:8px 0 10px;border:0;padding:0}
+  .utmdemo .felirat p{font-size:17px;color:#cfd6cf;margin:0}
+  .utmdemo .savok{display:flex;gap:6px;margin-top:22px}
+  .utmdemo .savok button{flex:1;height:5px;border:0;padding:0;border-radius:3px;background:#2c3a31;cursor:pointer;overflow:hidden;position:relative}
+  .utmdemo .savok button i{position:absolute;inset:0;width:0;background:var(--borostyan)}
+  .utmdemo .savok button.volt i{width:100%}
+  .utmdemo .savok button.akt i{animation:utmsav var(--ido,5s) linear forwards}
+  .utmdemo.all .savok button.akt i{animation-play-state:paused}
+  .utmdemo .megall{margin-top:10px;font-size:13px;color:var(--muted)}
+  @keyframes utmsav{to{width:100%}}
+  @media (prefers-reduced-motion:reduce){.utmdemo .kij img,.utmdemo .felirat{transition:none}.utmdemo .savok button.akt i{animation:none;width:100%}}
+  @media (max-width:640px){.utmdemo{grid-template-columns:1fr;justify-items:center;text-align:center;padding:18px 14px}
+    .utmdemo .feliratok{width:100%;min-height:130px}}
 </style>
 <link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/utmutato/">
 <link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/utmutato/">
@@ -134,13 +166,18 @@
 <main class="utm">
 <h1>Руководство пользователя</h1>
 <p class="beveze">Все функции приложения PrepperPapa, экран за экраном: где найти, для чего нужно и как пользоваться. В самом приложении тоже есть справка: знак вопроса в заголовке экрана.</p>
+<section class="utmdemo" aria-label="Обзор" aria-roledescription="diavetítés">
+<div class="tel" title="Остановить и продолжить"><span class="kij"><span class="kepdoboz"><img src="/ru/utmutato/kepek/01-kezdolap.jpg" alt="Главный экран" width="480" height="1038" loading="eager" class="akt"><img src="/ru/utmutato/kepek/05-keszlet.jpg" alt="Запасы" width="480" height="1038" loading="eager"><img src="/ru/utmutato/kepek/12-veszkartya.jpg" alt="Карточка экстренной помощи" width="480" height="1038" loading="lazy"><img src="/ru/utmutato/kepek/13-tudastar.jpg" alt="База знаний" width="480" height="1038" loading="lazy"><img src="/ru/utmutato/kepek/11-tajolo.jpg" alt="Компас" width="480" height="1038" loading="lazy"><img src="/ru/utmutato/kepek/19-morze.jpg" alt="Морзе" width="480" height="1038" loading="lazy"><img src="/ru/utmutato/kepek/30-sos.jpg" alt="SOS" width="480" height="1038" loading="lazy"><img src="/ru/utmutato/kepek/42-olvasasi-terv.jpg" alt="План чтения" width="480" height="1038" loading="lazy"><img src="/ru/utmutato/kepek/40-irattarca.jpg" alt="Документы" width="480" height="1038" loading="lazy"></span></span></div>
+<div><div class="feliratok"><div class="felirat akt"><div class="szam">01 / 09</div><h2>Главный экран</h2><p>Готовность с одного взгляда: вода, еда, отопление, по местам.</p></div><div class="felirat"><div class="szam">02 / 09</div><h2>Запасы</h2><p>Что есть дома, где хранится и когда истекает срок.</p></div><div class="felirat"><div class="szam">03 / 09</div><h2>Карточка экстренной помощи</h2><p>Медицинские данные семьи в одном QR-коде.</p></div><div class="felirat"><div class="szam">04 / 09</div><h2>База знаний</h2><p>Статьи, разбитые по темам, даже без интернета.</p></div><div class="felirat"><div class="szam">05 / 09</div><h2>Компас</h2><p>Определение направления, звуковое ведение, восход солнца и фазы луны.</p></div><div class="felirat"><div class="szam">06 / 09</div><h2>Морзе</h2><p>Передаёт светом и звуком, читает камерой и микрофоном.</p></div><div class="felirat"><div class="szam">07 / 09</div><h2>SOS</h2><p>Световой и звуковой сигнал, вызов помощи на одном экране.</p></div><div class="felirat"><div class="szam">08 / 09</div><h2>План чтения</h2><p>Библия ежедневными порциями, с утренним будильником.</p></div><div class="felirat"><div class="szam">09 / 09</div><h2>Документы</h2><p>Фото твоих документов под защитой PIN-кода.</p></div></div><div class="savok"><button type="button" aria-label="Изображение 1"><i></i></button><button type="button" aria-label="Изображение 2"><i></i></button><button type="button" aria-label="Изображение 3"><i></i></button><button type="button" aria-label="Изображение 4"><i></i></button><button type="button" aria-label="Изображение 5"><i></i></button><button type="button" aria-label="Изображение 6"><i></i></button><button type="button" aria-label="Изображение 7"><i></i></button><button type="button" aria-label="Изображение 8"><i></i></button><button type="button" aria-label="Изображение 9"><i></i></button></div>
+<p class="megall">Можно остановить касанием телефона.</p></div>
+</section>
 <h3>Если приложение просит войти</h3>
 <ol>
 <li>Введи свой e-mail.</li>
 <li>Запроси код. Через несколько минут на e-mail придёт шестизначный код.</li>
 <li>Введи код. Пароль не нужен.</li>
 </ol>
-<p class="dij"><b>Бесплатно и премиум, коротко:</b> фонарь, SOS, Морзе, карточка экстренной помощи и базовые статьи базы знаний бесплатны для всех и работают без интернета. Бесплатно можно добавить до 2 членов семьи и 50 позиций, а на карте доступны 2 планирования маршрута в неделю. Премиум-код снимает эти ограничения, добавляет скачиваемые офлайн-карты и расширенную базу знаний.</p>
+<p class="dij"><b>Бесплатно и премиум вкратце:</b> фонарик, SOS, Морзе, карточка экстренной помощи и базовые статьи базы знаний бесплатны для всех и работают даже без интернета. Бесплатно можно добавить не больше 2 членов семьи и 50 позиций, а на карте доступны 2 построения маршрута в неделю. Премиум-код снимает эти ограничения, добавляет загружаемую офлайн-карту и расширенную базу знаний. С одной учётной записью бесплатная версия работает на 1 устройстве, премиум на 2.</p>
 <nav class="tartalom" aria-label="Содержание"><b>Содержание</b><ol>
 <li><a href="#f1">Главный экран</a></li>
 <li><a href="#f2">Семья</a></li>
@@ -170,6 +207,13 @@
 <li><a href="#f26">Если не хватает разрешения</a></li>
 <li><a href="#f27">Отправить отзыв</a></li>
 <li><a href="#f28">Имущество</a></li>
+<li><a href="#f29">Кошелёк документов</a></li>
+<li><a href="#f30">Кошелёк токенов</a></li>
+<li><a href="#f31">Сбор</a></li>
+<li><a href="#f32">План чтения и будильник</a></li>
+<li><a href="#f33">Загрузка офлайн-карты</a></li>
+<li><a href="#f34">Мои устройства</a></li>
+<li><a href="#f35">Атмосферное давление и оценка погоды</a></li>
 </ol></nav>
 <section class="lap" id="f1"><h2><span class="sz">1.</span>Главный экран</h2>
 <p class="hol"><b>Где:</b> крайняя левая кнопка нижнего меню, <b>Главная</b>.</p>
@@ -334,10 +378,67 @@
 <div class="kepek"><figure><img src="/ru/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Отправить отзыв" loading="lazy" width="480"></figure><figure><img src="/ru/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Отправить отзыв" loading="lazy" width="480"></figure><figure><img src="/ru/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Отправить отзыв" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f28"><h2><span class="sz">28.</span>Имущество</h2>
 <p class="hol"><b>Где:</b> Главная &gt; плитка <b>Имущество</b>.</p>
-<p>«Имущество» это отдельный продукт. В приложении его можно попробовать бесплатно и с премиумом, до 10 позиций, а для полноценной работы его нужно купить отдельно в Google Play или App Store. Если ты его купишь, он полноценно работает и внутри PrepperPapa.</p></section>
+<p>«Имущество» это отдельный продукт. В приложении его можно попробовать, и бесплатно, и с премиумом, до 10 собственных позиций и 1 счёта; для полноценного использования его нужно купить отдельно в Google Play и в App Store. Если ты его купишь, он полноценно работает и в PrepperPapa.</p></section>
+<section class="lap" id="f29"><h2><span class="sz">29.</span>Кошелёк документов</h2>
+<p class="hol"><b>Где:</b> Главная &gt; плитка <b>Кошелёк документов</b>.</p>
+<p><b>Что умеет:</b> хранилище под PIN-кодом для фото или PDF твоих документов (удостоверение личности, водительские права, карта TAJ, страховка, техпаспорт) и для рукописных заметок. Бесплатно.</p>
+<ol><li>При первом входе задай шестизначный PIN-код и введи его ещё раз.</li><li>В разделе <b>Новый документ</b> отметь, чей он: человека, животного или транспортного средства. Если ничего не отметить, он сохранится как общий.</li><li>Кнопкой <b>Выбрать файл и сохранить</b> ты добавляешь фото или PDF, а кнопкой <b>Нарисовать заметку</b> можешь писать или рисовать пальцем.</li><li>Кнопкой <b>Заблокировать</b> ты сразу закрываешь хранилище.</li></ol>
+<p class="tipp"><b>Совет:</b> документы хранятся только на этом телефоне, зашифрованные ключом, созданным из твоего PIN-кода, и в полную резервную копию тоже не попадают. Включи отпечаток пальца и сохрани код восстановления: если забудешь PIN-код, с их помощью можно задать новый.</p>
+<div class="kepek egy"><figure><img src="/ru/utmutato/kepek/40-irattarca.jpg" alt="Документы" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f30"><h2><span class="sz">30.</span>Кошелёк токенов</h2>
+<p class="hol"><b>Где:</b> Главная &gt; плитка <b>Кошелёк токенов</b>. Открывается тем же PIN-кодом, что и Кошелёк документов.</p>
+<p><b>Что умеет:</b> в нём две вкладки. <b>Гира</b> это взаиморасчёты внутри небольшой общины (выполненная работа, проданные яйца, одолженный инструмент) с помощью QR-кодов, даже без интернета. На вкладке <b>Секретные коды</b> можно хранить в зашифрованном виде пароли и коды восстановления. Это не банк и не криптовалюта. Бесплатно.</p>
+<ol><li>Оплата: другой человек показывает свой QR-код с идентификатором, ты его сканируешь.</li><li>Вводишь сумму и назначение, затем нажимаешь <b>Подготовить платёж</b>: телефон подписывает его и показывает QR-код.</li><li>Он сканирует этот QR-код, и сумма зачисляется ему.</li><li>Запросить деньги можно кнопкой <b>Запроси гиру</b>: вводишь, сколько и зачем, он сканирует, и ему остаётся только подтвердить.</li></ol>
+<p class="tipp"><b>Совет:</b> Секретные коды никогда не попадают в полную резервную копию, поэтому важные коды восстановления храни ещё и на бумаге.</p>
+<div class="kepek egy"><figure><img src="/ru/utmutato/kepek/41-token-tarca.jpg" alt="Кошелёк токенов" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f31"><h2><span class="sz">31.</span>Сбор</h2>
+<p class="hol"><b>Где:</b> Главная &gt; плитка <b>Сбор</b>.</p>
+<p><b>Что умеет:</b> открывает в браузере форум сообщества PrepperPapa (forum.prepperpapa.hu). Там можно задавать вопросы и делиться опытом с другими пользователями. Для этого нужен интернет.</p></section>
+<section class="lap" id="f32"><h2><span class="sz">32.</span>План чтения и будильник</h2>
+<p class="hol"><b>Где:</b> Библия &gt; <b>План чтения</b>.</p>
+<p><b>Что умеет:</b> делит Библию на ежедневные или еженедельные порции и запоминает, где ты остановился. Можно выбрать один из восьми планов: вся Библия за год (в порядке книг или в хронологическом порядке), в том числе с разбивкой по неделям, вся Библия за 90 дней, Новый Завет за 90 дней, Евангелия за 30 дней, Псалмы и Притчи за 60 дней.</p>
+<ol><li>Коснись плана и запусти его.</li><li>Каждый день он показывает сегодняшнее чтение. Когда прочитаешь, нажми кнопку <b>Прочитано</b>.</li><li>Можно читать сразу несколько планов, по каждому отдельно запоминается, где ты остановился.</li><li><b>Будильник:</b> задай время и дни. Утром он разбудит телефон и прочитает вслух сегодняшнее чтение из плана.</li></ol>
+<p class="tipp"><b>Совет:</b> будильник работает в приложении для Android. В браузере и на iPhone настройка сохраняется, но заблокированный телефон сайт разбудить не может.</p>
+<div class="kepek egy"><figure><img src="/ru/utmutato/kepek/42-olvasasi-terv.jpg" alt="План чтения и будильник" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f33"><h2><span class="sz">33.</span>Загрузка офлайн-карты</h2>
+<p class="hol"><b>Где:</b> Карта &gt; кнопка функций &gt; группа <b>Офлайн-карта</b>. Премиум.</p>
+<p><b>Что умеет:</b> ты загружаешь карту на телефон и видишь, где находишься, даже без интернета и без связи. Венгрию можно загрузить по 11 регионам, остальные страны целиком или по областям.</p>
+<ol><li>Выбери регион или раскрой список <b>Карты других стран</b> и коснись страны.</li><li>У каждой строки три отдельные загрузки: <b>Базовая карта</b>, <b>Туристические тропы</b>, <b>Туристические точки</b>. Рядом с каждой виден её размер.</li><li>Для большой страны не загружай всё целиком, а только ту область, куда едешь: она меньше и остаётся детальнее.</li><li>То, что больше не нужно, можно удалить по строкам, и место освободится.</li></ol>
+<p class="tipp"><b>Совет:</b> загрузи карту перед выездом, по wifi. В дороге связь пропадает именно там, где нужна карта.</p></section>
+<section class="lap" id="f34"><h2><span class="sz">34.</span>Мои устройства</h2>
+<p class="hol"><b>Где:</b> Настройки &gt; <b>Мои устройства</b>.</p>
+<p><b>Что умеет:</b> показывает, на каких из твоих устройств работает твоя учётная запись. Премиум можно использовать одновременно на 2 устройствах, бесплатную учётную запись на 1 устройстве.</p>
+<ol><li>В списке видны названия устройств и время, когда они выходили на связь в последний раз. Текущее помечено «это устройство».</li><li>У ненужного устройства нажми <b>Отключить</b>, затем ещё раз для подтверждения. Его место освободится.</li><li>Отключать можно раз в 30 дней.</li></ol>
+<p class="tipp"><b>Совет:</b> для списка нужны интернет и вход в учётную запись. Остальные части приложения, от запасов до карты, работают на любом устройстве.</p>
+<div class="kepek egy"><figure><img src="/ru/utmutato/kepek/43-keszulekeim.jpg" alt="Мои устройства" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f35"><h2><span class="sz">35.</span>Атмосферное давление и оценка погоды</h2>
+<p class="hol"><b>Где:</b> Главная &gt; <b>Ориентирование</b>, на карточке давления. Видна только на телефонах, где есть барометр.</p>
+<p><b>Что умеет:</b> показывает давление и его изменение за последние часы стрелкой, а небольшой картинкой оценивает, какая погода ожидается (солнечно, переменчиво, дождь, гроза). Если давление быстро падает, выдаёт предупреждение о буре.</p>
+<ol><li>Открой Ориентирование: там давление измеряется постоянно.</li><li>В остальное время приложение измеряет раз в четверть часа, так экономится заряд, и у тебя есть данные за последние 48 часов.</li></ol>
+<p class="tipp"><b>Совет:</b> это оценка, а не прогноз погоды. В машине изменение высоты тоже выглядит как изменение давления, поэтому во время езды предупреждение может быть ложным.</p></section>
 <section class="lap"><h2>Если что-то не получается</h2>
 <p>Напиши нам из приложения: значок облачка с текстом на верхней панели или кнопка «Отправить отзыв» на странице «Обо мне». Опиши, что ты делал, что увидел и какой у тебя телефон.</p></section>
-
+<script>
+(function(){
+  // guide slideshow: auto-advance with a progress bar, tap/click the phone to pause or resume, a bar jumps to a slide
+  var d=document.querySelector('.utmdemo'); if(!d) return;
+  var kepek=d.querySelectorAll('.kepdoboz img'), fel=d.querySelectorAll('.felirat'), sav=d.querySelectorAll('.savok button');
+  var akt=0, IDO=5000, t=null, all=false, csendes=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  d.style.setProperty('--ido', IDO+'ms');
+  function mutat(i){ akt=(i+kepek.length)%kepek.length;
+    for(var j=0;j<kepek.length;j++){ kepek[j].classList.toggle('akt',j===akt); fel[j].classList.toggle('akt',j===akt);
+      sav[j].classList.remove('akt'); sav[j].classList.toggle('volt',j<akt); }
+    void sav[akt].offsetWidth; sav[akt].classList.add('akt');
+    var k=kepek[(akt+1)%kepek.length]; if(k.loading==='lazy') k.loading='eager';
+    idozit(); }
+  function idozit(){ clearTimeout(t); if(!all && !csendes) t=setTimeout(function(){mutat(akt+1);},IDO); }
+  for(var i=0;i<sav.length;i++){(function(i){ sav[i].onclick=function(){ mutat(i); }; })(i);}
+  d.querySelector('.tel').onclick=function(){ all=!all; d.classList.toggle('all',all); if(all) clearTimeout(t); else mutat(akt+1); };
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ if(!all) idozit(); } else clearTimeout(t); }); },{threshold:.4}).observe(d); }
+  mutat(0);
+})();
+</script>
 </main>
 <footer><div>PrepperPapa &middot; Руководство пользователя &middot; <a href="/ru/adatkezeles.html">Конфиденциальность</a></div></footer>
 <script>

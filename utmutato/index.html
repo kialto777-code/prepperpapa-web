@@ -100,6 +100,38 @@
   .lap .kepek.egy figure{flex:0 0 260px}
   .lap .kepek.egy img{width:260px}
   @media (max-width:560px){.tartalom ol{columns:1}}
+
+  .utmdemo{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:8px 0 30px;padding:22px;
+       border:1px solid var(--line);border-radius:22px;background:radial-gradient(120% 90% at 20% 30%,#1d2c23,#0d1511 70%)}
+  .utmdemo .tel{position:relative;width:min(230px,58vw);padding:7px;border-radius:34px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .utmdemo .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .utmdemo .kij{display:block;position:relative;overflow:hidden;border-radius:27px;background:#0B110E;padding:22px 0 8px}
+  .utmdemo .kepdoboz{display:block;position:relative;aspect-ratio:480/1038}
+  .utmdemo .kij::before{content:"";position:absolute;left:50%;top:6px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022;z-index:3}
+  .utmdemo .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .utmdemo .kij img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;
+       transform:scale(1.04);transition:opacity .8s ease,transform 5s ease}
+  .utmdemo .kij img.akt{opacity:1;transform:none}
+  .utmdemo .feliratok{position:relative;min-height:150px}
+  .utmdemo .felirat{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .utmdemo .felirat.akt{opacity:1;transform:none;position:relative}
+  .utmdemo .felirat .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .utmdemo .felirat h2{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:8px 0 10px;border:0;padding:0}
+  .utmdemo .felirat p{font-size:17px;color:#cfd6cf;margin:0}
+  .utmdemo .savok{display:flex;gap:6px;margin-top:22px}
+  .utmdemo .savok button{flex:1;height:5px;border:0;padding:0;border-radius:3px;background:#2c3a31;cursor:pointer;overflow:hidden;position:relative}
+  .utmdemo .savok button i{position:absolute;inset:0;width:0;background:var(--borostyan)}
+  .utmdemo .savok button.volt i{width:100%}
+  .utmdemo .savok button.akt i{animation:utmsav var(--ido,5s) linear forwards}
+  .utmdemo.all .savok button.akt i{animation-play-state:paused}
+  .utmdemo .megall{margin-top:10px;font-size:13px;color:var(--muted)}
+  @keyframes utmsav{to{width:100%}}
+  @media (prefers-reduced-motion:reduce){.utmdemo .kij img,.utmdemo .felirat{transition:none}.utmdemo .savok button.akt i{animation:none;width:100%}}
+  @media (max-width:640px){.utmdemo{grid-template-columns:1fr;justify-items:center;text-align:center;padding:18px 14px}
+    .utmdemo .feliratok{width:100%;min-height:130px}}
 </style>
 <link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/utmutato/">
 <link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/utmutato/">
@@ -136,13 +168,18 @@
 <main class="utm">
 <h1>Használati útmutató</h1>
 <p class="beveze">A PrepperPapa alkalmazás minden funkciója képernyőről képernyőre: hol találod, mire való, és hogyan használd. Az alkalmazásban is van súgó: a képernyő fejlécében a kérdőjel.</p>
+<section class="utmdemo" aria-label="Bemutató" aria-roledescription="diavetítés">
+<div class="tel" title="Megállítás és folytatás"><span class="kij"><span class="kepdoboz"><img src="/utmutato/kepek/01-kezdolap.jpg" alt="Kezdőképernyő" width="480" height="1038" loading="eager" class="akt"><img src="/utmutato/kepek/05-keszlet.jpg" alt="Készlet" width="480" height="1038" loading="eager"><img src="/utmutato/kepek/12-veszkartya.jpg" alt="Vészkártya" width="480" height="1038" loading="lazy"><img src="/utmutato/kepek/13-tudastar.jpg" alt="Tudástár" width="480" height="1038" loading="lazy"><img src="/utmutato/kepek/11-tajolo.jpg" alt="Tájoló" width="480" height="1038" loading="lazy"><img src="/utmutato/kepek/19-morze.jpg" alt="Morze" width="480" height="1038" loading="lazy"><img src="/utmutato/kepek/30-sos.jpg" alt="SOS" width="480" height="1038" loading="lazy"><img src="/utmutato/kepek/42-olvasasi-terv.jpg" alt="Olvasási terv" width="480" height="1038" loading="lazy"><img src="/utmutato/kepek/40-irattarca.jpg" alt="Irattárca" width="480" height="1038" loading="lazy"></span></span></div>
+<div><div class="feliratok"><div class="felirat akt"><div class="szam">01 / 09</div><h2>Kezdőképernyő</h2><p>A készültség egy pillantással: víz, élelem, fűtés, helyszínenként.</p></div><div class="felirat"><div class="szam">02 / 09</div><h2>Készlet</h2><p>Mi van otthon, hol tárolod, és mikor jár le.</p></div><div class="felirat"><div class="szam">03 / 09</div><h2>Vészkártya</h2><p>A család egészségügyi adatai egy QR-kódban.</p></div><div class="felirat"><div class="szam">04 / 09</div><h2>Tudástár</h2><p>Témákba rendezett cikkek, internet nélkül is.</p></div><div class="felirat"><div class="szam">05 / 09</div><h2>Tájoló</h2><p>Irány felvétele, hangvezetés, napkelte és holdfázis.</p></div><div class="felirat"><div class="szam">06 / 09</div><h2>Morze</h2><p>Fénnyel és hanggal ad, kamerával és mikrofonnal olvas.</p></div><div class="felirat"><div class="szam">07 / 09</div><h2>SOS</h2><p>Fény- és hangjelzés, segélyhívás egy képernyőn.</p></div><div class="felirat"><div class="szam">08 / 09</div><h2>Olvasási terv</h2><p>A Biblia napi adagokban, reggeli ébresztővel.</p></div><div class="felirat"><div class="szam">09 / 09</div><h2>Irattárca</h2><p>Az okmányaid fényképe PIN-kóddal védve.</p></div></div><div class="savok"><button type="button" aria-label="1. kép"><i></i></button><button type="button" aria-label="2. kép"><i></i></button><button type="button" aria-label="3. kép"><i></i></button><button type="button" aria-label="4. kép"><i></i></button><button type="button" aria-label="5. kép"><i></i></button><button type="button" aria-label="6. kép"><i></i></button><button type="button" aria-label="7. kép"><i></i></button><button type="button" aria-label="8. kép"><i></i></button><button type="button" aria-label="9. kép"><i></i></button></div>
+<p class="megall">A telefonra koppintva megállíthatod.</p></div>
+</section>
 <h3>Ha az alkalmazás belépést kér</h3>
 <ol>
 <li>Írd be az e-mail címedet.</li>
 <li>Kérj egy kódot. Pár percen belül megérkezik egy hatjegyű kód e-mailben.</li>
 <li>Írd be a kódot. Jelszó nem kell.</li>
 </ol>
-<p class="dij"><b>Ingyenes és prémium röviden:</b> a zseblámpa, az SOS, a Morze, a vészkártya és a tudástár alapcikkei mindenkinek ingyenesek, és internet nélkül is működnek. Ingyen legfeljebb 2 családtag és 50 termék vehető fel, a térképen hetente 2 útvonaltervezés. A prémium kód ezeket korlátlanra emeli, letölthető offline térképet és bővített tudástárat ad.</p>
+<p class="dij"><b>Ingyenes és prémium röviden:</b> a zseblámpa, az SOS, a Morze, a vészkártya és a tudástár alapcikkei mindenkinek ingyenesek, és internet nélkül is működnek. Ingyen legfeljebb 2 családtag és 50 termék vehető fel, a térképen hetente 2 útvonaltervezés. A prémium kód ezeket korlátlanra emeli, letölthető offline térképet és bővített tudástárat ad. Egy fiókkal az ingyenes változat 1, a prémium 2 készüléken használható.</p>
 <nav class="tartalom" aria-label="Tartalom"><b>Tartalom</b><ol>
 <li><a href="#f1">Kezdőképernyő</a></li>
 <li><a href="#f2">Háztartás</a></li>
@@ -172,6 +209,13 @@
 <li><a href="#f26">Ha hiányzik egy engedély</a></li>
 <li><a href="#f27">Visszajelzés küldése</a></li>
 <li><a href="#f28">Vagyonkezelő</a></li>
+<li><a href="#f29">Irattárca</a></li>
+<li><a href="#f30">Token tárca</a></li>
+<li><a href="#f31">Gyülekező</a></li>
+<li><a href="#f32">Olvasási terv és ébresztő</a></li>
+<li><a href="#f33">Offline térkép letöltése</a></li>
+<li><a href="#f34">Készülékeim</a></li>
+<li><a href="#f35">Légnyomás és időjárás-becslés</a></li>
 </ol></nav>
 <section class="lap" id="f1"><h2><span class="sz">1.</span>Kezdőképernyő</h2>
 <p class="hol"><b>Hol:</b> az alsó menü bal szélső gombja, <b>Kezdő</b>.</p>
@@ -336,10 +380,67 @@
 <div class="kepek"><figure><img src="/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Visszajelzés küldése" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Visszajelzés küldése" loading="lazy" width="480"></figure><figure><img src="/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Visszajelzés küldése" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f28"><h2><span class="sz">28.</span>Vagyonkezelő</h2>
 <p class="hol"><b>Hol:</b> Kezdő &gt; <b>Vagyonkezelő</b> csempe.</p>
-<p>A Vagyonkezelő külön termék. Az alkalmazásban ingyenesen és prémiummal is 10 tételig kipróbálható, a teljes használatához külön kell megvenni a Google Play áruházban és az App Store-ban. Ha megveszed, a PrepperPapában is teljes értékűen működik.</p></section>
+<p>A Vagyonkezelő külön termék. Az alkalmazásban ingyenesen és prémiummal is 10 saját tételig és 1 számláig kipróbálható, a teljes használatához külön kell megvenni a Google Play áruházban és az App Store-ban. Ha megveszed, a PrepperPapában is teljes értékűen működik.</p></section>
+<section class="lap" id="f29"><h2><span class="sz">29.</span>Irattárca</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Irattárca</b> csempe.</p>
+<p><b>Mit tud:</b> PIN-kóddal védett tároló az okmányaid fényképéhez vagy PDF-jéhez (személyi igazolvány, jogosítvány, TAJ-kártya, biztosítás, forgalmi), és kézzel rajzolt jegyzetekhez. Ingyenes.</p>
+<ol><li>Az első alkalommal állíts be egy hatjegyű PIN-kódot, és írd be még egyszer.</li><li>Az <b>Új dokumentum</b> résznél jelöld meg, kié: személy, állat vagy jármű. Ha egyiket sem jelölöd, közösként menti.</li><li>A <b>Fájl kiválasztása és mentés</b> gombbal fényképet vagy PDF-et teszel bele, a <b>Jegyzet rajzolása</b> gombbal az ujjaddal írhatsz vagy rajzolhatsz.</li><li>A <b>Zárolás</b> gombbal azonnal lezárod.</li></ol>
+<p class="tipp"><b>Tipp:</b> a dokumentumok csak ezen a telefonon vannak, a PIN-edből képzett kulccsal titkosítva, és a teljes mentésbe sem kerülnek bele. Kapcsold be az ujjlenyomatot, és őrizd meg a mentési kódot: ha elfelejted a PIN-t, ezekkel állíthatsz be újat.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/40-irattarca.jpg" alt="Irattárca" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f30"><h2><span class="sz">30.</span>Token tárca</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Token tárca</b> csempe. Ugyanaz a PIN nyitja, mint az Irattárcát.</p>
+<p><b>Mit tud:</b> két füle van. A <b>Gíra</b> egy kis közösség egymás közti elszámolása (elvégzett munka, eladott tojás, kölcsönadott szerszám), QR-kódokkal, internet nélkül is. A <b>Titkos kódok</b> fülön jelszavakat és helyreállító kódokat tarthatsz titkosítva. Nem bank és nem kriptovaluta. Ingyenes.</p>
+<ol><li>Fizetés: a másik megmutatja az azonosító-QR-jét, te beolvasod.</li><li>Megadod az összeget és azt, hogy miért, majd <b>Fizetés elkészítése</b>: a telefonod aláírja, és mutat egy QR-t.</li><li>Ő beolvassa ezt a QR-t, és nála jóváíródik.</li><li>Pénzt kérni a <b>Kérek gírát</b> gombbal tudsz: beírod, mennyit és miért, ő beolvassa, és csak jóvá kell hagynia.</li></ol>
+<p class="tipp"><b>Tipp:</b> a Titkos kódok a teljes mentésbe sosem kerülnek bele, ezért a fontos helyreállító kódokról tarts papírmásolatot is.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/41-token-tarca.jpg" alt="Token tárca" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f31"><h2><span class="sz">31.</span>Gyülekező</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Gyülekező</b> csempe.</p>
+<p><b>Mit tud:</b> megnyitja a PrepperPapa közösség fórumát (forum.prepperpapa.hu) a böngészőben. Ott kérdezhetsz, tapasztalatot cserélhetsz a többi felhasználóval. Ehhez internet kell.</p></section>
+<section class="lap" id="f32"><h2><span class="sz">32.</span>Olvasási terv és ébresztő</h2>
+<p class="hol"><b>Hol:</b> Biblia &gt; <b>Olvasási terv</b>.</p>
+<p><b>Mit tud:</b> napi vagy heti adagokra bontja a Bibliát, és megjegyzi, hol tartasz. Nyolc terv közül választhatsz: a teljes Biblia egy év alatt (a könyvek sorrendjében vagy az események időrendjében), heti bontásban is, a teljes Biblia 90 nap alatt, az Újszövetség 90 nap alatt, az evangéliumok 30 nap alatt, a Zsoltárok és a Példabeszédek 60 nap alatt.</p>
+<ol><li>Koppints egy tervre, és indítsd el.</li><li>Naponta megmutatja a mai olvasmányt. Ha elolvastad, nyomd meg az <b>Elolvastam</b> gombot.</li><li>Több tervet is olvashatsz egyszerre, mindegyiknél külön megmarad, hol tartasz.</li><li><b>Ébresztő:</b> add meg az időpontot és a napokat. Reggel felébreszti a telefont, és felolvassa a terv mai olvasmányát.</li></ol>
+<p class="tipp"><b>Tipp:</b> az ébresztő az Android alkalmazásban működik. Böngészőben és iPhone-on a beállításod megmarad, de a lezárt telefont a weboldal nem tudja felébreszteni.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/42-olvasasi-terv.jpg" alt="Olvasási terv és ébresztő" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f33"><h2><span class="sz">33.</span>Offline térkép letöltése</h2>
+<p class="hol"><b>Hol:</b> Térkép &gt; a funkciógomb &gt; <b>Offline térkép</b> csoport. Prémium.</p>
+<p><b>Mit tud:</b> a térképet a telefonodra töltöd, és internet és térerő nélkül is látod, merre vagy. Magyarországot 11 tájegységenként, a többi országot egészben vagy tartományonként töltheted le.</p>
+<ol><li>Válaszd ki a tájegységet, vagy nyisd le a <b>Más országok térképei</b> listát, és koppints az országra.</li><li>Minden sornál három külön letöltés van: <b>Alaptérkép</b>, <b>Turistautak</b>, <b>Turistapontok</b>. Mindegyik mellett látod a méretét.</li><li>Nagy országnál ne az egészet töltsd le, hanem csak azt a tartományt, ahová mész: kisebb, és részletesebb marad.</li><li>Amire már nincs szükséged, azt soronként törölheted, és a hely felszabadul.</li></ol>
+<p class="tipp"><b>Tipp:</b> indulás előtt, wifin töltsd le. Útközben a térerő épp ott szokott elfogyni, ahol a térkép kellene.</p></section>
+<section class="lap" id="f34"><h2><span class="sz">34.</span>Készülékeim</h2>
+<p class="hol"><b>Hol:</b> Beállítások &gt; <b>Készülékeim</b>.</p>
+<p><b>Mit tud:</b> megmutatja, mely készülékeiden működik a fiókod. A prémium egyszerre 2 készüléken, az ingyenes fiók 1 készüléken használható.</p>
+<ol><li>A listában látod a készülékek nevét és azt, mikor jelentkeztek utoljára. A mostanit „ez a készülék” jelöli.</li><li>Amelyik már nem kell, annál nyomd meg a <b>Leválasztás</b> gombot, majd még egyszer a megerősítéshez. A helye felszabadul.</li><li>Leválasztani 30 naponta egyszer lehet.</li></ol>
+<p class="tipp"><b>Tipp:</b> a listához internet és bejelentkezés kell. Az app többi része, a készlettől a térképig, minden készüléken működik.</p>
+<div class="kepek egy"><figure><img src="/utmutato/kepek/43-keszulekeim.jpg" alt="Készülékeim" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f35"><h2><span class="sz">35.</span>Légnyomás és időjárás-becslés</h2>
+<p class="hol"><b>Hol:</b> Kezdő &gt; <b>Tájoló</b>, a légnyomás-kártyán. Csak olyan telefonon látszik, amelyikben van légnyomásmérő.</p>
+<p><b>Mit tud:</b> kiírja a légnyomást és az elmúlt órák változását egy nyíllal, és egy kis képpel megbecsüli, milyen idő jön (napos, változékony, eső, vihar). Ha gyorsan esik a nyomás, vihar-figyelmeztetést ad.</p>
+<ol><li>Nyisd meg a Tájolót: ott folyamatosan mér.</li><li>Máskor az app negyedóránként egyszer mér, így kíméli az akkumulátort, és megvan az elmúlt 48 óra.</li></ol>
+<p class="tipp"><b>Tipp:</b> ez becslés, nem időjárás-előrejelzés. Autóban a magasság változása is nyomásváltozásnak látszik, ezért vezetés közben a figyelmeztetés téves lehet.</p></section>
 <section class="lap"><h2>Ha elakadtál</h2>
 <p>Írj nekünk az alkalmazásból: a felső sávban a szövegbuborék ikon, vagy a Rólam oldalon a „Visszajelzés küldése” gomb. Írd meg, mit csináltál, mit láttál, és milyen telefonon.</p></section>
-
+<script>
+(function(){
+  // guide slideshow: auto-advance with a progress bar, tap/click the phone to pause or resume, a bar jumps to a slide
+  var d=document.querySelector('.utmdemo'); if(!d) return;
+  var kepek=d.querySelectorAll('.kepdoboz img'), fel=d.querySelectorAll('.felirat'), sav=d.querySelectorAll('.savok button');
+  var akt=0, IDO=5000, t=null, all=false, csendes=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  d.style.setProperty('--ido', IDO+'ms');
+  function mutat(i){ akt=(i+kepek.length)%kepek.length;
+    for(var j=0;j<kepek.length;j++){ kepek[j].classList.toggle('akt',j===akt); fel[j].classList.toggle('akt',j===akt);
+      sav[j].classList.remove('akt'); sav[j].classList.toggle('volt',j<akt); }
+    void sav[akt].offsetWidth; sav[akt].classList.add('akt');
+    var k=kepek[(akt+1)%kepek.length]; if(k.loading==='lazy') k.loading='eager';
+    idozit(); }
+  function idozit(){ clearTimeout(t); if(!all && !csendes) t=setTimeout(function(){mutat(akt+1);},IDO); }
+  for(var i=0;i<sav.length;i++){(function(i){ sav[i].onclick=function(){ mutat(i); }; })(i);}
+  d.querySelector('.tel').onclick=function(){ all=!all; d.classList.toggle('all',all); if(all) clearTimeout(t); else mutat(akt+1); };
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ if(!all) idozit(); } else clearTimeout(t); }); },{threshold:.4}).observe(d); }
+  mutat(0);
+})();
+</script>
 </main>
 <footer><div>PrepperPapa &middot; Használati útmutató
 &middot; <a href="/adatkezeles.html">Adatkezelés</a></div></footer>

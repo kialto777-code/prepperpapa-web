@@ -100,6 +100,38 @@
   .lap .kepek.egy figure{flex:0 0 260px}
   .lap .kepek.egy img{width:260px}
   @media (max-width:560px){.tartalom ol{columns:1}}
+
+  .utmdemo{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:8px 0 30px;padding:22px;
+       border:1px solid var(--line);border-radius:22px;background:radial-gradient(120% 90% at 20% 30%,#1d2c23,#0d1511 70%)}
+  .utmdemo .tel{position:relative;width:min(230px,58vw);padding:7px;border-radius:34px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .utmdemo .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .utmdemo .kij{display:block;position:relative;overflow:hidden;border-radius:27px;background:#0B110E;padding:22px 0 8px}
+  .utmdemo .kepdoboz{display:block;position:relative;aspect-ratio:480/1038}
+  .utmdemo .kij::before{content:"";position:absolute;left:50%;top:6px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022;z-index:3}
+  .utmdemo .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .utmdemo .kij img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;
+       transform:scale(1.04);transition:opacity .8s ease,transform 5s ease}
+  .utmdemo .kij img.akt{opacity:1;transform:none}
+  .utmdemo .feliratok{position:relative;min-height:150px}
+  .utmdemo .felirat{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .utmdemo .felirat.akt{opacity:1;transform:none;position:relative}
+  .utmdemo .felirat .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .utmdemo .felirat h2{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:8px 0 10px;border:0;padding:0}
+  .utmdemo .felirat p{font-size:17px;color:#cfd6cf;margin:0}
+  .utmdemo .savok{display:flex;gap:6px;margin-top:22px}
+  .utmdemo .savok button{flex:1;height:5px;border:0;padding:0;border-radius:3px;background:#2c3a31;cursor:pointer;overflow:hidden;position:relative}
+  .utmdemo .savok button i{position:absolute;inset:0;width:0;background:var(--borostyan)}
+  .utmdemo .savok button.volt i{width:100%}
+  .utmdemo .savok button.akt i{animation:utmsav var(--ido,5s) linear forwards}
+  .utmdemo.all .savok button.akt i{animation-play-state:paused}
+  .utmdemo .megall{margin-top:10px;font-size:13px;color:var(--muted)}
+  @keyframes utmsav{to{width:100%}}
+  @media (prefers-reduced-motion:reduce){.utmdemo .kij img,.utmdemo .felirat{transition:none}.utmdemo .savok button.akt i{animation:none;width:100%}}
+  @media (max-width:640px){.utmdemo{grid-template-columns:1fr;justify-items:center;text-align:center;padding:18px 14px}
+    .utmdemo .feliratok{width:100%;min-height:130px}}
 </style>
 <link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/utmutato/">
 <link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/utmutato/">
@@ -134,13 +166,18 @@
 <main class="utm">
 <h1>Bedienungsanleitung</h1>
 <p class="beveze">Alle Funktionen der PrepperPapa App, Bildschirm für Bildschirm: wo du sie findest, wozu sie da sind und wie du sie benutzt. Auch in der App gibt es eine Hilfe: das Fragezeichen in der Kopfzeile des Bildschirms.</p>
+<section class="utmdemo" aria-label="Vorstellung" aria-roledescription="diavetítés">
+<div class="tel" title="Anhalten und fortsetzen"><span class="kij"><span class="kepdoboz"><img src="/de/utmutato/kepek/01-kezdolap.jpg" alt="Startbildschirm" width="480" height="1038" loading="eager" class="akt"><img src="/de/utmutato/kepek/05-keszlet.jpg" alt="Vorrat" width="480" height="1038" loading="eager"><img src="/de/utmutato/kepek/12-veszkartya.jpg" alt="Notfallkarte" width="480" height="1038" loading="lazy"><img src="/de/utmutato/kepek/13-tudastar.jpg" alt="Wissensbasis" width="480" height="1038" loading="lazy"><img src="/de/utmutato/kepek/11-tajolo.jpg" alt="Kompass" width="480" height="1038" loading="lazy"><img src="/de/utmutato/kepek/19-morze.jpg" alt="Morse" width="480" height="1038" loading="lazy"><img src="/de/utmutato/kepek/30-sos.jpg" alt="SOS" width="480" height="1038" loading="lazy"><img src="/de/utmutato/kepek/42-olvasasi-terv.jpg" alt="Leseplan" width="480" height="1038" loading="lazy"><img src="/de/utmutato/kepek/40-irattarca.jpg" alt="Dokumentenmappe" width="480" height="1038" loading="lazy"></span></span></div>
+<div><div class="feliratok"><div class="felirat akt"><div class="szam">01 / 09</div><h2>Startbildschirm</h2><p>Die Bereitschaft auf einen Blick: Wasser, Essen, Heizung, je Ort.</p></div><div class="felirat"><div class="szam">02 / 09</div><h2>Vorrat</h2><p>Was du zu Hause hast, wo du es lagerst und wann es abläuft.</p></div><div class="felirat"><div class="szam">03 / 09</div><h2>Notfallkarte</h2><p>Die Gesundheitsdaten deiner Familie in einem QR-Code.</p></div><div class="felirat"><div class="szam">04 / 09</div><h2>Wissensbasis</h2><p>Nach Themen geordnete Artikel, auch ohne Internet.</p></div><div class="felirat"><div class="szam">05 / 09</div><h2>Kompass</h2><p>Richtung aufnehmen, Tonführung, Sonnenaufgang und Mondphase.</p></div><div class="felirat"><div class="szam">06 / 09</div><h2>Morse</h2><p>Sendet mit Licht und Ton, liest mit Kamera und Mikrofon.</p></div><div class="felirat"><div class="szam">07 / 09</div><h2>SOS</h2><p>Licht- und Tonsignal, Notruf auf einem Bildschirm.</p></div><div class="felirat"><div class="szam">08 / 09</div><h2>Leseplan</h2><p>Die Bibel in Tagesportionen, mit Wecker am Morgen.</p></div><div class="felirat"><div class="szam">09 / 09</div><h2>Dokumentenmappe</h2><p>Fotos deiner Dokumente, mit PIN geschützt.</p></div></div><div class="savok"><button type="button" aria-label="Bild 1"><i></i></button><button type="button" aria-label="Bild 2"><i></i></button><button type="button" aria-label="Bild 3"><i></i></button><button type="button" aria-label="Bild 4"><i></i></button><button type="button" aria-label="Bild 5"><i></i></button><button type="button" aria-label="Bild 6"><i></i></button><button type="button" aria-label="Bild 7"><i></i></button><button type="button" aria-label="Bild 8"><i></i></button><button type="button" aria-label="Bild 9"><i></i></button></div>
+<p class="megall">Du kannst es stoppen, indem du auf das Handy tippst.</p></div>
+</section>
 <h3>Wenn die App eine Anmeldung verlangt</h3>
 <ol>
 <li>Gib deine E-Mail-Adresse ein.</li>
 <li>Fordere einen Code an. Innerhalb weniger Minuten kommt ein sechsstelliger Code per E-Mail.</li>
 <li>Gib den Code ein. Ein Passwort brauchst du nicht.</li>
 </ol>
-<p class="dij"><b>Kostenlos und Premium in Kürze:</b> Taschenlampe, SOS, Morse, Notfallkarte und die Basisartikel der Wissensbasis sind für alle kostenlos und funktionieren auch ohne Internet. Kostenlos kannst du bis zu 2 Familienmitglieder und 50 Artikel erfassen, auf der Karte gibt es 2 Routenplanungen pro Woche. Der Premium-Code hebt diese Grenzen auf und bringt herunterladbare Offline-Karten und die erweiterte Wissensbasis.</p>
+<p class="dij"><b>Kostenlos und Premium in Kürze:</b> Taschenlampe, SOS, Morse, Notfallkarte und die Grundlagenartikel der Wissensbasis sind für alle kostenlos und funktionieren auch ohne Internet. Kostenlos kannst du höchstens 2 Familienmitglieder und 50 Artikel erfassen und auf der Karte 2 Routen pro Woche planen. Ein Premium-Code hebt das auf unbegrenzt, bringt eine herunterladbare Offline-Karte und die erweiterte Wissensbasis. Mit einem Konto läuft die kostenlose Version auf 1 Gerät, Premium auf 2.</p>
 <nav class="tartalom" aria-label="Inhalt"><b>Inhalt</b><ol>
 <li><a href="#f1">Startbildschirm</a></li>
 <li><a href="#f2">Haushalt</a></li>
@@ -170,6 +207,13 @@
 <li><a href="#f26">Wenn eine Berechtigung fehlt</a></li>
 <li><a href="#f27">Feedback senden</a></li>
 <li><a href="#f28">Vermögen</a></li>
+<li><a href="#f29">Dokumentenmappe</a></li>
+<li><a href="#f30">Token-Wallet</a></li>
+<li><a href="#f31">Community-Forum</a></li>
+<li><a href="#f32">Leseplan und Wecker</a></li>
+<li><a href="#f33">Offline-Karte herunterladen</a></li>
+<li><a href="#f34">Meine Geräte</a></li>
+<li><a href="#f35">Luftdruck und Wetterschätzung</a></li>
 </ol></nav>
 <section class="lap" id="f1"><h2><span class="sz">1.</span>Startbildschirm</h2>
 <p class="hol"><b>Wo:</b> die Taste ganz links im unteren Menü, <b>Start</b>.</p>
@@ -334,10 +378,67 @@
 <div class="kepek"><figure><img src="/de/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Feedback senden" loading="lazy" width="480"></figure><figure><img src="/de/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Feedback senden" loading="lazy" width="480"></figure><figure><img src="/de/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Feedback senden" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f28"><h2><span class="sz">28.</span>Vermögen</h2>
 <p class="hol"><b>Wo:</b> Start &gt; Kachel <b>Vermögen</b>.</p>
-<p>Vermögen ist ein eigenes Produkt. In der App kannst du es kostenlos und mit Premium mit bis zu 10 Einträgen ausprobieren, für die volle Nutzung musst du es separat bei Google Play oder im App Store kaufen. Wenn du es kaufst, funktioniert es auch in PrepperPapa vollwertig.</p></section>
+<p>Vermögen ist ein eigenes Produkt. In der App kannst du es sowohl kostenlos als auch mit Premium mit bis zu 10 eigenen Einträgen und 1 Konto ausprobieren, für die volle Nutzung musst du es separat bei Google Play oder im App Store kaufen. Wenn du es kaufst, funktioniert es auch in PrepperPapa voll.</p></section>
+<section class="lap" id="f29"><h2><span class="sz">29.</span>Dokumentenmappe</h2>
+<p class="hol"><b>Wo:</b> Start &gt; Kachel <b>Dokumentenmappe</b>.</p>
+<p><b>Das kann es:</b> ein PIN-geschützter Speicher für Fotos oder PDFs deiner Dokumente (Personalausweis, Führerschein, Krankenversicherungskarte, Versicherung, Fahrzeugschein) und für handgezeichnete Notizen. Kostenlos.</p>
+<ol><li>Lege beim ersten Mal eine sechsstellige PIN fest und gib sie noch einmal ein.</li><li>Gib unter <b>Neues Dokument</b> an, wem es gehört: einer Person, einem Tier oder einem Fahrzeug. Wenn du nichts angibst, wird es als gemeinsam gespeichert.</li><li>Mit der Taste <b>Datei auswählen und speichern</b> legst du ein Foto oder PDF ab, mit <b>Notiz zeichnen</b> kannst du mit dem Finger schreiben oder zeichnen.</li><li>Mit der Taste <b>Sperren</b> schließt du sofort ab.</li></ol>
+<p class="tipp"><b>Tipp:</b> Die Dokumente liegen nur auf diesem Handy, verschlüsselt mit einem aus deiner PIN gebildeten Schlüssel, und sie gehören auch nicht zur vollständigen Sicherung. Schalte den Fingerabdruck ein und bewahre den Wiederherstellungscode auf: Wenn du die PIN vergisst, kannst du damit eine neue festlegen.</p>
+<div class="kepek egy"><figure><img src="/de/utmutato/kepek/40-irattarca.jpg" alt="Dokumentenmappe" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f30"><h2><span class="sz">30.</span>Token-Wallet</h2>
+<p class="hol"><b>Wo:</b> Start &gt; Kachel <b>Token-Wallet</b>. Dieselbe PIN öffnet sie wie die Dokumentenmappe.</p>
+<p><b>Das kann es:</b> Es hat zwei Reiter. <b>Gira</b> ist die Verrechnung innerhalb einer kleinen Gemeinschaft (geleistete Arbeit, verkaufte Eier, ein geliehenes Werkzeug), mit QR-Codes, auch ohne Internet. Im Reiter <b>Geheime Codes</b> kannst du Passwörter und Wiederherstellungscodes verschlüsselt aufbewahren. Es ist keine Bank und keine Kryptowährung. Kostenlos.</p>
+<ol><li>Bezahlen: Der andere zeigt seinen Identitäts-QR, du scannst ihn.</li><li>Du gibst den Betrag und den Zweck ein, dann <b>Zahlung vorbereiten</b>: Dein Handy signiert und zeigt einen QR.</li><li>Er scannt diesen QR, und bei ihm wird der Betrag gutgeschrieben.</li><li>Geld anfordern kannst du mit der Taste <b>Gira anfordern</b>: Du gibst ein, wie viel und wofür, er scannt es, und er muss es nur noch bestätigen.</li></ol>
+<p class="tipp"><b>Tipp:</b> Die Geheimen Codes gehören nie zur vollständigen Sicherung, bewahre deshalb von wichtigen Wiederherstellungscodes auch eine Papierkopie auf.</p>
+<div class="kepek egy"><figure><img src="/de/utmutato/kepek/41-token-tarca.jpg" alt="Token-Wallet" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f31"><h2><span class="sz">31.</span>Community-Forum</h2>
+<p class="hol"><b>Wo:</b> Start &gt; Kachel <b>Sammelpunkt</b>.</p>
+<p><b>Das kann es:</b> Es öffnet im Browser das PrepperPapa-Community-Forum (Gyülekező, forum.prepperpapa.hu). Dort kannst du Fragen stellen und Erfahrungen mit anderen Nutzern austauschen. Dafür braucht es Internet.</p></section>
+<section class="lap" id="f32"><h2><span class="sz">32.</span>Leseplan und Wecker</h2>
+<p class="hol"><b>Wo:</b> Bibel &gt; <b>Leseplan</b>.</p>
+<p><b>Das kann es:</b> Es teilt die Bibel in tägliche oder wöchentliche Portionen und merkt sich, wo du stehst. Du kannst aus acht Plänen wählen: die ganze Bibel in einem Jahr (in der Reihenfolge der Bücher oder in der zeitlichen Abfolge der Ereignisse), auch in wöchentlicher Aufteilung, die ganze Bibel in 90 Tagen, das Neue Testament in 90 Tagen, die Evangelien in 30 Tagen sowie die Psalmen und Sprüche in 60 Tagen.</p>
+<ol><li>Tippe auf einen Plan und starte ihn.</li><li>Es zeigt dir täglich die heutige Lesung. Wenn du sie gelesen hast, drücke auf <b>Gelesen</b>.</li><li>Du kannst mehrere Pläne gleichzeitig lesen, bei jedem merkt es sich getrennt, wo du stehst.</li><li><b>Wecker:</b> Lege die Uhrzeit und die Tage fest. Am Morgen weckt er das Handy und liest die heutige Lesung des Plans vor.</li></ol>
+<p class="tipp"><b>Tipp:</b> Der Wecker funktioniert in der Android-App. Im Browser und auf dem iPhone bleibt deine Einstellung erhalten, aber die Webseite kann ein gesperrtes Handy nicht wecken.</p>
+<div class="kepek egy"><figure><img src="/de/utmutato/kepek/42-olvasasi-terv.jpg" alt="Leseplan und Wecker" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f33"><h2><span class="sz">33.</span>Offline-Karte herunterladen</h2>
+<p class="hol"><b>Wo:</b> Karte &gt; die Funktionstaste &gt; Gruppe <b>Offline-Karte</b>. Premium.</p>
+<p><b>Das kann es:</b> Du lädst die Karte auf dein Handy und siehst auch ohne Internet und Empfang, wo du bist. Ungarn kannst du in 11 Regionen herunterladen, die anderen Länder ganz oder provinzweise.</p>
+<ol><li>Wähle die Region aus, oder öffne die Liste <b>Karten anderer Länder</b> und tippe auf das Land.</li><li>Bei jeder Zeile gibt es drei getrennte Downloads: <b>Basiskarte</b>, <b>Wanderwege</b>, <b>Wanderpunkte</b>. Neben jedem siehst du die Größe.</li><li>Bei einem großen Land lade nicht alles herunter, sondern nur die Provinz, in die du fährst: Sie ist kleiner und bleibt detaillierter.</li><li>Was du nicht mehr brauchst, kannst du zeilenweise löschen, und der Speicherplatz wird frei.</li></ol>
+<p class="tipp"><b>Tipp:</b> Lade die Karte vor der Abfahrt über WLAN herunter. Unterwegs fällt der Empfang oft genau dort aus, wo du die Karte brauchst.</p></section>
+<section class="lap" id="f34"><h2><span class="sz">34.</span>Meine Geräte</h2>
+<p class="hol"><b>Wo:</b> Einstellungen &gt; <b>Meine Geräte</b>.</p>
+<p><b>Das kann es:</b> Es zeigt, auf welchen deiner Geräte dein Konto funktioniert. Premium läuft auf 2 Geräten gleichzeitig, das kostenlose Konto auf 1 Gerät.</p>
+<ol><li>In der Liste siehst du die Namen der Geräte und wann sie sich zuletzt gemeldet haben. Das aktuelle ist mit „dieses Gerät“ markiert.</li><li>Bei einem, das du nicht mehr brauchst, drücke die Taste <b>Trennen</b> und zur Bestätigung noch einmal. Sein Platz wird frei.</li><li>Trennen kannst du einmal in 30 Tagen.</li></ol>
+<p class="tipp"><b>Tipp:</b> Für die Liste brauchst du Internet und eine Anmeldung. Der Rest der App, vom Vorrat bis zur Karte, funktioniert auf jedem Gerät.</p>
+<div class="kepek egy"><figure><img src="/de/utmutato/kepek/43-keszulekeim.jpg" alt="Meine Geräte" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f35"><h2><span class="sz">35.</span>Luftdruck und Wetterschätzung</h2>
+<p class="hol"><b>Wo:</b> Start &gt; <b>Kompass</b>, auf der Luftdruck-Karte. Sie erscheint nur auf einem Handy mit Luftdrucksensor.</p>
+<p><b>Das kann es:</b> Es zeigt den Luftdruck und seine Änderung in den letzten Stunden mit einem Pfeil an und schätzt mit einem kleinen Bild, welches Wetter kommt (sonnig, wechselhaft, Regen, Sturm). Wenn der Druck schnell fällt, gibt es eine Sturmwarnung.</p>
+<ol><li>Öffne den Kompass: Dort misst es dauernd.</li><li>Sonst misst die App einmal pro Viertelstunde, das schont den Akku, und die letzten 48 Stunden sind gespeichert.</li></ol>
+<p class="tipp"><b>Tipp:</b> Das ist eine Schätzung, keine Wettervorhersage. Im Auto sieht auch eine Höhenänderung wie eine Druckänderung aus, deshalb kann die Warnung beim Fahren falsch sein.</p></section>
 <section class="lap"><h2>Wenn du nicht weiterkommst</h2>
 <p>Schreib uns aus der App: das Sprechblasen-Symbol in der oberen Leiste oder die Taste „Feedback senden“ auf der Seite Über mich. Schreib, was du gemacht hast, was du gesehen hast und auf welchem Handy.</p></section>
-
+<script>
+(function(){
+  // guide slideshow: auto-advance with a progress bar, tap/click the phone to pause or resume, a bar jumps to a slide
+  var d=document.querySelector('.utmdemo'); if(!d) return;
+  var kepek=d.querySelectorAll('.kepdoboz img'), fel=d.querySelectorAll('.felirat'), sav=d.querySelectorAll('.savok button');
+  var akt=0, IDO=5000, t=null, all=false, csendes=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  d.style.setProperty('--ido', IDO+'ms');
+  function mutat(i){ akt=(i+kepek.length)%kepek.length;
+    for(var j=0;j<kepek.length;j++){ kepek[j].classList.toggle('akt',j===akt); fel[j].classList.toggle('akt',j===akt);
+      sav[j].classList.remove('akt'); sav[j].classList.toggle('volt',j<akt); }
+    void sav[akt].offsetWidth; sav[akt].classList.add('akt');
+    var k=kepek[(akt+1)%kepek.length]; if(k.loading==='lazy') k.loading='eager';
+    idozit(); }
+  function idozit(){ clearTimeout(t); if(!all && !csendes) t=setTimeout(function(){mutat(akt+1);},IDO); }
+  for(var i=0;i<sav.length;i++){(function(i){ sav[i].onclick=function(){ mutat(i); }; })(i);}
+  d.querySelector('.tel').onclick=function(){ all=!all; d.classList.toggle('all',all); if(all) clearTimeout(t); else mutat(akt+1); };
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ if(!all) idozit(); } else clearTimeout(t); }); },{threshold:.4}).observe(d); }
+  mutat(0);
+})();
+</script>
 </main>
 <footer><div>PrepperPapa &middot; Bedienungsanleitung &middot; <a href="/de/adatkezeles.html">Datenschutz</a></div></footer>
 <script>

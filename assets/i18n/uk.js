@@ -3038,6 +3038,7 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Biblia: itt a könyvek rácsa és a keresés. A teljes szöveg egyszer letöltendő, utána internet nélkül is olvasható.": "Біблія: тут сітка книг і пошук. Повний текст завантажується один раз, потім його можна читати без інтернету.",
   "Imák: mindig elérhetők, letöltés nélkül is. Koppints egy címre, és olvasd.": "Молитви: завжди доступні, навіть без завантаження. Торкніться назви й читайте.",
   "Vészhelyzeti igék és próféciák: válogatott szakaszok, egy koppintással.": "Вірші на випадок біди та пророцтва: вибрані уривки, одним дотиком.",
+  "Az app bibliaolvasót tartalmaz. A lelki felkészültség rész keresztény szemszögből készült.": "Застосунок містить читанку Біблії. Розділ про духовну підготовку написано з християнської точки зору.",
   "Tartsd nyomva egy verset: keresés, kiemelés, kommentár, könyvjelző és megosztás. Amit így jelölsz, a Kiemeléseim és a Kommentárjaim alatt visszatalálod.": "Натисніть і утримуйте вірш: пошук, виділення, коментар, закладка й надсилання. Усе, що так позначите, знайдете в «Мої виділення» та «Мої коментарі».",
   "Beállítások: a felolvasó hang, a letöltés internet nélküli felolvasáshoz, és a kereszthivatkozások bekapcsolása.": "Налаштування: голос читання, завантаження для читання без інтернету та увімкнення перехресних посилань.",
 });
@@ -3780,6 +3781,7 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Apokrifek ↓": "Апокрифи ↓",
   "Apokrif könyvek letöltése": "Завантажити апокрифічні книги",
   "Deuterokanonikus könyvek": "Второканонічні книги",
+  "Ószövetségi apokrifek": "Старозавітні апокрифи",
   "További ószövetségi apokrifek": "Інші старозавітні апокрифи",
   "Pszeudepigráfák": "Псевдоепіграфи",
   "Apostoli atyák": "Апостольські мужі",
@@ -4049,5 +4051,19 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
  "ennek a telefonnak a memóriáját nem sikerült lekérdezni": "не вдалося дізнатися пам’ять цього телефона",
  "Processzor:": "Процесор:",
  "kb. 8 GB-os telefon kell": "потрібен телефон приблизно на 8 ГБ",
- "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "Для цього потрібен телефон з Android 11 або новішим, приблизно 8 ГБ (номінальної) пам’яті та 6-8 ГБ вільного місця."
+ "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "Для цього потрібен телефон з Android 11 або новішим, приблизно 8 ГБ (номінальної) пам’яті та 6-8 ГБ вільного місця.",
+  "Becslés a légnyomás-trendből (Zambretti-módszer), a félgömb és az évszak szerint igazítva. Szelet és felhőzetet nem lát, ezért csak tájékoztató.": "Оцінка за трендом атмосферного тиску (метод Замбретті) з поправкою на півкулю та пору року. Вітру й хмар вона не бачить, тому має лише орієнтовний характер.",
+  "Magasság nélkül csak a trendet veszi figyelembe, a nyomás szintjét nem.": "Без висоти враховується лише тренд, а не рівень тиску.",
+  "A trópusokon a légnyomás napi ingadozása elfedi a frontokat, ezért itt a becslés kevésbé megbízható.": "У тропіках добові коливання тиску маскують фронти, тому тут оцінка менш надійна.",
+  "A sarkvidéken a módszer kevésbé megbízható.": "У полярних районах метод менш надійний.",
+  "Becslés": "Оцінка",
+  "Napos, nyugodt idő": "Сонячно, спокійно",
+  "Változékony idő": "Мінлива погода",
+  "Eső valószínű": "Імовірний дощ",
+  "Vihar, sok eső": "Шторм, сильний дощ",
+  "Gyorsan emelkedik": "Швидко зростає",
+  "Lassan emelkedik": "Повільно зростає",
+  "Állandó": "Стабільно",
+  "Lassan süllyed": "Повільно падає",
+  "Gyorsan süllyed": "Швидко падає"
 });

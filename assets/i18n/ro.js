@@ -2960,6 +2960,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Biblia: itt a könyvek rácsa és a keresés. A teljes szöveg egyszer letöltendő, utána internet nélkül is olvasható.": "Biblia: aici sunt grila cărților și căutarea. Textul complet se descarcă o dată, apoi se poate citi și fără internet.",
   "Imák: mindig elérhetők, letöltés nélkül is. Koppints egy címre, és olvasd.": "Rugăciuni: mereu disponibile, chiar și fără descărcare. Atinge un titlu și citește.",
   "Vészhelyzeti igék és próféciák: válogatott szakaszok, egy koppintással.": "Versete pentru situații de urgență și profeții: pasaje alese, la o atingere.",
+  "Az app bibliaolvasót tartalmaz. A lelki felkészültség rész keresztény szemszögből készült.": "Aplicația conține un cititor de Biblie. Secțiunea despre pregătirea spirituală este scrisă dintr-o perspectivă creștină.",
   "Tartsd nyomva egy verset: keresés, kiemelés, kommentár, könyvjelző és megosztás. Amit így jelölsz, a Kiemeléseim és a Kommentárjaim alatt visszatalálod.": "Ține apăsat un verset: căutare, evidențiere, comentariu, semn de carte și distribuire. Ce marchezi așa găsești la Evidențierile mele și Comentariile mele.",
   "Beállítások: a felolvasó hang, a letöltés internet nélküli felolvasáshoz, és a kereszthivatkozások bekapcsolása.": "Setări: vocea de citire, descărcarea pentru citire fără internet și activarea trimiterilor.",
 });
@@ -3714,6 +3715,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Apokrifek ↓": "Apocrife ↓",
   "Apokrif könyvek letöltése": "Descarcă cărțile apocrife",
   "Deuterokanonikus könyvek": "Cărți deuterocanonice",
+  "Ószövetségi apokrifek": "Apocrife ale Vechiului Testament",
   "További ószövetségi apokrifek": "Alte apocrife ale Vechiului Testament",
   "Pszeudepigráfák": "Pseudepigrafe",
   "Apostoli atyák": "Părinții apostolici",
@@ -3981,5 +3983,19 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "ennek a telefonnak a memóriáját nem sikerült lekérdezni": "memoria acestui telefon nu a putut fi citită",
  "Processzor:": "Procesor:",
  "kb. 8 GB-os telefon kell": "e nevoie de un telefon de aproximativ 8 GB",
- "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "Pentru aceasta e nevoie de un telefon cu Android 11 sau mai nou, aproximativ 8 GB de memorie (nominală) și 6-8 GB spațiu liber."
+ "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "Pentru aceasta e nevoie de un telefon cu Android 11 sau mai nou, aproximativ 8 GB de memorie (nominală) și 6-8 GB spațiu liber.",
+  "Becslés a légnyomás-trendből (Zambretti-módszer), a félgömb és az évszak szerint igazítva. Szelet és felhőzetet nem lát, ezért csak tájékoztató.": "Estimare din tendința presiunii atmosferice (metoda Zambretti), ajustată după emisferă și anotimp. Nu vede vântul și norii, deci are doar rol orientativ.",
+  "Magasság nélkül csak a trendet veszi figyelembe, a nyomás szintjét nem.": "Fără altitudine ia în calcul doar tendința, nu nivelul presiunii.",
+  "A trópusokon a légnyomás napi ingadozása elfedi a frontokat, ezért itt a becslés kevésbé megbízható.": "La tropice oscilația zilnică a presiunii ascunde fronturile, de aceea aici estimarea este mai puțin sigură.",
+  "A sarkvidéken a módszer kevésbé megbízható.": "În regiunile polare metoda este mai puțin sigură.",
+  "Becslés": "Estimare",
+  "Napos, nyugodt idő": "Însorit, stabil",
+  "Változékony idő": "Schimbător",
+  "Eső valószínű": "Ploaie probabilă",
+  "Vihar, sok eső": "Furtună, multă ploaie",
+  "Gyorsan emelkedik": "Crește rapid",
+  "Lassan emelkedik": "Crește lent",
+  "Állandó": "Constantă",
+  "Lassan süllyed": "Scade lent",
+  "Gyorsan süllyed": "Scade rapid"
 });
