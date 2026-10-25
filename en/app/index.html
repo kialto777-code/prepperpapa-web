@@ -236,6 +236,12 @@
     .tabla td{width:auto}
     .tabla tr.csop th{font-size:11px;padding:8px 6px}
   }
+  .partner{display:block;min-height:auto}
+  .partner .in{padding-top:40px;padding-bottom:40px}
+  .pfeltetel{margin:14px 0 16px 20px;padding:0;font-size:17px;color:#cfd6cf;max-width:720px}
+  .pfeltetel li{margin-bottom:6px}
+  .pjel{font-size:17px;margin:0}.pjel a{color:var(--borostyan)}
+  @media (max-width:560px){.pfeltetel,.pjel{font-size:15px}.partner .in{padding-top:28px;padding-bottom:28px}}
   .csakmobil{display:none}
   @media (max-width:560px){.csakmobil{display:block}}
   .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
@@ -442,8 +448,23 @@
 <p class="halk rv csakmobil">The Asset Manager is a separate product with its own page.</p>
 <p class="halk rv vk">“As in your version” means the Asset Manager add-on does not change this row: it works as in the free or the premium version, whichever you have.</p>
 <p class="halk rv">What is free stays free, and no feature stops working if you do not buy a code.</p>
-<div class="kieg rv"><div class="kicsi">Add-on</div><h3>Asset Manager</h3>
+<div class="kieg rv vk"><div class="kicsi">Add-on</div><h3>Asset Manager</h3>
 <p>A separate product, coming soon to Google Play and the App Store. In the app you can try it with up to 10 own items and 1 account, on both the free and the premium version. Full use requires the separate Asset Manager, and once you buy it, it also works fully inside PrepperPapa.</p></div>
+</div></section>
+
+<!-- PARTNERPROGRAM (Boss 2026-10-25 13:39): terms decided on cards 43a80047 / 9d1dd46d. GoAffPro is not live yet
+     (registration blocked), so applications go by e-mail; the GoAffPro sign-up link replaces the mailto later. -->
+<section class="sec partner" id="partners"><div class="in rv">
+<div class="kicsi">Partner program</div>
+<h2 class="nagy" style="font-size:clamp(28px,5vw,40px)">Recommend PrepperPapa.</h2>
+<ul class="pfeltetel">
+<li><b>20% commission</b> on the premium purchases you bring.</li>
+<li>With your coupon code the buyer gets <b>5% off</b>.</li>
+<li><b>30-day cookie:</b> a purchase counts as yours for 30 days after someone clicks your link.</li>
+<li>Payout <b>after 30 days, against an invoice</b>.</li>
+<li>For now <b>for companies and sole traders</b> only.</li>
+</ul>
+<p class="pjel">Apply: <a href="mailto:prepperpapa@gmail.com?subject=Partnerprogram">prepperpapa@gmail.com</a>, with the subject “Partnerprogram”.</p>
 </div></section>
 
 <section class="sec letolt" id="letoltes"><div class="in rv">
@@ -523,7 +544,7 @@
 </script>
 </main>
 <footer><div>PrepperPapa &middot; Common-sense preparedness for real life &middot; <a href="/en/privacy.html">Privacy</a></div></footer>
-<script>(function(){var m={"videok": "videos", "tudastar": "knowledge-base", "kapcsolat": "contact", "bemutato": "tour", "vasarlas": "buy", "ertesito": "notifications", "osszevetes": "comparison"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>(function(){var m={"videok": "videos", "tudastar": "knowledge-base", "kapcsolat": "contact", "bemutato": "tour", "vasarlas": "buy", "ertesito": "notifications", "osszevetes": "comparison", "partnerprogram": "partners"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
   if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});

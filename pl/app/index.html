@@ -236,6 +236,12 @@
     .tabla td{width:auto}
     .tabla tr.csop th{font-size:11px;padding:8px 6px}
   }
+  .partner{display:block;min-height:auto}
+  .partner .in{padding-top:40px;padding-bottom:40px}
+  .pfeltetel{margin:14px 0 16px 20px;padding:0;font-size:17px;color:#cfd6cf;max-width:720px}
+  .pfeltetel li{margin-bottom:6px}
+  .pjel{font-size:17px;margin:0}.pjel a{color:var(--borostyan)}
+  @media (max-width:560px){.pfeltetel,.pjel{font-size:15px}.partner .in{padding-top:28px;padding-bottom:28px}}
   .csakmobil{display:none}
   @media (max-width:560px){.csakmobil{display:block}}
   .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
@@ -442,8 +448,23 @@
 <p class="halk rv csakmobil">Majątek to osobny produkt z własną stroną.</p>
 <p class="halk rv vk">„Zależnie od wersji” oznacza, że dodatek Majątek niczego tu nie zmienia: działa tak jak w wersji darmowej lub premium, którą masz.</p>
 <p class="halk rv">To, co jest darmowe, pozostanie darmowe, a żadna funkcja nie przestanie działać, jeśli nie kupisz kodu.</p>
-<div class="kieg rv"><div class="kicsi">Dodatek</div><h3>Majątek</h3>
+<div class="kieg rv vk"><div class="kicsi">Dodatek</div><h3>Majątek</h3>
 <p>Osobny produkt, wkrótce w sklepie Google Play i w App Store. W aplikacji możesz go wypróbować, zarówno w wersji darmowej, jak i z premium, do 10 własnych pozycji i 1 rachunku. Do pełnego korzystania potrzebny jest osobny Majątek, a jeśli go kupisz, działa w pełni także w PrepperPapie.</p></div>
+</div></section>
+
+<!-- PARTNERPROGRAM (Boss 2026-10-25 13:39): terms decided on cards 43a80047 / 9d1dd46d. GoAffPro is not live yet
+     (registration blocked), so applications go by e-mail; the GoAffPro sign-up link replaces the mailto later. -->
+<section class="sec partner" id="program-partnerski"><div class="in rv">
+<div class="kicsi">Program partnerski</div>
+<h2 class="nagy" style="font-size:clamp(28px,5vw,40px)">Polecaj PrepperPapę.</h2>
+<ul class="pfeltetel">
+<li><b>20% prowizji</b> od zakupów premium, które przyprowadzisz.</li>
+<li>Z twoim kodem kuponu kupujący dostaje <b>5% rabatu</b>.</li>
+<li><b>30-dniowe cookie:</b> przez 30 dni od kliknięcia twojego linku zakup liczymy tobie.</li>
+<li>Wypłata <b>po 30 dniach, na podstawie faktury</b>.</li>
+<li>Na razie tylko <b>dla firm i jednoosobowych działalności</b>.</li>
+</ul>
+<p class="pjel">Zgłoszenia: <a href="mailto:prepperpapa@gmail.com?subject=Partnerprogram">prepperpapa@gmail.com</a>, w temacie „Partnerprogram”.</p>
 </div></section>
 
 <section class="sec letolt" id="letoltes"><div class="in rv">
@@ -523,7 +544,7 @@
 </script>
 </main>
 <footer><div>PrepperPapa &middot; Przygotowanie z rozsądkiem, na prawdziwe życie &middot; <a href="/pl/prywatnosc.html">Ochrona danych</a></div></footer>
-<script>(function(){var m={"videok": "filmy", "tudastar": "wiedza", "kapcsolat": "kontakt", "bemutato": "prezentacja", "vasarlas": "zakup", "ertesito": "powiadomienia", "osszevetes": "porownanie"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>(function(){var m={"videok": "filmy", "tudastar": "wiedza", "kapcsolat": "kontakt", "bemutato": "prezentacja", "vasarlas": "zakup", "ertesito": "powiadomienia", "osszevetes": "porownanie", "partnerprogram": "program-partnerski"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
   if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});

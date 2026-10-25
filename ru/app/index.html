@@ -236,6 +236,12 @@
     .tabla td{width:auto}
     .tabla tr.csop th{font-size:11px;padding:8px 6px}
   }
+  .partner{display:block;min-height:auto}
+  .partner .in{padding-top:40px;padding-bottom:40px}
+  .pfeltetel{margin:14px 0 16px 20px;padding:0;font-size:17px;color:#cfd6cf;max-width:720px}
+  .pfeltetel li{margin-bottom:6px}
+  .pjel{font-size:17px;margin:0}.pjel a{color:var(--borostyan)}
+  @media (max-width:560px){.pfeltetel,.pjel{font-size:15px}.partner .in{padding-top:28px;padding-bottom:28px}}
   .csakmobil{display:none}
   @media (max-width:560px){.csakmobil{display:block}}
   .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
@@ -442,8 +448,23 @@
 <p class="halk rv csakmobil">«Имущество» — отдельный продукт со своей страницей.</p>
 <p class="halk rv vk">«Как в твоей версии» означает, что дополнение «Имущество» здесь ничего не меняет: всё работает так, как в твоей версии, бесплатной или премиум.</p>
 <p class="halk rv">Что бесплатно, то и останется бесплатным, и ни одна функция не перестанет работать, если ты не купишь код.</p>
-<div class="kieg rv"><div class="kicsi">Дополнение</div><h3>Имущество</h3>
+<div class="kieg rv vk"><div class="kicsi">Дополнение</div><h3>Имущество</h3>
 <p>Отдельный продукт, скоро в Google Play и в App Store. В приложении его можно попробовать, и бесплатно, и с премиумом, до 10 собственных позиций и 1 счёта. Для полноценного использования нужен отдельный «Имущество», а если ты его купишь, он полноценно работает и в PrepperPapa.</p></div>
+</div></section>
+
+<!-- PARTNERPROGRAM (Boss 2026-10-25 13:39): terms decided on cards 43a80047 / 9d1dd46d. GoAffPro is not live yet
+     (registration blocked), so applications go by e-mail; the GoAffPro sign-up link replaces the mailto later. -->
+<section class="sec partner" id="partnyory"><div class="in rv">
+<div class="kicsi">Партнёрская программа</div>
+<h2 class="nagy" style="font-size:clamp(28px,5vw,40px)">Рекомендуй PrepperPapa.</h2>
+<ul class="pfeltetel">
+<li><b>20% комиссии</b> с премиум-покупок, которые ты приводишь.</li>
+<li>По твоему купону покупатель получает <b>скидку 5%</b>.</li>
+<li><b>Cookie на 30 дней:</b> после клика по твоей ссылке покупка засчитывается тебе 30 дней.</li>
+<li>Выплата <b>через 30 дней, по счёту</b>.</li>
+<li>Пока только <b>для компаний и индивидуальных предпринимателей</b>.</li>
+</ul>
+<p class="pjel">Заявка: <a href="mailto:prepperpapa@gmail.com?subject=Partnerprogram">prepperpapa@gmail.com</a>, тема письма «Partnerprogram».</p>
 </div></section>
 
 <section class="sec letolt" id="letoltes"><div class="in rv">
@@ -523,7 +544,7 @@
 </script>
 </main>
 <footer><div>PrepperPapa &middot; Подготовка со здравым смыслом, для реальной жизни &middot; <a href="/ru/konfidentsialnost.html">Конфиденциальность</a></div></footer>
-<script>(function(){var m={"videok": "video", "tudastar": "znaniya", "kapcsolat": "kontakty", "bemutato": "obzor", "vasarlas": "pokupka", "ertesito": "uvedomleniya", "osszevetes": "sravnenie"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>(function(){var m={"videok": "video", "tudastar": "znaniya", "kapcsolat": "kontakty", "bemutato": "obzor", "vasarlas": "pokupka", "ertesito": "uvedomleniya", "osszevetes": "sravnenie", "partnerprogram": "partnyory"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
   if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});

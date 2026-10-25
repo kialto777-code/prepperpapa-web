@@ -236,6 +236,12 @@
     .tabla td{width:auto}
     .tabla tr.csop th{font-size:11px;padding:8px 6px}
   }
+  .partner{display:block;min-height:auto}
+  .partner .in{padding-top:40px;padding-bottom:40px}
+  .pfeltetel{margin:14px 0 16px 20px;padding:0;font-size:17px;color:#cfd6cf;max-width:720px}
+  .pfeltetel li{margin-bottom:6px}
+  .pjel{font-size:17px;margin:0}.pjel a{color:var(--borostyan)}
+  @media (max-width:560px){.pfeltetel,.pjel{font-size:15px}.partner .in{padding-top:28px;padding-bottom:28px}}
   .csakmobil{display:none}
   @media (max-width:560px){.csakmobil{display:block}}
   .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
@@ -442,8 +448,23 @@
 <p class="halk rv csakmobil">«Майно» — окремий продукт із власною сторінкою.</p>
 <p class="halk rv vk">«Як у твоїй версії» означає, що додаток «Майно» тут нічого не змінює: усе працює так, як у твоїй версії, безкоштовній або преміум.</p>
 <p class="halk rv">Те, що безкоштовне, безкоштовним і залишиться, і жодна функція не зупиниться, якщо ти не купиш код.</p>
-<div class="kieg rv"><div class="kicsi">Доповнення</div><h3>Майно</h3>
+<div class="kieg rv vk"><div class="kicsi">Доповнення</div><h3>Майно</h3>
 <p>Окремий продукт, незабаром у Google Play та в App Store. У застосунку його можна спробувати, і безкоштовно, і з преміумом, до 10 власних позицій та 1 рахунку. Для повноцінного користування потрібне окреме «Майно», а якщо ти його купиш, воно повноцінно працює і в PrepperPapa.</p></div>
+</div></section>
+
+<!-- PARTNERPROGRAM (Boss 2026-10-25 13:39): terms decided on cards 43a80047 / 9d1dd46d. GoAffPro is not live yet
+     (registration blocked), so applications go by e-mail; the GoAffPro sign-up link replaces the mailto later. -->
+<section class="sec partner" id="partnery"><div class="in rv">
+<div class="kicsi">Партнерська програма</div>
+<h2 class="nagy" style="font-size:clamp(28px,5vw,40px)">Рекомендуй PrepperPapa.</h2>
+<ul class="pfeltetel">
+<li><b>20% комісії</b> з преміум-покупок, які ти приводиш.</li>
+<li>За твоїм купоном покупець отримує <b>знижку 5%</b>.</li>
+<li><b>Cookie на 30 днів:</b> після кліку на твоє посилання покупка зараховується тобі 30 днів.</li>
+<li>Виплата <b>через 30 днів, за рахунком</b>.</li>
+<li>Поки що лише <b>для компаній і ФОП</b>.</li>
+</ul>
+<p class="pjel">Заявка: <a href="mailto:prepperpapa@gmail.com?subject=Partnerprogram">prepperpapa@gmail.com</a>, тема листа «Partnerprogram».</p>
 </div></section>
 
 <section class="sec letolt" id="letoltes"><div class="in rv">
@@ -523,7 +544,7 @@
 </script>
 </main>
 <footer><div>PrepperPapa &middot; Підготовка з тверезим розумом, для реального життя &middot; <a href="/uk/konfidentsiinist.html">Конфіденційність</a></div></footer>
-<script>(function(){var m={"videok": "video", "tudastar": "znannia", "kapcsolat": "kontakty", "bemutato": "ohliad", "vasarlas": "kupivlia", "ertesito": "spovishchennia", "osszevetes": "porivniannia"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>(function(){var m={"videok": "video", "tudastar": "znannia", "kapcsolat": "kontakty", "bemutato": "ohliad", "vasarlas": "kupivlia", "ertesito": "spovishchennia", "osszevetes": "porivniannia", "partnerprogram": "partnery"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
   if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
