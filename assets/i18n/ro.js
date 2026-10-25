@@ -2875,6 +2875,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Visszatöltés a mentett fájlból. A biztonsági másolatból akkor állíts vissza, ha egy mentés félresikerült.": "Restaurare din fișierul salvat. Din copia de siguranță restaurează atunci când o salvare a ieșit prost.",
   "Menüsor bemutatása: az alsó gombok súgója újra.": "Prezentarea barei de meniu: ajutorul butoanelor de jos din nou.",
   "Gyári visszaállítás mindent töröl a telefonról. Előtte ments.": "Revenirea la setările din fabrică șterge tot de pe telefon. Salvează înainte.",
+  "Ha az app sötét vagy üres marad: engedélyezd a vírusirtóban (például Avast), vagy használd a böngészős változatot. A Play-áruházban vásárolt prémium árát 48 órán belül visszakérheted.": "Dacă aplicația rămâne întunecată sau goală: permite-o în antivirus (de exemplu Avast) sau folosește versiunea din browser. Pentru premiumul cumpărat din Google Play poți cere rambursarea în 48 de ore.",
   "Itt minden modul listában is elérhető, ugyanoda visz, mint a kezdőlap csempéi.": "Aici fiecare modul este disponibil și în listă, duce în același loc ca plăcile paginii de start.",
   "Add meg, mi az, mennyi, és mennyit nyom: ebből számol a készlet és a Mit vigyek.": "Dă ce este, cât și cât cântărește: de aici se calculează rezervele și Ce să iau.",
   "A lejárathoz elég egy gyors gomb: +6 hónap, +1 év. A színe magától változik, ahogy közeledik.": "Pentru expirare ajunge un buton rapid: +6 luni, +1 an. Culoarea se schimbă singură pe măsură ce se apropie.",
@@ -2988,6 +2989,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
 Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Olvasási terv": "Plan de citire",
   "Válassz egy tervet. A haladásodat a telefon megjegyzi, és mutatja, hol tartasz.": "Alege un plan. Telefonul îți reține progresul și arată unde ai ajuns.",
+  "Válassz egy tervet. Több tervet is olvashatsz egyszerre, mindegyiknél külön megmarad, hol tartasz.": "Alege un plan. Poți citi mai multe planuri în același timp; fiecare își păstrează separat locul unde ai ajuns.",
   "Teljes Biblia egy év alatt": "Toată Biblia într-un an",
   "Az elejétől a végéig, a könyvek sorrendjében.": "De la început până la sfârșit, în ordinea cărților.",
   "Kronologikus Biblia egy év alatt": "Biblia cronologic într-un an",
@@ -3998,4 +4000,34 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Állandó": "Constantă",
   "Lassan süllyed": "Scade lent",
   "Gyorsan süllyed": "Scade rapid"
+});
+// Vercsoport calculator (2026-10-25, card 6b4458db): the red-cell table of tudastar article 3.6
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Vércsoport": "Grupa sanguină",
+ "Kinek adhatsz vért, és kitől kaphatsz": "Cui poți da sânge și de la cine poți primi",
+ "Vércsoport: kinek adhatsz, kitől kaphatsz": "Grupa sanguină: cui poți da, de la cine poți primi",
+ "Vérátömlesztést csak egészségügyi személyzet végez, vércsoport-meghatározás és keresztpróba után.": "Transfuzia de sânge o face doar personalul medical, după determinarea grupei sanguine și proba de compatibilitate.",
+ "Terepen vért adni vagy kapni nem szabad. Ezt nem lehet rögtönözni.": "Pe teren nu ai voie să dai sau să primești sânge. Asta nu se poate improviza.",
+ "A kalkulátor tájékoztató: arra való, hogy értsd a szabályt, nem arra, hogy terepen dönts belőle.": "Calculatorul este informativ: te ajută să înțelegi regula, nu să decizi pe baza lui pe teren.",
+ "A te vércsoportod": "Grupa ta sanguină",
+ "Válaszd ki": "Alege",
+ "Mutasd": "Arată",
+ "Források: Magyar Vöröskereszt, Ausztrál Vöröskereszt (Lifeblood), Amerikai Vöröskereszt.": "Surse: Crucea Roșie Maghiară, Crucea Roșie Australiană (Lifeblood), Crucea Roșie Americană.",
+ "Válaszd ki a vércsoportodat.": "Alege-ți grupa sanguină.",
+ "Kinek adhatsz vörösvérsejtet": "Cui poți da globule roșii",
+ "Kitől kaphatsz vörösvérsejtet": "De la cine poți primi globule roșii",
+ "Mind a nyolc vércsoportnak": "Tuturor celor opt grupe sanguine",
+ "Mind a nyolc vércsoporttól": "De la toate cele opt grupe sanguine",
+ "A 0 Rh-negatív vörösvérsejt bárkinek adható, ezért hívják univerzális vörösvérsejt-adónak.": "Globulele roșii 0 Rh negativ pot fi date oricui, de aceea grupa 0 Rh negativ se numește donator universal de globule roșii.",
+ "A plazmánál a szabály megfordul: az AB vércsoportú plazma bárkinek adható, a 0 vércsoportú csak 0 vércsoportúnak.": "La plasmă regula se inversează: plasma AB poate fi dată oricui, plasma 0 doar grupei 0.",
+ "Ez tájékoztató, nem döntési alap.": "Este informativ, nu o bază de decizie.",
+ "Hogy egy beteg milyen vért kap, azt vércsoport-meghatározás és keresztpróba után az ellátó orvos dönti el.": "Ce sânge primește un pacient decide medicul curant, după determinarea grupei și proba de compatibilitate.",
+ "0 Rh-negatív": "0 Rh negativ",
+ "0 Rh-pozitív": "0 Rh pozitiv",
+ "A Rh-negatív": "A Rh negativ",
+ "A Rh-pozitív": "A Rh pozitiv",
+ "B Rh-negatív": "B Rh negativ",
+ "B Rh-pozitív": "B Rh pozitiv",
+ "AB Rh-negatív": "AB Rh negativ",
+ "AB Rh-pozitív": "AB Rh pozitiv"
 });

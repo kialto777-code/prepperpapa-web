@@ -3207,6 +3207,7 @@ window.PP_FORD_SZOTAR.en = {
   "Visszatöltés a mentett fájlból. A biztonsági másolatból akkor állíts vissza, ha egy mentés félresikerült.": "Restoring from the saved file. Restore from the backup copy if a save went wrong.",
   "Menüsor bemutatása: az alsó gombok súgója újra.": "Menu bar tour: the help for the bottom buttons again.",
   "Gyári visszaállítás mindent töröl a telefonról. Előtte ments.": "Factory reset deletes everything from the phone. Save first.",
+  "Ha az app sötét vagy üres marad: engedélyezd a vírusirtóban (például Avast), vagy használd a böngészős változatot. A Play-áruházban vásárolt prémium árát 48 órán belül visszakérheted.": "If the app stays dark or empty: allow it in your antivirus (for example Avast), or use the browser version. A premium purchase made on Google Play can be refunded within 48 hours.",
   "Itt minden modul listában is elérhető, ugyanoda visz, mint a kezdőlap csempéi.": "Here every module is available in a list as well, it takes you to the same place as the tiles on the home page.",
   "Add meg, mi az, mennyi, és mennyit nyom: ebből számol a készlet és a Mit vigyek.": "Give what it is, how much, and how much it weighs: the stock and the What to take are calculated from this.",
   "A lejárathoz elég egy gyors gomb: +6 hónap, +1 év. A színe magától változik, ahogy közeledik.": "For the expiry a quick button is enough: +6 months, +1 year. Its colour changes by itself as it gets closer.",
@@ -3326,6 +3327,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
 Object.assign(window.PP_FORD_SZOTAR.en, {
   "Olvasási terv": "Reading plan",
   "Válassz egy tervet. A haladásodat a telefon megjegyzi, és mutatja, hol tartasz.": "Choose a plan. Your phone remembers your progress and shows where you are.",
+  "Válassz egy tervet. Több tervet is olvashatsz egyszerre, mindegyiknél külön megmarad, hol tartasz.": "Choose a plan. You can read several plans at once; each one keeps its own place.",
   "Teljes Biblia egy év alatt": "Whole Bible in a year",
   "Az elejétől a végéig, a könyvek sorrendjében.": "From beginning to end, in book order.",
   "Kronologikus Biblia egy év alatt": "Chronological Bible in a year",
@@ -4338,4 +4340,34 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Állandó": "Steady",
   "Lassan süllyed": "Falling slowly",
   "Gyorsan süllyed": "Falling fast"
+});
+// Vercsoport calculator (2026-10-25, card 6b4458db): the red-cell table of tudastar article 3.6
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Vércsoport": "Blood type",
+ "Kinek adhatsz vért, és kitől kaphatsz": "Who you can give blood to, and who you can receive it from",
+ "Vércsoport: kinek adhatsz, kitől kaphatsz": "Blood type: who you can give to, who you can receive from",
+ "Vérátömlesztést csak egészségügyi személyzet végez, vércsoport-meghatározás és keresztpróba után.": "Blood transfusions are given only by medical staff, after blood typing and cross-matching.",
+ "Terepen vért adni vagy kapni nem szabad. Ezt nem lehet rögtönözni.": "Never give or receive blood in the field. This cannot be improvised.",
+ "A kalkulátor tájékoztató: arra való, hogy értsd a szabályt, nem arra, hogy terepen dönts belőle.": "This calculator is for information: it helps you understand the rule, not decide from it in the field.",
+ "A te vércsoportod": "Your blood type",
+ "Válaszd ki": "Choose",
+ "Mutasd": "Show",
+ "Források: Magyar Vöröskereszt, Ausztrál Vöröskereszt (Lifeblood), Amerikai Vöröskereszt.": "Sources: Hungarian Red Cross, Australian Red Cross Lifeblood, American Red Cross.",
+ "Válaszd ki a vércsoportodat.": "Choose your blood type.",
+ "Kinek adhatsz vörösvérsejtet": "Who you can give red cells to",
+ "Kitől kaphatsz vörösvérsejtet": "Who you can receive red cells from",
+ "Mind a nyolc vércsoportnak": "All eight blood types",
+ "Mind a nyolc vércsoporttól": "All eight blood types",
+ "A 0 Rh-negatív vörösvérsejt bárkinek adható, ezért hívják univerzális vörösvérsejt-adónak.": "O negative red cells can be given to anyone, which is why O negative is called the universal red cell donor.",
+ "A plazmánál a szabály megfordul: az AB vércsoportú plazma bárkinek adható, a 0 vércsoportú csak 0 vércsoportúnak.": "For plasma the rule is reversed: AB plasma can be given to anyone, O plasma only to group O.",
+ "Ez tájékoztató, nem döntési alap.": "This is for information, not a basis for decisions.",
+ "Hogy egy beteg milyen vért kap, azt vércsoport-meghatározás és keresztpróba után az ellátó orvos dönti el.": "Which blood a patient receives is decided by the treating doctor, after blood typing and cross-matching.",
+ "0 Rh-negatív": "O negative",
+ "0 Rh-pozitív": "O positive",
+ "A Rh-negatív": "A negative",
+ "A Rh-pozitív": "A positive",
+ "B Rh-negatív": "B negative",
+ "B Rh-pozitív": "B positive",
+ "AB Rh-negatív": "AB negative",
+ "AB Rh-pozitív": "AB positive"
 });

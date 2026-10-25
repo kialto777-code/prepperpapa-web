@@ -2877,6 +2877,7 @@ window.PP_FORD_SZOTAR.de = {
   "Visszatöltés a mentett fájlból. A biztonsági másolatból akkor állíts vissza, ha egy mentés félresikerült.": "Wiederherstellen aus der gespeicherten Datei. Aus der Sicherungskopie stelle wieder her, wenn eine Sicherung schiefgegangen ist.",
   "Menüsor bemutatása: az alsó gombok súgója újra.": "Menüleisten-Rundgang: die Hilfe für die unteren Tasten noch einmal.",
   "Gyári visszaállítás mindent töröl a telefonról. Előtte ments.": "Das Zurücksetzen auf Werkseinstellungen löscht alles vom Telefon. Sichere vorher.",
+  "Ha az app sötét vagy üres marad: engedélyezd a vírusirtóban (például Avast), vagy használd a böngészős változatot. A Play-áruházban vásárolt prémium árát 48 órán belül visszakérheted.": "Wenn die App dunkel oder leer bleibt: erlaube sie in deinem Virenschutz (zum Beispiel Avast) oder nutze die Browser-Version. Einen bei Google Play gekauften Premium-Zugang kannst du innerhalb von 48 Stunden erstatten lassen.",
   "Itt minden modul listában is elérhető, ugyanoda visz, mint a kezdőlap csempéi.": "Hier ist jedes Modul auch in einer Liste erreichbar, es führt an dieselbe Stelle wie die Kacheln der Startseite.",
   "Add meg, mi az, mennyi, és mennyit nyom: ebből számol a készlet és a Mit vigyek.": "Gib an, was es ist, wie viel und wie schwer es ist: daraus werden der Vorrat und Was mitnehmen berechnet.",
   "A lejárathoz elég egy gyors gomb: +6 hónap, +1 év. A színe magától változik, ahogy közeledik.": "Für den Ablauf reicht eine schnelle Taste: +6 Monate, +1 Jahr. Die Farbe ändert sich von selbst, je näher er rückt.",
@@ -2990,6 +2991,7 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
 Object.assign(window.PP_FORD_SZOTAR.de, {
   "Olvasási terv": "Leseplan",
   "Válassz egy tervet. A haladásodat a telefon megjegyzi, és mutatja, hol tartasz.": "Wähle einen Plan. Dein Telefon merkt sich deinen Fortschritt und zeigt, wo du stehst.",
+  "Válassz egy tervet. Több tervet is olvashatsz egyszerre, mindegyiknél külön megmarad, hol tartasz.": "Wähle einen Plan. Du kannst mehrere Pläne gleichzeitig lesen; bei jedem bleibt gespeichert, wo du stehst.",
   "Teljes Biblia egy év alatt": "Die ganze Bibel in einem Jahr",
   "Az elejétől a végéig, a könyvek sorrendjében.": "Von Anfang bis Ende, in der Reihenfolge der Bücher.",
   "Kronologikus Biblia egy év alatt": "Chronologische Bibel in einem Jahr",
@@ -3996,4 +3998,34 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
   "Állandó": "Gleichbleibend",
   "Lassan süllyed": "Fällt langsam",
   "Gyorsan süllyed": "Fällt schnell"
+});
+// Vercsoport calculator (2026-10-25, card 6b4458db): the red-cell table of tudastar article 3.6
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Vércsoport": "Blutgruppe",
+ "Kinek adhatsz vért, és kitől kaphatsz": "Wem du Blut geben und von wem du es bekommen kannst",
+ "Vércsoport: kinek adhatsz, kitől kaphatsz": "Blutgruppe: wem du geben, von wem du bekommen kannst",
+ "Vérátömlesztést csak egészségügyi személyzet végez, vércsoport-meghatározás és keresztpróba után.": "Bluttransfusionen gibt nur medizinisches Personal, nach Blutgruppenbestimmung und Kreuzprobe.",
+ "Terepen vért adni vagy kapni nem szabad. Ezt nem lehet rögtönözni.": "Im Gelände darf man kein Blut geben oder bekommen. Das lässt sich nicht improvisieren.",
+ "A kalkulátor tájékoztató: arra való, hogy értsd a szabályt, nem arra, hogy terepen dönts belőle.": "Der Rechner dient zur Information: Er hilft, die Regel zu verstehen, nicht im Gelände danach zu entscheiden.",
+ "A te vércsoportod": "Deine Blutgruppe",
+ "Válaszd ki": "Auswählen",
+ "Mutasd": "Anzeigen",
+ "Források: Magyar Vöröskereszt, Ausztrál Vöröskereszt (Lifeblood), Amerikai Vöröskereszt.": "Quellen: Ungarisches Rotes Kreuz, Australisches Rotes Kreuz (Lifeblood), Amerikanisches Rotes Kreuz.",
+ "Válaszd ki a vércsoportodat.": "Wähle deine Blutgruppe.",
+ "Kinek adhatsz vörösvérsejtet": "Wem du rote Blutkörperchen geben kannst",
+ "Kitől kaphatsz vörösvérsejtet": "Von wem du rote Blutkörperchen bekommen kannst",
+ "Mind a nyolc vércsoportnak": "Allen acht Blutgruppen",
+ "Mind a nyolc vércsoporttól": "Von allen acht Blutgruppen",
+ "A 0 Rh-negatív vörösvérsejt bárkinek adható, ezért hívják univerzális vörösvérsejt-adónak.": "Rote Blutkörperchen der Gruppe 0 Rh-negativ können jedem gegeben werden, deshalb heißt 0 Rh-negativ universeller Spender für rote Blutkörperchen.",
+ "A plazmánál a szabály megfordul: az AB vércsoportú plazma bárkinek adható, a 0 vércsoportú csak 0 vércsoportúnak.": "Beim Plasma kehrt sich die Regel um: AB-Plasma kann jedem gegeben werden, 0-Plasma nur der Gruppe 0.",
+ "Ez tájékoztató, nem döntési alap.": "Das dient zur Information, nicht als Entscheidungsgrundlage.",
+ "Hogy egy beteg milyen vért kap, azt vércsoport-meghatározás és keresztpróba után az ellátó orvos dönti el.": "Welches Blut ein Patient bekommt, entscheidet der behandelnde Arzt nach Blutgruppenbestimmung und Kreuzprobe.",
+ "0 Rh-negatív": "0 Rh-negativ",
+ "0 Rh-pozitív": "0 Rh-positiv",
+ "A Rh-negatív": "A Rh-negativ",
+ "A Rh-pozitív": "A Rh-positiv",
+ "B Rh-negatív": "B Rh-negativ",
+ "B Rh-pozitív": "B Rh-positiv",
+ "AB Rh-negatív": "AB Rh-negativ",
+ "AB Rh-pozitív": "AB Rh-positiv"
 });

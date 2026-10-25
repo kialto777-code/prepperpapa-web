@@ -169,16 +169,16 @@
       <label>Áram: mit tudsz róla üzemeltetni, és meddig</label>
 
       <label>Áramforrás</label>
-      <select id="araGep"></select>
+      <select autocomplete="off" id="araGep"></select>
       <a id="araGepLink" class="apajanlo" target="_blank" rel="noopener sponsored" style="display:none"></a>
       <div id="araKeziWrap" style="display:none">
         <div class="arasor">
           <span class="aranev">Kapacitás (Wh)</span>
-          <input type="number" id="araKap" min="1" step="50" value="1000">
+          <input type="number" autocomplete="off" id="araKap" min="1" step="50" value="1000">
         </div>
         <div class="arasor">
           <span class="aranev">Max. teljesítmény (W)</span>
-          <input type="number" id="araMaxW" min="0" step="50" value="600">
+          <input type="number" autocomplete="off" id="araMaxW" min="0" step="50" value="600">
         </div>
       </div>
       <p class="note" id="araGepInfo"></p>
@@ -193,20 +193,20 @@
       <button type="button" id="araPlusz" class="arahozzaad">+ Saját eszköz hozzáadása</button>
 
       <label style="margin-top:14px">Hány napra kell?</label>
-      <input type="number" id="araNap" min="0.5" step="0.5" value="3">
+      <input type="number" autocomplete="off" id="araNap" min="0.5" step="0.5" value="3">
 
       <label style="margin-top:14px">Van napelemed?</label>
-      <select id="araPanel"></select>
+      <select autocomplete="off" id="araPanel"></select>
       <a id="araPanelLink" class="apajanlo" target="_blank" rel="noopener sponsored" style="display:none"></a>
       <div id="araPanelWrap" style="display:none">
         <div id="araSajatPanelWrap" style="display:none">
           <label>A panel névleges teljesítménye (W)</label>
-          <input type="number" id="araSajatPanelW" min="0" step="10" placeholder="összesen W">
+          <input type="number" autocomplete="off" id="araSajatPanelW" min="0" step="10" placeholder="összesen W">
         </div>
         <label style="margin-top:12px">Melyik évszakban?</label>
-        <select id="araEvszak"></select>
+        <select autocomplete="off" id="araEvszak"></select>
         <label style="margin-top:12px">Milyen idő van?</label>
-        <select id="araIdojaras"></select>
+        <select autocomplete="off" id="araIdojaras"></select>
       </div>
 
       <div class="row"><button id="araSzamol" class="primary">Számold ki</button></div>
@@ -226,6 +226,23 @@ const $ = id => document.getElementById(id);
 function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
 function ppLocale(){ return 'ru-RU'; }
 function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
+
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function kalkHiba(elId, uzenet){
+  const el = $(elId); if(!el) return;
+  el.innerHTML = '<p class="note koordfigy">' + esc(uzenet) + '</p>';
+  el.style.display = 'block';
+  try{ el.scrollIntoView({ block: 'nearest' }); }catch(e){}
+}
+
+function kalkSzam(id){
+  const e = $(id); if(!e) return NaN;
+  const s = String(e.value).trim().replace(',', '.');
+  if(s === '') return NaN;
+  const n = Number(s);
+  return isFinite(n) ? n : NaN;
+}
 
 const ALLPOWERS_BOLT = 'https://iallpowers.eu/products/';
 
@@ -374,8 +391,8 @@ function araEgyeniSor(nev){
     +   '<input type="text" id="araN_'+kulcs+'" class="aranevbe" value="'+(nev||'').replace(/"/g,'&quot;')+'" placeholder="Mi ez? (pl. oxigénkoncentrátor)" aria-label="az eszköz neve">'
     +   '<button type="button" class="aratorol" aria-label="sor törlése">&times;</button>'
     + '</span>'
-    + '<input type="number" id="araD_'+kulcs+'" min="0" step="1" value="1" aria-label="hány darab">'
-    + '<input type="number" id="araW_'+kulcs+'" min="0" step="1" value="" placeholder="W" aria-label="watt darabonként">'
+    + '<input type="number" autocomplete="off" id="araD_'+kulcs+'" min="0" step="1" value="1" aria-label="hány darab">'
+    + '<input type="number" autocomplete="off" id="araW_'+kulcs+'" min="0" step="1" value="" placeholder="W" aria-label="watt darabonként">'
     + '<select id="araO_'+kulcs+'" aria-label="naponta mennyit megy">'
     +   ARA_ORAK.map(([ertek,szoveg])=>'<option value="'+ertek+'"'+(ertek===2?' selected':'')+'>'+szoveg+'</option>').join('')
     + '</select>';
@@ -415,8 +432,8 @@ function araListaEpit(){
   if(el && !el.dataset.kesz){
     el.innerHTML = ARA_FOGYASZTOK.map(f =>
       '<div class="arasor"><span class="aranev">'+f.nev+(f.motor?' <small>(motoros)</small>':'')+'</span>'
-      + '<input type="number" id="araD_'+f.id+'" min="0" step="1" value="'+f.db+'" title="darab" aria-label="hány darab">'
-      + '<input type="number" id="araW_'+f.id+'" min="0" step="1" value="'+(f.w||'')+'" title="watt darabonként" aria-label="watt darabonként" placeholder="W">'
+      + '<input type="number" autocomplete="off" id="araD_'+f.id+'" min="0" step="1" value="'+f.db+'" title="darab" aria-label="hány darab">'
+      + '<input type="number" autocomplete="off" id="araW_'+f.id+'" min="0" step="1" value="'+(f.w||'')+'" title="watt darabonként" aria-label="watt darabonként" placeholder="W">'
       + '<select id="araO_'+f.id+'" title="naponta mennyit megy" aria-label="naponta mennyit megy">'
       +   ARA_ORAK.map(([ertek,szoveg]) =>
             '<option value="'+ertek+'"'+((+(f.ora||0))===ertek?' selected':'')+'>'+szoveg+'</option>').join('')
@@ -507,6 +524,9 @@ function araSzamitas(){
 }
 
 $('araSzamol').onclick = ()=>{
+  { const n = kalkSzam('araNap');
+    if(isFinite(n) && n < 0) return kalkHiba('araEredmeny', 'A napok száma nem lehet negatív.');
+    if(n > 3650) return kalkHiba('araEredmeny', 'Legfeljebb 3650 napra (10 évre) számol.'); }
   const r=araSzamitas(), el=$('araEredmeny');
   if(!r.tetelek.length){
     el.innerHTML='<p class="note koordfigy">Tölts ki legalább egy sort: hány darab, hány watt, hány óra naponta.</p>';

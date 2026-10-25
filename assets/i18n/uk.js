@@ -2948,6 +2948,7 @@ window.PP_FORD_SZOTAR.uk = {
   "Visszatöltés a mentett fájlból. A biztonsági másolatból akkor állíts vissza, ha egy mentés félresikerült.": "Відновлення зі збереженого файлу. Із резервної копії відновлюй тоді, коли збереження не вдалося.",
   "Menüsor bemutatása: az alsó gombok súgója újra.": "Огляд панелі меню: довідка нижніх кнопок ще раз.",
   "Gyári visszaállítás mindent töröl a telefonról. Előtte ments.": "Скидання до заводських налаштувань видаляє все з телефона. Перед цим збережи.",
+  "Ha az app sötét vagy üres marad: engedélyezd a vírusirtóban (például Avast), vagy használd a böngészős változatot. A Play-áruházban vásárolt prémium árát 48 órán belül visszakérheted.": "Якщо застосунок лишається темним або порожнім: дозвольте його в антивірусі (наприклад, Avast) або скористайтеся версією в браузері. За преміум, куплений у Google Play, можна отримати повернення коштів протягом 48 годин.",
   "Itt minden modul listában is elérhető, ugyanoda visz, mint a kezdőlap csempéi.": "Тут кожен модуль доступний і списком, веде туди ж, куди плитки головної сторінки.",
   "Add meg, mi az, mennyi, és mennyit nyom: ebből számol a készlet és a Mit vigyek.": "Вкажи, що це, скільки й скільки важить: із цього рахуються запаси і Що взяти.",
   "A lejárathoz elég egy gyors gomb: +6 hónap, +1 év. A színe magától változik, ahogy közeledik.": "Для терміну достатньо швидкої кнопки: +6 місяців, +1 рік. Колір змінюється сам, у міру наближення.",
@@ -3066,6 +3067,7 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
 Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Olvasási terv": "План читання",
   "Válassz egy tervet. A haladásodat a telefon megjegyzi, és mutatja, hol tartasz.": "Оберіть план. Телефон запам'ятає ваш поступ і покаже, де ви зараз.",
+  "Válassz egy tervet. Több tervet is olvashatsz egyszerre, mindegyiknél külön megmarad, hol tartasz.": "Оберіть план. Можна читати кілька планів одночасно; для кожного окремо зберігається, де ви зупинилися.",
   "Teljes Biblia egy év alatt": "Уся Біблія за рік",
   "Az elejétől a végéig, a könyvek sorrendjében.": "Від початку до кінця, у порядку книг.",
   "Kronologikus Biblia egy év alatt": "Хронологічна Біблія за рік",
@@ -4066,4 +4068,34 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Állandó": "Стабільно",
   "Lassan süllyed": "Повільно падає",
   "Gyorsan süllyed": "Швидко падає"
+});
+// Vercsoport calculator (2026-10-25, card 6b4458db): the red-cell table of tudastar article 3.6
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+ "Vércsoport": "Група крові",
+ "Kinek adhatsz vért, és kitől kaphatsz": "Кому можна віддати кров і від кого її можна отримати",
+ "Vércsoport: kinek adhatsz, kitől kaphatsz": "Група крові: кому можна віддати, від кого можна отримати",
+ "Vérátömlesztést csak egészségügyi személyzet végez, vércsoport-meghatározás és keresztpróba után.": "Переливання крові проводить лише медичний персонал, після визначення групи крові та проби на сумісність.",
+ "Terepen vért adni vagy kapni nem szabad. Ezt nem lehet rögtönözni.": "У польових умовах віддавати чи отримувати кров не можна. Це неможливо імпровізувати.",
+ "A kalkulátor tájékoztató: arra való, hogy értsd a szabályt, nem arra, hogy terepen dönts belőle.": "Калькулятор має довідковий характер: він допомагає зрозуміти правило, а не ухвалювати за ним рішення в польових умовах.",
+ "A te vércsoportod": "Ваша група крові",
+ "Válaszd ki": "Виберіть",
+ "Mutasd": "Показати",
+ "Források: Magyar Vöröskereszt, Ausztrál Vöröskereszt (Lifeblood), Amerikai Vöröskereszt.": "Джерела: Угорський Червоний Хрест, Австралійський Червоний Хрест (Lifeblood), Американський Червоний Хрест.",
+ "Válaszd ki a vércsoportodat.": "Виберіть свою групу крові.",
+ "Kinek adhatsz vörösvérsejtet": "Кому можна перелити ваші еритроцити",
+ "Kitől kaphatsz vörösvérsejtet": "Від кого вам можна перелити еритроцити",
+ "Mind a nyolc vércsoportnak": "Усім восьми групам крові",
+ "Mind a nyolc vércsoporttól": "Від усіх восьми груп крові",
+ "A 0 Rh-negatív vörösvérsejt bárkinek adható, ezért hívják univerzális vörösvérsejt-adónak.": "Еритроцити 0 резус-негативні можна перелити будь-кому, тому групу 0 резус-негативну називають універсальним донором еритроцитів.",
+ "A plazmánál a szabály megfordul: az AB vércsoportú plazma bárkinek adható, a 0 vércsoportú csak 0 vércsoportúnak.": "З плазмою правило перевертається: плазму AB можна перелити будь-кому, плазму 0 лише групі 0.",
+ "Ez tájékoztató, nem döntési alap.": "Це довідка, а не підстава для рішення.",
+ "Hogy egy beteg milyen vért kap, azt vércsoport-meghatározás és keresztpróba után az ellátó orvos dönti el.": "Яку кров отримає пацієнт, вирішує лікар після визначення групи крові та проби на сумісність.",
+ "0 Rh-negatív": "0 резус-негативна",
+ "0 Rh-pozitív": "0 резус-позитивна",
+ "A Rh-negatív": "A резус-негативна",
+ "A Rh-pozitív": "A резус-позитивна",
+ "B Rh-negatív": "B резус-негативна",
+ "B Rh-pozitív": "B резус-позитивна",
+ "AB Rh-negatív": "AB резус-негативна",
+ "AB Rh-pozitív": "AB резус-позитивна"
 });

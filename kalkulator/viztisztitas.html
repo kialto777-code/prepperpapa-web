@@ -173,16 +173,16 @@
      Egy atnevezes itt NEM hibat adna, hanem NEMA elromlast -- a gomb lefutna, es nem
      tortenne semmi. Ugyanaz a csapda, mint a csempe `data-go`-janal. -->
     <label>Mennyi víz</label>
-    <input type="number" id="vizLiter" value="1" min="0.1" step="0.5">
+    <input type="number" autocomplete="off" id="vizLiter" value="1" min="0.1" step="0.5">
     <label>Milyen a víz</label>
-    <select id="vizAllapot">
+    <select autocomplete="off" id="vizAllapot">
       <option value="tiszta">Tiszta, átlátszó</option>
       <option value="zavaros">Zavaros, hideg vagy színes</option>
     </select>
     <label>Tengerszint feletti magasság (méter)</label>
-    <input type="number" id="vizMagas" value="150" min="0" step="50">
+    <input type="number" autocomplete="off" id="vizMagas" value="150" min="0" step="50">
     <label>A hipó töménysége (nézd meg az üvegen)</label>
-    <select id="vizHipo">
+    <select autocomplete="off" id="vizHipo">
       <option value="5">5% nátrium-hipoklorit (a szokásos háztartási)</option>
       <option value="2.5">2,5%</option>
       <option value="10">10% (ipari)</option>
@@ -206,6 +206,23 @@ function ppLocale(){ return 'hu-HU'; }
 function ppForditSzoveg(s){ return s; }
 function ppSzam(x){ return Math.round(x).toLocaleString('hu-HU'); }
 
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function kalkHiba(elId, uzenet){
+  const el = $(elId); if(!el) return;
+  el.innerHTML = '<p class="note koordfigy">' + esc(uzenet) + '</p>';
+  el.style.display = 'block';
+  try{ el.scrollIntoView({ block: 'nearest' }); }catch(e){}
+}
+
+function kalkSzam(id){
+  const e = $(id); if(!e) return NaN;
+  const s = String(e.value).trim().replace(',', '.');
+  if(s === '') return NaN;
+  const n = Number(s);
+  return isFinite(n) ? n : NaN;
+}
+
 function vizSzamitas(){
   const liter=Math.max(0, +$('vizLiter').value || 0);
   const zavaros=$('vizAllapot').value==='zavaros';
@@ -221,6 +238,11 @@ function vizSzamitas(){
 }
 
 $('vizSzamol').onclick = ()=>{
+  // 0 / negative / empty was silent (Thomas 5781); absurd sizes get a bound
+  const lit = kalkSzam('vizLiter'), mag = kalkSzam('vizMagas');
+  if(!(lit > 0)) return kalkHiba('vizEredmeny', 'Add meg, hány liter vizet tisztítasz (nullánál több).');
+  if(lit > 10000) return kalkHiba('vizEredmeny', 'Ez a számoló legfeljebb 10 000 literig számol.');
+  if(isFinite(mag) && (mag < -500 || mag > 9000)) return kalkHiba('vizEredmeny', 'A magasság -500 és 9000 méter között legyen.');
   const v=vizSzamitas();
   if(!v.liter){ $('vizEredmeny').style.display='none'; return; }
   const el=$('vizEredmeny');

@@ -172,16 +172,16 @@
         „normál" étkezés: vészhelyzetben a cél a működőképesség, nem a jóllakottság.</p>
 
       <label style="margin-top:14px">Hány felnőtt?</label>
-      <input type="number" id="kalFelnott" min="0" step="1" value="2">
+      <input type="number" autocomplete="off" id="kalFelnott" min="0" step="1" value="2">
       <label>Hány gyerek? (kb. 12 év alatt)</label>
-      <input type="number" id="kalGyerek" min="0" step="1" value="0">
+      <input type="number" autocomplete="off" id="kalGyerek" min="0" step="1" value="0">
 
       <label style="margin-top:14px">Mit csináltok ezekben a napokban?</label>
-      <select id="kalTerheles"></select>
+      <select autocomplete="off" id="kalTerheles"></select>
       <p class="note" id="kalTerhelesInfo"></p>
 
       <label style="margin-top:14px">Hány napra kell?</label>
-      <input type="number" id="kalNap" min="1" step="1" value="14">
+      <input type="number" autocomplete="off" id="kalNap" min="1" step="1" value="14">
 
       <label style="margin-top:14px">Mi van a készletben?</label>
       <p class="note">Írd be, amit tudsz — ami nincs a listán, azt add hozzá a végén. A
@@ -191,7 +191,7 @@
       <button type="button" id="kalPlusz" class="arahozzaad">+ Saját tétel hozzáadása</button>
 
       <label style="margin-top:14px">Vagy add meg egyben, ha tudod</label>
-      <input type="number" id="kalOsszKcal" min="0" step="100" placeholder="összes kilokalória (üresen hagyhatod)">
+      <input type="number" autocomplete="off" id="kalOsszKcal" min="0" step="100" placeholder="összes kilokalória (üresen hagyhatod)">
 
       <div class="row"><button id="kalSzamol" class="primary">Számold ki</button></div>
       <div id="kalEredmeny" style="display:none"></div>
@@ -208,6 +208,23 @@ function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
 function ppLocale(){ return 'hu-HU'; }
 function ppForditSzoveg(s){ return s; }
 function ppSzam(x){ return Math.round(x).toLocaleString('hu-HU'); }
+
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function kalkHiba(elId, uzenet){
+  const el = $(elId); if(!el) return;
+  el.innerHTML = '<p class="note koordfigy">' + esc(uzenet) + '</p>';
+  el.style.display = 'block';
+  try{ el.scrollIntoView({ block: 'nearest' }); }catch(e){}
+}
+
+function kalkSzam(id){
+  const e = $(id); if(!e) return NaN;
+  const s = String(e.value).trim().replace(',', '.');
+  if(s === '') return NaN;
+  const n = Number(s);
+  return isFinite(n) ? n : NaN;
+}
 
 const KAL_TERHELES = [
   {id:'pihen', nev:'bent maradunk, keveset mozgunk', kcal:1800,
@@ -239,8 +256,8 @@ let kalEgyeniek = [], kalEgyeniSzamlalo = 0;
 
 function kalSorHtml(kulcs, nev, egyseg, ertek){
   return '<div class="arasor"><span class="aranev">'+nev+' <small>('+egyseg+')</small></span>'
-    + '<input type="number" id="kalM_'+kulcs+'" min="0" step="0.5" value="'+(ertek||'')+'" placeholder="0" aria-label="mennyiség">'
-    + '<input type="number" id="kalK_'+kulcs+'" min="0" step="50" value="" placeholder="kcal/egység" aria-label="kalória egységenként">'
+    + '<input type="number" autocomplete="off" id="kalM_'+kulcs+'" min="0" step="0.5" value="'+(ertek||'')+'" placeholder="0" aria-label="mennyiség">'
+    + '<input type="number" autocomplete="off" id="kalK_'+kulcs+'" min="0" step="50" value="" placeholder="kcal/egység" aria-label="kalória egységenként">'
     + '</div>';
 }
 
@@ -257,7 +274,7 @@ function kalEpit(){
     // es aki a sajat csomagjarol olvassa le, pontosabb szamot kap, mint a mi atlagunk.
     l.innerHTML = KAL_TETELEK.map(f => kalSorHtml(f.id, f.nev, f.egyseg, f.db)).join('');
     l.dataset.kesz='1';
-    KAL_TETELEK.forEach(f=>{ const k=$('kalK_'+f.id); if(k) k.value=f.kcal; });
+    KAL_TETELEK.forEach(f=>{ const k=$('kalK_'+f.id); if(k){ k.defaultValue=f.kcal; k.value=f.kcal; } });   // defaultValue: the reset (kalkAlaphelyzet) restores THIS
   }
   kalTerhelesValt();
 }
@@ -278,8 +295,8 @@ function kalEgyeniSor(){
     +   '<input type="text" id="kalN_'+kulcs+'" class="aranevbe" placeholder="Mi ez? (pl. szárított hús)" aria-label="a tétel neve">'
     +   '<button type="button" class="aratorol" aria-label="sor törlése">&times;</button>'
     + '</span>'
-    + '<input type="number" id="kalM_'+kulcs+'" min="0" step="0.5" value="" placeholder="mennyi" aria-label="mennyiség">'
-    + '<input type="number" id="kalK_'+kulcs+'" min="0" step="50" value="" placeholder="kcal/egység" aria-label="kalória egységenként">';
+    + '<input type="number" autocomplete="off" id="kalM_'+kulcs+'" min="0" step="0.5" value="" placeholder="mennyi" aria-label="mennyiség">'
+    + '<input type="number" autocomplete="off" id="kalK_'+kulcs+'" min="0" step="50" value="" placeholder="kcal/egység" aria-label="kalória egységenként">';
   wrap.querySelector('.aratorol').onclick = ()=>{
     kalEgyeniek = kalEgyeniek.filter(x=>x!==kulcs); wrap.remove();
   };
@@ -322,6 +339,12 @@ function ppNapFmt(n){
 }
 
 $('kalSzamol').onclick = ()=>{
+  { const f = kalkSzam('kalFelnott'), g = kalkSzam('kalGyerek'), n = kalkSzam('kalNap');   // Thomas 5789: 0 persons / 0 days silent
+    if((isFinite(f) && f < 0) || (isFinite(g) && g < 0)) return kalkHiba('kalEredmeny', 'A létszám nem lehet negatív.');
+    if(!((f || 0) + (g || 0) > 0)) return kalkHiba('kalEredmeny', 'Add meg, hány felnőtt és hány gyerek van (legalább egy fő).');
+    if((f || 0) + (g || 0) > 500) return kalkHiba('kalEredmeny', 'Legfeljebb 500 főre számol.');
+    if(!(n >= 1)) return kalkHiba('kalEredmeny', 'Hány napra kell? Legalább 1 napot adj meg.');
+    if(n > 3650) return kalkHiba('kalEredmeny', 'Legfeljebb 3650 napra (10 évre) számol.'); }
   const r=kalSzamitas(), el=$('kalEredmeny');
   if(!r.fejek){ el.innerHTML='<p class="note koordfigy">Adj meg legalább egy embert.</p>'; el.style.display='block'; return; }
   if(!r.keszlet){ el.innerHTML='<p class="note koordfigy">Tölts ki legalább egy tételt (mennyiség és kcal), vagy add meg az összeset egyben.</p>'; el.style.display='block'; return; }

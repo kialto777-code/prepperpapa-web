@@ -2883,6 +2883,7 @@ window.PP_FORD_SZOTAR.pl = {
   "Visszatöltés a mentett fájlból. A biztonsági másolatból akkor állíts vissza, ha egy mentés félresikerült.": "Przywracanie z zapisanego pliku. Z kopii zapasowej przywracaj wtedy, gdy zapis się nie udał.",
   "Menüsor bemutatása: az alsó gombok súgója újra.": "Prezentacja paska menu: pomoc dolnych przycisków jeszcze raz.",
   "Gyári visszaállítás mindent töröl a telefonról. Előtte ments.": "Przywrócenie ustawień fabrycznych usuwa wszystko z telefonu. Wcześniej zrób kopię.",
+  "Ha az app sötét vagy üres marad: engedélyezd a vírusirtóban (például Avast), vagy használd a böngészős változatot. A Play-áruházban vásárolt prémium árát 48 órán belül visszakérheted.": "Jeśli aplikacja pozostaje ciemna lub pusta: zezwól na nią w programie antywirusowym (na przykład Avast) albo użyj wersji w przeglądarce. Za premium kupione w Google Play możesz uzyskać zwrot w ciągu 48 godzin.",
   "Itt minden modul listában is elérhető, ugyanoda visz, mint a kezdőlap csempéi.": "Tutaj każdy moduł jest dostępny także na liście, prowadzi w to samo miejsce co kafelki strony głównej.",
   "Add meg, mi az, mennyi, és mennyit nyom: ebből számol a készlet és a Mit vigyek.": "Podaj, co to jest, ile i ile waży: z tego liczone są zapasy i Co zabrać.",
   "A lejárathoz elég egy gyors gomb: +6 hónap, +1 év. A színe magától változik, ahogy közeledik.": "Na termin wystarczy szybki przycisk: +6 miesięcy, +1 rok. Kolor zmienia się sam, w miarę zbliżania.",
@@ -2996,6 +2997,7 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
 Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Olvasási terv": "Plan czytania",
   "Válassz egy tervet. A haladásodat a telefon megjegyzi, és mutatja, hol tartasz.": "Wybierz plan. Telefon zapamięta twoje postępy i pokaże, gdzie jesteś.",
+  "Válassz egy tervet. Több tervet is olvashatsz egyszerre, mindegyiknél külön megmarad, hol tartasz.": "Wybierz plan. Możesz czytać kilka planów naraz; każdy osobno zapamiętuje, gdzie jesteś.",
   "Teljes Biblia egy év alatt": "Cała Biblia w rok",
   "Az elejétől a végéig, a könyvek sorrendjében.": "Od początku do końca, w kolejności ksiąg.",
   "Kronologikus Biblia egy év alatt": "Biblia chronologicznie w rok",
@@ -4009,4 +4011,34 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Állandó": "Stałe",
   "Lassan süllyed": "Powoli spada",
   "Gyorsan süllyed": "Szybko spada"
+});
+// Vercsoport calculator (2026-10-25, card 6b4458db): the red-cell table of tudastar article 3.6
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+ "Vércsoport": "Grupa krwi",
+ "Kinek adhatsz vért, és kitől kaphatsz": "Komu możesz oddać krew i od kogo możesz ją otrzymać",
+ "Vércsoport: kinek adhatsz, kitől kaphatsz": "Grupa krwi: komu możesz oddać, od kogo możesz otrzymać",
+ "Vérátömlesztést csak egészségügyi személyzet végez, vércsoport-meghatározás és keresztpróba után.": "Transfuzję krwi wykonuje wyłącznie personel medyczny, po oznaczeniu grupy krwi i próbie krzyżowej.",
+ "Terepen vért adni vagy kapni nem szabad. Ezt nem lehet rögtönözni.": "W terenie nie wolno oddawać ani przyjmować krwi. Tego nie da się zaimprowizować.",
+ "A kalkulátor tájékoztató: arra való, hogy értsd a szabályt, nem arra, hogy terepen dönts belőle.": "Kalkulator ma charakter informacyjny: pomaga zrozumieć zasadę, a nie podejmować na jej podstawie decyzji w terenie.",
+ "A te vércsoportod": "Twoja grupa krwi",
+ "Válaszd ki": "Wybierz",
+ "Mutasd": "Pokaż",
+ "Források: Magyar Vöröskereszt, Ausztrál Vöröskereszt (Lifeblood), Amerikai Vöröskereszt.": "Źródła: Węgierski Czerwony Krzyż, Australijski Czerwony Krzyż (Lifeblood), Amerykański Czerwony Krzyż.",
+ "Válaszd ki a vércsoportodat.": "Wybierz swoją grupę krwi.",
+ "Kinek adhatsz vörösvérsejtet": "Komu możesz oddać krwinki czerwone",
+ "Kitől kaphatsz vörösvérsejtet": "Od kogo możesz otrzymać krwinki czerwone",
+ "Mind a nyolc vércsoportnak": "Wszystkim ośmiu grupom krwi",
+ "Mind a nyolc vércsoporttól": "Od wszystkich ośmiu grup krwi",
+ "A 0 Rh-negatív vörösvérsejt bárkinek adható, ezért hívják univerzális vörösvérsejt-adónak.": "Krwinki czerwone 0 Rh ujemne można podać każdemu, dlatego grupę 0 Rh ujemną nazywa się uniwersalnym dawcą krwinek czerwonych.",
+ "A plazmánál a szabály megfordul: az AB vércsoportú plazma bárkinek adható, a 0 vércsoportú csak 0 vércsoportúnak.": "Przy osoczu zasada się odwraca: osocze AB można podać każdemu, osocze 0 tylko grupie 0.",
+ "Ez tájékoztató, nem döntési alap.": "To informacja, a nie podstawa do decyzji.",
+ "Hogy egy beteg milyen vért kap, azt vércsoport-meghatározás és keresztpróba után az ellátó orvos dönti el.": "O tym, jaką krew otrzyma pacjent, decyduje lekarz prowadzący po oznaczeniu grupy krwi i próbie krzyżowej.",
+ "0 Rh-negatív": "0 Rh ujemna",
+ "0 Rh-pozitív": "0 Rh dodatnia",
+ "A Rh-negatív": "A Rh ujemna",
+ "A Rh-pozitív": "A Rh dodatnia",
+ "B Rh-negatív": "B Rh ujemna",
+ "B Rh-pozitív": "B Rh dodatnia",
+ "AB Rh-negatív": "AB Rh ujemna",
+ "AB Rh-pozitív": "AB Rh dodatnia"
 });

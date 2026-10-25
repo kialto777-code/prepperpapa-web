@@ -172,22 +172,22 @@
         másik között. Ezért nem lehet egy rádióra egyetlen kilométer-számot mondani.</p>
 
       <label style="margin-top:14px">Milyen sávon?</label>
-      <select id="radSav"></select>
+      <select autocomplete="off" id="radSav"></select>
       <p class="note" id="radSavInfo"></p>
 
       <label style="margin-top:14px">Adóteljesítmény (watt)</label>
-      <input type="number" id="radW" min="0.1" step="0.5" value="5">
+      <input type="number" autocomplete="off" id="radW" min="0.1" step="0.5" value="5">
 
       <label style="margin-top:14px">Milyen terepen?</label>
-      <select id="radTerep"></select>
+      <select autocomplete="off" id="radTerep"></select>
 
       <label style="margin-top:14px">Milyen magasan van az antennád? (méter)</label>
-      <input type="number" id="radMag1" min="0" step="1" value="2">
+      <input type="number" autocomplete="off" id="radMag1" min="0" step="1" value="2">
       <label>És a másiké?</label>
-      <input type="number" id="radMag2" min="0" step="1" value="2">
+      <input type="number" autocomplete="off" id="radMag2" min="0" step="1" value="2">
 
       <label style="margin-top:14px">Mekkora távolságot szeretnél áthidalni? (km, üresen hagyhatod)</label>
-      <input type="number" id="radCel" min="0" step="1" placeholder="pl. 15">
+      <input type="number" autocomplete="off" id="radCel" min="0" step="1" placeholder="pl. 15">
 
       <div class="row"><button id="radSzamol" class="primary">Számold ki</button></div>
       <div id="radEredmeny" style="display:none"></div>
@@ -207,6 +207,23 @@ function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
 function ppLocale(){ return 'de-DE'; }
 function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
 
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function kalkHiba(elId, uzenet){
+  const el = $(elId); if(!el) return;
+  el.innerHTML = '<p class="note koordfigy">' + esc(uzenet) + '</p>';
+  el.style.display = 'block';
+  try{ el.scrollIntoView({ block: 'nearest' }); }catch(e){}
+}
+
+function kalkSzam(id){
+  const e = $(id); if(!e) return NaN;
+  const s = String(e.value).trim().replace(',', '.');
+  if(s === '') return NaN;
+  const n = Number(s);
+  return isFinite(n) ? n : NaN;
+}
+
 const RAD_SAVOK = [
   {id:'pmr',  nev:'PMR446 (446 MHz) — engedély nélküli kézirádió', mhz:446, oszlop:'uhf', maxW:0.5,
    info:'Magyarországon engedély nélkül használható, de a törvény MAXIMUM 0,5 wattot és gyári, nem cserélhető antennát enged. Ezért van, hogy a doboz 10 kilométert ígér, a valóság meg 1-3.'},
@@ -216,6 +233,13 @@ const RAD_SAVOK = [
    info:'ENGEDÉLYKÖTELES: vizsga és hívójel kell hozzá. Vészhelyzetben az életveszély elhárítására a törvény enged kivételt, de arra épülő tervet ne csinálj -- a vizsga előre megszerezhető.'},
   {id:'uhf',  nev:'70 cm (435 MHz) — amatőr',                       mhz:435, oszlop:'uhf', maxW:0,
    info:'ENGEDÉLYKÖTELES, mint a 2 méter. Beépítésben, épületek között jobb, mint a 2 méter; nyílt terepen rosszabb.'},
+  // LORA (Fonok 2026-10-11 22:12: "a radio terjedesi kalkulatorban legyen Lora frekvencia is"). Engedely
+  // nelkuli SRD-sav, 863-870 MHz; az alapsav 25 mW (868,0-868,6 MHz, 1% adasido), a 869,4-869,65 MHz-es
+  // alsav 500 mW-ot enged 10% adasidovel. A LoRa szort spektruma a zajszint ALATT is vesz: ugyanannyi
+  // wattbol sokkal tovabb visz, mint egy FM-kezirádio -- ezt az `erzekenyseg` szorzo adja (kb. +25 dB
+  // tobblet linkbudget, 4-es kitevovel ~4x tav). Hangot nem visz, csak rovid szoveget.
+  {id:'lora', nev:'LoRa (868 MHz) — engedély nélküli adatrádió', mhz:868, oszlop:'uhf', maxW:0.5, alapW:0.025, erzekenyseg:4,
+   info:'Engedély nélkül használható: alapból 25 mW, a 869,4-869,65 MHz-es alsávon 500 mW, korlátozott adásidővel. Nem beszéd, hanem rövid szöveges üzenet; cserébe kis teljesítménnyel is kilométereket visz, mert a zaj alatt is vesz. A telefon nem tud LoRát: egy LoRa-egység kell, amihez a telefon Bluetooth-on csatlakozik.'},
   {id:'hf40', nev:'40 méter (7 MHz) — amatőr, rövidhullám',         mhz:7,   oszlop:'hf', maxW:0,
    info:'ENGEDÉLYKÖTELES. Itt NEM a rálátás dönt: nappal 100-400 km-re, éjjel akár több ezerre visz az ionoszféráról visszaverődve. Ezt a kalkulátor nem modellezi -- lásd a figyelmeztetést az eredménynél.'},
   {id:'hf80', nev:'80 méter (3,6 MHz) — amatőr, rövidhullám',       mhz:3.6, oszlop:'hf', maxW:0,
@@ -257,7 +281,7 @@ function radSavValt(){
   // A PMR-nel a torvenyi 0,5 W-ot ALAPERTELMEZESKENT beallitjuk, de nem kenyszeritjuk:
   // aki tudni akarja, mi lenne 5 watttal, kiprobalhatja -- csak megmondjuk, hogy tilos.
   const w=$('radW');
-  if(w && s.maxW) w.value = s.maxW;
+  if(w && (s.alapW || s.maxW)) w.value = s.alapW || s.maxW;
 }
 
 function radSzamitas(){
@@ -275,7 +299,8 @@ function radSzamitas(){
   const szorzo = hf ? (t.hf27||1.0) : fSzorzo;
 
   const ralatas = 4.12*(Math.sqrt(h1)+Math.sqrt(h2));       // km, a Fold gorbuletebol
-  const terepTav = RAD_K * t.alap * szorzo * Math.pow(w, 0.25);
+  const erz = s.erzekenyseg || 1;      // LoRa: a szort spektrum vetel-elonye
+  const terepTav = RAD_K * erz * t.alap * szorzo * Math.pow(w, 0.25);
   const varhato = hf ? terepTav*3 : Math.min(ralatas, terepTav);
   const korlat = hf ? 'talajhullám' : (terepTav < ralatas ? 'terep és teljesítmény' : 'rálátás (a Föld görbülete)');
 
@@ -284,12 +309,17 @@ function radSzamitas(){
   let kellW = null, celTul = false;
   if(cel > 0){
     if(!hf && cel > ralatas){ celTul = true; }
-    else { kellW = Math.pow(cel / (RAD_K * t.alap * szorzo * (hf?3:1)), 4); }
+    else { kellW = Math.pow(cel / (RAD_K * erz * t.alap * szorzo * (hf?3:1)), 4); }
   }
   return {s, t, w, h1, h2, cel, ralatas, terepTav, varhato, korlat, kellW, celTul, hf};
 }
 
 $('radSzamol').onclick = ()=>{
+  { const w = kalkSzam('radW'), h1 = kalkSzam('radMag1'), h2 = kalkSzam('radMag2'), c = kalkSzam('radCel');
+    if(!(w > 0)) return kalkHiba('radEredmeny', 'Add meg az adóteljesítményt (watt, nullánál több).');
+    if(w > 1500) return kalkHiba('radEredmeny', 'Legfeljebb 1500 wattal számol.');
+    if((isFinite(h1) && (h1 < 0 || h1 > 1000)) || (isFinite(h2) && (h2 < 0 || h2 > 1000))) return kalkHiba('radEredmeny', 'Az antennamagasság 0 és 1000 méter között legyen.');
+    if(isFinite(c) && c < 0) return kalkHiba('radEredmeny', 'A távolság nem lehet negatív.'); }
   const r=radSzamitas(), el=$('radEredmeny');
   // A HATOTAVOT SAVKENT irjuk ki, nem egyetlen szamkent. Egy "14,2 km" pontosnak latszik,
   // es epp ezert veszelyes: terepen a szoras konnyen ketszeres. A also/felso hatar a
@@ -302,6 +332,10 @@ $('radSzamol').onclick = ()=>{
     fig += '<p class="note koordfigy"><b>Ez a teljesítmény PMR446-on nem legális.</b> A sávon '
       + 'maximum 0,5 watt engedélyezett, gyári antennával. A számot kiszámoltuk, de egy '
       + 'erősebb adóval a saját frekvenciádon te zavarod meg azokat, akikkel beszélni akarsz.</p>';
+  }
+  if(r.s.id==='lora' && r.w > r.s.maxW){
+    fig += '<p class="note koordfigy"><b>Ez a teljesítmény LoRa-n nem legális.</b> A 868 MHz-es sávon '
+      + 'legfeljebb 0,5 watt (a 869,4-869,65 MHz-es alsávon), máshol 25 mW engedélyezett.</p>';
   }
   if(r.s.maxW===0){
     fig += '<p class="note koordfigy"><b>Ez a sáv engedélyköteles.</b> '+r.s.nev+' használatához '

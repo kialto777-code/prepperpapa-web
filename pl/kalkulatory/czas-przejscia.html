@@ -168,23 +168,25 @@
 <div class="ppkalk" id="kalk-menetido">    <div class="section">
       <label>Menetidő gyalog</label>
       <label>Távolság (km)</label>
-      <input type="number" id="menTav" value="8" min="0.1" step="0.5">
+      <input type="number" autocomplete="off" id="menTav" value="8" min="0.1" step="0.5">
       <label>Emelkedés összesen (m)</label>
-      <input type="number" id="menEmel" value="200" min="0" step="10">
+      <input type="number" autocomplete="off" id="menEmel" value="200" min="0" step="10">
       <label>Milyen terep</label>
-      <select id="menTerep">
+      <select autocomplete="off" id="menTerep">
         <option value="5">Jó út, sík (5 km/h)</option>
         <option value="4" selected>Ösvény, erdei út (4 km/h)</option>
         <option value="3">Nehéz terep, hó, sár (3 km/h)</option>
       </select>
       <label>Mit viszel</label>
-      <select id="menTeher">
+      <select autocomplete="off" id="menTeher">
         <option value="1">Könnyű, napi cucc</option>
         <option value="0.85">Megpakolt hátizsák</option>
         <option value="0.7">Nehéz teher vagy gyerekkel</option>
       </select>
       <div class="row"><button id="menSzamol" class="primary">Számold ki</button></div>
       <div id="menEredmeny" style="display:none"></div>
+      <!-- VISSZAFORDULASI EBRESZTO (kartya 8c7d43d2): a Tura inditasa kapcsolo es a beallitasok, JS rajzolja (vfRajz) -->
+      <div id="vfEbr"></div>
     </div></div>
 <div class="zaro"><p>Zachód słońca liczymy na tej stronie dla współrzędnych Budapesztu, bo nie prosimy przeglądarki o lokalizację. Między krańcami Węgier daje to kilka minut różnicy. Czas przejścia nie obejmuje odpoczynku.</p></div>
 <h2>Do czego się przydaje, a do czego nie</h2>
@@ -200,6 +202,166 @@ const $ = id => document.getElementById(id);
 function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
 function ppLocale(){ return 'pl-PL'; }
 function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
+
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function bibEbrEngedely(mit){
+  if(mit==='ertesites'){ try{ ppNotifKuld('request'); }catch(e){} return; }
+  try{ window.PPFelolvas.postMessage(JSON.stringify({ m:'ebrEngedely', mit })); }catch(e){}
+}
+
+function tnProfil(l){
+  const L0 = l.hossz, nyers = s => { const t = l.tav; let i = 1; while(i < t.length - 1 && t[i] < s) i++;
+    const q = (s - t[i-1]) / ((t[i] - t[i-1]) || 1); return l.z[i-1] + (l.z[i] - l.z[i-1]) * Math.max(0, Math.min(1, q)); };
+  const tv = [], zs = []; for(let s = 0; s < L0; s += 100) tv.push(s); tv.push(L0);
+  for(const s of tv){ let a = 0, n = 0; for(let k = -60; k <= 60; k += 20){ a += nyers(Math.max(0, Math.min(L0, s + k))); n++; } zs.push(a / n); }
+  return { tv, zs };
+}
+
+function kalkHiba(elId, uzenet){
+  const el = $(elId); if(!el) return;
+  el.innerHTML = '<p class="note koordfigy">' + esc(uzenet) + '</p>';
+  el.style.display = 'block';
+  try{ el.scrollIntoView({ block: 'nearest' }); }catch(e){}
+}
+
+function femNativ(){ return !!(window.PPSzenzor && window.PPSzenzor.postMessage); }
+
+const VF_KULCS = 'pp_visszafordulo', VF_KESES_MS = 30*60*1000;
+
+function vfBe(){
+  let o=null; try{ o=JSON.parse(localStorage.getItem(VF_KULCS)||'null'); }catch(e){}
+  o=(o && typeof o==='object' && !Array.isArray(o)) ? o : {};
+  const t=+o.tartalekPerc;
+  return { be:!!o.be, visszaPerc: (+o.visszaPerc>0 ? Math.round(+o.visszaPerc) : null),
+    tartalekPerc: (o.tartalekPerc!=null && isFinite(t) && t>=0) ? Math.round(t) : 30,
+    sotetFajta: o.sotetFajta==='szurkulet' ? 'szurkulet' : 'nyugta',
+    kezi: /^\d{2}:\d{2}$/.test(o.kezi||'') ? o.kezi : null,
+    at:+o.at||0, sotet:+o.sotet||0, nyugta:+o.nyugta||0,
+    hely:(o.hely && isFinite(+o.hely.lat) && isFinite(+o.hely.lng)) ? { lat:+o.hely.lat, lng:+o.hely.lng } : null,
+    kezd:(o.kezd && isFinite(+o.kezd.lat) && isFinite(+o.kezd.lng)) ? { lat:+o.kezd.lat, lng:+o.kezd.lng } : null,
+    szolt:+o.szolt||0 };
+}
+
+function vfMent(o){ try{ localStorage.setItem(VF_KULCS, JSON.stringify(o)); }catch(e){} }
+
+function vfSzamol(most, hely, visszaPerc, tartalekPerc, sotetFajta, kezi){
+  if(!hely) return { hiba:'hely' };
+  if(!(visszaPerc>0) && !kezi) return { hiba:'vissza' };
+  const n=ppNapIdok(new Date(most), hely.lat, hely.lng);
+  const s = sotetFajta==='szurkulet' ? n.szurkulet : n.nyugta;
+  if(!s) return { hiba:'sark' };
+  const sotet=s.getTime();
+  let at;
+  if(kezi){ const [h,m]=kezi.split(':').map(Number), d=new Date(most); d.setHours(h, m, 0, 0); at=d.getTime(); }
+  else at = sotet - (visszaPerc||0)*60000 - (tartalekPerc||0)*60000;
+  at = Math.floor(at/60000)*60000;          // egesz percre lefele: inkabb egy perccel korabban szoljon
+  return { at, sotet, nyugta: n.nyugta ? n.nyugta.getTime() : null, mult: at<=most, sotetMult: sotet<=most };
+}
+
+function vfIdo(ms){ const d=new Date(ms); return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
+
+function vfUtvonalPerc(){
+  const l = (typeof mapKiemeles!=='undefined') && mapKiemeles && mapKiemeles.lancok && mapKiemeles.lancok[0];
+  if(!l || !(l.hossz>0)) return null;
+  let le=0;
+  try{ if(l.z){ const { zs }=tnProfil(l); for(let i=1;i<zs.length;i++){ const dz=zs[i]-zs[i-1]; if(dz<0) le-=dz; } } }catch(e){}
+  return Math.max(1, Math.round((l.hossz/4000 + le/600)*60));
+}
+
+let vfMenetidoPerc = null;
+
+function vfMenetidoKapott(perc){
+  vfMenetidoPerc = perc>0 ? perc : null;
+  const st=vfBe();
+  if(!st.be && !st.visszaPerc && vfMenetidoPerc){ st.visszaPerc=vfMenetidoPerc; vfMent(st); }
+  vfRajz();
+}
+
+function vfNativ(){ return femNativ(); }
+
+function vfSzovegek(st, sz){
+  const T=ppForditSzoveg;
+  const sotetNev = T(st.sotetFajta==='szurkulet' ? 'Sötétedés' : 'Napnyugta');
+  return { cim: T('Ideje visszafordulni'),
+    torzs: sotetNev+' '+vfIdo(sz.sotet)+' · '+T('visszaút')+' '+ppHosszSzoveg((st.visszaPerc||0)*60000) };
+}
+
+function vfNativKuld(st){
+  if(!vfNativ()) return;
+  let adat=null;
+  if(st && st.be){
+    const sz=vfSzovegek(st, st);
+    adat={ at:st.at, sotet:st.sotet, nyugta:st.nyugta, sotetFajta:st.sotetFajta, visszaPerc:st.visszaPerc,
+      tartalekPerc:st.tartalekPerc, kezd:st.kezd, cim:sz.cim, torzs:sz.torzs };
+  }
+  try{ window.PPSzenzor.postMessage(JSON.stringify({ m:'turaEbreszto', adat })); }catch(e){ return; }
+  clearTimeout(vfNativVar);
+  // a regi (ebreszto nelkuli) app nem valaszol: ezt ki kell mondani, nem "elesitve"-t irni
+  vfNativVar=setTimeout(()=>{ if(!vfNativAllapot){ vfNativRegi=true; vfRajz(); } }, 4000);
+}
+
+function vfKikapcs(){ const st=vfBe(); st.be=false; vfMent(st); vfUzenet=''; vfNativAllapot=null; vfNativKuld(st); vfRajz(); }
+
+function vfRajz(){
+  const box=$('vfEbr'); if(!box) return;
+  const T=ppForditSzoveg, st=vfBe(), nativ=vfNativ(), most=Date.now();
+  const utvPerc=vfUtvonalPerc();
+  let sz=null; try{ sz=vfSzamol(most, st.be ? st.hely : (st.hely||(()=>{ const u=ppUtolsoHely(); return u?{lat:u.lat,lng:u.lng}:null; })()),
+    st.visszaPerc, st.tartalekPerc, st.sotetFajta, st.kezi); }catch(e){}
+  const alcim = st.be ? T('Élesítve, ekkor szól:')+' '+vfIdo(st.at)
+    : (st.szolt ? T('Szólt')+': '+vfIdo(st.szolt) : T('Kikapcsolva'));
+  let h='<label>'+esc(T('Visszafordulási ébresztő'))+'</label>'
+    + '<p class="note" style="margin:2px 0 0">'+esc(T('Túrán a visszafordulás idejében felébreszti a telefont, és mutatja, mennyi idő van sötétedésig, és mennyi a visszaút.'))+'</p>'
+    + '<div class="kapcssor"><div><div class="k-cim">'+esc(T('Túra indítása'))+'</div><div class="k-alcim" id="vfAlcim">'+esc(alcim)+'</div></div>'
+    + '<button type="button" class="kapcs'+(st.be?' on':'')+'" id="vfKapcs" role="switch" aria-checked="'+(st.be?'true':'false')+'" aria-label="'+esc(T('Túra indítása'))+'"><span class="gomb"></span></button></div>'
+    + '<label for="vfVissza">'+esc(T('Visszaút ideje (perc)'))+'</label>'
+    + '<input type="number" autocomplete="off" id="vfVissza" min="1" step="5" inputmode="numeric" value="'+(st.visszaPerc||'')+'" placeholder="'+esc(T('perc'))+'">'
+    + '<div class="row vf-forras">'
+    + (vfMenetidoPerc ? '<button type="button" id="vfMenetidobol">'+esc(T('A fenti számításból'))+' ('+esc(ppHosszSzoveg(vfMenetidoPerc*60000))+')</button>' : '')
+    + (utvPerc ? '<button type="button" id="vfUtvonalbol">'+esc(T('A tervezett útvonalból'))+' ('+esc(ppHosszSzoveg(utvPerc*60000))+')</button>' : '')
+    + '</div>'
+    + (!vfMenetidoPerc && !utvPerc ? '<p class="note" style="margin:2px 0 0">'+esc(T('A fenti Menetidővel kiszámolhatod: add meg a visszaút távolságát és emelkedését.'))+'</p>' : '')
+    + '<label for="vfTartalek">'+esc(T('Biztonsági tartalék (perc)'))+'</label>'
+    + '<input type="number" autocomplete="off" id="vfTartalek" min="0" step="5" inputmode="numeric" value="'+st.tartalekPerc+'">'
+    + '<label for="vfFajta">'+esc(T('Sötétedés'))+'</label>'
+    + '<select id="vfFajta"><option value="nyugta"'+(st.sotetFajta==='nyugta'?' selected':'')+'>'+esc(T('Napnyugta'))+'</option>'
+    + '<option value="szurkulet"'+(st.sotetFajta==='szurkulet'?' selected':'')+'>'+esc(T('A szürkület vége (kb. fél órával a napnyugta után)'))+'</option></select>';
+  if(sz && !sz.hiba){
+    const sotetNev=T(st.sotetFajta==='szurkulet' ? 'Sötétedés' : 'Napnyugta');
+    h+='<div class="koorddoboz" id="vfEredmeny"><p class="note" style="margin:0">'+esc(sotetNev)+' '+vfIdo(sz.sotet)
+      + (st.kezi ? '' : ' − '+esc(T('visszaút'))+' '+esc(ppHosszSzoveg((st.visszaPerc||0)*60000))+' − '+esc(T('tartalék'))+' '+esc(ppHosszSzoveg(st.tartalekPerc*60000)))
+      + '</p><p class="eginagy" id="vfFordulo">'+vfIdo(sz.at)+'</p><p class="note" style="margin:0">'+esc(T(st.kezi ? 'Visszafordulás (kézzel állítva)' : 'Visszafordulás'))+'</p></div>';
+  }
+  h+='<label for="vfIdo">'+esc(T('Visszafordulás időpontja (kézzel)'))+'</label>'
+    + '<div class="row"><input type="time" id="vfIdo" value="'+esc(st.kezi || (sz && !sz.hiba ? vfIdo(sz.at) : ''))+'">'
+    + (st.kezi ? '<button type="button" id="vfSzamitott">'+esc(T('Számított időre'))+'</button>' : '') + '</div>';
+  if(vfUzenet) h+='<p class="ebrfigy vf-figy" id="vfUzenet">'+esc(vfUzenet)+'</p>';
+  if(!nativ){
+    h+='<p class="ebrfigy vf-figy" id="vfWeb">'+esc(T('Böngészőben és iPhone-on csak akkor szól, ha az oldal nyitva van. A lezárt telefont az Android app ébreszti fel.'))+'</p>';
+  } else if(st.be && vfNativRegi){
+    h+='<p class="ebrfigy vf-figy" id="vfRegi">'+esc(T('Ehhez az ébresztőhöz frissítsd az appot a legújabb változatra.'))+'</p>';
+  } else if(st.be && vfNativAllapot){
+    const a=vfNativAllapot, figy=[];
+    if(a.ertesites===false) figy.push(['ertesites', 'Az értesítés nincs engedélyezve: enélkül az ébresztő nem tud megjelenni.', 'Értesítés engedélyezése']);
+    if(a.pontos===false) figy.push(['pontos', 'A pontos időzítés nincs engedélyezve (Ébresztők és emlékeztetők): az ébresztő így akár negyed órát is késhet.', 'Pontos időzítés engedélyezése']);
+    if(a.teljes===false) figy.push(['teljes', 'A teljes képernyős értesítés nincs engedélyezve: lezárt telefonon csak értesítés jelenik meg.', 'Teljes képernyő engedélyezése']);
+    if(figy.length) h+=figy.map(f=>'<div class="ebrfigy vf-figy" data-hiany="'+f[0]+'">'+esc(T(f[1]))+'<br><button type="button" data-vfeng="'+f[0]+'">'+esc(T(f[2]))+'</button></div>').join('');
+    else if(a.ok && a.at) h+='<p class="note" id="vfKesz" style="margin-top:8px">'+esc(T('Az ébresztő be van állítva, lezárt telefonon is szól.'))+'</p>';
+    else if(!a.ok) h+='<p class="ebrfigy vf-figy" id="vfHiba">'+esc(T('Az ébresztőt most nem sikerült beállítani. Próbáld újra később.'))+'</p>';
+  }
+  box.innerHTML=h;
+  const valt=(fn)=>{ const s=vfBe(); fn(s); vfMent(s); vfUzenet=''; if(s.be) vfElesit(); else vfRajz(); };
+  $('vfKapcs').onclick=()=>{ if(vfBe().be) vfKikapcs(); else vfElesit(); };
+  $('vfVissza').onchange=()=>valt(s=>{ const v=Math.round(+$('vfVissza').value); s.visszaPerc = v>0 ? v : null; });
+  $('vfTartalek').onchange=()=>valt(s=>{ const v=Math.round(+$('vfTartalek').value); s.tartalekPerc = v>=0 && isFinite(v) ? v : 30; });
+  $('vfFajta').onchange=()=>valt(s=>{ s.sotetFajta = $('vfFajta').value==='szurkulet' ? 'szurkulet' : 'nyugta'; });
+  $('vfIdo').onchange=()=>valt(s=>{ const v=$('vfIdo').value; s.kezi = /^\d{2}:\d{2}$/.test(v) ? v : null; });
+  if($('vfSzamitott')) $('vfSzamitott').onclick=()=>valt(s=>{ s.kezi=null; });
+  if($('vfMenetidobol')) $('vfMenetidobol').onclick=()=>valt(s=>{ s.visszaPerc=vfMenetidoPerc; });
+  if($('vfUtvonalbol')) $('vfUtvonalbol').onclick=()=>valt(s=>{ s.visszaPerc=vfUtvonalPerc(); });
+  box.querySelectorAll('[data-vfeng]').forEach(b=>b.onclick=()=>bibEbrEngedely(b.dataset.vfeng));
+}
 
 function ppNapIdok(datum, lat, lng){
   const rad=Math.PI/180;
@@ -245,6 +407,21 @@ function ppOra(d){
   return d ? d.toLocaleTimeString(ppLocale(),{ hour:'2-digit', minute:'2-digit' }) : null;
 }
 
+function ppHosszSzoveg(ms){
+  const p=Math.max(0, Math.round(ms/60000));
+  const o=Math.floor(p/60);
+  // AZ IDoTARTAM MERTEKEGYSEGE IS FORDITANDO (Thomas merese, 2026-08-23). Ez a fuggveny
+  // OSSZEFuZoTT szoveget ad ("1 ora 55 perc"), amit a hivo tovabbi szoveggel told meg --
+  // a kesz csomopontban tehat sem szotar-kulcs, sem minta nem tud illeszkedni ra.
+  // A helye itt van, a keletkezesenel.
+  const ora = ppForditSzoveg('óra'), perc = ppForditSzoveg('perc');
+  return o ? (o+' '+ora+' '+(p%60)+' '+perc) : (p+' '+perc);
+}
+
+function ppNotifKuld(action, extra){
+  try{ window.PPNotify.postMessage(JSON.stringify(Object.assign({action:action}, extra||{}))); }catch(e){}
+}
+
 function ppFmtOra(ora){
   if(!isFinite(ora) || ora<=0) return '0 perc';
   const o=Math.floor(ora), p=Math.round((ora-o)*60);
@@ -256,7 +433,12 @@ $('menSzamol').onclick = ()=>{
   const tav=+$('menTav').value||0, emel=+$('menEmel').value||0;
   const seb=(+$('menTerep').value||4) * (+$('menTeher').value||1);
   const el=$('menEredmeny');
-  if(!tav){ el.innerHTML='<p class="note koordfigy">Add meg a távolságot.</p>'; el.style.display='block'; return; }
+  // negative distance gave "0 perc" and an arrival in the past, a negative climb shortened the walk silently,
+  // 99 999 km gave "833 nap" (Thomas 5780)
+  if(!(tav > 0)){ el.innerHTML='<p class="note koordfigy">Add meg a távolságot.</p>'; el.style.display='block'; return; }
+  if(tav > 1000) return kalkHiba('menEredmeny', 'Gyalog legfeljebb 1000 km-rel számol. Hosszabb utat bonts szakaszokra.');
+  if(emel < 0) return kalkHiba('menEredmeny', 'Az emelkedés nem lehet negatív: a lejtőt ne vond le, írj 0-t.');
+  if(emel > 20000) return kalkHiba('menEredmeny', 'Az összes emelkedés legfeljebb 20 000 méter lehet.');
   const ora = tav/seb + emel/600;
   const erk = new Date(Date.now()+ora*3600*1000);
   // A NAPNYUGTA ITT VAN FELETTE a kepernyon: rogton megmondjuk, odaersz-e vilagosban.
@@ -278,6 +460,7 @@ $('menSzamol').onclick = ()=>{
     + feny
     + '<p class="note">Pihenő nincs benne. Hosszabb úton számolj óránként tíz perccel, és étkezéssel.</p></div>';
   el.style.display='block';
+  try{ vfMenetidoKapott(Math.round(ora*60)); }catch(e){}   // a visszafordulasi ebreszto visszautja
 };
 </script>
 

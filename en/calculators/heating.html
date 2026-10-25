@@ -168,17 +168,17 @@
 <div class="ppkalk" id="kalk-futes">    <div class="section">
       <label>Fűtés: mennyi tüzelő kell</label>
       <label>Fűtött terület (m²)</label>
-      <input type="number" id="futTer" value="25" min="1" step="1">
+      <input type="number" autocomplete="off" id="futTer" value="25" min="1" step="1">
       <label>Milyen a ház</label>
-      <select id="futSzig">
+      <select autocomplete="off" id="futSzig">
         <option value="60">Jól szigetelt (60 W/m²)</option>
         <option value="100" selected>Átlagos (100 W/m²)</option>
         <option value="140">Rossz, régi (140 W/m²)</option>
       </select>
       <label>Hány napra</label>
-      <input type="number" id="futNap" value="7" min="1" step="1">
+      <input type="number" autocomplete="off" id="futNap" value="7" min="1" step="1">
       <label>Mivel fűtesz</label>
-      <select id="futMod">
+      <select autocomplete="off" id="futMod">
         <option value="fa">Fa, kályhában</option>
         <option value="pb">PB-gáz palackkal</option>
       </select>
@@ -200,6 +200,23 @@ function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
 function ppLocale(){ return 'en-GB'; }
 function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
 
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function kalkHiba(elId, uzenet){
+  const el = $(elId); if(!el) return;
+  el.innerHTML = '<p class="note koordfigy">' + esc(uzenet) + '</p>';
+  el.style.display = 'block';
+  try{ el.scrollIntoView({ block: 'nearest' }); }catch(e){}
+}
+
+function kalkSzam(id){
+  const e = $(id); if(!e) return NaN;
+  const s = String(e.value).trim().replace(',', '.');
+  if(s === '') return NaN;
+  const n = Number(s);
+  return isFinite(n) ? n : NaN;
+}
+
 function futSzamitas(){
   const ter=+$('futTer').value||0, wm2=+$('futSzig').value||100, nap=+$('futNap').value||0;
   const kwhNap = ter*wm2*24/1000;
@@ -213,6 +230,10 @@ function futSzamitas(){
 }
 
 $('futSzamol').onclick = ()=>{
+  { const ter = kalkSzam('futTer'), nap = kalkSzam('futNap');   // negative was accepted, no upper bound (Thomas 5785)
+    if(!(ter > 0) || !(nap > 0)) return kalkHiba('futEredmeny', 'Tölts ki minden mezőt nullánál nagyobb számmal.');
+    if(ter > 2000) return kalkHiba('futEredmeny', 'A fűtött terület legfeljebb 2000 m² lehet.');
+    if(nap > 365) return kalkHiba('futEredmeny', 'Legfeljebb 365 napra számol.'); }
   const r=futSzamitas(), el=$('futEredmeny');
   if(!r.kwh){ el.innerHTML='<p class="note koordfigy">Tölts ki minden mezőt.</p>'; el.style.display='block'; return; }
   let html='<div class="koorddoboz">';
