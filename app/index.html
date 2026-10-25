@@ -260,7 +260,6 @@
     .hero .tel{width:min(230px,60vw)}
     .hero .cta,.hero .badges{justify-content:center}
     .hero .cta .btn{min-width:240px;text-align:center}
-    .hero .pp-ref small{text-align:center}
     .hero .hamar{display:table;margin:0 auto 12px}
     .dia{text-align:center}.dia p{margin:0 auto}
     .dia{gap:14px;padding-top:10px}
@@ -315,7 +314,6 @@
 <div class="kicsi">PrepperPapa alkalmazás</div>
 <h1 class="nagy">Felkészülés a zsebedben. <em>Internet nélkül is.</em></h1>
 <p class="lead">Ami egy áramszünetben, egy elakadt autó mellett vagy egy erdei túrán kell, egy helyen van. A teljes változat a térképpel együtt akkor is működik, amikor a net és a térerő már nem.</p>
-<script>/* referral link: ?ref=CODE is kept in localStorage (pp_ref) and offered as an app deep link */(function(){try{var me=document.currentScript;var q=new URLSearchParams(location.search).get('ref');var k=(q||localStorage.getItem('pp_ref')||'').toUpperCase().replace(/[^A-Z0-9]/g,'');if(!/^[A-Z0-9]{4,12}$/.test(k))return;localStorage.setItem('pp_ref',k);var d=document.createElement('div');d.className='pp-ref';d.style.marginBottom='18px';d.innerHTML='<div class="cta" style="margin-bottom:6px"><a class="btn amber" href="https://app.prepperpapa.hu/#ajanlo='+k+'">Megnyitás az appban</a></div><small class="halk" style="display:block;font-size:13px">Ajánlókód: '+k+'</small>';me.parentNode.insertBefore(d,me);}catch(e){}})();</script>
 <div class="cta"><a class="btn amber" href="#vasarlas">Szólj, ha indul</a><a class="btn ghost" href="#bemutato">Nézd meg, mit tud</a></div>
 <div class="hamar">Hamarosan</div>
 <div class="badges">
