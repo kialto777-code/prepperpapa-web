@@ -22,6 +22,8 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ru = {
+  // ===== 2026-10-25 v43.352 (idea #63, card 6b4458db): native volume guard =====
+  "A telefonos appban ezen a lapon a hangerő magától maximumra áll, és kilépéskor visszaáll a korábbira. A hang a telefon hangszóróján szól akkor is, ha fülhallgató vagy Bluetooth-eszköz csatlakozik.": "В приложении на телефоне на этом экране громкость сама выставляется на максимум, а при выходе возвращается к прежней. Звук идёт из динамика телефона, даже если подключены наушники или Bluetooth-устройство.",
   // ===== 2026-10-19 v43.313 (card 6b4458db) =====
   "(sérült üzenet — egy 2026. 10. 12. előtti szerverhiba levágta, nem állítható helyre)": "(повреждённое сообщение — обрезано ошибкой сервера до 12.10.2026, восстановить нельзя)",
   "Ezen a készüléken a böngésző nem támogatja a rezgést (iPhone-on a Safari nem tudja). A kapcsoló ezért nem aktív.": "Браузер этого устройства не поддерживает вибрацию (Safari на iPhone этого не умеет). Поэтому переключатель неактивен.",
@@ -1728,6 +1730,8 @@ window.PP_FORD_SZOTAR.ru = {
   "Fényerő:": "Яркость:",
   "Fehér": "Белый",
   "hang és fény, hálózat nélkül": "звук и свет, без сети",
+  "Vétel sebesség (magától követi a jelet, kézzel is állíthatod):": "Скорость приёма (сама следует за сигналом, можно задать и вручную):",
+  "Vétel-sebesség: magától követi a vett Morze tempóját, és a csúszkát is odaállítja. Kézzel is állíthatod, onnan követi tovább.": "Скорость приёма: сама следует за темпом принимаемой Морзе и передвигает ползунок. Можно задать и вручную; дальше она следует от этого значения.",
   "Vétel sebesség (állítsd a vett Morze tempójához):": "Скорость приёма (подстрой под темп принимаемой Морзе):",
   "Érzékenység (balra érzékenyebb, jobbra szigorúbb a zajra):": "Чувствительность (влево — чувствительнее, вправо — строже к шуму):",
   "Ha nem indul a kamera.": "Если камера не запускается.",
@@ -3953,5 +3957,43 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Kuponkód": "Промокод",
   "Másol": "Копировать",
   "A gomb mögötti link magától érvényesíti a kódot a kosárban.": "Ссылка за кнопкой сама применит код в корзине.",
-  "Megveszem kedvezménnyel": "Купить со скидкой"
+  "Megveszem kedvezménnyel": "Купить со скидкой",
+  // Biblia konyvszin-sema (2026-10-25, kartya 6b4458db)
+  "Könyvszínek": "Цвета книг",
+  "Új": "Новая",
+  "Régi": "Старая",
+  "Minden könyvcsoport saját színt kap, az Ószövetségben és az Újszövetségben is.": "Каждая группа книг получает свой цвет, и в Ветхом, и в Новом Завете.",
+  "A korábbi zöld árnyalatok: az Újszövetség is az Ószövetség színeit kapja.": "Прежние оттенки зелёного: Новый Завет получает те же цвета, что и Ветхий.",
+  // Biblia terkep: helyleiras (2026-10-25, kartya 6b4458db)
+  "biztos": "точно",
+  "valószínű": "вероятно",
+  "lehetséges": "возможно",
+  "Mai azonosítás": "Современная идентификация",
+  "Megjegyzés (OpenBible, angolul)": "Примечание (OpenBible, на английском)",
+  "Más nevek (angol fordításokban)": "Другие названия (в английских переводах)",
+  "További versek": "Другие стихи"
+});
+// ===== 2026-10-25 v43.355: camera Morse follows the tempo (#65); Noah memory lines from about 8 GB (#52) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+ "Indítsd, és irányítsd a kamerát egy Morzét villogó fényre (pl. egy másik telefon vakuja). A háttér legyen sötét, a fény a kép KÖZEPÉN. A fény-küszöb magától hangolódik; a \"Fényerő\" sáv és a lámpa mutatja, mit lát. A vétel magától követi a villogás tempóját, és a \"Vétel sebesség\" csúszkát is odaállítja; kézzel is állíthatod.": "Запусти и направь камеру на свет, мигающий азбукой Морзе (например, вспышку другого телефона). Фон должен быть тёмным, свет — в ЦЕНТРЕ кадра. Порог света подстраивается сам; полоса «Яркость» и лампа показывают, что видит камера. Приём сам следует за темпом мигания и сам ставит туда ползунок «Скорость приёма»; его можно двигать и вручную.",
+ "A nyelvi modell válasz közben kb. 3 GB memóriát használ, ezért Noah legalább 5,5 GB jelentett memóriát kér, ami kb. 8 GB-os telefonnak felel meg. Kisebb telefonon a rendszer válasz közben leállítaná az appot, ezért itt Noah nem használható.": "При ответе языковая модель использует около 3 ГБ памяти, поэтому Noah требует не менее 5,5 ГБ сообщаемой памяти, что соответствует телефону примерно на 8 ГБ. На телефоне меньше система остановила бы приложение во время ответа, поэтому здесь Noah использовать нельзя.",
+ "A telefon memóriáját nem sikerült lekérdezni.": "Не удалось узнать память телефона.",
+ "A telefon által jelentett memória: {jel} GB, ez kb. {nev} GB-os telefon (a rendszer a névleges memória kb. 90%-át jelenti).": "Память, которую сообщает телефон: {jel} ГБ, то есть телефон примерно на {nev} ГБ (система сообщает около 90% номинальной памяти).",
+ "Ebbe a telefonba mindkét modell belefér (E2B és E4B).": "На этот телефон помещаются обе модели (E2B и E4B).",
+ "Ebbe a telefonba az E2B modell fér bele. Az E4B nem, mert ahhoz legalább {kapu} GB jelentett memória kell.": "На этот телефон помещается модель E2B. E4B — нет, ей нужно не менее {kapu} ГБ сообщаемой памяти.",
+ "Ebbe a telefonba egyik modell sem fér bele.": "На этот телефон не помещается ни одна модель.",
+ "Noah kb. 8 GB-os telefontól fut (a telefon névleges memóriája), a nagyobb E4B modell kb. 10 GB-ostól.": "Noah работает на телефоне примерно от 8 ГБ (номинальная память телефона), более крупная модель E4B — примерно от 10 ГБ.",
+ "A telefon {jel} GB memóriát jelent, ez kb. {nev} GB-os telefon.": "Телефон сообщает {jel} ГБ памяти, то есть это телефон примерно на {nev} ГБ.",
+ "Ez a telefon: {modell}.": "Этот телефон: {modell}.",
+ "Szabad hely: {hely}.": "Свободное место: {hely}.",
+ "Ajánlott: {modell}.": "Рекомендуется: {modell}.",
+ "nem választható: legalább {ajanlott} GB-os telefon kell": "недоступно: нужен телефон не менее чем на {ajanlott} ГБ",
+ "ez kb. {nev} GB-os": "этот примерно на {nev} ГБ",
+ "Ajánlott memória: legalább {ajanlott} GB-os telefon": "Рекомендуемая память: телефон не менее чем на {ajanlott} ГБ",
+ "ez a telefon {jel} GB-ot jelent, kb. {nev} GB-os": "этот телефон сообщает {jel} ГБ, примерно {nev} ГБ",
+ "ezért ez a modell itt nem választható": "поэтому эту модель здесь выбрать нельзя",
+ "ennek a telefonnak a memóriáját nem sikerült lekérdezni": "не удалось узнать память этого телефона",
+ "Processzor:": "Процессор:",
+ "kb. 8 GB-os telefon kell": "нужен телефон примерно на 8 ГБ",
+ "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "Для этого нужен телефон с Android 11 или новее, примерно 8 ГБ (номинальной) памяти и 6-8 ГБ свободного места."
 });

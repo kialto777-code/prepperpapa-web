@@ -15,6 +15,8 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-25 v43.352 (idea #63, card 6b4458db): native volume guard =====
+  "A telefonos appban ezen a lapon a hangerő magától maximumra áll, és kilépéskor visszaáll a korábbira. A hang a telefon hangszóróján szól akkor is, ha fülhallgató vagy Bluetooth-eszköz csatlakozik.": "În aplicația de pe telefon, pe acest ecran volumul se dă singur la maxim și revine la cel anterior când ieși. Sunetul se aude din difuzorul telefonului chiar dacă sunt conectate căști sau un dispozitiv Bluetooth.",
   // ===== 2026-10-19 v43.313 (card 6b4458db) =====
   "(sérült üzenet — egy 2026. 10. 12. előtti szerverhiba levágta, nem állítható helyre)": "(mesaj deteriorat — trunchiat de o eroare de server dinainte de 12.10.2026, nu poate fi recuperat)",
   "Ezen a készüléken a böngésző nem támogatja a rezgést (iPhone-on a Safari nem tudja). A kapcsoló ezért nem aktív.": "Browserul acestui dispozitiv nu acceptă vibrația (Safari pe iPhone nu poate). De aceea comutatorul nu este activ.",
@@ -1721,6 +1723,8 @@ window.PP_FORD_SZOTAR.ro = {
   "Fényerő:": "Luminozitate:",
   "Fehér": "Alb",
   "hang és fény, hálózat nélkül": "sunet și lumină, fără rețea",
+  "Vétel sebesség (magától követi a jelet, kézzel is állíthatod):": "Viteza de recepție (urmărește singură semnalul, o poți seta și manual):",
+  "Vétel-sebesség: magától követi a vett Morze tempóját, és a csúszkát is odaállítja. Kézzel is állíthatod, onnan követi tovább.": "Viteza de recepție: urmărește singură ritmul semnalului Morse recepționat și mută cursorul acolo. O poți seta și manual; de acolo urmărește mai departe.",
   "Vétel sebesség (állítsd a vett Morze tempójához):": "Viteza de recepție (potrivește-o cu ritmul semnalului Morse recepționat):",
   "Érzékenység (balra érzékenyebb, jobbra szigorúbb a zajra):": "Sensibilitate (spre stânga mai sensibil, spre dreapta mai sever cu zgomotul):",
   "Ha nem indul a kamera.": "Dacă nu pornește camera.",
@@ -3939,5 +3943,43 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Kuponkód": "Cod de cupon",
   "Másol": "Copiază",
   "A gomb mögötti link magától érvényesíti a kódot a kosárban.": "Linkul din spatele butonului aplică automat codul în coș.",
-  "Megveszem kedvezménnyel": "Cumpăr cu reducere"
+  "Megveszem kedvezménnyel": "Cumpăr cu reducere",
+  // Biblia konyvszin-sema (2026-10-25, kartya 6b4458db)
+  "Könyvszínek": "Culorile cărților",
+  "Új": "Nou",
+  "Régi": "Vechi",
+  "Minden könyvcsoport saját színt kap, az Ószövetségben és az Újszövetségben is.": "Fiecare grup de cărți are culoarea sa, atât în Vechiul, cât și în Noul Testament.",
+  "A korábbi zöld árnyalatok: az Újszövetség is az Ószövetség színeit kapja.": "Nuanțele verzi de dinainte: Noul Testament primește și el culorile Vechiului Testament.",
+  // Biblia terkep: helyleiras (2026-10-25, kartya 6b4458db)
+  "biztos": "sigură",
+  "valószínű": "probabilă",
+  "lehetséges": "posibilă",
+  "Mai azonosítás": "Identificare actuală",
+  "Megjegyzés (OpenBible, angolul)": "Notă (OpenBible, în engleză)",
+  "Más nevek (angol fordításokban)": "Alte nume (în traduceri engleze)",
+  "További versek": "Alte versete"
+});
+// ===== 2026-10-25 v43.355: camera Morse follows the tempo (#65); Noah memory lines from about 8 GB (#52) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Indítsd, és irányítsd a kamerát egy Morzét villogó fényre (pl. egy másik telefon vakuja). A háttér legyen sötét, a fény a kép KÖZEPÉN. A fény-küszöb magától hangolódik; a \"Fényerő\" sáv és a lámpa mutatja, mit lát. A vétel magától követi a villogás tempóját, és a \"Vétel sebesség\" csúszkát is odaállítja; kézzel is állíthatod.": "Pornește și îndreaptă camera spre o lumină care clipește în Morse (de ex. blițul altui telefon). Fundalul să fie întunecat, lumina în CENTRUL imaginii. Pragul de lumină se reglează singur; bara \"Luminozitate\" și lampa arată ce vede. Recepția urmează singură ritmul clipirii și mută acolo și cursorul \"Viteză recepție\"; îl poți regla și manual.",
+ "A nyelvi modell válasz közben kb. 3 GB memóriát használ, ezért Noah legalább 5,5 GB jelentett memóriát kér, ami kb. 8 GB-os telefonnak felel meg. Kisebb telefonon a rendszer válasz közben leállítaná az appot, ezért itt Noah nem használható.": "În timp ce răspunde, modelul de limbaj folosește aproximativ 3 GB de memorie, de aceea Noah cere cel puțin 5,5 GB de memorie raportată, ceea ce corespunde unui telefon de aproximativ 8 GB. Pe un telefon mai mic sistemul ar opri aplicația în timpul răspunsului, de aceea aici Noah nu poate fi folosit.",
+ "A telefon memóriáját nem sikerült lekérdezni.": "Memoria telefonului nu a putut fi citită.",
+ "A telefon által jelentett memória: {jel} GB, ez kb. {nev} GB-os telefon (a rendszer a névleges memória kb. 90%-át jelenti).": "Memoria raportată de telefon: {jel} GB, adică un telefon de aproximativ {nev} GB (sistemul raportează aproximativ 90% din memoria nominală).",
+ "Ebbe a telefonba mindkét modell belefér (E2B és E4B).": "Pe acest telefon încap ambele modele (E2B și E4B).",
+ "Ebbe a telefonba az E2B modell fér bele. Az E4B nem, mert ahhoz legalább {kapu} GB jelentett memória kell.": "Pe acest telefon încape modelul E2B. E4B nu, pentru că are nevoie de cel puțin {kapu} GB de memorie raportată.",
+ "Ebbe a telefonba egyik modell sem fér bele.": "Pe acest telefon nu încape niciun model.",
+ "Noah kb. 8 GB-os telefontól fut (a telefon névleges memóriája), a nagyobb E4B modell kb. 10 GB-ostól.": "Noah rulează de la un telefon de aproximativ 8 GB (memoria nominală a telefonului), modelul mai mare E4B de la aproximativ 10 GB.",
+ "A telefon {jel} GB memóriát jelent, ez kb. {nev} GB-os telefon.": "Telefonul raportează {jel} GB de memorie, adică un telefon de aproximativ {nev} GB.",
+ "Ez a telefon: {modell}.": "Acest telefon: {modell}.",
+ "Szabad hely: {hely}.": "Spațiu liber: {hely}.",
+ "Ajánlott: {modell}.": "Recomandat: {modell}.",
+ "nem választható: legalább {ajanlott} GB-os telefon kell": "indisponibil: e nevoie de un telefon de cel puțin {ajanlott} GB",
+ "ez kb. {nev} GB-os": "acesta are aproximativ {nev} GB",
+ "Ajánlott memória: legalább {ajanlott} GB-os telefon": "Memorie recomandată: un telefon de cel puțin {ajanlott} GB",
+ "ez a telefon {jel} GB-ot jelent, kb. {nev} GB-os": "acest telefon raportează {jel} GB, aproximativ {nev} GB",
+ "ezért ez a modell itt nem választható": "de aceea acest model nu poate fi ales aici",
+ "ennek a telefonnak a memóriáját nem sikerült lekérdezni": "memoria acestui telefon nu a putut fi citită",
+ "Processzor:": "Procesor:",
+ "kb. 8 GB-os telefon kell": "e nevoie de un telefon de aproximativ 8 GB",
+ "Ehhez Android 11 vagy újabb, kb. 8 GB-os (névleges memóriájú) telefon kell, és 6-8 GB szabad hely.": "Pentru aceasta e nevoie de un telefon cu Android 11 sau mai nou, aproximativ 8 GB de memorie (nominală) și 6-8 GB spațiu liber."
 });
