@@ -260,6 +260,7 @@
     .hero .tel{width:min(230px,60vw)}
     .hero .cta,.hero .badges{justify-content:center}
     .hero .cta .btn{min-width:240px;text-align:center}
+    .hero .pp-ref small{text-align:center}
     .hero .hamar{display:table;margin:0 auto 12px}
     .dia{text-align:center}.dia p{margin:0 auto}
     .dia{gap:14px;padding-top:10px}
@@ -309,6 +310,7 @@
 <div class="kicsi">Приложение PrepperPapa</div>
 <h1 class="nagy">Подготовка у тебя в кармане. <em>Даже без интернета.</em></h1>
 <p class="lead">Всё, что нужно при отключении электричества, у сломавшейся машины или в лесном походе, собрано в одном месте. Полная версия вместе с картой работает и тогда, когда интернета и связи уже нет.</p>
+<script>/* referral link: ?ref=CODE is kept in localStorage (pp_ref) and offered as an app deep link */(function(){try{var me=document.currentScript;var q=new URLSearchParams(location.search).get('ref');var k=(q||localStorage.getItem('pp_ref')||'').toUpperCase().replace(/[^A-Z0-9]/g,'');if(!/^[A-Z0-9]{4,12}$/.test(k))return;localStorage.setItem('pp_ref',k);var d=document.createElement('div');d.className='pp-ref';d.style.marginBottom='18px';d.innerHTML='<div class="cta" style="margin-bottom:6px"><a class="btn amber" href="https://app.prepperpapa.hu/#ajanlo='+k+'">Открыть в приложении</a></div><small class="halk" style="display:block;font-size:13px">Реферальный код: '+k+'</small>';me.parentNode.insertBefore(d,me);}catch(e){}})();</script>
 <div class="cta"><a class="btn amber" href="#pokupka">Сообщите о запуске</a><a class="btn ghost" href="#obzor">Посмотри, что оно умеет</a></div>
 <div class="hamar">Скоро</div>
 <div class="badges">

@@ -260,6 +260,7 @@
     .hero .tel{width:min(230px,60vw)}
     .hero .cta,.hero .badges{justify-content:center}
     .hero .cta .btn{min-width:240px;text-align:center}
+    .hero .pp-ref small{text-align:center}
     .hero .hamar{display:table;margin:0 auto 12px}
     .dia{text-align:center}.dia p{margin:0 auto}
     .dia{gap:14px;padding-top:10px}
@@ -309,6 +310,7 @@
 <div class="kicsi">Aplicația PrepperPapa</div>
 <h1 class="nagy">Pregătirea în buzunarul tău. <em>Și fără internet.</em></h1>
 <p class="lead">Tot ce îți trebuie într-o pană de curent, lângă o mașină rămasă în drum sau într-o drumeție prin pădure, într-un singur loc. Versiunea completă, inclusiv harta, funcționează și atunci când nu mai ai nici internet, nici semnal.</p>
+<script>/* referral link: ?ref=CODE is kept in localStorage (pp_ref) and offered as an app deep link */(function(){try{var me=document.currentScript;var q=new URLSearchParams(location.search).get('ref');var k=(q||localStorage.getItem('pp_ref')||'').toUpperCase().replace(/[^A-Z0-9]/g,'');if(!/^[A-Z0-9]{4,12}$/.test(k))return;localStorage.setItem('pp_ref',k);var d=document.createElement('div');d.className='pp-ref';d.style.marginBottom='18px';d.innerHTML='<div class="cta" style="margin-bottom:6px"><a class="btn amber" href="https://app.prepperpapa.hu/#ajanlo='+k+'">Deschide în aplicație</a></div><small class="halk" style="display:block;font-size:13px">Cod de recomandare: '+k+'</small>';me.parentNode.insertBefore(d,me);}catch(e){}})();</script>
 <div class="cta"><a class="btn amber" href="#cumparare">Anunță-mă la lansare</a><a class="btn ghost" href="#prezentare">Vezi ce poate</a></div>
 <div class="hamar">În curând</div>
 <div class="badges">
