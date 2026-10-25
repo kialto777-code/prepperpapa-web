@@ -227,12 +227,20 @@
   @media (max-width:820px){.szintek{grid-template-columns:1fr}.tabla td.valt{font-size:11px}}
   @media (max-width:560px){
     .tabla table{table-layout:fixed}
-    .tabla thead th:first-child{width:31%}
-    .tabla th,.tabla td{padding:9px 5px;font-size:13px;overflow-wrap:anywhere;hyphens:auto}
+    .tabla table th,.tabla table td{padding:9px 5px;font-size:12.5px;overflow-wrap:normal;word-break:normal;hyphens:manual}
+    .tabla table thead th{width:30%}
+    .tabla table thead th:first-child{width:40%}
+    .tabla table td.arc small{font-size:11px}
+    .vk{display:none}
     .tabla thead th{font-size:10px;letter-spacing:.03em}
     .tabla td{width:auto}
     .tabla tr.csop th{font-size:11px;padding:8px 6px}
   }
+  .csakmobil{display:none}
+  @media (max-width:560px){.csakmobil{display:block}}
+  .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
+  .tabla td.arc .ar1{display:block;font-size:17px}
+  .szint .szkesobb{font-size:14px;margin:-8px 0 12px}
   .kieg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}
   .kieg h3{margin:0 0 8px;font-size:22px}
   /* reveal */
@@ -390,47 +398,49 @@
 <section class="sec osszevet" id="comparatie"><div class="in">
 <div class="rv"><div class="kicsi">Comparație</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Gratuit, premium și Patrimoniu</h2>
 <p class="lead">Pe module, într-un singur loc: ce e gratuit, ce deblochează codul premium și ce oferă Patrimoniu, produsul separat.</p></div>
-<div class="szintek"><div class="szint rv"><div class="kicsi">Gratuit</div><p class="szar">0 €</p><ul><li>Toate funcțiile de urgență, chiar și fără internet</li><li>2 membri ai familiei, 50 de articole în rezervă</li><li>2 planificări de traseu pe săptămână</li><li>1 dispozitiv</li></ul></div><div class="szint rv kiemelt"><div class="kicsi">Premium</div><p class="szar">39,90 €</p><ul><li>Achiziție unică, preț de lansare</li><li>Familie, rezervă și trasee nelimitate</li><li>Hartă descărcabilă și bază de cunoștințe extinsă</li><li>Fără oferte pop-up, pe 2 dispozitive</li></ul></div><div class="szint rv"><div class="kicsi">Patrimoniu</div><p class="szar">Modul suplimentar</p><ul><li>Produs separat, se adaugă atât la varianta gratuită, cât și la premium</li><li>Articole și conturi nelimitate</li><li>Funcționează la capacitate deplină și în PrepperPapa</li><li>Fără el: poate fi încercat până la 10 articole</li></ul></div></div>
+<div class="szintek"><div class="szint rv"><div class="kicsi">Gratuit</div><p class="szar">0 €</p><ul><li>Toate funcțiile de urgență, chiar și fără internet</li><li>2 membri ai familiei, 50 de articole în rezervă</li><li>2 planificări de traseu pe săptămână</li><li>1 dispozitiv</li></ul></div><div class="szint rv kiemelt"><div class="kicsi">Premium</div><p class="szar">39,90 €</p><p class="szkesobb">preț de lansare · ulterior 49,90 €</p><ul><li>Achiziție unică</li><li>Familie, rezervă și trasee nelimitate</li><li>Hartă descărcabilă și bază de cunoștințe extinsă</li><li>Fără oferte pop-up, pe 2 dispozitive</li></ul></div><div class="szint rv vk"><div class="kicsi">Patrimoniu</div><p class="szar">Modul suplimentar</p><ul><li>Produs separat, se adaugă atât la varianta gratuită, cât și la premium</li><li>Articole și conturi nelimitate</li><li>Funcționează la capacitate deplină și în PrepperPapa</li><li>Fără el: poate fi încercat până la 10 articole</li></ul></div></div>
 <div class="tabla rv"><table>
-<thead><tr><th scope="col">Funcție</th><th scope="col">Gratuit</th><th scope="col" class="prem">Premium</th><th scope="col" class="vagy">Extensia Patrimoniu</th></tr></thead>
+<thead><tr><th scope="col">Funcție</th><th scope="col">Gratuit</th><th scope="col" class="prem">Premium</th><th scope="col" class="vagy vk">Extensia Patrimoniu</th></tr></thead>
 <tbody>
 <tr class="csop"><th scope="rowgroup" colspan="4">Preț și cont</th></tr>
-<tr><th scope="row">Preț</th><td class="korlat">0 €</td><td class="korlat">39,90 € (preț de lansare, o singură dată)</td><td class="korlat">produs separat</td></tr>
-<tr><th scope="row">Dispozitive pe cont în același timp</th><td class="korlat">1</td><td class="korlat">2</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Recomandări pop-up</th><td class="korlat">da</td><td class="korlat">nu</td><td class="valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Preț</th><td class="korlat">0 €</td><td class="korlat arc"><span class="ar1">39,90 €</span><small>preț de lansare · ulterior 49,90 €</small></td><td class="vk korlat">produs separat</td></tr>
+<tr><th scope="row">Dispozitive pe cont în același timp</th><td class="korlat">1</td><td class="korlat">2</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Recomandări pop-up</th><td class="korlat">da</td><td class="korlat">nu</td><td class="vk valt">ca în varianta ta</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Hartă</th></tr>
-<tr><th scope="row">Hartă și trasee turistice, online</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Planificare de traseu</th><td class="korlat">2 pe săptămână</td><td class="korlat">nelimitat</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Hartă descărcabilă pentru utilizare fără internet (regiuni din Ungaria, țări străine și provinciile lor)</th><td class="nincs">–</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Hartă și trasee turistice, online</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Planificare de traseu</th><td class="korlat">2 pe săptămână</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Hartă descărcabilă pentru utilizare fără internet (regiuni din Ungaria, țări străine și provinciile lor)</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Gospodărie și rezervă</th></tr>
-<tr><th scope="row">Membrii familiei</th><td class="korlat">2 persoane</td><td class="korlat">nelimitat</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Rezervă</th><td class="korlat">50 de produse</td><td class="korlat">nelimitat</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Grad de pregătire și analiza riscurilor</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Lista de bagaje „Ce să iau?”</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Membrii familiei</th><td class="korlat">2 persoane</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Rezervă</th><td class="korlat">50 de produse</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Grad de pregătire și analiza riscurilor</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Lista de bagaje „Ce să iau?”</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Bază de cunoștințe</th></tr>
-<tr><th scope="row">Articole de bază și articole care salvează vieți</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Bază de cunoștințe extinsă</th><td class="nincs">–</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Articole de bază și articole care salvează vieți</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Bază de cunoștințe extinsă</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Urgență</th></tr>
-<tr><th scope="row">SOS și lanternă</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Card de urgență</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Busolă</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
+<tr><th scope="row">SOS și lanternă</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Card de urgență</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Busolă</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Comunicare</th></tr>
-<tr><th scope="row">Morse</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Fax: trimiterea unei imagini prin sunet</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Camere (mesaje de grup și private): cameră proprie</th><td class="korlat">1</td><td class="korlat">10</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Camere: membru în camerele altora</th><td class="korlat">3</td><td class="korlat">nelimitat</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Mesaje locale fără internet</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Morse</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Fax: trimiterea unei imagini prin sunet</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Camere (mesaje de grup și private): cameră proprie</th><td class="korlat">1</td><td class="korlat">10</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Camere: membru în camerele altora</th><td class="korlat">3</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Mesaje locale fără internet</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Unelte și portofele</th></tr>
-<tr><th scope="row">Calculatoare</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Biblia cu citire cu voce tare</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">QR secret</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Portofel de documente</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
-<tr><th scope="row">Portofel de tokenuri</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Calculatoare</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Biblia cu citire cu voce tare</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">QR secret</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Portofel de documente</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Portofel de tokenuri</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Patrimoniu</th></tr>
-<tr><th scope="row">Articole proprii</th><td class="korlat">10 (probă)</td><td class="korlat azonos">10 (probă)</td><td class="korlat">nelimitat</td></tr>
-<tr><th scope="row">Conturi</th><td class="korlat">1 (probă)</td><td class="korlat azonos">1 (probă)</td><td class="korlat">nelimitat</td></tr>
+<tr><th scope="row">Articole proprii</th><td class="korlat">10 (probă)</td><td class="korlat azonos">10 (probă)</td><td class="vk korlat">nelimitat</td></tr>
+<tr><th scope="row">Conturi</th><td class="korlat">1 (probă)</td><td class="korlat azonos">1 (probă)</td><td class="vk korlat">nelimitat</td></tr>
 </tbody></table></div>
-<p class="halk rv">„Ca în varianta ta” înseamnă că extensia Patrimoniu nu schimbă nimic aici: funcționează după varianta ta, gratuită sau premium.</p>
+<p class="halk rv">Premium este o achiziție unică.</p>
+<p class="halk rv csakmobil">Patrimoniu este un produs separat, cu pagină proprie.</p>
+<p class="halk rv vk">„Ca în varianta ta” înseamnă că extensia Patrimoniu nu schimbă nimic aici: funcționează după varianta ta, gratuită sau premium.</p>
 <p class="halk rv">Ce e gratuit rămâne gratuit și nicio funcție nu se oprește dacă nu cumperi un cod.</p>
 <div class="kieg rv"><div class="kicsi">Modul suplimentar</div><h3>Patrimoniu</h3>
 <p>Produs separat, în curând în Google Play și în App Store. În aplicație poate fi încercat, atât gratuit, cât și cu premium, până la 10 articole proprii și 1 cont. Pentru utilizarea completă ai nevoie de Patrimoniu, produsul separat, iar dacă îl cumperi, funcționează la capacitate deplină și în PrepperPapa.</p></div>

@@ -227,12 +227,20 @@
   @media (max-width:820px){.szintek{grid-template-columns:1fr}.tabla td.valt{font-size:11px}}
   @media (max-width:560px){
     .tabla table{table-layout:fixed}
-    .tabla thead th:first-child{width:31%}
-    .tabla th,.tabla td{padding:9px 5px;font-size:13px;overflow-wrap:anywhere;hyphens:auto}
+    .tabla table th,.tabla table td{padding:9px 5px;font-size:12.5px;overflow-wrap:normal;word-break:normal;hyphens:manual}
+    .tabla table thead th{width:30%}
+    .tabla table thead th:first-child{width:40%}
+    .tabla table td.arc small{font-size:11px}
+    .vk{display:none}
     .tabla thead th{font-size:10px;letter-spacing:.03em}
     .tabla td{width:auto}
     .tabla tr.csop th{font-size:11px;padding:8px 6px}
   }
+  .csakmobil{display:none}
+  @media (max-width:560px){.csakmobil{display:block}}
+  .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
+  .tabla td.arc .ar1{display:block;font-size:17px}
+  .szint .szkesobb{font-size:14px;margin:-8px 0 12px}
   .kieg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}
   .kieg h3{margin:0 0 8px;font-size:22px}
   /* reveal */
@@ -390,47 +398,49 @@
 <section class="sec osszevet" id="sravnenie"><div class="in">
 <div class="rv"><div class="kicsi">Сравнение</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Бесплатно, премиум и Имущество</h2>
 <p class="lead">По модулям, в одном месте: что бесплатно, что открывает премиум-код и что даёт отдельный продукт «Имущество».</p></div>
-<div class="szintek"><div class="szint rv"><div class="kicsi">Бесплатно</div><p class="szar">0 €</p><ul><li>Все экстренные функции, даже без интернета</li><li>2 члена семьи, 50 позиций в запасах</li><li>2 построения маршрута в неделю</li><li>1 устройство</li></ul></div><div class="szint rv kiemelt"><div class="kicsi">Премиум</div><p class="szar">39,90 €</p><ul><li>Разовая покупка, вводная цена</li><li>Семья, запасы и маршруты без ограничений</li><li>Загружаемая карта и расширенная база знаний</li><li>Без всплывающих предложений, на 2 устройствах</li></ul></div><div class="szint rv"><div class="kicsi">Имущество</div><p class="szar">Дополнение</p><ul><li>Отдельный продукт, подходит и к бесплатной версии, и к премиуму</li><li>Позиции и счета без ограничений</li><li>Полноценно работает и в PrepperPapa</li><li>Без него: пробный режим до 10 позиций</li></ul></div></div>
+<div class="szintek"><div class="szint rv"><div class="kicsi">Бесплатно</div><p class="szar">0 €</p><ul><li>Все экстренные функции, даже без интернета</li><li>2 члена семьи, 50 позиций в запасах</li><li>2 построения маршрута в неделю</li><li>1 устройство</li></ul></div><div class="szint rv kiemelt"><div class="kicsi">Премиум</div><p class="szar">39,90 €</p><p class="szkesobb">вводная цена · позже 49,90 €</p><ul><li>Разовая покупка</li><li>Семья, запасы и маршруты без ограничений</li><li>Загружаемая карта и расширенная база знаний</li><li>Без всплывающих предложений, на 2 устройствах</li></ul></div><div class="szint rv vk"><div class="kicsi">Имущество</div><p class="szar">Дополнение</p><ul><li>Отдельный продукт, подходит и к бесплатной версии, и к премиуму</li><li>Позиции и счета без ограничений</li><li>Полноценно работает и в PrepperPapa</li><li>Без него: пробный режим до 10 позиций</li></ul></div></div>
 <div class="tabla rv"><table>
-<thead><tr><th scope="col">Функция</th><th scope="col">Бесплатно</th><th scope="col" class="prem">Премиум</th><th scope="col" class="vagy">Дополнение «Имущество»</th></tr></thead>
+<thead><tr><th scope="col">Функция</th><th scope="col">Бесплатно</th><th scope="col" class="prem">Премиум</th><th scope="col" class="vagy vk">Дополнение «Имущество»</th></tr></thead>
 <tbody>
 <tr class="csop"><th scope="rowgroup" colspan="4">Цена и учётная запись</th></tr>
-<tr><th scope="row">Цена</th><td class="korlat">0 €</td><td class="korlat">39,90 € (вводная цена, разово)</td><td class="korlat">отдельный продукт</td></tr>
-<tr><th scope="row">Устройств на одну учётную запись одновременно</th><td class="korlat">1</td><td class="korlat">2</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Всплывающие предложения</th><td class="korlat">есть</td><td class="korlat">нет</td><td class="valt">как в твоей версии</td></tr>
+<tr><th scope="row">Цена</th><td class="korlat">0 €</td><td class="korlat arc"><span class="ar1">39,90 €</span><small>вводная цена · позже 49,90 €</small></td><td class="vk korlat">отдельный продукт</td></tr>
+<tr><th scope="row">Устройств на одну учётную запись одновременно</th><td class="korlat">1</td><td class="korlat">2</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Всплывающие предложения</th><td class="korlat">есть</td><td class="korlat">нет</td><td class="vk valt">как в твоей версии</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Карта</th></tr>
-<tr><th scope="row">Карта и туристические тропы, онлайн</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Планирование маршрутов</th><td class="korlat">2 в неделю</td><td class="korlat">без ограничений</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Загружаемая карта для использования без интернета (регионы Венгрии, зарубежные страны и их области)</th><td class="nincs">–</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
+<tr><th scope="row">Карта и туристические тропы, онлайн</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Планирование маршрутов</th><td class="korlat">2 в неделю</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Загружаемая карта для использования без интернета (регионы Венгрии, зарубежные страны и их области)</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Домохозяйство и запасы</th></tr>
-<tr><th scope="row">Члены семьи</th><td class="korlat">2 человека</td><td class="korlat">без ограничений</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Запасы</th><td class="korlat">50 позиций</td><td class="korlat">без ограничений</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Расчёт готовности и оценка рисков</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Список «Что взять?»</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
+<tr><th scope="row">Члены семьи</th><td class="korlat">2 человека</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Запасы</th><td class="korlat">50 позиций</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Расчёт готовности и оценка рисков</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Список «Что взять?»</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">База знаний</th></tr>
-<tr><th scope="row">Базовые статьи и статьи, спасающие жизнь</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Расширенная база знаний</th><td class="nincs">–</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
+<tr><th scope="row">Базовые статьи и статьи, спасающие жизнь</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Расширенная база знаний</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Экстренная ситуация</th></tr>
-<tr><th scope="row">SOS и фонарь</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Карточка экстренной помощи</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Компас</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
+<tr><th scope="row">SOS и фонарь</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Карточка экстренной помощи</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Компас</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Связь</th></tr>
-<tr><th scope="row">Морзе</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Факс: передача изображения звуком</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Комнаты (групповые и личные сообщения): своя комната</th><td class="korlat">1</td><td class="korlat">10</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Комнаты: участие в чужих комнатах</th><td class="korlat">3</td><td class="korlat">без ограничений</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Локальные сообщения без интернета</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
+<tr><th scope="row">Морзе</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Факс: передача изображения звуком</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Комнаты (групповые и личные сообщения): своя комната</th><td class="korlat">1</td><td class="korlat">10</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Комнаты: участие в чужих комнатах</th><td class="korlat">3</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Локальные сообщения без интернета</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Инструменты и кошельки</th></tr>
-<tr><th scope="row">Калькуляторы</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Библия с чтением вслух</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Секретный QR</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Документы</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
-<tr><th scope="row">Кошелёк токенов</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="valt">как в твоей версии</td></tr>
+<tr><th scope="row">Калькуляторы</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Библия с чтением вслух</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Секретный QR</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Документы</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Кошелёк токенов</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
 <tr class="csop"><th scope="rowgroup" colspan="4">Имущество</th></tr>
-<tr><th scope="row">Собственные позиции</th><td class="korlat">10 (проба)</td><td class="korlat azonos">10 (проба)</td><td class="korlat">без ограничений</td></tr>
-<tr><th scope="row">Счета</th><td class="korlat">1 (проба)</td><td class="korlat azonos">1 (проба)</td><td class="korlat">без ограничений</td></tr>
+<tr><th scope="row">Собственные позиции</th><td class="korlat">10 (проба)</td><td class="korlat azonos">10 (проба)</td><td class="vk korlat">без ограничений</td></tr>
+<tr><th scope="row">Счета</th><td class="korlat">1 (проба)</td><td class="korlat azonos">1 (проба)</td><td class="vk korlat">без ограничений</td></tr>
 </tbody></table></div>
-<p class="halk rv">«Как в твоей версии» означает, что дополнение «Имущество» здесь ничего не меняет: всё работает так, как в твоей версии, бесплатной или премиум.</p>
+<p class="halk rv">Премиум — разовая покупка.</p>
+<p class="halk rv csakmobil">«Имущество» — отдельный продукт со своей страницей.</p>
+<p class="halk rv vk">«Как в твоей версии» означает, что дополнение «Имущество» здесь ничего не меняет: всё работает так, как в твоей версии, бесплатной или премиум.</p>
 <p class="halk rv">Что бесплатно, то и останется бесплатным, и ни одна функция не перестанет работать, если ты не купишь код.</p>
 <div class="kieg rv"><div class="kicsi">Дополнение</div><h3>Имущество</h3>
 <p>Отдельный продукт, скоро в Google Play и в App Store. В приложении его можно попробовать, и бесплатно, и с премиумом, до 10 собственных позиций и 1 счёта. Для полноценного использования нужен отдельный «Имущество», а если ты его купишь, он полноценно работает и в PrepperPapa.</p></div>
