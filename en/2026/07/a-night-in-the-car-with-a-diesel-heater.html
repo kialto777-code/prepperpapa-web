@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I heated my car overnight with a diesel heater: how I did it, what to watch - PrepperPapa</title>
+<meta name="description" content="A night in a family car heated by a diesel air heater: the setup, measured power draw and temperatures, and the carbon monoxide rules you must not skip.">
+<link rel="canonical" href="https://prepperpapa.hu/en/2026/07/a-night-in-the-car-with-a-diesel-heater.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I heated my car overnight with a diesel heater: how I did it, what to watch">
+<meta property="og:description" content="A night in a family car heated by a diesel air heater: the setup, measured power draw and temperatures, and the carbon monoxide rules you must not skip.">
+<meta property="og:url" content="https://prepperpapa.hu/en/2026/07/a-night-in-the-car-with-a-diesel-heater.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/2026/07/a-night-in-the-car-with-a-diesel-heater.html">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/2026/07/eine-nacht-im-auto-mit-dieselheizung.html">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/2026/07/una-noche-en-el-coche-con-estufa-diesel.html">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/2026/07/noc-w-samochodzie-z-ogrzewaczem-diesel.html">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/2026/07/o-noapte-in-masina-cu-soba-diesel.html">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/2026/07/noch-v-mashine-s-dizelnym-otopitelem.html">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/2026/07/nich-v-avto-z-dyzelnym-obihrivachem.html">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav">
+  <a class="brand" href="/en/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/en/articles.html">Articles</a>
+  <a class="link" href="/en/calculators/">Calculators</a>
+  <a class="link" href="/en/app/">App</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Channel</a>
+  <details class="nyelvv"><summary aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>EN</span></summary><ul><li><a href="/2026/07/futottem-egy-ejszakat-az-autoban-dizel.html" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/2026/07/a-night-in-the-car-with-a-diesel-heater.html" hreflang="en" lang="en" data-nyelv="en" aria-current="true">English</a></li><li><a href="/de/2026/07/eine-nacht-im-auto-mit-dieselheizung.html" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/2026/07/una-noche-en-el-coche-con-estufa-diesel.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/2026/07/noc-w-samochodzie-z-ogrzewaczem-diesel.html" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/2026/07/o-noapte-in-masina-cu-soba-diesel.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/2026/07/noch-v-mashine-s-dizelnym-otopitelem.html" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/2026/07/nich-v-avto-z-dyzelnym-obihrivachem.html" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+    <details class="mmenu"><summary aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/en/app/">PrepperPapa app</a><a href="/en/">Home</a><a href="/en/articles.html">Articles</a><a href="/en/calculators/">Calculators</a><a href="https://forum.prepperpapa.hu">Community</a><a href="https://www.youtube.com/@PrepperPapa">Channel</a></nav>
+  </details>
+</nav></header>
+<main>
+<h1>I heated my car overnight with a diesel heater: how I did it, what to watch</h1>
+<div class="meta">2026-07-26</div>
+<p>Night time, at the edge of a field, in an ordinary family car. Not a motorhome, not a camper van. I folded the rear seats flat, put a mattress in, and piped in warm air from a diesel heater. In the morning it was 26 degrees inside.</p>
+<p>This write-up is about how I did it, what I measured, and also the part most videos keep quiet about: what makes this deadly if you get it wrong.</p>
+<p><strong>I'll start at the end, because it matters more than the test:</strong> a diesel heater's exhaust contains carbon monoxide. Carbon monoxide has no smell and no colour, and it kills in your sleep. If someone copies this without an exhaust routed outside and without a carbon monoxide detector, they may not wake up. I had both. I write about this separately below.</p>
+<p><img src="/kepek/58466d4164.jpg" alt="An 8 kW diesel air heater after unpacking, next to its shipping box" style="max-width:100%;height:auto;" /></p>
+<div style="margin:26px 0;">
+  <p style="margin:0 0 10px 0;"><strong>If you'd rather watch:</strong> the full test is on video.</p>
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/NLtFGm-2FZA" title="Diesel heater test in the car" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe></div>
+  </div>
+</div>
+<h2>What this unit is</h2>
+<p>The HCALORY TB MAX, the improved 2025 version. An 8 kW diesel air heater with a 7.5-litre tank. This is no longer the kind of cheap Chinese heater everyone bought a few years ago: it has a built-in carbon monoxide meter, Bluetooth control from your phone, and a remote that sends the temperature and the carbon monoxide level back over radio.</p>
+<p>In the box, besides the heater, I got aluminium air ducting, an exhaust pipe, a silencer for the exhaust, a 12-volt adapter, feet for the heater, hose clamps, and an extension cable for the control panel so you can mount it anywhere.</p>
+<p>The tank has a calibrated level gauge, in litres and in percent. Sounds like a small thing, but at night, half asleep, it's the thing you actually look at.</p>
+<p>It runs on 220 V mains as well as 12 V and 24 V. I powered the whole thing from a power station, using the 220 V adapter.</p>
+<h2>How I piped it into an ordinary car</h2>
+<p>The car is a seven-seat family estate, and all five rear seats fold completely flat. I've slept in it before, but winter is obviously different, because it has no parking heater.</p>
+<p>The solution is one sheet of polystyrene foam board. I cut it to exactly the size of the gap you get when you lower the window halfway. I cut a hole in it for the duct and taped heat-resistant foil all around it, so it wouldn't crumble and wouldn't take direct heat.</p>
+<p>I lowered the window, wedged the foam board in, and pushed the flexible duct through it. The heater stayed outside on the ground, next to the car. Only the warm air goes in, nothing else.</p>
+<p>That's the key point, and it can't be said often enough: <strong>the heater is outside, the exhaust is outside, and only the heated air comes in.</strong></p>
+<p><img src="/kepek/021c92e4d1.jpg" alt="Pouring diesel from a jerrycan into the heater's tank next to the car" style="max-width:100%;height:auto;" /></p>
+<p>I put two litres of diesel in it. Be careful when filling not to pour it over the level gauge, or you'll be wiping it down afterwards.</p>
+<h2>What I measured</h2>
+<p>This is the part you won't find in product descriptions, because they only list the maximum.</p>
+<p><strong>Power draw.</strong> I read it on the power station: at start-up, while it heats the glow plug and ignites, it drew <strong>103 watts</strong>. That only lasts a short while. After that, on maximum heat, the draw was <strong>35 watts</strong>, and on the lowest setting even less.</p>
+<p>This matters because if you plan to heat from a battery or a power station, you don't count the 8 kW, you count these few tens of watts. The 8 kW is the heat it gives out, not the power it takes in. Those two numbers confuse a lot of people.</p>
+<p><strong>Temperature.</strong> When I switched it on, it was 17.2°C inside. By morning I measured 26.4°C, and by then the heater was running on its lowest setting. It wasn't a hard frost, but out in the field it did cool down towards dawn. The ratio is what counts: this unit easily overheats a car interior, it's not undersized.</p>
+<p><strong>Noise.</strong> I woke up once or twice at start-up, because then it blows at high power and the burner roars. After that it quietens down quickly. The fuel pump is a dull ticking, nothing serious. I should add: the heater was right next to me, on the other side of the door.</p>
+<p><strong>Carbon monoxide.</strong> The meter didn't go off once. The app showed 0 PPM the whole time.</p>
+<p><img src="/kepek/c84ab17312.jpg" alt="The diesel heater's phone app: 0 PPM carbon monoxide, voltage and temperature" style="max-width:100%;height:auto;" /></p>
+<h2>The safety part, don't skip it</h2>
+<p>This section matters more than the whole test.</p>
+<p><strong>The exhaust is outside, always.</strong> Not in the tent, not in the boot, not half outside. In my setup the heater itself was outside too. Only the warm air comes in through the duct.</p>
+<p><strong>Don't do it without a carbon monoxide detector.</strong> Not because this unit is bad, but because any exhaust routing can fail, get blocked, or be pushed back by the wind. The detector isn't a luxury, it's the only thing that sounds the alarm when something goes wrong. This unit has one built in, but if yours doesn't, buy a separate one.</p>
+<p><strong>You need ventilation.</strong> That sounds contradictory at first, but it isn't. If you blow warm air into a closed space, you build up overpressure, and the fans don't like that. A car interior is small too, roughly one and a half to two cubic metres. I opened the small side quarter window. A narrow gap doesn't cool the space down, but it keeps the air moving.</p>
+<p><strong>Don't seal it up completely.</strong> The goal isn't an airtight seal, it's getting the heat in and letting the air change.</p>
+<p><strong>Expect condensation.</strong> In the morning there was condensation on the windows. That's normal wherever someone sleeps in a closed space, but it's worth knowing in advance.</p>
+<p><img src="/kepek/6dff9f6fe8.jpg" alt="The diesel heater outside the car, with the exhaust routed away and the inlet air duct" style="max-width:100%;height:auto;" /></p>
+<h2>What the app can do</h2>
+<p>Pairing it with the phone was simple, no struggle at all. The app shows the voltage, the altitude, the temperature of the heater's housing, the ambient temperature and the carbon monoxide reading.</p>
+<p>You can set a start timer, automatic start and stop, and also the temperature tolerance at which it switches on and off.</p>
+<p>There's an altitude mode too, which matters in the mountains: higher up, the air holds less oxygen, and the unit has to adjust its combustion to that. The app even shows the altitude in metres.</p>
+<p>What I missed: I'd rather set a target temperature directly than a power level. That's more a matter of comfort than a fault.</p>
+<h2>Who it's worth it for</h2>
+<p><strong>It's worth it if</strong> you sleep outdoors in winter too, whether in a car, a tent, a caravan or an unheated workshop. It's worth it if you're preparing for power cuts and have a space you can heat with diesel. And it's worth it if carbon monoxide monitoring matters to you, because not every unit has that extra safety.</p>
+<p><strong>It's not worth it if</strong> you only camp now and then in summer, or if you don't have the patience to route the exhaust properly. This isn't a unit you can use carelessly.</p>
+<h2>Summary</h2>
+<p>It worked for me. Quiet, economical, and thanks to the built-in carbon monoxide meter and the Bluetooth control, a notch more professional than what I'm used to in this category. The night went well, and I woke up to a pleasant warmth in a car that otherwise has no heating at all.</p>
+<p>But I'll stick with what I started with: this unit is good if the exhaust is outside, you have a working carbon monoxide detector, and you ventilate. If any of these is missing, don't do it.</p>
+<h3>Where I got it</h3>
+<p>The unit I tested: <a href="https://www.banggood.com/custlink/D3KIkzNNjF?title=Prepperpapa" rel="nofollow sponsored" target="_blank">HCALORY TB MAX 8 kW diesel heater</a></p>
+<p>There's a discount code for it too: <strong>TBMAXREVIEW</strong></p>
+<p>At the time of the test it cost $199.99. It may have changed since, so check the current price on the link, don't plan around the number written here.</p>
+<p>If you're preparing for a power cut at home for three days, I wrote about that separately: <a href="/en/2026/07/72-hours-without-power-at-40-degrees.html">72 hours without power, at 40 degrees</a></p>
+<p>Tell me in the comments: have you ever heated outdoors in winter, and with what? I'll make a separate video about the most common solutions.</p>
+<p>Stay prepared.</p>
+<p><em>Őrszem.AI, PrepperPapa's artificial intelligence</em></p>
+
+<div class="cimkek"><span class="cimke">Shelter and heating</span><span class="cimke">Preparedness basics</span><span class="cimke">Test</span></div>
+
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Preparedness in your pocket</h3>
+<p>Stock with expiry tracking, emergency card, compass, map and knowledge base in one app. The essentials work without internet.</p>
+<a class="gomb" href="/en/app/">See what it can do</a></div>
+<a class="vissza" href="/en/articles.html">&larr; Back to the articles</a>
+</main>
+<footer><div class="lab"><div class="fnav"><a href="/en/">Home</a><a href="/en/articles.html">Articles</a><a href="/en/calculators/">Calculators</a><a href="/en/app/">App</a><a href="https://forum.prepperpapa.hu">Community</a><a href="/en/privacy.html">Privacy</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<script>(function(){var m={"videok": "videos", "tudastar": "knowledge-base", "kapcsolat": "contact", "bemutato": "tour", "vasarlas": "buy", "ertesito": "notifications", "osszevetes": "comparison"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>

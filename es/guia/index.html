@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App PrepperPapa: guía de uso</title>
+<meta name="description" content="Todas las funciones de la app PrepperPapa, pantalla a pantalla: reserva, hogar, mapa, brújula, tarjeta de emergencia, base de conocimientos, Biblia, Morse, SOS, linterna y mucho más.">
+<link rel="canonical" href="https://prepperpapa.hu/es/guia/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="App PrepperPapa: guía de uso">
+<meta property="og:description" content="Todas las funciones de la app PrepperPapa, pantalla a pantalla: reserva, hogar, mapa, brújula, tarjeta de emergencia, base de conocimientos, Biblia, Morse, SOS, linterna y mucho más.">
+<meta property="og:url" content="https://prepperpapa.hu/es/guia/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://prepperpapa.hu/es/app/kepek/og-app.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/es/app/kepek/og-app.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  main.utm{max-width:820px}
+  .tartalom{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 30px}
+  .tartalom ol{columns:2;column-gap:26px;margin:8px 0 0 20px;font-size:15px}
+  .tartalom a{color:var(--ink);text-decoration:none}
+  .tartalom a:hover{color:var(--borostyan)}
+  .lap{border-top:1px solid var(--line);padding:26px 0 8px;scroll-margin-top:12px}
+  .lap h2{margin:0 0 12px;font-size:24px}
+  .lap h2 .sz{color:var(--borostyan);margin-right:8px}
+  .hol{background:var(--panel);border-left:3px solid var(--zold);padding:8px 14px;border-radius:0 8px 8px 0;font-size:15px}
+  .tipp{border-left:3px solid var(--borostyan);padding:4px 0 4px 14px;font-size:15px;color:#cfd6cf}
+  .dij{background:rgba(255,179,64,.07);border:1px solid rgba(255,179,64,.35);border-radius:10px;padding:10px 14px;font-size:15px}
+  .lap .kepek figure{flex:0 0 220px}
+  .lap .kepek img{width:220px}
+  .lap .kepek.egy figure{flex:0 0 260px}
+  .lap .kepek.egy img{width:260px}
+  @media (max-width:560px){.tartalom ol{columns:1}}
+
+  .utmdemo{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:8px 0 30px;padding:22px;
+       border:1px solid var(--line);border-radius:22px;background:radial-gradient(120% 90% at 20% 30%,#1d2c23,#0d1511 70%)}
+  .utmdemo .tel{position:relative;width:min(230px,58vw);padding:7px;border-radius:34px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .utmdemo .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .utmdemo .kij{display:block;position:relative;overflow:hidden;border-radius:27px;background:#0B110E;padding:22px 0 8px}
+  .utmdemo .kepdoboz{display:block;position:relative;aspect-ratio:480/1038}
+  .utmdemo .kij::before{content:"";position:absolute;left:50%;top:6px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022;z-index:3}
+  .utmdemo .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .utmdemo .kij img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;
+       transform:scale(1.04);transition:opacity .8s ease,transform 5s ease}
+  .utmdemo .kij img.akt{opacity:1;transform:none}
+  .utmdemo .feliratok{position:relative;min-height:150px}
+  .utmdemo .felirat{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .utmdemo .felirat.akt{opacity:1;transform:none;position:relative}
+  .utmdemo .felirat .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .utmdemo .felirat h2{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:8px 0 10px;border:0;padding:0}
+  .utmdemo .felirat p{font-size:17px;color:#cfd6cf;margin:0}
+  .utmdemo .savok{display:flex;gap:6px;margin-top:22px}
+  .utmdemo .savok button{flex:1;height:5px;border:0;padding:0;border-radius:3px;background:#2c3a31;cursor:pointer;overflow:hidden;position:relative}
+  .utmdemo .savok button i{position:absolute;inset:0;width:0;background:var(--borostyan)}
+  .utmdemo .savok button.volt i{width:100%}
+  .utmdemo .savok button.akt i{animation:utmsav var(--ido,5s) linear forwards}
+  .utmdemo.all .savok button.akt i{animation-play-state:paused}
+  .utmdemo .megall{margin-top:10px;font-size:13px;color:var(--muted)}
+  @keyframes utmsav{to{width:100%}}
+  @media (prefers-reduced-motion:reduce){.utmdemo .kij img,.utmdemo .felirat{transition:none}.utmdemo .savok button.akt i{animation:none;width:100%}}
+  @media (max-width:640px){.utmdemo{grid-template-columns:1fr;justify-items:center;text-align:center;padding:18px 14px}
+    .utmdemo .feliratok{width:100%;min-height:130px}}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/utmutato/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/guide/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/anleitung/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/guia/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/instrukcja/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/ghid/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/rukovodstvo/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/posibnyk/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/utmutato/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<header><nav class="nav"><span class="brand"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></span><details class="nyelvv sarok"><summary aria-label="Idioma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>ES</span></summary><ul><li><a href="/utmutato/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/guide/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/anleitung/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/guia/" hreflang="es" lang="es" data-nyelv="es" aria-current="true">Español</a></li><li><a href="/pl/instrukcja/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/ghid/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/rukovodstvo/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/posibnyk/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details></nav></header>
+<main class="utm">
+<h1>Guía de uso</h1>
+<p class="beveze">Todas las funciones de la app PrepperPapa, pantalla a pantalla: dónde las encuentras, para qué sirven y cómo se usan. La app también tiene ayuda: el signo de interrogación en la cabecera de la pantalla.</p>
+<section class="utmdemo" aria-label="Presentación" aria-roledescription="diavetítés">
+<div class="tel" title="Pausar y reanudar"><span class="kij"><span class="kepdoboz"><img src="/es/utmutato/kepek/01-kezdolap.jpg" alt="Pantalla de inicio" width="480" height="1038" loading="eager" class="akt"><img src="/es/utmutato/kepek/05-keszlet.jpg" alt="Reserva" width="480" height="1038" loading="eager"><img src="/es/utmutato/kepek/12-veszkartya.jpg" alt="Tarjeta de emergencia" width="480" height="1038" loading="lazy"><img src="/es/utmutato/kepek/13-tudastar.jpg" alt="Base de conocimientos" width="480" height="1038" loading="lazy"><img src="/es/utmutato/kepek/11-tajolo.jpg" alt="Brújula" width="480" height="1038" loading="lazy"><img src="/es/utmutato/kepek/19-morze.jpg" alt="Morse" width="480" height="1038" loading="lazy"><img src="/es/utmutato/kepek/30-sos.jpg" alt="SOS" width="480" height="1038" loading="lazy"><img src="/es/utmutato/kepek/42-olvasasi-terv.jpg" alt="Plan de lectura" width="480" height="1038" loading="lazy"><img src="/es/utmutato/kepek/40-irattarca.jpg" alt="Cartera de documentos" width="480" height="1038" loading="lazy"></span></span></div>
+<div><div class="feliratok"><div class="felirat akt"><div class="szam">01 / 09</div><h2>Pantalla de inicio</h2><p>La preparación de un vistazo: agua, comida, calefacción, por lugar.</p></div><div class="felirat"><div class="szam">02 / 09</div><h2>Reserva</h2><p>Qué tienes en casa, dónde lo guardas y cuándo caduca.</p></div><div class="felirat"><div class="szam">03 / 09</div><h2>Tarjeta de emergencia</h2><p>Los datos de salud de tu familia en un código QR.</p></div><div class="felirat"><div class="szam">04 / 09</div><h2>Base de conocimientos</h2><p>Artículos ordenados por temas, incluso sin internet.</p></div><div class="felirat"><div class="szam">05 / 09</div><h2>Brújula</h2><p>Fijar el rumbo, guía sonora, amanecer y fase lunar.</p></div><div class="felirat"><div class="szam">06 / 09</div><h2>Morse</h2><p>Emite con luz y sonido, lee con la cámara y el micrófono.</p></div><div class="felirat"><div class="szam">07 / 09</div><h2>SOS</h2><p>Señal de luz y sonido, llamada de emergencia en una sola pantalla.</p></div><div class="felirat"><div class="szam">08 / 09</div><h2>Plan de lectura</h2><p>La Biblia en porciones diarias, con alarma por la mañana.</p></div><div class="felirat"><div class="szam">09 / 09</div><h2>Cartera de documentos</h2><p>Fotos de tus documentos, protegidas con un PIN.</p></div></div><div class="savok"><button type="button" aria-label="Imagen 1"><i></i></button><button type="button" aria-label="Imagen 2"><i></i></button><button type="button" aria-label="Imagen 3"><i></i></button><button type="button" aria-label="Imagen 4"><i></i></button><button type="button" aria-label="Imagen 5"><i></i></button><button type="button" aria-label="Imagen 6"><i></i></button><button type="button" aria-label="Imagen 7"><i></i></button><button type="button" aria-label="Imagen 8"><i></i></button><button type="button" aria-label="Imagen 9"><i></i></button></div>
+<p class="megall">Puedes detenerla tocando el teléfono.</p></div>
+</section>
+<h3>Si la app te pide iniciar sesión</h3>
+<ol>
+<li>Escribe tu dirección de correo electrónico.</li>
+<li>Pide un código. En pocos minutos te llega por correo un código de seis dígitos.</li>
+<li>Escribe el código. No necesitas contraseña.</li>
+</ol>
+<p class="dij"><b>Gratis y premium, en breve:</b> la linterna, el SOS, el Morse, la tarjeta de emergencia y los artículos básicos de la base de conocimientos son gratis para todos y funcionan sin internet. Gratis puedes añadir hasta 2 miembros de la familia y 50 productos, y planificar 2 rutas por semana en el mapa. Un código premium lo deja todo ilimitado y añade un mapa sin conexión descargable y la base de conocimientos ampliada. Con una cuenta, la versión gratuita se usa en 1 dispositivo y la premium en 2.</p>
+<nav class="tartalom" aria-label="Contenido"><b>Contenido</b><ol>
+<li><a href="#f1">Pantalla de inicio</a></li>
+<li><a href="#f2">Hogar</a></li>
+<li><a href="#f3">Ficha de un miembro de la familia</a></li>
+<li><a href="#f4">Reserva</a></li>
+<li><a href="#f5">¿Qué llevo? (lista de equipaje)</a></li>
+<li><a href="#f6">Análisis de riesgos</a></li>
+<li><a href="#f7">Mapa</a></li>
+<li><a href="#f8">Brújula</a></li>
+<li><a href="#f9">Tarjeta de emergencia</a></li>
+<li><a href="#f10">Base de conocimientos</a></li>
+<li><a href="#f11">Biblia</a></li>
+<li><a href="#f12">Comunicación</a></li>
+<li><a href="#f13">Morse</a></li>
+<li><a href="#f14">Fax</a></li>
+<li><a href="#f15">Salas locales y Salas</a></li>
+<li><a href="#f16">QR secreto</a></li>
+<li><a href="#f17">Herramientas</a></li>
+<li><a href="#f18">Calculadoras</a></li>
+<li><a href="#f19">Ahuyentador de animales e insectos</a></li>
+<li><a href="#f20">SOS (emergencia)</a></li>
+<li><a href="#f21">Detección de caídas</a></li>
+<li><a href="#f22">Luz</a></li>
+<li><a href="#f23">Modo nocturno</a></li>
+<li><a href="#f24">Ajustes</a></li>
+<li><a href="#f25">Canjear el código premium</a></li>
+<li><a href="#f26">Si falta un permiso</a></li>
+<li><a href="#f27">Enviar comentarios</a></li>
+<li><a href="#f28">Patrimonio</a></li>
+<li><a href="#f29">Cartera de documentos</a></li>
+<li><a href="#f30">Cartera de tokens</a></li>
+<li><a href="#f31">Foro de la comunidad</a></li>
+<li><a href="#f32">Plan de lectura y alarma</a></li>
+<li><a href="#f33">Descargar el mapa sin conexión</a></li>
+<li><a href="#f34">Mis dispositivos</a></li>
+<li><a href="#f35">Presión atmosférica y estimación del tiempo</a></li>
+</ol></nav>
+<section class="lap" id="f1"><h2><span class="sz">1.</span>Pantalla de inicio</h2>
+<p class="hol"><b>Dónde:</b> el botón del extremo izquierdo del menú inferior, <b>Inicio</b>.</p>
+<p><b>Qué hace:</b> arriba, la preparación de tus lugares en porcentaje (casa, segunda residencia, coche); debajo, los mosaicos de todas las funciones, y al final, un versículo del día o una idea de la base de conocimientos.</p>
+<ol><li>La primera vez que la abres, con el botón <b>Cargar datos de demostración</b> puedes probar la app con una familia de ejemplo.</li><li>Toca el círculo de un lugar: te muestra lo que falta allí.</li><li>Desde los mosaicos llegas a todo: Familia, Reserva, Equipaje, Riesgo, Radio, Mapa, Brújula, Urgencia, Saber, Biblia, Reunión (nuestro foro comunitario, Gyülekező), Herramientas, Documentos, QR secreto, Cartera, Patrimonio.</li></ol>
+<p class="tipp"><b>Consejo:</b> el número verde es bueno; el naranja y el rojo indican que hay algo que reponer.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/01-kezdolap.jpg" alt="Pantalla de inicio" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f2"><h2><span class="sz">2.</span>Hogar</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Familia</b>.</p>
+<p><b>Qué hace:</b> aquí indicas quiénes forman parte de tu hogar y dónde están tus lugares. La preparación, las raciones y la lista de equipaje se calculan a partir de esto.</p>
+<ol><li>Tiene cuatro partes: <b>Miembros de la familia</b>, <b>Mascotas</b>, <b>Vehículos</b>, <b>Lugares</b>.</li><li>Al tocar cualquiera de ellas ves la lista; con el botón amarillo <b>+</b> añades uno nuevo.</li><li>En los lugares indicas quién llega allí y para cuántos días.</li></ol>
+<p class="tipp"><b>Consejo:</b> en la versión gratuita puedes añadir 2 miembros de la familia; con el código premium, ilimitados.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/02-haztartas.jpg" alt="Hogar" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/03-csaladtagok.jpg" alt="Hogar" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f3"><h2><span class="sz">3.</span>Ficha de un miembro de la familia</h2>
+<p class="hol"><b>Dónde:</b> Hogar &gt; Miembros de la familia &gt; toca un nombre.</p>
+<p><b>Qué hace:</b> nombre, fecha de nacimiento, quién es (adulto, niño, bebé), capacidad de carga y los datos de salud para la tarjeta de emergencia.</p>
+<ol><li>Rellena el nombre y la fecha de nacimiento, y elige quién es.</li><li>Indica la capacidad de carga en kilos: así la lista de equipaje sabe cuánto puede llevar cada uno.</li><li>En la sección <b>Datos de salud</b>, toca las alergias y escribe la medicación y las enfermedades.</li><li>Rellena: «Teléfono del titular de la tarjeta», «Contacto de emergencia (persona a avisar)» y «Teléfono del contacto de emergencia».</li><li>Marca la casilla <b>Mostrar mis datos en la tarjeta de emergencia</b> si esta es tu ficha.</li></ol>
+<p class="tipp"><b>Consejo:</b> la tarjeta se puede rellenar también para otra persona, así que escribe el número del titular y el de la persona a avisar en campos separados.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/04-csaladtag-adatlap.jpg" alt="Ficha de un miembro de la familia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f4"><h2><span class="sz">4.</span>Reserva</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Reserva</b>.</p>
+<p><b>Qué hace:</b> el registro de tu equipo y tus alimentos con aviso de caducidad. Ves el número de elementos, el peso total y lo que caduca en menos de un mes.</p>
+<ol><li>Puedes filtrar por categoría, lugar y reserva.</li><li>Con el botón amarillo <b>+</b> añades un elemento nuevo: nombre, cantidad, categoría, caducidad, de quién es y dónde lo guardas.</li><li>Con el botón <b>Escanear código de barras / QR</b> también puedes añadirlo desde el envase.</li><li>El botón <b>¿Qué falta?</b> te muestra lo que conviene reponer.</li><li>El botón <b>Kit de 72 h</b> prepara el kit básico para 72 horas.</li></ol>
+<p class="tipp"><b>Consejo:</b> en la versión gratuita puedes añadir 50 elementos; con el código premium, ilimitados.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/05-keszlet.jpg" alt="Reserva" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/06-keszlet-uj-tetel.jpg" alt="Reserva" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f5"><h2><span class="sz">5.</span>¿Qué llevo? (lista de equipaje)</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Equipaje</b>.</p>
+<p><b>Qué hace:</b> prepara una lista de equipaje a medida según quién va, cómo, a qué tipo de viaje y para cuántos días.</p>
+<ol><li>Marca quién va (también puedes elegir a las mascotas).</li><li>Elige cómo vais (en coche, a pie, con mochila) y qué tipo de viaje es.</li><li>Indica para cuántos días y con qué ración de agua debe calcular.</li><li>La app prepara la lista teniendo en cuenta el límite de peso.</li></ol>
+<p class="tipp"><b>Consejo:</b> ajusta la capacidad de carga en la ficha de cada miembro de la familia; así la lista también reparte el peso.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/07-mit-vigyek.jpg" alt="¿Qué llevo? (lista de equipaje)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f6"><h2><span class="sz">6.</span>Análisis de riesgos</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Riesgo</b>.</p>
+<p><b>Qué hace:</b> muestra por lugar quién llega allí, para cuántos días, y si basta el agua, la comida, la calefacción y la electricidad que hay allí.</p>
+<ol><li>Mira los círculos de los lugares: el porcentaje indica el nivel de preparación.</li><li>La fila roja indica de qué hay poco.</li><li>Puedes reponer lo que falta en la Reserva y asignar el elemento a ese lugar.</li></ol>
+<p class="tipp"><b>Consejo:</b> el análisis de riesgos es tan preciso como lo completos que estén el Hogar y la Reserva.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/08-kockazat.jpg" alt="Análisis de riesgos" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f7"><h2><span class="sz">7.</span>Mapa</h2>
+<p class="hol"><b>Dónde:</b> el botón <b>Mapa</b> del menú inferior, o Inicio &gt; mosaico Mapa.</p>
+<p><b>Qué hace:</b> rutas de senderismo, fuentes, pozos, refugios, cimas, miradores y otros puntos de interés, con iconos de colores uniformes. También muestra la preparación de tus lugares. Puedes buscar y planificar rutas.</p>
+<ol><li>Arriba, escribe en el buscador lo que buscas (ruta, cima, fuente, localidad).</li><li>Con el botón de la mira, abajo a la izquierda, saltas a tu posición.</li><li>Con los botones <b>+</b> y <b>−</b> amplías o reduces, y con el botón de capas cambias la vista del mapa.</li><li>Planificación de rutas: indica de dónde a dónde vas, y la app te muestra la distancia, el tiempo de marcha, el desnivel y las marcas que debes seguir.</li></ol>
+<p class="dij"><b>Gratis y premium:</b> gratis tienes el mapa en línea y 2 rutas planificadas por semana. Con el código premium la planificación de rutas es ilimitada y puedes descargar mapas sin conexión (regiones de Hungría y países extranjeros) que funcionan sin internet.</p>
+<p class="tipp"><b>Consejo:</b> en modo nocturno los iconos del mapa también se vuelven rojos para no deslumbrar.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/09-terkep.jpg" alt="Mapa" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/10-terkep-nagyitva.jpg" alt="Mapa" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f8"><h2><span class="sz">8.</span>Brújula</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Brújula</b>.</p>
+<p><b>Qué hace:</b> brújula con grados y puntos cardinales, registro del rumbo, guía sonora, amanecer, atardecer y fase lunar.</p>
+<ol><li>Gírate hacia donde tienes que ir y toca el botón <b>Registrar el azimut</b>.</li><li>Activa la <b>Guía sonora</b>: si vas en la buena dirección suena un tono grave y lento; si te desvías, más agudo y más rápido.</li><li>Puedes guardarte el teléfono en el bolsillo: el sonido te guía.</li><li>En la sección <b>Sol y luna</b> ves el amanecer, el atardecer y la fase lunar.</li></ol>
+<p class="tipp"><b>Consejo:</b> con el botón Eliminar puedes registrar un rumbo nuevo. Si tu teléfono no tiene brújula, la sección del sol y la luna funciona igualmente.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/11-tajolo.jpg" alt="Brújula" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f9"><h2><span class="sz">9.</span>Tarjeta de emergencia</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Urgencia</b>, y también en la parte inferior de la pantalla SOS.</p>
+<p><b>Qué hace:</b> los datos médicos de emergencia de los miembros de la familia (grupo sanguíneo, alergias, medicación, enfermedades, persona a avisar) en una tarjeta que el personal sanitario también puede leer con un código QR. Funciona sin internet.</p>
+<ol><li>Los datos vienen del Hogar: rellena allí las fichas de los miembros de la familia.</li><li>Si en alguien aparece «Falta: contacto», añade en su ficha la persona a avisar.</li><li>Con el botón <b>Imprimir</b> imprimes la de cada persona, y con <b>Imprimir todas</b>, las de todos.</li><li>La <b>Tarjeta familiar (un QR)</b> reúne a toda la familia en un solo código.</li></ol>
+<p class="tipp"><b>Consejo:</b> imprímela y llévala en la cartera o en el coche.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/12-veszkartya.jpg" alt="Tarjeta de emergencia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f10"><h2><span class="sz">10.</span>Base de conocimientos</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Saber</b>.</p>
+<p><b>Qué hace:</b> artículos ordenados por temas, desde las nociones básicas, pasando por la comida, el agua y la salud, hasta la supervivencia urbana y la orientación. Los artículos básicos y los que salvan vidas son gratuitos, para todos, y se pueden leer sin internet. La base de conocimientos ampliada forma parte de premium.</p>
+<ol><li>Toca un tema, por ejemplo <b>Nociones básicas</b>.</li><li>Elige un artículo de la lista.</li><li>Con el buscador de arriba puedes buscar en todos los artículos.</li><li>Los artículos marcados con un candado («cerrados») forman parte de la base de conocimientos ampliada: se abren después de canjear el código premium.</li></ol>
+<p class="tipp"><b>Consejo:</b> en la parte inferior de la pantalla de inicio aparece cada día una idea distinta de la base de conocimientos.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/13-tudastar.jpg" alt="Base de conocimientos" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/14-tudastar-tema.jpg" alt="Base de conocimientos" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/15-tudastar-cikk.jpg" alt="Base de conocimientos" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f11"><h2><span class="sz">11.</span>Biblia</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Biblia</b>.</p>
+<p><b>Qué hace:</b> la Biblia con lectura en voz alta, oraciones, confesiones de fe, plan de lectura, versículos para emergencias, profecías, subrayados y comentarios propios.</p>
+<ol><li>Toca el mosaico <b>Biblia</b> y, la primera vez, guárdala en tu teléfono con el botón <b>Descargar la Biblia</b>. Después se queda en tu teléfono.</li><li>Elige libro, capítulo y versículo.</li><li>Con el icono del altavoz puedes escucharla en voz alta.</li><li>En los demás mosaicos encontrarás oraciones, el plan de lectura y versículos para emergencias.</li></ol>
+<p class="tipp"><b>Consejo:</b> toca un versículo para subrayarlo o añadirle una nota.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/16-biblia.jpg" alt="Biblia" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/17-biblia-olvaso.jpg" alt="Biblia" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f12"><h2><span class="sz">12.</span>Comunicación</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Radio</b>.</p>
+<p><b>Qué hace:</b> reúne en un solo lugar todas las formas de enviar mensajes cuando la red telefónica no ayuda.</p>
+<ol><li><b>Mensaje digital:</b> Sala local (texto para quienes están cerca, por una wifi común, un punto de acceso o Bluetooth) y Salas (grupos cerrados por internet; para entrar hace falta la aprobación del dueño de la sala).</li><li><b>Mensaje de voz:</b> Morse (mensaje corto con sonido o luz) y Fax (envío de una imagen por sonido, también por radio).</li></ol>
+<p class="tipp"><b>Consejo:</b> si no hay ninguna red, el Morse y el fax siguen funcionando.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/18-kommunikacio.jpg" alt="Comunicación" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f13"><h2><span class="sz">13.</span>Morse</h2>
+<p class="hol"><b>Dónde:</b> Comunicación &gt; <b>Morse</b>. Gratis.</p>
+<p><b>Qué hace:</b> transmisión de texto con sonido y luz, recepción con la cámara (luz intermitente) y con el micrófono (pitidos), entrenador y nociones básicas.</p>
+<ol><li><b>Transmisión:</b> escribe el texto y pulsa el botón <b>Reproducir</b>. El botón <b>SOS</b> emite la señal de socorro con un solo toque.</li><li><b>Lectura de luz:</b> apunta la cámara hacia la luz intermitente y la app lo convierte en texto.</li><li><b>Lectura de sonido:</b> el micrófono convierte los pitidos en texto.</li><li><b>Entrenador de Morse:</b> puedes practicar letras, números y palabras de oído, con el manipulador manual o con golpes.</li></ol>
+<p class="tipp"><b>Consejo:</b> la sección Fundamentos del Morse explica la temporización y la velocidad.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/19-morze.jpg" alt="Morse" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/20-morze-adas.jpg" alt="Morse" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/21-morze-gyakorlo.jpg" alt="Morse" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f14"><h2><span class="sz">14.</span>Fax</h2>
+<p class="hol"><b>Dónde:</b> Comunicación &gt; <b>Fax</b>. Gratis.</p>
+<p><b>Qué hace:</b> envía una imagen por sonido, incluso a través de una radio.</p>
+<ol><li><b>Envío:</b> elige una imagen y la app la convierte en sonido. Tiene que sonar cerca del receptor del otro teléfono.</li><li><b>Recepción:</b> el teléfono receptor dibuja la imagen línea a línea a partir del sonido que oye.</li></ol>
+<p class="tipp"><b>Consejo:</b> funciona mejor en un lugar silencioso, con los dos teléfonos cerca.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/22-fax.jpg" alt="Fax" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f15"><h2><span class="sz">15.</span>Salas locales y Salas</h2>
+<p class="hol"><b>Dónde:</b> Comunicación &gt; <b>Sala local</b> o <b>Salas</b>.</p>
+<p><b>Qué hace:</b> la Sala local lleva texto a quienes están cerca de ti por una wifi común, el punto de acceso de un teléfono o Bluetooth, sin tarifa de internet. Las Salas son grupos cerrados a través de internet.</p>
+<ol><li>Primero, en la pantalla <b>Perfil</b>, indica tu nombre (y, si quieres, una foto de perfil): así te ven los demás.</li><li>Sala local: necesitáis una red común (un router o el punto de acceso de un teléfono); todos se conectan a ella y abren la app.</li><li>Con el botón amarillo <b>+</b> abres una sala nueva, o esperas a que aparezca una sala cercana.</li><li>Salas: con el botón <b>+</b> creas una, o te unes con un código a una que ya existe. La entrada la aprueba el dueño de la sala.</li></ol>
+<p class="dij"><b>Gratis y premium:</b> la Sala local es gratis para todos. De las Salas, gratis puedes crear 1 propia y ser miembro de 3; con el código premium, 10 salas propias y miembro de un número ilimitado de salas.</p>
+<p class="tipp"><b>Consejo:</b> manteniendo pulsado un mensaje puedes guardarlo, y luego lo encuentras en la pantalla Perfil.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/23-helyi-szobak.jpg" alt="Salas locales y Salas" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/24-profil.jpg" alt="Salas locales y Salas" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/25-szobak.jpg" alt="Salas locales y Salas" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f16"><h2><span class="sz">16.</span>QR secreto</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>QR secreto</b>.</p>
+<p><b>Qué hace:</b> mete en un código QR un mensaje, una ubicación, una lista o datos personales que solo puede leer quien conoce vuestra contraseña familiar.</p>
+<ol><li>Configura la <b>Contraseña familiar</b> (arriba, si todavía pone «no configurada»).</li><li>Elige qué quieres incluir y escribe el mensaje.</li><li>Pulsa el botón <b>Crear QR</b>.</li><li>Lectura: <b>Escanear con la cámara</b>, <b>Cargar desde archivo</b>, o escribe la secuencia de letras si la recibiste por Morse o por fax.</li></ol>
+<p class="tipp"><b>Consejo:</b> acordad la contraseña de palabra y con antelación, no por mensaje.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/26-titkos-qr.jpg" alt="QR secreto" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f17"><h2><span class="sz">17.</span>Herramientas</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Herramientas</b>.</p>
+<p><b>Qué hace:</b> Calculadoras, Detector de metales (hierro y acero en la pared o en el suelo), Espejo (cámara frontal con marco de luz, para revisar una herida), Ahuyentador de animales e insectos.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/27-eszkozok.jpg" alt="Herramientas" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f18"><h2><span class="sz">18.</span>Calculadoras</h2>
+<p class="hol"><b>Dónde:</b> Herramientas &gt; <b>Calculadoras</b>.</p>
+<p><b>Qué hace:</b> Calculadora (botones grandes, cinta, memoria, también con guantes y a oscuras), Energía (cuánto te dura un powerbank o una batería), Calorías (para cuánto alcanza la comida), Alcance de radio, Calefacción (cuánta leña o gas hace falta), Agua de lluvia (cuánta se recoge del tejado), Tiempo de marcha (si llegas con luz de día), Rayo (a qué distancia está la tormenta), Potabilización del agua (cuánta lejía hace falta, cuánto tiempo hervir), Autonomía de la linterna.</p>
+<ol><li>Toca la calculadora.</li><li>Introduce los datos y el resultado aparece al instante.</li></ol>
+<p class="tipp"><b>Consejo:</b> en la cinta de la calculadora puedes repasar cada paso, así que tampoco en el monte pierdes el hilo de las cuentas.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/28-kalkulatorok.jpg" alt="Calculadoras" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f19"><h2><span class="sz">19.</span>Ahuyentador de animales e insectos</h2>
+<p class="hol"><b>Dónde:</b> Herramientas &gt; <b>Ahuyentador de animales e insectos</b>.</p>
+<p><b>Qué hace:</b> emite un sonido agudo contra los animales salvajes y los mosquitos.</p>
+<ol><li>Elige: <b>Contra la fauna</b> o <b>Contra los mosquitos</b>.</li><li>Con el control deslizante ajustas la frecuencia.</li><li>El botón <b>Tono de prueba</b> emite un pitido corto y bien audible: así compruebas que el altavoz suena. No detiene el ahuyentador en marcha.</li></ol>
+<p class="tipp"><b>Consejo:</b> el sonido del ahuyentador es intencionadamente tan agudo que no se oye. Si no oyes nada, es lo normal.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/29-riaszto.jpg" alt="Ahuyentador de animales e insectos" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f20"><h2><span class="sz">20.</span>SOS (emergencia)</h2>
+<p class="hol"><b>Dónde:</b> el botón rojo <b>SOS</b> en el centro del menú inferior. Gratis, funciona sin internet.</p>
+<p><b>Qué hace:</b> SOS con luz desde la pantalla o el flash, silbato de emergencia potente, ritmo de reanimación, llamada al 112, detección de caídas y tarjeta de emergencia rápida.</p>
+<ol><li><b>SOS con luz (pantalla)</b> o <b>SOS con luz (flash)</b>: un toque lo inicia y otro lo detiene.</li><li><b>Silbato de emergencia:</b> Silbato o Continuo; el tono es ajustable. Sube el volumen.</li><li><b>Ritmo de reanimación:</b> una voz marca el ritmo para que no tengas que contar ni en pleno pánico.</li><li><b>Llamar al número de emergencia (112 en la UE):</b> el número único europeo de emergencias.</li><li>Abajo del todo, la <b>Tarjeta de emergencia rápida</b>.</li></ol>
+<p class="tipp"><b>Consejo:</b> el silbato de emergencia se oye mejor en torno a 3-4 kHz, por eso los equipos de rescate lo oyen desde más lejos.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/30-sos.jpg" alt="SOS (emergencia)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f21"><h2><span class="sz">21.</span>Detección de caídas</h2>
+<p class="hol"><b>Dónde:</b> pantalla SOS &gt; <b>Detección de caídas</b>.</p>
+<p><b>Qué hace:</b> si el teléfono detecta un golpe fuerte y después no se mueve durante un minuto, enciende la pantalla y hace una cuenta atrás en voz alta. Si no pulsas el botón <b>Estoy bien</b>, envía un mensaje SOS con tu ubicación a tus salas y suena el silbato de emergencia.</p>
+<ol><li>Marca la casilla <b>SOS automático tras una caída</b>.</li><li>Concede el permiso si la app te lo pide.</li><li>Si se activa por error, pulsa el botón grande <b>Estoy bien</b>.</li></ol>
+<p class="tipp"><b>Consejo:</b> para el mensaje hace falta conexión con tus salas; la cuenta atrás y el silbato de emergencia funcionan también sin ella.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/31-eses-erzekeles.jpg" alt="Detección de caídas" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f22"><h2><span class="sz">22.</span>Luz</h2>
+<p class="hol"><b>Dónde:</b> el botón <b>Luz</b> del menú inferior. Gratis, funciona sin internet.</p>
+<p><b>Qué hace:</b> linterna con el flash o con la pantalla, con color y brillo ajustables, y luz roja nocturna.</p>
+<ol><li>Toca el botón <b>Luz</b>: se enciende el flash y la pantalla se queda oscura.</li><li>Tócalo otra vez: solo alumbra el flash.</li><li>Con la luz de pantalla, desliza el dedo: en horizontal ajustas el color y en vertical el brillo. Con un toque aparecen los botones.</li></ol>
+<p class="tipp"><b>Consejo:</b> la luz roja no deslumbra el ojo acostumbrado a la oscuridad.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/32-lampa.jpg" alt="Luz" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f23"><h2><span class="sz">23.</span>Modo nocturno</h2>
+<p class="hol"><b>Dónde:</b> el icono de la luna en la barra superior.</p>
+<p><b>Qué hace:</b> toda la app pasa a rojo, así no deslumbra a oscuras ni estropea la visión nocturna. El mapa y la linterna también se quedan en rojo.</p>
+<ol><li>Toca el icono de la luna para activarlo y otra vez para desactivarlo.</li></ol>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/33-ejszakai-mod.jpg" alt="Modo nocturno" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f24"><h2><span class="sz">24.</span>Ajustes</h2>
+<p class="hol"><b>Dónde:</b> el botón del extremo derecho del menú inferior, <b>Ajustes</b>. Gratis.</p>
+<p><b>Qué hace:</b> avisos de alimentos y existencias a punto de caducar, respuesta háptica, idioma, tamaño de letra, ayuda, privacidad y canje del código premium.</p>
+<ol><li><b>Notificaciones:</b> marca la casilla y elige con cuánta antelación quieres el aviso (3 días, 1 semana, 2 semanas, 1 mes). Con el botón <b>Notificación de prueba</b> puedes probarlo.</li><li><b>Idioma</b> y <b>Tamaño de letra:</b> ajústalos a tu gusto.</li><li><b>Ayuda:</b> en cualquier pantalla, el signo de interrogación de la cabecera también abre la ayuda.</li></ol>
+<p class="tipp"><b>Consejo:</b> si las notificaciones están bloqueadas, la app te indica dónde activarlas en los ajustes del teléfono.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/34-beallitasok.jpg" alt="Ajustes" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f25"><h2><span class="sz">25.</span>Canjear el código premium</h2>
+<p class="hol"><b>Dónde:</b> Ajustes &gt; <b>Desbloquear</b>.</p>
+<p><b>Qué hace:</b> aquí canjeas el código premium.</p>
+<ol><li>Escribe el código en el campo.</li><li>Pulsa el botón <b>Canjear código</b>. Para canjearlo hace falta internet.</li><li>A partir de ahí, los miembros de la familia y la reserva son ilimitados, se abre la base de conocimientos ampliada y la planificación de rutas en el mapa es ilimitada, con mapas descargables sin conexión.</li></ol>
+<p class="tipp"><b>Consejo:</b> un código sirve como máximo para dos de tus dispositivos.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/35-feloldas.jpg" alt="Canjear el código premium" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f26"><h2><span class="sz">26.</span>Si falta un permiso</h2>
+<p class="hol"><b>Dónde:</b> aparece solo cuando una función necesita un permiso (cámara, micrófono, ubicación, notificaciones, sensor de movimiento, Bluetooth).</p>
+<p><b>Qué hace:</b> te dice qué falta, para qué hace falta y qué tienes que hacer.</p>
+<ol><li>Toca el botón <b>Pedir permiso</b> y elige la opción Permitir.</li><li>Si no aparece ninguna pregunta, el botón <b>Ajustes de la aplicación</b> abre los ajustes del teléfono con un toque.</li><li>Cuando lo hayas concedido, vuelve: la app lo reintenta sola.</li></ol>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/36-engedely.jpg" alt="Si falta un permiso" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f27"><h2><span class="sz">27.</span>Enviar comentarios</h2>
+<p class="hol"><b>Dónde (en dos sitios):</b></p>
+<ul><li>en la barra superior, el <b>icono del bocadillo</b> (sin texto),</li><li>en la página <b>¿Quién soy?</b>, el botón <b>Enviar comentarios</b>.</li></ul>
+<p><b>Qué hace:</b> puedes enviarnos un error o una idea, con captura de pantalla incluida.</p>
+<ol><li>Elige el tipo (error o idea) y la parte de la app a la que se refiere.</li><li>Cuenta qué hiciste, qué viste y qué esperabas.</li><li>Si hace falta, adjunta una captura de pantalla.</li><li>Pulsa el botón <b>Enviar</b>.</li></ol>
+<p class="tipp"><b>Consejo:</b> con el botón <b>Mis informes</b> puedes revisar lo que has enviado, y con el botón <b>Novedades</b>, lo que ha cambiado en la app.</p>
+<div class="kepek"><figure><img src="/es/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Enviar comentarios" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Enviar comentarios" loading="lazy" width="480"></figure><figure><img src="/es/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Enviar comentarios" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f28"><h2><span class="sz">28.</span>Patrimonio</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Patrimonio</b>.</p>
+<p>Patrimonio es un producto aparte. En la app se puede probar, tanto en la versión gratuita como en la premium, con hasta 10 elementos propios y 1 cuenta; para usarlo por completo hay que comprarlo por separado en Google Play o en la App Store. Si lo compras, funciona también por completo dentro de PrepperPapa.</p></section>
+<section class="lap" id="f29"><h2><span class="sz">29.</span>Cartera de documentos</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Cartera de documentos</b>.</p>
+<p><b>Qué hace:</b> un almacén protegido con PIN para fotos o PDF de tus documentos (documento de identidad, carnet de conducir, tarjeta sanitaria, seguro, permiso de circulación) y para notas dibujadas a mano. Gratis.</p>
+<ol><li>La primera vez, establece un PIN de seis dígitos y vuelve a escribirlo.</li><li>En <b>Nuevo documento</b>, indica de quién es: una persona, un animal o un vehículo. Si no marcas ninguno, se guarda como común.</li><li>Con el botón <b>Elegir archivo y guardar</b> añades una foto o un PDF, y con <b>Dibujar una nota</b> puedes escribir o dibujar con el dedo.</li><li>Con el botón <b>Bloquear</b> lo cierras al instante.</li></ol>
+<p class="tipp"><b>Consejo:</b> los documentos solo están en este teléfono, cifrados con una clave creada a partir de tu PIN, y tampoco entran en la copia de seguridad completa. Activa la huella digital y guarda el código de recuperación: si olvidas el PIN, con ellos puedes establecer uno nuevo.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/40-irattarca.jpg" alt="Cartera de documentos" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f30"><h2><span class="sz">30.</span>Cartera de tokens</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Cartera de tokens</b>. Se abre con el mismo PIN que la Cartera de documentos.</p>
+<p><b>Qué hace:</b> tiene dos pestañas. <b>Gira</b> sirve para las cuentas entre los miembros de una pequeña comunidad (trabajo hecho, huevos vendidos, una herramienta prestada), con códigos QR, incluso sin internet. En la pestaña <b>Códigos secretos</b> puedes guardar contraseñas y códigos de recuperación cifrados. No es un banco ni una criptomoneda. Gratis.</p>
+<ol><li>Pagar: la otra persona muestra su QR de identificación y tú lo escaneas.</li><li>Introduces el importe y el motivo, y luego <b>Preparar el pago</b>: tu teléfono lo firma y muestra un QR.</li><li>Él escanea ese QR y a él se le acredita.</li><li>Para pedir dinero, usa el botón <b>Pedir gira</b>: escribes cuánto y para qué, él lo escanea y solo tiene que aprobarlo.</li></ol>
+<p class="tipp"><b>Consejo:</b> los Códigos secretos nunca entran en la copia de seguridad completa, así que guarda también una copia en papel de los códigos de recuperación importantes.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/41-token-tarca.jpg" alt="Cartera de tokens" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f31"><h2><span class="sz">31.</span>Foro de la comunidad</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; mosaico <b>Punto de reunión</b>.</p>
+<p><b>Qué hace:</b> abre en el navegador el foro de la comunidad de PrepperPapa (Gyülekező, forum.prepperpapa.hu). Allí puedes preguntar e intercambiar experiencias con otros usuarios. Para ello hace falta internet.</p></section>
+<section class="lap" id="f32"><h2><span class="sz">32.</span>Plan de lectura y alarma</h2>
+<p class="hol"><b>Dónde:</b> Biblia &gt; <b>Plan de lectura</b>.</p>
+<p><b>Qué hace:</b> divide la Biblia en porciones diarias o semanales y recuerda por dónde vas. Puedes elegir entre ocho planes: la Biblia completa en un año (en el orden de los libros o en el orden cronológico de los acontecimientos), también en reparto semanal, la Biblia completa en 90 días, el Nuevo Testamento en 90 días, los Evangelios en 30 días, y los Salmos y los Proverbios en 60 días.</p>
+<ol><li>Toca un plan y empiézalo.</li><li>Cada día te muestra la lectura de hoy. Cuando la hayas leído, pulsa el botón <b>Lo he leído</b>.</li><li>Puedes seguir varios planes a la vez, y en cada uno se guarda por separado por dónde vas.</li><li><b>Alarma:</b> indica la hora y los días. Por la mañana despierta el teléfono y lee en voz alta la lectura de hoy del plan.</li></ol>
+<p class="tipp"><b>Consejo:</b> la alarma funciona en la app para Android. En el navegador y en iPhone tu ajuste se conserva, pero la página web no puede despertar un teléfono bloqueado.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/42-olvasasi-terv.jpg" alt="Plan de lectura y alarma" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f33"><h2><span class="sz">33.</span>Descargar el mapa sin conexión</h2>
+<p class="hol"><b>Dónde:</b> Mapa &gt; el botón de funciones &gt; grupo <b>Mapa sin conexión</b>. Premium.</p>
+<p><b>Qué hace:</b> descargas el mapa en tu teléfono y ves dónde estás incluso sin internet ni cobertura. Hungría se descarga en 11 regiones, y los demás países enteros o por provincias.</p>
+<ol><li>Elige la región, o abre la lista <b>Mapas de otros países</b> y toca el país.</li><li>En cada fila hay tres descargas independientes: <b>Mapa base</b>, <b>Rutas de senderismo</b>, <b>Puntos de senderismo</b>. Junto a cada una ves su tamaño.</li><li>En un país grande no descargues todo, sino solo la provincia a la que vas: es más pequeña y conserva más detalle.</li><li>Lo que ya no necesites, puedes borrarlo fila por fila, y el espacio se libera.</li></ol>
+<p class="tipp"><b>Consejo:</b> descárgalo antes de salir, con wifi. Por el camino, la cobertura suele acabarse justo donde haría falta el mapa.</p></section>
+<section class="lap" id="f34"><h2><span class="sz">34.</span>Mis dispositivos</h2>
+<p class="hol"><b>Dónde:</b> Ajustes &gt; <b>Mis dispositivos</b>.</p>
+<p><b>Qué hace:</b> muestra en cuáles de tus dispositivos funciona tu cuenta. La premium se usa en 2 dispositivos a la vez, la cuenta gratuita en 1 dispositivo.</p>
+<ol><li>En la lista ves el nombre de los dispositivos y cuándo se conectaron por última vez. El actual está marcado como «este dispositivo».</li><li>En el que ya no necesites, pulsa el botón <b>Desconectar</b> y otra vez más para confirmar. Su plaza queda libre.</li><li>Solo se puede desvincular una vez cada 30 días.</li></ol>
+<p class="tipp"><b>Consejo:</b> la lista requiere internet e iniciar sesión. El resto de la app, desde la reserva hasta el mapa, funciona en todos los dispositivos.</p>
+<div class="kepek egy"><figure><img src="/es/utmutato/kepek/43-keszulekeim.jpg" alt="Mis dispositivos" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f35"><h2><span class="sz">35.</span>Presión atmosférica y estimación del tiempo</h2>
+<p class="hol"><b>Dónde:</b> Inicio &gt; <b>Brújula</b>, en la tarjeta de presión atmosférica. Solo se ve en un teléfono que tenga barómetro.</p>
+<p><b>Qué hace:</b> muestra la presión atmosférica y su cambio en las últimas horas con una flecha, y con una pequeña imagen estima qué tiempo viene (soleado, variable, lluvia, tormenta). Si la presión baja rápido, avisa de tormenta.</p>
+<ol><li>Abre la Brújula: ahí mide de forma continua.</li><li>En otros momentos la app mide una vez cada cuarto de hora, así cuida la batería, y guarda las últimas 48 horas.</li></ol>
+<p class="tipp"><b>Consejo:</b> es una estimación, no una previsión del tiempo. En un coche, el cambio de altitud también parece un cambio de presión, por eso al conducir el aviso puede ser falso.</p></section>
+<section class="lap"><h2>Si te has atascado</h2>
+<p>Escríbenos desde la app: el icono del bocadillo en la barra superior, o el botón «Enviar comentarios» en la página «¿Quién soy?». Cuéntanos qué hiciste, qué viste y qué teléfono tienes.</p></section>
+<script>
+(function(){
+  // guide slideshow: auto-advance with a progress bar, tap/click the phone to pause or resume, a bar jumps to a slide
+  var d=document.querySelector('.utmdemo'); if(!d) return;
+  var kepek=d.querySelectorAll('.kepdoboz img'), fel=d.querySelectorAll('.felirat'), sav=d.querySelectorAll('.savok button');
+  var akt=0, IDO=5000, t=null, all=false, csendes=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  d.style.setProperty('--ido', IDO+'ms');
+  function mutat(i){ akt=(i+kepek.length)%kepek.length;
+    for(var j=0;j<kepek.length;j++){ kepek[j].classList.toggle('akt',j===akt); fel[j].classList.toggle('akt',j===akt);
+      sav[j].classList.remove('akt'); sav[j].classList.toggle('volt',j<akt); }
+    void sav[akt].offsetWidth; sav[akt].classList.add('akt');
+    var k=kepek[(akt+1)%kepek.length]; if(k.loading==='lazy') k.loading='eager';
+    idozit(); }
+  function idozit(){ clearTimeout(t); if(!all && !csendes) t=setTimeout(function(){mutat(akt+1);},IDO); }
+  for(var i=0;i<sav.length;i++){(function(i){ sav[i].onclick=function(){ mutat(i); }; })(i);}
+  d.querySelector('.tel').onclick=function(){ all=!all; d.classList.toggle('all',all); if(all) clearTimeout(t); else mutat(akt+1); };
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ if(!all) idozit(); } else clearTimeout(t); }); },{threshold:.4}).observe(d); }
+  mutat(0);
+})();
+</script>
+</main>
+<footer><div>PrepperPapa &middot; Guía de uso &middot; <a href="/es/privacidad.html">Privacidad</a></div></footer>
+<script>(function(){var m={"videok": "videos", "tudastar": "conocimiento", "kapcsolat": "contacto", "bemutato": "recorrido", "vasarlas": "comprar", "ertesito": "avisos", "osszevetes": "comparacion"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>

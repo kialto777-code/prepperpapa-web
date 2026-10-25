@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Застосунок PrepperPapa: посібник користувача</title>
+<meta name="description" content="Усі функції застосунку PrepperPapa, екран за екраном: запаси, домогосподарство, карта, компас, картка екстреної допомоги, база знань, Біблія, Морзе, SOS, ліхтар та інше.">
+<link rel="canonical" href="https://prepperpapa.hu/uk/posibnyk/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Застосунок PrepperPapa: посібник користувача">
+<meta property="og:description" content="Усі функції застосунку PrepperPapa, екран за екраном: запаси, домогосподарство, карта, компас, картка екстреної допомоги, база знань, Біблія, Морзе, SOS, ліхтар та інше.">
+<meta property="og:url" content="https://prepperpapa.hu/uk/posibnyk/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:image" content="https://prepperpapa.hu/uk/app/kepek/og-app.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/uk/app/kepek/og-app.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  main.utm{max-width:820px}
+  .tartalom{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 30px}
+  .tartalom ol{columns:2;column-gap:26px;margin:8px 0 0 20px;font-size:15px}
+  .tartalom a{color:var(--ink);text-decoration:none}
+  .tartalom a:hover{color:var(--borostyan)}
+  .lap{border-top:1px solid var(--line);padding:26px 0 8px;scroll-margin-top:12px}
+  .lap h2{margin:0 0 12px;font-size:24px}
+  .lap h2 .sz{color:var(--borostyan);margin-right:8px}
+  .hol{background:var(--panel);border-left:3px solid var(--zold);padding:8px 14px;border-radius:0 8px 8px 0;font-size:15px}
+  .tipp{border-left:3px solid var(--borostyan);padding:4px 0 4px 14px;font-size:15px;color:#cfd6cf}
+  .dij{background:rgba(255,179,64,.07);border:1px solid rgba(255,179,64,.35);border-radius:10px;padding:10px 14px;font-size:15px}
+  .lap .kepek figure{flex:0 0 220px}
+  .lap .kepek img{width:220px}
+  .lap .kepek.egy figure{flex:0 0 260px}
+  .lap .kepek.egy img{width:260px}
+  @media (max-width:560px){.tartalom ol{columns:1}}
+
+  .utmdemo{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:8px 0 30px;padding:22px;
+       border:1px solid var(--line);border-radius:22px;background:radial-gradient(120% 90% at 20% 30%,#1d2c23,#0d1511 70%)}
+  .utmdemo .tel{position:relative;width:min(230px,58vw);padding:7px;border-radius:34px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .utmdemo .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .utmdemo .kij{display:block;position:relative;overflow:hidden;border-radius:27px;background:#0B110E;padding:22px 0 8px}
+  .utmdemo .kepdoboz{display:block;position:relative;aspect-ratio:480/1038}
+  .utmdemo .kij::before{content:"";position:absolute;left:50%;top:6px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022;z-index:3}
+  .utmdemo .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .utmdemo .kij img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;
+       transform:scale(1.04);transition:opacity .8s ease,transform 5s ease}
+  .utmdemo .kij img.akt{opacity:1;transform:none}
+  .utmdemo .feliratok{position:relative;min-height:150px}
+  .utmdemo .felirat{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .utmdemo .felirat.akt{opacity:1;transform:none;position:relative}
+  .utmdemo .felirat .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .utmdemo .felirat h2{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:8px 0 10px;border:0;padding:0}
+  .utmdemo .felirat p{font-size:17px;color:#cfd6cf;margin:0}
+  .utmdemo .savok{display:flex;gap:6px;margin-top:22px}
+  .utmdemo .savok button{flex:1;height:5px;border:0;padding:0;border-radius:3px;background:#2c3a31;cursor:pointer;overflow:hidden;position:relative}
+  .utmdemo .savok button i{position:absolute;inset:0;width:0;background:var(--borostyan)}
+  .utmdemo .savok button.volt i{width:100%}
+  .utmdemo .savok button.akt i{animation:utmsav var(--ido,5s) linear forwards}
+  .utmdemo.all .savok button.akt i{animation-play-state:paused}
+  .utmdemo .megall{margin-top:10px;font-size:13px;color:var(--muted)}
+  @keyframes utmsav{to{width:100%}}
+  @media (prefers-reduced-motion:reduce){.utmdemo .kij img,.utmdemo .felirat{transition:none}.utmdemo .savok button.akt i{animation:none;width:100%}}
+  @media (max-width:640px){.utmdemo{grid-template-columns:1fr;justify-items:center;text-align:center;padding:18px 14px}
+    .utmdemo .feliratok{width:100%;min-height:130px}}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/utmutato/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/guide/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/anleitung/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/guia/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/instrukcja/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/ghid/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/rukovodstvo/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/posibnyk/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/utmutato/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<header><nav class="nav"><span class="brand"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></span><details class="nyelvv sarok"><summary aria-label="Мова"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>UK</span></summary><ul><li><a href="/utmutato/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/guide/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/anleitung/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/guia/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/instrukcja/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/ghid/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/rukovodstvo/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/posibnyk/" hreflang="uk" lang="uk" data-nyelv="uk" aria-current="true">Українська</a></li></ul></details></nav></header>
+<main class="utm">
+<h1>Посібник користувача</h1>
+<p class="beveze">Усі функції застосунку PrepperPapa, екран за екраном: де знайти, для чого вони і як ними користуватися. Довідка є і в самому застосунку: знак питання в заголовку екрана.</p>
+<section class="utmdemo" aria-label="Огляд" aria-roledescription="diavetítés">
+<div class="tel" title="Зупинити й продовжити"><span class="kij"><span class="kepdoboz"><img src="/uk/utmutato/kepek/01-kezdolap.jpg" alt="Головний екран" width="480" height="1038" loading="eager" class="akt"><img src="/uk/utmutato/kepek/05-keszlet.jpg" alt="Запаси" width="480" height="1038" loading="eager"><img src="/uk/utmutato/kepek/12-veszkartya.jpg" alt="Картка екстреної допомоги" width="480" height="1038" loading="lazy"><img src="/uk/utmutato/kepek/13-tudastar.jpg" alt="База знань" width="480" height="1038" loading="lazy"><img src="/uk/utmutato/kepek/11-tajolo.jpg" alt="Орієнтування" width="480" height="1038" loading="lazy"><img src="/uk/utmutato/kepek/19-morze.jpg" alt="Морзе" width="480" height="1038" loading="lazy"><img src="/uk/utmutato/kepek/30-sos.jpg" alt="SOS" width="480" height="1038" loading="lazy"><img src="/uk/utmutato/kepek/42-olvasasi-terv.jpg" alt="План читання" width="480" height="1038" loading="lazy"><img src="/uk/utmutato/kepek/40-irattarca.jpg" alt="Гаманець документів" width="480" height="1038" loading="lazy"></span></span></div>
+<div><div class="feliratok"><div class="felirat akt"><div class="szam">01 / 09</div><h2>Головний екран</h2><p>Готовність одним поглядом: вода, їжа, опалення, за місцями.</p></div><div class="felirat"><div class="szam">02 / 09</div><h2>Запаси</h2><p>Що є вдома, де зберігається і коли спливає термін.</p></div><div class="felirat"><div class="szam">03 / 09</div><h2>Картка екстреної допомоги</h2><p>Медичні дані родини в одному QR-коді.</p></div><div class="felirat"><div class="szam">04 / 09</div><h2>База знань</h2><p>Статті, розбиті за темами, навіть без інтернету.</p></div><div class="felirat"><div class="szam">05 / 09</div><h2>Орієнтування</h2><p>Визначення напрямку, звукове ведення, схід сонця і фази місяця.</p></div><div class="felirat"><div class="szam">06 / 09</div><h2>Морзе</h2><p>Передає світлом і звуком, читає камерою і мікрофоном.</p></div><div class="felirat"><div class="szam">07 / 09</div><h2>SOS</h2><p>Світловий і звуковий сигнал, виклик допомоги на одному екрані.</p></div><div class="felirat"><div class="szam">08 / 09</div><h2>План читання</h2><p>Біблія щоденними порціями, з ранковим будильником.</p></div><div class="felirat"><div class="szam">09 / 09</div><h2>Гаманець документів</h2><p>Фото твоїх документів під захистом PIN-коду.</p></div></div><div class="savok"><button type="button" aria-label="Зображення 1"><i></i></button><button type="button" aria-label="Зображення 2"><i></i></button><button type="button" aria-label="Зображення 3"><i></i></button><button type="button" aria-label="Зображення 4"><i></i></button><button type="button" aria-label="Зображення 5"><i></i></button><button type="button" aria-label="Зображення 6"><i></i></button><button type="button" aria-label="Зображення 7"><i></i></button><button type="button" aria-label="Зображення 8"><i></i></button><button type="button" aria-label="Зображення 9"><i></i></button></div>
+<p class="megall">Можна зупинити дотиком до телефону.</p></div>
+</section>
+<h3>Якщо застосунок просить увійти</h3>
+<ol>
+<li>Введи свою адресу електронної пошти.</li>
+<li>Запроси код. За кілька хвилин на пошту прийде шестизначний код.</li>
+<li>Введи код. Пароль не потрібен.</li>
+</ol>
+<p class="dij"><b>Безкоштовно і преміум коротко:</b> ліхтарик, SOS, Морзе, картка екстреної допомоги та базові статті бази знань безкоштовні для всіх і працюють навіть без інтернету. Безкоштовно можна додати щонайбільше 2 члени родини та 50 позицій, а на карті доступні 2 побудови маршруту на тиждень. Преміум-код знімає ці обмеження, додає офлайн-карту для завантаження та розширену базу знань. З одним обліковим записом безкоштовна версія працює на 1 пристрої, преміум на 2.</p>
+<nav class="tartalom" aria-label="Зміст"><b>Зміст</b><ol>
+<li><a href="#f1">Головний екран</a></li>
+<li><a href="#f2">Домогосподарство</a></li>
+<li><a href="#f3">Картка члена родини</a></li>
+<li><a href="#f4">Запаси</a></li>
+<li><a href="#f5">Що взяти? (список речей)</a></li>
+<li><a href="#f6">Аналіз ризиків</a></li>
+<li><a href="#f7">Карта</a></li>
+<li><a href="#f8">Орієнтування</a></li>
+<li><a href="#f9">Картка екстреної допомоги</a></li>
+<li><a href="#f10">База знань</a></li>
+<li><a href="#f11">Біблія</a></li>
+<li><a href="#f12">Зв’язок</a></li>
+<li><a href="#f13">Морзе</a></li>
+<li><a href="#f14">Факс</a></li>
+<li><a href="#f15">Локальні кімнати та Кімнати</a></li>
+<li><a href="#f16">Секретний QR</a></li>
+<li><a href="#f17">Інструменти</a></li>
+<li><a href="#f18">Калькулятори</a></li>
+<li><a href="#f19">Відлякувач звірів і комах</a></li>
+<li><a href="#f20">SOS (надзвичайна ситуація)</a></li>
+<li><a href="#f21">Розпізнавання падіння</a></li>
+<li><a href="#f22">Ліхтар</a></li>
+<li><a href="#f23">Нічний режим</a></li>
+<li><a href="#f24">Налаштування</a></li>
+<li><a href="#f25">Використання преміум-коду</a></li>
+<li><a href="#f26">Якщо бракує дозволу</a></li>
+<li><a href="#f27">Надіслати відгук</a></li>
+<li><a href="#f28">Майно</a></li>
+<li><a href="#f29">Гаманець документів</a></li>
+<li><a href="#f30">Гаманець токенів</a></li>
+<li><a href="#f31">Збірний пункт</a></li>
+<li><a href="#f32">План читання та будильник</a></li>
+<li><a href="#f33">Завантаження офлайн-карти</a></li>
+<li><a href="#f34">Мої пристрої</a></li>
+<li><a href="#f35">Атмосферний тиск і оцінка погоди</a></li>
+</ol></nav>
+<section class="lap" id="f1"><h2><span class="sz">1.</span>Головний екран</h2>
+<p class="hol"><b>Де:</b> крайня ліва кнопка нижнього меню, <b>Початок</b>.</p>
+<p><b>Що вміє:</b> угорі готовність твоїх місць у відсотках (дім, дача, автомобіль), під ними плитки для всіх функцій, у самому низу щоденний вірш або думка з бази знань.</p>
+<ol><li>Під час першого запуску кнопкою <b>Завантажити демодані</b> можна випробувати застосунок на прикладі родини.</li><li>Торкнися кола місця: побачиш, чого там бракує.</li><li>З плиток доступне все: Домогосподарство, Запаси, Що взяти, Ризик, Зв’язок, Карта, Орієнтування, Картка екстреної допомоги, База знань, Біблія, Збірний пункт, Інструменти, Гаманець документів, Секретний QR, Гаманець токенів, Майно.</li></ol>
+<p class="tipp"><b>Порада:</b> зелене число означає, що все добре, помаранчеве й червоне вказують, що щось треба поповнити.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/01-kezdolap.jpg" alt="Головний екран" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f2"><h2><span class="sz">2.</span>Домогосподарство</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Домогосподарство</b>.</p>
+<p><b>Що вміє:</b> тут ти вказуєш, хто належить до вашої родини і де розташовані твої місця. З цього рахуються готовність, добова норма і список речей.</p>
+<ol><li>Тут чотири розділи: <b>Члени родини</b>, <b>Домашні тварини</b>, <b>Транспорт</b>, <b>Місця</b>.</li><li>Торкнувшись будь-якого з них, побачиш список, а жовтою кнопкою <b>+</b> додаси новий запис.</li><li>Для місць ти вказуєш, хто і на скільки днів туди прибуває.</li></ol>
+<p class="tipp"><b>Порада:</b> у безкоштовній версії можна додати 2 членів родини, з преміум-кодом без обмежень.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/02-haztartas.jpg" alt="Домогосподарство" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/03-csaladtagok.jpg" alt="Домогосподарство" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f3"><h2><span class="sz">3.</span>Картка члена родини</h2>
+<p class="hol"><b>Де:</b> Домогосподарство &gt; Члени родини &gt; торкнися імені.</p>
+<p><b>Що вміє:</b> ім’я, дата народження, хто це (дорослий, дитина, немовля), вантажопідйомність і медичні дані для картки екстреної допомоги.</p>
+<ol><li>Заповни ім’я та дату народження, вибери, хто це.</li><li>Вкажи вантажопідйомність у кілограмах: з цього список речей знає, хто скільки може нести.</li><li>У розділі <b>Медичні дані</b> торкнися алергій, впиши ліки та захворювання.</li><li>Заповни: «Телефон власника картки», «Кого сповістити в екстреному випадку» і «Телефон того, кого сповістити в екстреному випадку».</li><li>Познач: <b>Показувати мої дані на картці екстреної допомоги</b>, якщо це твоя картка.</li></ol>
+<p class="tipp"><b>Порада:</b> картку можна заповнити й для іншої людини, тому номер власника і номер того, кого треба сповістити, вписуй в окремі поля.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/04-csaladtag-adatlap.jpg" alt="Картка члена родини" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f4"><h2><span class="sz">4.</span>Запаси</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Запаси</b>.</p>
+<p><b>Що вміє:</b> облік твого спорядження та їжі з контролем термінів придатності. Ти бачиш кількість позицій, загальну вагу і те, у чого термін спливає протягом місяця.</p>
+<ol><li>Можна фільтрувати за категорією, місцем і запасом.</li><li>Жовтою кнопкою <b>+</b> додаєш нову позицію: назва, кількість, категорія, термін придатності, чия, де зберігається.</li><li>Кнопкою <b>Сканувати штрихкод / QR</b> можна додати позицію просто з упаковки.</li><li>Кнопка <b>Чого бракує?</b> показує, що варто поповнити.</li><li>Кнопка <b>Набір на 72 години</b> складає базовий набір на 72 години.</li></ol>
+<p class="tipp"><b>Порада:</b> у безкоштовній версії можна додати 50 позицій, з преміум-кодом без обмежень.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/05-keszlet.jpg" alt="Запаси" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/06-keszlet-uj-tetel.jpg" alt="Запаси" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f5"><h2><span class="sz">5.</span>Що взяти? (список речей)</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Що взяти</b>.</p>
+<p><b>Що вміє:</b> складає персональний список речей залежно від того, хто йде, як, у яку дорогу і на скільки днів.</p>
+<ol><li>Познач, хто йде (можна вибрати й домашню тварину).</li><li>Вибери, як ви йдете (автомобілем, пішки, з рюкзаком) і в яку дорогу.</li><li>Вкажи, на скільки днів і з якою нормою води рахувати.</li><li>Застосунок складає список, враховуючи обмеження ваги.</li></ol>
+<p class="tipp"><b>Порада:</b> вантажопідйомність задай на картках членів родини, тоді список ще й розподілить вагу між ними.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/07-mit-vigyek.jpg" alt="Що взяти? (список речей)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f6"><h2><span class="sz">6.</span>Аналіз ризиків</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Ризик</b>.</p>
+<p><b>Що вміє:</b> для кожного місця показує, хто туди прибуває, на скільки днів і чи вистачить там води, їжі, опалення та електрики.</p>
+<ol><li>Подивися на кола місць: відсоток показує готовність.</li><li>Червоний рядок показує, чого мало.</li><li>Нестачу можна поповнити в Запасах і прив’язати позицію до потрібного місця.</li></ol>
+<p class="tipp"><b>Порада:</b> картина ризиків точна настільки, наскільки заповнені Домогосподарство і Запаси.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/08-kockazat.jpg" alt="Аналіз ризиків" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f7"><h2><span class="sz">7.</span>Карта</h2>
+<p class="hol"><b>Де:</b> кнопка <b>Карта</b> в нижньому меню або Початок &gt; плитка Карта.</p>
+<p><b>Що вміє:</b> туристичні стежки, джерела, колодязі, притулки, вершини, оглядові вежі та інші туристичні точки з єдиними кольоровими значками. На ній видно і готовність твоїх місць. Можна шукати і планувати маршрут.</p>
+<ol><li>Угорі в пошуку введи, що шукаєш (туристичну стежку, вершину, джерело, населений пункт).</li><li>Кнопкою з перехрестям унизу ліворуч переходиш до свого місцезнаходження.</li><li>Кнопками <b>+</b> і <b>−</b> змінюєш масштаб, кнопкою шарів перемикаєш вигляд карти.</li><li>Планування маршруту: вкажи, звідки й куди йдеш, і застосунок покаже відстань, час у дорозі, набір висоти та маркування, за яким треба йти.</li></ol>
+<p class="dij"><b>Безкоштовно і преміум:</b> безкоштовно доступні онлайн-карта і 2 плани маршрутів на тиждень. З преміум-кодом планування маршрутів необмежене, і можна завантажувати офлайн-карти (регіони Угорщини та зарубіжні країни), які працюють без інтернету.</p>
+<p class="tipp"><b>Порада:</b> у нічному режимі значки на карті теж червоні, тож не засліплюють.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/09-terkep.jpg" alt="Карта" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/10-terkep-nagyitva.jpg" alt="Карта" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f8"><h2><span class="sz">8.</span>Орієнтування</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Орієнтування</b>.</p>
+<p><b>Що вміє:</b> компас із градусами та сторонами світу, запис напрямку, звукове ведення, схід і захід сонця, фаза місяця.</p>
+<ol><li>Повернися туди, куди тобі треба йти, і торкнися кнопки <b>Записати напрямок</b>.</li><li>Увімкни <b>Звукове ведення</b>: якщо йдеш правильно, звучить низький, повільний тон, якщо збиваєшся, вищий і частіший.</li><li>Телефон можна покласти в кишеню, веде звук.</li><li>У розділі <b>Сонце й місяць</b> бачиш схід і захід сонця та фазу місяця.</li></ol>
+<p class="tipp"><b>Порада:</b> кнопкою Видалити можна записати новий напрямок. Якщо в телефоні немає компаса, розділ про сонце й місяць однаково працює.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/11-tajolo.jpg" alt="Орієнтування" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f9"><h2><span class="sz">9.</span>Картка екстреної допомоги</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Картка екстреної допомоги</b>, а також унизу екрана SOS.</p>
+<p><b>Що вміє:</b> медичні дані членів родини для екстрених випадків (група крові, алергії, ліки, захворювання, кого сповістити) на одній картці, яку медик може зчитати через QR-код. Працює і без інтернету.</p>
+<ol><li>Дані беруться з Домогосподарства: там заповни картки членів родини.</li><li>Якщо в когось стоїть «Бракує: контакт», додай у його картці людину, яку треба сповістити.</li><li>Кнопкою <b>Друк</b> можна надрукувати картку кожної людини окремо, кнопкою <b>Друкувати всі</b> картки всіх.</li><li><b>Сімейна картка (один QR)</b> вміщує всю родину в один код.</li></ol>
+<p class="tipp"><b>Порада:</b> надрукуй її й поклади в гаманець або в автомобіль.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/12-veszkartya.jpg" alt="Картка екстреної допомоги" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f10"><h2><span class="sz">10.</span>База знань</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>База знань</b>.</p>
+<p><b>Що вміє:</b> статті, впорядковані за темами, від основ через їжу, воду, медицину до виживання в місті та орієнтування на місцевості. Базові та рятівні статті безкоштовні, для всіх, і читаються без інтернету. Розширена база знань входить до преміуму.</p>
+<ol><li>Торкнися теми, наприклад <b>Основи</b>.</li><li>Вибери статтю зі списку.</li><li>Пошуком угорі можна шукати в усіх статтях.</li><li>Статті, позначені замком («закриті»), належать до розширеної бази знань: вони відкриваються після використання преміум-коду.</li></ol>
+<p class="tipp"><b>Порада:</b> унизу головного екрана щодня з’являється нова думка з бази знань.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/13-tudastar.jpg" alt="База знань" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/14-tudastar-tema.jpg" alt="База знань" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/15-tudastar-cikk.jpg" alt="База знань" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f11"><h2><span class="sz">11.</span>Біблія</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Біблія</b>.</p>
+<p><b>Що вміє:</b> переклад Кароля з читанням уголос, молитви, сповідання, план читання, вірші для надзвичайних ситуацій, пророцтва, виділення та власні коментарі.</p>
+<ol><li>Торкнися плитки <b>Біблія</b> і першого разу кнопкою <b>Завантажити Біблію</b> збережи її на телефон. Після цього вона залишиться на твоєму телефоні.</li><li>Вибери книгу, розділ і вірш.</li><li>Значком динаміка можна ввімкнути читання вголос.</li><li>На інших плитках знайдеш молитви, план читання та вірші для надзвичайних ситуацій.</li></ol>
+<p class="tipp"><b>Порада:</b> торкнувшись вірша, можна його виділити або додати до нього нотатку.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/16-biblia.jpg" alt="Біблія" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/17-biblia-olvaso.jpg" alt="Біблія" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f12"><h2><span class="sz">12.</span>Зв’язок</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Зв’язок</b>.</p>
+<p><b>Що вміє:</b> в одному місці всі способи надіслати повідомлення, коли мобільна мережа не допомагає.</p>
+<ol><li><b>Цифрове повідомлення:</b> Локальна кімната (текст людям поруч через спільну Wi-Fi, точку доступу або Bluetooth) і Кімнати (закриті групи через інтернет, вхід за схваленням власника кімнати).</li><li><b>Голосове повідомлення:</b> Морзе (коротке повідомлення звуком або світлом) і Факс (передавання зображення звуком, навіть через рацію).</li></ol>
+<p class="tipp"><b>Порада:</b> якщо немає жодної мережі, Морзе і факс однаково працюють.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/18-kommunikacio.jpg" alt="Зв’язок" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f13"><h2><span class="sz">13.</span>Морзе</h2>
+<p class="hol"><b>Де:</b> Зв’язок &gt; <b>Морзе</b>. Безкоштовно.</p>
+<p><b>Що вміє:</b> передавання тексту звуком і світлом, приймання з камери (миготливе світло) та з мікрофона (тональний сигнал), тренажер і основи.</p>
+<ol><li><b>Передавання:</b> введи текст і натисни кнопку <b>Відтворити</b>. Кнопка <b>SOS</b> одним дотиком передає сигнал лиха.</li><li><b>Читання зі світла:</b> наведи камеру на миготливе світло, і застосунок перетворить його на текст.</li><li><b>Читання зі звуку:</b> мікрофон перетворює тональний сигнал на текст.</li><li><b>Тренажер Морзе:</b> можна тренувати літери, цифри й слова на слух, телеграфним ключем або постукуванням.</li></ol>
+<p class="tipp"><b>Порада:</b> розділ Основи Морзе пояснює ритм і швидкість.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/19-morze.jpg" alt="Морзе" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/20-morze-adas.jpg" alt="Морзе" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/21-morze-gyakorlo.jpg" alt="Морзе" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f14"><h2><span class="sz">14.</span>Факс</h2>
+<p class="hol"><b>Де:</b> Зв’язок &gt; <b>Факс</b>. Безкоштовно.</p>
+<p><b>Що вміє:</b> передавання зображення звуком, навіть через рацію.</p>
+<ol><li><b>Надсилання:</b> вибери зображення, і застосунок перетворить його на звук. Звук має йти в приймач іншого телефона.</li><li><b>Приймання:</b> телефон-приймач рядок за рядком відтворює зображення з почутого звуку.</li></ol>
+<p class="tipp"><b>Порада:</b> найкраще працює в тихому місці, коли обидва телефони поруч.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/22-fax.jpg" alt="Факс" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f15"><h2><span class="sz">15.</span>Локальні кімнати та Кімнати</h2>
+<p class="hol"><b>Де:</b> Зв’язок &gt; <b>Локальна кімната</b> або <b>Кімнати</b>.</p>
+<p><b>Що вміє:</b> Локальна кімната передає текст людям поруч через спільну Wi-Fi, точку доступу телефона або Bluetooth, без інтернет-тарифу. Кімнати це закриті групи через інтернет.</p>
+<ol><li>Спершу на екрані <b>Профіль</b> вкажи своє ім’я (і, якщо хочеш, фото профілю): так тебе бачитимуть інші.</li><li>Локальна кімната: потрібна спільна мережа (роутер або точка доступу телефона), усі мають під’єднатися до неї та відкрити застосунок.</li><li>Жовтою кнопкою <b>+</b> відкриваєш нову кімнату або чекаєш, поки з’явиться кімната поблизу.</li><li>Кімнати: кнопкою <b>+</b> створюєш нову або приєднуєшся до наявної за кодом. Вхід схвалює власник кімнати.</li></ol>
+<p class="dij"><b>Безкоштовно і преміум:</b> Локальна кімната безкоштовна для всіх. Із Кімнат безкоштовно можна створити 1 власну і бути учасником 3 кімнат; з преміум-кодом 10 власних кімнат і участь у необмеженій кількості кімнат.</p>
+<p class="tipp"><b>Порада:</b> утримавши повідомлення, його можна зберегти, і потім воно буде на екрані Профіль.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/23-helyi-szobak.jpg" alt="Локальні кімнати та Кімнати" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/24-profil.jpg" alt="Локальні кімнати та Кімнати" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/25-szobak.jpg" alt="Локальні кімнати та Кімнати" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f16"><h2><span class="sz">16.</span>Секретний QR</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Секретний QR</b>.</p>
+<p><b>Що вміє:</b> поміщає повідомлення, місцезнаходження, список або особисті дані в QR-код, який прочитає лише той, хто знає ваш сімейний пароль.</p>
+<ol><li>Встанови <b>Сімейний пароль</b> (угорі, якщо там ще стоїть «не встановлено»).</li><li>Вибери, що вкладаєш, і введи повідомлення.</li><li>Натисни кнопку <b>Створити QR</b>.</li><li>Зчитування: <b>Сканувати камерою</b>, <b>Завантажити з файлу</b> або введи рядок символів, якщо отримав його Морзе чи факсом.</li></ol>
+<p class="tipp"><b>Порада:</b> домовтеся про пароль заздалегідь усно, а не в повідомленні.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/26-titkos-qr.jpg" alt="Секретний QR" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f17"><h2><span class="sz">17.</span>Інструменти</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Інструменти</b>.</p>
+<p><b>Що вміє:</b> Калькулятори, Металошукач (залізо й сталь у стіні чи в землі), Дзеркало (фронтальна камера з рамкою підсвічування, щоб оглянути травму), Відлякувач звірів і комах.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/27-eszkozok.jpg" alt="Інструменти" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f18"><h2><span class="sz">18.</span>Калькулятори</h2>
+<p class="hol"><b>Де:</b> Інструменти &gt; <b>Калькулятори</b>.</p>
+<p><b>Що вміє:</b> Калькулятор (великі кнопки, стрічка, пам’ять, зручний і в рукавицях, і в темряві), Електроенергія (на скільки вистачить павербанка чи акумулятора), Калорії (на скільки вистачить їжі), Дальність рації, Опалення (скільки потрібно дров або газу), Дощова вода (скільки збереться з даху), Час у дорозі (чи встигнеш дійти засвітла), Блискавка (як далеко гроза), Очищення води (скільки потрібно хлорного відбілювача, скільки кип’ятити), Час роботи ліхтаря.</p>
+<ol><li>Торкнися калькулятора.</li><li>Введи дані, і результат з’явиться одразу.</li></ol>
+<p class="tipp"><b>Порада:</b> на стрічці калькулятора можна переглянути кожен крок, тож і в дорозі не заплутаєшся в розрахунках.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/28-kalkulatorok.jpg" alt="Калькулятори" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f19"><h2><span class="sz">19.</span>Відлякувач звірів і комах</h2>
+<p class="hol"><b>Де:</b> Інструменти &gt; <b>Відлякувач звірів і комах</b>.</p>
+<p><b>Що вміє:</b> видає високий звук проти диких звірів і комарів.</p>
+<ol><li>Вибери: <b>Проти звірів</b> або <b>Проти комарів</b>.</li><li>Повзунком можна налаштувати частоту.</li><li>Кнопка <b>Пробний сигнал</b> видає короткий, добре чутний свист: так можна перевірити, що динамік працює. Увімкнений відлякувач вона не вимикає.</li></ol>
+<p class="tipp"><b>Порада:</b> звук відлякувача навмисно настільки високий, що його не чути. Якщо ти нічого не чуєш, це нормально.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/29-riaszto.jpg" alt="Відлякувач звірів і комах" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f20"><h2><span class="sz">20.</span>SOS (надзвичайна ситуація)</h2>
+<p class="hol"><b>Де:</b> червона кнопка <b>SOS</b> посередині нижнього меню. Безкоштовно, працює і без інтернету.</p>
+<p><b>Що вміє:</b> світловий SOS екраном або спалахом, гучний аварійний свисток, ритм реанімації, виклик 112, розпізнавання падіння і швидка картка екстреної допомоги.</p>
+<ol><li><b>Світловий SOS (екран)</b> або <b>Світловий SOS (спалах)</b>: один дотик вмикає, ще один вимикає.</li><li><b>Аварійний свисток:</b> Свисток або Безперервно, висоту тону можна налаштувати. Збільш гучність.</li><li><b>Ритм реанімації:</b> голос задає ритм, щоб навіть у паніці не треба було рахувати.</li><li><b>Виклик 112:</b> єдиний європейський номер екстреної допомоги.</li><li>У самому низу <b>Швидка картка екстреної допомоги</b>.</li></ol>
+<p class="tipp"><b>Порада:</b> аварійний свисток найкраще чути на частоті близько 3-4 кГц, тому рятувальники почують його здалеку.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/30-sos.jpg" alt="SOS (надзвичайна ситуація)" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f21"><h2><span class="sz">21.</span>Розпізнавання падіння</h2>
+<p class="hol"><b>Де:</b> екран SOS &gt; <b>Розпізнавання падіння</b>.</p>
+<p><b>Що вміє:</b> якщо телефон відчуває сильний удар, а потім хвилину не рухається, він вмикає екран і гучно веде зворотний відлік. Якщо ти не натиснеш кнопку <b>Я в порядку</b>, він надішле SOS із твоїм місцезнаходженням у твої кімнати і ввімкне аварійний свисток.</p>
+<ol><li>Познач: <b>Автоматичний SOS після падіння</b>.</li><li>Надай дозвіл, якщо застосунок попросить.</li><li>Якщо спрацювало помилково, натисни велику кнопку <b>Я в порядку</b>.</li></ol>
+<p class="tipp"><b>Порада:</b> для повідомлення потрібен зв’язок із твоїми кімнатами, зворотний відлік і аварійний свисток працюють і без нього.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/31-eses-erzekeles.jpg" alt="Розпізнавання падіння" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f22"><h2><span class="sz">22.</span>Ліхтар</h2>
+<p class="hol"><b>Де:</b> кнопка <b>Ліхтар</b> у нижньому меню. Безкоштовно, працює і без інтернету.</p>
+<p><b>Що вміє:</b> ліхтарик зі спалахом або екраном, з налаштовуваним кольором і яскравістю, з червоним нічним світлом.</p>
+<ol><li>Торкнися кнопки <b>Ліхтар</b>: вмикається спалах, а екран залишається темним.</li><li>Торкнися ще раз: світить лише спалах.</li><li>При світлі екрана веди пальцем: горизонтально змінюєш колір, вертикально яскравість. Дотиком викликаєш кнопки.</li></ol>
+<p class="tipp"><b>Порада:</b> червоне світло не засліплює очі, які звикли до темряви.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/32-lampa.jpg" alt="Ліхтар" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f23"><h2><span class="sz">23.</span>Нічний режим</h2>
+<p class="hol"><b>Де:</b> значок місяця у верхній панелі.</p>
+<p><b>Що вміє:</b> увесь застосунок стає червоним, тож у темряві не засліплює і не погіршує нічний зір. Карта і ліхтар теж залишаються червоними.</p>
+<ol><li>Торкнися значка місяця, щоб увімкнути, і ще раз, щоб вимкнути.</li></ol>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/33-ejszakai-mod.jpg" alt="Нічний режим" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f24"><h2><span class="sz">24.</span>Налаштування</h2>
+<p class="hol"><b>Де:</b> крайня права кнопка нижнього меню, <b>Налаштувати</b>. Безкоштовно.</p>
+<p><b>Що вміє:</b> сповіщення про продукти й запаси, у яких спливає термін, вібровідгук, мова, розмір шрифту, довідка, обробка даних, використання преміум-коду.</p>
+<ol><li><b>Сповіщення:</b> познач і вибери, за скільки часу нагадувати (3 дні, 1 тиждень, 2 тижні, 1 місяць). Кнопкою <b>Тестове сповіщення</b> можна перевірити.</li><li><b>Мова</b> і <b>Розмір шрифту:</b> налаштуй, як тобі зручно.</li><li><b>Довідка:</b> на кожному екрані знак питання в заголовку теж відкриває довідку.</li></ol>
+<p class="tipp"><b>Порада:</b> якщо сповіщення заблоковані, застосунок підкаже, де їх увімкнути в налаштуваннях телефона.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/34-beallitasok.jpg" alt="Налаштування" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f25"><h2><span class="sz">25.</span>Використання преміум-коду</h2>
+<p class="hol"><b>Де:</b> Налаштування &gt; <b>Розблокувати</b>.</p>
+<p><b>Що вміє:</b> тут ти використовуєш преміум-код.</p>
+<ol><li>Введи код у поле.</li><li>Натисни кнопку <b>Використати код</b>. Для цього потрібен інтернет.</li><li>Після цього кількість членів родини і запасів необмежена, відкривається розширена база знань, а планування маршрутів на карті стає необмеженим, із завантажуваними офлайн-картами.</li></ol>
+<p class="tipp"><b>Порада:</b> один код можна використовувати щонайбільше на двох твоїх пристроях.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/35-feloldas.jpg" alt="Використання преміум-коду" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f26"><h2><span class="sz">26.</span>Якщо бракує дозволу</h2>
+<p class="hol"><b>Де:</b> з’являється сам, коли для функції потрібен дозвіл (камера, мікрофон, геолокація, сповіщення, датчик руху, Bluetooth).</p>
+<p><b>Що вміє:</b> пояснює, чого бракує, для чого це потрібно і що робити.</p>
+<ol><li>Торкнися кнопки <b>Запитати дозвіл</b> і вибери «Дозволити».</li><li>Якщо запит не з’являється, кнопка <b>Налаштування застосунку</b> одним дотиком відкриває налаштування телефона.</li><li>Коли надаси дозвіл, повернися: застосунок сам спробує ще раз.</li></ol>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/36-engedely.jpg" alt="Якщо бракує дозволу" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f27"><h2><span class="sz">27.</span>Надіслати відгук</h2>
+<p class="hol"><b>Де, у двох місцях:</b></p>
+<ul><li><b>значок хмаринки з текстом</b> у верхній панелі (без підпису),</li><li>кнопка <b>Надіслати відгук</b> на сторінці <b>Про мене</b>.</li></ul>
+<p><b>Що вміє:</b> можна надіслати нам помилку або ідею разом зі знімком екрана.</p>
+<ol><li>Вибери тип (помилка чи ідея) і розділ, якого він стосується.</li><li>Опиши, що ти робив, що побачив і чого очікував.</li><li>За потреби додай знімок екрана.</li><li>Натисни кнопку <b>Надіслати</b>.</li></ol>
+<p class="tipp"><b>Порада:</b> кнопкою <b>Мої повідомлення</b> можна переглянути, що ти надіслав, а кнопкою <b>Новини</b>, що змінилося в застосунку.</p>
+<div class="kepek"><figure><img src="/uk/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Надіслати відгук" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Надіслати відгук" loading="lazy" width="480"></figure><figure><img src="/uk/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Надіслати відгук" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f28"><h2><span class="sz">28.</span>Майно</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Майно</b>.</p>
+<p>«Майно» це окремий продукт. У застосунку його можна спробувати, і безкоштовно, і з преміумом, до 10 власних позицій та 1 рахунку; для повноцінного користування його потрібно купити окремо в Google Play та в App Store. Якщо ти його купиш, воно повноцінно працює і в PrepperPapa.</p></section>
+<section class="lap" id="f29"><h2><span class="sz">29.</span>Гаманець документів</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Гаманець документів</b>.</p>
+<p><b>Що вміє:</b> сховище під PIN-кодом для фото чи PDF твоїх документів (посвідчення особи, водійські права, картка TAJ, страховка, техпаспорт) і для рукописних нотаток. Безкоштовно.</p>
+<ol><li>Під час першого входу задай шестицифровий PIN-код і введи його ще раз.</li><li>У розділі <b>Новий документ</b> познач, чий він: людини, тварини чи транспортного засобу. Якщо нічого не позначити, він збережеться як спільний.</li><li>Кнопкою <b>Вибрати файл і зберегти</b> ти додаєш фото чи PDF, а кнопкою <b>Намалювати нотатку</b> можеш писати чи малювати пальцем.</li><li>Кнопкою <b>Заблокувати</b> ти одразу закриваєш сховище.</li></ol>
+<p class="tipp"><b>Порада:</b> документи зберігаються лише на цьому телефоні, зашифровані ключем, створеним із твого PIN-коду, і в повну резервну копію теж не потрапляють. Увімкни відбиток пальця й збережи код відновлення: якщо забудеш PIN-код, за їхньою допомогою можна задати новий.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/40-irattarca.jpg" alt="Гаманець документів" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f30"><h2><span class="sz">30.</span>Гаманець токенів</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Гаманець токенів</b>. Відкривається тим самим PIN-кодом, що й Гаманець документів.</p>
+<p><b>Що вміє:</b> у ньому дві вкладки. <b>Гіра</b> це взаєморозрахунки всередині невеликої спільноти (виконана робота, продані яйця, позичений інструмент) за допомогою QR-кодів, навіть без інтернету. На вкладці <b>Секретні коди</b> можна зберігати в зашифрованому вигляді паролі та коди відновлення. Це не банк і не криптовалюта. Безкоштовно.</p>
+<ol><li>Оплата: інша людина показує свій QR-код з ідентифікатором, ти його скануєш.</li><li>Вводиш суму й призначення, тоді натискаєш <b>Підготувати платіж</b>: телефон підписує його і показує QR-код.</li><li>Він сканує цей QR-код, і сума зараховується йому.</li><li>Попросити гроші можна кнопкою <b>Запроси гіру</b>: вводиш, скільки й навіщо, він сканує, і йому залишається лише підтвердити.</li></ol>
+<p class="tipp"><b>Порада:</b> Секретні коди ніколи не потрапляють у повну резервну копію, тому важливі коди відновлення зберігай ще й на папері.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/41-token-tarca.jpg" alt="Гаманець токенів" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f31"><h2><span class="sz">31.</span>Збірний пункт</h2>
+<p class="hol"><b>Де:</b> Початок &gt; плитка <b>Збірний пункт</b>.</p>
+<p><b>Що вміє:</b> відкриває в браузері форум спільноти PrepperPapa (forum.prepperpapa.hu). Там можна ставити запитання й ділитися досвідом з іншими користувачами. Для цього потрібен інтернет.</p></section>
+<section class="lap" id="f32"><h2><span class="sz">32.</span>План читання та будильник</h2>
+<p class="hol"><b>Де:</b> Біблія &gt; <b>План читання</b>.</p>
+<p><b>Що вміє:</b> ділить Біблію на щоденні чи щотижневі порції та запам’ятовує, де ти зупинився. Можна вибрати один із восьми планів: уся Біблія за рік (у порядку книг або в хронологічному порядку), зокрема з розбивкою за тижнями, уся Біблія за 90 днів, Новий Заповіт за 90 днів, Євангелія за 30 днів, Псалми та Приповісті за 60 днів.</p>
+<ol><li>Торкнися плану й запусти його.</li><li>Щодня він показує сьогоднішнє читання. Коли прочитаєш, натисни кнопку <b>Прочитано</b>.</li><li>Можна читати одразу кілька планів, за кожним окремо запам’ятовується, де ти зупинився.</li><li><b>Будильник:</b> задай час і дні. Зранку він розбудить телефон і прочитає вголос сьогоднішнє читання з плану.</li></ol>
+<p class="tipp"><b>Порада:</b> будильник працює в застосунку для Android. У браузері та на iPhone налаштування зберігається, але заблокований телефон сайт розбудити не може.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/42-olvasasi-terv.jpg" alt="План читання та будильник" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f33"><h2><span class="sz">33.</span>Завантаження офлайн-карти</h2>
+<p class="hol"><b>Де:</b> Карта &gt; кнопка функцій &gt; група <b>Офлайн-карта</b>. Преміум.</p>
+<p><b>Що вміє:</b> ти завантажуєш карту на телефон і бачиш, де перебуваєш, навіть без інтернету та без зв’язку. Угорщину можна завантажити за 11 регіонами, решту країн цілком або за областями.</p>
+<ol><li>Вибери регіон або розгорни список <b>Карти інших країн</b> і торкнися країни.</li><li>У кожного рядка три окремі завантаження: <b>Базова карта</b>, <b>Туристичні стежки</b>, <b>Туристичні точки</b>. Поруч із кожним видно його розмір.</li><li>Для великої країни не завантажуй усе цілком, а лише ту область, куди їдеш: вона менша й лишається детальнішою.</li><li>Те, що більше не потрібне, можна видалити за рядками, і місце звільниться.</li></ol>
+<p class="tipp"><b>Порада:</b> завантаж карту перед виїздом, через wifi. У дорозі зв’язок зникає саме там, де потрібна карта.</p></section>
+<section class="lap" id="f34"><h2><span class="sz">34.</span>Мої пристрої</h2>
+<p class="hol"><b>Де:</b> Налаштування &gt; <b>Мої пристрої</b>.</p>
+<p><b>Що вміє:</b> показує, на яких із твоїх пристроїв працює твій обліковий запис. Преміум можна використовувати одночасно на 2 пристроях, безкоштовний обліковий запис на 1 пристрої.</p>
+<ol><li>У списку видно назви пристроїв і час, коли вони виходили на зв’язок востаннє. Поточний позначено «цей пристрій».</li><li>У непотрібного пристрою натисни <b>Від’єднати</b>, потім ще раз для підтвердження. Його місце звільниться.</li><li>Від’єднувати можна раз на 30 днів.</li></ol>
+<p class="tipp"><b>Порада:</b> для списку потрібні інтернет і вхід в обліковий запис. Решта частин застосунку, від запасів до карти, працюють на будь-якому пристрої.</p>
+<div class="kepek egy"><figure><img src="/uk/utmutato/kepek/43-keszulekeim.jpg" alt="Мої пристрої" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f35"><h2><span class="sz">35.</span>Атмосферний тиск і оцінка погоди</h2>
+<p class="hol"><b>Де:</b> Початок &gt; <b>Орієнтування</b>, на картці тиску. Видно лише на телефонах, де є барометр.</p>
+<p><b>Що вміє:</b> показує тиск і його зміну за останні години стрілкою, а невеликою картинкою оцінює, яка погода очікується (сонячно, мінливо, дощ, гроза). Якщо тиск швидко падає, видає попередження про бурю.</p>
+<ol><li>Відкрий Орієнтування: там тиск вимірюється постійно.</li><li>В інший час застосунок вимірює раз на чверть години, так заощаджується заряд, і в тебе є дані за останні 48 годин.</li></ol>
+<p class="tipp"><b>Порада:</b> це оцінка, а не прогноз погоди. В автомобілі зміна висоти теж виглядає як зміна тиску, тому під час їзди попередження може бути хибним.</p></section>
+<section class="lap"><h2>Якщо щось не виходить</h2>
+<p>Напиши нам із застосунку: значок хмаринки з текстом у верхній панелі або кнопка «Надіслати відгук» на сторінці «Про мене». Опиши, що ти робив, що побачив і який у тебе телефон.</p></section>
+<script>
+(function(){
+  // guide slideshow: auto-advance with a progress bar, tap/click the phone to pause or resume, a bar jumps to a slide
+  var d=document.querySelector('.utmdemo'); if(!d) return;
+  var kepek=d.querySelectorAll('.kepdoboz img'), fel=d.querySelectorAll('.felirat'), sav=d.querySelectorAll('.savok button');
+  var akt=0, IDO=5000, t=null, all=false, csendes=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  d.style.setProperty('--ido', IDO+'ms');
+  function mutat(i){ akt=(i+kepek.length)%kepek.length;
+    for(var j=0;j<kepek.length;j++){ kepek[j].classList.toggle('akt',j===akt); fel[j].classList.toggle('akt',j===akt);
+      sav[j].classList.remove('akt'); sav[j].classList.toggle('volt',j<akt); }
+    void sav[akt].offsetWidth; sav[akt].classList.add('akt');
+    var k=kepek[(akt+1)%kepek.length]; if(k.loading==='lazy') k.loading='eager';
+    idozit(); }
+  function idozit(){ clearTimeout(t); if(!all && !csendes) t=setTimeout(function(){mutat(akt+1);},IDO); }
+  for(var i=0;i<sav.length;i++){(function(i){ sav[i].onclick=function(){ mutat(i); }; })(i);}
+  d.querySelector('.tel').onclick=function(){ all=!all; d.classList.toggle('all',all); if(all) clearTimeout(t); else mutat(akt+1); };
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ if(!all) idozit(); } else clearTimeout(t); }); },{threshold:.4}).observe(d); }
+  mutat(0);
+})();
+</script>
+</main>
+<footer><div>PrepperPapa &middot; Посібник користувача &middot; <a href="/uk/konfidentsiinist.html">Конфіденційність</a></div></footer>
+<script>(function(){var m={"videok": "video", "tudastar": "znannia", "kapcsolat": "kontakty", "bemutato": "ohliad", "vasarlas": "kupivlia", "ertesito": "spovishchennia", "osszevetes": "porivniannia"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>

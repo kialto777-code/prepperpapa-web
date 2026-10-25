@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalorien-Rechner: Wie lange reicht dein Essen? | PrepperPapa</title>
+<meta name="description" content="Für wie viele Tage reichen die angelegten Lebensmittel für deinen Haushalt? Gib deinen Vorrat und die Personenzahl ein, und er nennt dir die Tage und was fehlt.">
+<link rel="canonical" href="https://prepperpapa.hu/de/rechner/kalorien.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kalorien-Rechner: Wie lange reicht dein Essen?">
+<meta property="og:description" content="Für wie viele Tage reichen die angelegten Lebensmittel für deinen Haushalt? Gib deinen Vorrat und die Personenzahl ein, und er nennt dir die Tage und was fehlt.">
+<meta property="og:url" content="https://prepperpapa.hu/de/rechner/kalorien.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/kalkulator/app.css">
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* HAROM menupont + logo 390 keppontos telefonon nem fer ki egy sorba: merve 102 keppont
+     vizszintes tullogas. NEM elrejtjuk a linkeket (akkor telefonrol nem lehetne a
+     kalkulatorokhoz jutni a fejlecbol), hanem TORDELJUK -- a navigacio megmarad. */
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{color:var(--ink);font-size:18px}
+  .zaro{color:var(--muted);font-size:15px;border-top:1px solid var(--line);
+         margin-top:30px;padding-top:20px}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  /* A KALKULATOR DOBOZA. Az app CSS-e ide van hatarolva (.ppkalk), ezert a lap tobbi
+     resze a weboldal sajat kinezetet tartja meg. */
+  .ppkalk{display:block;background:var(--panel);border:1px solid var(--line);
+          border-radius:12px;padding:20px;margin:26px 0}
+  .kalk-lista{list-style:none;margin:0;padding:0}
+  .kalk-lista li{border-bottom:1px solid var(--line);margin:0}
+  .kalk-lista li:last-child{border-bottom:0}
+  .kalk-lista a{display:block;padding:16px 2px;text-decoration:none;color:var(--ink)}
+  .kalk-lista a:hover{color:var(--zold)}
+  .kalk-lista b{display:block;font-size:18px;margin-bottom:3px}
+  .kalk-lista span{color:var(--muted);font-size:15px}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}
+    .nav{flex-wrap:nowrap;height:70px;padding:0 16px}.brand{width:auto;margin-right:auto}}
+  .k-szem{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);font-weight:700;margin-bottom:6px}
+  .ppkalk{border-radius:18px;border-color:#2c3d33;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .lapfej{margin:-44px -22px 30px;padding:56px 22px 40px;border-bottom:1px solid var(--line);
+     background:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.86)),url('/assets/hatter-topo.jpg') center/cover}
+  .lapfej h1{font-size:clamp(38px,8vw,60px);margin:8px 0 10px}
+  .kalk-lista{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .kalk-lista li{border:1px solid #2c3d33 !important;border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .kalk-lista a{padding:18px 20px}
+  @media(max-width:640px){.kalk-lista{grid-template-columns:1fr}}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/kalkulator/kaloria.html">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/calculators/calories.html">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/rechner/kalorien.html">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/calculadoras/calorias.html">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/kalkulatory/kalorie.html">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/calculatoare/calorii.html">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/kalkulyatory/kalorii.html">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/kalkuliatory/kalorii.html">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/kalkulator/kaloria.html">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav">
+  <a class="brand" href="/de/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/de/artikel.html">Artikel</a>
+  <a class="link" href="/de/rechner/">Rechner</a>
+  <a class="link" href="/de/app/">App</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Kanal</a>
+  <details class="nyelvv"><summary aria-label="Sprache"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>DE</span></summary><ul><li><a href="/kalkulator/kaloria.html" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/calculators/calories.html" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/rechner/kalorien.html" hreflang="de" lang="de" data-nyelv="de" aria-current="true">Deutsch</a></li><li><a href="/es/calculadoras/calorias.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/kalkulatory/kalorie.html" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/calculatoare/calorii.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/kalkulyatory/kalorii.html" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/kalkuliatory/kalorii.html" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+    <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/de/app/">PrepperPapa App</a><a href="/de/">Startseite</a><a href="/de/artikel.html">Artikel</a><a href="/de/rechner/">Rechner</a><a href="https://forum.prepperpapa.hu">Forum</a><a href="https://www.youtube.com/@PrepperPapa">Kanal</a></nav>
+  </details>
+</nav></header>
+<main>
+<div class="k-szem">Rechner</div>
+<h1>Kalorien-Rechner</h1>
+<p class="beveze">Die Frage ist nicht, wie viele Konserven im Regal stehen, sondern für wie viele Tage sie reichen. Gib deinen Vorrat und die Personenzahl ein.</p>
+<div class="ppkalk" id="kalk-kaloria">    <div class="section">
+      <label>Kalória: meddig elég az élelmed</label>
+      <p class="note">Nem fogyókúrás számoló. Azt mondja meg, hogy a KÉSZLETED hány napra elég,
+        és mennyi hiányzik ahhoz a naphoz, ameddig ki akarod húzni. A napi szükséglet nem
+        „normál" étkezés: vészhelyzetben a cél a működőképesség, nem a jóllakottság.</p>
+
+      <label style="margin-top:14px">Hány felnőtt?</label>
+      <input type="number" id="kalFelnott" min="0" step="1" value="2">
+      <label>Hány gyerek? (kb. 12 év alatt)</label>
+      <input type="number" id="kalGyerek" min="0" step="1" value="0">
+
+      <label style="margin-top:14px">Mit csináltok ezekben a napokban?</label>
+      <select id="kalTerheles"></select>
+      <p class="note" id="kalTerhelesInfo"></p>
+
+      <label style="margin-top:14px">Hány napra kell?</label>
+      <input type="number" id="kalNap" min="1" step="1" value="14">
+
+      <label style="margin-top:14px">Mi van a készletben?</label>
+      <p class="note">Írd be, amit tudsz — ami nincs a listán, azt add hozzá a végén. A
+        kilogrammnál a SZÁRAZ tömeg számít (a rizs főzve nehezebb, de ugyanannyi kalória).</p>
+      <div id="kalLista" class="arafogy"></div>
+      <div id="kalEgyeniLista" class="arafogy"></div>
+      <button type="button" id="kalPlusz" class="arahozzaad">+ Saját tétel hozzáadása</button>
+
+      <label style="margin-top:14px">Vagy add meg egyben, ha tudod</label>
+      <input type="number" id="kalOsszKcal" min="0" step="100" placeholder="összes kilokalória (üresen hagyhatod)">
+
+      <div class="row"><button id="kalSzamol" class="primary">Számold ki</button></div>
+      <div id="kalEredmeny" style="display:none"></div>
+    </div></div>
+<div class="zaro"><p>Planungswerte, keine ärztliche Empfehlung. Der Tagesbedarf im Notfall ist darauf ausgelegt, dass du handlungsfähig bleibst, nicht auf die gewohnten Mahlzeiten.</p></div>
+<h2>Wofür es taugt und wofür nicht</h2>
+<p>Dieser Rechner stammt aus der <a href="/de/">PrepperPapa</a> App und ist dort ebenfalls kostenlos. Die Berechnung läuft in deinem Browser: Wir senden nichts irgendwohin und speichern keine Daten darüber.</p>
+<script src="/assets/i18n/de.js"></script>
+<script src="/assets/i18n/kalk-de.js"></script>
+<script src="/assets/i18n/fordito.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+// A weboldalon nincs terkep-nezet es nincs mentett hely: az app `ppUtolsoHely`
+// fuggvenye itt ertelmetlen lenne. Budapesti koordinataval szamolunk, es ezt a lap
+// zaro szovege ki is mondja -- az orszag ket szele kozott ez nehany perc elteres.
+function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
+function ppLocale(){ return 'de-DE'; }
+function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
+
+const KAL_TERHELES = [
+  {id:'pihen', nev:'bent maradunk, keveset mozgunk', kcal:1800,
+   info:'Rejtőzködés, fekvés, olvasás. Ennyivel nem hízol és nem is fogysz gyorsan, de a fejed tiszta marad.'},
+  {id:'normal', nev:'normál napi ügyintézés',         kcal:2100,
+   info:'Járkálás, ház körüli teendők. Ez a nemzetközi vészhelyzeti tervezés alapszáma is.'},
+  {id:'nehez', nev:'fizikai munka, gyaloglás',        kcal:3000,
+   info:'Favágás, sáncolás, teherrel gyaloglás, hideg. Ez a szám gyorsan elviszi a készletet -- éppen ezért érdemes előre számolni vele.'},
+];
+
+const KAL_GYEREK_ARANY = 0.6;
+
+const KAL_TETELEK = [
+  {id:'rizs',   nev:'Rizs',                 egyseg:'kg', kcal:3600, db:0},
+  {id:'teszta', nev:'Száraztészta',         egyseg:'kg', kcal:3600, db:0},
+  {id:'liszt',  nev:'Liszt',                egyseg:'kg', kcal:3400, db:0},
+  {id:'bab',    nev:'Bab, lencse, borsó',   egyseg:'kg', kcal:3300, db:0},
+  {id:'zab',    nev:'Zabpehely',            egyseg:'kg', kcal:3800, db:0},
+  {id:'cukor',  nev:'Cukor, méz',           egyseg:'kg', kcal:3900, db:0},
+  {id:'olaj',   nev:'Olaj, zsír',           egyseg:'liter/kg', kcal:8800, db:0},
+  {id:'konzerv',nev:'Húskonzerv (400 g)',   egyseg:'db', kcal:700,  db:0},
+  {id:'zoldkon',nev:'Zöldségkonzerv (400 g)',egyseg:'db',kcal:150,  db:0},
+  {id:'tejpor', nev:'Tejpor',               egyseg:'kg', kcal:4900, db:0},
+  {id:'keksz',  nev:'Keksz, kétszersült',   egyseg:'kg', kcal:4300, db:0},
+  {id:'csoki',  nev:'Csokoládé, müzliszelet',egyseg:'kg',kcal:5000, db:0},
+];
+
+let kalEgyeniek = [], kalEgyeniSzamlalo = 0;
+
+function kalSorHtml(kulcs, nev, egyseg, ertek){
+  return '<div class="arasor"><span class="aranev">'+nev+' <small>('+egyseg+')</small></span>'
+    + '<input type="number" id="kalM_'+kulcs+'" min="0" step="0.5" value="'+(ertek||'')+'" placeholder="0" aria-label="mennyiség">'
+    + '<input type="number" id="kalK_'+kulcs+'" min="0" step="50" value="" placeholder="kcal/egység" aria-label="kalória egységenként">'
+    + '</div>';
+}
+
+function kalEpit(){
+  const t=$('kalTerheles');
+  if(t && !t.dataset.kesz){
+    t.innerHTML = KAL_TERHELES.map(x=>'<option value="'+x.id+'"'+(x.id==='normal'?' selected':'')+'>'+x.nev+'</option>').join('');
+    t.dataset.kesz='1';
+    t.onchange = kalTerhelesValt;
+  }
+  const l=$('kalLista');
+  if(l && !l.dataset.kesz){
+    // A kcal-mezo ELoRE KI VAN TOLTVE a tabla-ertekkel, de ATIRHATO: a "rizs" nem egyfele,
+    // es aki a sajat csomagjarol olvassa le, pontosabb szamot kap, mint a mi atlagunk.
+    l.innerHTML = KAL_TETELEK.map(f => kalSorHtml(f.id, f.nev, f.egyseg, f.db)).join('');
+    l.dataset.kesz='1';
+    KAL_TETELEK.forEach(f=>{ const k=$('kalK_'+f.id); if(k) k.value=f.kcal; });
+  }
+  kalTerhelesValt();
+}
+
+function kalTerhelesValt(){
+  const t=KAL_TERHELES.find(x=>x.id===($('kalTerheles')||{}).value) || KAL_TERHELES[1];
+  const el=$('kalTerhelesInfo');
+  if(el) el.textContent = t.kcal+' kcal fejenként naponta. '+t.info;
+}
+
+function kalEgyeniSor(){
+  const kulcs='k'+(++kalEgyeniSzamlalo);
+  kalEgyeniek.push(kulcs);
+  const wrap=document.createElement('div');
+  wrap.className='arasor araegyeni';
+  wrap.innerHTML =
+      '<span class="aranev aranev-szerk">'
+    +   '<input type="text" id="kalN_'+kulcs+'" class="aranevbe" placeholder="Mi ez? (pl. szárított hús)" aria-label="a tétel neve">'
+    +   '<button type="button" class="aratorol" aria-label="sor törlése">&times;</button>'
+    + '</span>'
+    + '<input type="number" id="kalM_'+kulcs+'" min="0" step="0.5" value="" placeholder="mennyi" aria-label="mennyiség">'
+    + '<input type="number" id="kalK_'+kulcs+'" min="0" step="50" value="" placeholder="kcal/egység" aria-label="kalória egységenként">';
+  wrap.querySelector('.aratorol').onclick = ()=>{
+    kalEgyeniek = kalEgyeniek.filter(x=>x!==kulcs); wrap.remove();
+  };
+  $('kalEgyeniLista').appendChild(wrap);
+  const be=wrap.querySelector('.aranevbe'); if(be) be.focus();
+}
+
+function kalSzamitas(){
+  const feln=+$('kalFelnott').value||0, gyer=+$('kalGyerek').value||0;
+  const t=KAL_TERHELES.find(x=>x.id===$('kalTerheles').value) || KAL_TERHELES[1];
+  const fejek = feln + gyer*KAL_GYEREK_ARANY;          // "felnott-egyenertek"
+  const napiIgeny = fejek * t.kcal;
+  const kertNap = +$('kalNap').value||0;
+
+  const tetelek=[]; let keszlet=0;
+  const sorok = KAL_TETELEK.map(f=>({kulcs:f.id, nev:f.nev, egyseg:f.egyseg}))
+    .concat(kalEgyeniek.map(k=>({kulcs:k,
+      nev: (($('kalN_'+k)||{}).value||'').trim() || 'saját tétel', egyseg:'egység'})));
+  sorok.forEach(f=>{
+    const m=+($('kalM_'+f.kulcs)||{}).value||0;
+    const k=+($('kalK_'+f.kulcs)||{}).value||0;
+    if(m>0 && k>0){ const e=m*k; keszlet+=e; tetelek.push({nev:f.nev, egyseg:f.egyseg, m, k, kcal:e}); }
+  });
+  // A KEZZEL MEGADOTT oSSZEG HOZZAADODIK, nem felulir: van, aki a szekreny egy reszet
+  // tetelesen tudja, a tobbit csak nagyjabol. Ha felulirna, a beirt tetelek nemán elvesznenek.
+  const kezi = +$('kalOsszKcal').value||0;
+  keszlet += kezi;
+
+  const napok = napiIgeny>0 ? keszlet/napiIgeny : 0;
+  const kellOsszes = napiIgeny*kertNap;
+  const hiany = Math.max(0, kellOsszes - keszlet);
+  return {feln, gyer, fejek, t, napiIgeny, kertNap, tetelek, kezi, keszlet, napok, kellOsszes, hiany};
+}
+
+function ppNapFmt(n){
+  if(!isFinite(n) || n<=0) return '0 nap';
+  if(n < 1) return Math.round(n*24)+' óra';
+  if(n < 10) return (Math.round(n*10)/10).toString().replace('.',',')+' nap';
+  return Math.round(n)+' nap';
+}
+
+$('kalSzamol').onclick = ()=>{
+  const r=kalSzamitas(), el=$('kalEredmeny');
+  if(!r.fejek){ el.innerHTML='<p class="note koordfigy">Adj meg legalább egy embert.</p>'; el.style.display='block'; return; }
+  if(!r.keszlet){ el.innerHTML='<p class="note koordfigy">Tölts ki legalább egy tételt (mennyiség és kcal), vagy add meg az összeset egyben.</p>'; el.style.display='block'; return; }
+
+  const sorok = r.tetelek.map(t=>'<tr><td>'+t.nev+'</td>'
+    +'<td style="text-align:right">'+String(t.m).replace('.',',')+' '+t.egyseg+'</td>'
+    +'<td style="text-align:right">'+ppSzam(t.kcal)+' kcal</td></tr>').join('')
+    + (r.kezi ? '<tr><td>Egyben megadva</td><td></td><td style="text-align:right">'+ppSzam(r.kezi)+' kcal</td></tr>' : '');
+
+  const eleg = r.napok >= r.kertNap;
+  let potlas='';
+  if(r.hiany>0){
+    // A HIANYT NEM CSAK KALORIABAN mondjuk meg: egy szam onmagaban nem vasarolhato.
+    // A rizs es az olaj a ket szelso pelda -- a legolcsobb tomeg es a legsurubb energia.
+    potlas = '<p class="note"><b>'+ppSzam(r.hiany)+' kcal hiányzik</b> a '+r.kertNap+' naphoz. '
+      + 'Ez nagyjából <b>'+(Math.round(r.hiany/3600*10)/10).toString().replace('.',',')+' kg rizs</b>, '
+      + 'vagy <b>'+(Math.round(r.hiany/8800*10)/10).toString().replace('.',',')+' liter olaj</b>, '
+      + 'vagy <b>'+Math.ceil(r.hiany/700)+' húskonzerv</b>.</p>';
+  }
+
+  el.innerHTML='<div class="koorddoboz"><p class="eginagy">'+ppNapFmt(r.napok)+'</p>'
+    + '<p class="note">Ennyi ideig elég a készlet '+r.feln+' felnőttnek'
+    + (r.gyer? ' és '+r.gyer+' gyereknek' : '')+', '+r.t.nev+' mellett.</p>'
+    + '<p class="note"><b>Napi igény: '+ppSzam(r.napiIgeny)+' kcal</b> &nbsp;|&nbsp; '
+    + '<b>készlet: '+ppSzam(r.keszlet)+' kcal</b></p>'
+    + '<table class="aratabla"><tbody>'+sorok+'</tbody></table>'
+    + (r.kertNap ? '<p class="note"><b>'+r.kertNap+' napra '+ppSzam(r.kellOsszes)+' kcal kell.</b> '
+        + (eleg ? 'Ez megvan.' : 'Ehhez a készlet kevés.')+'</p>' : '')
+    + potlas
+    + '<p class="note">A gyerekekkel a felnőtt adag 60 százalékával számoltunk — ez átlag, '
+    + 'egy tizenkét éves többet eszik egy hároméves(nél). A kalória nem minden: '
+    + 'fehérje, só és zsír nélkül a puszta kalória pár hét alatt legyengít, és a '
+    + 'C-vitamin hiánya hetek alatt jelentkezik. Ez a szám a KIHÚZÁST méri, nem az egészséget.</p>'
+    + '</div>'
+    + '<div class="vizfigy"><p><b>A víz nincs ebben a számban, és hamarabb fogy el.</b> '
+    + 'Élelem nélkül hetekig el lehet lenni, víz nélkül napokig. Ha a készletet tervezed, '
+    + 'a vízzel kezdd — arra külön kalkulátor van.</p></div>';
+  el.style.display='block';
+};
+kalEpit();
+if($('kalTerheles')) $('kalTerheles').onchange = kalTerhelesValt;
+if($('kalPlusz')) $('kalPlusz').onclick = kalEgyeniSor;
+</script>
+
+<div class="appdoboz"><div class="k">PrepperPapa App</div><h3>Dasselbe in deiner Tasche, ohne Internet</h3>
+<p>Diese Rechner gibt es auch in der App, kostenlos, und sie rechnen auch ohne Netz. Dazu kommen Vorrat, Notfallkarte, Kompass und Wissensbasis.</p>
+<a class="gomb" href="/de/app/">Sieh dir an, was sie kann</a></div>
+<a class="vissza" href="/de/rechner/">&larr; Zurück zu den Rechnern</a>
+</main>
+<footer><div class="lab"><div class="fnav"><a href="/de/">Startseite</a><a href="/de/artikel.html">Artikel</a><a href="/de/rechner/">Rechner</a><a href="/de/app/">App</a><a href="https://forum.prepperpapa.hu">Forum</a><a href="/de/datenschutz.html">Datenschutz</a></div><span>PrepperPapa &middot; Vorsorge mit gesundem Menschenverstand, für das echte Leben</span></div></footer>
+<script>(function(){var m={"videok": "videos", "tudastar": "wissen", "kapcsolat": "kontakt", "bemutato": "rundgang", "vasarlas": "kaufen", "ertesito": "benachrichtigung", "osszevetes": "vergleich"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>
