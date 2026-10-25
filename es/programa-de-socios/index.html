@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programa de socios de PrepperPapa: 20% de comisión por tus recomendaciones</title>
+<meta name="description" content="Recomienda la app PrepperPapa: 20% de comisión por las compras premium, 5% de descuento para el comprador con tu cupón, cookie de 30 días. Condiciones y registro.">
+<link rel="canonical" href="https://prepperpapa.hu/es/programa-de-socios/">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Programa de socios de PrepperPapa: 20% de comisión por tus recomendaciones">
+<meta property="og:description" content="Recomienda la app PrepperPapa: 20% de comisión por las compras premium, 5% de descuento para el comprador con tu cupón, cookie de 30 días. Condiciones y registro.">
+<meta property="og:url" content="https://prepperpapa.hu/es/programa-de-socios/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://prepperpapa.hu/es/app/kepek/og-app.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/es/app/kepek/og-app.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  .pp{max-width:var(--max);margin:0 auto;padding:44px 22px 56px}
+  .pp .kicsi{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);font-weight:700;margin:0 0 10px}
+  .pp h1{font-size:clamp(30px,6vw,46px);line-height:1.1;margin:0 0 16px}
+  .pp h2{font-size:clamp(22px,4vw,28px);line-height:1.2;margin:38px 0 14px}
+  .pp p{margin:0 0 14px;color:#cfd6cf}
+  .pp ul,.pp ol{margin:0 0 16px 22px;color:#cfd6cf}
+  .pp li{margin-bottom:8px}
+  .pp .cta{margin:24px 0 10px}
+  .pp .halk{color:var(--muted);font-size:15px}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/partnerprogram/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/partners/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/partnerprogramm/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/programa-de-socios/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/program-partnerski/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/program-parteneri/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/partnyory/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/partnery/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/partnerprogram/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+</style>
+<!-- goaffpro:general -->
+<script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<header><nav class="nav"><a class="brand" href="/es/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a> <a class="link" href="/es/articulos.html">Artículos</a> <a class="link" href="/es/calculadoras/">Calculadoras</a> <a class="link" href="/es/app/">App</a><details class="nyelvv"><summary aria-label="Idioma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>ES</span></summary><ul><li><a href="/partnerprogram/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/partners/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/partnerprogramm/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/programa-de-socios/" hreflang="es" lang="es" data-nyelv="es" aria-current="true">Español</a></li><li><a href="/pl/program-partnerski/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/program-parteneri/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/partnyory/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/partnery/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details></nav></header>
+<main>
+<div class="pp">
+<p class="kicsi">Programa de socios</p>
+<h1>Recomienda PrepperPapa.</h1>
+<p>Si a tu público le interesa la preparación, recomiéndale la app PrepperPapa. Recibes una comisión por cada compra premium que traigas.</p>
+<div class="cta"><a class="btn amber" href="https://prepperpapa.goaffpro.com/create-account" rel="noopener">Solicitar ser socio</a></div>
+<p class="halk">La solicitud se hace en el portal de socios de GoAffPro, que está en inglés.</p>
+
+<h2>Las condiciones</h2>
+<ul>
+<li><b>20% de comisión</b> por las compras premium que traigas.</li>
+<li>Con tu código de cupón, el comprador obtiene un <b>5% de descuento</b>.</li>
+<li><b>Cookie de 30 días:</b> tras un clic en tu enlace, te asignamos la compra durante 30 días.</li>
+<li>Por ahora, solo <b>para empresas y autónomos</b>.</li>
+<li>Aprobamos <b>cada solicitud una por una, a mano</b>.</li>
+<li>El pago se hace <b>por transferencia, contra factura</b>, cuando tu comisión acumulada llega a <b>100 €</b>.</li>
+</ul>
+
+<h2>Cómo funciona, paso a paso</h2>
+<ol>
+<li><b>Solicitud:</b> te registras en el portal de socios con el botón de arriba.</li>
+<li><b>Aprobación:</b> revisamos tu solicitud y te avisamos por correo cuando esté aprobada.</li>
+<li><b>Tu enlace y tu cupón:</b> en el portal de socios recibes tu enlace personal y tu código de cupón.</li>
+<li><b>Venta:</b> si alguien llega por tu enlace o compra con tu cupón, su compra premium se te asigna a ti.</li>
+<li><b>Espera de 14 días:</b> la comisión queda pendiente 14 días después de la compra, para que un posible reembolso pueda resolverse.</li>
+<li><b>Factura:</b> emites una factura por la comisión aprobada. Te enviamos los datos de facturación al aprobarte.</li>
+<li><b>Pago:</b> transferimos la comisión según tu factura.</li>
+</ol>
+
+<h2>¿Tienes preguntas?</h2>
+<p>Si la solicitud no funciona o tienes alguna pregunta, escribe a <a href="mailto:prepperpapa@gmail.com?subject=Partnerprogram">prepperpapa@gmail.com</a> con el asunto «Partnerprogram».</p>
+<p><a href="/es/app/">&larr; Volver a la app</a></p>
+</div>
+</main>
+<footer><div>PrepperPapa &middot; Preparación con sentido común, para la vida real &middot; <a href="/es/privacidad.html">Privacidad</a> &middot; <a href="/es/programa-de-socios/">Programa de socios</a></div></footer>
+<script>(function(){var m={"videok": "videos", "tudastar": "conocimiento", "kapcsolat": "contacto", "bemutato": "recorrido", "vasarlas": "comprar", "ertesito": "avisos", "osszevetes": "comparacion", "partnerprogram": "programa-de-socios"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>
