@@ -141,7 +141,9 @@
   .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
   /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
      the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
-  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
 </style>
 <!-- goaffpro:general -->
 <script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>

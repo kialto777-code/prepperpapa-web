@@ -31,8 +31,10 @@
        -webkit-font-smoothing:antialiased}
   a{color:var(--zold)}
   header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
-  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
-        gap:18px;height:70px}
+  /* Boss 2026-10-26 (TG 29604): the header uses the home page's width (1180 px), not the 760 px text column --
+     in the narrow column the logo sat in the middle of a wide screen. */
+  .nav{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;
+        gap:22px;height:74px}
   .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
   .brand img{width:38px;height:38px;border-radius:50%}
   .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
@@ -43,8 +45,8 @@
   .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
                text-decoration:none}
   .nav a.link:hover{color:var(--ink)}
-  @media (max-width:560px){
-    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+  @media (max-width:920px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px 8px;gap:4px 20px}
     .brand{width:100%;margin-right:0}
     .nav a.link{font-size:13px}
   }
@@ -121,7 +123,9 @@
   .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
   /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
      the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
-  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
 </style>
 <!-- goaffpro:general -->
 <script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>

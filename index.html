@@ -39,7 +39,14 @@
 
   header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.86);
          backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;gap:30px;height:74px}
+  .nav{display:flex;align-items:center;gap:22px;height:74px}
+  /* Boss 2026-10-26 06:23 (TG 29604): the menu items must show on the home page, as on /app/. Since the language
+     picker joined the header the six links needed ~1220 px at the 1180 px max width, so the JS fell back to the
+     hamburger on EVERY screen. Now: gap 30 -> 22 (fits in one row on desktop), and when it still does not fit
+     (narrow desktop, tablet, phone) the links move to a second row under the logo -- one line, swipeable if long --
+     instead of hiding behind a menu button. */
+  .linkek{display:flex;align-items:center;gap:22px;flex-shrink:0}
+  .linkek a.link{flex-shrink:0;white-space:nowrap}
   .brand{display:flex;align-items:center;gap:12px;margin-right:auto}
   .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;
              box-shadow:0 0 0 1px rgba(255,179,64,.35),0 0 18px rgba(255,179,64,.16)}
@@ -52,8 +59,11 @@
      translated labels). The brand never shrinks; when the links do not fit, JS adds .kompakt
      and the header falls back to the menu button, in every language. */
   .brand,.brand img,.brand span{flex-shrink:0}
-  .nav.kompakt a.link{display:none}
-  .nav.kompakt .mmenu{display:block}
+  .nav.kompakt{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:4px;column-gap:12px}
+  .nav.kompakt .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
+  .nav.kompakt .linkek::-webkit-scrollbar{display:none}
+  .nav.kompakt .linkek a.link{font-size:13px}
+  .nav.kompakt .linkek.gorgo{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
   .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
   .nav a.link:hover{color:var(--ink)}
   .btn{display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;
@@ -262,15 +272,16 @@
     .hero .wrap{padding-top:64px;padding-bottom:52px}
     .tenyek .wrap{gap:26px}
     .pillars,.tobb,.ketto,.kiemelt{grid-template-columns:1fr}
-    .nav a.link{display:none}
-    .mmenu{display:block}
-    .nav{gap:12px}
+    .nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:4px;column-gap:12px}
+    .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
+    .linkek::-webkit-scrollbar{display:none}
+    .linkek a.link{font-size:13px}
+    .linkek.gorgo{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
     .nav .btn{padding:10px 14px;font-size:14px}
     section.blk{padding:60px 0}
   }
   @media(max-width:520px){
     .nav > .btn{display:none}
-    .mmenu nav a.mm-yt{display:block}
   }
 </style>
 <script type="application/ld+json">
@@ -318,7 +329,9 @@
   .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
   /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
      the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
-  @media (max-width:560px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:5px;margin:0} }
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
 </style>
 <!-- goaffpro:general -->
 <script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>
@@ -340,26 +353,16 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#"><img src="assets/applogo-96.png" width="52" height="52" alt="PrepperPapa logó"><span>PrepperPapa</span></a>
-    <a class="link" href="#videok">Videók</a>
-    <a class="link" href="#tudastar">Tudástár</a>
-    <a class="link" href="/kalkulator/">Kalkulátorok</a>
-    <a class="link" href="/app/">Alkalmazás</a>
-    <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező</a>
-    <a class="link" href="#kapcsolat">Kapcsolat</a>
+    <div class="linkek">
+      <a class="link" href="#videok">Videók</a>
+      <a class="link" href="#tudastar">Tudástár</a>
+      <a class="link" href="/kalkulator/">Kalkulátorok</a>
+      <a class="link" href="/app/">Alkalmazás</a>
+      <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező</a>
+      <a class="link" href="#kapcsolat">Kapcsolat</a>
+    </div>
     <a class="btn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
     <details class="nyelvv"><summary aria-label="Nyelv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>HU</span></summary><ul><li><a href="/" hreflang="hu" lang="hu" data-nyelv="hu" aria-current="true">Magyar</a></li><li><a href="/en/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
-    <details class="mmenu">
-      <summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
-      <nav onclick="this.parentNode.open=false">
-        <a class="mm-app" href="/app/">PrepperPapa app</a>
-        <a href="#videok">Videók</a>
-        <a href="#tudastar">Tudástár</a>
-        <a href="/kalkulator/">Kalkulátorok</a>
-        <a href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező</a>
-        <a href="#kapcsolat">Kapcsolat</a>
-        <a class="mm-yt" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom a csatornára</a>
-      </nav>
-    </details>
   </div>
 </header>
 
@@ -565,9 +568,8 @@
 <script>
 (function(){var n=document.querySelector('header .nav');if(!n)return;
   function fit(){n.classList.remove('kompakt');
-    var br=n.querySelector('.brand'),ls=n.querySelectorAll('a.link'),tight=n.scrollWidth>n.clientWidth+1;
-    for(var i=0;i<ls.length&&!tight;i++){if(ls[i].offsetParent&&ls[i].getBoundingClientRect().left<br.getBoundingClientRect().right+8)tight=true;}
-    if(tight)n.classList.add('kompakt');}
+    if(n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    var l=n.querySelector('.linkek');if(l)l.classList.toggle('gorgo',l.scrollWidth>l.clientWidth+1);}
   fit();window.addEventListener('resize',fit);
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 </script>
