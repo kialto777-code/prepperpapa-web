@@ -40,13 +40,6 @@
   header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.86);
          backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;gap:22px;height:74px}
-  /* Boss 2026-10-26 06:23 (TG 29604): the menu items must show on the home page, as on /app/. Since the language
-     picker joined the header the six links needed ~1220 px at the 1180 px max width, so the JS fell back to the
-     hamburger on EVERY screen. Now: gap 30 -> 22 (fits in one row on desktop), and when it still does not fit
-     (narrow desktop, tablet, phone) the links move to a second row under the logo -- one line, swipeable if long --
-     instead of hiding behind a menu button. */
-  .linkek{display:flex;align-items:center;gap:22px;flex-shrink:0}
-  .linkek a.link{flex-shrink:0;white-space:nowrap}
   .brand{display:flex;align-items:center;gap:12px;margin-right:auto}
   .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;
              box-shadow:0 0 0 1px rgba(255,179,64,.35),0 0 18px rgba(255,179,64,.16)}
@@ -59,11 +52,6 @@
      translated labels). The brand never shrinks; when the links do not fit, JS adds .kompakt
      and the header falls back to the menu button, in every language. */
   .brand,.brand img,.brand span{flex-shrink:0}
-  .nav.kompakt{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:4px;column-gap:12px}
-  .nav.kompakt .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
-  .nav.kompakt .linkek::-webkit-scrollbar{display:none}
-  .nav.kompakt .linkek a.link{font-size:13px}
-  .nav.kompakt .linkek.gorgo{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
   .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
   .nav a.link:hover{color:var(--ink)}
   .nav a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
@@ -273,11 +261,6 @@
     .hero .wrap{padding-top:64px;padding-bottom:52px}
     .tenyek .wrap{gap:26px}
     .pillars,.tobb,.ketto,.kiemelt{grid-template-columns:1fr}
-    .nav{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:4px;column-gap:12px}
-    .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
-    .linkek::-webkit-scrollbar{display:none}
-    .linkek a.link{font-size:13px}
-    .linkek.gorgo{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
     .nav .btn{padding:10px 14px;font-size:14px}
     section.blk{padding:60px 0}
   }
@@ -293,6 +276,43 @@
 "https://www.facebook.com/prepperpapa","https://www.instagram.com/prepperpapa"],
 "email":"prepperpapa@gmail.com"}
 </script>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
 <link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/">
 <link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/">
 <link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/">
@@ -339,14 +359,13 @@
 </defs>
 </svg>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#"><img src="/assets/applogo-96.png" width="52" height="52" alt="PrepperPapa logó"><span>PrepperPapa</span></a>
-    <div class="linkek"><a class="link" href="#videoclipuri">Videoclipuri</a> <a class="link" href="#cunostinte">Bază de cunoștințe</a> <a class="link" href="/ro/calculatoare/">Calculatoare</a> <a class="link" href="/ro/app/">Aplicație</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Forum</a> <a class="link" href="#contact">Contact</a></div>
-    <a class="btn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Abonează-te</a>
-    <details class="nyelvv"><summary aria-label="Limba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>RO</span></summary><ul><li><a href="/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/" hreflang="ro" lang="ro" data-nyelv="ro" aria-current="true">Română</a></li><li><a href="/ru/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
-  </div>
-</header>
+<header><nav class="nav fej2">
+  <a class="brand" href="/ro/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/ro/" aria-current="page">Acasă</a> <a class="link" href="#videoclipuri">Videoclipuri</a> <a class="link" href="#cunostinte">Bază de cunoștințe</a> <a class="link" href="/ro/calculatoare/">Calculatoare</a> <a class="link" href="/ro/app/">Aplicație</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Forum</a> <a class="link" href="#contact">Contact</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Abonează-te</a>
+  <details class="nyelvv"><summary aria-label="Limba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>RO</span></summary><ul><li><a href="/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/" hreflang="ro" lang="ro" data-nyelv="ro" aria-current="true">Română</a></li><li><a href="/ru/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+  <button class="hamb" type="button" aria-label="Meniu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
 
 <section class="hero">
   <div class="bg"></div><div class="veil"></div>
@@ -534,18 +553,25 @@
 </footer>
 
 <script>
-(function(){var n=document.querySelector('header .nav');if(!n)return;
-  function fit(){n.classList.remove('kompakt');
-    if(n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
-    var l=n.querySelector('.linkek');if(l)l.classList.toggle('gorgo',l.scrollWidth>l.clientWidth+1);}
-  fit();window.addEventListener('resize',fit);
-  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
-</script>
-<script>
 (function(){var els=document.querySelectorAll('.rv');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('lat');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lat');io.unobserve(e.target);}});},{threshold:.12});
   els.forEach(function(e){io.observe(e);});})();
+</script>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 </script>
 <script>(function(){var m={"videok": "videoclipuri", "tudastar": "cunostinte", "kapcsolat": "contact", "bemutato": "prezentare", "vasarlas": "cumparare", "ertesito": "notificari", "osszevetes": "comparatie", "partnerprogram": "program-parteneri"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
 <script>

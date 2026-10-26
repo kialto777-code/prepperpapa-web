@@ -91,26 +91,38 @@
   footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
 <style id="fej2">
-  header .nav.fej2{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:22px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
   header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
   header .nav.fej2 .brand img{width:52px;height:52px}
-  header .nav.fej2 .linkek{display:flex;align-items:center;gap:22px;flex-shrink:0}
-  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
   header .nav.fej2 a.link:hover{color:var(--ink)}
   header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
   header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
   header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
-  header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:4px}
-  header .nav.fej2.kompakt{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:4px;column-gap:12px}
-  header .nav.fej2.kompakt .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
-  header .nav.fej2.kompakt .linkek::-webkit-scrollbar{display:none}
-  header .nav.fej2.kompakt a.link{font-size:13px}
-  header .nav.fej2 .linkek.gorgo{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
   @media(max-width:920px){
-    header .nav.fej2{flex-wrap:wrap;height:auto;padding:10px 16px 4px;row-gap:4px;column-gap:12px}
-    header .nav.fej2 .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
-    header .nav.fej2 .linkek::-webkit-scrollbar{display:none}
-    header .nav.fej2 a.link{font-size:13px}
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
   }
   @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
   @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
@@ -161,10 +173,11 @@
 </defs>
 </svg>
 <header><nav class="nav fej2">
-  <a class="brand" href="/uk/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
-  <div class="linkek"><a class="link" href="/uk/#video">Відео</a> <a class="link" href="/uk/statti.html" aria-current="page">База знань</a> <a class="link" href="/uk/kalkuliatory/">Калькулятори</a> <a class="link" href="/uk/app/">Застосунок</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Спільнота</a> <a class="link" href="/uk/#kontakty">Контакти</a></div>
+  <a class="brand" href="/uk/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/uk/">Головна</a> <a class="link" href="/uk/#video">Відео</a> <a class="link" href="/uk/statti.html" aria-current="page">База знань</a> <a class="link" href="/uk/kalkuliatory/">Калькулятори</a> <a class="link" href="/uk/app/">Застосунок</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Спільнота</a> <a class="link" href="/uk/#kontakty">Контакти</a></div>
   <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Підписатися</a>
   <details class="nyelvv"><summary aria-label="Мова"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>UK</span></summary><ul><li><a href="/2024/12/hogyan-keszitsunk-iranytut-egyszeruen.html" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/2024/12/how-to-make-a-simple-compass.html" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/2024/12/einfach-einen-kompass-machen.html" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/2024/12/como-hacer-una-brujula-sencilla.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/2024/12/jak-zrobic-prosty-kompas.html" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/2024/12/cum-iti-faci-o-busola.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/2024/12/kak-prosto-sdelat-kompas.html" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/2024/12/yak-lehko-zrobyty-kompas.html" hreflang="uk" lang="uk" data-nyelv="uk" aria-current="true">Українська</a></li></ul></details>
+  <button class="hamb" type="button" aria-label="Меню" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
 </nav></header>
 <main>
 <h1>Як легко зробити компас без компаса?</h1>
@@ -196,9 +209,16 @@
 <footer><div class="lab"><div class="fnav"><a href="/uk/">Головна</a><a href="/uk/statti.html">Статті</a><a href="/uk/kalkuliatory/">Калькулятори</a><a href="/uk/app/">Застосунок</a><a href="https://forum.prepperpapa.hu">Спільнота</a><a href="/uk/konfidentsiinist.html">Конфіденційність</a><a href="/uk/partnery/">Партнерська програма</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
 <script id="fej2js">
 (function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
   function fit(){n.classList.remove('kompakt');
-    if(n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
-    var l=n.querySelector('.linkek');if(l)l.classList.toggle('gorgo',l.scrollWidth>l.clientWidth+1);}
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
   fit();window.addEventListener('resize',fit);
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 </script>
