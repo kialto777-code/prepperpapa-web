@@ -24,7 +24,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még {perc} percet.": "Dacă nu simți mirosul, adaugă aceeași cantitate și mai așteaptă {perc} minute.",
   "Zavaros, színes vagy jéghideg (pl. olvadt hó, jeges patak)": "Tulbure, colorată sau rece ca gheața (de ex. zăpadă topită, pârâu înghețat)",
   "Tengerszint feletti magasság": "Altitudine deasupra nivelului mării",
-  "2000 m alatt (Magyarországon mindenhol)": "Sub 2000 m (toată Ungaria)",
+  "2000 m alatt": "Sub 2000 m",
   "2000 m felett": "Peste 2000 m",
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Ai introdus prea multe coduri greșite. Din motive de securitate nu poți încerca din nou o vreme.",

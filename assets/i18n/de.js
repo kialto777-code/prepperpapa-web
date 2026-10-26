@@ -26,7 +26,7 @@ window.PP_FORD_SZOTAR.de = {
   "Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még {perc} percet.": "Wenn du nichts riechst, gib dieselbe Menge nach und warte weitere {perc} Minuten.",
   "Zavaros, színes vagy jéghideg (pl. olvadt hó, jeges patak)": "Trüb, gefärbt oder eiskalt (z. B. Schmelzwasser aus Schnee, eisiger Bach)",
   "Tengerszint feletti magasság": "Höhe über dem Meeresspiegel",
-  "2000 m alatt (Magyarországon mindenhol)": "Unter 2000 m (ganz Ungarn)",
+  "2000 m alatt": "Unter 2000 m",
   "2000 m felett": "Über 2000 m",
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Du hast zu viele falsche Codes eingegeben. Aus Sicherheitsgründen kannst du es eine Weile nicht erneut versuchen.",
