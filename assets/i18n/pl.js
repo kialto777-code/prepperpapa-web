@@ -23,6 +23,10 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.pl = {
+  // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
+  "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Wpisano zbyt wiele błędnych kodów. Ze względów bezpieczeństwa przez jakiś czas nie można spróbować ponownie.",
+  "Újra próbálhatod ekkor:": "Można spróbować ponownie o:",
+  "A vásárlási levélben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "Kod z e-maila z zakupem jest już wpisany. Dotknij „Zrealizuj kod”.",
   // ===== 2026-10-25 v43.380 (Thomas 24623): stale offline region =====
   "Új változat a szerveren": "Nowa wersja na serwerze",
   // ===== 2026-10-25 v43.380 (card 6b287cfb, Boss 20:13): Solar panel setup tool =====
@@ -4332,4 +4336,23 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
  "Lelkileg is melletted vagyok: ha félsz, elfáradtál vagy gyászolsz, igét teszek a válasz mellé, és a Bibliában is keresek: megmutatom, hol van megírva valami, a helyre koppintva megnyílik. Az igeverset soha nem én írom: mindig a Károli-fordítás pontos szövegéből jön. Például: „Hol van megírva, hogy ne aggódjunk a holnapért?”": "Jestem przy Tobie także duchowo: jeśli się boisz, jesteś zmęczony lub w żałobie, dodaję werset do odpowiedzi, a także szukam w Biblii: pokazuję, gdzie coś jest napisane, a dotknięcie odnośnika go otwiera. Wersetu nigdy nie piszę sam: zawsze pochodzi z dokładnego tekstu przekładu Biblii w aplikacji. Na przykład: „Gdzie jest napisane, żebyśmy nie troszczyli się o jutro?”",
  "Internet nélkül működöm, itt futok a telefonodon. Amit kérdezel, amit válaszolok, és amit magadról megadsz, a telefonon marad: semmit nem küldök el sehova, akkor sem, ha van internet, kivéve, ha egy válaszomat te magad jelented a „Válasz jelentése” gombbal: akkor a kérdés és a válasz szövege a PrepperPapa csapatához kerül. Internet csak a nyelvi modell egyszeri letöltéséhez kell, és a térképhez, ha egy területét még nem töltötted le.": "Działam bez internetu, tutaj w Twoim telefonie. To, o co pytasz, co odpowiadam i co o sobie podajesz, zostaje w telefonie: niczego nigdzie nie wysyłam, nawet gdy jest internet, chyba że sam zgłosisz moją odpowiedź przyciskiem „Zgłoś tę odpowiedź”: wtedy pytanie i odpowiedź trafiają do zespołu PrepperPapa. Internet jest potrzebny tylko do jednorazowego pobrania modelu językowego oraz do mapy, jeśli nie pobrano jeszcze obszaru.",
  "Tévedhetek; életveszélyben a 112 az első.": "Mogę się mylić; w zagrożeniu życia najpierw dzwoń pod numer alarmowy."
+});
+
+// ===== 2026-10-26 v43.382 (task 6b287cfb-noah-nyelvek, Boss 2026-10-25 16:46): Noah settings sheet and measurement line =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+ "A telefonon: {lista}.": "W telefonie: {lista}.",
+ "kísérleti": "eksperymentalny",
+ "Letöltés: {modell} {szaz}% ({kesz} / {ossz})": "Pobieranie: {modell} {szaz}% ({kesz} / {ossz})",
+ "A letöltés nem sikerült:": "Pobieranie nie powiodło się:",
+ "Nincs elég szabad hely a telefonon ehhez a modellhez.": "W telefonie nie ma wystarczająco wolnego miejsca na ten model.",
+ "Nem indult el:": "Nie rozpoczęto:",
+ "Törlöd, amit a Kérdezz rólad tud?": "Usunąć to, co Zapytaj wie o tobie?",
+ "Törlöd a letöltött modellt? Újra le kell tölteni, ha később használnád.": "Usunąć pobrany model? Jeśli zechcesz go później użyć, trzeba będzie pobrać go ponownie.",
+ "A Háztartásból: {lista}": "Z gospodarstwa domowego: {lista}",
+ "A Háztartásban még nincs családtag.": "W gospodarstwie domowym nie ma jeszcze żadnego członka rodziny.",
+ "ő a kérdező": "to on pyta",
+ "betöltés {n} mp": "ładowanie {n} s",
+ "első szó {n} mp": "pierwsze słowo {n} s",
+ "{n} token/mp": "{n} tokenów/s",
+ "memória csúcs {n} MB": "szczyt pamięci {n} MB"
 });

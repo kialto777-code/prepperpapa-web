@@ -18,6 +18,10 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
+  "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "You entered too many wrong codes. For security you cannot try again for a while.",
+  "Újra próbálhatod ekkor:": "You can try again at:",
+  "A vásárlási levélben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "The code from your purchase e-mail has been entered. Tap “Redeem code”.",
   // ===== 2026-10-25 v43.380 (Thomas 24623): stale offline region =====
   "Új változat a szerveren": "New version on the server",
   // ===== 2026-10-25 v43.380 (card 6b287cfb, Boss 20:13): Solar panel setup tool =====
@@ -4661,4 +4665,24 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "Lelkileg is melletted vagyok: ha félsz, elfáradtál vagy gyászolsz, igét teszek a válasz mellé, és a Bibliában is keresek: megmutatom, hol van megírva valami, a helyre koppintva megnyílik. Az igeverset soha nem én írom: mindig a Károli-fordítás pontos szövegéből jön. Például: „Hol van megírva, hogy ne aggódjunk a holnapért?”": "I am with you in spirit too: if you are afraid, tired or grieving, I put a Bible verse next to the answer, and I also search the Bible: I show where something is written, and tapping the reference opens it. I never write the verse myself: it always comes from the exact text of the app's Bible translation. For example: “Where is it written that we should not worry about tomorrow?”",
  "Internet nélkül működöm, itt futok a telefonodon. Amit kérdezel, amit válaszolok, és amit magadról megadsz, a telefonon marad: semmit nem küldök el sehova, akkor sem, ha van internet, kivéve, ha egy válaszomat te magad jelented a „Válasz jelentése” gombbal: akkor a kérdés és a válasz szövege a PrepperPapa csapatához kerül. Internet csak a nyelvi modell egyszeri letöltéséhez kell, és a térképhez, ha egy területét még nem töltötted le.": "I work without internet, I run here on your phone. What you ask, what I answer and what you tell me about yourself stay on the phone: I send nothing anywhere, even when there is internet, except when you yourself report one of my answers with the “Report this answer” button: then the question and the answer text go to the PrepperPapa team. Internet is only needed for the one-time download of the language model, and for the map if you have not downloaded an area yet.",
  "Tévedhetek; életveszélyben a 112 az első.": "I can be wrong; in a life-threatening situation, call the emergency number first."
+});
+
+// ===== 2026-10-26 v43.382 (task 6b287cfb-noah-nyelvek, Boss 2026-10-25 16:46): Noah settings sheet and measurement line =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "A telefonon: {lista}.": "On the phone: {lista}.",
+ "kísérleti": "experimental",
+ "Letöltés: {modell} {szaz}% ({kesz} / {ossz})": "Downloading: {modell} {szaz}% ({kesz} / {ossz})",
+ "A letöltés nem sikerült:": "The download failed:",
+ "Nincs elég szabad hely a telefonon ehhez a modellhez.": "There is not enough free space on the phone for this model.",
+ "Nem indult el:": "Did not start:",
+ "Nem sikerült:": "Failed:",
+ "Törlöd, amit a Kérdezz rólad tud?": "Delete what Ask knows about you?",
+ "Törlöd a letöltött modellt? Újra le kell tölteni, ha később használnád.": "Delete the downloaded model? You will have to download it again if you want to use it later.",
+ "A Háztartásból: {lista}": "From the Household: {lista}",
+ "A Háztartásban még nincs családtag.": "There is no family member in the Household yet.",
+ "ő a kérdező": "the one asking",
+ "betöltés {n} mp": "loading {n} s",
+ "első szó {n} mp": "first word {n} s",
+ "{n} token/mp": "{n} tokens/s",
+ "memória csúcs {n} MB": "peak memory {n} MB"
 });

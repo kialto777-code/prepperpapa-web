@@ -15,6 +15,10 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
+  "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Ai introdus prea multe coduri greșite. Din motive de securitate nu poți încerca din nou o vreme.",
+  "Újra próbálhatod ekkor:": "Poți încerca din nou la:",
+  "A vásárlási levélben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "Codul din e-mailul de cumpărare este deja completat. Atinge „Valorifică codul”.",
   // ===== 2026-10-25 v43.380 (Thomas 24623): stale offline region =====
   "Új változat a szerveren": "Versiune nouă pe server",
   // ===== 2026-10-25 v43.380 (card 6b287cfb, Boss 20:13): Solar panel setup tool =====
@@ -4321,4 +4325,23 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Lelkileg is melletted vagyok: ha félsz, elfáradtál vagy gyászolsz, igét teszek a válasz mellé, és a Bibliában is keresek: megmutatom, hol van megírva valami, a helyre koppintva megnyílik. Az igeverset soha nem én írom: mindig a Károli-fordítás pontos szövegéből jön. Például: „Hol van megírva, hogy ne aggódjunk a holnapért?”": "Sunt alături de tine și sufletește: dacă ți-e frică, ești obosit sau în doliu, pun un verset lângă răspuns și caut și în Biblie: îți arăt unde scrie ceva, iar atingerea locului îl deschide. Versetul nu îl scriu niciodată eu: vine mereu din textul exact al traducerii Bibliei din aplicație. De exemplu: „Unde scrie să nu ne îngrijorăm de ziua de mâine?”",
  "Internet nélkül működöm, itt futok a telefonodon. Amit kérdezel, amit válaszolok, és amit magadról megadsz, a telefonon marad: semmit nem küldök el sehova, akkor sem, ha van internet, kivéve, ha egy válaszomat te magad jelented a „Válasz jelentése” gombbal: akkor a kérdés és a válasz szövege a PrepperPapa csapatához kerül. Internet csak a nyelvi modell egyszeri letöltéséhez kell, és a térképhez, ha egy területét még nem töltötted le.": "Funcționez fără internet, aici pe telefonul tău. Ce întrebi, ce răspund și ce îmi spui despre tine rămân pe telefon: nu trimit nimic nicăieri, nici când există internet, decât dacă tu raportezi unul dintre răspunsurile mele cu butonul „Raportează acest răspuns”: atunci întrebarea și răspunsul ajung la echipa PrepperPapa. Internetul trebuie doar pentru descărcarea unică a modelului lingvistic și pentru hartă, dacă nu ai descărcat încă o zonă.",
  "Tévedhetek; életveszélyben a 112 az első.": "Pot greși; în pericol de moarte, sună întâi la numărul de urgență."
+});
+
+// ===== 2026-10-26 v43.382 (task 6b287cfb-noah-nyelvek, Boss 2026-10-25 16:46): Noah settings sheet and measurement line =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "A telefonon: {lista}.": "Pe telefon: {lista}.",
+ "kísérleti": "experimental",
+ "Letöltés: {modell} {szaz}% ({kesz} / {ossz})": "Descărcare: {modell} {szaz}% ({kesz} / {ossz})",
+ "A letöltés nem sikerült:": "Descărcarea nu a reușit:",
+ "Nincs elég szabad hely a telefonon ehhez a modellhez.": "Nu este suficient spațiu liber pe telefon pentru acest model.",
+ "Nem indult el:": "Nu a pornit:",
+ "Törlöd, amit a Kérdezz rólad tud?": "Ștergi ce știe Întreabă despre tine?",
+ "Törlöd a letöltött modellt? Újra le kell tölteni, ha később használnád.": "Ștergi modelul descărcat? Va trebui să-l descarci din nou dacă vrei să-l folosești mai târziu.",
+ "A Háztartásból: {lista}": "Din gospodărie: {lista}",
+ "A Háztartásban még nincs családtag.": "În gospodărie nu există încă niciun membru al familiei.",
+ "ő a kérdező": "el întreabă",
+ "betöltés {n} mp": "încărcare {n} s",
+ "első szó {n} mp": "primul cuvânt {n} s",
+ "{n} token/mp": "{n} tokeni/s",
+ "memória csúcs {n} MB": "vârf de memorie {n} MB"
 });
