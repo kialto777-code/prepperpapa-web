@@ -224,10 +224,17 @@
     <label>Milyen a víz</label>
     <select autocomplete="off" id="vizAllapot">
       <option value="tiszta">Tiszta, átlátszó</option>
-      <option value="zavaros">Zavaros, hideg vagy színes</option>
+      <option value="zavaros">Zavaros, színes vagy jéghideg (pl. olvadt hó, jeges patak)</option>
     </select>
-    <label>Tengerszint feletti magasság (méter)</label>
-    <input type="number" autocomplete="off" id="vizMagas" value="150" min="0" step="50">
+    <!-- ALTITUDE AS TWO BANDS (tester #84, owner chose A 2026-10-26 20:32): the only thing the altitude
+         changes is the boiling time (1 min, above 2000 m 3 min), so a metre field asked more than it used.
+         The id stays `vizMagas` and the option values are metres (0 / 2001), so vizSzamitas() and the
+         kalkSzam range check read it unchanged. -->
+    <label>Tengerszint feletti magasság</label>
+    <select autocomplete="off" id="vizMagas">
+      <option value="0" selected>2000 m alatt (Magyarországon mindenhol)</option>
+      <option value="2001">2000 m felett</option>
+    </select>
     <label>A hipó töménysége (nézd meg az üvegen)</label>
     <select autocomplete="off" id="vizHipo">
       <option value="5">5% nátrium-hipoklorit (a szokásos háztartási)</option>
@@ -295,21 +302,28 @@ $('vizSzamol').onclick = ()=>{
   const v=vizSzamitas();
   if(!v.liter){ $('vizEredmeny').style.display='none'; return; }
   const el=$('vizEredmeny');
+  // TRANSLATED AS WHOLE SENTENCES (v43.386, tester #84 check): the result used to be one concatenated text node per
+  // paragraph ("Buzgó forrás 3 percig — ..."), which the text-node translator never matched, so every non-Hungarian UI
+  // showed this block in Hungarian. Each sentence is now a dictionary key with {placeholders}.
+  const T=(k,v)=>{ let t=ppForditSzoveg(k); for(const n in (v||{})) t=t.split('{'+n+'}').join(String(v[n])); return esc(t); };
+  // warning paragraphs: the dictionary key is the whole paragraph; the first sentence stays bold
+  const figy=(b,rest)=>{ const egesz=b+' '+rest, t=ppForditSzoveg(egesz);
+    const m=String(t).match(/^(.+?[.:])\s+(.*)$/);
+    return m ? '<p><b>'+esc(m[1])+'</b> '+esc(m[2])+'</p>' : '<p>'+esc(t)+'</p>'; };
   el.innerHTML=
-    '<div class="koorddoboz"><h3>Forralás (ez a legbiztosabb)</h3>'
-    + '<p class="note">Buzgó forrás ' + v.forralasPerc + ' percig'
-    + (v.magas>2000 ? ' — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.' : '.')
-    + ' Hagyd kihűlni fedő alatt.</p></div>'
-    + '<div class="koorddoboz"><h3>Ha nem tudsz forralni: hipó</h3>'
-    + '<p class="note">' + v.liter + ' liter ' + (v.zavaros?'zavaros':'tiszta') + ' vízhez '
-    + v.csepp + ' csepp ' + v.hipo + ' százalékos hipó, ami körülbelül ' + v.ml + ' milliliter. '
-    + 'Keverd el, várj ' + v.varakozas + ' percet, és utána is enyhén klóros szagúnak kell lennie. '
-    + 'Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még ' + v.varakozas + ' percet.</p></div>'
+    '<div class="koorddoboz"><h3>'+T('Forralás (ez a legbiztosabb)')+'</h3>'
+    + '<p class="note">' + T(v.magas>2000 ? 'Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.' : 'Buzgó forrás {perc} percig.', {perc:v.forralasPerc})
+    + ' ' + T('Hagyd kihűlni fedő alatt.') + '</p></div>'
+    + '<div class="koorddoboz"><h3>'+T('Ha nem tudsz forralni: hipó')+'</h3>'
+    + '<p class="note">' + T(v.zavaros ? '{liter} liter zavaros vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.' : '{liter} liter tiszta vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.',
+        {liter:v.liter, csepp:v.csepp, hipo:v.hipo, ml:v.ml})
+    + ' ' + T('Keverd el, várj {perc} percet, és utána is enyhén klóros szagúnak kell lennie.', {perc:v.varakozas})
+    + ' ' + T('Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még {perc} percet.', {perc:v.varakozas}) + '</p></div>'
     + '<div class="vizfigy">'
-    + '<p><b>Zavaros vizet előbb tisztítsd le.</b> Hagyd ülepedni, majd szűrd át ruhán vagy kávéfilteren. A hipó a lebegő szennyeződésre pazarlódik el, és nem jut a kórokozókra.</p>'
-    + '<p><b>Illatosított, sűrített vagy tisztítószeres hipót ne használj.</b> Csak sima nátrium-hipoklorit oldat való bele.</p>'
-    + '<p><b>Amit ez nem old meg:</b> vegyszer, olaj, növényvédőszer, nehézfém, sóstalanítás. Ezeket sem a forralás, sem a hipó nem távolítja el, a forralás inkább töményíti őket. Ipari terület, út menti árok vagy szántóföld melletti vízzel ne is próbálkozz.</p>'
-    + '<p><b>A hipó nem öl meg mindent.</b> A Cryptosporidium ellenáll neki. Ha ilyet gyanítasz (állati ürülékkel érintkezett felszíni víz), forralj, vagy használj arra való szűrőt.</p>'
+    + figy('Zavaros vizet előbb tisztítsd le.', 'Hagyd ülepedni, majd szűrd át ruhán vagy kávéfilteren. A hipó a lebegő szennyeződésre pazarlódik el, és nem jut a kórokozókra.')
+    + figy('Illatosított, sűrített vagy tisztítószeres hipót ne használj.', 'Csak sima nátrium-hipoklorit oldat való bele.')
+    + figy('Amit ez nem old meg:', 'vegyszer, olaj, növényvédőszer, nehézfém, sóstalanítás. Ezeket sem a forralás, sem a hipó nem távolítja el, a forralás inkább töményíti őket. Ipari terület, út menti árok vagy szántóföld melletti vízzel ne is próbálkozz.')
+    + figy('A hipó nem öl meg mindent.', 'A Cryptosporidium ellenáll neki. Ha ilyet gyanítasz (állati ürülékkel érintkezett felszíni víz), forralj, vagy használj arra való szűrőt.')
     + '</div>';
   el.style.display='block';
 };

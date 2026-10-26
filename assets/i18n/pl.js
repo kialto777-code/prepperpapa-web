@@ -23,6 +23,17 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.pl = {
+  // ===== 2026-10-26 v43.386 (tester #84): water purification, ice-cold water + altitude bands =====
+  "Buzgó forrás {perc} percig.": "Gotuj na pełnym wrzeniu przez {perc} min.",
+  "Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.": "Gotuj na pełnym wrzeniu przez {perc} min — jesteś powyżej dwóch tysięcy metrów, tam trzeba dłużej, bo temperatura wrzenia jest niższa.",
+  "{liter} liter tiszta vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.": "Na {liter} l czystej wody: {csepp} kropli {hipo}-procentowego podchlorynu, około {ml} ml.",
+  "{liter} liter zavaros vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.": "Na {liter} l mętnej wody: {csepp} kropli {hipo}-procentowego podchlorynu, około {ml} ml.",
+  "Keverd el, várj {perc} percet, és utána is enyhén klóros szagúnak kell lennie.": "Wymieszaj, odczekaj {perc} minut; potem woda powinna nadal lekko pachnieć chlorem.",
+  "Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még {perc} percet.": "Jeśli nie czujesz zapachu, dodaj tyle samo i odczekaj kolejne {perc} minut.",
+  "Zavaros, színes vagy jéghideg (pl. olvadt hó, jeges patak)": "Mętna, zabarwiona lub lodowata (np. stopiony śnieg, lodowaty strumień)",
+  "Tengerszint feletti magasság": "Wysokość nad poziomem morza",
+  "2000 m alatt (Magyarországon mindenhol)": "Poniżej 2000 m (całe Węgry)",
+  "2000 m felett": "Powyżej 2000 m",
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Wpisano zbyt wiele błędnych kodów. Ze względów bezpieczeństwa przez jakiś czas nie można spróbować ponownie.",
   "Újra próbálhatod ekkor:": "Można spróbować ponownie o:",

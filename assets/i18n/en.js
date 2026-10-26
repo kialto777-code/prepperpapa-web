@@ -18,6 +18,17 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  // ===== 2026-10-26 v43.386 (tester #84): water purification, ice-cold water + altitude bands =====
+  "Buzgó forrás {perc} percig.": "Rolling boil for {perc} min.",
+  "Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.": "Rolling boil for {perc} min — you are above two thousand metres, where it needs longer because the boiling point is lower.",
+  "{liter} liter tiszta vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.": "For {liter} litres of clear water: {csepp} drops of {hipo} percent bleach, about {ml} millilitres.",
+  "{liter} liter zavaros vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.": "For {liter} litres of cloudy water: {csepp} drops of {hipo} percent bleach, about {ml} millilitres.",
+  "Keverd el, várj {perc} percet, és utána is enyhén klóros szagúnak kell lennie.": "Stir, wait {perc} minutes, and afterwards it should still smell slightly of chlorine.",
+  "Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még {perc} percet.": "If you cannot smell it, add the same amount again and wait another {perc} minutes.",
+  "Zavaros, színes vagy jéghideg (pl. olvadt hó, jeges patak)": "Cloudy, coloured or ice-cold (e.g. melted snow, icy stream)",
+  "Tengerszint feletti magasság": "Altitude above sea level",
+  "2000 m alatt (Magyarországon mindenhol)": "Below 2000 m (all of Hungary)",
+  "2000 m felett": "Above 2000 m",
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "You entered too many wrong codes. For security you cannot try again for a while.",
   "Újra próbálhatod ekkor:": "You can try again at:",

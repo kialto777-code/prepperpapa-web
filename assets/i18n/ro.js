@@ -15,6 +15,17 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-26 v43.386 (tester #84): water purification, ice-cold water + altitude bands =====
+  "Buzgó forrás {perc} percig.": "Fierbere în clocot {perc} min.",
+  "Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.": "Fierbere în clocot {perc} min — ești peste două mii de metri, acolo durează mai mult, pentru că punctul de fierbere e mai jos.",
+  "{liter} liter tiszta vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.": "Pentru {liter} litri de apă limpede: {csepp} picături de clor (hipoclorit) {hipo} la sută, aproximativ {ml} mililitri.",
+  "{liter} liter zavaros vízhez {csepp} csepp {hipo} százalékos hipó, ami körülbelül {ml} milliliter.": "Pentru {liter} litri de apă tulbure: {csepp} picături de clor (hipoclorit) {hipo} la sută, aproximativ {ml} mililitri.",
+  "Keverd el, várj {perc} percet, és utána is enyhén klóros szagúnak kell lennie.": "Amestecă, așteaptă {perc} minute; după aceea trebuie să miroasă încă ușor a clor.",
+  "Ha nem érzed a szagot, adj hozzá ugyanennyit, és várj még {perc} percet.": "Dacă nu simți mirosul, adaugă aceeași cantitate și mai așteaptă {perc} minute.",
+  "Zavaros, színes vagy jéghideg (pl. olvadt hó, jeges patak)": "Tulbure, colorată sau rece ca gheața (de ex. zăpadă topită, pârâu înghețat)",
+  "Tengerszint feletti magasság": "Altitudine deasupra nivelului mării",
+  "2000 m alatt (Magyarországon mindenhol)": "Sub 2000 m (toată Ungaria)",
+  "2000 m felett": "Peste 2000 m",
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Ai introdus prea multe coduri greșite. Din motive de securitate nu poți încerca din nou o vreme.",
   "Újra próbálhatod ekkor:": "Poți încerca din nou la:",
