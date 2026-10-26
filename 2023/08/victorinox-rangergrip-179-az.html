@@ -90,6 +90,30 @@
   footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
   footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
 </style>
+<style id="fej2">
+  header .nav.fej2{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:22px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:22px;flex-shrink:0}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:4px}
+  header .nav.fej2.kompakt{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:4px;column-gap:12px}
+  header .nav.fej2.kompakt .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
+  header .nav.fej2.kompakt .linkek::-webkit-scrollbar{display:none}
+  header .nav.fej2.kompakt a.link{font-size:13px}
+  header .nav.fej2 .linkek.gorgo{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  @media(max-width:920px){
+    header .nav.fej2{flex-wrap:wrap;height:auto;padding:10px 16px 4px;row-gap:4px;column-gap:12px}
+    header .nav.fej2 .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
+    header .nav.fej2 .linkek::-webkit-scrollbar{display:none}
+    header .nav.fej2 a.link{font-size:13px}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
 <!-- goaffpro:general -->
 <script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>
 <!-- /goaffpro:general -->
@@ -106,15 +130,18 @@
 <symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
 </defs>
 </svg>
-<header><nav class="nav">
+<header><nav class="nav fej2">
   <a class="brand" href="/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
-  <a class="link" href="/cikkek.html">Cikkek</a>
-  <a class="link" href="/kalkulator/">Kalkulátorok</a>
-  <a class="link" href="/app/">Alkalmazás</a>
-  <a class="link" href="https://www.youtube.com/@PrepperPapa">Csatorna</a>
-  <details class="mmenu"><summary aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
-    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/app/">PrepperPapa app</a><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="https://www.youtube.com/@PrepperPapa">Csatorna</a></nav>
-  </details>
+  <div class="linkek">
+    <a class="link" href="/#videok">Videók</a>
+    <a class="link" href="/cikkek.html">Tudástár</a>
+    <a class="link" href="/kalkulator/">Kalkulátorok</a>
+    <a class="link" href="/app/">Alkalmazás</a>
+    <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező</a>
+    <a class="link" href="/#kapcsolat">Kapcsolat</a>
+  </div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
+  <!--nyelvv-->
 </nav></header>
 <main>
 <h1>Victorinox RangerGrip 179: Az Univerzális Túlélő Kés Teljes Körű Tesztje és Bemutató</h1>
@@ -128,5 +155,13 @@
 <a class="vissza" href="/cikkek.html">&larr; Vissza a cikkekhez</a>
 </main>
 <footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a><a href="/partnerprogram/">Partnerprogram</a></div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre</div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  function fit(){n.classList.remove('kompakt');
+    if(n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    var l=n.querySelector('.linkek');if(l)l.classList.toggle('gorgo',l.scrollWidth>l.clientWidth+1);}
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
 </body>
 </html>

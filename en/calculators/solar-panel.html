@@ -115,40 +115,30 @@
   .kfej h1{margin:0}
   .kfej .kikon{width:52px;height:52px}
   @media(max-width:480px){.kfej .kikon{width:42px;height:42px}}
-  /* NAPELEM (from the app, scoped) */
-  .ppkalk .ne-chipek{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
-  .ppkalk .ne-chipek button{flex:0 0 auto; min-width:0; min-height:40px; padding:8px 12px; font-size:14px;}
-  .ppkalk .ne-koord input{min-width:0; flex:1 1 0;}
-  .ppkalk .ne-watt{display:flex; flex-direction:row; flex-wrap:nowrap; align-items:center; gap:8px;}
-  .ppkalk .ne-watt input{flex:1 1 auto; width:auto; min-width:0; margin:0;}
-  .ppkalk .ne-watt span{flex:0 0 auto; font-family:var(--mono); color:var(--muted);}
-  .ppkalk .ne-abra{display:block; width:100%; height:auto; background:var(--raised); border:1px solid var(--border); border-radius:12px; margin:4px 0 6px;}
-  .ppkalk .ne-racs{stroke:var(--border); stroke-width:1;}
-  .ppkalk .ne-tx{fill:var(--muted); font-size:10px; font-family:var(--mono);}
-  .ppkalk .ne-egt{fill:var(--text); font-weight:700;}
-  .ppkalk .ne-oratx{fill:var(--text); font-size:9.5px;}
-  .ppkalk .ne-ref{fill:none; stroke:var(--dim); stroke-width:1.4; stroke-dasharray:4 4;}
-  .ppkalk .ne-ut{fill:none; stroke:var(--accent); stroke-width:3; stroke-linejoin:round; stroke-linecap:round;}
-  .ppkalk .ne-ora{fill:var(--accent); stroke:var(--bg); stroke-width:1;}
-  .ppkalk .ne-most{fill:#FFD600; stroke:var(--bg); stroke-width:2;}
-  .ppkalk .ne-jelmagy{display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; font-size:12.5px; color:var(--muted); margin-bottom:6px;}
-  .ppkalk .ne-jelmagy span{display:inline-block; width:18px; height:0; border-top:3px solid var(--accent);}
-  .ppkalk .ne-jelmagy span.ne-j-ref{border-top:2px dashed var(--dim); margin-left:6px;}
-  .ppkalk .egi-csempek b small{font-size:12px; color:var(--muted);}
-  .ppkalk .ne-irany{display:flex; align-items:center; gap:12px; background:var(--raised); border:1px solid var(--border); border-radius:12px; padding:10px 12px; margin-bottom:8px;}
-  .ppkalk .ne-irany b{font-family:var(--mono); font-size:22px; color:var(--accent);}
-  .ppkalk .ne-irany span{display:block; font-size:13px; color:var(--muted); margin-top:2px;}
-  .ppkalk .ne-irany-ikon{width:44px; height:44px; flex:0 0 auto;}
-  .ppkalk .ne-irany-ikon circle{fill:none; stroke:var(--green); stroke-width:1.4;}
-  .ppkalk .ne-irany-ikon path{fill:var(--accent);}
-  .ppkalk .ne-dolesek{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:4px 0 8px;}
-  .ppkalk .ne-dolesek div{background:var(--raised); border:1px solid var(--border); border-radius:12px; padding:8px 6px; text-align:center; display:flex; flex-direction:column; justify-content:space-between; gap:4px;}
-  .ppkalk .ne-dolesek span{font-size:12.5px; color:var(--muted); line-height:1.25;}
-  .ppkalk .ne-dolesek b{font-family:var(--mono); font-size:20px; color:var(--accent);}
-  .ppkalk #neBecsles .ne-dolesek{grid-template-columns:repeat(2,1fr);}
-  .ppkalk .ne-hely{font-family:var(--mono)}
-  .ppkalk .ne-applink{display:inline-block;background:var(--accent);color:#1b1407;font-weight:700;padding:11px 20px;border-radius:10px;text-decoration:none}
-  .ppkalk #neDatum{max-width:220px}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:22px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:22px;flex-shrink:0}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:4px}
+  header .nav.fej2.kompakt{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;row-gap:4px;column-gap:12px}
+  header .nav.fej2.kompakt .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
+  header .nav.fej2.kompakt .linkek::-webkit-scrollbar{display:none}
+  header .nav.fej2.kompakt a.link{font-size:13px}
+  header .nav.fej2 .linkek.gorgo{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  @media(max-width:920px){
+    header .nav.fej2{flex-wrap:wrap;height:auto;padding:10px 16px 4px;row-gap:4px;column-gap:12px}
+    header .nav.fej2 .linkek{order:5;flex:0 0 100%;gap:20px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
+    header .nav.fej2 .linkek::-webkit-scrollbar{display:none}
+    header .nav.fej2 a.link{font-size:13px}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
 </style>
 <link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/kalkulator/napelem.html">
 <link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/calculators/solar-panel.html">
@@ -194,16 +184,11 @@
 </defs>
 </svg><svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="pp-viz" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2.8 C12 2.8 5.6 10.6 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.6 12 2.8 12 2.8 Z"/><path d="M9.2 14.8 A2.8 2.8 0 0 0 12 17.6"/></g></symbol><symbol id="pp-akku" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="7" width="16" height="10"/><path d="M18.5 10.5 H21.5 V13.5 H18.5"/></g><g fill="currentColor"><path d="M11.6 8.6 L7.6 13.2 H10.4 L9.6 15.8 L13.8 11 H11 Z"/></g></symbol><symbol id="pp-lang" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.2 C8.2 21.2 5.6 18.6 5.6 15.2 C5.6 11 9.6 9.4 10.6 2.8 C14 5.6 15.2 9.2 14 12 C15.4 11.6 16.2 10.4 16.4 8.8 C18 10.8 18.4 13 18.4 15.2 C18.4 18.6 15.8 21.2 12 21.2 Z"/></g></symbol><symbol id="pp-eso" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M2.5 10.5 L12 4 L21.5 10.5"/><path d="M6 15.5 V19"/><path d="M12 15 V20"/><path d="M18 15.5 V19"/></g></symbol><symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol><symbol id="pp-lepes" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 20.5 L9 12.5 L13.5 16 L21 5.5"/></g><g fill="currentColor"><circle cx="9" cy="12.5" r="1.6"/><circle cx="21" cy="5.5" r="1.6"/></g></symbol><symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol><symbol id="pp-villam" viewBox="0 0 24 24"><g fill="currentColor"><path d="M13.6 2 L5.6 13.4 H10.8 L9.4 22 L18.4 10.2 H12.8 Z"/></g></symbol><symbol id="pp-vercsepp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2.5 C12 2.5 5 10.5 5 15 A7 7 0 0 0 19 15 C19 10.5 12 2.5 12 2.5 Z"/><path d="M9 15.5 A3 3 0 0 0 12 18.5"/></g></symbol></defs></svg>
 <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="pp-napelem" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><circle cx="18.5" cy="5.5" r="2.5"/><path d="M18.5 0.8 V1.4"/><path d="M23.2 5.5 H22.6"/><path d="M14.4 2.2 L14.8 2.6"/><path d="M2.5 12 L13.5 10 L15.8 18.6 L4.8 20.6 Z"/><path d="M8 11 L10.3 19.6"/><path d="M3.6 16.3 L14.6 14.3"/><path d="M10.3 19.6 V23"/><path d="M7.5 23 H13"/></g></symbol></defs></svg>
-<header><nav class="nav">
+<header><nav class="nav fej2">
   <a class="brand" href="/en/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
-  <a class="link" href="/en/articles.html">Articles</a>
-  <a class="link" href="/en/calculators/">Calculators</a>
-  <a class="link" href="/en/app/">App</a>
-  <a class="link" href="https://www.youtube.com/@PrepperPapa">Channel</a>
+  <div class="linkek"><a class="link" href="/en/#videos">Videos</a> <a class="link" href="/en/articles.html">Knowledge base</a> <a class="link" href="/en/calculators/">Calculators</a> <a class="link" href="/en/app/">App</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Community</a> <a class="link" href="/en/#contact">Contact</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Subscribe</a>
   <details class="nyelvv"><summary aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>EN</span></summary><ul><li><a href="/kalkulator/napelem.html" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/calculators/solar-panel.html" hreflang="en" lang="en" data-nyelv="en" aria-current="true">English</a></li><li><a href="/de/rechner/solarmodul.html" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/calculadoras/panel-solar.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/kalkulatory/panel-sloneczny.html" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/calculatoare/panou-solar.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/kalkulyatory/solnechnaya-panel.html" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/kalkuliatory/soniachna-panel.html" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
-    <details class="mmenu"><summary aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
-    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/en/app/">PrepperPapa app</a><a href="/en/">Home</a><a href="/en/articles.html">Articles</a><a href="/en/calculators/">Calculators</a><a href="https://forum.prepperpapa.hu">Community</a><a href="https://www.youtube.com/@PrepperPapa">Channel</a></nav>
-  </details>
 </nav></header>
 <main>
 <div class="kfej"><svg class="kikon" aria-hidden="true"><use href="#pp-napelem"/></svg><div>
@@ -518,6 +503,14 @@ if(document.readyState === 'loading') document.addEventListener('DOMContentLoade
 <a class="vissza" href="/en/calculators/">&larr; Back to the calculators</a>
 </main>
 <footer><div class="lab"><div class="fnav"><a href="/en/">Home</a><a href="/en/articles.html">Articles</a><a href="/en/calculators/">Calculators</a><a href="/en/app/">App</a><a href="https://forum.prepperpapa.hu">Community</a><a href="/en/privacy.html">Privacy</a><a href="/en/partners/">Partner program</a></div><span>PrepperPapa &middot; Common-sense preparedness for real life</span></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  function fit(){n.classList.remove('kompakt');
+    if(n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    var l=n.querySelector('.linkek');if(l)l.classList.toggle('gorgo',l.scrollWidth>l.clientWidth+1);}
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
 <script>(function(){var m={"videok": "videos", "tudastar": "knowledge-base", "kapcsolat": "contact", "bemutato": "tour", "vasarlas": "buy", "ertesito": "notifications", "osszevetes": "comparison", "partnerprogram": "partners"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
