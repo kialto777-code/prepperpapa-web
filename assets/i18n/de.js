@@ -4343,3 +4343,34 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
  "{n} token/mp": "{n} Token/s",
  "memória csúcs {n} MB": "Speicherspitze {n} MB"
 });
+
+// Bible settings tidy-up (owner 2026-10-26 17:50): short labels, one display block, one voice list
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Színes": "Farbig",
+ "Egyszínű": "Einfarbig",
+ "zöld árnyalatok": "Grüntöne",
+ "Megjelenítés az igék mellett": "Neben den Versen anzeigen",
+ "Forrás: OpenBible.info (CC BY)": "Quelle: OpenBible.info (CC BY)",
+ "A telefon hangja": "Stimme des Telefons",
+ "Gépi hang · nem foglal helyet": "Computerstimme · braucht keinen Speicher",
+ "Gépi felvétel · magyar": "Computeraufnahme · Ungarisch",
+ "Professzionális · magyar": "Professionell · Ungarisch",
+ "Professzionális · hamarosan": "Professionell · bald verfügbar",
+ "Készül": "In Arbeit",
+ "Megszakítás": "Abbrechen",
+ "Letöltés": "Herunterladen",
+ "Törlés": "Löschen",
+ "Letöltés internet nélkül": "Für die Offline-Nutzung herunterladen",
+ "magyar": "Ungarisch",
+ "Könyvenként": "Nach Büchern",
+ "Mértékegységek": "Maßeinheiten"
+});
+
+// Bible alarms on their own screen (owner 2026-10-26 17:54): several alarms, each with its own plan
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Ébresztő törlése": "Wecker löschen",
+ "Új ébresztő": "Neuer Wecker",
+ "Válassz tervet": "Plan wählen",
+ "Törlöd ezt az ébresztőt?": "Diesen Wecker löschen?",
+ "Az ébresztő egy olvasási terv napi olvasmányát olvassa fel. Előbb indíts el egy tervet.": "Der Wecker liest den Tagesabschnitt eines Leseplans vor. Starte zuerst einen Plan."
+});

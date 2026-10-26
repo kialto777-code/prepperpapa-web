@@ -4345,3 +4345,34 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "{n} token/mp": "{n} tokeni/s",
  "memória csúcs {n} MB": "vârf de memorie {n} MB"
 });
+
+// Bible settings tidy-up (owner 2026-10-26 17:50): short labels, one display block, one voice list
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Színes": "Colorat",
+ "Egyszínű": "Monocrom",
+ "zöld árnyalatok": "nuanțe de verde",
+ "Megjelenítés az igék mellett": "Afișate lângă versete",
+ "Forrás: OpenBible.info (CC BY)": "Sursa: OpenBible.info (CC BY)",
+ "A telefon hangja": "Vocea telefonului",
+ "Gépi hang · nem foglal helyet": "Voce sintetică · nu ocupă spațiu",
+ "Gépi felvétel · magyar": "Înregistrare sintetică · maghiară",
+ "Professzionális · magyar": "Profesională · maghiară",
+ "Professzionális · hamarosan": "Profesională · în curând",
+ "Készül": "În pregătire",
+ "Megszakítás": "Anulează",
+ "Letöltés": "Descarcă",
+ "Törlés": "Șterge",
+ "Letöltés internet nélkül": "Descarcă pentru utilizare offline",
+ "magyar": "maghiară",
+ "Könyvenként": "Pe cărți",
+ "Mértékegységek": "Unități de măsură"
+});
+
+// Bible alarms on their own screen (owner 2026-10-26 17:54): several alarms, each with its own plan
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Ébresztő törlése": "Șterge alarma",
+ "Új ébresztő": "Alarmă nouă",
+ "Válassz tervet": "Alege un plan",
+ "Törlöd ezt az ébresztőt?": "Ștergi această alarmă?",
+ "Az ébresztő egy olvasási terv napi olvasmányát olvassa fel. Előbb indíts el egy tervet.": "Alarma citește cu voce tare lectura zilei dintr-un plan de citire. Mai întâi pornește un plan."
+});

@@ -4686,3 +4686,34 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "{n} token/mp": "{n} tokens/s",
  "memória csúcs {n} MB": "peak memory {n} MB"
 });
+
+// Bible settings tidy-up (owner 2026-10-26 17:50): short labels, one display block, one voice list
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Színes": "Colour",
+ "Egyszínű": "Single colour",
+ "zöld árnyalatok": "green shades",
+ "Megjelenítés az igék mellett": "Shown next to the verses",
+ "Forrás: OpenBible.info (CC BY)": "Source: OpenBible.info (CC BY)",
+ "A telefon hangja": "The phone's voice",
+ "Gépi hang · nem foglal helyet": "Machine voice · uses no space",
+ "Gépi felvétel · magyar": "Machine recording · Hungarian",
+ "Professzionális · magyar": "Professional · Hungarian",
+ "Professzionális · hamarosan": "Professional · coming soon",
+ "Készül": "In progress",
+ "Megszakítás": "Cancel",
+ "Letöltés": "Download",
+ "Törlés": "Delete",
+ "Letöltés internet nélkül": "Download for offline use",
+ "magyar": "Hungarian",
+ "Könyvenként": "By book",
+ "Mértékegységek": "Units of measure"
+});
+
+// Bible alarms on their own screen (owner 2026-10-26 17:54): several alarms, each with its own plan
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Ébresztő törlése": "Delete alarm",
+ "Új ébresztő": "New alarm",
+ "Válassz tervet": "Choose a plan",
+ "Törlöd ezt az ébresztőt?": "Delete this alarm?",
+ "Az ébresztő egy olvasási terv napi olvasmányát olvassa fel. Előbb indíts el egy tervet.": "The alarm reads out the day's portion of a reading plan. Start a plan first."
+});
