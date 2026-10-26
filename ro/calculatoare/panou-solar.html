@@ -14,6 +14,8 @@
 <meta property="og:site_name" content="PrepperPapa">
 <meta property="og:locale" content="ro_RO">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<meta property="og:image" content="https://prepperpapa.hu/assets/hero.jpg">
 <link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/kalkulator/app.css">
 <style>
@@ -116,6 +118,42 @@
   .kfej .kikon{width:52px;height:52px}
   @media(max-width:480px){.kfej .kikon{width:42px;height:42px}}
 </style>
+<style id="napelem">
+  /* NAPELEM (from the app, scoped) */
+  .ppkalk .ne-chipek{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .ppkalk .ne-chipek button{flex:0 0 auto; min-width:0; min-height:40px; padding:8px 12px; font-size:14px;}
+  .ppkalk .ne-koord input{min-width:0; flex:1 1 0;}
+  .ppkalk .ne-watt{display:flex; flex-direction:row; flex-wrap:nowrap; align-items:center; gap:8px;}
+  .ppkalk .ne-watt input{flex:1 1 auto; width:auto; min-width:0; margin:0;}
+  .ppkalk .ne-watt span{flex:0 0 auto; font-family:var(--mono); color:var(--muted);}
+  .ppkalk .ne-abra{display:block; width:100%; height:auto; background:var(--raised); border:1px solid var(--border); border-radius:12px; margin:4px 0 6px;}
+  .ppkalk .ne-racs{stroke:var(--border); stroke-width:1;}
+  .ppkalk .ne-tx{fill:var(--muted); font-size:10px; font-family:var(--mono);}
+  .ppkalk .ne-egt{fill:var(--text); font-weight:700;}
+  .ppkalk .ne-oratx{fill:var(--text); font-size:9.5px;}
+  .ppkalk .ne-ref{fill:none; stroke:var(--dim); stroke-width:1.4; stroke-dasharray:4 4;}
+  .ppkalk .ne-ut{fill:none; stroke:var(--accent); stroke-width:3; stroke-linejoin:round; stroke-linecap:round;}
+  .ppkalk .ne-ora{fill:var(--accent); stroke:var(--bg); stroke-width:1;}
+  .ppkalk .ne-most{fill:#FFD600; stroke:var(--bg); stroke-width:2;}
+  .ppkalk .ne-jelmagy{display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; font-size:12.5px; color:var(--muted); margin-bottom:6px;}
+  .ppkalk .ne-jelmagy span{display:inline-block; width:18px; height:0; border-top:3px solid var(--accent);}
+  .ppkalk .ne-jelmagy span.ne-j-ref{border-top:2px dashed var(--dim); margin-left:6px;}
+  .ppkalk .egi-csempek b small{font-size:12px; color:var(--muted);}
+  .ppkalk .ne-irany{display:flex; align-items:center; gap:12px; background:var(--raised); border:1px solid var(--border); border-radius:12px; padding:10px 12px; margin-bottom:8px;}
+  .ppkalk .ne-irany b{font-family:var(--mono); font-size:22px; color:var(--accent);}
+  .ppkalk .ne-irany span{display:block; font-size:13px; color:var(--muted); margin-top:2px;}
+  .ppkalk .ne-irany-ikon{width:44px; height:44px; flex:0 0 auto;}
+  .ppkalk .ne-irany-ikon circle{fill:none; stroke:var(--green); stroke-width:1.4;}
+  .ppkalk .ne-irany-ikon path{fill:var(--accent);}
+  .ppkalk .ne-dolesek{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:4px 0 8px;}
+  .ppkalk .ne-dolesek div{background:var(--raised); border:1px solid var(--border); border-radius:12px; padding:8px 6px; text-align:center; display:flex; flex-direction:column; justify-content:space-between; gap:4px;}
+  .ppkalk .ne-dolesek span{font-size:12.5px; color:var(--muted); line-height:1.25;}
+  .ppkalk .ne-dolesek b{font-family:var(--mono); font-size:20px; color:var(--accent);}
+  .ppkalk #neBecsles .ne-dolesek{grid-template-columns:repeat(2,1fr);}
+  .ppkalk .ne-hely{font-family:var(--mono)}
+  .ppkalk .ne-applink{display:inline-block;background:var(--accent);color:#1b1407;font-weight:700;padding:11px 20px;border-radius:10px;text-decoration:none}
+  .ppkalk #neDatum{max-width:220px}
+</style>
 <style id="fej2">
   header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
   header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
@@ -185,6 +223,7 @@
 <!-- goaffpro:general -->
 <script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>
 <!-- /goaffpro:general -->
+<script type="application/ld+json" id="pp-ld">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Reglarea panoului solar", "description": "Încotro să privească un panou solar și cât de înclinat, pentru o zi, un anotimp sau tot anul? Cu drumul soarelui și producția.", "url": "https://prepperpapa.hu/ro/calculatoare/panou-solar.html", "inLanguage": "ro", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "PrepperPapa", "url": "https://prepperpapa.hu/ro/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PrepperPapa", "item": "https://prepperpapa.hu/ro/"}, {"@type": "ListItem", "position": 2, "name": "Calculatoare", "item": "https://prepperpapa.hu/ro/calculatoare/"}, {"@type": "ListItem", "position": 3, "name": "Reglarea panoului solar", "item": "https://prepperpapa.hu/ro/calculatoare/panou-solar.html"}]}]}</script>
 </head>
 <body>
 <svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
