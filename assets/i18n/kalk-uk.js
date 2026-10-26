@@ -164,4 +164,6 @@ M[ny].unshift.apply(M[ny], R.map(function(r){ return {minta:r[0], csere:WR(r[0],
 
 /* 2026-10-26 Napelem-beállítás web calculator (epit-napelem-kalk.py): the default place label. Hand-added. */
 (function(){ var S=(window.PP_FORD_SZOTAR=window.PP_FORD_SZOTAR||{}); S['uk']=S['uk']||{};
+  S['uk']["A panelt a telefon tájolójával is a helyére igazíthatod: a kamerakép rárajzolja a nap pályáját, és a tájoló a panel irányára mutat. Ez a PrepperPapa alkalmazásban működik."]="Панель можна навести й компасом телефона: на зображенні з камери малюється шлях сонця, а компас показує напрямок панелі. Це працює в застосунку PrepperPapa.";
+  S['uk']["Nézd meg az alkalmazást"]="Переглянути застосунок";
   S['uk']['alapértelmezett hely: Budapest']="місце за замовчуванням: Будапешт"; })();
