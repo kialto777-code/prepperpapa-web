@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://prepperpapa.hu/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://prepperpapa.hu/app/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -17,6 +17,18 @@
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prepperpapa.hu/utmutato/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prepperpapa.hu/adatkezeles.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <!-- i18n -->
   <url>
@@ -28,24 +40,28 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://prepperpapa.hu/en/guide/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://prepperpapa.hu/en/partners/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/privacy.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/power.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/rainwater.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/heating.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/</loc>
@@ -53,11 +69,11 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/calories.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/travel-time.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/solar-panel.html</loc>
@@ -65,19 +81,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/radio-range.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/blood-type.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/lightning.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/water-purification.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/</loc>
@@ -88,24 +104,28 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://prepperpapa.hu/de/anleitung/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://prepperpapa.hu/de/partnerprogramm/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/datenschutz.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/strom.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/regenwasser.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/heizung.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/</loc>
@@ -113,11 +133,11 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/kalorien.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/wegzeit.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/solarmodul.html</loc>
@@ -125,19 +145,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/funkreichweite.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/blutgruppe.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/blitz.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/wasseraufbereitung.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/</loc>
@@ -148,24 +168,28 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://prepperpapa.hu/es/guia/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://prepperpapa.hu/es/programa-de-socios/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/privacidad.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/electricidad.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/agua-de-lluvia.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/calefaccion.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/</loc>
@@ -173,11 +197,11 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/calorias.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/tiempo-de-marcha.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/panel-solar.html</loc>
@@ -185,19 +209,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/alcance-de-radio.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/grupo-sanguineo.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/rayos.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/potabilizacion-del-agua.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/</loc>
@@ -208,24 +232,28 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://prepperpapa.hu/pl/instrukcja/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://prepperpapa.hu/pl/program-partnerski/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/prywatnosc.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/prad.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/woda-deszczowa.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/ogrzewanie.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/</loc>
@@ -233,11 +261,11 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/kalorie.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/czas-przejscia.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/panel-sloneczny.html</loc>
@@ -245,19 +273,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/zasieg-radia.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/grupa-krwi.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/piorun.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/uzdatnianie-wody.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/</loc>
@@ -268,24 +296,28 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://prepperpapa.hu/ro/ghid/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://prepperpapa.hu/ro/program-parteneri/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/confidentialitate.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/curent.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/apa-de-ploaie.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/incalzire.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/</loc>
@@ -293,11 +325,11 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/calorii.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/durata-drumului.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/panou-solar.html</loc>
@@ -305,19 +337,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/raza-radio.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/grupa-sanguina.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/fulger.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/purificarea-apei.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/</loc>
@@ -328,24 +360,28 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://prepperpapa.hu/ru/rukovodstvo/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://prepperpapa.hu/ru/partnyory/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/konfidentsialnost.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/elektrichestvo.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/dozhdevaya-voda.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/otoplenie.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/</loc>
@@ -353,11 +389,11 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/kalorii.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/vremya-v-puti.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/solnechnaya-panel.html</loc>
@@ -365,19 +401,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/dalnost-ratsii.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/gruppa-krovi.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/molniya.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/ochistka-vody.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/</loc>
@@ -388,24 +424,28 @@
     <lastmod>2026-10-26</lastmod>
   </url>
   <url>
+    <loc>https://prepperpapa.hu/uk/posibnyk/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://prepperpapa.hu/uk/partnery/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/konfidentsiinist.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/elektroenerhiia.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/doshchova-voda.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/opalennia.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/</loc>
@@ -413,11 +453,11 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/kalorii.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/chas-u-dorozi.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/soniachna-panel.html</loc>
@@ -425,45 +465,45 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/dalnist-ratsii.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/hrupa-krovi.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/blyskavka.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/ochyshchennia-vody.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <!-- /i18n -->
   <!-- cikk-i18n -->
   <url>
     <loc>https://prepperpapa.hu/en/articles.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2024/11/allpowers-s300-plus-test-compact-power.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2024/11/what-is-colour-temperature-and-why.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2024/12/how-to-make-a-simple-compass.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2024/12/sofirn-hs21-headlamp-test-mode-ring.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2025/01/mre-food-ration-test.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2025/01/noah-the-worlds-first-prepper.html</loc>
@@ -471,19 +511,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2025/02/torch-comparison-table.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2025/03/five-wise-virgins-light-love-preparedness.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2025/03/why-a-sudden-reaction-beats-lasting-fear.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2025/10/shorter-days-visibility-saves-lives.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/2026/07/72-hours-without-power-at-40-degrees.html</loc>
@@ -507,27 +547,27 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/artikel.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2024/11/allpowers-s300-plus-test-kompakte-energie.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2024/11/was-ist-farbtemperatur-und-warum.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2024/12/einfach-einen-kompass-machen.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2024/12/sofirn-hs21-stirnlampe-test-drehring.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2025/01/mre-ration-im-test.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2025/01/noah-der-erste-prepper-der-welt.html</loc>
@@ -535,19 +575,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2025/02/lampen-vergleichstabelle.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2025/03/fuenf-kluge-jungfrauen-licht-liebe.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2025/03/warum-ploetzliche-reaktion-besser-als-angst.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2025/10/kuerzere-tage-sichtbarkeit-rettet-leben.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/2026/07/72-stunden-ohne-strom-bei-40-grad.html</loc>
@@ -571,27 +611,27 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/articulos.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2024/11/prueba-allpowers-s300-plus-energia-compacta.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2024/11/que-es-la-temperatura-de-color.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2024/12/como-hacer-una-brujula-sencilla.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2024/12/prueba-frontal-sofirn-hs21-selector.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2025/01/prueba-racion-mre.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2025/01/noe-el-primer-prepper-del-mundo.html</loc>
@@ -599,19 +639,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2025/02/tabla-comparativa-de-linternas.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2025/03/cinco-virgenes-prudentes-luz-amor.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2025/03/por-que-un-susto-repentino-es-mejor.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2025/10/dias-mas-cortos-visibilidad-salva-vidas.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/2026/07/72-horas-sin-luz-a-40-grados.html</loc>
@@ -635,27 +675,27 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/artykuly.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2024/11/test-allpowers-s300-plus-kompaktowa-energia.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2024/11/czym-jest-temperatura-barwowa.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2024/12/jak-zrobic-prosty-kompas.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2024/12/test-czolowki-sofirn-hs21-pierscien.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2025/01/test-racji-mre.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2025/01/noe-pierwszy-prepper-swiata.html</loc>
@@ -663,19 +703,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2025/02/tabela-porownawcza-latarek.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2025/03/piec-madrych-panien-swiatlo-milosc.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2025/03/dlaczego-nagla-reakcja-jest-lepsza.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2025/10/krotsze-dni-widocznosc-ratuje-zycie.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/2026/07/72-godziny-bez-pradu-przy-40-stopniach.html</loc>
@@ -699,27 +739,27 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/articole.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2024/11/test-allpowers-s300-plus-energie-compacta.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2024/11/ce-este-temperatura-de-culoare.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2024/12/cum-iti-faci-o-busola.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2024/12/test-frontala-sofirn-hs21-inel.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2025/01/test-ratie-mre.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2025/01/noe-primul-prepper-al-lumii.html</loc>
@@ -727,19 +767,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2025/02/tabel-comparativ-lanterne.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2025/03/cinci-fecioare-intelepte-lumina-dragoste.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2025/03/de-ce-reactia-brusca-e-mai-buna.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2025/10/zile-mai-scurte-vizibilitatea-salveaza.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/2026/07/72-de-ore-fara-curent-la-40-de-grade.html</loc>
@@ -763,27 +803,27 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/stati.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2024/11/test-allpowers-s300-plus-kompaktnyi-istochnik.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2024/11/chto-takoe-tsvetovaya-temperatura.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2024/12/kak-prosto-sdelat-kompas.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2024/12/test-nalobnogo-fonarya-sofirn-hs21.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2025/01/test-sukhpaika-mre.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2025/01/noi-pervyi-prepper-v-mire.html</loc>
@@ -791,19 +831,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2025/02/sravnitelnaya-tablitsa-fonarei.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2025/03/pyat-mudrykh-dev-svet-lyubov.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2025/03/pochemu-vnezapnyi-ispug-luchshe.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2025/10/dni-koroche-zametnost-spasaet-zhizn.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/2026/07/72-chasa-bez-sveta-v-40-gradusov.html</loc>
@@ -827,27 +867,27 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/statti.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2024/11/test-allpowers-s300-plus-kompaktne-dzherelo.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2024/11/shcho-take-kolirna-temperatura.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2024/12/yak-lehko-zrobyty-kompas.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2024/12/test-nalobnoho-likhtaria-sofirn-hs21.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2025/01/test-sukhpaika-mre.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2025/01/noi-pershyi-prepper-u-sviti.html</loc>
@@ -855,19 +895,19 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2025/02/porivnialna-tablytsia-likhtariv.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2025/03/piat-mudrykh-div-svitlo-liubov.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2025/03/chomu-raptova-reaktsiia-krashcha.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2025/10/dni-korotshaiut-pomitnist-riatuie-zhyttia.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/2026/07/72-hodyny-bez-svitla-v-40-hradusiv.html</loc>
