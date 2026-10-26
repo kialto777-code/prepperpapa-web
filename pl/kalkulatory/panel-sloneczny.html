@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ustawienie panelu słonecznego: w którą stronę ma patrzeć panel i jak mocno go pochylić? | PrepperPapa</title>
+<meta name="description" content="W którą stronę ma patrzeć panel słoneczny i jak mocno go pochylić w danym dniu, w danej porze roku albo na stałe na cały rok? Podaj miejsce i dzień, a zobaczysz drogę słońca i spodziewaną produkcję.">
+<link rel="canonical" href="https://prepperpapa.hu/pl/kalkulatory/panel-sloneczny.html">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ustawienie panelu słonecznego: w którą stronę ma patrzeć panel i jak mocno go pochylić?">
+<meta property="og:description" content="W którą stronę ma patrzeć panel słoneczny i jak mocno go pochylić w danym dniu, w danej porze roku albo na stałe na cały rok? Podaj miejsce i dzień, a zobaczysz drogę słońca i spodziewaną produkcję.">
+<meta property="og:url" content="https://prepperpapa.hu/pl/kalkulatory/panel-sloneczny.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/kalkulator/app.css">
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* HAROM menupont + logo 390 keppontos telefonon nem fer ki egy sorba: merve 102 keppont
+     vizszintes tullogas. NEM elrejtjuk a linkeket (akkor telefonrol nem lehetne a
+     kalkulatorokhoz jutni a fejlecbol), hanem TORDELJUK -- a navigacio megmarad. */
+  @media (max-width:560px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px;gap:12px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{color:var(--ink);font-size:18px}
+  .zaro{color:var(--muted);font-size:15px;border-top:1px solid var(--line);
+         margin-top:30px;padding-top:20px}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  /* A KALKULATOR DOBOZA. Az app CSS-e ide van hatarolva (.ppkalk), ezert a lap tobbi
+     resze a weboldal sajat kinezetet tartja meg. */
+  .ppkalk{display:block;background:var(--panel);border:1px solid var(--line);
+          border-radius:12px;padding:20px;margin:26px 0}
+  .kalk-lista{list-style:none;margin:0;padding:0}
+  .kalk-lista li{border-bottom:1px solid var(--line);margin:0}
+  .kalk-lista li:last-child{border-bottom:0}
+  .kalk-lista a{display:block;padding:16px 2px;text-decoration:none;color:var(--ink)}
+  .kalk-lista a:hover{color:var(--zold)}
+  .kalk-lista b{display:block;font-size:18px;margin-bottom:3px}
+  .kalk-lista span{color:var(--muted);font-size:15px}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}
+    .nav{flex-wrap:nowrap;height:70px;padding:0 16px}.brand{width:auto;margin-right:auto}}
+  .k-szem{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);font-weight:700;margin-bottom:6px}
+  .ppkalk{border-radius:18px;border-color:#2c3d33;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .lapfej{margin:-44px -22px 30px;padding:56px 22px 40px;border-bottom:1px solid var(--line);
+     background:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.86)),url('/assets/hatter-topo.jpg') center/cover}
+  .lapfej h1{font-size:clamp(38px,8vw,60px);margin:8px 0 10px}
+  .kalk-lista{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .kalk-lista li{border:1px solid #2c3d33 !important;border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16)}
+  .kalk-lista a{padding:18px 20px}
+  @media(max-width:640px){.kalk-lista{grid-template-columns:1fr}}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+  /* Boss 2026-10-25 16:34: calculator icons, the same SVG symbols as the app's calculator tiles */
+  .kikon{width:34px;height:34px;color:var(--zold);flex:none}
+  .kfej{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+  .kfej h1{margin:0}
+  .kfej .kikon{width:52px;height:52px}
+  @media(max-width:480px){.kfej .kikon{width:42px;height:42px}}
+  /* NAPELEM (from the app, scoped) */
+  .ppkalk .ne-chipek{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .ppkalk .ne-chipek button{flex:0 0 auto; min-width:0; min-height:40px; padding:8px 12px; font-size:14px;}
+  .ppkalk .ne-koord input{min-width:0; flex:1 1 0;}
+  .ppkalk .ne-watt{display:flex; flex-direction:row; flex-wrap:nowrap; align-items:center; gap:8px;}
+  .ppkalk .ne-watt input{flex:1 1 auto; width:auto; min-width:0; margin:0;}
+  .ppkalk .ne-watt span{flex:0 0 auto; font-family:var(--mono); color:var(--muted);}
+  .ppkalk .ne-abra{display:block; width:100%; height:auto; background:var(--raised); border:1px solid var(--border); border-radius:12px; margin:4px 0 6px;}
+  .ppkalk .ne-racs{stroke:var(--border); stroke-width:1;}
+  .ppkalk .ne-tx{fill:var(--muted); font-size:10px; font-family:var(--mono);}
+  .ppkalk .ne-egt{fill:var(--text); font-weight:700;}
+  .ppkalk .ne-oratx{fill:var(--text); font-size:9.5px;}
+  .ppkalk .ne-ref{fill:none; stroke:var(--dim); stroke-width:1.4; stroke-dasharray:4 4;}
+  .ppkalk .ne-ut{fill:none; stroke:var(--accent); stroke-width:3; stroke-linejoin:round; stroke-linecap:round;}
+  .ppkalk .ne-ora{fill:var(--accent); stroke:var(--bg); stroke-width:1;}
+  .ppkalk .ne-most{fill:#FFD600; stroke:var(--bg); stroke-width:2;}
+  .ppkalk .ne-jelmagy{display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; font-size:12.5px; color:var(--muted); margin-bottom:6px;}
+  .ppkalk .ne-jelmagy span{display:inline-block; width:18px; height:0; border-top:3px solid var(--accent);}
+  .ppkalk .ne-jelmagy span.ne-j-ref{border-top:2px dashed var(--dim); margin-left:6px;}
+  .ppkalk .egi-csempek b small{font-size:12px; color:var(--muted);}
+  .ppkalk .ne-irany{display:flex; align-items:center; gap:12px; background:var(--raised); border:1px solid var(--border); border-radius:12px; padding:10px 12px; margin-bottom:8px;}
+  .ppkalk .ne-irany b{font-family:var(--mono); font-size:22px; color:var(--accent);}
+  .ppkalk .ne-irany span{display:block; font-size:13px; color:var(--muted); margin-top:2px;}
+  .ppkalk .ne-irany-ikon{width:44px; height:44px; flex:0 0 auto;}
+  .ppkalk .ne-irany-ikon circle{fill:none; stroke:var(--green); stroke-width:1.4;}
+  .ppkalk .ne-irany-ikon path{fill:var(--accent);}
+  .ppkalk .ne-dolesek{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:4px 0 8px;}
+  .ppkalk .ne-dolesek div{background:var(--raised); border:1px solid var(--border); border-radius:12px; padding:8px 6px; text-align:center; display:flex; flex-direction:column; justify-content:space-between; gap:4px;}
+  .ppkalk .ne-dolesek span{font-size:12.5px; color:var(--muted); line-height:1.25;}
+  .ppkalk .ne-dolesek b{font-family:var(--mono); font-size:20px; color:var(--accent);}
+  .ppkalk #neBecsles .ne-dolesek{grid-template-columns:repeat(2,1fr);}
+  .ppkalk .ne-hely{font-family:var(--mono)}
+  .ppkalk #neDatum{max-width:220px}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/kalkulator/napelem.html">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/calculators/solar-panel.html">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/rechner/solarmodul.html">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/calculadoras/panel-solar.html">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/kalkulatory/panel-sloneczny.html">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/calculatoare/panou-solar.html">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/kalkulyatory/solnechnaya-panel.html">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/kalkuliatory/soniachna-panel.html">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/kalkulator/napelem.html">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
+</style>
+<!-- goaffpro:general -->
+<script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg><svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="pp-viz" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2.8 C12 2.8 5.6 10.6 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.6 12 2.8 12 2.8 Z"/><path d="M9.2 14.8 A2.8 2.8 0 0 0 12 17.6"/></g></symbol><symbol id="pp-akku" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="7" width="16" height="10"/><path d="M18.5 10.5 H21.5 V13.5 H18.5"/></g><g fill="currentColor"><path d="M11.6 8.6 L7.6 13.2 H10.4 L9.6 15.8 L13.8 11 H11 Z"/></g></symbol><symbol id="pp-lang" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.2 C8.2 21.2 5.6 18.6 5.6 15.2 C5.6 11 9.6 9.4 10.6 2.8 C14 5.6 15.2 9.2 14 12 C15.4 11.6 16.2 10.4 16.4 8.8 C18 10.8 18.4 13 18.4 15.2 C18.4 18.6 15.8 21.2 12 21.2 Z"/></g></symbol><symbol id="pp-eso" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M2.5 10.5 L12 4 L21.5 10.5"/><path d="M6 15.5 V19"/><path d="M12 15 V20"/><path d="M18 15.5 V19"/></g></symbol><symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol><symbol id="pp-lepes" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 20.5 L9 12.5 L13.5 16 L21 5.5"/></g><g fill="currentColor"><circle cx="9" cy="12.5" r="1.6"/><circle cx="21" cy="5.5" r="1.6"/></g></symbol><symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol><symbol id="pp-villam" viewBox="0 0 24 24"><g fill="currentColor"><path d="M13.6 2 L5.6 13.4 H10.8 L9.4 22 L18.4 10.2 H12.8 Z"/></g></symbol><symbol id="pp-vercsepp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2.5 C12 2.5 5 10.5 5 15 A7 7 0 0 0 19 15 C19 10.5 12 2.5 12 2.5 Z"/><path d="M9 15.5 A3 3 0 0 0 12 18.5"/></g></symbol></defs></svg>
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="pp-napelem" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><circle cx="18.5" cy="5.5" r="2.5"/><path d="M18.5 0.8 V1.4"/><path d="M23.2 5.5 H22.6"/><path d="M14.4 2.2 L14.8 2.6"/><path d="M2.5 12 L13.5 10 L15.8 18.6 L4.8 20.6 Z"/><path d="M8 11 L10.3 19.6"/><path d="M3.6 16.3 L14.6 14.3"/><path d="M10.3 19.6 V23"/><path d="M7.5 23 H13"/></g></symbol></defs></svg>
+<header><nav class="nav">
+  <a class="brand" href="/pl/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
+  <a class="link" href="/pl/artykuly.html">Artykuły</a>
+  <a class="link" href="/pl/kalkulatory/">Kalkulatory</a>
+  <a class="link" href="/pl/app/">Aplikacja</a>
+  <a class="link" href="https://www.youtube.com/@PrepperPapa">Kanał</a>
+  <details class="nyelvv"><summary aria-label="Język"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>PL</span></summary><ul><li><a href="/kalkulator/napelem.html" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/calculators/solar-panel.html" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/rechner/solarmodul.html" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/calculadoras/panel-solar.html" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/kalkulatory/panel-sloneczny.html" hreflang="pl" lang="pl" data-nyelv="pl" aria-current="true">Polski</a></li><li><a href="/ro/calculatoare/panou-solar.html" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/kalkulyatory/solnechnaya-panel.html" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/kalkuliatory/soniachna-panel.html" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+    <details class="mmenu"><summary aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></summary>
+    <nav onclick="this.parentNode.open=false"><a class="mm-app" href="/pl/app/">Aplikacja PrepperPapa</a><a href="/pl/">Strona główna</a><a href="/pl/artykuly.html">Artykuły</a><a href="/pl/kalkulatory/">Kalkulatory</a><a href="https://forum.prepperpapa.hu">Forum</a><a href="https://www.youtube.com/@PrepperPapa">Kanał</a></nav>
+  </details>
+</nav></header>
+<main>
+<div class="kfej"><svg class="kikon" aria-hidden="true"><use href="#pp-napelem"/></svg><div>
+<div class="k-szem">Kalkulator</div>
+<h1>Ustawienie panelu słonecznego</h1>
+</div></div>
+<p class="beveze">W którą stronę ma patrzeć panel i jak mocno go pochylić? Podaj miejsce i dzień, albo jednym dotknięciem przesilenie zimowe lub letnie, a dostaniesz kąt nachylenia na ten dzień, na tę porę roku i na stałe na cały rok.</p>
+<div class="ppkalk" id="kalk-napelem">
+    <div class="section">
+      <label>Helyszín</label>
+      <p class="note ne-hely" id="neHely"></p>
+      <div class="row"><button id="neGps">Mérés a helyzetemre</button><button id="neKezi">Kézi megadás</button></div>
+      <div id="neKeziDoboz" hidden>
+        <div class="row ne-koord"><input id="neLat" inputmode="decimal" autocomplete="off"><input id="neLng" inputmode="decimal" autocomplete="off"></div>
+        <div class="row"><button id="neKeziOk" class="primary">Beállítás</button></div>
+      </div>
+    </div>
+    <div class="section">
+      <label>Dátum</label>
+      <input type="date" id="neDatum">
+      <div class="ne-chipek" id="neEvszakok">
+        <button data-nap="ma">Ma</button><button data-nap="tel">Téli napforduló</button><button data-nap="tavasz">Tavaszi napéjegyenlőség</button><button data-nap="nyar">Nyári napforduló</button><button data-nap="osz">Őszi napéjegyenlőség</button>
+      </div>
+    </div>
+    <div class="section">
+      <label>A nap járása</label>
+      <div id="neAbra"></div>
+      <div class="egi-csempek" id="neIdok"></div>
+      <p class="note" id="neNapfeny"></p>
+    </div>
+    <div class="section">
+      <label>Ajánlott beállítás</label>
+      <div id="neAjanlas"></div>
+    </div>
+    <div class="section">
+      <label>Várható termelés ezen a napon</label>
+      <div class="row ne-watt"><input type="number" id="neWatt" inputmode="numeric" min="1" max="100000"><span>W</span></div>
+      <div id="neBecsles"></div>
+    </div>
+    <p class="note koordfigy">AMIT EZ TUD ÉS AMIT NEM. A nap helyzetét és a napkeltét pár perc pontossággal számolja, internet nélkül. A dőlésszög és a termelés tiszta égboltra szóló becslés: a felhőt, az árnyékot (fa, ház, domb) és a panel melegedését nem ismeri. A tájoló mágneses irányt mutat, ami Magyarországon kb. 5 fokkal tér el a valódi déltől; a panel termelésén ez alig látszik.</p>
+</div>
+<div class="zaro"><p>Ustaw panel na południe geograficzne: kompas wskazuje północ magnetyczną, która na Węgrzech różni się o kilka stopni od geograficznej, ale w produkcji prawie tego nie widać. Kąt nachylenia ustawisz kątomierzem albo poziomicą w telefonie.</p></div>
+<h2>Do czego się przydaje, a do czego nie</h2>
+<p>Ten kalkulator pochodzi z aplikacji <a href="/pl/">PrepperPapa</a> i tam też jest darmowy. Obliczenia odbywają się w twojej przeglądarce: niczego nigdzie nie wysyłamy i nie przechowujemy na ten temat żadnych danych.</p>
+<script src="/assets/i18n/pl.js"></script>
+<script src="/assets/i18n/kalk-pl.js"></script>
+<script src="/assets/i18n/fordito.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+// The web page has no map and no saved points: the app's place memory (`ppUtolsoHely`) means nothing here. Until the
+// visitor measures or types a place, Budapest is used, and the screen says so.
+function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402, honnan:'alapértelmezett hely: Budapest'}; }
+function ppLocale(){ return 'pl-PL'; }
+function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
+
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+// ---- from the app (generated by epit-napelem-kalk.py, do not edit here) ----
+function ppNapPozicio(d, lat, lng){
+  const r = Math.PI/180, jd = d.getTime()/86400000 + 2440587.5, T = (jd - 2451545)/36525;
+  const L0 = ((280.46646 + T*(36000.76983 + T*0.0003032)) % 360 + 360) % 360;
+  const M = 357.52911 + T*(35999.05029 - 0.0001537*T), e = 0.016708634 - T*(0.000042037 + 0.0000001267*T);
+  const C = Math.sin(M*r)*(1.914602 - T*(0.004817 + 0.000014*T)) + Math.sin(2*M*r)*(0.019993 - 0.000101*T) + Math.sin(3*M*r)*0.000289;
+  const om = 125.04 - 1934.136*T, lam = L0 + C - 0.00569 - 0.00478*Math.sin(om*r);
+  const eps = 23 + (26 + (21.448 - T*(46.815 + T*(0.00059 - T*0.001813)))/60)/60 + 0.00256*Math.cos(om*r);
+  const dek = Math.asin(Math.sin(eps*r)*Math.sin(lam*r));
+  const y = Math.pow(Math.tan(eps*r/2), 2);
+  const eqt = 4/r*(y*Math.sin(2*L0*r) - 2*e*Math.sin(M*r) + 4*e*y*Math.sin(M*r)*Math.cos(2*L0*r) - 0.5*y*y*Math.sin(4*L0*r) - 1.25*e*e*Math.sin(2*M*r));
+  const perc = d.getUTCHours()*60 + d.getUTCMinutes() + d.getUTCSeconds()/60;
+  const tst = ((perc + eqt + 4*lng) % 1440 + 1440) % 1440, ha = tst/4 - 180;
+  const cz = Math.min(1, Math.max(-1, Math.sin(lat*r)*Math.sin(dek) + Math.cos(lat*r)*Math.cos(dek)*Math.cos(ha*r)));
+  let el = 90 - Math.acos(cz)/r;
+  if(el > -0.575) el += 1.02/Math.tan((el + 10.3/(el + 5.11))*r)/60;      // refraction (Bennett), arc-minutes -> degrees
+  const az = ((Math.atan2(Math.sin(ha*r), Math.cos(ha*r)*Math.sin(lat*r) - Math.tan(dek)*Math.cos(lat*r))/r + 180) % 360 + 360) % 360;
+  return { az, el, dek: dek/r };
+}
+function ppKoordFmt(lat, lng){
+  // Ot tizedes ~ 1 meter. Tobbet szandekosan nem irunk ki: a telefon GPS-e ennel
+  // pontosabbat nem tud, a hosszabb szam viszont hamis biztonsagot adna.
+  return (+lat).toFixed(5)+', '+(+lng).toFixed(5);
+}
+function ppFrissHelyzet(){
+  return new Promise((megvan, hiba)=>{
+    if(!navigator.geolocation){ hiba(new Error('Ezen az eszközön nincs helymeghatározás.')); return; }
+    navigator.geolocation.getCurrentPosition(
+      p=>megvan({ lat:p.coords.latitude, lng:p.coords.longitude, pont:p.coords.accuracy }),
+      e=>hiba(new Error(e.message||'Nem sikerült a helymeghatározás.')),
+      { enableHighAccuracy:true, timeout:12000, maximumAge:5000 }
+    );
+  });
+}
+function ppOra(d){
+  return d ? d.toLocaleTimeString(ppLocale(),{ hour:'2-digit', minute:'2-digit' }) : null;
+}
+function ppHosszSzoveg(ms){
+  const p=Math.max(0, Math.round(ms/60000));
+  const o=Math.floor(p/60);
+  // AZ IDoTARTAM MERTEKEGYSEGE IS FORDITANDO (Thomas merese, 2026-08-23). Ez a fuggveny
+  // OSSZEFuZoTT szoveget ad ("1 ora 55 perc"), amit a hivo tovabbi szoveggel told meg --
+  // a kesz csomopontban tehat sem szotar-kulcs, sem minta nem tud illeszkedni ra.
+  // A helye itt van, a keletkezesenel.
+  const ora = ppForditSzoveg('óra'), perc = ppForditSzoveg('perc');
+  return o ? (o+' '+ora+' '+(p%60)+' '+perc) : (p+' '+perc);
+}
+
+// ==== PP_NAPELEM_KEZDET
+const NE_LEPES_PERC = 5;                       // day sampling for the irradiance sums
+function nePanelAz(lat){ return lat >= 0 ? 180 : 0; }          // facing the equator
+// clear-sky irradiance on a tilted plane (W/m2) for the sun at (az, el), panel tilt `dol`, panel azimuth `paz`
+function neSugarzas(az, el, dol, paz){
+  if(!(el > 0)) return 0;
+  const r = Math.PI/180, z = 90 - el, cz = Math.cos(z*r);
+  const am = 1/(cz + 0.50572*Math.pow(96.07995 - z, -1.6364));
+  const dni = 1353*Math.pow(0.7, Math.pow(am, 0.678)), dhi = 0.1*dni, ghi = dni*cz + dhi;
+  const cb = Math.cos(dol*r), ct = cz*cb + Math.sin(z*r)*Math.sin(dol*r)*Math.cos((az - paz)*r);
+  return dni*Math.max(0, ct) + dhi*(1 + cb)/2 + ghi*0.2*(1 - cb)/2;
+}
+// the sun every NE_LEPES_PERC minutes of the local day containing `datum`
+function neNapMintak(datum, lat, lng){
+  const n = new Date(datum); n.setHours(0, 0, 0, 0); const l = [];
+  for(let m = 0; m < 1440; m += NE_LEPES_PERC){ const t = new Date(n.getTime() + m*60000), p = ppNapPozicio(t, lat, lng); if(p.el > 0) l.push(p); }
+  return l;
+}
+// daily clear-sky energy on the plane (Wh/m2) from precomputed samples
+function neNapiWhm2(mintak, dol, paz){ let s = 0; for(const p of mintak) s += neSugarzas(p.az, p.el, dol, paz); return s*NE_LEPES_PERC/60; }
+// the tilt (0..90, 1-degree steps) with the largest clear-sky sum over the given days
+function neLegjobbDoles(napok, lat, lng){
+  const paz = nePanelAz(lat), mintak = napok.map(d => neNapMintak(d, lat, lng));
+  let jo = 0, max = -1;
+  for(let d = 0; d <= 90; d++){ let s = 0; for(const m of mintak) s += neNapiWhm2(m, d, paz); if(s > max + 1e-9){ max = s; jo = d; } }
+  return jo;
+}
+// one crossing of elevation `cel` between t0 and t1 (ms), bisection to 1 s
+function neKereszt(t0, t1, lat, lng, cel){
+  let a = t0, b = t1, fa = ppNapPozicio(new Date(a), lat, lng).el - cel;
+  for(let i = 0; i < 30 && b - a > 1000; i++){ const m = (a + b)/2, fm = ppNapPozicio(new Date(m), lat, lng).el - cel; if((fm > 0) === (fa > 0)){ a = m; fa = fm; } else b = m; }
+  return new Date((a + b)/2);
+}
+// the day: path (5 min), hour points, sunrise / sunset (el = -0.833, the usual definition), noon (highest point), day length,
+// hours with the sun above 10 degrees (the part a panel really uses)
+function neNap(datum, lat, lng){
+  const n = new Date(datum); n.setHours(0, 0, 0, 0); const t0 = n.getTime();
+  const ut = [], orak = []; let kelte = null, nyugta = null, del = null, elozo = null, f10 = 0, fent = 0;
+  for(let m = 0; m <= 1440; m++){
+    const t = t0 + m*60000, p = ppNapPozicio(new Date(t), lat, lng);
+    if(m % 5 === 0) ut.push({ t:new Date(t), az:p.az, el:p.el });
+    if(m % 60 === 0 && m < 1440) orak.push({ t:new Date(t), ora:new Date(t).getHours(), az:p.az, el:p.el });
+    if(m < 1440){ if(p.el > 10) f10++; if(p.el > -0.833) fent++; }
+    if(!del || p.el > del.el) del = { t:new Date(t), az:p.az, el:p.el };
+    if(elozo){ const a = elozo.el + 0.833, b = p.el + 0.833;
+      if(a <= 0 && b > 0 && !kelte) kelte = neKereszt(t - 60000, t, lat, lng, -0.833);
+      if(a > 0 && b <= 0) nyugta = neKereszt(t - 60000, t, lat, lng, -0.833); }
+    elozo = p;
+  }
+  const hossz = (kelte && nyugta && nyugta > kelte) ? nyugta - kelte : fent*60000;
+  return { ut, orak, kelte, nyugta, del, hossz, hasznos: f10*60000, orokNap: fent >= 1440, orokEj: fent === 0 };
+}
+// solstices and equinoxes of a year, from the declination (day by day at 12:00 UTC, then to the hour)
+function neNevezetesNapok(ev){
+  const dek = t => ppNapPozicio(new Date(t), 0, 0).dek, nap = 86400000;
+  const finom = (t, f) => { let a = t - nap, b = t + nap; for(let i = 0; i < 40; i++){ const m1 = a + (b - a)/3, m2 = b - (b - a)/3; if(f(m1) < f(m2)) b = m2; else a = m1; } return new Date((a + b)/2); };
+  const nulla = (t) => { let a = t - nap, b = t + nap, fa = dek(a); for(let i = 0; i < 40; i++){ const m = (a + b)/2, fm = dek(m); if((fm > 0) === (fa > 0)){ a = m; fa = fm; } else b = m; } return new Date((a + b)/2); };
+  const keres = (h0, nap0, nap1, f) => { let jo = null, jf = Infinity; for(let d = nap0; d <= nap1; d++){ const t = Date.UTC(ev, h0, d, 12), v = f(t); if(v < jf){ jf = v; jo = t; } } return jo; };
+  const nyari = finom(keres(5, 15, 27, t => -dek(t)), t => -dek(t)), teli = finom(keres(11, 15, 27, t => dek(t)), t => dek(t));
+  const tavaszi = nulla(keres(2, 15, 25, t => Math.abs(dek(t)))), oszi = nulla(keres(8, 18, 28, t => Math.abs(dek(t))));
+  return { tavaszi, nyari, oszi, teli };              // June = the northern summer solstice, December the winter one
+}
+// the meteorological season (three whole months) containing the date: days every 5 days; and the year: every 7 days
+function neEvszak(datum){
+  const h = datum.getMonth(), elso = [11, 0, 1].includes(h) ? 11 : h < 5 ? 2 : h < 8 ? 5 : 8;
+  const ev = datum.getFullYear() - (elso === 11 && h < 2 ? 1 : 0);
+  const tol = new Date(ev, elso, 1, 12), ig = new Date(ev, elso + 3, 0, 12), napok = [];
+  for(let t = tol.getTime(); t <= ig.getTime(); t += 5*86400000) napok.push(new Date(t));
+  return { tol, ig, napok };
+}
+function neEv(ev){ const l = []; for(let d = 0; d < 365; d += 7) l.push(new Date(ev, 0, 1 + d, 12)); return l; }
+// rough daily energy (Wh) of a panel of `watt` rated power (rated at 1000 W/m2), 20% system loss
+function neWh(watt, whm2){ return watt > 0 ? watt*whm2/1000*0.8 : 0; }
+// ==== PP_NAPELEM_VEGE ====
+// ---- the screen ----
+const NE_HELY_KULCS = 'pp_napelem_hely', NE_WATT_KULCS = 'pp_napelem_watt';
+let neDatum = null, neHelyAkt = null, neNevezetesCache = {}, neEvCache = {};
+function neHelyBe(){
+  try{ const h = JSON.parse(localStorage.getItem(NE_HELY_KULCS) || 'null'); if(h && isFinite(h.lat) && isFinite(h.lng)) return h; }catch(e){}
+  const u = ppUtolsoHely(); return u ? { lat:u.lat, lng:u.lng, honnan:u.honnan } : null;
+}
+function neHelyMent(h){ neHelyAkt = h; try{ localStorage.setItem(NE_HELY_KULCS, JSON.stringify(h)); }catch(e){} }
+function neDeli(d){ const x = new Date(d); x.setHours(12, 0, 0, 0); return x; }
+function neDatumMezo(d){ const p = n => String(n).padStart(2, '0'); return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()); }
+function neNevezetes(ev){ return neNevezetesCache[ev] || (neNevezetesCache[ev] = neNevezetesNapok(ev)); }
+function neEvszakNev(datum, lat){
+  const h = datum.getMonth(), del = lat < 0;
+  const k = [11, 0, 1].includes(h) ? 'tel' : h < 5 ? 'tavasz' : h < 8 ? 'nyar' : 'osz';
+  const csere = { tel:'nyar', nyar:'tel', tavasz:'osz', osz:'tavasz' };
+  const v = del ? csere[k] : k;
+  return { tel:'Tél', tavasz:'Tavasz', nyar:'Nyár', osz:'Ősz' }[v];
+}
+function napelemInit(){
+  const T = ppForditSzoveg;
+  neHelyAkt = neHelyBe();
+  if(!neDatum) neDatum = neDeli(new Date());
+  const lat = $('neLat'), lng = $('neLng'), w = $('neWatt');
+  if(lat) lat.placeholder = T('Szélesség, pl. 47.50'); if(lng) lng.placeholder = T('Hosszúság, pl. 19.04');
+  if(w){ w.placeholder = T('pl. 400'); try{ const v = localStorage.getItem(NE_WATT_KULCS); if(v && !w.value) w.value = v; }catch(e){} }
+  $('neDatum').value = neDatumMezo(neDatum);
+  $('neDatum').onchange = () => { const v = $('neDatum').value; if(!v) return; const [y, m, d] = v.split('-').map(Number); neDatum = new Date(y, m - 1, d, 12); napelemRajz(); };
+  document.querySelectorAll('#neEvszakok button').forEach(b => b.onclick = () => {
+    const ev = neDatum.getFullYear(), n = neNevezetes(ev), del = neHelyAkt && neHelyAkt.lat < 0;
+    const m = b.dataset.nap;
+    const cel = m === 'ma' ? new Date() : m === 'tel' ? (del ? n.nyari : n.teli) : m === 'nyar' ? (del ? n.teli : n.nyari)
+      : m === 'tavasz' ? (del ? n.oszi : n.tavaszi) : (del ? n.tavaszi : n.oszi);
+    neDatum = neDeli(cel); $('neDatum').value = neDatumMezo(neDatum); napelemRajz();
+  });
+  $('neGps').onclick = async () => {
+    $('neHely').textContent = T('Helymeghatározás…');
+    try{ const p = await ppFrissHelyzet(); neHelyMent({ lat:p.lat, lng:p.lng, honnan:'a mostani helyzeted' }); napelemRajz(); }
+    catch(e){ $('neHely').textContent = T('Nem sikerült a helymeghatározás:') + ' ' + e.message; }
+  };
+  $('neKezi').onclick = () => { const d = $('neKeziDoboz'); d.hidden = !d.hidden; if(!d.hidden && neHelyAkt){ lat.value = neHelyAkt.lat.toFixed(4); lng.value = neHelyAkt.lng.toFixed(4); } };
+  $('neKeziOk').onclick = () => {
+    const a = parseFloat(String(lat.value).replace(',', '.')), o = parseFloat(String(lng.value).replace(',', '.'));
+    if(!(a >= -89.9 && a <= 89.9) || !(o >= -180 && o <= 180)){ $('neHely').textContent = T('A szélesség -90 és 90, a hosszúság -180 és 180 fok közötti szám.'); return; }
+    neHelyMent({ lat:a, lng:o, honnan:'kézzel megadva' }); $('neKeziDoboz').hidden = true; napelemRajz();
+  };
+  if(w) w.oninput = () => { try{ localStorage.setItem(NE_WATT_KULCS, w.value); }catch(e){} neBecslesRajz(); };
+  napelemRajz();
+}
+let neUtolso = null;
+function napelemRajz(){
+  const T = ppForditSzoveg, h = neHelyAkt;
+  const hely = $('neHely');
+  if(!h){ hely.textContent = T('Még nem tudom, hol vagy. Nyomd meg a „Mérés a helyzetemre” gombot, vagy add meg kézzel.');
+    ['neAbra', 'neIdok', 'neNapfeny', 'neAjanlas', 'neBecsles'].forEach(id => { $(id).textContent = ''; }); return; }
+  hely.textContent = ppKoordFmt(h.lat, h.lng) + ' · ' + T(h.honnan || 'kézzel megadva');
+  const nap = neNap(neDatum, h.lat, h.lng);
+  // reference days: the two solstices and an equinox of the same year (dim), the chosen day on top
+  const n = neNevezetes(neDatum.getFullYear());
+  const ref = [n.teli, n.nyari, n.tavaszi].map(d => neNap(neDeli(d), h.lat, h.lng).ut);
+  $('neAbra').innerHTML = neAbraSvg(nap, ref, h);
+  const cs = (ertek, felirat) => '<div><b>' + ertek + '</b>' + esc(T(felirat)) + '</div>';
+  $('neIdok').innerHTML = nap.orokEj ? '<div style="grid-column:1/-1">' + esc(T('Ezen a napon itt a nap nem kel fel.')) + '</div>'
+    : nap.orokNap ? '<div style="grid-column:1/-1">' + esc(T('Ezen a napon itt a nap nem nyugszik le.')) + '</div>'
+    : cs(ppOra(nap.kelte) || '–', 'napkelte') + cs(ppOra(nap.del.t) + '<small> ' + Math.round(nap.del.el) + '°</small>', 'delelés') + cs(ppOra(nap.nyugta) || '–', 'napnyugta');
+  $('neNapfeny').textContent = T('Nappal hossza:') + ' ' + ppHosszSzoveg(nap.hossz) + ' · ' + T('napsütés derült égnél, 10° fölött:') + ' ' + ppHosszSzoveg(nap.hasznos);
+  // recommendation
+  const paz = nePanelAz(h.lat), ev = neDatum.getFullYear(), esz = neEvszak(neDatum);
+  const dNap = neLegjobbDoles([neDatum], h.lat, h.lng);
+  const kE = esz.tol.getTime() + '|' + h.lat.toFixed(2);
+  const dEsz = neEvCache[kE] != null ? neEvCache[kE] : (neEvCache[kE] = neLegjobbDoles(esz.napok, h.lat, h.lng));
+  const kY = ev + '|' + h.lat.toFixed(2);
+  const dEv = neEvCache[kY] != null ? neEvCache[kY] : (neEvCache[kY] = neLegjobbDoles(neEv(ev), h.lat, h.lng));
+  const ho = d => d.toLocaleDateString(ppLocale(), { month:'short' });
+  const egtaj = paz === 180 ? T('dél') : T('észak');
+  $('neAjanlas').innerHTML =
+      '<div class="ne-irany"><svg class="ne-irany-ikon" viewBox="-12 -12 24 24" aria-hidden="true"><circle r="10.5"/><path d="M0 -8 L3.2 2 L0 0 L-3.2 2 Z" transform="rotate(' + paz + ')"/></svg>'
+    + '<div><b>' + paz + '°</b> ' + esc(egtaj) + '<span>' + esc(T('A panel erre nézzen (valódi égtáj, nem mágneses).')) + '</span></div></div>'
+    + '<div class="ne-dolesek">'
+    + '<div><span>' + esc(T('Erre a napra')) + '</span><b>' + dNap + '°</b></div>'
+    + '<div><span>' + esc(T(neEvszakNev(neDatum, h.lat))) + ' (' + esc(ho(esz.tol) + '–' + ho(esz.ig)) + ')</span><b>' + dEsz + '°</b></div>'
+    + '<div><span>' + esc(T('Egész évre, fixen')) + '</span><b>' + dEv + '°</b></div></div>'
+    + '<p class="note">' + esc(T('A dőlésszög a vízszinteshez mért szög: 0° = fekvő panel, 90° = függőleges.')) + '</p>';
+  neUtolso = { nap, dNap, dEv, paz, h };
+  neBecslesRajz();
+}
+function neBecslesRajz(){
+  const T = ppForditSzoveg, b = $('neBecsles'); if(!b) return;
+  if(!neUtolso){ b.textContent = ''; return; }
+  const watt = parseFloat(String(($('neWatt') || {}).value || '').replace(',', '.'));
+  const { dNap, dEv, paz, h } = neUtolso, m = neNapMintak(neDatum, h.lat, h.lng);
+  const eNap = neNapiWhm2(m, dNap, paz), eEv = neNapiWhm2(m, dEv, paz);
+  if(!(watt > 0)){ b.innerHTML = '<p class="note">' + esc(T('Add meg a panel teljesítményét (a címkéjén W-ban), és kiszámolom, nagyjából mennyit termel ezen a napon.')) + '</p>'; return; }
+  const kerek = x => x >= 100 ? Math.round(x/10)*10 : Math.round(x);
+  b.innerHTML = '<div class="ne-dolesek">'
+    + '<div><span>' + esc(T('A napra ajánlott dőléssel')) + ' (' + dNap + '°)</span><b>~' + kerek(neWh(watt, eNap)) + ' Wh</b></div>'
+    + '<div><span>' + esc(T('Az egész évre beállított dőléssel')) + ' (' + dEv + '°)</span><b>~' + kerek(neWh(watt, eEv)) + ' Wh</b></div></div>'
+    + '<p class="note koordfigy">' + esc(T('Becslés, felhő nélkül: tiszta égbolttal, árnyék nélkül, 20% veszteséggel számolva. Felhős időben ennek csak a töredéke jön, borult égnél akár a tizede.')) + '</p>';
+}
+// the diagram: azimuth across (the equator side in the middle), elevation up; reference days dashed, the chosen day amber
+function neAbraSvg(nap, ref, h){
+  const W = 340, H = 190, bal = 26, jobb = 8, fel = 10, le = 26, sz = W - bal - jobb, mag = H - fel - le;
+  const kozep = nePanelAz(h.lat);                       // 180 north of the equator, 0 south of it
+  const x = az => bal + ((((az - kozep + 540) % 360) - 180) + 180)/360*sz;
+  const maxEl = 90, y = el => fel + (1 - Math.max(0, Math.min(maxEl, el))/maxEl)*mag;
+  const vonal = (pontok) => { let d = '', le2 = true, px = null;
+    for(const p of pontok){ if(p.el <= -0.833){ le2 = true; continue; } const X = x(p.az), Y = y(p.el);
+      if(!le2 && px != null && Math.abs(X - px) > sz/2) le2 = true;      // wrapped around the edge
+      d += (le2 ? 'M' : 'L') + X.toFixed(1) + ' ' + Y.toFixed(1); le2 = false; px = X; }
+    return d; };
+  let s = '<svg class="ne-abra" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(ppForditSzoveg('A nap járása')) + '">';
+  for(const e of [0, 30, 60, 90]){ s += '<line class="ne-racs" x1="' + bal + '" x2="' + (W - jobb) + '" y1="' + y(e) + '" y2="' + y(e) + '"/><text class="ne-tx" x="' + (bal - 4) + '" y="' + (y(e) + 4) + '" text-anchor="end">' + e + '°</text>'; }
+  const egt = [[0, 'É'], [90, 'K'], [180, 'D'], [270, 'Ny']];
+  for(const [a, t] of egt){ const X = x(a); s += '<line class="ne-racs" x1="' + X + '" x2="' + X + '" y1="' + fel + '" y2="' + (H - le) + '"/><text class="ne-tx ne-egt" x="' + X + '" y="' + (H - 8) + '" text-anchor="middle">' + esc(ppForditSzoveg(t)) + '</text>'; }
+  ref.forEach((u, i) => { s += '<path class="ne-ref ne-ref' + i + '" d="' + vonal(u) + '"/>'; });
+  s += '<path class="ne-ut" d="' + vonal(nap.ut) + '"/>';
+  for(const o of nap.orak){ if(o.el <= 0) continue; const X = x(o.az), Y = y(o.el);
+    s += '<circle class="ne-ora" cx="' + X.toFixed(1) + '" cy="' + Y.toFixed(1) + '" r="2.6"/>';
+    if(o.ora % 2 === 0) s += '<text class="ne-tx ne-oratx" x="' + X.toFixed(1) + '" y="' + (Y - 6).toFixed(1) + '" text-anchor="middle">' + o.ora + '</text>'; }
+  const ma = new Date();
+  if(neDatum.toDateString() === ma.toDateString()){ const p = ppNapPozicio(ma, h.lat, h.lng); if(p.el > 0) s += '<circle class="ne-most" cx="' + x(p.az).toFixed(1) + '" cy="' + y(p.el).toFixed(1) + '" r="6"/>'; }
+  s += '</svg><div class="ne-jelmagy"><span class="ne-j-ut"></span>' + esc(ppForditSzoveg('a választott nap')) + '<span class="ne-j-ref"></span>' + esc(ppForditSzoveg('napfordulók, napéjegyenlőség')) + '</div>';
+  return s;
+}
+
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', napelemInit); else napelemInit();
+</script>
+
+<div class="appdoboz"><div class="k">Aplikacja PrepperPapa</div><h3>To samo w kieszeni, bez internetu</h3>
+<p>Te kalkulatory są też w aplikacji, za darmo, i liczą nawet bez sieci. Obok nich znajdziesz zapas, kartę ratunkową, kompas i bazę wiedzy.</p>
+<a class="gomb" href="/pl/app/">Zobacz, co potrafi</a></div>
+<a class="vissza" href="/pl/kalkulatory/">&larr; Powrót do kalkulatorów</a>
+</main>
+<footer><div class="lab"><div class="fnav"><a href="/pl/">Strona główna</a><a href="/pl/artykuly.html">Artykuły</a><a href="/pl/kalkulatory/">Kalkulatory</a><a href="/pl/app/">Aplikacja</a><a href="https://forum.prepperpapa.hu">Forum</a><a href="/pl/prywatnosc.html">Ochrona danych</a><a href="/pl/program-partnerski/">Program partnerski</a></div><span>PrepperPapa &middot; Przygotowanie z rozsądkiem, na prawdziwe życie</span></div></footer>
+<script>(function(){var m={"videok": "filmy", "tudastar": "wiedza", "kapcsolat": "kontakt", "bemutato": "prezentacja", "vasarlas": "zakup", "ertesito": "powiadomienia", "osszevetes": "porownanie", "partnerprogram": "program-partnerski"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>
