@@ -132,8 +132,79 @@
   @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
 </style>
 <!-- goaffpro:general -->
-<script>(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();</script>
-<script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/adatkezeles.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Sütik és hozzájárulás", "bevezeto": "Ez az oldal alapból nem tesz sütit az eszközödre. Két célra kérünk hozzájárulást, külön-külön megadhatod vagy elutasíthatod. Elutasítás esetén is minden működik, és a döntésedet bármikor megváltoztathatod a lábléc „Sütibeállítások” pontjánál.", "p_cim": "Partneri követés", "p_le": "Ha egy partnerünk linkjéről érkezel, sütiben megjegyezzük a partner kódját és a kattintás idejét (pp_ref és a GoAffPro sütijei, 90 napig), hogy megállapíthassuk, melyik partnernek jár jutalék, ha vásárolsz. A partner kuponkódja süti nélkül is a partnernek számít.", "s_cim": "Látogatottság-statisztika", "s_le": "Névtelen látogatottsági statisztika a Google Analytics 4 szolgáltatással (_ga sütik). Hirdetésre és profilalkotásra nem használjuk; hozzájárulás nélkül be sem töltődik.", "igen": "Elfogadom", "nem": "Elutasítom", "mind_igen": "Mindet elfogadom", "mind_nem": "Mindet elutasítom", "ment": "Választásom mentése", "adatv": "Adatkezelési tájékoztató", "link": "Sütibeállítások"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
 <!-- /goaffpro:general -->
 </head>
 <body>
@@ -165,13 +236,12 @@
 </nav></header>
 <main>
 <h1>Adatkezelési tájékoztató</h1>
-<p><strong>prepperpapa.hu | Hatályos: 2026. október 19.</strong></p>
+<p><strong>prepperpapa.hu | Hatályos: 2026. október 28.</strong></p>
 <h2>Röviden</h2>
-<p>Ez az oldal nem használ sütiket, nem mér, nem készít rólad profilt. Nincs regisztráció és nincs hírlevél. Személyes adatot csak akkor kérünk, ha te magad feliratkozol az alkalmazás indulásáról szóló értesítésre.</p>
+<p>Ez az oldal alapból nem tesz sütit az eszközödre. Két célra kérünk hozzájárulást, külön-külön megadható vagy elutasítható: (1) partnerprogramunkban annak megállapítására, melyik partnernek jár jutalék, ha vásárolsz; (2) névtelen látogatottsági statisztikához (Google Analytics). Elutasítás esetén is minden működik. Nincs regisztráció és nincs hírlevél. Személyes adatot csak akkor kérünk, ha te magad feliratkozol az alkalmazás indulásáról szóló értesítésre, vagy vásárolsz.</p>
 <p>Négy dolog van, amiről tudnod kell: a kiszolgáló technikai naplója, a beágyazott videók, a partneri linkek, és az indulási értesítő. Ezt írja le az alábbi néhány bekezdés.</p>
 <h2>Kapcsolat</h2>
-<p>Az oldalt magánszemély üzemelteti. Elérhetőség, bármilyen adatvédelmi kérdésben:</p>
-<p><strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong></p>
+<p>Az oldalt Nagy János László egyéni vállalkozó üzemelteti (székhely: 3128 Vizslás, József Attila út 15.; nyilvántartási szám: 63017434; adószám: 92514027-1-32). Adatvédelmi kérdésben: <a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></p>
 <h2>1. Kiszolgálói napló</h2>
 <p>A honlap a GitHub Pages szolgáltatásán fut. Amikor megnyitsz egy oldalt, a kiszolgáló automatikusan naplózza az IP-címedet, biztonsági célból. Ehhez a naplóhoz mi nem férünk hozzá, és nem kapcsoljuk össze semmivel.</p>
 <ul>
@@ -186,16 +256,24 @@
 <p>Néhány cikkben YouTube-videó van beágyazva. Amíg nem indítod el, nem kerül süti az eszközödre.</p>
 <p>Ha elindítod, onnantól a Google saját adatkezelése vonatkozik rád.</p>
 <p>Két cikkben egyéb beágyazás is van (egy Google-dokumentum és egy gyártói kép). Ezek betöltésekor a böngésződ kapcsolatba lép az adott szolgáltatóval, és eközben az IP-címed eljut hozzá.</p>
-<h2>3. Partneri (affiliate) linkek</h2>
-<p>Vannak linkek, amelyek külső boltba vezetnek, és jelzik a boltnak, hogy tőlünk érkeztél. Ha vásárolsz, ebből jutalék keletkezhet nálunk.</p>
-<p>Amíg az oldalunkon vagy, ez nem gyűjt rólad adatot. Amint rákattintasz, elhagyod a honlapot, és onnantól a bolt saját adatkezelése érvényes. A bolttól nem kapunk rólad személyes adatot.</p>
+<h2>3. Sütik és hozzájárulás</h2>
+<p>Az első látogatáskor egy ablak két kategóriát kínál, mindkettőnél egyforma súlyú "Elfogadom" és "Elutasítom" gombbal. Amíg nem döntesz, egyik süti sem kerül az eszközödre. A döntésed bármikor megváltoztatható a lábléc "Sütibeállítások" pontjánál, vagy a sütik törlésével a böngésződben. A döntésedet a böngésződ helyi tárolójában jegyezzük meg (<code>pp-suti</code> kulcs, csak ezen az oldalon, 365 napig; ha a sütik köre változik, újra megkérdezünk). Jogalap mindkét kategóriánál a hozzájárulásod (az elektronikus hírközlésről szóló 2003. évi C. törvény 155. § (4) bekezdése; ha az adat személyes adatnak minősül, GDPR 6. cikk (1) a)).</p>
+<h3>3.1. Partneri (affiliate) követés</h3>
+<p>Partnereink olyan linkeket osztanak meg, amelyek a kódjukat tartalmazzák (?ref=...). Ha ilyen linkről érkezel, és hozzájárulsz, a prepperpapa.hu tartományon az alábbi sütiket helyezzük el:</p>
+<ul>
+<li><strong>saját süti</strong> (<code>pp_ref</code>): a partner kódja és a kattintás ideje;</li>
+<li><strong>a GoAffPro partnerprogram-szolgáltatás követő sütijei</strong> (a GoAffPro betöltő állítja be): <code>ref</code> (a partner kódja), <code>gfp_ref_expires</code>, <code>gfp_landing_page</code> (az első oldal, ahová érkeztél), <code>gfp_referrer</code> (honnan érkeztél), <code>gfp_session_start</code> (a látogatás kezdete); a <code>ref</code> és a <code>gfp_ref_expires</code> értéke a böngésző helyi tárolójában is megjelenik; egyes folyamatokban mellette <code>dcode</code> a kuponkódhoz.</li>
+</ul>
+<p>Cél: kizárólag annak megállapítása, melyik partnernek jár jutalék, ha 90 napon belül vásárolsz. Időtartam: 90 nap az utolsó partneri kattintástól; újabb partner linkje felülírja a régit. A saját sütiben nincs a nevedre, e-mail-címedre vagy fizetésedre utaló adat. Ha nem járulsz hozzá: az oldal és a vásárlás ugyanúgy működik, de a link alapján nem keletkezik partneri jutalék; ha a partner kuponkódját használod, az a partnernek akkor is jár, mert az nem sütin alapul.</p>
+<h3>3.2. Látogatottság-statisztika (Google Analytics 4)</h3>
+<p>Ha hozzájárulsz, a Google Analytics 4 szolgáltatást használjuk (szolgáltató: Google Ireland Limited), hogy névtelenül lássuk, hány látogató jön, mely oldalakat nézik és honnan érkeznek. Sütik: <code>_ga</code> (a látogatók megkülönböztetése) és <code>_ga_K4K2L8JMN5</code> (a munkamenet állapota). A Google dokumentációja szerint alapértelmezett élettartamuk 2 év; mi legfeljebb 14 hónapra állítjuk (a böngészők legfeljebb 400 napra engedik, ezért ennyi a tényleges időtartam), és az események, valamint a felhasználói szintű adatok megőrzése is 14 hónap; ez az idő minden újabb látogatáskor újraindul, az utolsó látogatástól számítva. A Google szerint a GA4 nem naplózza az IP-címedet; ezt az állítást a Google leírása alapján közöljük. Az adatok az Egyesült Államokba is kerülhetnek; az átadás jogalapja az EU-USA adatvédelmi keretrendszer (Data Privacy Framework), amelyre a Google LLC tanúsítvánnyal rendelkezik. Nem használjuk hirdetésre, profilalkotásra, és nem kapcsoljuk össze más adatainkkal. Ha nem járulsz hozzá, a GA4 egyáltalán nem töltődik be.</p>
 <h2 id="ertesito">4. Értesítés az alkalmazás indulásáról</h2>
 <p>A PrepperPapa alkalmazás bemutató oldalán megadhatod az e-mail-címedet, hogy szóljunk, amikor a PrepperPapa alkalmazás megvásárolható. A címet kizárólag erre az egy értesítésre használjuk, és addig őrizzük, amíg az indulási értesítést el nem küldtük, vagy amíg nem kéred a törlését a <a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a> címen.</p>
 <ul>
 <li><strong>Jogalap:</strong> a hozzájárulásod (GDPR 6. cikk (1) a)), amelyet bármikor visszavonhatsz.</li>
 </ul>
 <h2>5. Amit nem csinálunk</h2>
-<p>Nincs látogatottság-mérés, nincs hirdetési vagy nyomkövető süti, nincs profilalkotás és nincs automatizált döntéshozatal. Nevet és telefonszámot nem gyűjtünk, e-mail-címet csak az indulási értesítőhöz, és nem adunk át adatot marketing célra. Ezért nincs az oldalon süti-elfogadó ablak sem: nincs mit engedélyezned.</p>
+<p>Nincs hirdetési süti, nincs profilalkotás és nincs automatizált döntéshozatal. Sütit kizárólag a 3. pont szerint, a hozzájárulásod után használunk, ezért az oldalon süti-elfogadó ablak jelenik meg. Nevet és telefonszámot a feliratkozáshoz nem gyűjtünk, e-mail-címet csak az indulási értesítőhöz, és nem adunk át adatot marketing célra.</p>
 <h2>6. A jogaid</h2>
 <p>Kérheted a rád vonatkozó adatokhoz való hozzáférést, azok helyesbítését, törlését vagy korlátozását, tiltakozhatsz a jogos érdeken alapuló adatkezelés ellen, és élhetsz az adathordozhatóság jogával. Írj a fenti címre.</p>
 <p>Az indulási értesítő e-mail-címén kívül nem tárolunk rólad azonosításra alkalmas adatot, ezért más kérést csak akkor tudunk értelmezni, ha te magad adsz hozzá támpontot. A kiszolgálói naplóra a szolgáltató saját eljárása vonatkozik.</p>
@@ -205,11 +283,11 @@
 <p>+36 (1) 391 1400 | <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a> | naih.hu</p>
 <p>Bírósághoz is fordulhatsz.</p>
 <h2>7. Ha ez megváltozik</h2>
-<p>Ha később mérés, hirdetés vagy hírlevél kerül az oldalra, ez a tájékoztató bővül, és akkor süti-elfogadó ablak is megjelenik. A változást a fenti dátum jelzi.</p>
+<p>Ha újabb sütit, mérést, hirdetést vagy hírlevelet teszünk az oldalra, ez a tájékoztató bővül, és a hozzájárulást újra kérjük. A változást a fenti dátum jelzi.</p>
 
 <a class="vissza" href="/">&larr; Vissza a főoldalra</a>
 </main>
-<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre &middot; <a href="/partnerprogram/">Partnerprogram</a></div></footer>
+<footer><div>PrepperPapa &middot; Felkészülés józan ésszel, a valós életre &middot; <a href="/aszf.html">ÁSZF</a> &middot; <a href="/impresszum.html">Impresszum</a> &middot; <a href="/partnerprogram/">Partnerprogram</a></div></footer>
 <script id="fej2js">
 (function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
   var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');

@@ -5,7 +5,78 @@
 <script>(function(){var m={"videok": "filmy", "tudastar": "wiedza", "kapcsolat": "kontakt", "bemutato": "prezentacja", "vasarlas": "zakup", "ertesito": "powiadomienia", "osszevetes": "porownanie", "partnerprogram": "program-partnerski"},h=decodeURIComponent(location.hash.slice(1));if(m[h])h=m[h];location.replace('/pl/kalkulatory/piorun.html'+(h?'#'+h:''));})();</script>
 <meta http-equiv="refresh" content="0; url=/pl/kalkulatory/piorun.html">
 <!-- goaffpro:general -->
-<script>(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();</script>
-<script type="text/javascript" async src="https://api.goaffpro.com/loader.js?shop=zktbdakdtn"></script>
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/pl/prywatnosc.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Pliki cookie i zgoda", "bevezeto": "Domyślnie ta strona nie zapisuje plików cookie na twoim urządzeniu. Prosimy o zgodę w dwóch celach, którą możesz wyrazić lub odrzucić osobno. Po odmowie wszystko nadal działa, a decyzję możesz w każdej chwili zmienić w „Ustawieniach cookie” w stopce.", "p_cim": "Śledzenie partnerów", "p_le": "Jeśli trafiasz do nas z linku jednego z naszych partnerów, zapisujemy w plikach cookie kod partnera i czas kliknięcia (pp_ref i pliki cookie GoAffPro, przez 90 dni), aby ustalić, któremu partnerowi należy się prowizja, jeśli coś kupisz. Kod kuponu partnera jest mu zaliczany także bez plików cookie.", "s_cim": "Statystyki odwiedzin", "s_le": "Anonimowe statystyki odwiedzin w Google Analytics 4 (pliki cookie _ga). Nie używamy ich do reklam ani profilowania; bez twojej zgody nawet się nie ładują.", "igen": "Akceptuję", "nem": "Odrzucam", "mind_igen": "Akceptuję wszystkie", "mind_nem": "Odrzucam wszystkie", "ment": "Zapisz mój wybór", "adatv": "Polityka prywatności", "link": "Ustawienia cookie"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
 <!-- /goaffpro:general -->
 </head><body><p><a href="/pl/kalkulatory/piorun.html">https://prepperpapa.hu/pl/kalkulatory/piorun.html</a></p></body></html>

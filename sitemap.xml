@@ -26,7 +26,31 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/adatkezeles.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://prepperpapa.hu/aszf.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://prepperpapa.hu/impresszum.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://prepperpapa.hu/en/terms.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://prepperpapa.hu/en/legal-notice.html</loc>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -49,7 +73,7 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/privacy.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/en/calculators/power.html</loc>
@@ -113,7 +137,7 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/datenschutz.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/de/rechner/strom.html</loc>
@@ -177,7 +201,7 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/privacidad.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/es/calculadoras/electricidad.html</loc>
@@ -241,7 +265,7 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/prywatnosc.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/pl/kalkulatory/prad.html</loc>
@@ -305,7 +329,7 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/confidentialitate.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ro/calculatoare/curent.html</loc>
@@ -369,7 +393,7 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/konfidentsialnost.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/ru/kalkulyatory/elektrichestvo.html</loc>
@@ -433,7 +457,7 @@
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/konfidentsiinist.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
   </url>
   <url>
     <loc>https://prepperpapa.hu/uk/kalkuliatory/elektroenerhiia.html</loc>
