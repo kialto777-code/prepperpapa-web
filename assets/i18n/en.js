@@ -18,6 +18,45 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
+  "Ez a fájl nem PrepperPapa mentés.": "This file is not a PrepperPapa backup.",
+  "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "Not enough storage on this device for the restore. Nothing was changed.",
+  "A visszatöltés nem sikerült. Semmi nem változott.": "The restore failed. Nothing was changed.",
+  "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "This device already has your own data (inventory, points, household). The restore replaces it with the data in the backup. Before that, your inventory and household go into the safety copy, which the “Restore from the safety copy” button brings back. Continue?",
+  "Visszatöltés": "Restore",
+  "Visszatöltöm": "Restore",
+  "Hibás mentés-fájl.": "Invalid backup file.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "The full backup is encrypted with a backup key you choose, and it also contains the Token wallet and your Gíra (behind the wallet PIN). Restoring needs the backup key; afterwards the wallet opens with the PIN. The document wallet is not included.",
+  "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Payments you made or received since the backup are missing from this book (the others' books still have them), so the balance may differ.",
+  "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "The Gíra in the backup is damaged, so nothing was restored.",
+  "A mentési kulcs legyen legalább 8 karakter és 2 szó, vagy legalább 12 karakter.": "The backup key must be at least 8 characters and 2 words, or at least 12 characters.",
+  "A mentési kulcs ne a neved legyen.": "The backup key must not be your name.",
+  "A mentési kulcs nem egyezik, a fájlt nem lehetett visszafejteni. Semmit nem írtunk felül.": "The backup key does not match, the file could not be decrypted. Nothing was overwritten.",
+  "A mentési kulcsod: „{kod}”. Írd le magadnak most, és ellenőrizd, hogy pontosan így írtad le. Ne felejtsd el ezt a kulcsot, és a tárca PIN-jét se: visszatöltés után a Token tárca és a Gíra a PIN-nel nyílik.": "Your backup key: “{kod}”. Write it down now and check that you wrote it exactly like this. Do not forget this key, and do not forget the wallet PIN either: after restoring, the Token wallet and the Gíra open with the PIN.",
+  "A mostani Gírád maradt; a mentésben levőt nem vettük át.": "Your current Gíra was kept; the one in the backup was not taken over.",
+  "A titkosított mentés nem készült el, nem töltöttünk le semmit.": "The encrypted backup could not be created, nothing was downloaded.",
+  "A Token tárca és a Gíra visszaállítása nem sikerült.": "Restoring the Token wallet and the Gíra failed.",
+  "Add meg ennek a készüléknek a tárca PIN-jét.": "Enter this device's wallet PIN.",
+  "Adj meg egy mentési kulcsot: egy általad kitalált szót vagy rövid mondatot (legalább 8 karakter és 2 szó, vagy legalább 12 karakter). Ne a neved legyen. A kis- és nagybetű nem számít. Írd le magadnak: a mentés csak ezzel tölthető vissza.": "Enter a backup key: a word or short sentence you make up (at least 8 characters and 2 words, or at least 12 characters). It must not be your name. Upper and lower case do not matter. Write it down: the backup can only be restored with it.",
+  "Biztosan lecseréled? A mostani Gíra ({most}) kulcsa ezzel elvész ezen a készüléken; ha nincs róla mentésed, véglegesen.": "Replace it? The key of the current Gíra ({most}) will be lost on this device; if you have no backup of it, for good.",
+  "Ez egy titkosított mentés. Add meg a mentési kulcsot.": "This is an encrypted backup. Enter the backup key.",
+  "Ezen a készüléken már van egy MÁSIK Gíra ({most}). A mentésben levő: {mentes}. Megtartod a mostanit, vagy lecseréled a mentésben levőre?": "This device already has a DIFFERENT Gíra ({most}). The one in the backup: {mentes}. Keep the current one, or replace it with the one in the backup?",
+  "Ezen a készüléken már van tárca. A mentett Token tárca átvételéhez add meg azt a PIN-t, amellyel a mentett tárca nyílt.": "This device already has a wallet. To take over the saved Token wallet, enter the PIN the saved wallet opened with.",
+  "Gíra visszaállítva: {az}, egyenleg {egy} gíra.": "Gíra restored: {az}, balance {egy} gíra.",
+  "Hibás PIN.": "Wrong PIN.",
+  "Igen, lecserélem": "Yes, replace it",
+  "Igen, nélkülük": "Yes, without them",
+  "Javítom": "Let me fix it",
+  "Lecserélem": "Replace",
+  "Mégsem": "Cancel",
+  "Megtartom a mostanit": "Keep the current one",
+  "Mentés megszakítva, nem töltöttünk le semmit.": "Backup cancelled, nothing was downloaded.",
+  "Titkosított mentés": "Encrypted backup",
+  "Titkosított mentés visszatöltése": "Restore encrypted backup",
+  "Token tárca visszaállítva: a mentéskor használt PIN-nel nyílik.": "Token wallet restored: it opens with the PIN used when the backup was made.",
+  "Token tárca: {n} bejegyzés hozzáadva a tárcádhoz.": "Token wallet: {n} entries added to your wallet.",
+  "Visszatöltés megszakítva, semmit nem írtunk felül.": "Restore cancelled, nothing was overwritten.",
+  "Visszatöltöd a többi adatot a Token tárca és a Gíra nélkül?": "Restore the rest of the data without the Token wallet and the Gíra?",
   // ===== 2026-10-26 v43.386 (tester #84): water purification, ice-cold water + altitude bands =====
   "Buzgó forrás {perc} percig.": "Rolling boil for {perc} min.",
   "Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.": "Rolling boil for {perc} min — you are above two thousand metres, where it needs longer because the boiling point is lower.",
@@ -239,6 +278,8 @@ window.PP_FORD_SZOTAR.en = {
     "Places",
   "a határok közelítők":
     "borders are approximate",
+  "A területhatárok közelítő rekonstrukciók, nem mért vonalak.":
+    "Territorial borders are approximate reconstructions, not surveyed lines.",
   // ===== HIANYPOTLAS 2026-10-11 (Fonok kepe: a Beallitasok Ertesitesek resze magyarul allt;
   // forras-alapu meres: pp-i18n-forras.mjs, a PP_SZOTAR soraival egyutt kiszurve) =====
   "Gíra-közösség":
@@ -2125,6 +2166,11 @@ window.PP_FORD_SZOTAR.en = {
   'Ezen a készüléken a böngésző nem éri el a légnyomás-szenzort, ezért kézzel kell bevinni az értéket. A telefonos appban magától mér majd. Addig is: írj be egy értéket, és a trendet innentől számolja.':
     'On this device the browser cannot reach the air-pressure sensor, so the value has to be entered by hand. The phone app will measure it by itself. Until then: type a value, and the trend is calculated from here on.',
   'Két mérés kell a trendhez.': 'Two readings are needed for a trend.',
+  'Az első mérés óta eltelt idő:': 'Time since the first reading:',
+  'Trendet húsz perctől mondok.': 'A trend is shown from twenty minutes on.',
+  'Hézag van a mérésekben. Az előző mérés óta eltelt:': 'There is a gap in the readings. Time since the previous reading:',
+  'A hézag óta eltelt idő:': 'Time since the gap:',
+  'Közelítő trend: az utóbbi órákban hézag van a mérésekben, ezért az ablak elejét a hézag előtti utolsó mérésből számoltam.': 'Approximate trend: there is a gap in the readings over the last hours, so the start of the window was calculated from the last reading before the gap.',
   'Ha autóval hegyre mész, a nyomás esik, de nem jön vihar: száz méter emelkedés körülbelül 12 hPa. Ilyen napon ne vedd komolyan a jelzést.':
     'If you drive up a hill, the pressure drops but no storm is coming: a hundred metres of ascent is about 12 hPa. On a day like that, do not take the warning seriously.',
   'Kalkulátor': 'Calculator',
@@ -3651,6 +3697,32 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "kilátópont": "viewpoint",
   "kilátó": "lookout tower",
   "menedékház, esőbeálló": "hut, shelter",
+  "kórház": "hospital",
+  "rendelőintézet": "clinic",
+  "temető": "cemetery",
+  "menedékház": "mountain hut",
+  "esőbeálló, menedék": "shelter",
+  "szálloda": "hotel",
+  "vendégház, panzió": "guest house",
+  "turistaszálló": "hostel",
+  "motel": "motel",
+  "üdülő": "resort",
+  "apartman": "apartment",
+  "szálláshely": "accommodation",
+  "szupermarket": "supermarket",
+  "áruház": "department store",
+  "bevásárlóközpont": "shopping centre",
+  "piac": "market",
+  "élelmiszerbolt": "grocery",
+  "zöldséges": "greengrocer",
+  "pékség": "bakery",
+  "hentes": "butcher",
+  "vegyesbolt": "general store",
+  "cukrászda": "pastry shop",
+  "édességbolt": "sweet shop",
+  "italbolt": "drinks shop",
+  "posta": "post office",
+  "bolt": "shop",
   "táborhely": "campsite",
   "pihenőhely": "picnic site",
   "útjelző tábla": "guidepost",
@@ -4727,4 +4799,115 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "Válassz tervet": "Choose a plan",
  "Törlöd ezt az ébresztőt?": "Delete this alarm?",
  "Az ébresztő egy olvasási terv napi olvasmányát olvassa fel. Előbb indíts el egy tervet.": "The alarm reads out the day's portion of a reading plan. Start a plan first."
+});
+// v43.389: foreign official fire bans in the fire-ban layer (card 4f0b74b5)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Területek tilalommal vagy korlátozással": "Areas with a ban or restriction",
+ "Közelíts a területek megjelenítéséhez.": "Zoom in to see the areas.",
+ "Tűzhasználati korlátozás": "Fire restriction",
+ "Tűz miatti területlezárás": "Area closed due to fire danger",
+ "Kockázat miatti törvényi korlátozás": "Legal restriction due to fire risk",
+ "Terület": "Area",
+ "Érvényes": "Valid for",
+ "Hatályos ettől": "In force since",
+ "Hatályos eddig": "In force until",
+ "Ez veszélyszint, nem külön tilalmi rendelet: ezen a szinten a portugál jogszabály (DL 82/2021) korlátozza a tűzhasználatot.": "This is a risk level, not a separate ban order: at this level Portuguese law (DL 82/2021) restricts the use of fire.",
+ "A hivatalos forrás nem tartalmazza a helyi (községi) tilalmakat. Indulás előtt ellenőrizd a forrásnál.": "The official source does not include local (municipal) bans. Check with the source before you go."
+});
+
+// ===== 2026-10-27 v43.392 (report + block): internet-room report sheet, block list, collapsed messages =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Illegális tartalom": "Illegal content",
+ "Zaklatás vagy fenyegetés": "Harassment or threats",
+ "Kéretlen üzenet (spam)": "Unsolicited message (spam)",
+ "Bejelentetted ezt az üzenetet. Elrejtve, a csapat ellenőrzi.": "You reported this message. Hidden; the team is checking it.",
+ "Letiltott felhasználó üzenete.": "Message from a blocked user.",
+ "Bejelentett üzenet, ellenőrzés alatt.": "Reported message, under review.",
+ "Üzenet bejelentése": "Report message",
+ "Felhasználó bejelentése": "Report user",
+ "A bejelentéssel az üzenet szövege (ahogy a te telefonod megfejtette), a küldője és a szoba neve a PrepperPapa csapatához kerül. Nálad az üzenet azonnal eltűnik, a többieknél ellenőrzésig összecsukva marad.": "With the report, the text of the message (as your phone decrypted it), its sender and the room name go to the PrepperPapa team. The message disappears for you at once; for the others it stays collapsed until it is checked.",
+ "A bejelentéssel a felhasználó neve és a szoba neve a PrepperPapa csapatához kerül, hogy ellenőrizhessük.": "With the report, the user's name and the room name go to the PrepperPapa team so that we can check them.",
+ "Bejelentett": "Reported",
+ "Mi a gond?": "What is the problem?",
+ "A felhasználót le is tiltom": "Block this user as well",
+ "Bejelentés": "Report",
+ "Túl sok bejelentést küldtél rövid idő alatt. Próbáld újra később.": "You sent too many reports in a short time. Try again later.",
+ "Most nincs internetkapcsolat. A bejelentés nem ment el, próbáld újra.": "No internet connection right now. The report was not sent; try again.",
+ "A bejelentést most nem sikerült elküldeni. Próbáld újra később.": "The report could not be sent right now. Try again later.",
+ "Köszönjük, a bejelentést megkaptuk. A csapat hamarosan ellenőrzi.": "Thank you, we received the report. The team will check it shortly.",
+ "Letiltod ezt a felhasználót?": "Block this user?",
+ "Az üzeneteit nálad elrejtjük, és privát üzenetet nem küldhet neked. A Beállításokban bármikor feloldhatod.": "Their messages will be hidden for you, and they cannot send you private messages. You can unblock them in Settings at any time.",
+ "Most nem sikerült, próbáld újra később.": "That did not work right now; try again later.",
+ "Letiltva.": "Blocked.",
+ "A letiltás feloldva.": "Unblocked.",
+ "Nincs letiltott felhasználó.": "No blocked users.",
+ "Letiltás feloldása": "Unblock",
+ "A küldő letiltása": "Block the sender",
+ "Letiltás": "Block",
+ "A privát üzenet nem ment el: ez a felhasználó nem fogad tőled privát üzenetet.": "The private message was not sent: this user does not accept private messages from you.",
+ "Letiltott felhasználók": "Blocked users",
+ "Az internetes szobákban letiltott felhasználók. Az üzeneteiket nálad elrejtjük, és privát üzenetet nem küldhetnek neked.": "Users you blocked in the internet rooms. Their messages are hidden for you, and they cannot send you private messages.",
+ "Egyéb": "Other",
+ "kép": "picture",
+ "Feloldás": "Unblock"
+});
+// v43.393: map search -- coordinate result
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Mentés pontként": "Save as point",
+ "ideiglenes jelölő a térképen": "temporary marker on the map"
+});
+
+// 2026-10-27: map point categories (marker picker, point list)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Szállás": "Accommodation",
+ "Egészség": "Health",
+ "Táborhely": "Campsite",
+ "Alap": "Default",
+ "jelölő": "marker"
+});
+
+// ===== GIRA: GYORS UT ERINTESSEL (owner 2026-10-27, TG 30121-30128): NFC / Bluetooth next to the QR =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Az NFC ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "NFC is off, so only the QR code works right now.",
+  "NFC bekapcsolása":
+    "Turn on NFC",
+  "A Bluetooth ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "Bluetooth is off, so only the QR code works right now.",
+  "Bluetooth bekapcsolása":
+    "Turn on Bluetooth",
+  "Gyorsabb: a másik telefonon nyomják meg a Beolvasás gombot, és tartsd össze a két telefont.":
+    "Faster: on the other phone, tap Scan, then hold the two phones together.",
+  "Tartsd össze a két telefont.":
+    "Hold the two phones together.",
+  "A két telefon túl hamar vált el. Tartsd össze őket újra.":
+    "The phones were separated too soon. Hold them together again.",
+  "A nyugta nem ért át: a másik telefon a QR-kódjáról olvassa be.":
+    "The receipt did not get through: the other phone can scan it from its QR code.",
+  "Az átvitel nem sikerült. Próbáld újra, vagy olvasd be a QR-kódot.":
+    "The transfer failed. Try again, or scan the QR code.",
+  "Átadva. Tartsd még egy pillanatig össze, jön a nyugta.":
+    "Handed over. Keep them together a moment longer, the receipt is coming.",
+  "Átadva a másik telefonnak.":
+    "Handed over to the other phone.",
+  "Nem érkezett semmi. Nyomd meg újra a Beolvasás gombot.":
+    "Nothing arrived. Tap Scan again.",
+  "Tartsd a fizetés QR-kódját a keretbe, vagy tartsd össze a két telefont.":
+    "Hold the payment QR code in the frame, or hold the two phones together.",
+  "Ha elkészült a fizetés, tartsd újra össze a két telefont.":
+    "When the payment is ready, hold the two phones together again."
+});
+
+// 2026-10-27: barometer -- no storm alarm in a vehicle (activity recognition), card 4f0b74b5
+Object.assign(window.PP_FORD_SZOTAR.en, {
+ "Autóban ne riasszon": "No alarm in a vehicle",
+ "A telefon mozgásfelismerése jelzi, ha járműben ülsz, és addig nem jön viharriasztás: vezetés közben a légnyomás az emelkedőktől és a szellőzéstől is változik. Ehhez a „Fizikai tevékenység” engedély kell. Helyadatot nem használ, és semmit nem küld el.": "The phone's motion recognition tells when you are in a vehicle, and no storm alarm comes until then: while driving, the air pressure also changes with hills and ventilation. This needs the “Physical activity” permission. It uses no location data and sends nothing anywhere.",
+ "Bekapcsolva — most járműben vagy, a riasztás szünetel": "On — you are in a vehicle now, the alarm is paused",
+ "Bekapcsolva — járműben szünetel a riasztás": "On — the alarm pauses in a vehicle",
+ "Bekapcsolva. Kikapcsolni a telefon beállításaiban lehet: Alkalmazások > PrepperPapa > Engedélyek > Fizikai tevékenység.": "On. It can be switched off in the phone settings: Apps > PrepperPapa > Permissions > Physical activity.",
+ "Kész: járműben nem jön viharriasztás.": "Done: no storm alarm in a vehicle.",
+ "A telefon már nem kérdez rá. A beállításokban kapcsold be: Engedélyek > Fizikai tevékenység.": "The phone no longer asks. Switch it on in the settings: Permissions > Physical activity.",
+ "Nem adtál engedélyt. A riasztást ilyenkor a GPS-sebesség alapján szüneteltetem, ha van helyadat.": "You did not give permission. In that case the alarm is paused by GPS speed, if location is available.",
+ "Járműben vagy (a telefon mozgásfelismerése szerint): a riasztás szünetel, mert ilyenkor a nyomás az emelkedőtől és a szellőzéstől is változik.": "You are in a vehicle (by the phone's motion recognition): the alarm is paused, because the pressure then also changes with hills and ventilation.",
+ "Az elmúlt órákban járműben is mért a telefon: a riasztást csak a kiszállás utáni mérésekből számolom.": "The phone also measured in a vehicle in the last hours: the alarm is calculated only from the readings after you got out."
 });

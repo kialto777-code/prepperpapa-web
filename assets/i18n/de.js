@@ -17,6 +17,42 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.de = {
+  // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
+  "Ez a fájl nem PrepperPapa mentés.": "Diese Datei ist keine PrepperPapa-Sicherung.",
+  "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "Auf diesem Gerät ist nicht genug Speicher für die Wiederherstellung. Nichts wurde geändert.",
+  "A visszatöltés nem sikerült. Semmi nem változott.": "Die Wiederherstellung ist fehlgeschlagen. Nichts wurde geändert.",
+  "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "Auf diesem Gerät gibt es bereits eigene Daten (Vorrat, Punkte, Haushalt). Die Wiederherstellung ersetzt sie durch die Daten der Sicherung. Vorher kommen dein Vorrat und dein Haushalt in die Sicherheitskopie, die der Knopf „Aus der Sicherheitskopie wiederherstellen“ zurückholt. Fortfahren?",
+  "Visszatöltöm": "Wiederherstellen",
+  "Hibás mentés-fájl.": "Ungültige Sicherungsdatei.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "Die vollständige Sicherung wird mit einem von dir gewählten Sicherungsschlüssel verschlüsselt und enthält auch die Token-Brieftasche und deine Gíra (hinter der PIN der Brieftasche). Zum Wiederherstellen brauchst du den Sicherungsschlüssel, danach öffnet sich die Brieftasche mit der PIN. Die Dokumentenmappe ist nicht enthalten.",
+  "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Zahlungen, die du seit der Sicherung geleistet oder erhalten hast, fehlen in diesem Buch (in den Büchern der anderen sind sie vorhanden), daher kann der Kontostand abweichen.",
+  "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "Die Gíra in der Sicherung ist beschädigt, daher wurde nichts wiederhergestellt.",
+  "A mentési kulcs legyen legalább 8 karakter és 2 szó, vagy legalább 12 karakter.": "Der Sicherungsschlüssel muss mindestens 8 Zeichen und 2 Wörter oder mindestens 12 Zeichen haben.",
+  "A mentési kulcs ne a neved legyen.": "Der Sicherungsschlüssel darf nicht dein Name sein.",
+  "A mentési kulcs nem egyezik, a fájlt nem lehetett visszafejteni. Semmit nem írtunk felül.": "Der Sicherungsschlüssel stimmt nicht, die Datei konnte nicht entschlüsselt werden. Nichts wurde überschrieben.",
+  "A mentési kulcsod: „{kod}”. Írd le magadnak most, és ellenőrizd, hogy pontosan így írtad le. Ne felejtsd el ezt a kulcsot, és a tárca PIN-jét se: visszatöltés után a Token tárca és a Gíra a PIN-nel nyílik.": "Dein Sicherungsschlüssel: „{kod}“. Schreib ihn jetzt auf und prüfe, dass du ihn genau so aufgeschrieben hast. Vergiss diesen Schlüssel nicht und auch nicht die PIN der Brieftasche: Nach dem Wiederherstellen öffnen sich die Token-Brieftasche und die Gíra mit der PIN.",
+  "A mostani Gírád maradt; a mentésben levőt nem vettük át.": "Deine aktuelle Gíra bleibt; die aus der Sicherung wurde nicht übernommen.",
+  "A titkosított mentés nem készült el, nem töltöttünk le semmit.": "Die verschlüsselte Sicherung wurde nicht erstellt, es wurde nichts heruntergeladen.",
+  "A Token tárca és a Gíra visszaállítása nem sikerült.": "Die Wiederherstellung der Token-Brieftasche und der Gíra ist fehlgeschlagen.",
+  "Add meg ennek a készüléknek a tárca PIN-jét.": "Gib die PIN der Brieftasche dieses Geräts ein.",
+  "Adj meg egy mentési kulcsot: egy általad kitalált szót vagy rövid mondatot (legalább 8 karakter és 2 szó, vagy legalább 12 karakter). Ne a neved legyen. A kis- és nagybetű nem számít. Írd le magadnak: a mentés csak ezzel tölthető vissza.": "Gib einen Sicherungsschlüssel ein: ein selbst ausgedachtes Wort oder einen kurzen Satz (mindestens 8 Zeichen und 2 Wörter oder mindestens 12 Zeichen). Nicht dein Name. Groß- und Kleinschreibung spielt keine Rolle. Schreib ihn auf: Die Sicherung lässt sich nur damit wiederherstellen.",
+  "Biztosan lecseréled? A mostani Gíra ({most}) kulcsa ezzel elvész ezen a készüléken; ha nincs róla mentésed, véglegesen.": "Wirklich ersetzen? Der Schlüssel der aktuellen Gíra ({most}) geht auf diesem Gerät verloren; ohne Sicherung davon endgültig.",
+  "Ez egy titkosított mentés. Add meg a mentési kulcsot.": "Das ist eine verschlüsselte Sicherung. Gib den Sicherungsschlüssel ein.",
+  "Ezen a készüléken már van egy MÁSIK Gíra ({most}). A mentésben levő: {mentes}. Megtartod a mostanit, vagy lecseréled a mentésben levőre?": "Auf diesem Gerät gibt es bereits eine ANDERE Gíra ({most}). Die aus der Sicherung: {mentes}. Behältst du die aktuelle oder ersetzt du sie durch die aus der Sicherung?",
+  "Ezen a készüléken már van tárca. A mentett Token tárca átvételéhez add meg azt a PIN-t, amellyel a mentett tárca nyílt.": "Auf diesem Gerät gibt es bereits eine Brieftasche. Um die gesicherte Token-Brieftasche zu übernehmen, gib die PIN ein, mit der sich die gesicherte Brieftasche öffnete.",
+  "Gíra visszaállítva: {az}, egyenleg {egy} gíra.": "Gíra wiederhergestellt: {az}, Kontostand {egy} Gíra.",
+  "Igen, lecserélem": "Ja, ersetzen",
+  "Igen, nélkülük": "Ja, ohne sie",
+  "Javítom": "Korrigieren",
+  "Lecserélem": "Ersetzen",
+  "Megtartom a mostanit": "Aktuelle behalten",
+  "Mentés megszakítva, nem töltöttünk le semmit.": "Sicherung abgebrochen, es wurde nichts heruntergeladen.",
+  "Titkosított mentés": "Verschlüsselte Sicherung",
+  "Titkosított mentés visszatöltése": "Verschlüsselte Sicherung wiederherstellen",
+  "Token tárca visszaállítva: a mentéskor használt PIN-nel nyílik.": "Token-Brieftasche wiederhergestellt: Sie öffnet sich mit der PIN, die bei der Sicherung galt.",
+  "Token tárca: {n} bejegyzés hozzáadva a tárcádhoz.": "Token-Brieftasche: {n} Einträge zu deiner Brieftasche hinzugefügt.",
+  "Visszatöltés megszakítva, semmit nem írtunk felül.": "Wiederherstellung abgebrochen, nichts wurde überschrieben.",
+  "Visszatöltöd a többi adatot a Token tárca és a Gíra nélkül?": "Die übrigen Daten ohne Token-Brieftasche und Gíra wiederherstellen?",
   // ===== 2026-10-26 v43.386 (tester #84): water purification, ice-cold water + altitude bands =====
   "Buzgó forrás {perc} percig.": "{perc} Min. sprudelnd kochen.",
   "Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.": "{perc} Min. sprudelnd kochen — du bist über zweitausend Metern, dort dauert es länger, weil der Siedepunkt niedriger ist.",
@@ -238,6 +274,8 @@ window.PP_FORD_SZOTAR.de = {
     "Orte",
   "a határok közelítők":
     "Grenzen sind Näherungen",
+  "A területhatárok közelítő rekonstrukciók, nem mért vonalak.":
+    "Die Gebietsgrenzen sind näherungsweise Rekonstruktionen, keine vermessenen Linien.",
   // ===== HIANYPOTLAS 2026-10-11 (Fonok kepe: a Beallitasok Ertesitesek resze magyarul allt;
   // forras-alapu meres: pp-i18n-forras.mjs, a PP_SZOTAR soraival egyutt kiszurve) =====
   "Gíra-közösség":
@@ -2016,6 +2054,11 @@ window.PP_FORD_SZOTAR.de = {
   "Titkosított üzenet · helyzet · lista": "Verschlüsselte Nachricht · Position · Liste",
   "Ezen a készüléken a böngésző nem éri el a légnyomás-szenzort, ezért kézzel kell bevinni az értéket. A telefonos appban magától mér majd. Addig is: írj be egy értéket, és a trendet innentől számolja.": "Auf diesem Gerät hat der Browser keinen Zugriff auf den Luftdrucksensor, daher muss der Wert von Hand eingegeben werden. In der Telefon-App wird automatisch gemessen. Bis dahin: Gib einen Wert ein, und der Trend wird ab hier berechnet.",
   "Két mérés kell a trendhez.": "Für den Trend sind zwei Messungen nötig.",
+  "Az első mérés óta eltelt idő:": "Zeit seit der ersten Messung:",
+  "Trendet húsz perctől mondok.": "Einen Trend zeige ich ab zwanzig Minuten.",
+  "Hézag van a mérésekben. Az előző mérés óta eltelt:": "Die Messungen haben eine Lücke. Zeit seit der vorherigen Messung:",
+  "A hézag óta eltelt idő:": "Zeit seit der Lücke:",
+  "Közelítő trend: az utóbbi órákban hézag van a mérésekben, ezért az ablak elejét a hézag előtti utolsó mérésből számoltam.": "Ungefährer Trend: In den letzten Stunden haben die Messungen eine Lücke, daher wurde der Anfang des Fensters aus der letzten Messung vor der Lücke berechnet.",
   "Ha autóval hegyre mész, a nyomás esik, de nem jön vihar: száz méter emelkedés körülbelül 12 hPa. Ilyen napon ne vedd komolyan a jelzést.": "Wenn du mit dem Auto in die Berge fährst, fällt der Druck, aber es kommt kein Sturm: Hundert Meter Anstieg sind etwa 12 hPa. An so einem Tag nimm die Warnung nicht ernst.",
   "Kalkulátor": "Rechner",
   "Meddig visz el egy powerbank vagy egy akku": "Wie lange eine Powerbank oder ein Akku reicht",
@@ -3317,6 +3360,32 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
   "kilátópont": "Aussichtspunkt",
   "kilátó": "Aussichtsturm",
   "menedékház, esőbeálló": "Hütte, Unterstand",
+  "kórház": "Krankenhaus",
+  "rendelőintézet": "Poliklinik",
+  "temető": "Friedhof",
+  "menedékház": "Berghütte",
+  "esőbeálló, menedék": "Unterstand",
+  "szálloda": "Hotel",
+  "vendégház, panzió": "Pension",
+  "turistaszálló": "Herberge",
+  "motel": "Motel",
+  "üdülő": "Ferienanlage",
+  "apartman": "Ferienwohnung",
+  "szálláshely": "Unterkunft",
+  "szupermarket": "Supermarkt",
+  "áruház": "Kaufhaus",
+  "bevásárlóközpont": "Einkaufszentrum",
+  "piac": "Markt",
+  "élelmiszerbolt": "Lebensmittelladen",
+  "zöldséges": "Obst- und Gemüseladen",
+  "pékség": "Bäckerei",
+  "hentes": "Metzgerei",
+  "vegyesbolt": "Gemischtwarenladen",
+  "cukrászda": "Konditorei",
+  "édességbolt": "Süßwarenladen",
+  "italbolt": "Getränkemarkt",
+  "posta": "Postamt",
+  "bolt": "Geschäft",
   "táborhely": "Zeltplatz",
   "pihenőhely": "Rastplatz",
   "útjelző tábla": "Wegweiser",
@@ -4384,4 +4453,112 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
  "Válassz tervet": "Plan wählen",
  "Törlöd ezt az ébresztőt?": "Diesen Wecker löschen?",
  "Az ébresztő egy olvasási terv napi olvasmányát olvassa fel. Előbb indíts el egy tervet.": "Der Wecker liest den Tagesabschnitt eines Leseplans vor. Starte zuerst einen Plan."
+});
+// v43.389: foreign official fire bans in the fire-ban layer (card 4f0b74b5)
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Területek tilalommal vagy korlátozással": "Gebiete mit Verbot oder Einschränkung",
+ "Közelíts a területek megjelenítéséhez.": "Hineinzoomen, um die Gebiete zu sehen.",
+ "Tűzhasználati korlátozás": "Feuerbeschränkung",
+ "Tűz miatti területlezárás": "Gebietssperrung wegen Brandgefahr",
+ "Kockázat miatti törvényi korlátozás": "Gesetzliche Einschränkung wegen Brandrisiko",
+ "Terület": "Gebiet",
+ "Érvényes": "Gültig für",
+ "Hatályos ettől": "In Kraft seit",
+ "Hatályos eddig": "In Kraft bis",
+ "Ez veszélyszint, nem külön tilalmi rendelet: ezen a szinten a portugál jogszabály (DL 82/2021) korlátozza a tűzhasználatot.": "Dies ist eine Gefahrenstufe, keine eigene Verbotsverfügung: Auf dieser Stufe schränkt das portugiesische Gesetz (DL 82/2021) den Umgang mit Feuer ein.",
+ "A hivatalos forrás nem tartalmazza a helyi (községi) tilalmakat. Indulás előtt ellenőrizd a forrásnál.": "Die amtliche Quelle enthält keine örtlichen (Gemeinde-)Verbote. Vor dem Aufbruch bei der Quelle prüfen."
+});
+
+// ===== 2026-10-27 v43.392 (report + block): internet-room report sheet, block list, collapsed messages =====
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Illegális tartalom": "Illegaler Inhalt",
+ "Zaklatás vagy fenyegetés": "Belästigung oder Drohung",
+ "Kéretlen üzenet (spam)": "Unerwünschte Nachricht (Spam)",
+ "Bejelentetted ezt az üzenetet. Elrejtve, a csapat ellenőrzi.": "Du hast diese Nachricht gemeldet. Ausgeblendet, das Team prüft sie.",
+ "Letiltott felhasználó üzenete.": "Nachricht eines blockierten Nutzers.",
+ "Bejelentett üzenet, ellenőrzés alatt.": "Gemeldete Nachricht, wird geprüft.",
+ "Üzenet bejelentése": "Nachricht melden",
+ "Felhasználó bejelentése": "Nutzer melden",
+ "A bejelentéssel az üzenet szövege (ahogy a te telefonod megfejtette), a küldője és a szoba neve a PrepperPapa csapatához kerül. Nálad az üzenet azonnal eltűnik, a többieknél ellenőrzésig összecsukva marad.": "Mit der Meldung gehen der Text der Nachricht (so, wie dein Telefon ihn entschlüsselt hat), ihr Absender und der Name des Raums an das PrepperPapa-Team. Bei dir verschwindet die Nachricht sofort, bei den anderen bleibt sie bis zur Prüfung eingeklappt.",
+ "A bejelentéssel a felhasználó neve és a szoba neve a PrepperPapa csapatához kerül, hogy ellenőrizhessük.": "Mit der Meldung gehen der Name des Nutzers und der Name des Raums an das PrepperPapa-Team, damit wir sie prüfen können.",
+ "Bejelentett": "Gemeldet",
+ "Mi a gond?": "Was ist das Problem?",
+ "A felhasználót le is tiltom": "Diesen Nutzer auch blockieren",
+ "Bejelentés": "Melden",
+ "Túl sok bejelentést küldtél rövid idő alatt. Próbáld újra később.": "Du hast in kurzer Zeit zu viele Meldungen gesendet. Versuche es später erneut.",
+ "Most nincs internetkapcsolat. A bejelentés nem ment el, próbáld újra.": "Gerade keine Internetverbindung. Die Meldung wurde nicht gesendet, versuche es erneut.",
+ "A bejelentést most nem sikerült elküldeni. Próbáld újra később.": "Die Meldung konnte gerade nicht gesendet werden. Versuche es später erneut.",
+ "Köszönjük, a bejelentést megkaptuk. A csapat hamarosan ellenőrzi.": "Danke, wir haben die Meldung erhalten. Das Team prüft sie in Kürze.",
+ "Letiltod ezt a felhasználót?": "Diesen Nutzer blockieren?",
+ "Az üzeneteit nálad elrejtjük, és privát üzenetet nem küldhet neked. A Beállításokban bármikor feloldhatod.": "Seine Nachrichten werden bei dir ausgeblendet, und er kann dir keine privaten Nachrichten senden. In den Einstellungen kannst du die Blockierung jederzeit aufheben.",
+ "Most nem sikerült, próbáld újra később.": "Das hat gerade nicht geklappt, versuche es später erneut.",
+ "Letiltva.": "Blockiert.",
+ "A letiltás feloldva.": "Blockierung aufgehoben.",
+ "Nincs letiltott felhasználó.": "Keine blockierten Nutzer.",
+ "Letiltás feloldása": "Blockierung aufheben",
+ "A küldő letiltása": "Absender blockieren",
+ "Letiltás": "Blockieren",
+ "A privát üzenet nem ment el: ez a felhasználó nem fogad tőled privát üzenetet.": "Die private Nachricht wurde nicht gesendet: Dieser Nutzer nimmt keine privaten Nachrichten von dir an.",
+ "Letiltott felhasználók": "Blockierte Nutzer",
+ "Az internetes szobákban letiltott felhasználók. Az üzeneteiket nálad elrejtjük, és privát üzenetet nem küldhetnek neked.": "In den Internet-Räumen blockierte Nutzer. Ihre Nachrichten werden bei dir ausgeblendet, und sie können dir keine privaten Nachrichten senden."
+});
+// v43.393: map search -- coordinate result
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Mentés pontként": "Als Punkt speichern",
+ "ideiglenes jelölő a térképen": "vorübergehende Markierung auf der Karte"
+});
+
+// 2026-10-27: map point categories (marker picker, point list)
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Szállás": "Unterkunft",
+ "Egészség": "Gesundheit",
+ "Táborhely": "Lagerplatz",
+ "Alap": "Standard",
+ "jelölő": "Markierung"
+});
+
+// ===== GIRA: GYORS UT ERINTESSEL (owner 2026-10-27, TG 30121-30128): NFC / Bluetooth next to the QR =====
+Object.assign(window.PP_FORD_SZOTAR.de, {
+  "Az NFC ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "NFC ist ausgeschaltet, daher funktioniert gerade nur der QR-Code.",
+  "NFC bekapcsolása":
+    "NFC einschalten",
+  "A Bluetooth ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "Bluetooth ist ausgeschaltet, daher funktioniert gerade nur der QR-Code.",
+  "Bluetooth bekapcsolása":
+    "Bluetooth einschalten",
+  "Gyorsabb: a másik telefonon nyomják meg a Beolvasás gombot, és tartsd össze a két telefont.":
+    "Schneller: Auf dem anderen Telefon auf Scannen tippen, dann die beiden Telefone aneinanderhalten.",
+  "Tartsd össze a két telefont.":
+    "Halte die beiden Telefone aneinander.",
+  "A két telefon túl hamar vált el. Tartsd össze őket újra.":
+    "Die Telefone wurden zu früh getrennt. Halte sie erneut aneinander.",
+  "A nyugta nem ért át: a másik telefon a QR-kódjáról olvassa be.":
+    "Die Quittung kam nicht an: Das andere Telefon kann sie über ihren QR-Code scannen.",
+  "Az átvitel nem sikerült. Próbáld újra, vagy olvasd be a QR-kódot.":
+    "Die Übertragung ist fehlgeschlagen. Versuche es erneut oder scanne den QR-Code.",
+  "Átadva. Tartsd még egy pillanatig össze, jön a nyugta.":
+    "Übergeben. Halte sie noch einen Moment aneinander, die Quittung kommt.",
+  "Átadva a másik telefonnak.":
+    "An das andere Telefon übergeben.",
+  "Nem érkezett semmi. Nyomd meg újra a Beolvasás gombot.":
+    "Nichts angekommen. Tippe erneut auf Scannen.",
+  "Tartsd a fizetés QR-kódját a keretbe, vagy tartsd össze a két telefont.":
+    "Halte den QR-Code der Zahlung in den Rahmen oder halte die beiden Telefone aneinander.",
+  "Ha elkészült a fizetés, tartsd újra össze a két telefont.":
+    "Wenn die Zahlung fertig ist, halte die beiden Telefone erneut aneinander."
+});
+
+// 2026-10-27: barometer -- no storm alarm in a vehicle (activity recognition), card 4f0b74b5
+Object.assign(window.PP_FORD_SZOTAR.de, {
+ "Autóban ne riasszon": "Im Fahrzeug kein Alarm",
+ "A telefon mozgásfelismerése jelzi, ha járműben ülsz, és addig nem jön viharriasztás: vezetés közben a légnyomás az emelkedőktől és a szellőzéstől is változik. Ehhez a „Fizikai tevékenység” engedély kell. Helyadatot nem használ, és semmit nem küld el.": "Die Bewegungserkennung des Telefons meldet, wenn du in einem Fahrzeug sitzt, und bis dahin kommt kein Sturmalarm: Beim Fahren ändert sich der Luftdruck auch durch Steigungen und Lüftung. Dafür ist die Berechtigung „Körperliche Aktivität“ nötig. Es werden keine Standortdaten verwendet und nichts gesendet.",
+ "Bekapcsolva — most járműben vagy, a riasztás szünetel": "Eingeschaltet — du bist gerade im Fahrzeug, der Alarm pausiert",
+ "Bekapcsolva — járműben szünetel a riasztás": "Eingeschaltet — im Fahrzeug pausiert der Alarm",
+ "Bekapcsolva. Kikapcsolni a telefon beállításaiban lehet: Alkalmazások > PrepperPapa > Engedélyek > Fizikai tevékenység.": "Eingeschaltet. Ausschalten kannst du es in den Telefoneinstellungen: Apps > PrepperPapa > Berechtigungen > Körperliche Aktivität.",
+ "Kész: járműben nem jön viharriasztás.": "Fertig: im Fahrzeug kommt kein Sturmalarm.",
+ "A telefon már nem kérdez rá. A beállításokban kapcsold be: Engedélyek > Fizikai tevékenység.": "Das Telefon fragt nicht mehr nach. Schalte es in den Einstellungen ein: Berechtigungen > Körperliche Aktivität.",
+ "Nem adtál engedélyt. A riasztást ilyenkor a GPS-sebesség alapján szüneteltetem, ha van helyadat.": "Du hast keine Berechtigung erteilt. Der Alarm pausiert dann anhand der GPS-Geschwindigkeit, wenn Standortdaten verfügbar sind.",
+ "Járműben vagy (a telefon mozgásfelismerése szerint): a riasztás szünetel, mert ilyenkor a nyomás az emelkedőtől és a szellőzéstől is változik.": "Du bist im Fahrzeug (laut Bewegungserkennung des Telefons): der Alarm pausiert, weil sich der Druck dann auch durch Steigungen und Lüftung ändert.",
+ "Az elmúlt órákban járműben is mért a telefon: a riasztást csak a kiszállás utáni mérésekből számolom.": "Das Telefon hat in den letzten Stunden auch im Fahrzeug gemessen: den Alarm berechne ich nur aus den Messungen nach dem Aussteigen."
 });

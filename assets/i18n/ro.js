@@ -15,6 +15,42 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
+  "Ez a fájl nem PrepperPapa mentés.": "Acest fișier nu este o copie de siguranță PrepperPapa.",
+  "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "Nu este destul spațiu pe acest dispozitiv pentru restaurare. Nu s-a schimbat nimic.",
+  "A visszatöltés nem sikerült. Semmi nem változott.": "Restaurarea nu a reușit. Nu s-a schimbat nimic.",
+  "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "Pe acest dispozitiv există deja datele tale (stoc, puncte, gospodărie). Restaurarea le înlocuiește cu cele din copie. Înainte, stocul și gospodăria ta ajung în copia de siguranță, pe care butonul „Restaurare din copia de siguranță” o aduce înapoi. Continui?",
+  "Visszatöltöm": "Restaurez",
+  "Hibás mentés-fájl.": "Fișier de copie invalid.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "Copia de siguranță completă este criptată cu o cheie de copie aleasă de tine și conține și portofelul de tokenuri și Gíra ta (în spatele PIN-ului portofelului). La restaurare e nevoie de cheia de copie; apoi portofelul se deschide cu PIN-ul. Portofelul de documente nu este inclus.",
+  "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Plățile făcute sau primite de la copie lipsesc din această carte (în cărțile celorlalți există), de aceea soldul poate diferi.",
+  "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "Gíra din copie este deteriorată, de aceea nu s-a restaurat nimic.",
+  "A mentési kulcs legyen legalább 8 karakter és 2 szó, vagy legalább 12 karakter.": "Cheia de copie trebuie să aibă cel puțin 8 caractere și 2 cuvinte sau cel puțin 12 caractere.",
+  "A mentési kulcs ne a neved legyen.": "Cheia de copie nu poate fi numele tău.",
+  "A mentési kulcs nem egyezik, a fájlt nem lehetett visszafejteni. Semmit nem írtunk felül.": "Cheia de copie nu se potrivește, fișierul nu a putut fi decriptat. Nu s-a suprascris nimic.",
+  "A mentési kulcsod: „{kod}”. Írd le magadnak most, és ellenőrizd, hogy pontosan így írtad le. Ne felejtsd el ezt a kulcsot, és a tárca PIN-jét se: visszatöltés után a Token tárca és a Gíra a PIN-nel nyílik.": "Cheia ta de copie: „{kod}”. Noteaz-o acum și verifică dacă ai scris-o exact așa. Nu uita această cheie și nici PIN-ul portofelului: după restaurare, portofelul de tokenuri și Gíra se deschid cu PIN-ul.",
+  "A mostani Gírád maradt; a mentésben levőt nem vettük át.": "Gíra ta actuală a rămas; cea din copie nu a fost preluată.",
+  "A titkosított mentés nem készült el, nem töltöttünk le semmit.": "Copia criptată nu a putut fi creată, nu s-a descărcat nimic.",
+  "A Token tárca és a Gíra visszaállítása nem sikerült.": "Restaurarea portofelului de tokenuri și a Gírei nu a reușit.",
+  "Add meg ennek a készüléknek a tárca PIN-jét.": "Introdu PIN-ul portofelului de pe acest dispozitiv.",
+  "Adj meg egy mentési kulcsot: egy általad kitalált szót vagy rövid mondatot (legalább 8 karakter és 2 szó, vagy legalább 12 karakter). Ne a neved legyen. A kis- és nagybetű nem számít. Írd le magadnak: a mentés csak ezzel tölthető vissza.": "Introdu o cheie de copie: un cuvânt sau o propoziție scurtă inventată de tine (cel puțin 8 caractere și 2 cuvinte sau cel puțin 12 caractere). Să nu fie numele tău. Literele mari și mici nu contează. Noteaz-o: copia se poate restaura doar cu ea.",
+  "Biztosan lecseréled? A mostani Gíra ({most}) kulcsa ezzel elvész ezen a készüléken; ha nincs róla mentésed, véglegesen.": "Sigur o înlocuiești? Cheia Gírei actuale ({most}) se pierde pe acest dispozitiv; dacă nu ai copie a ei, definitiv.",
+  "Ez egy titkosított mentés. Add meg a mentési kulcsot.": "Aceasta este o copie criptată. Introdu cheia de copie.",
+  "Ezen a készüléken már van egy MÁSIK Gíra ({most}). A mentésben levő: {mentes}. Megtartod a mostanit, vagy lecseréled a mentésben levőre?": "Pe acest dispozitiv există deja o ALTĂ Gíra ({most}). Cea din copie: {mentes}. O păstrezi pe cea actuală sau o înlocuiești cu cea din copie?",
+  "Ezen a készüléken már van tárca. A mentett Token tárca átvételéhez add meg azt a PIN-t, amellyel a mentett tárca nyílt.": "Pe acest dispozitiv există deja un portofel. Pentru a prelua portofelul de tokenuri salvat, introdu PIN-ul cu care se deschidea portofelul salvat.",
+  "Gíra visszaállítva: {az}, egyenleg {egy} gíra.": "Gíra restaurată: {az}, sold {egy} gíra.",
+  "Igen, lecserélem": "Da, înlocuiește",
+  "Igen, nélkülük": "Da, fără ele",
+  "Javítom": "O corectez",
+  "Lecserélem": "Înlocuiesc",
+  "Megtartom a mostanit": "O păstrez pe cea actuală",
+  "Mentés megszakítva, nem töltöttünk le semmit.": "Copie întreruptă, nu s-a descărcat nimic.",
+  "Titkosított mentés": "Copie de siguranță criptată",
+  "Titkosított mentés visszatöltése": "Restaurarea copiei criptate",
+  "Token tárca visszaállítva: a mentéskor használt PIN-nel nyílik.": "Portofel de tokenuri restaurat: se deschide cu PIN-ul folosit la crearea copiei.",
+  "Token tárca: {n} bejegyzés hozzáadva a tárcádhoz.": "Portofel de tokenuri: {n} intrări adăugate în portofelul tău.",
+  "Visszatöltés megszakítva, semmit nem írtunk felül.": "Restaurare întreruptă, nu s-a suprascris nimic.",
+  "Visszatöltöd a többi adatot a Token tárca és a Gíra nélkül?": "Restaurezi restul datelor fără portofelul de tokenuri și Gíra?",
   // ===== 2026-10-26 v43.386 (tester #84): water purification, ice-cold water + altitude bands =====
   "Buzgó forrás {perc} percig.": "Fierbere în clocot {perc} min.",
   "Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.": "Fierbere în clocot {perc} min — ești peste două mii de metri, acolo durează mai mult, pentru că punctul de fierbere e mai jos.",
@@ -236,6 +272,8 @@ window.PP_FORD_SZOTAR.ro = {
     "Locuri",
   "a határok közelítők":
     "granițele sunt aproximative",
+  "A területhatárok közelítő rekonstrukciók, nem mért vonalak.":
+    "Granițele teritoriilor sunt reconstituiri aproximative, nu linii măsurate.",
   // ===== HIANYPOTLAS 2026-10-11 (Fonok kepe: a Beallitasok Ertesitesek resze magyarul allt;
   // forras-alapu meres: pp-i18n-forras.mjs, a PP_SZOTAR soraival egyutt kiszurve) =====
   "Gíra-közösség":
@@ -2014,6 +2052,11 @@ window.PP_FORD_SZOTAR.ro = {
   "Titkosított üzenet · helyzet · lista": "Mesaj criptat · poziție · listă",
   "Ezen a készüléken a böngésző nem éri el a légnyomás-szenzort, ezért kézzel kell bevinni az értéket. A telefonos appban magától mér majd. Addig is: írj be egy értéket, és a trendet innentől számolja.": "Pe acest dispozitiv browserul nu are acces la senzorul de presiune, de aceea valoarea trebuie introdusă manual. În aplicația de telefon va măsura singură. Până atunci: introdu o valoare, iar tendința se va calcula de aici înainte.",
   "Két mérés kell a trendhez.": "Pentru tendință sunt necesare două măsurători.",
+  "Az első mérés óta eltelt idő:": "Timp de la prima măsurătoare:",
+  "Trendet húsz perctől mondok.": "Tendința o arăt de la douăzeci de minute.",
+  "Hézag van a mérésekben. Az előző mérés óta eltelt:": "Există o pauză în măsurători. Timp de la măsurătoarea anterioară:",
+  "A hézag óta eltelt idő:": "Timp de la pauză:",
+  "Közelítő trend: az utóbbi órákban hézag van a mérésekben, ezért az ablak elejét a hézag előtti utolsó mérésből számoltam.": "Tendință aproximativă: în ultimele ore există o pauză în măsurători, așa că începutul ferestrei a fost calculat din ultima măsurătoare dinaintea pauzei.",
   "Ha autóval hegyre mész, a nyomás esik, de nem jön vihar: száz méter emelkedés körülbelül 12 hPa. Ilyen napon ne vedd komolyan a jelzést.": "Dacă urci cu mașina la munte, presiunea scade, dar nu vine furtună: o sută de metri diferență de nivel înseamnă circa 12 hPa. Într-o astfel de zi nu lua avertismentul în serios.",
   "Kalkulátor": "Calculator",
   "Meddig visz el egy powerbank vagy egy akku": "Cât te duce o baterie externă sau un acumulator",
@@ -3319,6 +3362,32 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "kilátópont": "punct de belvedere",
   "kilátó": "turn de belvedere",
   "menedékház, esőbeálló": "cabană, adăpost",
+  "kórház": "spital",
+  "rendelőintézet": "policlinică",
+  "temető": "cimitir",
+  "menedékház": "cabană",
+  "esőbeálló, menedék": "adăpost",
+  "szálloda": "hotel",
+  "vendégház, panzió": "pensiune",
+  "turistaszálló": "hostel",
+  "motel": "motel",
+  "üdülő": "stațiune",
+  "apartman": "apartament",
+  "szálláshely": "cazare",
+  "szupermarket": "supermarket",
+  "áruház": "magazin universal",
+  "bevásárlóközpont": "centru comercial",
+  "piac": "piață",
+  "élelmiszerbolt": "magazin alimentar",
+  "zöldséges": "aprozar",
+  "pékség": "brutărie",
+  "hentes": "măcelărie",
+  "vegyesbolt": "magazin mixt",
+  "cukrászda": "cofetărie",
+  "édességbolt": "magazin de dulciuri",
+  "italbolt": "magazin de băuturi",
+  "posta": "oficiu poștal",
+  "bolt": "magazin",
   "táborhely": "loc de campare",
   "pihenőhely": "loc de popas",
   "útjelző tábla": "indicator",
@@ -4386,4 +4455,112 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Válassz tervet": "Alege un plan",
  "Törlöd ezt az ébresztőt?": "Ștergi această alarmă?",
  "Az ébresztő egy olvasási terv napi olvasmányát olvassa fel. Előbb indíts el egy tervet.": "Alarma citește cu voce tare lectura zilei dintr-un plan de citire. Mai întâi pornește un plan."
+});
+// v43.389: foreign official fire bans in the fire-ban layer (card 4f0b74b5)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Területek tilalommal vagy korlátozással": "Zone cu interdicție sau restricție",
+ "Közelíts a területek megjelenítéséhez.": "Apropie harta pentru a vedea zonele.",
+ "Tűzhasználati korlátozás": "Restricție privind focul",
+ "Tűz miatti területlezárás": "Zonă închisă din cauza pericolului de incendiu",
+ "Kockázat miatti törvényi korlátozás": "Restricție legală din cauza riscului de incendiu",
+ "Terület": "Zonă",
+ "Érvényes": "Valabil pentru",
+ "Hatályos ettől": "În vigoare din",
+ "Hatályos eddig": "În vigoare până la",
+ "Ez veszélyszint, nem külön tilalmi rendelet: ezen a szinten a portugál jogszabály (DL 82/2021) korlátozza a tűzhasználatot.": "Acesta este un nivel de risc, nu un ordin de interdicție separat: la acest nivel legea portugheză (DL 82/2021) restricționează folosirea focului.",
+ "A hivatalos forrás nem tartalmazza a helyi (községi) tilalmakat. Indulás előtt ellenőrizd a forrásnál.": "Sursa oficială nu include interdicțiile locale (comunale). Verifică la sursă înainte de plecare."
+});
+
+// ===== 2026-10-27 v43.392 (report + block): internet-room report sheet, block list, collapsed messages =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Illegális tartalom": "Conținut ilegal",
+ "Zaklatás vagy fenyegetés": "Hărțuire sau amenințări",
+ "Kéretlen üzenet (spam)": "Mesaj nesolicitat (spam)",
+ "Bejelentetted ezt az üzenetet. Elrejtve, a csapat ellenőrzi.": "Ai raportat acest mesaj. Ascuns; echipa îl verifică.",
+ "Letiltott felhasználó üzenete.": "Mesaj de la un utilizator blocat.",
+ "Bejelentett üzenet, ellenőrzés alatt.": "Mesaj raportat, în curs de verificare.",
+ "Üzenet bejelentése": "Raportează mesajul",
+ "Felhasználó bejelentése": "Raportează utilizatorul",
+ "A bejelentéssel az üzenet szövege (ahogy a te telefonod megfejtette), a küldője és a szoba neve a PrepperPapa csapatához kerül. Nálad az üzenet azonnal eltűnik, a többieknél ellenőrzésig összecsukva marad.": "Odată cu raportarea, textul mesajului (așa cum l-a decriptat telefonul tău), expeditorul și numele camerei ajung la echipa PrepperPapa. La tine mesajul dispare imediat, la ceilalți rămâne restrâns până la verificare.",
+ "A bejelentéssel a felhasználó neve és a szoba neve a PrepperPapa csapatához kerül, hogy ellenőrizhessük.": "Odată cu raportarea, numele utilizatorului și numele camerei ajung la echipa PrepperPapa, ca să le putem verifica.",
+ "Bejelentett": "Raportat",
+ "Mi a gond?": "Care este problema?",
+ "A felhasználót le is tiltom": "Blochez și acest utilizator",
+ "Bejelentés": "Raportează",
+ "Túl sok bejelentést küldtél rövid idő alatt. Próbáld újra később.": "Ai trimis prea multe raportări într-un timp scurt. Încearcă din nou mai târziu.",
+ "Most nincs internetkapcsolat. A bejelentés nem ment el, próbáld újra.": "Acum nu există conexiune la internet. Raportarea nu a fost trimisă; încearcă din nou.",
+ "A bejelentést most nem sikerült elküldeni. Próbáld újra később.": "Raportarea nu a putut fi trimisă acum. Încearcă din nou mai târziu.",
+ "Köszönjük, a bejelentést megkaptuk. A csapat hamarosan ellenőrzi.": "Mulțumim, am primit raportarea. Echipa o va verifica în curând.",
+ "Letiltod ezt a felhasználót?": "Blochezi acest utilizator?",
+ "Az üzeneteit nálad elrejtjük, és privát üzenetet nem küldhet neked. A Beállításokban bármikor feloldhatod.": "Mesajele lui vor fi ascunse la tine și nu îți poate trimite mesaje private. Îl poți debloca oricând din Setări.",
+ "Most nem sikerült, próbáld újra később.": "Acum nu a reușit; încearcă din nou mai târziu.",
+ "Letiltva.": "Blocat.",
+ "A letiltás feloldva.": "Deblocat.",
+ "Nincs letiltott felhasználó.": "Niciun utilizator blocat.",
+ "Letiltás feloldása": "Deblochează",
+ "A küldő letiltása": "Blochează expeditorul",
+ "Letiltás": "Blochează",
+ "A privát üzenet nem ment el: ez a felhasználó nem fogad tőled privát üzenetet.": "Mesajul privat nu a fost trimis: acest utilizator nu acceptă mesaje private de la tine.",
+ "Letiltott felhasználók": "Utilizatori blocați",
+ "Az internetes szobákban letiltott felhasználók. Az üzeneteiket nálad elrejtjük, és privát üzenetet nem küldhetnek neked.": "Utilizatorii blocați în camerele de internet. Mesajele lor sunt ascunse la tine și nu îți pot trimite mesaje private."
+});
+// v43.393: map search -- coordinate result
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Mentés pontként": "Salvează ca punct",
+ "ideiglenes jelölő a térképen": "marcaj temporar pe hartă"
+});
+
+// 2026-10-27: map point categories (marker picker, point list)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Szállás": "Cazare",
+ "Egészség": "Sănătate",
+ "Táborhely": "Loc de tabără",
+ "Alap": "Implicit",
+ "jelölő": "marcaj"
+});
+
+// ===== GIRA: GYORS UT ERINTESSEL (owner 2026-10-27, TG 30121-30128): NFC / Bluetooth next to the QR =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Az NFC ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "NFC este oprit, așa că acum funcționează doar codul QR.",
+  "NFC bekapcsolása":
+    "Pornește NFC",
+  "A Bluetooth ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "Bluetooth este oprit, așa că acum funcționează doar codul QR.",
+  "Bluetooth bekapcsolása":
+    "Pornește Bluetooth",
+  "Gyorsabb: a másik telefonon nyomják meg a Beolvasás gombot, és tartsd össze a két telefont.":
+    "Mai rapid: pe celălalt telefon apasă Scanare, apoi ține cele două telefoane lipite.",
+  "Tartsd össze a két telefont.":
+    "Ține cele două telefoane lipite.",
+  "A két telefon túl hamar vált el. Tartsd össze őket újra.":
+    "Telefoanele s-au despărțit prea devreme. Ține-le din nou lipite.",
+  "A nyugta nem ért át: a másik telefon a QR-kódjáról olvassa be.":
+    "Chitanța nu a ajuns: celălalt telefon o poate scana de pe codul QR.",
+  "Az átvitel nem sikerült. Próbáld újra, vagy olvasd be a QR-kódot.":
+    "Transferul a eșuat. Încearcă din nou sau scanează codul QR.",
+  "Átadva. Tartsd még egy pillanatig össze, jön a nyugta.":
+    "Predat. Mai ține-le lipite o clipă, vine chitanța.",
+  "Átadva a másik telefonnak.":
+    "Predat celuilalt telefon.",
+  "Nem érkezett semmi. Nyomd meg újra a Beolvasás gombot.":
+    "Nu a sosit nimic. Apasă din nou Scanare.",
+  "Tartsd a fizetés QR-kódját a keretbe, vagy tartsd össze a két telefont.":
+    "Ține codul QR al plății în cadru sau ține cele două telefoane lipite.",
+  "Ha elkészült a fizetés, tartsd újra össze a két telefont.":
+    "Când plata este gata, ține din nou cele două telefoane lipite."
+});
+
+// 2026-10-27: barometer -- no storm alarm in a vehicle (activity recognition), card 4f0b74b5
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+ "Autóban ne riasszon": "Fără alarmă în vehicul",
+ "A telefon mozgásfelismerése jelzi, ha járműben ülsz, és addig nem jön viharriasztás: vezetés közben a légnyomás az emelkedőktől és a szellőzéstől is változik. Ehhez a „Fizikai tevékenység” engedély kell. Helyadatot nem használ, és semmit nem küld el.": "Recunoașterea mișcării din telefon semnalează când ești într-un vehicul și până atunci nu vine alarmă de furtună: la condus, presiunea se schimbă și din cauza pantelor și a ventilației. Pentru asta este nevoie de permisiunea „Activitate fizică”. Nu folosește date de localizare și nu trimite nimic.",
+ "Bekapcsolva — most járműben vagy, a riasztás szünetel": "Pornit — acum ești într-un vehicul, alarma este suspendată",
+ "Bekapcsolva — járműben szünetel a riasztás": "Pornit — în vehicul alarma este suspendată",
+ "Bekapcsolva. Kikapcsolni a telefon beállításaiban lehet: Alkalmazások > PrepperPapa > Engedélyek > Fizikai tevékenység.": "Pornit. Se poate opri din setările telefonului: Aplicații > PrepperPapa > Permisiuni > Activitate fizică.",
+ "Kész: járműben nem jön viharriasztás.": "Gata: în vehicul nu vine alarmă de furtună.",
+ "A telefon már nem kérdez rá. A beállításokban kapcsold be: Engedélyek > Fizikai tevékenység.": "Telefonul nu mai întreabă. Pornește din setări: Permisiuni > Activitate fizică.",
+ "Nem adtál engedélyt. A riasztást ilyenkor a GPS-sebesség alapján szüneteltetem, ha van helyadat.": "Nu ai dat permisiunea. În acest caz alarma este suspendată pe baza vitezei GPS, dacă există date de localizare.",
+ "Járműben vagy (a telefon mozgásfelismerése szerint): a riasztás szünetel, mert ilyenkor a nyomás az emelkedőtől és a szellőzéstől is változik.": "Ești într-un vehicul (după recunoașterea mișcării din telefon): alarma este suspendată, pentru că atunci presiunea se schimbă și din cauza pantelor și a ventilației.",
+ "Az elmúlt órákban járműben is mért a telefon: a riasztást csak a kiszállás utáni mérésekből számolom.": "În ultimele ore telefonul a măsurat și în vehicul: alarma o calculez doar din măsurătorile de după coborâre."
 });

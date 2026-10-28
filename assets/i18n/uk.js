@@ -15,6 +15,43 @@
 // `app-nyelvi-valtozat-hianypotlas` skill irja le.
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.uk = {
+  // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
+  "Ez a fájl nem PrepperPapa mentés.": "Цей файл не є резервною копією PrepperPapa.",
+  "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "На цьому пристрої недостатньо місця для відновлення. Нічого не змінено.",
+  "A visszatöltés nem sikerült. Semmi nem változott.": "Відновлення не вдалося. Нічого не змінено.",
+  "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "На цьому пристрої вже є ваші власні дані (запаси, точки, господарство). Відновлення замінить їх даними з копії. Перед цим ваші запаси й господарство потраплять до страхувальної копії, яку повертає кнопка «Відновити зі страхувальної копії». Продовжити?",
+  "Visszatöltöm": "Відновити",
+  "Hibás mentés-fájl.": "Неправильний файл копії.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "Повна резервна копія шифрується обраним вами ключем копії й містить також токен-гаманець і вашу Гіру (за PIN-кодом гаманця). Для відновлення потрібен ключ копії, після цього гаманець відкривається PIN-кодом. Гаманець документів до неї не входить.",
+  "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Платежі, зроблені або отримані після створення копії, у цій книзі відсутні (у книгах інших вони є), тому баланс може відрізнятися.",
+  "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "Гіра в копії пошкоджена, тому нічого не відновлено.",
+  "A mentési kulcs legyen legalább 8 karakter és 2 szó, vagy legalább 12 karakter.": "Ключ копії має містити щонайменше 8 символів і 2 слова або щонайменше 12 символів.",
+  "A mentési kulcs ne a neved legyen.": "Ключем копії не може бути ваше ім'я.",
+  "A mentési kulcs nem egyezik, a fájlt nem lehetett visszafejteni. Semmit nem írtunk felül.": "Ключ копії не підходить, файл не вдалося розшифрувати. Нічого не перезаписано.",
+  "A mentési kulcsod: „{kod}”. Írd le magadnak most, és ellenőrizd, hogy pontosan így írtad le. Ne felejtsd el ezt a kulcsot, és a tárca PIN-jét se: visszatöltés után a Token tárca és a Gíra a PIN-nel nyílik.": "Ваш ключ копії: «{kod}». Запишіть його зараз і перевірте, що записали саме так. Не забудьте цей ключ і PIN-код гаманця: після відновлення токен-гаманець і Гіра відкриваються PIN-кодом.",
+  "A mostani Gírád maradt; a mentésben levőt nem vettük át.": "Вашу поточну Гіру збережено; Гіру з копії не перенесено.",
+  "A titkosított mentés nem készült el, nem töltöttünk le semmit.": "Зашифровану копію створити не вдалося, нічого не завантажено.",
+  "A Token tárca és a Gíra visszaállítása nem sikerült.": "Не вдалося відновити токен-гаманець і Гіру.",
+  "Add meg ennek a készüléknek a tárca PIN-jét.": "Введіть PIN-код гаманця цього пристрою.",
+  "Adj meg egy mentési kulcsot: egy általad kitalált szót vagy rövid mondatot (legalább 8 karakter és 2 szó, vagy legalább 12 karakter). Ne a neved legyen. A kis- és nagybetű nem számít. Írd le magadnak: a mentés csak ezzel tölthető vissza.": "Введіть ключ копії: вигадане вами слово або коротку фразу (щонайменше 8 символів і 2 слова або щонайменше 12 символів). Це не має бути ваше ім'я. Регістр літер не має значення. Запишіть його: копію можна відновити лише з ним.",
+  "Biztosan lecseréled? A mostani Gíra ({most}) kulcsa ezzel elvész ezen a készüléken; ha nincs róla mentésed, véglegesen.": "Точно замінити? Ключ поточної Гіри ({most}) на цьому пристрої буде втрачено; якщо у вас немає його копії, назавжди.",
+  "Ez egy titkosított mentés. Add meg a mentési kulcsot.": "Це зашифрована копія. Введіть ключ копії.",
+  "Ezen a készüléken már van egy MÁSIK Gíra ({most}). A mentésben levő: {mentes}. Megtartod a mostanit, vagy lecseréled a mentésben levőre?": "На цьому пристрої вже є ІНША Гіра ({most}). Гіра з копії: {mentes}. Залишити поточну чи замінити її Гірою з копії?",
+  "Ezen a készüléken már van tárca. A mentett Token tárca átvételéhez add meg azt a PIN-t, amellyel a mentett tárca nyílt.": "На цьому пристрої вже є гаманець. Щоб перенести збережений токен-гаманець, введіть PIN-код, яким відкривався збережений гаманець.",
+  "Gíra visszaállítva: {az}, egyenleg {egy} gíra.": "Гіру відновлено: {az}, баланс {egy} гір.",
+  "Igen, lecserélem": "Так, замінити",
+  "Igen, nélkülük": "Так, без них",
+  "Javítom": "Виправлю",
+  "Lecserélem": "Замінити",
+  "Mégsem": "Скасувати",
+  "Megtartom a mostanit": "Залишити поточну",
+  "Mentés megszakítva, nem töltöttünk le semmit.": "Копіювання скасовано, нічого не завантажено.",
+  "Titkosított mentés": "Зашифрована копія",
+  "Titkosított mentés visszatöltése": "Відновлення зашифрованої копії",
+  "Token tárca visszaállítva: a mentéskor használt PIN-nel nyílik.": "Токен-гаманець відновлено: він відкривається PIN-кодом, який був під час створення копії.",
+  "Token tárca: {n} bejegyzés hozzáadva a tárcádhoz.": "Токен-гаманець: до вашого гаманця додано записів: {n}.",
+  "Visszatöltés megszakítva, semmit nem írtunk felül.": "Відновлення скасовано, нічого не перезаписано.",
+  "Visszatöltöd a többi adatot a Token tárca és a Gíra nélkül?": "Відновити решту даних без токен-гаманця і Гіри?",
   // ===== 2026-10-26 v43.386 (tester #84): water purification, ice-cold water + altitude bands =====
   "Buzgó forrás {perc} percig.": "Кип’ятити при сильному кипінні {perc} хв.",
   "Buzgó forrás {perc} percig — kétezer méter felett vagy, ott hosszabb kell, mert alacsonyabb a forráspont.": "Кип’ятити при сильному кипінні {perc} хв — ви вище двох тисяч метрів, там потрібно довше, бо температура кипіння нижча.",
@@ -236,6 +273,8 @@ window.PP_FORD_SZOTAR.uk = {
     "Місця",
   "a határok közelítők":
     "кордони приблизні",
+  "A területhatárok közelítő rekonstrukciók, nem mért vonalak.":
+    "Межі територій — наближені реконструкції, а не виміряні лінії.",
   // ===== HIANYPOTLAS 2026-10-11 (Fonok kepe: a Beallitasok Ertesitesek resze magyarul allt;
   // forras-alapu meres: pp-i18n-forras.mjs, a PP_SZOTAR soraival egyutt kiszurve) =====
   "Gíra-közösség":
@@ -2056,6 +2095,11 @@ window.PP_FORD_SZOTAR.uk = {
   'Mit vigyek?': 'Що взяти?',
   'Titkosított üzenet · helyzet · lista': 'Зашифроване повідомлення · позиція · список',
   'Két mérés kell a trendhez.': 'Для тренду потрібні два вимірювання.',
+  'Az első mérés óta eltelt idő:': 'Минуло від першого вимірювання:',
+  'Trendet húsz perctől mondok.': 'Тренд показую від двадцяти хвилин.',
+  'Hézag van a mérésekben. Az előző mérés óta eltelt:': 'У вимірюваннях є прогалина. Минуло від попереднього вимірювання:',
+  'A hézag óta eltelt idő:': 'Минуло після прогалини:',
+  'Közelítő trend: az utóbbi órákban hézag van a mérésekben, ezért az ablak elejét a hézag előtti utolsó mérésből számoltam.': 'Наближений тренд: за останні години у вимірюваннях є прогалина, тому початок вікна розраховано за останнім вимірюванням перед прогалиною.',
   'Névjegy': 'Про застосунок',
   'PrepperPapa — vészhelyzeti prepper eszköztár.': 'PrepperPapa — набір інструментів для надзвичайних ситуацій.',
   'Verzió:': 'Версія:',
@@ -3381,6 +3425,32 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "kilátópont": "оглядовий майданчик",
   "kilátó": "оглядова вежа",
   "menedékház, esőbeálló": "притулок, навіс",
+  "kórház": "лікарня",
+  "rendelőintézet": "поліклініка",
+  "temető": "кладовище",
+  "menedékház": "притулок",
+  "esőbeálló, menedék": "навіс, укриття",
+  "szálloda": "готель",
+  "vendégház, panzió": "гостьовий будинок",
+  "turistaszálló": "хостел",
+  "motel": "мотель",
+  "üdülő": "курорт",
+  "apartman": "апартаменти",
+  "szálláshely": "житло",
+  "szupermarket": "супермаркет",
+  "áruház": "універмаг",
+  "bevásárlóközpont": "торговий центр",
+  "piac": "ринок",
+  "élelmiszerbolt": "продуктовий магазин",
+  "zöldséges": "овочевий магазин",
+  "pékség": "пекарня",
+  "hentes": "м'ясна крамниця",
+  "vegyesbolt": "універсальний магазин",
+  "cukrászda": "кондитерська",
+  "édességbolt": "магазин солодощів",
+  "italbolt": "магазин напоїв",
+  "posta": "пошта",
+  "bolt": "магазин",
   "táborhely": "кемпінг",
   "pihenőhely": "місце відпочинку",
   "útjelző tábla": "вказівник",
@@ -4454,4 +4524,114 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
  "Válassz tervet": "Оберіть план",
  "Törlöd ezt az ébresztőt?": "Видалити цей будильник?",
  "Az ébresztő egy olvasási terv napi olvasmányát olvassa fel. Előbb indíts el egy tervet.": "Будильник зачитує денне читання з плану читання. Спочатку розпочніть план."
+});
+// v43.389: foreign official fire bans in the fire-ban layer (card 4f0b74b5)
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+ "Területek tilalommal vagy korlátozással": "Території із забороною або обмеженням",
+ "Közelíts a területek megjelenítéséhez.": "Наблизьте, щоб побачити території.",
+ "Tűzhasználati korlátozás": "Обмеження на використання вогню",
+ "Tűz miatti területlezárás": "Територію закрито через пожежну небезпеку",
+ "Kockázat miatti törvényi korlátozás": "Законодавче обмеження через ризик пожежі",
+ "Terület": "Територія",
+ "Érvényes": "Дійсно на",
+ "Hatályos ettől": "Діє з",
+ "Hatályos eddig": "Діє до",
+ "Ez veszélyszint, nem külön tilalmi rendelet: ezen a szinten a portugál jogszabály (DL 82/2021) korlátozza a tűzhasználatot.": "Це рівень ризику, а не окреме розпорядження про заборону: на цьому рівні португальський закон (DL 82/2021) обмежує використання вогню.",
+ "A hivatalos forrás nem tartalmazza a helyi (községi) tilalmakat. Indulás előtt ellenőrizd a forrásnál.": "Офіційне джерело не містить місцевих (муніципальних) заборон. Перед виходом перевірте в джерелі."
+});
+
+// ===== 2026-10-27 v43.392 (report + block): internet-room report sheet, block list, collapsed messages =====
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+ "Illegális tartalom": "Незаконний вміст",
+ "Zaklatás vagy fenyegetés": "Цькування або погрози",
+ "Kéretlen üzenet (spam)": "Небажане повідомлення (спам)",
+ "Bejelentetted ezt az üzenetet. Elrejtve, a csapat ellenőrzi.": "Ви поскаржилися на це повідомлення. Приховано, команда перевіряє його.",
+ "Letiltott felhasználó üzenete.": "Повідомлення заблокованого користувача.",
+ "Bejelentett üzenet, ellenőrzés alatt.": "Повідомлення зі скаргою, на перевірці.",
+ "Üzenet bejelentése": "Поскаржитися на повідомлення",
+ "Felhasználó bejelentése": "Поскаржитися на користувача",
+ "A bejelentéssel az üzenet szövege (ahogy a te telefonod megfejtette), a küldője és a szoba neve a PrepperPapa csapatához kerül. Nálad az üzenet azonnal eltűnik, a többieknél ellenőrzésig összecsukva marad.": "Разом зі скаргою команді PrepperPapa передаються текст повідомлення (так, як його розшифрував ваш телефон), його відправник і назва кімнати. У вас повідомлення одразу зникає, в інших лишається згорнутим до перевірки.",
+ "A bejelentéssel a felhasználó neve és a szoba neve a PrepperPapa csapatához kerül, hogy ellenőrizhessük.": "Разом зі скаргою команді PrepperPapa передаються ім'я користувача і назва кімнати, щоб ми могли це перевірити.",
+ "Bejelentett": "Скарга",
+ "Mi a gond?": "У чому проблема?",
+ "A felhasználót le is tiltom": "Також заблокувати цього користувача",
+ "Bejelentés": "Поскаржитися",
+ "Túl sok bejelentést küldtél rövid idő alatt. Próbáld újra később.": "Ви надіслали забагато скарг за короткий час. Спробуйте пізніше.",
+ "Most nincs internetkapcsolat. A bejelentés nem ment el, próbáld újra.": "Зараз немає підключення до інтернету. Скаргу не надіслано, спробуйте ще раз.",
+ "A bejelentést most nem sikerült elküldeni. Próbáld újra később.": "Зараз не вдалося надіслати скаргу. Спробуйте пізніше.",
+ "Köszönjük, a bejelentést megkaptuk. A csapat hamarosan ellenőrzi.": "Дякуємо, ми отримали скаргу. Команда незабаром її перевірить.",
+ "Letiltod ezt a felhasználót?": "Заблокувати цього користувача?",
+ "Az üzeneteit nálad elrejtjük, és privát üzenetet nem küldhet neked. A Beállításokban bármikor feloldhatod.": "Його повідомлення будуть у вас приховані, і він не зможе надсилати вам особисті повідомлення. Розблокувати можна будь-коли в Налаштуваннях.",
+ "Most nem sikerült, próbáld újra később.": "Зараз не вдалося, спробуйте пізніше.",
+ "Letiltva.": "Заблоковано.",
+ "A letiltás feloldva.": "Розблоковано.",
+ "Nincs letiltott felhasználó.": "Немає заблокованих користувачів.",
+ "Letiltás feloldása": "Розблокувати",
+ "A küldő letiltása": "Заблокувати відправника",
+ "Letiltás": "Заблокувати",
+ "A privát üzenet nem ment el: ez a felhasználó nem fogad tőled privát üzenetet.": "Особисте повідомлення не надіслано: цей користувач не приймає від вас особисті повідомлення.",
+ "Letiltott felhasználók": "Заблоковані користувачі",
+ "Az internetes szobákban letiltott felhasználók. Az üzeneteiket nálad elrejtjük, és privát üzenetet nem küldhetnek neked.": "Користувачі, заблоковані вами в інтернет-кімнатах. Їхні повідомлення у вас приховані, і вони не можуть надсилати вам особисті повідомлення.",
+ "Egyéb": "Інше",
+ "Feloldás": "Розблокувати"
+});
+// v43.393: map search -- coordinate result
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+ "Mentés pontként": "Зберегти як точку",
+ "ideiglenes jelölő a térképen": "тимчасова позначка на карті"
+});
+
+// 2026-10-27: map point categories (marker picker, point list)
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+ "Szállás": "Ночівля",
+ "Egészség": "Здоров'я",
+ "Táborhely": "Стоянка",
+ "Alap": "Звичайний",
+ "jelölő": "позначка"
+});
+
+// ===== GIRA: GYORS UT ERINTESSEL (owner 2026-10-27, TG 30121-30128): NFC / Bluetooth next to the QR =====
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Az NFC ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "NFC вимкнено, тому зараз працює лише QR-код.",
+  "NFC bekapcsolása":
+    "Увімкнути NFC",
+  "A Bluetooth ki van kapcsolva, ezért most csak a QR-kód működik.":
+    "Bluetooth вимкнено, тому зараз працює лише QR-код.",
+  "Bluetooth bekapcsolása":
+    "Увімкнути Bluetooth",
+  "Gyorsabb: a másik telefonon nyomják meg a Beolvasás gombot, és tartsd össze a két telefont.":
+    "Швидше: на іншому телефоні натисніть «Сканувати» й прикладіть телефони один до одного.",
+  "Tartsd össze a két telefont.":
+    "Прикладіть телефони один до одного.",
+  "A két telefon túl hamar vált el. Tartsd össze őket újra.":
+    "Телефони роз'єднали надто рано. Прикладіть їх знову.",
+  "A nyugta nem ért át: a másik telefon a QR-kódjáról olvassa be.":
+    "Квитанція не дійшла: інший телефон може відсканувати її QR-код.",
+  "Az átvitel nem sikerült. Próbáld újra, vagy olvasd be a QR-kódot.":
+    "Передача не вдалася. Спробуйте ще раз або відскануйте QR-код.",
+  "Átadva. Tartsd még egy pillanatig össze, jön a nyugta.":
+    "Передано. Потримайте їх разом ще мить, квитанція надходить.",
+  "Átadva a másik telefonnak.":
+    "Передано на інший телефон.",
+  "Nem érkezett semmi. Nyomd meg újra a Beolvasás gombot.":
+    "Нічого не надійшло. Знову натисніть «Сканувати».",
+  "Tartsd a fizetés QR-kódját a keretbe, vagy tartsd össze a két telefont.":
+    "Наведіть рамку на QR-код платежу або прикладіть телефони один до одного.",
+  "Ha elkészült a fizetés, tartsd újra össze a két telefont.":
+    "Коли платіж буде готовий, знову прикладіть телефони один до одного."
+});
+
+// 2026-10-27: barometer -- no storm alarm in a vehicle (activity recognition), card 4f0b74b5
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+ "Autóban ne riasszon": "Без тривоги в транспорті",
+ "A telefon mozgásfelismerése jelzi, ha járműben ülsz, és addig nem jön viharriasztás: vezetés közben a légnyomás az emelkedőktől és a szellőzéstől is változik. Ehhez a „Fizikai tevékenység” engedély kell. Helyadatot nem használ, és semmit nem küld el.": "Розпізнавання руху в телефоні визначає, що ви їдете в транспорті, і доти штормова тривога не надходить: під час їзди тиск змінюється і на підйомах, і від вентиляції. Для цього потрібен дозвіл «Фізична активність». Дані про місцезнаходження не використовуються, нічого нікуди не надсилається.",
+ "Bekapcsolva — most járműben vagy, a riasztás szünetel": "Увімкнено — зараз ви в транспорті, тривогу призупинено",
+ "Bekapcsolva — járműben szünetel a riasztás": "Увімкнено — у транспорті тривога призупиняється",
+ "Bekapcsolva. Kikapcsolni a telefon beállításaiban lehet: Alkalmazások > PrepperPapa > Engedélyek > Fizikai tevékenység.": "Увімкнено. Вимкнути можна в налаштуваннях телефона: Додатки > PrepperPapa > Дозволи > Фізична активність.",
+ "Kész: járműben nem jön viharriasztás.": "Готово: у транспорті штормової тривоги не буде.",
+ "A telefon már nem kérdez rá. A beállításokban kapcsold be: Engedélyek > Fizikai tevékenység.": "Телефон більше не питає. Увімкніть у налаштуваннях: Дозволи > Фізична активність.",
+ "Nem adtál engedélyt. A riasztást ilyenkor a GPS-sebesség alapján szüneteltetem, ha van helyadat.": "Ви не надали дозволу. Тоді тривога призупиняється за швидкістю GPS, якщо є дані про місцезнаходження.",
+ "Járműben vagy (a telefon mozgásfelismerése szerint): a riasztás szünetel, mert ilyenkor a nyomás az emelkedőtől és a szellőzéstől is változik.": "Ви в транспорті (за розпізнаванням руху телефона): тривогу призупинено, бо тиск тоді змінюється і на підйомах, і від вентиляції.",
+ "Az elmúlt órákban járműben is mért a telefon: a riasztást csak a kiszállás utáni mérésekből számolom.": "Останніми годинами телефон вимірював і в транспорті: тривогу я рахую лише за вимірюваннями після виходу з транспорту."
 });
