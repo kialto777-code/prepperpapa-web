@@ -4767,3 +4767,26 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Seguimiento activado — toca para centrar",
   "Hol vagyok (követés visszakapcsolása)": "Dónde estoy (volver a activar el seguimiento)"
 });
+// Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
+Object.assign(window.PP_FORD_SZOTAR.es, {
+  "Eredeti szó": "Palabra original",
+  "Héber": "Hebreo",
+  "Arámi": "Arameo",
+  "Görög": "Griego",
+  "Átírás": "Transliteración",
+  "Strong-szám": "Número Strong",
+  "Jelentés itt": "Significado aquí",
+  "Szótári alak": "Forma de diccionario",
+  "Eredet": "Origen",
+  "Meghatározás": "Definición",
+  "A KJV így fordítja": "La KJV lo traduce como",
+  "Szótár: Strong (1894)": "Diccionario: Strong (1894)",
+  "Nincs megbízható egyezés.": "No hay una correspondencia fiable.",
+  "Ennél a szónál a gépi szó-összekötés nem elég biztos, ezért nem mutatunk eredeti szót.": "Para esta palabra la alineación automática de palabras no es lo bastante segura, por eso no se muestra la palabra original.",
+  "Biblia prémium": "Biblia Premium",
+  "A Biblia prémiumban egy szóra koppintva megjelenik az eredeti héber, arámi vagy görög szó, átírással, Strong-számmal és szótári jelentéssel. Biblia prémium kóddal feloldható.": "Con Biblia Premium, al tocar una palabra aparece la palabra original hebrea, aramea o griega, con transliteración, número Strong y significado de diccionario. Se desbloquea con un código Biblia Premium.",
+  "Az eredeti szavak betöltése…": "Cargando las palabras originales…",
+  "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Ahora no se pueden cargar las palabras originales. La primera apertura necesita conexión a internet.",
+  "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Fuente: STEP Bible (www.STEPBible.org), CC BY 4.0",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Diccionario: diccionario hebreo y griego de Strong (1894), dominio público. El texto del diccionario está en inglés."
+});

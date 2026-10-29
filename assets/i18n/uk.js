@@ -4845,3 +4845,26 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Стеження ввімкнено — торкнися, щоб відцентрувати",
   "Hol vagyok (követés visszakapcsolása)": "Де я (знову ввімкнути стеження)"
 });
+// Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Eredeti szó": "Оригінальне слово",
+  "Héber": "Іврит",
+  "Arámi": "Арамейська",
+  "Görög": "Грецька",
+  "Átírás": "Транслітерація",
+  "Strong-szám": "Номер Стронга",
+  "Jelentés itt": "Значення тут",
+  "Szótári alak": "Словникова форма",
+  "Eredet": "Походження",
+  "Meghatározás": "Визначення",
+  "A KJV így fordítja": "У KJV перекладено як",
+  "Szótár: Strong (1894)": "Словник: Стронг (1894)",
+  "Nincs megbízható egyezés.": "Надійної відповідності немає.",
+  "Ennél a szónál a gépi szó-összekötés nem elég biztos, ezért nem mutatunk eredeti szót.": "Для цього слова автоматичне зіставлення слів недостатньо надійне, тому оригінальне слово не показується.",
+  "Biblia prémium": "Біблія Преміум",
+  "A Biblia prémiumban egy szóra koppintva megjelenik az eredeti héber, arámi vagy görög szó, átírással, Strong-számmal és szótári jelentéssel. Biblia prémium kóddal feloldható.": "У Біблії Преміум дотик до слова показує оригінальне єврейське, арамейське чи грецьке слово з транслітерацією, номером Стронга та словниковим значенням. Розблоковується кодом Біблія Преміум.",
+  "Az eredeti szavak betöltése…": "Завантаження оригінальних слів…",
+  "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Зараз не вдається завантажити оригінальні слова. Для першого відкриття потрібне з’єднання з інтернетом.",
+  "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Джерело: STEP Bible (www.STEPBible.org), CC BY 4.0",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Словник: єврейський і грецький словник Стронга (1894), суспільне надбання. Текст словника англійською."
+});

@@ -4772,3 +4772,26 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Standortverfolgung an — tippen zum Zentrieren",
   "Hol vagyok (követés visszakapcsolása)": "Wo bin ich (Standortverfolgung wieder einschalten)"
 });
+// Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
+Object.assign(window.PP_FORD_SZOTAR.de, {
+  "Eredeti szó": "Ursprüngliches Wort",
+  "Héber": "Hebräisch",
+  "Arámi": "Aramäisch",
+  "Görög": "Griechisch",
+  "Átírás": "Umschrift",
+  "Strong-szám": "Strong-Nummer",
+  "Jelentés itt": "Bedeutung hier",
+  "Szótári alak": "Wörterbuchform",
+  "Eredet": "Herkunft",
+  "Meghatározás": "Definition",
+  "A KJV így fordítja": "Die KJV übersetzt es mit",
+  "Szótár: Strong (1894)": "Wörterbuch: Strong (1894)",
+  "Nincs megbízható egyezés.": "Keine verlässliche Zuordnung.",
+  "Ennél a szónál a gépi szó-összekötés nem elég biztos, ezért nem mutatunk eredeti szót.": "Für dieses Wort ist die automatische Wortzuordnung nicht sicher genug, daher wird kein ursprüngliches Wort angezeigt.",
+  "Biblia prémium": "Bibel Premium",
+  "A Biblia prémiumban egy szóra koppintva megjelenik az eredeti héber, arámi vagy görög szó, átírással, Strong-számmal és szótári jelentéssel. Biblia prémium kóddal feloldható.": "Mit Bibel Premium zeigt ein Tippen auf ein Wort das ursprüngliche hebräische, aramäische oder griechische Wort mit Umschrift, Strong-Nummer und Wörterbuchbedeutung. Mit einem Bibel-Premium-Code freischaltbar.",
+  "Az eredeti szavak betöltése…": "Die ursprünglichen Wörter werden geladen…",
+  "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Die ursprünglichen Wörter können jetzt nicht geladen werden. Für das erste Öffnen ist eine Internetverbindung nötig.",
+  "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Quelle: STEP Bible (www.STEPBible.org), CC BY 4.0",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Wörterbuch: Strongs hebräisches und griechisches Wörterbuch (1894), gemeinfrei. Der Wörterbuchtext ist englisch."
+});

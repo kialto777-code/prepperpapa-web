@@ -4774,3 +4774,26 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Urmărirea este pornită — atinge pentru centrare",
   "Hol vagyok (követés visszakapcsolása)": "Unde sunt (repornește urmărirea)"
 });
+// Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Eredeti szó": "Cuvântul original",
+  "Héber": "Ebraică",
+  "Arámi": "Aramaică",
+  "Görög": "Greacă",
+  "Átírás": "Transliterare",
+  "Strong-szám": "Număr Strong",
+  "Jelentés itt": "Sensul aici",
+  "Szótári alak": "Forma de dicționar",
+  "Eredet": "Origine",
+  "Meghatározás": "Definiție",
+  "A KJV így fordítja": "KJV îl traduce prin",
+  "Szótár: Strong (1894)": "Dicționar: Strong (1894)",
+  "Nincs megbízható egyezés.": "Nicio potrivire sigură.",
+  "Ennél a szónál a gépi szó-összekötés nem elég biztos, ezért nem mutatunk eredeti szót.": "Pentru acest cuvânt alinierea automată a cuvintelor nu este suficient de sigură, de aceea nu afișăm cuvântul original.",
+  "Biblia prémium": "Biblia Premium",
+  "A Biblia prémiumban egy szóra koppintva megjelenik az eredeti héber, arámi vagy görög szó, átírással, Strong-számmal és szótári jelentéssel. Biblia prémium kóddal feloldható.": "Cu Biblia Premium, atingând un cuvânt apare cuvântul original ebraic, aramaic sau grec, cu transliterare, număr Strong și sens de dicționar. Se deblochează cu un cod Biblia Premium.",
+  "Az eredeti szavak betöltése…": "Se încarcă cuvintele originale…",
+  "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Cuvintele originale nu pot fi încărcate acum. Prima deschidere necesită conexiune la internet.",
+  "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Sursa: STEP Bible (www.STEPBible.org), CC BY 4.0",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public. Textul dicționarului este în engleză."
+});

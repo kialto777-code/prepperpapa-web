@@ -4788,3 +4788,26 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Слежение включено — нажми, чтобы отцентрировать",
   "Hol vagyok (követés visszakapcsolása)": "Где я (снова включить слежение)"
 });
+// Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Eredeti szó": "Исходное слово",
+  "Héber": "Иврит",
+  "Arámi": "Арамейский",
+  "Görög": "Греческий",
+  "Átírás": "Транслитерация",
+  "Strong-szám": "Номер Стронга",
+  "Jelentés itt": "Значение здесь",
+  "Szótári alak": "Словарная форма",
+  "Eredet": "Происхождение",
+  "Meghatározás": "Определение",
+  "A KJV így fordítja": "В KJV переведено как",
+  "Szótár: Strong (1894)": "Словарь: Стронг (1894)",
+  "Nincs megbízható egyezés.": "Надёжного соответствия нет.",
+  "Ennél a szónál a gépi szó-összekötés nem elég biztos, ezért nem mutatunk eredeti szót.": "Для этого слова автоматическое сопоставление слов недостаточно надёжно, поэтому исходное слово не показывается.",
+  "Biblia prémium": "Библия Премиум",
+  "A Biblia prémiumban egy szóra koppintva megjelenik az eredeti héber, arámi vagy görög szó, átírással, Strong-számmal és szótári jelentéssel. Biblia prémium kóddal feloldható.": "В Библии Премиум касание слова показывает исходное еврейское, арамейское или греческое слово с транслитерацией, номером Стронга и словарным значением. Открывается кодом Библия Премиум.",
+  "Az eredeti szavak betöltése…": "Загрузка исходных слов…",
+  "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Сейчас нельзя загрузить исходные слова. Для первого открытия нужно подключение к интернету.",
+  "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Источник: STEP Bible (www.STEPBible.org), CC BY 4.0",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Словарь: еврейский и греческий словарь Стронга (1894), общественное достояние. Текст словаря на английском."
+});

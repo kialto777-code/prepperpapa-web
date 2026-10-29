@@ -4785,3 +4785,26 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Śledzenie włączone — dotknij, aby wyśrodkować",
   "Hol vagyok (követés visszakapcsolása)": "Gdzie jestem (włącz ponownie śledzenie)"
 });
+// Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Eredeti szó": "Słowo oryginalne",
+  "Héber": "Hebrajski",
+  "Arámi": "Aramejski",
+  "Görög": "Grecki",
+  "Átírás": "Transliteracja",
+  "Strong-szám": "Numer Stronga",
+  "Jelentés itt": "Znaczenie tutaj",
+  "Szótári alak": "Forma słownikowa",
+  "Eredet": "Pochodzenie",
+  "Meghatározás": "Definicja",
+  "A KJV így fordítja": "KJV tłumaczy to jako",
+  "Szótár: Strong (1894)": "Słownik: Strong (1894)",
+  "Nincs megbízható egyezés.": "Brak pewnego dopasowania.",
+  "Ennél a szónál a gépi szó-összekötés nem elég biztos, ezért nem mutatunk eredeti szót.": "Dla tego słowa automatyczne dopasowanie słów nie jest wystarczająco pewne, dlatego nie pokazujemy słowa oryginalnego.",
+  "Biblia prémium": "Biblia Premium",
+  "A Biblia prémiumban egy szóra koppintva megjelenik az eredeti héber, arámi vagy görög szó, átírással, Strong-számmal és szótári jelentéssel. Biblia prémium kóddal feloldható.": "W Biblii Premium dotknięcie słowa pokazuje oryginalne słowo hebrajskie, aramejskie lub greckie z transliteracją, numerem Stronga i znaczeniem słownikowym. Do odblokowania kodem Biblia Premium.",
+  "Az eredeti szavak betöltése…": "Wczytywanie słów oryginalnych…",
+  "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Nie można teraz wczytać słów oryginalnych. Pierwsze otwarcie wymaga połączenia z internetem.",
+  "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Źródło: STEP Bible (www.STEPBible.org), CC BY 4.0",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Słownik: słownik hebrajski i grecki Stronga (1894), domena publiczna. Tekst słownika jest po angielsku."
+});

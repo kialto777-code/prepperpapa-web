@@ -52,7 +52,7 @@ function ppSzovegForditas(gyoker) {
       // kovetkezetes magyar: ugy nez ki, mintha a forditas felig kesz lenne.
       // Ami ITT MARAD forditando: a keret (a "Tudastar" fejlec, a keresomezo, a
       // hibauzenetek, a "Betoltes...", a feloldo-kartya) -- azok felulet.
-      if (p.closest('.kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat')) continue;
+      if (p.closest('.kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat, .biberedeti-forma, .biberedeti-hu, .biberedeti-sor > span + span, .biberedeti-szotar p')) continue;
       const eredeti = PP_FORD_EREDETI.has(cs) ? PP_FORD_EREDETI.get(cs) : cs.textContent;
       const kulcs = eredeti.replace(/\s+/g, ' ').trim();
       if (!kulcs) continue;

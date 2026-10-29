@@ -5121,3 +5121,26 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Following is on — tap to centre",
   "Hol vagyok (követés visszakapcsolása)": "Where am I (turn following back on)"
 });
+// Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Eredeti szó": "Original word",
+  "Héber": "Hebrew",
+  "Arámi": "Aramaic",
+  "Görög": "Greek",
+  "Átírás": "Transliteration",
+  "Strong-szám": "Strong number",
+  "Jelentés itt": "Meaning here",
+  "Szótári alak": "Dictionary form",
+  "Eredet": "Origin",
+  "Meghatározás": "Definition",
+  "A KJV így fordítja": "KJV renders it",
+  "Szótár: Strong (1894)": "Dictionary: Strong (1894)",
+  "Nincs megbízható egyezés.": "No reliable match.",
+  "Ennél a szónál a gépi szó-összekötés nem elég biztos, ezért nem mutatunk eredeti szót.": "For this word the automatic word alignment is not certain enough, so no original word is shown.",
+  "Biblia prémium": "Bible Premium",
+  "A Biblia prémiumban egy szóra koppintva megjelenik az eredeti héber, arámi vagy görög szó, átírással, Strong-számmal és szótári jelentéssel. Biblia prémium kóddal feloldható.": "With Bible Premium, tapping a word shows the original Hebrew, Aramaic or Greek word with transliteration, Strong number and dictionary meaning. Unlockable with a Bible Premium code.",
+  "Az eredeti szavak betöltése…": "Loading the original words…",
+  "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "The original words cannot be loaded now. The first opening needs an internet connection.",
+  "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Source: STEP Bible (www.STEPBible.org), CC BY 4.0",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Dictionary: Strong's Hebrew and Greek dictionaries (1894), public domain. The dictionary text is in English."
+});
