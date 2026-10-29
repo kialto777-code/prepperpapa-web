@@ -15,6 +15,40 @@
 // `app-nyelvi-valtozat-hianypotlas` skill irja le.
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.uk = {
+  // ===== 2026-10-28 SOS sharing per room (TG 30631) =====
+  "Vészhelyzet ebben a szobában": "Надзвичайна ситуація в цій кімнаті",
+  "Szobánként döntöd el, mit kapnak meg az SOS-odból. Ha az SOS-t kikapcsolod, ebbe a szobába semmi nem megy; a hely és a vércsoport csak az SOS-üzenetben jelenik meg.": "Для кожної кімнати ти вирішуєш, що вона отримає з твого SOS. Якщо вимкнути SOS, до цієї кімнати нічого не піде; місцезнаходження і група крові з'являються лише в повідомленні SOS.",
+  "SOS-jelzésem ide is menjen": "Надсилати мій SOS і сюди",
+  "Lássák a GPS-helyzetemet az SOS-ban": "Показувати моє GPS-місцезнаходження в SOS",
+  "Lássák a vércsoportomat az SOS-ban": "Показувати мою групу крові в SOS",
+  "Később a szoba beállításaiban is átállíthatod.": "Пізніше це можна змінити в налаштуваннях кімнати.",
+  "Az SOS egyik szobádba sem ment el: a szobák beállításában mindenhol ki van kapcsolva. A vészsíp szól.": "SOS не пішов до жодної з твоїх кімнат: у налаштуваннях усіх кімнат він вимкнений. Звучить аварійний свисток.",
+  "Szobánként, a szoba beállításaiban szűkítheted: melyik szoba kapja meg az SOS-t, és látszik-e benne a helyed és a vércsoportod.": "У налаштуваннях кожної кімнати це можна обмежити: яка кімната отримує SOS і чи видно в ньому твоє місцезнаходження та групу крові.",
+  "gombot, SOS üzenetet küld a helyzeteddel a szobáidba (ahová a szoba beállításában engedted), és megszólal a vészsíp.": ", він надішле SOS з вашим місцезнаходженням до ваших кімнат (до тих, де це дозволено в налаштуваннях) і ввімкне аварійний свисток.",
+  "Esés után automatikus SOS: alapból ki van kapcsolva. Ha bekapcsolod, és a telefon nagy ütés után egy percig nem mozdul, hangosan visszaszámol. Ha nem nyomod meg a Jól vagyok gombot, SOS üzenetet küld a helyzeteddel a szobáidba (ahová a szoba beállításában engedted), és megszólal a vészsíp.": "Автоматичний SOS після падіння: типово вимкнений. Якщо ти його ввімкнеш і телефон після сильного удару хвилину не рухається, він голосно веде зворотний відлік. Якщо ти не натиснеш кнопку «Я в порядку», він надішле SOS з твоїм місцезнаходженням до твоїх кімнат (до тих, де це дозволено в налаштуваннях) і ввімкне аварійний свисток.",
+  "Vészhelyzet: szobánként eldöntöd, hogy az SOS-od ide is menjen-e, és látszik-e benne a GPS-helyzeted és a vércsoportod. Alapból mindhárom be van kapcsolva.": "Надзвичайна ситуація: для кожної кімнати ти вирішуєш, чи йде туди твій SOS і чи показує він твоє GPS-місцезнаходження та групу крові. Типово всі три ввімкнені.",
+  // ===== 2026-10-28 route planning: sunset / dark timing (TG 30629) =====
+  "Most": "Зараз",
+  "Napnyugta előtt érkezel, a tartalék:": "Прийдеш до заходу сонця, запас:",
+  "Napnyugta után érkezel, ennyivel:": "Прийдеш після заходу сонця, на:",
+  "Sötétedés előtt még odaérsz.": "До темряви ще встигнеш.",
+  "Sötétedés után érkezel.": "Прийдеш після настання темряви.",
+  "Napnyugta után indulsz.": "Виходиш після заходу сонця.",
+  "Sötétedés után indulsz.": "Виходиш після настання темряви.",
+  "Napnyugtakor itt jársz, a kezdéstől:": "На заході сонця ти будеш тут, від старту:",
+  "Sötétedéskor itt jársz, a kezdéstől:": "З настанням темряви ти будеш тут, від старту:",
+  "Az út utolsó szakasza sötétben van:": "Остання частина маршруту в темряві:",
+  "A tábort a sötétedés pontja előtt válaszd ki.": "Обери місце для табору до точки настання темряви.",
+  // ===== 2026-10-28 Barometer + Napkelte, napnyugta: own screens under Eszkozok (TG 30627) =====
+  "Barométer": "Барометр",
+  "Légnyomás, trend és viharjelzés": "Тиск, тенденція і попередження про бурю",
+  "Napkelte, napnyugta": "Схід, захід сонця",
+  "Nap és hold: mennyi világosod van, holdfázis": "Сонце і місяць: скільки в тебе світлого часу, фаза місяця",
+  "Nem kaptunk engedélyt az iránytűhöz.": "Ми не отримали дозволу на компас.",
+  "Ez a készülék nem ad iránytű-adatot, vagy nincs rá engedély.": "Цей пристрій не дає даних компаса, або немає дозволу.",
+  "A nap pályájához tudni kell, hol vagy: az Eszközök, Napkelte, napnyugta lapon nyomd meg a „Mérés a helyzetemre” gombot.": "Для шляху сонця треба знати, де ти: у розділі Інструменти, Схід, захід сонця натисни «Розрахувати для мого місця».",
+  "Tájoló: irány és azimut, a visszaút is.": "Компас: напрямок і азимут, а також шлях назад.",
+  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a vad- és rovarriasztó, a barométer és a napkelte-napnyugta egy helyen.": "Інструменти: калькулятори, металошукач, дзеркало, відлякувач звірів і комах, барометр і схід-захід сонця в одному місці.",
   // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
   "Ez a fájl nem PrepperPapa mentés.": "Цей файл не є резервною копією PrepperPapa.",
   "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "На цьому пристрої недостатньо місця для відновлення. Нічого не змінено.",
@@ -174,6 +208,8 @@ window.PP_FORD_SZOTAR.uk = {
   "Termékek": "Товари",
   "Teszt-adatok betöltve: 3 fő, 1 háziállat, 5 helyszín (köztük autó és hétvégi ház),": "Тестові дані завантажено: 3 людини, 1 улюбленець, 5 місць (серед них авто та дача),",
   "Vissza az igéhez": "Назад до вірша",
+  "Panel összecsukása": "Згорнути панель",
+  "Panel kinyitása": "Розгорнути панель",
   "Vészkártyák": "Екстрені картки",
   "adat frissítve a már felvett teszt-tagoknál": "дані оновлено в уже доданих тестових учасників",
   "egy sincs": "немає",
@@ -3641,6 +3677,12 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
  "Pontos időzítés engedélyezése": "Дозволити точний час",
  "A teljes képernyős értesítés nincs engedélyezve: lezárt telefonon csak értesítés jelenik meg, a felolvasás a koppintásra indul.": "Повноекранні сповіщення не дозволені: на заблокованому телефоні з'явиться лише сповіщення, а читання почнеться після натискання на нього.",
  "Teljes képernyő engedélyezése": "Дозволити повний екран",
+  // v43.407 (kartya 0ef65ebd): eszkoz-riasztas elore hozasa, szoba beallitasai
+  "Az értesítés nincs engedélyezve: enélkül a szoba riasztása nem jelenik meg a telefonon.": "Сповіщення не дозволені: без них тривога кімнати не з'явиться на телефоні.",
+  "A teljes képernyős értesítés nincs engedélyezve: lezárt telefonon a riasztás csak értesítésként jelenik meg.": "Повноекранні сповіщення не дозволені: на заблокованому телефоні тривога з'явиться лише як сповіщення.",
+  "A megjelenítés más alkalmazások felett nincs engedélyezve: amíg a telefont használod, a riasztás oldala nem ugrik elő, csak értesítés érkezik.": "Показ поверх інших застосунків не дозволено: поки ви користуєтеся телефоном, сторінка тривоги не з'явиться, надійде лише сповіщення.",
+  "Megjelenítés más alkalmazások felett": "Показ поверх інших застосунків",
+  "A szoba riasztása lezárt és használatban lévő telefonon is előreugrik.": "Тривога кімнати з'являється на заблокованому телефоні й під час його використання.",
  "Az ébresztő be van állítva.": "Будильник встановлено.",
  "Az ébresztőt most nem sikerült beállítani. Próbáld újra később.": "Зараз не вдалося встановити будильник. Спробуйте пізніше.",
  "Bibliaolvasás ébresztő": "Будильник для читання Біблії",
@@ -4634,4 +4676,172 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
  "Nem adtál engedélyt. A riasztást ilyenkor a GPS-sebesség alapján szüneteltetem, ha van helyadat.": "Ви не надали дозволу. Тоді тривога призупиняється за швидкістю GPS, якщо є дані про місцезнаходження.",
  "Járműben vagy (a telefon mozgásfelismerése szerint): a riasztás szünetel, mert ilyenkor a nyomás az emelkedőtől és a szellőzéstől is változik.": "Ви в транспорті (за розпізнаванням руху телефона): тривогу призупинено, бо тиск тоді змінюється і на підйомах, і від вентиляції.",
  "Az elmúlt órákban járműben is mért a telefon: a riasztást csak a kiszállás utáni mérésekből számolom.": "Останніми годинами телефон вимірював і в транспорті: тривогу я рахую лише за вимірюваннями після виходу з транспорту."
+});
+
+// ===== GIRA: FIZETES ERINTESSEL (owner 2026-10-29): guided touch payment, re-delivery of a pending payment =====
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Fogadás érintéssel":
+    "Отримати дотиком",
+  "Fizetés érintéssel":
+    "Оплатити дотиком",
+  "Újra átadás":
+    "Передати знову",
+  "Az összeg nulla vagy hiányzik.":
+    "Сума дорівнює нулю або не вказана.",
+  "Ez a fizetés már jóváírva volt nálad, másodszor nem írtam jóvá. A nyugtát újra kiadtam.":
+    "Цей платіж уже було зараховано; вдруге його не зараховано. Квитанцію видано знову.",
+  "A másik telefon érintéses fogadásra vár. Írd be az összeget, nyomd meg a Fizetés érintéssel gombot, és tartsátok össze a két telefont.":
+    "Інший телефон чекає отримання дотиком. Введіть суму, натисніть «Оплатити дотиком» і прикладіть телефони один до одного.",
+  "A fizetés nem ért át: a két telefon túl hamar vált el. Tartsátok újra össze (a másik telefonon maradjon nyitva a Fogadás).":
+    "Платіж не пройшов: телефони роз'єднали надто рано. Прикладіть їх знову (на іншому телефоні має залишатися відкритим «Отримати»).",
+  "Érintéssel nem vette át senki. A másik telefonon előbb nyomják meg a Beolvasás gombot, vagy olvassák be a QR-kódot.":
+    "Ніхто не прийняв дотиком. На іншому телефоні спершу натисніть «Сканувати» або відскануйте QR-код.",
+  "Érintésre vár. A másik telefonon legyen bekapcsolva a Fogadás érintéssel, és tartsátok össze a két telefont.":
+    "Чекає дотику. На іншому телефоні має бути увімкнено «Отримати дотиком»; прикладіть телефони один до одного.",
+  "Fizetés aláírva és átadva":
+    "Платіж підписано й передано",
+  "Fizetés aláírása és átadása":
+    "Підписання й передавання платежу",
+  "Nyugta megérkezett. Kész.":
+    "Квитанцію отримано. Готово.",
+  "Nyugta visszaérkezése":
+    "Повернення квитанції",
+  "Érintésre vár. A fizető telefonon a Fizetés érintéssel gombot nyomják meg, és tartsátok össze a két telefont.":
+    "Чекає дотику. На телефоні платника натисніть «Оплатити дотиком» і прикладіть телефони один до одного.",
+  "Azonosítód átadva, jön a fizetés…":
+    "Твій ідентифікатор передано, платіж надходить…",
+  "Megérkezett és jóváírva":
+    "Отримано й зараховано",
+  "Fizetés megérkezése":
+    "Надходження платежу",
+  "Nyugta visszaküldve. Kész.":
+    "Квитанцію надіслано назад. Готово.",
+  "Nyugta visszaküldése":
+    "Надсилання квитанції назад",
+  "Még nem jött semmi. A másik telefonon előbb nyomják meg a Fogadás érintéssel gombot, aztán tartsátok össze a két telefont.":
+    "Поки нічого. На іншому телефоні спершу натисніть «Отримати дотиком», потім прикладіть телефони один до одного.",
+  "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
+    "Поки нічого. На телефоні платника спершу введіть суму й натисніть «Оплатити дотиком», потім прикладіть телефони один до одного.",
+  "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
+    "Квитанція ще не повернулася. Прикладіть телефони знову або нехай інший телефон відсканує QR-код.",
+  "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":
+    "Платіж ще не надійшов. Прикладіть телефони знову.",
+  "A nyugta még nem ment vissza. Tartsátok újra össze a két telefont, vagy a fizető olvassa be a nyugta QR-kódját.":
+    "Квитанцію ще не надіслано назад. Прикладіть телефони знову або нехай платник відсканує QR-код квитанції.",
+  "Lejárt az idő. Nyomd meg újra a Fogadás érintéssel gombot.":
+    "Час вийшов. Натисніть «Отримати дотиком» ще раз.",
+  "Lejárt az idő. A fizetés nálad „átadásra vár”: a Mozgások között az Újra átadás gombbal még átadhatod.":
+    "Час вийшов. Платіж «очікує передавання»: у розділі «Рухи» його ще можна передати кнопкою «Передати знову».",
+  "Lejárt az idő, nem jött létre kapcsolat. A másik telefonon előbb nyomják meg a Fogadás érintéssel gombot, aztán nyomd meg újra a Fizetés érintéssel gombot.":
+    "Час вийшов, з'єднання не було. На іншому телефоні спершу натисніть «Отримати дотиком», потім знову натисніть «Оплатити дотиком».",
+  "Ha az érintés nem megy: a fizető olvassa be ezt a QR-kódot.":
+    "Якщо дотик не працює: платник сканує цей QR-код.",
+  "Az érintéses átadás most nem indult el. Olvassák be a QR-kódot.":
+    "Передавання дотиком не запустилося. Відскануйте QR-код.",
+  "Az érintéses olvasás nem indult el. Próbáld újra, vagy használd a QR-kódot.":
+    "Зчитування дотиком не запустилося. Спробуйте знову або скористайтеся QR-кодом.",
+  "Ez nem egy másik telefon azonosítója.":
+    "Це не ідентифікатор іншого телефону.",
+  "Ez a fizetés nem ennek a telefonnak szól, hanem neki:":
+    "Цей платіж не для цього телефону, а для:",
+  "A fizetés nem készült el.":
+    "Платіж не створено.",
+  "A fizetés nem volt érvényes.":
+    "Платіж був недійсний.",
+  "Ugyanaz az aláírt fizetés, nem új: a másik telefonon nyomják meg a Fogadás érintéssel gombot, és tartsátok össze a két telefont, vagy olvassa be ezt a QR-kódot.":
+    "Той самий підписаний платіж, не новий: на іншому телефоні натисніть «Отримати дотиком» і прикладіть телефони або відскануйте цей QR-код.",
+  "Ugyanaz az aláírt fizetés, nem új: a másik telefon olvassa be ezt a QR-kódot.":
+    "Той самий підписаний платіж, не новий: нехай інший телефон відсканує цей QR-код."
+});
+
+// ===== GIRA: switch-on offer when the wallet opens (owner 2026-10-29 09:18) =====
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Az érintéses fizetéshez kapcsold be az NFC-t.":
+    "Увімкніть NFC, щоб платити дотиком.",
+  "Az érintéses fizetéshez kapcsold be a Bluetooth-t.":
+    "Увімкніть Bluetooth, щоб платити дотиком."
+});
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Érintés nélkül: címzett megadása (QR-kód, szobatárs, azonosító)":
+    "Без дотику: вкажіть одержувача (QR-код, учасник кімнати, ідентифікатор)"
+});
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Kész: a fizetés megérkezett, a nyugtát a másik telefon átvette.":
+    "Готово: платіж надійшов, інший телефон прийняв квитанцію."
+});
+
+// ===== 2026-10-29 pack list, compass bearing, SOS card stub, Bible download (Agnes: Hungarian in the EN UI) =====
+// Keys with {slots} are templates (index.html ppForditKitolt): the slots are filled after the lookup.
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "A kijelölt személyek együtt kb. {keret} kg-ot bírnak, a lista {lista} kg. A víz a legnehezebb: fontold meg a vízszűrőt kanna helyett, vagy vidd rövidebb szakaszra.": "Вибрані люди разом понесуть близько {keret} кг, список важить {lista} кг. Вода найважча: подумай про фільтр для води замість каністри або про коротший відрізок.",
+  "A készletedben most {kcal} van megadva, ami ennek az útnak a {sz}.": "У твоїх запасах зараз указано {kcal}, це {sz} того, що потрібно на цю дорогу.",
+  "A vészkártyád (vércsoport, allergia, gyógyszerek, kontakt) itt jelenik meg gyorsan.": "Твоя картка екстреної допомоги (група крові, алергія, ліки, контакт) швидко з'являється тут.",
+  "A víz csak az indulásra elég: a teljes igény {teljes} liter lenne, ebből {viz} liter megy veletek. A többit útközben kell megszerezni és tisztítani.": "Води вистачить лише на вихід: повна потреба становила б {teljes} л, з них {viz} л ідуть із вами. Решту треба здобути й очистити в дорозі.",
+  "A {haz} a saját adatlapodon pipáld be: {jelolo}.": "У розділі {haz}, у своїй анкеті, познач: {jelolo}.",
+  "A {hianyzik} jelölésűek a beszerzési listád. Most {n} ilyen van. A vizet és az élelmet a készlet KATEGÓRIÁJÁBÓL ismeri fel, a többit a nevéből.": "Позначене як {hianyzik} — твій список покупок. Зараз: {n}. Воду та їжу список упізнає за КАТЕГОРІЄЮ в запасах, решту — за назвою.",
+  "Allergia-gyógyszer ({all})": "Ліки від алергії ({all})",
+  "Az én adataim jelenjenek meg a vészkártyán": "Показувати мої дані на картці екстреної допомоги",
+  "Belefér: a kijelöltek kb. {keret} kg-ot bírnak.": "Вміщається: вибрані понесуть близько {keret} кг.",
+  "Csak azzal számol, amit elbírsz: 1,5 liter fejenként. Ez {tura} való, és a listán kiírom, mennyi hiányzik a teljes fejadaghoz.": "Рахує лише те, що ти понесеш: 1,5 літра на особу. Це {tura}, а в списку видно, скільки бракує до повної норми.",
+  "Csomaglista": "Список речей",
+  "EZ TÖBB, MINT AMIT ELBÍR": "БІЛЬШЕ, НІЖ МОЖЕ ПОНЕСТИ",
+  "Ez nehezebb, mint amit el tudtok vinni.": "Це важче, ніж ви можете понести.",
+  "Ez {olt} kategóriájú ruházatot kíván. A készletedben nincs ilyen tétel — a készletnél ez egy kategória.": "Для цього потрібен одяг категорії {olt}. У твоїх запасах такої позиції немає — у запасах це категорія.",
+  "Ez {olt} kategóriájú ruházatot kíván. A készletedben {n} ilyen tétel van.": "Для цього потрібен одяг категорії {olt}. Таких позицій у твоїх запасах: {n}.",
+  "Felvett irány: {fok} fok ({betu}). Visszafelé: {vfok} fok ({vbetu}). A zöld háromszög a felvett irányt mutatja.": "Записаний напрямок: {fok}° ({betu}). Назад: {vfok}° ({vbetu}). Зелений трикутник показує записаний напрямок.",
+  "Gyógyszer: {gy}": "Ліки: {gy}",
+  "Hiányzik még kb. {kcal} kcal.": "Бракує ще близько {kcal} ккал.",
+  "Háztartásban": "Домогосподарство",
+  "Nem sikerült: {ok}. Ehhez az egy lépéshez internet kell.": "Не вдалося: {ok}. Для цього одного кроку потрібен інтернет.",
+  "Nincs iránytű-adat, ezért nincs mit felvenni.": "Немає даних компаса, тому нічого записати.",
+  "Nála: {ossz} kg (ebből {sajat} kg a sajátja)": "Несе: {ossz} кг (з них {sajat} кг свого)",
+  "Nála: {ossz} kg (ebből {sajat} kg a sajátja, {kozos} kg a közösből)": "Несе: {ossz} кг (з них {sajat} кг свого і {kozos} кг зі спільного спорядження)",
+  "Sapka": "Шапка",
+  "Termosz meleg itallal": "Термос із гарячим напоєм",
+  "Vércsoport-kártya: {ver}": "Картка групи крові: {ver}",
+  "Víz ({kg} kg testtömegre)": "Вода (на {kg} кг маси тіла)",
+  "Zokni": "Шкарпетки",
+  "amit viszünk; a teljes igény {l} l": "що несемо; повна потреба {l} л",
+  "belefér": "вміщається",
+  "fejenként egy ({fo})": "по одному ({fo})",
+  "indulásra; a teljes igény {l} l lenne": "на вихід; повна потреба була б {l} л",
+  "megvan": "є",
+  "személyre szóló ({tipus})": "особисте ({tipus})",
+  "teherbírása {kg} kg": "понесе {kg} кг",
+  "túrához": "для походу",
+  "{kcal} kcal/nap × {nap}": "{kcal} ккал/день × {nap}",
+  "{kesz} / {ossz} bepakolva": "{kesz} / {ossz} спаковано",
+  "{kg} kg, elosztva {fo} között: fejenként kb. {fej} kg": "{kg} кг, на {fo}: приблизно по {fej} кг",
+  "{l} liter víz": "{l} л води",
+  "{napra} valójában {teljes} liter kellene, ennyit viszont nem lehet elvinni. Hiányzik {hiany} liter, amit útközben kell megszerezni: vízszűrő, víztisztító tabletta, ismert vízvételi pont. Ezt a listán is nézd meg.": "Насправді потрібно {teljes} л {napra}, але стільки не понести. Бракує {hiany} л, їх треба здобути в дорозі: фільтр для води, таблетки для очищення, відоме джерело води. Перевір це і в списку.",
+  "{nev}: be van írva a betegség ({b}), de nincs megadva gyógyszer. A Háztartás adatlapján pótolható.": "{nev}: указано хворобу ({b}), але не вказано ліків. Це можна доповнити в анкеті в Домогосподарстві.",
+  "{nev}: nincs megadva a testtömeg, 15 kg-mal számoltam. Az adatlapján javítható.": "{nev}: масу тіла не вказано, я рахував із 15 кг. Це можна виправити в анкеті.",
+  "{n} tételnél nincs megadva az energia (kcal/100 g), azok nem számítanak bele. A dobozról leolvasva pontosabb lesz a kép.": "Позиції без енергетичної цінності (ккал/100 г): {n}. Вони не враховуються. Якщо переписати її з упаковки, картина буде точнішою.",
+  "{n}%-a": "{n}%",
+  "{viz} l/nap × {nap}": "{viz} л/день × {nap}",
+  "Összesen {viz} és {kcal} élelem. Becsült tömeg: {kg}.": "Усього {viz} і {kcal} їжі. Орієнтовна вага: {kg}.",
+  "ÉÉK": "ПнПнСх",
+  "KÉK": "СхПнСх",
+  "KDK": "СхПдСх",
+  "DDK": "ПдПдСх",
+  "DDNy": "ПдПдЗх",
+  "NyDNy": "ЗхПдЗх",
+  "NyÉNy": "ЗхПнЗх",
+  "ÉÉNy": "ПнПнЗх"
+});
+// count patterns used by the pack list (`3 pár`, `5 napra`, `4 fő/állat` ...), same plural rules as above
+(function () {
+  const alak=(n,e,k,s)=>{const u=n%10,sz=n%100;if(u===1&&sz!==11)return e;if(u>=2&&u<=4&&!(sz>=12&&sz<=14))return k;return s;};
+  window.PP_FORD_MINTAK.uk.push(
+    { minta: /^(\d+) fő\/állat$/, csere: (_, n) => n + ' ' + alak(+n, 'людина/тварина', 'людини/тварини', 'людей/тварин') },
+    { minta: /^(\d+) napra$/, csere: (_, n) => 'на ' + n + ' ' + alak(+n, 'день', 'дні', 'днів') },
+    { minta: /^(\d+) csomag$/, csere: (_, n) => n + ' ' + alak(+n, 'упаковка', 'упаковки', 'упаковок') },
+    { minta: /^(\d+) szett$/, csere: (_, n) => n + ' ' + alak(+n, 'комплект', 'комплекти', 'комплектів') },
+    { minta: /^(\d+) pár$/, csere: (_, n) => n + ' ' + alak(+n, 'пара', 'пари', 'пар') }
+  );
+})();
+// map locate button title (2026-10-29, written by mapKovetJel)
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Követés bekapcsolva — koppints a középre igazításhoz": "Стеження ввімкнено — торкнися, щоб відцентрувати",
+  "Hol vagyok (követés visszakapcsolása)": "Де я (знову ввімкнути стеження)"
 });

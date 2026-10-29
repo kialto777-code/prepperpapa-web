@@ -15,6 +15,40 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-28 SOS sharing per room (TG 30631) =====
+  "Vészhelyzet ebben a szobában": "Urgență în această cameră",
+  "Szobánként döntöd el, mit kapnak meg az SOS-odból. Ha az SOS-t kikapcsolod, ebbe a szobába semmi nem megy; a hely és a vércsoport csak az SOS-üzenetben jelenik meg.": "Hotărăști pentru fiecare cameră ce primește din SOS-ul tău. Dacă oprești SOS-ul, în această cameră nu ajunge nimic; locația și grupa sanguină apar doar în mesajul SOS.",
+  "SOS-jelzésem ide is menjen": "SOS-ul meu să ajungă și aici",
+  "Lássák a GPS-helyzetemet az SOS-ban": "Să-mi vadă poziția GPS în SOS",
+  "Lássák a vércsoportomat az SOS-ban": "Să-mi vadă grupa sanguină în SOS",
+  "Később a szoba beállításaiban is átállíthatod.": "Poți schimba asta mai târziu în setările camerei.",
+  "Az SOS egyik szobádba sem ment el: a szobák beállításában mindenhol ki van kapcsolva. A vészsíp szól.": "SOS-ul nu a ajuns în niciuna dintre camerele tale: este oprit în setările tuturor. Pornește fluierul de urgență.",
+  "Szobánként, a szoba beállításaiban szűkítheted: melyik szoba kapja meg az SOS-t, és látszik-e benne a helyed és a vércsoportod.": "În setările fiecărei camere poți restrânge: care cameră primește SOS-ul și dacă se văd locația și grupa ta sanguină.",
+  "gombot, SOS üzenetet küld a helyzeteddel a szobáidba (ahová a szoba beállításában engedted), és megszólal a vészsíp.": ", trimite un mesaj SOS cu locația ta în camerele tale (cele ale căror setări permit) și pornește fluierul de urgență.",
+  "Esés után automatikus SOS: alapból ki van kapcsolva. Ha bekapcsolod, és a telefon nagy ütés után egy percig nem mozdul, hangosan visszaszámol. Ha nem nyomod meg a Jól vagyok gombot, SOS üzenetet küld a helyzeteddel a szobáidba (ahová a szoba beállításában engedted), és megszólal a vészsíp.": "SOS automat după o cădere: implicit este oprit. Dacă îl pornești și telefonul nu se mișcă un minut după un impact puternic, numără invers cu voce tare. Dacă nu apeși butonul Sunt bine, trimite un mesaj SOS cu locația ta în camerele tale (cele ale căror setări permit) și pornește fluierul de urgență.",
+  "Vészhelyzet: szobánként eldöntöd, hogy az SOS-od ide is menjen-e, és látszik-e benne a GPS-helyzeted és a vércsoportod. Alapból mindhárom be van kapcsolva.": "Urgență: pentru fiecare cameră hotărăști dacă SOS-ul tău ajunge și aici și dacă arată poziția ta GPS și grupa sanguină. Implicit toate trei sunt pornite.",
+  // ===== 2026-10-28 route planning: sunset / dark timing (TG 30629) =====
+  "Most": "Acum",
+  "Napnyugta előtt érkezel, a tartalék:": "Ajungi înainte de apus, rezervă:",
+  "Napnyugta után érkezel, ennyivel:": "Ajungi după apus, cu:",
+  "Sötétedés előtt még odaérsz.": "Ajungi totuși înainte de întuneric.",
+  "Sötétedés után érkezel.": "Ajungi după lăsarea întunericului.",
+  "Napnyugta után indulsz.": "Pornești după apus.",
+  "Sötétedés után indulsz.": "Pornești după lăsarea întunericului.",
+  "Napnyugtakor itt jársz, a kezdéstől:": "La apus ești aici, de la start:",
+  "Sötétedéskor itt jársz, a kezdéstől:": "La lăsarea întunericului ești aici, de la start:",
+  "Az út utolsó szakasza sötétben van:": "Ultima parte a traseului este pe întuneric:",
+  "A tábort a sötétedés pontja előtt válaszd ki.": "Alege locul de tabără înainte de punctul de întuneric.",
+  // ===== 2026-10-28 Barometer + Napkelte, napnyugta: own screens under Eszkozok (TG 30627) =====
+  "Barométer": "Barometru",
+  "Légnyomás, trend és viharjelzés": "Presiune, tendință și avertizare de furtună",
+  "Napkelte, napnyugta": "Răsărit, apus",
+  "Nap és hold: mennyi világosod van, holdfázis": "Soare și lună: câtă lumină de zi ai, faza lunii",
+  "Nem kaptunk engedélyt az iránytűhöz.": "Nu am primit permisiune pentru busolă.",
+  "Ez a készülék nem ad iránytű-adatot, vagy nincs rá engedély.": "Acest dispozitiv nu furnizează date de busolă sau nu există permisiune.",
+  "A nap pályájához tudni kell, hol vagy: az Eszközök, Napkelte, napnyugta lapon nyomd meg a „Mérés a helyzetemre” gombot.": "Pentru traiectoria soarelui aplicația trebuie să știe unde ești: în Unelte, Răsărit, apus apasă „Calculează pentru poziția mea”.",
+  "Tájoló: irány és azimut, a visszaút is.": "Busolă: direcție și azimut, și drumul înapoi.",
+  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a vad- és rovarriasztó, a barométer és a napkelte-napnyugta egy helyen.": "Unelte: calculatoarele, detectorul de metale, oglinda, repelentul pentru animale și insecte, barometrul și răsăritul-apusul într-un singur loc.",
   // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
   "Ez a fájl nem PrepperPapa mentés.": "Acest fișier nu este o copie de siguranță PrepperPapa.",
   "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "Nu este destul spațiu pe acest dispozitiv pentru restaurare. Nu s-a schimbat nimic.",
@@ -173,6 +207,8 @@ window.PP_FORD_SZOTAR.ro = {
   "Termékek": "Produse",
   "Teszt-adatok betöltve: 3 fő, 1 háziállat, 5 helyszín (köztük autó és hétvégi ház),": "Date de test încărcate: 3 persoane, 1 animal de companie, 5 locuri (inclusiv o mașină și o casă de vacanță),",
   "Vissza az igéhez": "Înapoi la verset",
+  "Panel összecsukása": "Restrânge panoul",
+  "Panel kinyitása": "Extinde panoul",
   "Vészkártyák": "Carduri de urgență",
   "adat frissítve a már felvett teszt-tagoknál": "date actualizate la membrii de test deja adăugați",
   "egy sincs": "niciunul",
@@ -3577,6 +3613,12 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Pontos időzítés engedélyezése": "Permite ora exactă",
  "A teljes képernyős értesítés nincs engedélyezve: lezárt telefonon csak értesítés jelenik meg, a felolvasás a koppintásra indul.": "Notificările pe tot ecranul nu sunt permise: pe un telefon blocat apare doar o notificare, iar citirea începe când o atingi.",
  "Teljes képernyő engedélyezése": "Permite ecranul complet",
+  // v43.407 (kartya 0ef65ebd): eszkoz-riasztas elore hozasa, szoba beallitasai
+  "Az értesítés nincs engedélyezve: enélkül a szoba riasztása nem jelenik meg a telefonon.": "Notificările nu sunt permise: fără ele alarma camerei nu apare pe telefon.",
+  "A teljes képernyős értesítés nincs engedélyezve: lezárt telefonon a riasztás csak értesítésként jelenik meg.": "Notificările pe ecran complet nu sunt permise: pe un telefon blocat alarma apare doar ca notificare.",
+  "A megjelenítés más alkalmazások felett nincs engedélyezve: amíg a telefont használod, a riasztás oldala nem ugrik elő, csak értesítés érkezik.": "Afișarea peste alte aplicații nu este permisă: cât timp folosești telefonul, pagina de alarmă nu apare, sosește doar o notificare.",
+  "Megjelenítés más alkalmazások felett": "Afișare peste alte aplicații",
+  "A szoba riasztása lezárt és használatban lévő telefonon is előreugrik.": "Alarma camerei apare pe telefonul blocat și în timp ce îl folosești.",
  "Az ébresztő be van állítva.": "Alarma este setată.",
  "Az ébresztőt most nem sikerült beállítani. Próbáld újra később.": "Alarma nu a putut fi setată acum. Încearcă din nou mai târziu.",
  "Bibliaolvasás ébresztő": "Alarmă pentru citirea Bibliei",
@@ -4563,4 +4605,172 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Nem adtál engedélyt. A riasztást ilyenkor a GPS-sebesség alapján szüneteltetem, ha van helyadat.": "Nu ai dat permisiunea. În acest caz alarma este suspendată pe baza vitezei GPS, dacă există date de localizare.",
  "Járműben vagy (a telefon mozgásfelismerése szerint): a riasztás szünetel, mert ilyenkor a nyomás az emelkedőtől és a szellőzéstől is változik.": "Ești într-un vehicul (după recunoașterea mișcării din telefon): alarma este suspendată, pentru că atunci presiunea se schimbă și din cauza pantelor și a ventilației.",
  "Az elmúlt órákban járműben is mért a telefon: a riasztást csak a kiszállás utáni mérésekből számolom.": "În ultimele ore telefonul a măsurat și în vehicul: alarma o calculez doar din măsurătorile de după coborâre."
+});
+
+// ===== GIRA: FIZETES ERINTESSEL (owner 2026-10-29): guided touch payment, re-delivery of a pending payment =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Fogadás érintéssel":
+    "Primește prin atingere",
+  "Fizetés érintéssel":
+    "Plătește prin atingere",
+  "Újra átadás":
+    "Predă din nou",
+  "Az összeg nulla vagy hiányzik.":
+    "Suma este zero sau lipsește.",
+  "Ez a fizetés már jóváírva volt nálad, másodszor nem írtam jóvá. A nyugtát újra kiadtam.":
+    "Această plată era deja creditată; nu a fost creditată a doua oară. Chitanța a fost emisă din nou.",
+  "A másik telefon érintéses fogadásra vár. Írd be az összeget, nyomd meg a Fizetés érintéssel gombot, és tartsátok össze a két telefont.":
+    "Celălalt telefon așteaptă primirea prin atingere. Introdu suma, apasă Plătește prin atingere și țineți cele două telefoane lipite.",
+  "A fizetés nem ért át: a két telefon túl hamar vált el. Tartsátok újra össze (a másik telefonon maradjon nyitva a Fogadás).":
+    "Plata nu a ajuns: telefoanele au fost despărțite prea devreme. Țineți-le din nou lipite (pe celălalt telefon să rămână deschis Primește).",
+  "Érintéssel nem vette át senki. A másik telefonon előbb nyomják meg a Beolvasás gombot, vagy olvassák be a QR-kódot.":
+    "Nimeni nu l-a preluat prin atingere. Pe celălalt telefon apăsați întâi Scanare sau scanați codul QR.",
+  "Érintésre vár. A másik telefonon legyen bekapcsolva a Fogadás érintéssel, és tartsátok össze a két telefont.":
+    "Așteaptă atingerea. Pe celălalt telefon trebuie să fie pornit Primește prin atingere; țineți cele două telefoane lipite.",
+  "Fizetés aláírva és átadva":
+    "Plată semnată și predată",
+  "Fizetés aláírása és átadása":
+    "Semnarea și predarea plății",
+  "Nyugta megérkezett. Kész.":
+    "Chitanță primită. Gata.",
+  "Nyugta visszaérkezése":
+    "Chitanța revine",
+  "Érintésre vár. A fizető telefonon a Fizetés érintéssel gombot nyomják meg, és tartsátok össze a két telefont.":
+    "Așteaptă atingerea. Pe telefonul care plătește apăsați Plătește prin atingere și țineți cele două telefoane lipite.",
+  "Azonosítód átadva, jön a fizetés…":
+    "ID-ul tău a fost predat, vine plata…",
+  "Megérkezett és jóváírva":
+    "Sosită și creditată",
+  "Fizetés megérkezése":
+    "Sosirea plății",
+  "Nyugta visszaküldve. Kész.":
+    "Chitanță trimisă înapoi. Gata.",
+  "Nyugta visszaküldése":
+    "Trimiterea chitanței înapoi",
+  "Még nem jött semmi. A másik telefonon előbb nyomják meg a Fogadás érintéssel gombot, aztán tartsátok össze a két telefont.":
+    "Încă nimic. Pe celălalt telefon apăsați întâi Primește prin atingere, apoi țineți cele două telefoane lipite.",
+  "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
+    "Încă nimic. Pe telefonul care plătește introduceți întâi suma și apăsați Plătește prin atingere, apoi țineți cele două telefoane lipite.",
+  "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
+    "Chitanța nu a revenit încă. Țineți din nou telefoanele lipite sau celălalt telefon să scaneze codul QR.",
+  "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":
+    "Plata nu a sosit încă. Țineți din nou telefoanele lipite.",
+  "A nyugta még nem ment vissza. Tartsátok újra össze a két telefont, vagy a fizető olvassa be a nyugta QR-kódját.":
+    "Chitanța nu a plecat încă înapoi. Țineți din nou telefoanele lipite sau cel care plătește să scaneze codul QR al chitanței.",
+  "Lejárt az idő. Nyomd meg újra a Fogadás érintéssel gombot.":
+    "Timpul a expirat. Apasă din nou Primește prin atingere.",
+  "Lejárt az idő. A fizetés nálad „átadásra vár”: a Mozgások között az Újra átadás gombbal még átadhatod.":
+    "Timpul a expirat. Plata „așteaptă predarea”: la Mișcări o mai poți preda cu Predă din nou.",
+  "Lejárt az idő, nem jött létre kapcsolat. A másik telefonon előbb nyomják meg a Fogadás érintéssel gombot, aztán nyomd meg újra a Fizetés érintéssel gombot.":
+    "Timpul a expirat, nu s-a făcut conexiunea. Pe celălalt telefon apăsați întâi Primește prin atingere, apoi apasă din nou Plătește prin atingere.",
+  "Ha az érintés nem megy: a fizető olvassa be ezt a QR-kódot.":
+    "Dacă atingerea nu merge: cel care plătește scanează acest cod QR.",
+  "Az érintéses átadás most nem indult el. Olvassák be a QR-kódot.":
+    "Predarea prin atingere nu a pornit. Scanați codul QR.",
+  "Az érintéses olvasás nem indult el. Próbáld újra, vagy használd a QR-kódot.":
+    "Citirea prin atingere nu a pornit. Încearcă din nou sau folosește codul QR.",
+  "Ez nem egy másik telefon azonosítója.":
+    "Acesta nu este ID-ul altui telefon.",
+  "Ez a fizetés nem ennek a telefonnak szól, hanem neki:":
+    "Această plată nu este pentru acest telefon, ci pentru:",
+  "A fizetés nem készült el.":
+    "Plata nu a fost creată.",
+  "A fizetés nem volt érvényes.":
+    "Plata nu a fost validă.",
+  "Ugyanaz az aláírt fizetés, nem új: a másik telefonon nyomják meg a Fogadás érintéssel gombot, és tartsátok össze a két telefont, vagy olvassa be ezt a QR-kódot.":
+    "Aceeași plată semnată, nu una nouă: pe celălalt telefon apăsați Primește prin atingere și țineți telefoanele lipite sau scanați acest cod QR.",
+  "Ugyanaz az aláírt fizetés, nem új: a másik telefon olvassa be ezt a QR-kódot.":
+    "Aceeași plată semnată, nu una nouă: celălalt telefon să scaneze acest cod QR."
+});
+
+// ===== GIRA: switch-on offer when the wallet opens (owner 2026-10-29 09:18) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Az érintéses fizetéshez kapcsold be az NFC-t.":
+    "Pornește NFC pentru a plăti prin atingere.",
+  "Az érintéses fizetéshez kapcsold be a Bluetooth-t.":
+    "Pornește Bluetooth pentru a plăti prin atingere."
+});
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Érintés nélkül: címzett megadása (QR-kód, szobatárs, azonosító)":
+    "Fără atingere: introdu destinatarul (cod QR, coleg de cameră, ID)"
+});
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Kész: a fizetés megérkezett, a nyugtát a másik telefon átvette.":
+    "Gata: plata a sosit, celălalt telefon a preluat chitanța."
+});
+
+// ===== 2026-10-29 pack list, compass bearing, SOS card stub, Bible download (Agnes: Hungarian in the EN UI) =====
+// Keys with {slots} are templates (index.html ppForditKitolt): the slots are filled after the lookup.
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A kijelölt személyek együtt kb. {keret} kg-ot bírnak, a lista {lista} kg. A víz a legnehezebb: fontold meg a vízszűrőt kanna helyett, vagy vidd rövidebb szakaszra.": "Persoanele selectate pot duce împreună cam {keret} kg, lista are {lista} kg. Apa este cea mai grea: ia în calcul un filtru de apă în loc de canistră sau o etapă mai scurtă.",
+  "A készletedben most {kcal} van megadva, ami ennek az útnak a {sz}.": "În stocul tău sunt trecute acum {kcal}, adică {sz} din cât îi trebuie acestui drum.",
+  "A vészkártyád (vércsoport, allergia, gyógyszerek, kontakt) itt jelenik meg gyorsan.": "Cardul tău de urgență (grupă de sânge, alergie, medicamente, contact) apare aici rapid.",
+  "A víz csak az indulásra elég: a teljes igény {teljes} liter lenne, ebből {viz} liter megy veletek. A többit útközben kell megszerezni és tisztítani.": "Apa ajunge doar pentru plecare: necesarul complet ar fi {teljes} litri, din care {viz} litri merg cu voi. Restul trebuie procurat și tratat pe drum.",
+  "A {haz} a saját adatlapodon pipáld be: {jelolo}.": "La {haz}, pe propria ta fișă, bifează: {jelolo}.",
+  "A {hianyzik} jelölésűek a beszerzési listád. Most {n} ilyen van. A vizet és az élelmet a készlet KATEGÓRIÁJÁBÓL ismeri fel, a többit a nevéből.": "Ce este marcat cu {hianyzik} este lista ta de cumpărături. Acum: {n}. Apa și mâncarea le recunoaște după CATEGORIA din stoc, restul după nume.",
+  "Allergia-gyógyszer ({all})": "Medicament pentru alergie ({all})",
+  "Az én adataim jelenjenek meg a vészkártyán": "Datele mele să apară pe cardul de urgență",
+  "Belefér: a kijelöltek kb. {keret} kg-ot bírnak.": "Încape: cei selectați pot duce cam {keret} kg.",
+  "Csak azzal számol, amit elbírsz: 1,5 liter fejenként. Ez {tura} való, és a listán kiírom, mennyi hiányzik a teljes fejadaghoz.": "Ia în calcul doar ce poți duce: 1,5 litri de persoană. Asta este {tura}, iar lista arată cât lipsește până la rația completă.",
+  "Csomaglista": "Listă de bagaje",
+  "EZ TÖBB, MINT AMIT ELBÍR": "MAI MULT DECÂT POATE DUCE",
+  "Ez nehezebb, mint amit el tudtok vinni.": "Este mai greu decât puteți duce.",
+  "Ez {olt} kategóriájú ruházatot kíván. A készletedben nincs ilyen tétel — a készletnél ez egy kategória.": "Asta cere îmbrăcăminte din categoria {olt}. În stocul tău nu există un astfel de articol — în stoc aceasta este o categorie.",
+  "Ez {olt} kategóriájú ruházatot kíván. A készletedben {n} ilyen tétel van.": "Asta cere îmbrăcăminte din categoria {olt}. Astfel de articole în stocul tău: {n}.",
+  "Felvett irány: {fok} fok ({betu}). Visszafelé: {vfok} fok ({vbetu}). A zöld háromszög a felvett irányt mutatja.": "Direcție înregistrată: {fok}° ({betu}). Întoarcere: {vfok}° ({vbetu}). Triunghiul verde arată direcția înregistrată.",
+  "Gyógyszer: {gy}": "Medicament: {gy}",
+  "Hiányzik még kb. {kcal} kcal.": "Mai lipsesc cam {kcal} kcal.",
+  "Háztartásban": "Gospodărie",
+  "Nem sikerült: {ok}. Ehhez az egy lépéshez internet kell.": "Nu a reușit: {ok}. Pentru acest singur pas e nevoie de internet.",
+  "Nincs iránytű-adat, ezért nincs mit felvenni.": "Nu există date de la busolă, deci nu e nimic de înregistrat.",
+  "Nála: {ossz} kg (ebből {sajat} kg a sajátja)": "Duce: {ossz} kg (din care {sajat} kg ale sale)",
+  "Nála: {ossz} kg (ebből {sajat} kg a sajátja, {kozos} kg a közösből)": "Duce: {ossz} kg (din care {sajat} kg ale sale și {kozos} kg din echipamentul comun)",
+  "Sapka": "Căciulă",
+  "Termosz meleg itallal": "Termos cu băutură caldă",
+  "Vércsoport-kártya: {ver}": "Card cu grupa de sânge: {ver}",
+  "Víz ({kg} kg testtömegre)": "Apă (pentru {kg} kg greutate corporală)",
+  "Zokni": "Șosete",
+  "amit viszünk; a teljes igény {l} l": "ce ducem; necesarul complet este {l} l",
+  "belefér": "încape",
+  "fejenként egy ({fo})": "câte unul ({fo})",
+  "indulásra; a teljes igény {l} l lenne": "pentru plecare; necesarul complet ar fi {l} l",
+  "megvan": "există",
+  "személyre szóló ({tipus})": "personal ({tipus})",
+  "teherbírása {kg} kg": "poate duce {kg} kg",
+  "túrához": "pentru drumeție",
+  "{kcal} kcal/nap × {nap}": "{kcal} kcal/zi × {nap}",
+  "{kesz} / {ossz} bepakolva": "{kesz} / {ossz} împachetate",
+  "{kg} kg, elosztva {fo} között: fejenként kb. {fej} kg": "{kg} kg, împărțite între {fo}: cam {fej} kg fiecare",
+  "{l} liter víz": "{l} litri de apă",
+  "{napra} valójában {teljes} liter kellene, ennyit viszont nem lehet elvinni. Hiányzik {hiany} liter, amit útközben kell megszerezni: vízszűrő, víztisztító tabletta, ismert vízvételi pont. Ezt a listán is nézd meg.": "De fapt ar trebui {teljes} litri {napra}, dar atât nu se poate duce. Lipsesc {hiany} litri, care trebuie procurați pe drum: filtru de apă, tablete de purificare, un punct de apă cunoscut. Verifică asta și pe listă.",
+  "{nev}: be van írva a betegség ({b}), de nincs megadva gyógyszer. A Háztartás adatlapján pótolható.": "{nev}: este trecută o boală ({b}), dar niciun medicament. Se poate completa pe fișa din Gospodărie.",
+  "{nev}: nincs megadva a testtömeg, 15 kg-mal számoltam. Az adatlapján javítható.": "{nev}: nu este dată greutatea corporală, am calculat cu 15 kg. Se poate corecta pe fișă.",
+  "{n} tételnél nincs megadva az energia (kcal/100 g), azok nem számítanak bele. A dobozról leolvasva pontosabb lesz a kép.": "Articole fără valoare energetică (kcal/100 g): {n}. Nu sunt luate în calcul. Citită de pe ambalaj, imaginea va fi mai exactă.",
+  "{n}%-a": "{n}%",
+  "{viz} l/nap × {nap}": "{viz} l/zi × {nap}",
+  "Összesen {viz} és {kcal} élelem. Becsült tömeg: {kg}.": "În total {viz} și {kcal} de mâncare. Greutate estimată: {kg}.",
+  "ÉÉK": "NNE",
+  "KÉK": "ENE",
+  "KDK": "ESE",
+  "DDK": "SSE",
+  "DDNy": "SSV",
+  "NyDNy": "VSV",
+  "NyÉNy": "VNV",
+  "ÉÉNy": "NNV"
+});
+// count patterns used by the pack list (`3 pár`, `5 napra`, `4 fő/állat` ...), same plural rules as above
+(function () {
+  const alak=(n,e,t,d)=>{if(n===1)return e;const r=n%100;return (n===0||(r>=1&&r<=19))?t:d;};
+  window.PP_FORD_MINTAK.ro.push(
+    { minta: /^(\d+) fő\/állat$/, csere: (_, n) => n + ' ' + alak(+n, 'persoană/animal', 'persoane/animale', 'de persoane/animale') },
+    { minta: /^(\d+) napra$/, csere: (_, n) => 'pentru ' + n + ' ' + alak(+n, 'zi', 'zile', 'de zile') },
+    { minta: /^(\d+) csomag$/, csere: (_, n) => n + ' ' + alak(+n, 'pachet', 'pachete', 'de pachete') },
+    { minta: /^(\d+) szett$/, csere: (_, n) => n + ' ' + alak(+n, 'set', 'seturi', 'de seturi') },
+    { minta: /^(\d+) pár$/, csere: (_, n) => n + ' ' + alak(+n, 'pereche', 'perechi', 'de perechi') }
+  );
+})();
+// map locate button title (2026-10-29, written by mapKovetJel)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Követés bekapcsolva — koppints a középre igazításhoz": "Urmărirea este pornită — atinge pentru centrare",
+  "Hol vagyok (követés visszakapcsolása)": "Unde sunt (repornește urmărirea)"
 });

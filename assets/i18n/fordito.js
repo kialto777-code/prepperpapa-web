@@ -195,6 +195,13 @@ function ppForditSzoveg(sz) {
   }
   return sz;
 }
+// TEMPLATE WITH NAMED SLOTS (2026-10-29, Agnes: Hungarian sentences in the EN pack list, compass, SOS card).
+// The dictionary key is the Hungarian sentence with {slot} markers, so a number or a name inside the sentence
+// no longer breaks the key; the slots are filled AFTER the lookup, in every language (Hungarian too).
+// Slot values go in as given: the caller escapes them when the result is used as HTML.
+function ppForditKitolt(sz, o) {
+  return ppForditSzoveg(sz).replace(/\{(\w+)\}/g, (_, k) => (o && o[k] != null) ? String(o[k]) : '');
+}
 let ppFordTimer = null, ppFordElsoJel = 0, ppFordUjraKell = false;
 function ppFordFigyeloIndit() {
   if (window.__ppFordFigyelo) return;
