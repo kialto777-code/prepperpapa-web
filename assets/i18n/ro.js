@@ -56,6 +56,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "Pe acest dispozitiv există deja datele tale (stoc, puncte, gospodărie). Restaurarea le înlocuiește cu cele din copie. Înainte, stocul și gospodăria ta ajung în copia de siguranță, pe care butonul „Restaurare din copia de siguranță” o aduce înapoi. Continui?",
   "Visszatöltöm": "Restaurez",
   "Hibás mentés-fájl.": "Fișier de copie invalid.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül. Visszatöltéskor a mentési kulcs kell.": "Copia de siguranță completă este criptată cu o cheie de copie aleasă de tine. Pentru restaurare este nevoie de cheia de copie.",
   "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "Copia de siguranță completă este criptată cu o cheie de copie aleasă de tine și conține și portofelul de tokenuri și Gíra ta (în spatele PIN-ului portofelului). La restaurare e nevoie de cheia de copie; apoi portofelul se deschide cu PIN-ul. Portofelul de documente nu este inclus.",
   "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Plățile făcute sau primite de la copie lipsesc din această carte (în cărțile celorlalți există), de aceea soldul poate diferi.",
   "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "Gíra din copie este deteriorată, de aceea nu s-a restaurat nimic.",
@@ -3305,6 +3306,7 @@ window.PP_FORD_MINTAK.ro = (function () {
   { minta: /^Lemaradás: (\d+) nap$/, csere: (_, n) => "Rămânere în urmă: " + n + ' ' + alak(+n, "zi", "zile", "de zile") },
   { minta: /^Előrébb jársz: (\d+) nap$/, csere: (_, n) => "Înainte cu: " + n + ' ' + alak(+n, "zi", "zile", "de zile") },
   { minta: /^Napi átlag: ([\d,]+) fejezet$/, csere: "Medie zilnică: $1 capitole" },
+  { minta: /^Heti átlag: (\d+) fejezet$/, csere: "Medie săptămânală: $1 capitole" },
   { minta: /^(\d+)\. nap( •)?$/, csere: (_, n, p) => "Ziua #".replace('#', n) + (p || '') },
   ];
 })();
@@ -3599,6 +3601,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Az olvasmány vége": "Sfârșitul lecturii",
  "Vissza a tervemhez": "Înapoi la planul meu",
  "Ébresztő": "Alarmă",
+ "Ébresztő bekapcsolva": "Alarmă activată",
  "Reggel felébreszti a telefont, és felolvassa a terv mai olvasmányát.": "Trezește telefonul dimineața și citește cu voce tare lectura de azi din plan.",
  "Bekapcsolva": "Pornită",
  "Időpont": "Ora",
@@ -4772,7 +4775,18 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
 // map locate button title (2026-10-29, written by mapKovetJel)
 Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Urmărirea este pornită — atinge pentru centrare",
-  "Hol vagyok (követés visszakapcsolása)": "Unde sunt (repornește urmărirea)"
+  "Hol vagyok (követés visszakapcsolása)": "Unde sunt (repornește urmărirea)",
+  "Hol vagyok": "Unde sunt"
+});
+// Bible prayer timer, weekly reading plans, map route GPX button (2026-10-29, untranslated-text sweep)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Ismétlés": "Repetare",
+  "mp": "s",
+  "GPX mentése": "Salvează GPX",
+  "Teljes Biblia egy év alatt, heti bontásban": "Toată Biblia într-un an, pe săptămâni",
+  "Kronologikus Biblia egy év alatt, heti bontásban": "Biblia cronologic într-un an, pe săptămâni",
+  "A könyvek sorrendjében, hetente egy adag.": "În ordinea cărților, o porție pe săptămână.",
+  "Az események időrendjében, hetente egy adag.": "În ordinea evenimentelor, o porție pe săptămână."
 });
 // Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
 Object.assign(window.PP_FORD_SZOTAR.ro, {

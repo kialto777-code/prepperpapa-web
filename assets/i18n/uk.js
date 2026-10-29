@@ -56,6 +56,7 @@ window.PP_FORD_SZOTAR.uk = {
   "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "На цьому пристрої вже є ваші власні дані (запаси, точки, господарство). Відновлення замінить їх даними з копії. Перед цим ваші запаси й господарство потраплять до страхувальної копії, яку повертає кнопка «Відновити зі страхувальної копії». Продовжити?",
   "Visszatöltöm": "Відновити",
   "Hibás mentés-fájl.": "Неправильний файл копії.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül. Visszatöltéskor a mentési kulcs kell.": "Повна резервна копія шифрується обраним вами ключем копії. Для відновлення потрібен ключ копії.",
   "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "Повна резервна копія шифрується обраним вами ключем копії й містить також токен-гаманець і вашу Гіру (за PIN-кодом гаманця). Для відновлення потрібен ключ копії, після цього гаманець відкривається PIN-кодом. Гаманець документів до неї не входить.",
   "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Платежі, зроблені або отримані після створення копії, у цій книзі відсутні (у книгах інших вони є), тому баланс може відрізнятися.",
   "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "Гіра в копії пошкоджена, тому нічого не відновлено.",
@@ -3368,6 +3369,7 @@ window.PP_FORD_MINTAK.uk = (function () {
   { minta: /^Lemaradás: (\d+) nap$/, csere: (_, n) => "Відставання: " + n + ' ' + alak(+n, "день", "дні", "днів") },
   { minta: /^Előrébb jársz: (\d+) nap$/, csere: (_, n) => "Випередження: " + n + ' ' + alak(+n, "день", "дні", "днів") },
   { minta: /^Napi átlag: ([\d,]+) fejezet$/, csere: "У середньому на день: $1 розд." },
+  { minta: /^Heti átlag: (\d+) fejezet$/, csere: "У середньому на тиждень: $1 розд." },
   { minta: /^(\d+)\. nap( •)?$/, csere: (_, n, p) => "День #".replace('#', n) + (p || '') },
   ];
 })();
@@ -3663,6 +3665,7 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
  "Az olvasmány vége": "Кінець читання",
  "Vissza a tervemhez": "Назад до мого плану",
  "Ébresztő": "Будильник",
+ "Ébresztő bekapcsolva": "Будильник увімкнено",
  "Reggel felébreszti a telefont, és felolvassa a terv mai olvasmányát.": "Вранці будить телефон і читає вголос сьогоднішнє читання з плану.",
  "Bekapcsolva": "Увімкнено",
  "Időpont": "Час",
@@ -4843,7 +4846,18 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
 // map locate button title (2026-10-29, written by mapKovetJel)
 Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Стеження ввімкнено — торкнися, щоб відцентрувати",
-  "Hol vagyok (követés visszakapcsolása)": "Де я (знову ввімкнути стеження)"
+  "Hol vagyok (követés visszakapcsolása)": "Де я (знову ввімкнути стеження)",
+  "Hol vagyok": "Де я"
+});
+// Bible prayer timer, weekly reading plans, map route GPX button (2026-10-29, untranslated-text sweep)
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Ismétlés": "Повтор",
+  "mp": "с",
+  "GPX mentése": "Зберегти GPX",
+  "Teljes Biblia egy év alatt, heti bontásban": "Уся Біблія за рік, по тижнях",
+  "Kronologikus Biblia egy év alatt, heti bontásban": "Хронологічна Біблія за рік, по тижнях",
+  "A könyvek sorrendjében, hetente egy adag.": "У порядку книг, одна порція на тиждень.",
+  "Az események időrendjében, hetente egy adag.": "У порядку подій, одна порція на тиждень."
 });
 // Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
 Object.assign(window.PP_FORD_SZOTAR.uk, {

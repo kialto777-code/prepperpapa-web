@@ -53,6 +53,7 @@ window.PP_FORD_SZOTAR.es = {
   "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "Este dispositivo ya tiene datos propios (inventario, puntos, hogar). La restauración los sustituye por los de la copia. Antes, tu inventario y tu hogar pasan a la copia de seguridad interna, que el botón «Restaurar desde la copia de seguridad» recupera. ¿Continuar?",
   "Visszatöltöm": "Restaurar",
   "Hibás mentés-fájl.": "Archivo de copia no válido.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül. Visszatöltéskor a mentési kulcs kell.": "La copia de seguridad completa se cifra con una clave de copia que eliges tú. Para restaurarla hace falta la clave de copia.",
   "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "La copia de seguridad completa se cifra con una clave de copia que eliges tú, y también contiene el monedero de tokens y tu Gíra (tras el PIN del monedero). Para restaurarla hace falta la clave de copia; después el monedero se abre con el PIN. La cartera de documentos no se incluye.",
   "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Los pagos que hiciste o recibiste desde la copia faltan en este libro (en los libros de los demás siguen estando), por eso el saldo puede diferir.",
   "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "La Gíra de la copia está dañada, por eso no se ha restaurado nada.",
@@ -3298,6 +3299,7 @@ window.PP_FORD_MINTAK.es = (function () {
   { minta: /^Lemaradás: (\d+) nap$/, csere: (_, n) => "Retraso: " + n + ' ' + alak(+n, "día", "días") },
   { minta: /^Előrébb jársz: (\d+) nap$/, csere: (_, n) => "Adelanto: " + n + ' ' + alak(+n, "día", "días") },
   { minta: /^Napi átlag: ([\d,]+) fejezet$/, csere: "Media diaria: $1 capítulos" },
+  { minta: /^Heti átlag: (\d+) fejezet$/, csere: "Media semanal: $1 capítulos" },
   { minta: /^(\d+)\. nap( •)?$/, csere: (_, n, p) => "Día #".replace('#', n) + (p || '') },
   ];
 })();
@@ -3592,6 +3594,7 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
  "Az olvasmány vége": "Fin de la lectura",
  "Vissza a tervemhez": "Volver a mi plan",
  "Ébresztő": "Alarma",
+ "Ébresztő bekapcsolva": "Alarma activada",
  "Reggel felébreszti a telefont, és felolvassa a terv mai olvasmányát.": "Despierta el teléfono por la mañana y lee en voz alta la lectura de hoy del plan.",
  "Bekapcsolva": "Activada",
  "Időpont": "Hora",
@@ -4765,7 +4768,18 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
 // map locate button title (2026-10-29, written by mapKovetJel)
 Object.assign(window.PP_FORD_SZOTAR.es, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Seguimiento activado — toca para centrar",
-  "Hol vagyok (követés visszakapcsolása)": "Dónde estoy (volver a activar el seguimiento)"
+  "Hol vagyok (követés visszakapcsolása)": "Dónde estoy (volver a activar el seguimiento)",
+  "Hol vagyok": "Dónde estoy"
+});
+// Bible prayer timer, weekly reading plans, map route GPX button (2026-10-29, untranslated-text sweep)
+Object.assign(window.PP_FORD_SZOTAR.es, {
+  "Ismétlés": "Repetición",
+  "mp": "s",
+  "GPX mentése": "Guardar GPX",
+  "Teljes Biblia egy év alatt, heti bontásban": "Toda la Biblia en un año, por semanas",
+  "Kronologikus Biblia egy év alatt, heti bontásban": "Biblia cronológica en un año, por semanas",
+  "A könyvek sorrendjében, hetente egy adag.": "En el orden de los libros, una porción por semana.",
+  "Az események időrendjében, hetente egy adag.": "En el orden de los acontecimientos, una porción por semana."
 });
 // Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
 Object.assign(window.PP_FORD_SZOTAR.es, {

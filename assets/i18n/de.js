@@ -58,6 +58,7 @@ window.PP_FORD_SZOTAR.de = {
   "Ezen a készüléken már vannak saját adataid (készlet, pontok, háztartás). A visszatöltés ezeket a mentésben levőkre cseréli. Előtte a készleted és a háztartásod biztonsági másolatba kerül, amit a „Visszaállítás a biztonsági másolatból” gomb visszahoz. Folytatod?": "Auf diesem Gerät gibt es bereits eigene Daten (Vorrat, Punkte, Haushalt). Die Wiederherstellung ersetzt sie durch die Daten der Sicherung. Vorher kommen dein Vorrat und dein Haushalt in die Sicherheitskopie, die der Knopf „Aus der Sicherheitskopie wiederherstellen“ zurückholt. Fortfahren?",
   "Visszatöltöm": "Wiederherstellen",
   "Hibás mentés-fájl.": "Ungültige Sicherungsdatei.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül. Visszatöltéskor a mentési kulcs kell.": "Die vollständige Sicherung wird mit einem von dir gewählten Sicherungsschlüssel verschlüsselt. Zum Wiederherstellen brauchst du den Sicherungsschlüssel.",
   "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "Die vollständige Sicherung wird mit einem von dir gewählten Sicherungsschlüssel verschlüsselt und enthält auch die Token-Brieftasche und deine Gíra (hinter der PIN der Brieftasche). Zum Wiederherstellen brauchst du den Sicherungsschlüssel, danach öffnet sich die Brieftasche mit der PIN. Die Dokumentenmappe ist nicht enthalten.",
   "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Zahlungen, die du seit der Sicherung geleistet oder erhalten hast, fehlen in diesem Buch (in den Büchern der anderen sind sie vorhanden), daher kann der Kontostand abweichen.",
   "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "Die Gíra in der Sicherung ist beschädigt, daher wurde nichts wiederhergestellt.",
@@ -3303,6 +3304,7 @@ window.PP_FORD_MINTAK.de = (function () {
   { minta: /^Lemaradás: (\d+) nap$/, csere: (_, n) => "Rückstand: " + n + ' ' + alak(+n, "Tag", "Tage") },
   { minta: /^Előrébb jársz: (\d+) nap$/, csere: (_, n) => "Vorsprung: " + n + ' ' + alak(+n, "Tag", "Tage") },
   { minta: /^Napi átlag: ([\d,]+) fejezet$/, csere: "Tagesdurchschnitt: $1 Kapitel" },
+  { minta: /^Heti átlag: (\d+) fejezet$/, csere: "Wochendurchschnitt: $1 Kapitel" },
   { minta: /^(\d+)\. nap( •)?$/, csere: (_, n, p) => "Tag #".replace('#', n) + (p || '') },
   ];
 })();
@@ -3597,6 +3599,7 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
  "Az olvasmány vége": "Ende der Lesung",
  "Vissza a tervemhez": "Zurück zu meinem Plan",
  "Ébresztő": "Wecker",
+ "Ébresztő bekapcsolva": "Wecker eingeschaltet",
  "Reggel felébreszti a telefont, és felolvassa a terv mai olvasmányát.": "Weckt das Telefon am Morgen und liest die heutige Lesung des Plans vor.",
  "Bekapcsolva": "Ein",
  "Időpont": "Uhrzeit",
@@ -4770,7 +4773,18 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
 // map locate button title (2026-10-29, written by mapKovetJel)
 Object.assign(window.PP_FORD_SZOTAR.de, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Standortverfolgung an — tippen zum Zentrieren",
-  "Hol vagyok (követés visszakapcsolása)": "Wo bin ich (Standortverfolgung wieder einschalten)"
+  "Hol vagyok (követés visszakapcsolása)": "Wo bin ich (Standortverfolgung wieder einschalten)",
+  "Hol vagyok": "Wo bin ich"
+});
+// Bible prayer timer, weekly reading plans, map route GPX button (2026-10-29, untranslated-text sweep)
+Object.assign(window.PP_FORD_SZOTAR.de, {
+  "Ismétlés": "Wiederholung",
+  "mp": "s",
+  "GPX mentése": "GPX speichern",
+  "Teljes Biblia egy év alatt, heti bontásban": "Die ganze Bibel in einem Jahr, wochenweise",
+  "Kronologikus Biblia egy év alatt, heti bontásban": "Chronologische Bibel in einem Jahr, wochenweise",
+  "A könyvek sorrendjében, hetente egy adag.": "In der Reihenfolge der Bücher, ein Abschnitt pro Woche.",
+  "Az események időrendjében, hetente egy adag.": "In der Reihenfolge der Ereignisse, ein Abschnitt pro Woche."
 });
 // Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
 Object.assign(window.PP_FORD_SZOTAR.de, {

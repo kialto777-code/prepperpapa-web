@@ -60,6 +60,7 @@ window.PP_FORD_SZOTAR.en = {
   "Visszatöltés": "Restore",
   "Visszatöltöm": "Restore",
   "Hibás mentés-fájl.": "Invalid backup file.",
+  "A teljes mentés egy általad választott mentési kulccsal titkosítva készül. Visszatöltéskor a mentési kulcs kell.": "The full backup is encrypted with a backup key you choose. Restoring it needs the backup key.",
   "A teljes mentés egy általad választott mentési kulccsal titkosítva készül, és benne van a Token tárca és a Gíra is (a tárca PIN-je mögött). Visszatöltéskor a mentési kulcs kell, utána a tárca a PIN-nel nyílik. Az irattárca nem kerül bele.": "The full backup is encrypted with a backup key you choose, and it also contains the Token wallet and your Gíra (behind the wallet PIN). Restoring needs the backup key; afterwards the wallet opens with the PIN. The document wallet is not included.",
   "A mentés óta indított vagy kapott fizetéseid ebből a könyvből hiányoznak (a többiek könyvében megvannak), ezért az egyenleg eltérhet.": "Payments you made or received since the backup are missing from this book (the others' books still have them), so the balance may differ.",
   "A mentésben levő Gíra sérült, ezért nem töltöttünk vissza semmit.": "The Gíra in the backup is damaged, so nothing was restored.",
@@ -3640,6 +3641,7 @@ window.PP_FORD_MINTAK.en = (function () {
   { minta: /^Lemaradás: (\d+) nap$/, csere: (_, n) => 'Behind by ' + n + ' ' + alak(+n, "day", "days") },
   { minta: /^Előrébb jársz: (\d+) nap$/, csere: (_, n) => 'Ahead by ' + n + ' ' + alak(+n, "day", "days") },
   { minta: /^Napi átlag: ([\d,]+) fejezet$/, csere: "Daily average: $1 chapters" },
+  { minta: /^Heti átlag: (\d+) fejezet$/, csere: "Weekly average: $1 chapters" },
   { minta: /^(\d+)\. nap( •)?$/, csere: (_, n, p) => "Day #".replace('#', n) + (p || '') },
   ];
 })();
@@ -3935,6 +3937,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "Az olvasmány vége": "End of the reading",
  "Vissza a tervemhez": "Back to my plan",
  "Ébresztő": "Alarm",
+ "Ébresztő bekapcsolva": "Alarm on",
  "Reggel felébreszti a telefont, és felolvassa a terv mai olvasmányát.": "Wakes the phone in the morning and reads today's reading of the plan aloud.",
  "Bekapcsolva": "On",
  "Kikapcsolva": "Off",
@@ -5119,7 +5122,18 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
 // map locate button title (2026-10-29, written by mapKovetJel)
 Object.assign(window.PP_FORD_SZOTAR.en, {
   "Követés bekapcsolva — koppints a középre igazításhoz": "Following is on — tap to centre",
-  "Hol vagyok (követés visszakapcsolása)": "Where am I (turn following back on)"
+  "Hol vagyok (követés visszakapcsolása)": "Where am I (turn following back on)",
+  "Hol vagyok": "Where am I"
+});
+// Bible prayer timer, weekly reading plans, map route GPX button (2026-10-29, untranslated-text sweep)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Ismétlés": "Repeat",
+  "mp": "s",
+  "GPX mentése": "Save GPX",
+  "Teljes Biblia egy év alatt, heti bontásban": "Whole Bible in a year, week by week",
+  "Kronologikus Biblia egy év alatt, heti bontásban": "Chronological Bible in a year, week by week",
+  "A könyvek sorrendjében, hetente egy adag.": "In book order, one portion a week.",
+  "Az események időrendjében, hetente egy adag.": "In the order of events, one portion a week."
 });
 // Bible: original words on tap (Biblia premium, card cf02b3ee, 2026-10-29)
 Object.assign(window.PP_FORD_SZOTAR.en, {
