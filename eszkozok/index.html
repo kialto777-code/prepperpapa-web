@@ -98,6 +98,17 @@
   .pp .cta{margin:24px 0 10px}
   .pp .halk{color:var(--muted);font-size:15px}
 
+  #pp-termek-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-termek-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;background:#0f1612;color:inherit}
+  #pp-termek-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-termek-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-termek-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-termek-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-termek-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-termek-ertesito .pp-hl-figyelem{margin:6px 0 -4px;color:var(--borostyan)}
+  #pp-termek-ertesito .pp-urlap-megj{margin:0;font-size:13px;color:#9fb0a4;line-height:1.5}
+  #pp-termek-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-termek-ertesito-uzenet.hiba{color:#ff8a65}
   .pp h3{font-size:20px;margin:26px 0 8px;color:var(--borostyan)}
   .pp table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:16px}
   .pp td,.pp th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;color:#cfd6cf;vertical-align:top}
@@ -325,6 +336,38 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <h2>Mikor lesznek kaphatók?</h2>
 <p>Az eszközök fejlesztés alatt állnak. Áruk és megjelenésük időpontja még nincs.</p>
+<p>Szeretnéd tudni, mikor lesznek kaphatók? Add meg az e-mail-címedet, és szólunk, amikor új PrepperPapa termék jelenik meg.</p>
+<form id="pp-termek-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="E-mail-címed" aria-label="E-mail-cím">
+<label><input type="checkbox" name="hozzajarul" required><span>Hozzájárulok, hogy a PrepperPapa e-mailben értesítsen az újonnan megjelenő termékeiről. <a href="/adatkezeles.html#ertesito">Adatkezelés</a></span></label>
+<p class="pp-hl-figyelem"><strong>Elsőként értesülsz az akciókról, kuponokról és az új funkciókról.</strong></p>
+<label><input type="checkbox" name="hirlevel"><span>Szeretnék hírlevelet is kapni a PrepperPapáról (újdonságok, tippek, ajánlatok), legfeljebb havonta néhány alkalommal. A hírlevelet a Brevo küldi megnyitás-követéssel (láthatatlan kép); a hozzájárulásom bármikor visszavonhatom, a levelekben lévő leiratkozás hivatkozással is. Részletek: <a href="/adatkezeles.html#hirlevel">adatkezelési tájékoztató</a>, 5. pont.</span></label>
+<p class="pp-urlap-megj">A megerősítő levelet a Brevo küldi, megnyitás-követéssel (láthatatlan kép); a feliratkozással ebbe is beleegyezel. Részletek: <a href="/adatkezeles.html#ertesito">adatkezelési tájékoztató</a>, 4. pont.</p>
+<button class="btn amber" type="submit">Értesítést kérek</button>
+<p id="pp-termek-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+  // new-products signup (endpoint: app.prepperpapa.hu, tema termekek, consent required)
+  var f=document.getElementById('pp-termek-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-termek-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Az értesítéshez kérjük, jelöld be a hozzájárulást.';return;}
+    b.disabled=true; b.textContent='Küldés...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:f.email.value.trim(),hozzajarul:true,hirlevel:((f.hirlevel&&f.hirlevel.checked)||undefined),hirlevel_szoveg:((f.hirlevel&&f.hirlevel.checked)?f.hirlevel.closest('label').textContent.trim():undefined),tema:'termekek',forras:'eszkozok-oldal',nyelv:'hu'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Köszönjük! Küldtünk egy megerősítő e-mailt: a feliratkozás a benne lévő gombbal válik érvényessé.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Túl sok próbálkozás. Kérjük, próbáld újra pár perc múlva.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Most nem sikerült elküldeni. Kérjük, próbáld újra később.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='Most nem sikerült elküldeni. Ellenőrizd a kapcsolatot, és próbáld újra.';})
+    .then(function(){b.disabled=false;b.textContent='Értesítést kérek';});
+  });
+})();
+</script>
 <p><a href="/app/">&larr; Vissza az alkalmazáshoz</a></p>
 </div>
 </main>

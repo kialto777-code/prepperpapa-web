@@ -98,6 +98,17 @@
   .pp .cta{margin:24px 0 10px}
   .pp .halk{color:var(--muted);font-size:15px}
 
+  #pp-termek-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-termek-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;background:#0f1612;color:inherit}
+  #pp-termek-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-termek-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-termek-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-termek-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-termek-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-termek-ertesito .pp-hl-figyelem{margin:6px 0 -4px;color:var(--borostyan)}
+  #pp-termek-ertesito .pp-urlap-megj{margin:0;font-size:13px;color:#9fb0a4;line-height:1.5}
+  #pp-termek-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-termek-ertesito-uzenet.hiba{color:#ff8a65}
   .pp h3{font-size:20px;margin:26px 0 8px;color:var(--borostyan)}
   .pp table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:16px}
   .pp td,.pp th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;color:#cfd6cf;vertical-align:top}
@@ -317,6 +328,38 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <h2>When will they be available?</h2>
 <p>The devices are in development. There is no price or release date yet.</p>
+<p>Want to know when they become available? Enter your e-mail address and we will let you know when a new PrepperPapa product is released.</p>
+<form id="pp-termek-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Your e-mail address" aria-label="E-mail address">
+<label><input type="checkbox" name="hozzajarul" required><span>I agree that PrepperPapa may notify me by e-mail about its newly released products. <a href="/en/privacy.html#notifications">Privacy</a></span></label>
+<p class="pp-hl-figyelem"><strong>Be the first to hear about deals, coupons and new features.</strong></p>
+<label><input type="checkbox" name="hirlevel"><span>I would also like to receive the PrepperPapa newsletter (news, tips, offers), at most a few times a month. The newsletter is sent by Brevo with open tracking (an invisible image); I can withdraw my consent at any time, including through the unsubscribe link in the messages. Details: <a href="/en/privacy.html#hirlevel">privacy notice</a>, section 5.</span></label>
+<p class="pp-urlap-megj">The confirmation message is sent by Brevo with open tracking (an invisible image); by signing up you also consent to this. Details: <a href="/en/privacy.html#notifications">privacy notice</a>, section 4.</p>
+<button class="btn amber" type="submit">Notify me</button>
+<p id="pp-termek-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+  // new-products signup (endpoint: app.prepperpapa.hu, tema termekek, consent required)
+  var f=document.getElementById('pp-termek-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-termek-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Please tick the consent box to get the notification.';return;}
+    b.disabled=true; b.textContent='Sending...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:f.email.value.trim(),hozzajarul:true,hirlevel:((f.hirlevel&&f.hirlevel.checked)||undefined),hirlevel_szoveg:((f.hirlevel&&f.hirlevel.checked)?f.hirlevel.closest('label').textContent.trim():undefined),tema:'termekek',forras:'eszkozok-oldal-en',nyelv:'en'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Thank you! We have sent you a confirmation e-mail: your sign-up becomes valid with the button in it.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Too many attempts. Please try again in a few minutes.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Sending failed this time. Please try again later.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='Sending failed this time. Check your connection and try again.';})
+    .then(function(){b.disabled=false;b.textContent='Notify me';});
+  });
+})();
+</script>
 <p><a href="/en/app/">&larr; Back to the app</a></p>
 </div>
 </main>

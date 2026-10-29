@@ -98,6 +98,17 @@
   .pp .cta{margin:24px 0 10px}
   .pp .halk{color:var(--muted);font-size:15px}
 
+  #pp-termek-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-termek-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;background:#0f1612;color:inherit}
+  #pp-termek-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-termek-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-termek-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-termek-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-termek-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-termek-ertesito .pp-hl-figyelem{margin:6px 0 -4px;color:var(--borostyan)}
+  #pp-termek-ertesito .pp-urlap-megj{margin:0;font-size:13px;color:#9fb0a4;line-height:1.5}
+  #pp-termek-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-termek-ertesito-uzenet.hiba{color:#ff8a65}
   .pp h3{font-size:20px;margin:26px 0 8px;color:var(--borostyan)}
   .pp table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:16px}
   .pp td,.pp th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;color:#cfd6cf;vertical-align:top}
@@ -317,6 +328,38 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <h2>Când vor fi disponibile?</h2>
 <p>Dispozitivele sunt în dezvoltare. Încă nu au preț și nici dată de lansare.</p>
+<p>Vrei să știi când vor fi disponibile? Introdu adresa de e-mail și te anunțăm când apare un produs nou PrepperPapa.</p>
+<form id="pp-termek-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Adresa ta de e-mail" aria-label="Adresă de e-mail">
+<label><input type="checkbox" name="hozzajarul" required><span>Sunt de acord ca PrepperPapa să mă anunțe prin e-mail despre produsele sale noi. <a href="/ro/confidentialitate.html#notificari">Protecția datelor</a></span></label>
+<p class="pp-hl-figyelem"><strong>Afli primul despre oferte, cupoane și funcții noi.</strong></p>
+<label><input type="checkbox" name="hirlevel"><span>Doresc să primesc și buletinul informativ PrepperPapa (noutăți, sfaturi, oferte), de cel mult câteva ori pe lună. Buletinul este trimis de Brevo cu urmărirea deschiderii (o imagine invizibilă); îmi pot retrage oricând consimțământul, inclusiv prin linkul de dezabonare din mesaje. Detalii: <a href="/ro/confidentialitate.html#hirlevel">nota de confidențialitate</a>, secțiunea 5.</span></label>
+<p class="pp-urlap-megj">Mesajul de confirmare este trimis de Brevo cu urmărirea deschiderii (o imagine invizibilă); prin abonare îți dai acordul și pentru aceasta. Detalii: <a href="/ro/confidentialitate.html#notificari">nota de confidențialitate</a>, secțiunea 4.</p>
+<button class="btn amber" type="submit">Vreau să fiu anunțat(ă)</button>
+<p id="pp-termek-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+  // new-products signup (endpoint: app.prepperpapa.hu, tema termekek, consent required)
+  var f=document.getElementById('pp-termek-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-termek-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Pentru notificare, te rugăm să bifezi consimțământul.';return;}
+    b.disabled=true; b.textContent='Se trimite...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:f.email.value.trim(),hozzajarul:true,hirlevel:((f.hirlevel&&f.hirlevel.checked)||undefined),hirlevel_szoveg:((f.hirlevel&&f.hirlevel.checked)?f.hirlevel.closest('label').textContent.trim():undefined),tema:'termekek',forras:'eszkozok-oldal-ro',nyelv:'ro'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Mulțumim! Ți-am trimis un e-mail de confirmare: abonarea devine valabilă prin butonul din acesta.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Prea multe încercări. Te rugăm să încerci din nou peste câteva minute.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Momentan nu s-a putut trimite. Te rugăm să încerci din nou mai târziu.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='Momentan nu s-a putut trimite. Verifică conexiunea și încearcă din nou.';})
+    .then(function(){b.disabled=false;b.textContent='Vreau să fiu anunțat(ă)';});
+  });
+})();
+</script>
 <p><a href="/ro/app/">&larr; Înapoi la aplicație</a></p>
 </div>
 </main>

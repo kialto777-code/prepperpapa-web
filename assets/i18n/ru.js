@@ -4668,6 +4668,10 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
     "Пока ничего. На другом телефоне сначала нажмите «Получить касанием», затем приложите телефоны друг к другу.",
   "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
     "Пока ничего. На телефоне плательщика сначала введите сумму и нажмите «Оплатить касанием», затем приложите телефоны друг к другу.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont, vagy a Beolvasás gombbal olvasd be a nyugta QR-kódját a másik telefonról.":
+    "Платёж прошёл, квитанция ещё не пришла. Приложите телефоны снова или отсканируйте кнопкой «Сканировать» QR-код квитанции на другом телефоне.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont.":
+    "Платёж прошёл, квитанция ещё не пришла. Приложите телефоны снова.",
   "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
     "Квитанция ещё не вернулась. Приложите телефоны снова или пусть другой телефон отсканирует QR-код.",
   "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":

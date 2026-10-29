@@ -4665,6 +4665,10 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
     "Jeszcze nic. Na drugim telefonie najpierw naciśnijcie Odbierz dotykiem, potem przyłóżcie telefony do siebie.",
   "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
     "Jeszcze nic. Na telefonie płacącego najpierw wpiszcie kwotę i naciśnijcie Zapłać dotykiem, potem przyłóżcie telefony do siebie.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont, vagy a Beolvasás gombbal olvasd be a nyugta QR-kódját a másik telefonról.":
+    "Płatność przeszła, potwierdzenie jeszcze nie dotarło. Przyłóżcie telefony ponownie albo przyciskiem „Skanuj” zeskanuj kod QR potwierdzenia z drugiego telefonu.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont.":
+    "Płatność przeszła, potwierdzenie jeszcze nie dotarło. Przyłóżcie telefony ponownie.",
   "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
     "Potwierdzenie jeszcze nie wróciło. Przyłóżcie telefony ponownie albo niech drugi telefon zeskanuje kod QR.",
   "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":

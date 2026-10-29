@@ -4647,6 +4647,10 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
     "Aún nada. En el otro teléfono hay que pulsar primero Recibir por contacto, y luego juntad los dos teléfonos.",
   "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
     "Aún nada. En el teléfono que paga hay que escribir primero el importe y pulsar Pagar por contacto, y luego juntad los dos teléfonos.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont, vagy a Beolvasás gombbal olvasd be a nyugta QR-kódját a másik telefonról.":
+    "El pago se ha realizado, el recibo aún no ha llegado. Juntad de nuevo los dos teléfonos, o escanea con «Escanear» el código QR del recibo en el otro teléfono.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont.":
+    "El pago se ha realizado, el recibo aún no ha llegado. Juntad de nuevo los dos teléfonos.",
   "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
     "El recibo aún no ha vuelto. Juntad de nuevo los dos teléfonos, o que el otro teléfono escanee el código QR.",
   "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":

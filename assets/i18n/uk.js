@@ -4725,6 +4725,10 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
     "Поки нічого. На іншому телефоні спершу натисніть «Отримати дотиком», потім прикладіть телефони один до одного.",
   "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
     "Поки нічого. На телефоні платника спершу введіть суму й натисніть «Оплатити дотиком», потім прикладіть телефони один до одного.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont, vagy a Beolvasás gombbal olvasd be a nyugta QR-kódját a másik telefonról.":
+    "Платіж пройшов, квитанція ще не надійшла. Прикладіть телефони знову або відскануйте кнопкою «Сканувати» QR-код квитанції на іншому телефоні.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont.":
+    "Платіж пройшов, квитанція ще не надійшла. Прикладіть телефони знову.",
   "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
     "Квитанція ще не повернулася. Прикладіть телефони знову або нехай інший телефон відсканує QR-код.",
   "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":

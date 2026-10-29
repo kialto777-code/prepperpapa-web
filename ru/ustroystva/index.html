@@ -98,6 +98,17 @@
   .pp .cta{margin:24px 0 10px}
   .pp .halk{color:var(--muted);font-size:15px}
 
+  #pp-termek-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-termek-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;background:#0f1612;color:inherit}
+  #pp-termek-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-termek-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-termek-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-termek-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-termek-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-termek-ertesito .pp-hl-figyelem{margin:6px 0 -4px;color:var(--borostyan)}
+  #pp-termek-ertesito .pp-urlap-megj{margin:0;font-size:13px;color:#9fb0a4;line-height:1.5}
+  #pp-termek-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-termek-ertesito-uzenet.hiba{color:#ff8a65}
   .pp h3{font-size:20px;margin:26px 0 8px;color:var(--borostyan)}
   .pp table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:16px}
   .pp td,.pp th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;color:#cfd6cf;vertical-align:top}
@@ -317,6 +328,38 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <h2>Когда они появятся в продаже?</h2>
 <p>Устройства находятся в разработке. Цены и даты выхода пока нет.</p>
+<p>Хотите узнать, когда они появятся в продаже? Укажите адрес электронной почты, и мы сообщим, когда выйдет новый продукт PrepperPapa.</p>
+<form id="pp-termek-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Твой e-mail" aria-label="E-mail">
+<label><input type="checkbox" name="hozzajarul" required><span>Я согласен(-на), чтобы PrepperPapa сообщала мне по электронной почте о своих новых продуктах. <a href="/ru/konfidentsialnost.html#uvedomleniya">Конфиденциальность</a></span></label>
+<p class="pp-hl-figyelem"><strong>Узнавайте первыми об акциях, купонах и новых функциях.</strong></p>
+<label><input type="checkbox" name="hirlevel"><span>Я также хочу получать рассылку PrepperPapa (новости, советы, предложения) не чаще нескольких раз в месяц. Рассылку отправляет Brevo с отслеживанием открытий (невидимое изображение); я могу в любой момент отозвать согласие, в том числе по ссылке для отписки в письмах. Подробнее: <a href="/ru/konfidentsialnost.html#hirlevel">политика конфиденциальности</a>, раздел 5.</span></label>
+<p class="pp-urlap-megj">Письмо с подтверждением отправляет Brevo с отслеживанием открытий (невидимое изображение); подписываясь, вы соглашаетесь и с этим. Подробнее: <a href="/ru/konfidentsialnost.html#uvedomleniya">политика конфиденциальности</a>, раздел 4.</p>
+<button class="btn amber" type="submit">Уведомить меня</button>
+<p id="pp-termek-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+  // new-products signup (endpoint: app.prepperpapa.hu, tema termekek, consent required)
+  var f=document.getElementById('pp-termek-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-termek-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Чтобы получить уведомление, отметь, пожалуйста, согласие.';return;}
+    b.disabled=true; b.textContent='Отправка...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:f.email.value.trim(),hozzajarul:true,hirlevel:((f.hirlevel&&f.hirlevel.checked)||undefined),hirlevel_szoveg:((f.hirlevel&&f.hirlevel.checked)?f.hirlevel.closest('label').textContent.trim():undefined),tema:'termekek',forras:'eszkozok-oldal-ru',nyelv:'ru'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Спасибо! Мы отправили вам письмо с подтверждением: подписка станет действительной после нажатия кнопки в нём.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Слишком много попыток. Попробуй ещё раз через несколько минут.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Сейчас отправить не удалось. Попробуй ещё раз позже.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='Сейчас отправить не удалось. Проверь подключение и попробуй ещё раз.';})
+    .then(function(){b.disabled=false;b.textContent='Уведомить меня';});
+  });
+})();
+</script>
 <p><a href="/ru/app/">&larr; Назад к приложению</a></p>
 </div>
 </main>

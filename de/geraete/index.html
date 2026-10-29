@@ -98,6 +98,17 @@
   .pp .cta{margin:24px 0 10px}
   .pp .halk{color:var(--muted);font-size:15px}
 
+  #pp-termek-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-termek-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;background:#0f1612;color:inherit}
+  #pp-termek-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-termek-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-termek-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-termek-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-termek-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-termek-ertesito .pp-hl-figyelem{margin:6px 0 -4px;color:var(--borostyan)}
+  #pp-termek-ertesito .pp-urlap-megj{margin:0;font-size:13px;color:#9fb0a4;line-height:1.5}
+  #pp-termek-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-termek-ertesito-uzenet.hiba{color:#ff8a65}
   .pp h3{font-size:20px;margin:26px 0 8px;color:var(--borostyan)}
   .pp table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:16px}
   .pp td,.pp th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;color:#cfd6cf;vertical-align:top}
@@ -317,6 +328,38 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <h2>Wann sind sie erhältlich?</h2>
 <p>Die Geräte sind in Entwicklung. Preis und Erscheinungstermin gibt es noch nicht.</p>
+<p>Möchtest du wissen, wann sie erhältlich sind? Gib deine E-Mail-Adresse ein, und wir melden uns, sobald ein neues PrepperPapa-Produkt erscheint.</p>
+<form id="pp-termek-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse">
+<label><input type="checkbox" name="hozzajarul" required><span>Ich bin einverstanden, dass PrepperPapa mich per E-Mail über neu erscheinende Produkte benachrichtigt. <a href="/de/datenschutz.html#benachrichtigung">Datenschutz</a></span></label>
+<p class="pp-hl-figyelem"><strong>Erfahre als Erster von Angeboten, Gutscheinen und neuen Funktionen.</strong></p>
+<label><input type="checkbox" name="hirlevel"><span>Ich möchte auch den PrepperPapa-Newsletter erhalten (Neuigkeiten, Tipps, Angebote), höchstens einige Male im Monat. Der Newsletter wird von Brevo mit Öffnungsverfolgung (ein unsichtbares Bild) versendet; ich kann meine Einwilligung jederzeit widerrufen, auch über den Abmeldelink in den Nachrichten. Details: <a href="/de/datenschutz.html#hirlevel">Datenschutzerklärung</a>, Abschnitt 5.</span></label>
+<p class="pp-urlap-megj">Die Bestätigungsnachricht wird von Brevo mit Öffnungsverfolgung (ein unsichtbares Bild) versendet; mit der Anmeldung stimmst du auch dem zu. Details: <a href="/de/datenschutz.html#benachrichtigung">Datenschutzerklärung</a>, Abschnitt 4.</p>
+<button class="btn amber" type="submit">Benachrichtige mich</button>
+<p id="pp-termek-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+  // new-products signup (endpoint: app.prepperpapa.hu, tema termekek, consent required)
+  var f=document.getElementById('pp-termek-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-termek-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Bitte setze für die Benachrichtigung das Häkchen bei der Einwilligung.';return;}
+    b.disabled=true; b.textContent='Wird gesendet...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:f.email.value.trim(),hozzajarul:true,hirlevel:((f.hirlevel&&f.hirlevel.checked)||undefined),hirlevel_szoveg:((f.hirlevel&&f.hirlevel.checked)?f.hirlevel.closest('label').textContent.trim():undefined),tema:'termekek',forras:'eszkozok-oldal-de',nyelv:'de'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Danke! Wir haben dir eine Bestätigungs-E-Mail geschickt: Mit dem Button darin wird deine Anmeldung gültig.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Zu viele Versuche. Bitte versuche es in ein paar Minuten erneut.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Das Senden hat gerade nicht geklappt. Bitte versuche es später erneut.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='Das Senden hat gerade nicht geklappt. Prüfe deine Verbindung und versuche es erneut.';})
+    .then(function(){b.disabled=false;b.textContent='Benachrichtige mich';});
+  });
+})();
+</script>
 <p><a href="/de/app/">&larr; Zurück zur App</a></p>
 </div>
 </main>

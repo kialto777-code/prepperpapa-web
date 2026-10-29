@@ -98,6 +98,17 @@
   .pp .cta{margin:24px 0 10px}
   .pp .halk{color:var(--muted);font-size:15px}
 
+  #pp-termek-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-termek-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;background:#0f1612;color:inherit}
+  #pp-termek-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-termek-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-termek-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-termek-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-termek-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-termek-ertesito .pp-hl-figyelem{margin:6px 0 -4px;color:var(--borostyan)}
+  #pp-termek-ertesito .pp-urlap-megj{margin:0;font-size:13px;color:#9fb0a4;line-height:1.5}
+  #pp-termek-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-termek-ertesito-uzenet.hiba{color:#ff8a65}
   .pp h3{font-size:20px;margin:26px 0 8px;color:var(--borostyan)}
   .pp table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:16px}
   .pp td,.pp th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;color:#cfd6cf;vertical-align:top}
@@ -317,6 +328,38 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <h2>¿Cuándo estarán disponibles?</h2>
 <p>Los dispositivos están en desarrollo. Todavía no tienen precio ni fecha de lanzamiento.</p>
+<p>¿Quieres saber cuándo estarán disponibles? Escribe tu correo y te avisaremos cuando salga un nuevo producto de PrepperPapa.</p>
+<form id="pp-termek-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico">
+<label><input type="checkbox" name="hozzajarul" required><span>Acepto que PrepperPapa me avise por correo electrónico de sus nuevos productos. <a href="/es/privacidad.html#avisos">Privacidad</a></span></label>
+<p class="pp-hl-figyelem"><strong>Entérate antes que nadie de ofertas, cupones y nuevas funciones.</strong></p>
+<label><input type="checkbox" name="hirlevel"><span>También quiero recibir el boletín de PrepperPapa (novedades, consejos, ofertas), como máximo unas pocas veces al mes. El boletín lo envía Brevo con seguimiento de apertura (una imagen invisible); puedo retirar mi consentimiento en cualquier momento, también mediante el enlace para darse de baja de los mensajes. Detalles: <a href="/es/privacidad.html#hirlevel">aviso de privacidad</a>, apartado 5.</span></label>
+<p class="pp-urlap-megj">El mensaje de confirmación lo envía Brevo con seguimiento de apertura (una imagen invisible); al suscribirte también das tu consentimiento a esto. Detalles: <a href="/es/privacidad.html#avisos">aviso de privacidad</a>, apartado 4.</p>
+<button class="btn amber" type="submit">Quiero que me aviséis</button>
+<p id="pp-termek-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+  // new-products signup (endpoint: app.prepperpapa.hu, tema termekek, consent required)
+  var f=document.getElementById('pp-termek-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-termek-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Para recibir el aviso, marca la casilla de consentimiento.';return;}
+    b.disabled=true; b.textContent='Enviando...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:f.email.value.trim(),hozzajarul:true,hirlevel:((f.hirlevel&&f.hirlevel.checked)||undefined),hirlevel_szoveg:((f.hirlevel&&f.hirlevel.checked)?f.hirlevel.closest('label').textContent.trim():undefined),tema:'termekek',forras:'eszkozok-oldal-es',nyelv:'es'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='¡Gracias! Te hemos enviado un correo de confirmación: tu suscripción será válida con el botón que contiene.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Demasiados intentos. Vuelve a intentarlo dentro de unos minutos.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'No se ha podido enviar. Vuelve a intentarlo más tarde.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='No se ha podido enviar. Comprueba tu conexión y vuelve a intentarlo.';})
+    .then(function(){b.disabled=false;b.textContent='Quiero que me aviséis';});
+  });
+})();
+</script>
 <p><a href="/es/app/">&larr; Volver a la app</a></p>
 </div>
 </main>

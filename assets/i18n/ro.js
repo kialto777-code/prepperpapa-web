@@ -4654,6 +4654,10 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
     "Încă nimic. Pe celălalt telefon apăsați întâi Primește prin atingere, apoi țineți cele două telefoane lipite.",
   "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
     "Încă nimic. Pe telefonul care plătește introduceți întâi suma și apăsați Plătește prin atingere, apoi țineți cele două telefoane lipite.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont, vagy a Beolvasás gombbal olvasd be a nyugta QR-kódját a másik telefonról.":
+    "Plata a trecut, chitanța nu a sosit încă. Țineți din nou telefoanele lipite sau scanează cu „Scanare” codul QR al chitanței de pe celălalt telefon.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont.":
+    "Plata a trecut, chitanța nu a sosit încă. Țineți din nou telefoanele lipite.",
   "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
     "Chitanța nu a revenit încă. Țineți din nou telefoanele lipite sau celălalt telefon să scaneze codul QR.",
   "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":

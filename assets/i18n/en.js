@@ -5001,6 +5001,10 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
     "Nothing yet. On the other phone, tap Receive by touch first, then hold the two phones together.",
   "Még nem jött semmi. A fizető telefonon előbb írják be az összeget, és nyomják meg a Fizetés érintéssel gombot, aztán tartsátok össze a két telefont.":
     "Nothing yet. On the paying phone, enter the amount and tap Pay by touch first, then hold the two phones together.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont, vagy a Beolvasás gombbal olvasd be a nyugta QR-kódját a másik telefonról.":
+    "The payment went through, the receipt has not arrived yet. Hold the two phones together again, or use Scan to read the receipt QR code on the other phone.",
+  "A fizetés átment, a nyugta még nem jött meg. Tartsátok újra össze a két telefont.":
+    "The payment went through, the receipt has not arrived yet. Hold the two phones together again.",
   "A nyugta még nem jött vissza. Tartsátok újra össze a két telefont, vagy a másik telefon olvassa be a QR-kódot.":
     "The receipt has not come back yet. Hold the two phones together again, or let the other phone scan the QR code.",
   "A fizetés még nem jött meg. Tartsátok újra össze a két telefont.":
