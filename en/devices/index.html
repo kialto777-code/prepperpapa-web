@@ -282,8 +282,21 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h3>LoRa unit</h3>
 <img class="ppkep" src="/eszkozok/kepek/lora.webp" width="1200" height="750" alt="A small green PrepperPapa box with a short black antenna.">
 <p>The same small box with a short antenna and a LoRa radio in the 868 MHz band. It also runs on a battery and links houses kilometres apart.</p>
-<h3>Sensors</h3>
-<p>Door sensor, siren relay and thermometer: their state reaches every phone over the network.</p>
+<h3>Sensors: Tuya smart devices</h3>
+<p>The Központ handles Tuya smart devices locally, on its own network. A device's local key is issued once by the Tuya cloud; after that, everything runs locally.</p>
+<p><b>Works today:</b></p>
+<ul>
+<li>Zigbee sensors through a Tuya gateway: door and window contact sensor, presence sensor, wireless alarm remote and thermometer.</li>
+<li>Wi-Fi Tuya devices: siren and relay switch, smart switch, smart plug and energy meter, temperature and humidity sensor, thermostat, panel heater, infrared remote and garage door opener.</li>
+<li>A sensor's alert reaches the phones as an encrypted message: over Bluetooth without internet near the Központ, and over the internet anywhere.</li>
+</ul>
+<p><b>In development:</b></p>
+<ul>
+<li><b>Tripwire and field sentry:</b> a door contact sensor turned into a simple tripwire that also alerts in the field with a battery-powered Központ, for the security and watch of a camp or a plot.</li>
+<li><b>For beekeepers:</b> a thermometer in the hive sends its reading to the phone over LoRa radio, without a mobile network.</li>
+<li><b>Camera alarm:</b> a camera's motion alarm reaches the app as an event, without the picture, if the camera also reports it on the local network.</li>
+<li>Smoke and water-leak sensors.</li>
+</ul>
 <h3>Handheld unit</h3>
 <p>An optional handheld with a display, a keyboard, a LoRa radio and a 2000 mAh battery, for messaging without a phone.</p>
 
