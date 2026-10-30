@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Приложения PrepperPapa</title>
-<meta name="description" content="Приложения PrepperPapa в одном месте: приложение для подготовки PrepperPapa и библейское приложение Wordlight.">
+<title>Приложение PrepperPapa: подготовка без интернета</title>
+<meta name="description" content="Оценка готовности, база знаний, карта, компас, SOS и карта экстренной помощи в одном приложении, главное и без интернета.">
 <link rel="canonical" href="https://prepperpapa.hu/ru/app/">
 <link rel="icon" href="/assets/favicon-64.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Приложения PrepperPapa">
-<meta property="og:description" content="Приложения PrepperPapa в одном месте: приложение для подготовки PrepperPapa и библейское приложение Wordlight.">
+<meta property="og:title" content="Приложение PrepperPapa: подготовка без интернета">
+<meta property="og:description" content="Оценка готовности, база знаний, карта, компас, SOS и карта экстренной помощи в одном приложении, главное и без интернета.">
 <meta property="og:url" content="https://prepperpapa.hu/ru/app/">
 <meta property="og:site_name" content="PrepperPapa">
 <meta property="og:locale" content="ru_RU">
@@ -85,28 +85,195 @@
   footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
   footer a{color:var(--muted)}
 
-  main.ppm{max-width:none;padding:0}
-  .pp{max-width:var(--max);margin:0 auto;padding:32px 18px 56px}
-  @media (max-width:560px){.pp{padding:24px 16px 48px}}
-  .ppkep{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin:6px 0 22px}
-  .pp .kicsi{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);font-weight:700;margin:0 0 10px}
-  .pp h1{font-size:clamp(30px,6vw,46px);line-height:1.1;margin:0 0 16px}
-  .pp h2{font-size:clamp(22px,4vw,28px);line-height:1.2;margin:38px 0 14px}
-  .pp p{margin:0 0 14px;color:#cfd6cf}
-  .pp ul,.pp ol{margin:0 0 16px 22px;color:#cfd6cf}
-  .pp li{margin-bottom:8px}
-  .pp .cta{margin:24px 0 10px}
-  .pp .halk{color:var(--muted);font-size:15px}
-
-  .appok{display:grid;gap:16px;margin:8px 0 10px}
-  @media (min-width:720px){.appok{grid-template-columns:1fr 1fr}}
-  .appk{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;
-        padding:20px 20px 18px;text-decoration:none;color:var(--ink)}
-  .appk:hover{border-color:var(--zold)}
-  .appk h2{margin:0 0 4px;font-size:clamp(22px,4vw,28px)}
-  .appk .al{color:var(--borostyan);font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
-  .appk p{flex:1}
-  .appk .tovabb{color:var(--zold);font-weight:700;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  main.appm{max-width:none;padding:0}
+  .sec{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
+       border-bottom:1px solid var(--line)}
+  .in{max-width:1100px;margin:0 auto;padding:64px 22px;width:100%}
+  .kicsi{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);
+         font-weight:700;margin-bottom:14px}
+  .nagy{font-size:clamp(38px,9vw,76px);line-height:1.04;font-weight:800;letter-spacing:-.01em;margin:0 0 18px}
+  .nagy em{font-style:normal;color:var(--borostyan)}
+  .lead{font-size:clamp(18px,2.4vw,22px);color:#cfd6cf;max-width:560px;margin:0 0 26px}
+  /* hero */
+  .hero{background:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.76)),url('/assets/hatter-topo.jpg') center/cover}
+  .telhely{position:relative;display:flex;justify-content:center;align-items:center;padding:30px 0}
+  .telhely::before{content:"";position:absolute;left:50%;top:50%;width:min(470px,108vw);aspect-ratio:1;
+        transform:translate(-50%,-50%);background:url('/assets/iranytu.png') center/contain no-repeat;opacity:.30;pointer-events:none}
+  .telhely .tel{position:relative}
+  .allit::before{content:"";position:absolute;left:50%;top:50%;width:min(620px,130vw);aspect-ratio:1;
+        transform:translate(-50%,-50%);background:url('/assets/iranytu.png') center/contain no-repeat;opacity:.10;pointer-events:none}
+  .allit .in{position:relative}
+  .hero .in{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+  .badges{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badge{position:relative;display:inline-block}
+  .badge img{height:52px;width:auto;display:block}
+  .badge.play img{height:70px;margin:-9px -8px}
+  .hamar{display:inline-block;background:var(--borostyan);color:#1b1407;margin:0 0 12px;
+        font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+  .badge[aria-disabled="true"]{cursor:default}
+  /* phone mockup */
+  /* realistic upright phone frames around the real app screenshots (Boss 22:54 via Marveen 23822):
+     Android with a punch-hole camera at the top of the page, iPhone with the Dynamic Island further down.
+     A status bar sits above the screenshot so the camera never covers the app header. */
+  .tel{display:block;position:relative;width:min(270px,62vw);margin:0 auto;padding:7px;border-radius:36px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .tel .kij{display:block;position:relative;overflow:hidden;border-radius:29px;background:#0B110E}
+  .tel .sb{display:flex;justify-content:space-between;align-items:center;height:26px;padding:0 16px 0 20px;
+       background:#0B110E;color:#e8efe9;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .tel .sb::before{content:"12:45"}
+  .tel .sb svg{height:9px;width:auto;fill:#e8efe9;display:block}
+  .tel .sb::after{content:"";position:absolute;left:50%;top:8px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022}
+  .tel img{display:block;width:100%;height:auto}
+  .tel .kij{padding-bottom:9px}
+  .tel .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .tel.iphone{padding:9px;border-radius:46px;background:linear-gradient(160deg,#6b6862,#2c2b29 42%,#57544f);
+       box-shadow:0 0 0 1px #8a867f,0 0 0 2.5px #111,0 26px 60px rgba(0,0,0,.6)}
+  .tel.iphone::before{right:-3.5px;top:24%;height:13%;background:#77736c}
+  .tel.iphone::after{content:"";position:absolute;left:-3.5px;top:18%;width:3px;height:7%;border-radius:3px 0 0 3px;background:#77736c;
+       box-shadow:0 calc(min(270px,62vw)*.2) 0 #77736c}
+  .tel.iphone .kij{border-radius:37px;padding-bottom:18px}
+  .tel.iphone .kij::after{bottom:6px;height:4px;width:34%;margin-left:-17%}
+  .tel.iphone .sb{height:34px;padding:0 22px 0 28px}
+  .tel.iphone .sb::before{content:"9:41"}
+  .tel.iphone .sb::after{top:8px;width:26%;height:20px;margin-left:-13%;border-radius:12px;box-shadow:none}
+  .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
+          letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
+  @keyframes lebeg{50%{transform:translate(-50%,6px)}}
+  /* slider */
+  .slider{background:#0d1511}
+  .slider .in{padding-left:0;padding-right:0;max-width:none}
+  .slider .fej{max-width:1100px;margin:0 auto;padding:0 22px 6px}
+  .sav{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .sav::-webkit-scrollbar{display:none}
+  .dia{flex:0 0 100%;scroll-snap-align:center;display:grid;grid-template-columns:1fr 1fr;align-items:center;
+       gap:24px;max-width:1100px;padding:18px 22px 10px;margin:0 auto}
+  .dia .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .dia h3{font-size:clamp(30px,6.5vw,52px);line-height:1.08;margin:8px 0 12px;font-weight:800}
+  .dia p{font-size:18px;color:#cfd6cf;max-width:460px}
+  .pottyok{display:flex;justify-content:center;gap:10px;padding:12px 0 4px}
+  .pottyok button{width:9px;height:9px;border-radius:9px;border:0;background:#3a4a40;padding:0;cursor:pointer;transition:.3s}
+  .pottyok button.akt{width:28px;background:var(--borostyan)}
+  .nyilak{display:flex;justify-content:center;gap:12px;margin-top:6px}
+  .nyilak button{width:44px;height:44px;border-radius:50%;border:1px solid #33453B;background:transparent;color:var(--ink);
+       font-size:20px;cursor:pointer}
+  /* statement */
+  .allit{background:linear-gradient(180deg,#0B110E,#142019);text-align:center}
+  .allit .nagy{max-width:900px;margin:0 auto 22px}
+  .allit .lead{margin:0 auto}
+  /* feature cards */
+  .tudas{display:block;min-height:auto}
+  .kartyak{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .kartya{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .kartya h3{color:var(--borostyan);font-size:20px;margin:0 0 10px}
+  .kartya ul{list-style:none;margin:0}
+  .kartya li{font-size:15px;color:#cfd6cf;margin-bottom:10px}
+  .kartya li b{color:var(--ink);display:block;font-size:16px}
+  /* price */
+  .arsec{display:block;min-height:auto}
+  .csomag{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  .csomag > div{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .csomag h3{margin:0 0 8px}
+  .csomag ul{margin:0 0 0 18px;font-size:15px;color:#cfd6cf}
+  .vasarlas{border-radius:18px;padding:24px}
+  .ar{font-size:44px}
+  #pp-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;
+       background:#0B110E;color:var(--ink);width:100%}
+  #pp-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-ertesito-uzenet.hiba{color:#ff8a65}
+  .letolt{display:block;min-height:auto;text-align:center}
+  .letolt .badges{justify-content:center;margin:22px 0 8px}
+  .gyik{display:block;min-height:auto}
+  .gyik .in{max-width:760px}
+  /* premium tiles + comparison table */
+  .elonyok{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+  .elony{background:linear-gradient(160deg,#1c2a21,#121B16);border:1px solid #2c3d33;border-radius:18px;padding:20px}
+  .elony h3{color:var(--borostyan);font-size:19px;margin:0 0 8px}
+  .elony p{font-size:15px;color:#cfd6cf;margin:0}
+  .osszevet{display:block;min-height:auto}
+  .tabla{overflow-x:auto;margin:22px 0 14px;border:1px solid var(--line);border-radius:16px}
+  .tabla table{width:100%;border-collapse:collapse;font-size:15px}
+  .tabla th,.tabla td{padding:12px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+  .tabla thead th{background:var(--panel);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tabla thead th.prem{color:var(--borostyan)}
+  .tabla tbody th{font-weight:600}
+  .tabla td{text-align:center;width:24%}
+  .tabla td.pipa{color:var(--zold);font-weight:800;font-size:18px}
+  .tabla td.nincs{color:#5d6b62}
+  .tabla td.korlat{color:#cfd6cf}
+  .tabla td:nth-child(3){background:rgba(255,179,64,.05)}
+  .tabla td.korlat:nth-child(3){color:var(--borostyan);font-weight:700}
+  .tabla td.korlat.azonos:nth-child(3){color:#cfd6cf;font-weight:400}
+  .tabla tr:last-child th,.tabla tr:last-child td{border-bottom:0}
+  .tabla thead th.vagy{color:var(--zold)}
+  .tabla tr.csop th{background:#18241d;color:var(--zold);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px}
+  .tabla td.valt{color:#5d6b62;font-size:13px}
+  .tabla td{width:19%}
+  .szintek{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 8px}
+  .szint{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .szint.kiemelt{border-color:rgba(255,179,64,.55);background:linear-gradient(160deg,#2a2414,#121B16)}
+  .szint .szar{font-size:30px;font-weight:800;margin:4px 0 10px}
+  .szint ul{margin:0 0 0 18px;font-size:15px;color:#cfd6cf}
+  .szint li{margin-bottom:6px}
+  @media (max-width:820px){.szintek{grid-template-columns:1fr}.tabla td.valt{font-size:11px}}
+  @media (max-width:560px){
+    .tabla table{table-layout:fixed}
+    .tabla table th,.tabla table td{padding:9px 5px;font-size:12.5px;overflow-wrap:normal;word-break:normal;hyphens:manual}
+    .tabla table thead th{width:30%}
+    .tabla table thead th:first-child{width:40%}
+    .tabla table td.arc small{font-size:11px}
+    .vk{display:none}
+    .tabla thead th{font-size:10px;letter-spacing:.03em}
+    .tabla td{width:auto}
+    .tabla tr.csop th{font-size:11px;padding:8px 6px}
+  }
+  .partner{display:block;min-height:auto}
+  .partner .in{padding-top:40px;padding-bottom:40px}
+  .pfeltetel{margin:14px 0 16px 20px;padding:0;font-size:17px;color:#cfd6cf;max-width:720px}
+  .pfeltetel li{margin-bottom:6px}
+  .pjel{font-size:17px;margin:0}.pjel a{color:var(--borostyan)}
+  @media (max-width:560px){.pfeltetel,.pjel{font-size:15px}.partner .in{padding-top:28px;padding-bottom:28px}}
+  .csakmobil{display:none}
+  @media (max-width:560px){.csakmobil{display:block}}
+  .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
+  .tabla td.arc .ar1{display:block;font-size:17px}
+  .szint .szkesobb{font-size:14px;margin:-8px 0 12px}
+  .kieg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}
+  .kieg h3{margin:0 0 8px;font-size:22px}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .rv.lat{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}
+    .lefele{animation:none}}
+  @media (max-width:820px){
+    .hero .in,.dia{grid-template-columns:1fr}
+    .hero .in{padding-top:36px;text-align:left}
+    .hero .tel{width:min(230px,60vw)}
+    .hero .cta,.hero .badges{justify-content:center}
+    .hero .cta .btn{min-width:240px;text-align:center}
+    .hero .hamar{display:table;margin:0 auto 12px}
+    .dia{text-align:center}.dia p{margin:0 auto}
+    .dia{gap:14px;padding-top:10px}
+    .dia h3{font-size:clamp(26px,7.5vw,34px)}
+    .dia p{font-size:16px}
+    .dia .tel{width:min(190px,50vw);order:2}
+    .kartyak,.csomag{grid-template-columns:1fr}
+    .elonyok{grid-template-columns:1fr}
+    .tabla th,.tabla td{padding:11px 9px;font-size:14px}
+    .sec{min-height:auto}
+    .hero{min-height:100svh}
+  }
 </style>
 <style id="fej2">
   header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
@@ -249,36 +416,250 @@ var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
 function indul(){lablec();if(!olvas())nyit();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
 <!-- /goaffpro:general -->
+<script type="application/ld+json" id="pp-ld">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "PrepperPapa", "description": "Оценка готовности, база знаний, карта, компас, SOS и карта экстренной помощи в одном приложении, главное и без интернета.", "url": "https://prepperpapa.hu/ru/app/", "inLanguage": "ru", "applicationCategory": "LifestyleApplication", "operatingSystem": "Android, iOS", "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, {"@type": "Offer", "price": "39.90", "priceCurrency": "EUR", "name": "Premium"}], "publisher": {"@type": "Organization", "name": "PrepperPapa", "url": "https://prepperpapa.hu/ru/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PrepperPapa", "item": "https://prepperpapa.hu/ru/"}, {"@type": "ListItem", "position": 2, "name": "Подготовка у тебя в кармане. Даже без интернета.", "item": "https://prepperpapa.hu/ru/app/"}]}]}</script>
 </head>
 <body>
 <header><nav class="nav fej2">
   <a class="brand" href="/ru/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
-  <div class="linkek"><a class="link" href="/ru/">Главная</a> <a class="link" href="/ru/#video">Видео</a> <a class="link" href="/ru/stati.html">База знаний</a> <a class="link" href="/ru/kalkulyatory/">Калькуляторы</a> <a class="link" href="/ru/app/" aria-current="page">Приложение</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Форум сообщества</a> <a class="link" href="/ru/#kontakty">Контакты</a></div>
+  <div class="linkek"><a class="link" href="/ru/">Главная</a> <a class="link" href="/ru/#video">Видео</a> <a class="link" href="/ru/stati.html">База знаний</a> <a class="link" href="/ru/kalkulyatory/">Калькуляторы</a> <a class="link" href="/ru/prilozheniya/" aria-current="page">Приложение</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Форум сообщества</a> <a class="link" href="/ru/#kontakty">Контакты</a></div>
   <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Подписаться</a>
   <details class="nyelvv"><summary aria-label="Язык"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>RU</span></summary><ul><li><a href="/app/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/app/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/app/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/app/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/app/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/app/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/app/" hreflang="ru" lang="ru" data-nyelv="ru" aria-current="true">Русский</a></li><li><a href="/uk/app/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
   <button class="hamb" type="button" aria-label="Меню" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
 </nav></header>
-<main class="ppm">
+<main class="appm">
+<section class="sec hero"><div class="in">
+<div class="rv lat">
+<div class="kicsi">Приложение PrepperPapa</div>
+<h1 class="nagy">Подготовка у тебя в кармане. <em>Даже без интернета.</em></h1>
+<p class="lead">Всё, что нужно при отключении электричества, у сломавшейся машины или в лесном походе, собрано в одном месте. Полная версия вместе с картой работает и тогда, когда интернета и связи уже нет.</p>
+<div class="cta"><a class="btn amber" href="#pokupka">Сообщите о запуске</a><a class="btn ghost" href="#obzor">Посмотри, что оно умеет</a></div>
+<div class="hamar">Скоро</div>
+<div class="badges">
+<a class="badge play" id="pp-badge-play" aria-disabled="true" title="Скоро в Google Play"><img src="/app/kepek/google-play-ru.png" alt="Доступно в Google Play (скоро)" width="646" height="250"></a>
+<a class="badge appstore" id="pp-badge-appstore" aria-disabled="true" title="Скоро в App Store"><img src="/app/kepek/app-store-ru.svg" alt="Загрузите в App Store (скоро)" width="151" height="40"></a>
+</div>
+</div>
+<div class="telhely rv lat"><div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/1-kezdolap.jpg" alt="Главный экран PrepperPapa" width="480" height="1038"></span></div></div>
+</div><a class="lefele" href="#obzor">Листай вниз &darr;</a></section>
+
+<section class="sec slider" id="obzor"><div class="in">
+<div class="fej rv"><div class="kicsi">Обзор</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Десять экранов, которые важны.</h2></div>
+<div class="sav" aria-roledescription="lapozó">
+<div class="dia"><div><div class="szam">01 &middot; Готовность</div>
+<h3>Один взгляд, и ясно, насколько вы готовы.</h3><p>Вода, еда, отопление, электричество: по каждому месту, в процентах. Если чего-то мало, сразу видно, что нужно пополнить.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/1-kezdolap.jpg" alt="Готовность" loading="eager" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">02 &middot; Карта</div>
+<h3>И в лесу знаешь, куда идти.</h3><p>Туристические тропы, родники, приюты. План похода с расстоянием, временем в пути и набором высоты, а со скачанной картой и без связи.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/2-terkep.jpg" alt="Карта" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">03 &middot; Запасы</div>
+<h3>Кладовая у тебя в кармане.</h3><p>Что есть дома, где хранится, когда истекает срок годности. Позиции с истекающим сроком выделены цветом.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/8-keszlet.jpg" alt="Запасы" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">04 &middot; База знаний</div>
+<h3>Знания, которые с тобой и без связи.</h3><p>21 тема, от воды до первой помощи, с более глубокими и подробными статьями, которые можно читать и без интернета.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/3-tudastar.jpg" alt="База знаний" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">05 &middot; Компас</div>
+<h3>Телефон в кармане, ведёт звук.</h3><p>Записываешь азимут, и приложение ведёт тебя звуком. Показывает и обратный путь. С камерой видно и сегодняшний путь солнца, для солнечной панели.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/4-tajolo.jpg" alt="Компас" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">06 &middot; Библия</div>
+<h3>Сила для трудных дней.</h3><p>Библия на твоём телефоне, с чтением вслух, без интернета.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/6-biblia.jpg" alt="Библия" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">07 &middot; Карточка экстренной помощи</div>
+<h3>Врач скорой помощи узнаёт всё из одного QR-кода.</h3><p>Группа крови, аллергии, лекарства и контактное лицо для каждого члена семьи, в том числе в распечатанном виде.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/9-veszkartya.jpg" alt="Карточка экстренной помощи" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">08 &middot; SOS</div>
+<h3>Одна кнопка на случай беды.</h3><p>Световой и звуковой сигнал, вызов помощи и твоя карточка экстренной помощи на одном экране, даже без интернета.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/10-sos.jpg" alt="SOS" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">09 &middot; Морзе</div>
+<h3>Сообщение, когда больше ничего не работает.</h3><p>Передаёт светом и звуком, читает камерой и микрофоном, на нём можно и тренироваться.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/11-morze.jpg" alt="Морзе" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">10 &middot; Кошелёк документов</div>
+<h3>Твои документы под PIN-кодом.</h3><p>Фото удостоверения личности, водительских прав, карты TAJ и страховки в зашифрованном виде, только на твоём телефоне.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ru/app/kepek/12-irattarca.jpg" alt="Документы" loading="lazy" width="480" height="1038"></span></div></div>
+</div>
+<div class="pottyok"></div>
+<div class="nyilak"><button type="button" id="dia-elozo" aria-label="Назад">&larr;</button><button type="button" id="dia-kov" aria-label="Далее">&rarr;</button></div>
+</div></section>
+
+<section class="sec allit"><div class="in rv">
+<div class="kicsi">Наше обещание</div>
+<h2 class="nagy">Оно не подведёт, когда нужно тебе больше всего.</h2>
+<p class="lead">Это приложение для экстренных ситуаций. Не бывает такого, что ты открываешь его в беде, а оно сначала просит заплатить. Фонарь, SOS, Морзе, карточка экстренной помощи и базовые статьи базы знаний работают без интернета, для всех и бесплатно.</p>
+</div></section>
+
+<section class="sec tudas"><div class="in">
+<div class="rv"><div class="kicsi">Что оно умеет?</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Шесть ситуаций, восемнадцать функций.</h2></div>
+<div class="kartyak">
+<div class="kartya rv"><h3>Если пропал интернет</h3><ul><li><b>Расчёт готовности</b>Указываешь, кто живёт с вами (и домашних животных тоже) и что лежит в кладовой. Приложение показывает по каждому месту в процентах, как обстоят дела с водой, едой, отоплением и электричеством. Если чего-то мало, видно, что нужно пополнить.</li><li><b>База знаний без интернета</b>21 тема, от воды до первой помощи, вместе с более глубокими и подробными статьями. Всё, что попало на твой телефон, можно читать и без связи.</li><li><b>Локальные сообщения</b>Текстовые сообщения людям поблизости без интернета, через общую сеть, даже через точку доступа телефона.</li><li><b>Noah, искусственный интеллект без интернета</b>Работает на самом телефоне, а не в облаке, поэтому отвечает даже без связи. Спрашивай его о базе знаний, Библии и своих запасах, например, что просрочено. Работает в приложении для Android; языковую модель нужно скачать один раз.</li></ul></div>
+<div class="kartya rv"><h3>Отключение электричества</h3><ul><li><b>Фонарь и красный ночной свет</b>Красный свет не ослепляет глаза, привыкшие к темноте.</li><li><b>Калькулятор электричества и отопления</b>На сколько хватит павербанка или зарядной станции и сколько топлива нужно на зиму.</li><li><b>Список запасов</b>Что есть дома, где хранится и когда истекает срок годности. Позиции с истекающим сроком выделены цветом.</li></ul></div>
+<div class="kartya rv"><h3>Вода и еда</h3><ul><li><b>Калькулятор очистки воды</b>Сколько гипохлорита или таблеток нужно, чтобы обеззаразить заданное количество воды.</li><li><b>Калькулятор дождевой воды</b>Сколько воды можно собрать с крыши за определённый дождь.</li><li><b>Список вещей «Что взять?»</b>Составляется по членам твоей семьи, с ограничением по весу, чтобы груз можно было унести.</li></ul></div>
+<div class="kartya rv"><h3>Нет связи</h3><ul><li><b>Морзе и факс</b>Сигналы Морзе звуком и мигающим светом, а также передача изображения звуком.</li><li><b>Секретный QR</b>Сообщение, местоположение или список в QR-коде, который прочитает только тот, кто знает ваш семейный пароль.</li></ul></div>
+<div class="kartya rv"><h3>На местности</h3><ul><li><b>Карта и планирование походов</b>Туристические тропы, родники, вершины. Указываешь, откуда и куда идёшь, и приложение покажет расстояние, время в пути, набор высоты и маркировку, по которой нужно идти. Карту можно скачать, и она работает даже посреди леса без связи.</li><li><b>Компас со звуковым ведением</b>Записываешь азимут, и приложение ведёт тебя звуком, а телефон можно убрать в карман. Показывает и обратный путь, а также время восхода солнца и фазу луны. В режиме камеры рисует на изображении сегодняшний путь солнца с часовыми отметками, чтобы направить солнечную панель, и без интернета.</li><li><b>Распознавание падения</b>Если после падения и удара ты остаёшься неподвижным, запускается обратный отсчёт, и если ты его не отменишь, уходит SOS-сообщение с твоим местоположением и включается аварийный свисток.</li><li><b>Время в пути и молния</b>Сколько идти пешком до цели и как далеко ударила молния.</li></ul></div>
+<div class="kartya rv"><h3>Семья и душа</h3><ul><li><b>Семья и карточка экстренной помощи</b>Здесь ты добавляешь членов семьи: на этом основаны расчёт готовности и список вещей. На карточке экстренной помощи есть группа крови, аллергии, лекарства и контакт для экстренной связи.</li><li><b>Библия без интернета</b>Библия на твоём телефоне, с чтением вслух.</li><li><b>Аварийный свисток и ритм реанимации</b>Громкий аварийный свисток и звук, задающий ритм реанимации, чтобы даже в панике не пришлось считать.</li></ul></div>
+</div>
+</div></section>
+
+<section class="sec arsec" id="pokupka"><div class="in">
+<div class="rv"><div class="kicsi">Премиум</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Весь PrepperPapa <em>с одним кодом.</em></h2>
+<p class="lead">Премиум-код открывает всё, что умеет приложение: карту без связи, неограниченное число маршрутов, всю семью, всю кладовую и расширенную базу знаний.</p></div>
+<div class="elonyok">
+<div class="elony rv"><h3>Карта без связи</h3><p>Можно скачать регионы Венгрии и зарубежные страны, и даже посреди леса ты видишь, где находишься.</p></div>
+<div class="elony rv"><h3>Неограниченное планирование маршрутов</h3><p>С расстоянием, временем в пути и набором высоты, для стольких походов, сколько нужно.</p></div>
+<div class="elony rv"><h3>Вся семья, вся кладовая</h3><p>Неограниченное число членов семьи и позиций в запасах, чтобы расчёт учитывал всех.</p></div>
+<div class="elony rv"><h3>Расширенная база знаний</h3><p>Более глубокие и подробные статьи, которые можно читать и без интернета.</p></div>
+</div>
+<div class="vasarlas rv" id="pp-premium-vasarlas">
+<p class="ar">39,90 €</p>
+<p class="halk">Вводная цена, позже 49,90 €. С купоном одного из наших партнёров ты получишь дополнительную скидку 5%.</p>
+<!-- CHECKOUT HOOK (Marveen): a vásárlási űrlap/gomb ennek az elemnek a HELYÉRE kerül, amikor a pp-vasarlas élesbe áll.
+     Addig az indulási értesítő űrlap látszik. Element id: pp-checkout -->
+<div id="pp-checkout">
+<p><b>Скоро в продаже.</b> Оставь свой e-mail, и мы сообщим, когда начнутся продажи.</p>
+<form id="pp-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Твой e-mail" aria-label="E-mail">
+<label><input type="checkbox" name="hozzajarul" required><span>Я даю согласие на то, чтобы PrepperPapa уведомил меня по e-mail о начале продаж. <a href="/ru/konfidentsialnost.html#uvedomleniya">Конфиденциальность</a></span></label>
+<button class="btn amber" type="submit">Уведомить меня</button>
+<p id="pp-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+</div>
+</div>
+</div></section>
+
+<section class="sec osszevet" id="sravnenie"><div class="in">
+<div class="rv"><div class="kicsi">Сравнение</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Бесплатно, премиум и Имущество</h2>
+<p class="lead">По модулям, в одном месте: что бесплатно, что открывает премиум-код и что даёт отдельный продукт «Имущество».</p></div>
+<div class="szintek"><div class="szint rv"><div class="kicsi">Бесплатно</div><p class="szar">0 €</p><ul><li>Все экстренные функции, даже без интернета</li><li>2 члена семьи, 50 позиций в запасах</li><li>2 построения маршрута в неделю</li><li>1 устройство</li></ul></div><div class="szint rv kiemelt"><div class="kicsi">Премиум</div><p class="szar">39,90 €</p><p class="szkesobb">вводная цена · позже 49,90 €</p><ul><li>Разовая покупка</li><li>Семья, запасы и маршруты без ограничений</li><li>Загружаемая карта и расширенная база знаний</li><li>Без всплывающих предложений, на 2 устройствах</li></ul></div><div class="szint rv vk"><div class="kicsi">Имущество</div><p class="szar">Дополнение</p><ul><li>Отдельный продукт, подходит и к бесплатной версии, и к премиуму</li><li>Позиции и счета без ограничений</li><li>Полноценно работает и в PrepperPapa</li><li>Без него: пробный режим до 10 позиций</li></ul></div></div>
+<div class="tabla rv"><table>
+<thead><tr><th scope="col">Функция</th><th scope="col">Бесплатно</th><th scope="col" class="prem">Премиум</th><th scope="col" class="vagy vk">Дополнение «Имущество»</th></tr></thead>
+<tbody>
+<tr class="csop"><th scope="rowgroup" colspan="4">Цена и учётная запись</th></tr>
+<tr><th scope="row">Цена</th><td class="korlat">0 €</td><td class="korlat arc"><span class="ar1">39,90 €</span><small>вводная цена · позже 49,90 €</small></td><td class="vk korlat">отдельный продукт</td></tr>
+<tr><th scope="row">Устройств на одну учётную запись одновременно</th><td class="korlat">1</td><td class="korlat">2</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Всплывающие предложения</th><td class="korlat">есть</td><td class="korlat">нет</td><td class="vk valt">как в твоей версии</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Карта</th></tr>
+<tr><th scope="row">Карта и туристические тропы, онлайн</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Планирование маршрутов</th><td class="korlat">2 в неделю</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Загружаемая карта для использования без интернета (регионы Венгрии, зарубежные страны и их области)</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Домохозяйство и запасы</th></tr>
+<tr><th scope="row">Члены семьи</th><td class="korlat">2 человека</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Запасы</th><td class="korlat">50 позиций</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Расчёт готовности и оценка рисков</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Список «Что взять?»</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">База знаний</th></tr>
+<tr><th scope="row">Базовые статьи и статьи, спасающие жизнь</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Расширенная база знаний</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Экстренная ситуация</th></tr>
+<tr><th scope="row">SOS и фонарь</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Карточка экстренной помощи</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Компас</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Связь</th></tr>
+<tr><th scope="row">Морзе</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Факс: передача изображения звуком</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Комнаты (групповые и личные сообщения): своя комната</th><td class="korlat">1</td><td class="korlat">10</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Комнаты: участие в чужих комнатах</th><td class="korlat">3</td><td class="korlat">без ограничений</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Локальные сообщения без интернета</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Инструменты и кошельки</th></tr>
+<tr><th scope="row">Калькуляторы</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Библия с чтением вслух</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Секретный QR</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Документы</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr><th scope="row">Кошелёк токенов</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">как в твоей версии</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Имущество</th></tr>
+<tr><th scope="row">Собственные позиции</th><td class="korlat">10 (проба)</td><td class="korlat azonos">10 (проба)</td><td class="vk korlat">без ограничений</td></tr>
+<tr><th scope="row">Счета</th><td class="korlat">1 (проба)</td><td class="korlat azonos">1 (проба)</td><td class="vk korlat">без ограничений</td></tr>
+</tbody></table></div>
+<p class="halk rv">Премиум — разовая покупка.</p>
+<p class="halk rv csakmobil">«Имущество» — отдельный продукт со своей страницей.</p>
+<p class="halk rv vk">«Как в твоей версии» означает, что дополнение «Имущество» здесь ничего не меняет: всё работает так, как в твоей версии, бесплатной или премиум.</p>
+<p class="halk rv">Что бесплатно, то и останется бесплатным, и ни одна функция не перестанет работать, если ты не купишь код.</p>
+<div class="kieg rv vk"><div class="kicsi">Дополнение</div><h3>Имущество</h3>
+<p>Отдельный продукт, скоро в Google Play и в App Store. В приложении его можно попробовать, и бесплатно, и с премиумом, до 10 собственных позиций и 1 счёта. Для полноценного использования нужен отдельный «Имущество», а если ты его купишь, он полноценно работает и в PrepperPapa.</p></div>
+</div></section>
+
+<!-- PARTNERPROGRAM: moved to its own page /partnerprogram/ (Boss 2026-10-25 22:17), linked only from the footers. -->
+<!-- DEVICES teaser (Boss 2026-10-29 15:57, TG 95 to Dénes, Marveen 25767): link to the new /eszkozok/ page. -->
+<section class="sec" id="eszkozok"><div class="in rv">
+<div class="kicsi">Инструменты</div>
+<h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Своя сеть, без интернета.</h2>
+<p class="lead">Готовятся устройства PrepperPapa: маленькие коробочки, из которых в доме и между домами строится собственная сеть. Через неё приложение отправляет сообщения и тревоги даже без интернета и сотовой связи.</p>
+<p><img src="/eszkozok/kepek/marketing/ru/csalad.webp" width="1600" height="1000" alt="Центр PrepperPapa Központ с сенсорным экраном и три маленькие коробочки PrepperPapa, одна с антенной." loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin:8px 0 16px"></p>
+<p><a class="btn" href="/ru/ustroystva/">Устройства и сеть &rarr;</a></p>
+</div></section>
+
+<section class="sec letolt" id="letoltes"><div class="in rv">
+<div class="kicsi">Скачать</div>
+<h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Для Android и iPhone.</h2>
+<p class="lead" style="margin:0 auto"><b>Android:</b> скоро в Google Play. Премиум можно купить и прямо в Google Play.<br><b>iPhone:</b> скоро в App Store.</p>
+<div class="hamar">Скоро</div>
+<div class="badges">
+<a class="badge play" id="letolt-pp-badge-play" aria-disabled="true" title="Скоро в Google Play"><img src="/app/kepek/google-play-ru.png" alt="Доступно в Google Play (скоро)" width="646" height="250"></a>
+<a class="badge appstore" id="letolt-pp-badge-appstore" aria-disabled="true" title="Скоро в App Store"><img src="/app/kepek/app-store-ru.svg" alt="Загрузите в App Store (скоро)" width="151" height="40"></a>
+</div>
+</div></section>
+
+<!-- TESZTELŐI VÉLEMÉNYEK: a tesztelési menet végén kérjük (26c3272b), engedéllyel.
+     Amíg nincs közzétehető vélemény, a szakasz rejtve marad (hidden), üres szakasz nem megy ki. -->
+<section id="velemenyek" hidden>
+<h2>Уже попробовали</h2>
+</section>
+
+<section class="sec gyik"><div class="in rv">
+<h2>Частые вопросы</h2>
+<details><summary>На каких телефонах работает?</summary><p>На Android и iPhone. Скоро в Google Play и App Store. На Android премиум можно купить и прямо в Google Play.</p></details>
+<details><summary>Нужен ли интернет?</summary><p>Для самого важного нет: фонарь, SOS, Морзе, карточка экстренной помощи и базовые статьи базы знаний работают без интернета. Бесплатной карте нужен интернет, а скачиваемая карта, которая работает без интернета, входит в премиум. Интернет нужен также для загрузки, обновлений и активации кода.</p></details>
+<details><summary>Где хранятся мои данные?</summary><p>На твоём телефоне. Подробности на странице <a href="/ru/konfidentsialnost.html">Конфиденциальность</a>.</p></details>
+<details><summary>Перестанет ли что-то работать, если я не куплю код?</summary><p>Нет. Бесплатная часть останется бесплатной, и ни одна функция не перестанет работать.</p></details>
+<details><summary>Где найти руководство пользователя?</summary><p>На странице <a href="/ru/rukovodstvo/">Руководство пользователя</a>, а также в разделе «Справка» в приложении.</p></details>
+</div></section>
 <script>
 (function(){
-  // old links to /app/ with a partner code or a section anchor belong to the PrepperPapa page
-  if(/[?&]ref=/.test(location.search) || location.hash.length>1){
-    location.replace(location.pathname.replace(/\/?$/,'/')+'prepperpapa/'+location.search+location.hash);
+  // reveal on scroll
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lat');io.unobserve(e.target);}});},{threshold:.15});
+    els.forEach(function(el){io.observe(el);});
+  } else { els.forEach(function(el){el.classList.add('lat');}); }
+  // slider: native swipe (scroll-snap) + dots + arrows + gentle autoplay until the visitor touches it
+  var sav=document.querySelector('.sav'); if(!sav) return;
+  var diak=sav.children, pk=document.querySelector('.pottyok'), akt=0, auto=true, t;
+  for(var i=0;i<diak.length;i++){(function(i){var b=document.createElement('button');b.type='button';
+    b.setAttribute('aria-label',(i+1)+'-й слайд');b.onclick=function(){stop();menj(i);};pk.appendChild(b);})(i);}
+  function menj(i){akt=(i+diak.length)%diak.length;sav.scrollTo({left:diak[akt].offsetLeft-sav.offsetLeft,behavior:'smooth'});}
+  function jelol(){var i=Math.round(sav.scrollLeft/sav.clientWidth);akt=i;
+    [].forEach.call(pk.children,function(b,j){b.classList.toggle('akt',j===i);});}
+  sav.addEventListener('scroll',function(){clearTimeout(sav._t);sav._t=setTimeout(jelol,60);},{passive:true});
+  function stop(){auto=false;clearInterval(t);}
+  ['touchstart','wheel','mousedown','keydown'].forEach(function(ev){sav.addEventListener(ev,stop,{passive:true});});
+  document.getElementById('dia-elozo').onclick=function(){stop();menj(akt-1);};
+  document.getElementById('dia-kov').onclick=function(){stop();menj(akt+1);};
+  jelol();
+  var csendes=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!csendes && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){clearInterval(t);
+      if(e.isIntersecting&&auto){t=setInterval(function(){menj(akt+1);},4500);}});},{threshold:.5}).observe(sav);
   }
 })();
-</script><div class="pp">
-<div class="kicsi">Приложения</div>
-<h1>Приложения PrepperPapa</h1>
-<p>Выбери то, что тебе интересно. Каждое устанавливается отдельно.</p>
-<div class="appok">
-<a class="appk" href="/ru/app/prepperpapa/"><h2>PrepperPapa</h2><div class="al">Подготовка без интернета</div>
-<p>Оценка готовности, база знаний, карта, компас, SOS и карта экстренной помощи в одном приложении, главное и без интернета.</p>
-<p class="tovabb">Посмотреть &rarr;</p></a>
-<a class="appk" href="/ru/app/wordlight/"><h2>Wordlight</h2><div class="al">Библия PrepperPapa</div>
-<p>Библия на восьми языках, даже без интернета: чтение вслух, планы чтения, будильник со Словом, молитвы и стихи для экстренных ситуаций.</p>
-<p class="tovabb">Посмотреть &rarr;</p></a>
-</div>
-</div>
+(function(){
+  // launch-notice signup (endpoint: app.prepperpapa.hu, consent required)
+  var f=document.getElementById('pp-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    var email=f.email.value.trim();
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Чтобы получить уведомление, отметь, пожалуйста, согласие.';return;}
+    b.disabled=true; b.textContent='Отправка...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,hozzajarul:true,forras:'app-oldal-ru',nyelv:'ru'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Спасибо! Мы сообщим, когда PrepperPapa поступит в продажу.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Слишком много попыток. Попробуй ещё раз через несколько минут.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Сейчас отправить не удалось. Попробуй ещё раз позже.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='Сейчас отправить не удалось. Проверь подключение и попробуй ещё раз.';})
+    .then(function(){b.disabled=false;b.textContent='Уведомить меня';});
+  });
+})();
+</script>
 </main>
 <footer><div>PrepperPapa &middot; Готовься, не бойся! &middot; <a href="/ru/konfidentsialnost.html">Конфиденциальность</a> &middot; <a href="/en/terms.html">Условия покупки (EN)</a> &middot; <a href="/en/legal-notice.html">Правовая информация (EN)</a> &middot; <a href="/ru/partnyory/">Партнёрская программа</a></div></footer>
 <script id="fej2js">
