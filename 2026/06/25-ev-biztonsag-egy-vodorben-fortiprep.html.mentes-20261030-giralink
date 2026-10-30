@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>25 év biztonság egy vödörben? – Fortiprep teszt és őszinte prepper vélemény - PrepperPapa</title>
+<meta name="description" content="A prepper dilemmája: Forgatás vs. Stabilitás Üdv Prepper társam! Te is unod már azt a véget nem érő folyamatot, hogy évről évre átnézed a kamra polcait,...">
+<link rel="canonical" href="https://prepperpapa.hu/2026/06/25-ev-biztonsag-egy-vodorben-fortiprep.html">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="article">
+<meta property="og:title" content="25 év biztonság egy vödörben? – Fortiprep teszt és őszinte prepper vélemény">
+<meta property="og:description" content="A prepper dilemmája: Forgatás vs. Stabilitás Üdv Prepper társam! Te is unod már azt a véget nem érő folyamatot, hogy évről évre átnézed a kamra polcait,...">
+<meta property="og:url" content="https://prepperpapa.hu/2026/06/25-ev-biztonsag-egy-vodorben-fortiprep.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav fej2">
+  <a class="brand" href="/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek">
+    <a class="link" href="/">Kezdőlap</a>
+    <a class="link" href="/#videok">Videók</a>
+    <a class="link" href="/cikkek.html" aria-current="page">Tudástár</a>
+    <a class="link" href="/kalkulator/">Kalkulátorok</a>
+    <a class="link" href="/alkalmazasok/">Alkalmazás</a>
+    <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező fórum</a>
+    <a class="link" href="/#kapcsolat">Kapcsolat</a>
+  </div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
+  <!--nyelvv-->
+  <button class="hamb" type="button" aria-label="Menü" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main>
+<h1>25 év biztonság egy vödörben? – Fortiprep teszt és őszinte prepper vélemény</h1>
+<div class="meta">2026-06-25</div>
+<!--A "Törhetetlen" blogposzt Blogger-barát verziója-->
+
+<article style="line-height: 1.6; margin: 0px auto; max-width: 800px;">
+
+    <div class="separator" style="clear: both; color: #333333; font-family: Arial, sans-serif; text-align: center;"><div class="video"><iframe allowfullscreen="" class="BLOG_video_class" src="https://www.youtube-nocookie.com/embed/BoWD7IvDU_I" youtube-src-id="BoWD7IvDU_I"></iframe></div></div>
+
+    <br /><h2 style="text-align: left;">A prepper dilemmája: Forgatás vs. Stabilitás </h2><br />Üdv Prepper társam! Te is unod már azt a véget nem érő folyamatot, hogy évről évre átnézed a kamra polcait, kidobod a lejárt konzerveket, és újakat veszel? Ez nemcsak rengeteg pénz, de logisztikai rémálom is. <br /><h2 style="text-align: left;">Miért a Fortiprep 14 napos csomag? </h2><br />Ez a készlet nem csak egy "túlélőcsomag". Íme, miért tartjuk szakmailag is kiemelkedőnek: <br /><br /><ul style="text-align: left;"><li>Főzés nélkül fogyasztható: Válsághelyzetben gyakran nincs gáz, villany vagy víz. Ezeket csak ki kell bontani. </li><li>Valódi 25 éves szavatosság: Nem kell "rotálnod". Egyszer befektetsz, és évtizedekig nyugodt lehetsz.</li><li>Tudatos tápanyag: Napi 2300 kcal, fehérjével, vitaminokkal.</li><li>Integrált vízszűrő: A csomag része, elektromosság nélkül is működik. Exkluzív PrepperPapa ajánlatok </li></ul><br />1. 15% kedvezmény 1 vödörre: Használd a PP-2-2026 kódot. <br /><br /><a href="https://fortiprep.hu/discount/PP-2-2026?redirect=%2Fproducts%2F14-napos-veszhelyzeti-elelmiszer-csomag-viztisztitoval">Kattints ide a vödörhöz →</a> <br /><br />2. 2+1 akció (Családi csomag): Vegyél 3-at, fizess 2-t! (Automatikusan érvényesül.) <br /><br />3. 90% kedvezmény az E-bookra: Használd a PP-1-2026 kódot. <br /><br /><a href="https://fortiprep.hu/discount/PP-1-2026?redirect=%2Fproducts%2Ftorhetetlen-ebook">Kattints ide az e-bookhoz →</a></article><article style="line-height: 1.6; margin: 0px auto; max-width: 800px;"> <br />Záró gondolatok <br /><br />Nézzétek meg a videót, amiben részletesen kielemezzük az ízeket és a matekot is. A 25 éves szavatosság nem csak egy szám – az a nyugalom, amit a családotoknak vásároltok meg. <br /><br />Neked melyik íz lenne a favorit? Írd meg kommentben!
+
+<h3>Mennyibe kerül? A pontos matek</h3>
+
+<p>A leggyakoribb kérdés a videó alatt az volt, hogy mennyi ez forintban, és megéri-e. Itt van
+kiszámolva, hogy ne kelljen fejben osztanod. <b>Az árak 2026. augusztus 29-én érvényesek</b> a
+gyártó oldalán, egy 42 adagos (14 napos, egy főre szóló) csomagra.</p>
+
+<table style="border-collapse:collapse;width:100%;max-width:560px">
+<tr><td style="padding:6px 10px;border-bottom:1px solid #ddd">Áthúzott listaár</td>
+    <td style="padding:6px 10px;border-bottom:1px solid #ddd;text-align:right">79 900 Ft</td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid #ddd">Bolti ár ma</td>
+    <td style="padding:6px 10px;border-bottom:1px solid #ddd;text-align:right"><b>69 984 Ft</b></td></tr>
+<tr><td style="padding:6px 10px;border-bottom:1px solid #ddd">A PP-2-2026 kóddal (-15%)</td>
+    <td style="padding:6px 10px;border-bottom:1px solid #ddd;text-align:right"><b>59 486 Ft</b></td></tr>
+</table>
+
+<h3>Lebontva arra, amit tényleg kapsz</h3>
+
+<p>A csomagban <b>42 komplett adag</b> van, ami 14 nap három étkezéssel, egy főre, napi
+nagyjából 2300 kcal-lal. A kóddal számolva:</p>
+
+<ul>
+<li><b>1 416 Ft egy adag.</b> Ez egy előre elkészített, főzés nélkül fogyasztható étel.</li>
+<li><b>4 249 Ft egy teljes nap</b> (három adag, 2300 kcal).</li>
+<li><b>1 847 Ft ezer kalóriánként.</b> Ezen a számon lehet a legőszintébben összemérni bármi
+    mással, ami a kamrádban áll.</li>
+</ul>
+
+<p>Kód nélkül, bolti áron ugyanez 1 666 Ft adagonként és 4 999 Ft naponta.</p>
+
+<h3>A 25 éves szavatosság ára, évekre elosztva</h3>
+
+<p>Itt válik el ez a csomag a hagyományos kamrától, és szerintem ez a lényeg. A mostani gyártás
+minőségmegőrzési ideje <b>2050. november</b>, tehát nem egy évre veszed meg, hanem huszonötre:</p>
+
+<ul>
+<li><b>2 379 Ft egy évre</b> a kóddal (2 799 Ft bolti áron).</li>
+<li>Nem kell rotálni, nem kell évente átnézni és kidobni, nem kell újravásárolni.</li>
+</ul>
+
+<p>Egy hagyományos konzerves tartaléknál ez az összeg nem egyszer merül fel, hanem újra és újra,
+amikor lejár és cserélni kell. A pénz egy része tehát nem az ételért megy el, hanem azért, hogy
+huszonöt évig ne kelljen foglalkoznod vele.</p>
+
+<h3>A 2+1 csomag, ha többen vagytok</h3>
+
+<p>Három vödör kettő áráért <b>139 968 Ft</b> a 209 952 helyett. Ez 126 adag, vagyis
+<b>42 nap egy főnek, vagy 14 nap három főnek</b>. Így az adagár 1 111 Ft-ra, a napi költség
+3 333 Ft-ra jön le. Ez a csomag legolcsóbb formája.</p>
+
+<p><i>A 15%-os kód és a 2+1 akció együttes használhatóságát a kosárban ellenőrizd, mert a
+kedvezmények kombinálhatósága a boltnál dől el, nem nálam.</i></p>
+
+<h3>Mit számolj ki magadnak, mielőtt rendelsz</h3>
+
+<p>Egy vödör <b>egy fő, tizennégy nap</b>. Ha ketten vagytok otthon, egy vödör egy hetet fed le.
+Ha négyen, három és fél napot. Nem azt mondom, hogy mindenkinek a nagy csomag kell: azt mondom,
+hogy a döntés előtt szorozd fel a saját létszámodra, mert a vödrök száma ettől függ, nem az
+akciótól.</p>
+</article>
+<div class="cimkek"><span class="cimke">Felkészülés alapja</span><span class="cimke">Egészség és elsősegély</span><span class="cimke">Teszt</span></div>
+
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Felkészülés a zsebedben</h3>
+<p>Készlet lejárat-figyelővel, vészkártya, tájoló, térkép és tudástár egy alkalmazásban. A legfontosabbak internet nélkül is működnek.</p>
+<a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
+<a class="vissza" href="/cikkek.html">&larr; Vissza a cikkekhez</a>
+</main>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a><a href="/partnerprogram/">Partnerprogram</a></div><span>PrepperPapa &middot; Készülj, ne félj!</span></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+</body>
+</html>

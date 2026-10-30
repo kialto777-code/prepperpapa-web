@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klarus FlatTac X1: Az ultravékony taktikai zseblámpa részletes értékelése - PrepperPapa</title>
+<meta name="description" content="A Klarus FlatTac X1 egy izgalmas új belépő az ultravékony taktikai zseblámpák piacán. Miután alaposan teszteltem ezt az eszközt, megosztom...">
+<link rel="canonical" href="https://prepperpapa.hu/2025/01/klarus-flattac-x1-az-ultravekony.html">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Klarus FlatTac X1: Az ultravékony taktikai zseblámpa részletes értékelése">
+<meta property="og:description" content="A Klarus FlatTac X1 egy izgalmas új belépő az ultravékony taktikai zseblámpák piacán. Miután alaposan teszteltem ezt az eszközt, megosztom...">
+<meta property="og:url" content="https://prepperpapa.hu/2025/01/klarus-flattac-x1-az-ultravekony.html">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  /* 2026-10-19 arculat (Fonok 21:43): the /app/ look */
+  h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.01em}
+  h2{font-weight:800;letter-spacing:-.005em}
+  header{position:sticky;top:0;z-index:30;background:rgba(11,17,14,.9);backdrop-filter:blur(10px)}
+  .nav{max-width:1100px}
+  .mmenu{display:none;position:relative}
+  .mmenu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;
+                 justify-content:center;border:1px solid #33453B;border-radius:8px;color:var(--ink)}
+  .mmenu summary::-webkit-details-marker{display:none}
+  .mmenu summary svg{width:22px;height:22px}
+  .mmenu[open] summary{border-color:var(--zold)}
+  .mmenu nav{position:absolute;right:0;top:54px;min-width:230px;background:var(--panel);z-index:40;
+             border:1px solid var(--line);border-radius:8px;padding:8px 0;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .mmenu nav a{display:block;padding:13px 20px;font-size:15px;letter-spacing:.05em;text-transform:uppercase;
+               color:var(--ink);text-decoration:none}
+  .mmenu nav a.mm-app{color:var(--borostyan);font-weight:700}
+  @media(max-width:820px){.nav a.link{display:none} .mmenu{display:block}}
+  .meta{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .cimke{border-radius:999px}
+  .appdoboz{margin:46px 0 0;padding:24px;border-radius:18px;border:1px solid #2c3d33;
+     background:linear-gradient(rgba(11,17,14,.70),rgba(11,17,14,.84)),url('/assets/hatter-topo.jpg') center/cover}
+  .appdoboz .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:700}
+  .appdoboz h3{margin:6px 0 8px;font-size:22px;font-weight:800}
+  .appdoboz p{color:#cfd6cf;font-size:15.5px;margin:0 0 16px}
+  .appdoboz a.gomb{display:inline-block;background:var(--borostyan);color:#1b1407;font-weight:700;
+     padding:11px 20px;border-radius:10px;text-decoration:none}
+  footer .fnav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+  footer .fnav a{color:var(--muted);text-decoration:none}
+  footer .fnav a:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div.lab{max-width:1100px;margin:0 auto;padding:30px 22px 40px}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav fej2">
+  <a class="brand" href="/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek">
+    <a class="link" href="/">Kezdőlap</a>
+    <a class="link" href="/#videok">Videók</a>
+    <a class="link" href="/cikkek.html" aria-current="page">Tudástár</a>
+    <a class="link" href="/kalkulator/">Kalkulátorok</a>
+    <a class="link" href="/alkalmazasok/">Alkalmazás</a>
+    <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező fórum</a>
+    <a class="link" href="/#kapcsolat">Kapcsolat</a>
+  </div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
+  <!--nyelvv-->
+  <button class="hamb" type="button" aria-label="Menü" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main>
+<h1>Klarus FlatTac X1: Az ultravékony taktikai zseblámpa részletes értékelése</h1>
+<div class="meta">2025-01-31</div>
+<div>A Klarus FlatTac X1 egy izgalmas új belépő az ultravékony taktikai zseblámpák piacán. Miután alaposan teszteltem ezt az eszközt, megosztom tapasztalataimat és véleményemet erről az innovatív termékről.</div>
+
+<h3>Főbb jellemzők</h3>
+
+<ul>
+<li>Maximális fényerő: 4200 lumen</li>
+<li>Hatótávolság: 175-185 méter</li>
+<li>5 üzemmód: Turbó, Magas, Holdfény, Stroboszkóp és SOS</li>
+<li>Beépített 2150 mAh-s lítium-ion akkumulátor</li>
+<li>USB-C töltőport</li>
+<li>OLED kijelző</li>
+<li>Kettős kapcsoló rendszer</li>
+<li>Vízállóság: IPX6</li>
+<li>Ütésállóság: 1 méter</li>
+</ul>
+
+<h3>Dizájn és felépítés</h3>
+
+<p>A FlatTac X1 legszembetűnőbb tulajdonsága az ultravékony kialakítás. Meglepően kompakt mérete ellenére a lámpa robusztus érzetet kelt a kézben. Az egytestű ház kiváló vízállóságot és ütésállóságot biztosít, ami fontos szempont egy taktikai zseblámpánál.</p>
+
+<p>Különösen tetszett a lámpa fejrészén található kerámia gyöngyök ötlete, amelyek lehetővé teszik az üvegtörést vészhelyzetben. Ez a funkció rendkívül hasznos lehet mentési műveletekben vagy önvédelmi helyzetekben.</p>
+
+<h3>Teljesítmény és fényerő</h3>
+
+<p>A FlatTac X1 4200 lumenes maximális fényereje valóban lenyűgöző. Azonban úgy érzem, hogy a tényleges fényerő szubjektíven nem tűnik sokkal erősebbnek, mint néhány alacsonyabb lumen értékű versenytárs, amit korábban teszteltem.</p><p><br></p><div><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3WYxx9ISFQgDiczXOm65bUgHVEutSk4Nl7TuHQJh93VgZsO7t_lmPdBGAZPHrqCrfz8u4UI3rd5ctbDCBqtGYVqipYzvurNSpbyHKVyNhnpsrk_U-L73imLNVu5t1woppJ3cQdalJsb53oH_jq8l5ISle8fmHM75G8Sa-5kSU0sTzmSAxh-igpnUzsEaL/s1920/DJI_20250116180105_0082_D%20-%20frame%20at%201m3s.jpg"><img border="0" height="334" src="/kepek/cd96f66f1f.jpg" width="591"></a></div><p><br></p>
+
+<p>Az öt különböző üzemmód (Turbó, Magas, Holdfény, Stroboszkóp és SOS) jól lefedi a lehetséges felhasználási területeket. A Turbó mód 15 másodperces időkorlátja és az azt követő automatikus csökkentés 200 lumenre ésszerű kompromisszumnak tűnik a teljesítmény és a hőkezelés között.</p>
+
+<h3>Használhatóság és kezelőfelület</h3>
+
+<p>A kettős kapcsolórendszer véleményem szerint kissé megosztó. Bár értékelem az intuitív, vakon is használható kialakítást, néha frusztrálónak találtam, hogy nem lehet közvetlenül kikapcsolni a lámpát anélkül, hogy végig kellene lépkedni a fényerő szinteken.</p><p><br></p><div><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBHSSojeHDy21h6SZJ8F2vGZ1DL13n9KlcjHu-Mtuoa9UpzcGzzk4ZE-SXu-_vq8KMMRHD11PeXWsnadcDltp158eXgA-XV2qy4EfwLOBOubhU0iywmXop9ICy2dSGqapvisrHplBOIyzU2Zp5kyeef04rXyRH63GLeS_SQYfH6Dgdb07TadSW9XBws2G3/s952/17352795589057301.jpg"><img border="0" height="170" src="/kepek/84ffd9f1f4.jpg" width="587"></a></div><br><p><br></p>
+
+<p>Az OLED kijelző hasznos funkciónak bizonyult, bár úgy érzem, hogy nem olyan hatékony, mint néhány versenytárs megoldása. A kijelző rövid ideig mutatja az akkumulátor töltöttségét és az aktuális fényerőt, majd kikapcsol, ami energiatakarékos, de néha kényelmetlennek találtam.</p>
+
+<h3>Akkumulátor és töltés</h3>
+
+<p>A beépített 2150 mAh-s akkumulátor és az USB-C töltési lehetőség kényelmes megoldást jelent. A holdfény üzemmódban tapasztalt akár 48 órás üzemidő kifejezetten impresszív. A gyors töltési képesség is nagy előnynek bizonyult a használat során.</p>
+
+<h3>Összegzés</h3>
+
+<p>A Klarus FlatTac X1 összességében egy izgalmas és ígéretes termék. Erősségei közé tartozik a kompakt, mégis robusztus kialakítás, a magas fényerő és a sokoldalú felhasználhatóság. Azonban úgy érzem, hogy a kezelőfelület és az OLED kijelző működése terén van még lehetőség a fejlesztésre.</p>
+
+<p>Ez a lámpa ideális választás lehet azoknak, akik egy kompakt, nagy teljesítményű és sokoldalú zseblámpát keresnek mindennapi hordásra vagy taktikai célokra. Azonban javaslom, hogy a vásárlás előtt mindenképpen próbálják ki személyesen a kezelőfelületet, hogy megbizonyosodjanak arról, kényelmes-e számukra a használata.</p><p>Nézd meg a lámpárol készült videómat is:</p><div></div><div>&lt;&lt;&lt;&lt;----------‐---‐--------------------&gt;&gt;&gt;&gt;</div><b>FRISSÍTÉS</b><div><b>UI 2.0</b></div><div><br></div><div><div><div>Azt találtuk, hogy sok X1 felhasználó úgy gondolja, hogy az X1 felhasználói felületünk nem jó, ezért azt tervezzük, hogy a közelmúltban frissítjük az X1 felhasználói felületet. Itt egy új UI művelet.</div><div><br></div><div><div>
+  <a href="/kepek/ac2c8d323e.jpg">
+    </a><img border="0" src="/kepek/ac2c8d323e.jpg" width="400"></div></div><div><br></div><div>Töröljük a „háromszori koppintású AUX kapcsolót a zároláshoz/feloldáshoz”, és hozzáadjuk az oldalsó kapcsolót a zároláshoz/feloldáshoz.</div><div><p></p><div>
+  <a href="/kepek/a4f372ef44.png">
+    <img border="0" src="/kepek/a4f372ef44.png" width="400">
+  </a>
+</div><br><p></p></div></div></div><div>Várjuk a frissített változatot.</div>
+<div class="cimkek"><span class="cimke">Lámpák és fény</span><span class="cimke">Teszt</span></div>
+
+<div class="appdoboz"><div class="k">PrepperPapa app</div><h3>Felkészülés a zsebedben</h3>
+<p>Készlet lejárat-figyelővel, vészkártya, tájoló, térkép és tudástár egy alkalmazásban. A legfontosabbak internet nélkül is működnek.</p>
+<a class="gomb" href="/app/">Nézd meg, mit tud</a></div>
+<a class="vissza" href="/cikkek.html">&larr; Vissza a cikkekhez</a>
+</main>
+<footer><div class="lab"><div class="fnav"><a href="/">Főoldal</a><a href="/cikkek.html">Cikkek</a><a href="/kalkulator/">Kalkulátorok</a><a href="/app/">Alkalmazás</a><a href="https://forum.prepperpapa.hu">Gyülekező</a><a href="/adatkezeles.html">Adatkezelés</a><a href="/partnerprogram/">Partnerprogram</a></div><span>PrepperPapa &middot; Készülj, ne félj!</span></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+</body>
+</html>

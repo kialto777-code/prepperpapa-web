@@ -4855,5 +4855,6 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Nincs cél": "Bez celu",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Słownik: słownik hebrajski i grecki Stronga (1894), domena publiczna.",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Słownik: słownik hebrajski i grecki Stronga (1894), domena publiczna; tekst słownika jest tłumaczeniem maszynowym.",
-  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Dla tego przekładu nie ma jeszcze danych o słowach oryginału."
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Dla tego przekładu nie ma jeszcze danych o słowach oryginału.",
+  "Hiányzó engedély az ébresztőhöz": "Budzikowi brakuje uprawnienia"
 });

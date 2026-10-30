@@ -4915,5 +4915,6 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Nincs cél": "Без мети",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Словник: єврейський і грецький словник Стронга (1894), суспільне надбання.",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Словник: єврейський і грецький словник Стронга (1894), суспільне надбання; текст словника — машинний переклад.",
-  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Для цього перекладу ще немає даних про слова оригіналу."
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Для цього перекладу ще немає даних про слова оригіналу.",
+  "Hiányzó engedély az ébresztőhöz": "Будильнику бракує дозволу"
 });

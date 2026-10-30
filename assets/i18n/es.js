@@ -4837,5 +4837,6 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
   "Nincs cél": "Sin meta",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Diccionario: diccionario hebreo y griego de Strong (1894), dominio público.",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Diccionario: diccionario hebreo y griego de Strong (1894), dominio público; el texto del diccionario es una traducción automática.",
-  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Todavía no hay datos de las palabras originales para esta traducción."
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Todavía no hay datos de las palabras originales para esta traducción.",
+  "Hiányzó engedély az ébresztőhöz": "Falta un permiso para la alarma"
 });

@@ -4844,5 +4844,6 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Nincs cél": "Fără țintă",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public.",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public; textul dicționarului este o traducere automată.",
-  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Pentru această traducere nu există încă date despre cuvintele originale."
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Pentru această traducere nu există încă date despre cuvintele originale.",
+  "Hiányzó engedély az ébresztőhöz": "Alarmei îi lipsește o permisiune"
 });

@@ -4858,5 +4858,6 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Nincs cél": "Без цели",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Словарь: еврейский и греческий словарь Стронга (1894), общественное достояние.",
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Словарь: еврейский и греческий словарь Стронга (1894), общественное достояние; текст словаря — машинный перевод.",
-  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Для этого перевода пока нет данных об исходных словах."
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Для этого перевода пока нет данных об исходных словах.",
+  "Hiányzó engedély az ébresztőhöz": "Будильнику не хватает разрешения"
 });
