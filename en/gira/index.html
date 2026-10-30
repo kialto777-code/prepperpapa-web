@@ -120,6 +120,9 @@
   @keyframes girafeny{0%,55%{background-position:130% 0}100%{background-position:-130% 0}}
   .gira h1{font-size:clamp(28px,6vw,40px);line-height:1.1;margin:0 0 10px;
      background:linear-gradient(180deg,var(--arany2),var(--arany) 55%,#B8913F);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .gira h1.felirat{background:none;color:inherit;margin:0 0 12px}
+  .gira h1.felirat img{display:block;width:min(46%,200px);height:auto;margin:0 auto;filter:drop-shadow(0 0 18px rgba(226,190,106,.22))}
+  .gira .rejtett{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .gira .alcim{color:var(--ink);font-size:18px;max-width:560px;margin:0 auto}
   .gira h2{color:var(--arany);letter-spacing:.3px}
   .gira .forrasok{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0 8px}
@@ -288,7 +291,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="pp gira">
 <section class="hos">
 <div class="kep"><div class="erme"><img src="/gira/kepek/gira-erme.webp" width="720" height="720" alt="Gíra"></div></div>
-<h1>Gíra</h1>
+<h1 class="felirat"><img src="/gira/kepek/gira-felirat.webp" width="492" height="229" alt=""><span class="rejtett">Gíra</span></h1>
 <p class="alcim">PrepperPapa's community settlement unit. A reward and a tool for mutual settlement between members, not money.</p>
 </section>
 
