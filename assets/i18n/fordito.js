@@ -56,6 +56,9 @@ function ppSzovegForditas(gyoker) {
       const eredeti = PP_FORD_EREDETI.has(cs) ? PP_FORD_EREDETI.get(cs) : cs.textContent;
       const kulcs = eredeti.replace(/\s+/g, ' ').trim();
       if (!kulcs) continue;
+      // LANGUAGE NAMES ARE AUTONYMS (owner report 2026-10-30): a language-list entry (an <option> or a data-nyelv button
+      // built from PP_NYELVEK) stays in its own language -- "Magyar" was turned into "Hungarian" / "Угорська".
+      if (PP_NYELVEK[(p.tagName === 'OPTION' ? p.value : p.dataset && p.dataset.nyelv) || ''] === kulcs) continue;
       if (ny === 'hu') {
         if (PP_FORD_EREDETI.has(cs)) { cs.textContent = eredeti; PP_FORD_EREDETI.delete(cs); }
         continue;

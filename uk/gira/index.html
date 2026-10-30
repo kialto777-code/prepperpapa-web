@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гіра: розрахункова одиниця спільноти PrepperPapa</title>
+<meta name="description" content="Гіра є розрахунковою одиницею спільноти PrepperPapa: стартовий баланс, рекомендації, щотижневе читання Біблії, а учасники можуть передавати її й одне одному, без інтернету, через QR-код або дотиком. Винагорода, а не гроші.">
+<link rel="canonical" href="https://prepperpapa.hu/uk/gira/">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Гіра: розрахункова одиниця спільноти PrepperPapa">
+<meta property="og:description" content="Гіра є розрахунковою одиницею спільноти PrepperPapa: стартовий баланс, рекомендації, щотижневе читання Біблії, а учасники можуть передавати її й одне одному, без інтернету, через QR-код або дотиком. Винагорода, а не гроші.">
+<meta property="og:url" content="https://prepperpapa.hu/uk/gira/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:image" content="https://prepperpapa.hu/uk/app/kepek/og-app.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/uk/app/kepek/og-app.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  /* Boss 2026-10-26 (TG 29604): the header uses the home page's width (1180 px), not the 760 px text column --
+     in the narrow column the logo sat in the middle of a wide screen. */
+  .nav{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;
+        gap:22px;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:920px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px 8px;gap:4px 20px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  main.ppm{max-width:none;padding:0}
+  .pp{max-width:var(--max);margin:0 auto;padding:32px 18px 56px}
+  @media (max-width:560px){.pp{padding:24px 16px 48px}}
+  .ppkep{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin:6px 0 22px}
+  .pp .kicsi{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);font-weight:700;margin:0 0 10px}
+  .pp h1{font-size:clamp(30px,6vw,46px);line-height:1.1;margin:0 0 16px}
+  .pp h2{font-size:clamp(22px,4vw,28px);line-height:1.2;margin:38px 0 14px}
+  .pp p{margin:0 0 14px;color:#cfd6cf}
+  .pp ul,.pp ol{margin:0 0 16px 22px;color:#cfd6cf}
+  .pp li{margin-bottom:8px}
+  .pp .cta{margin:24px 0 10px}
+  .pp .halk{color:var(--muted);font-size:15px}
+
+  .gira{--arany:#E2BE6A;--arany2:#F6E3A8;--zold:#2E6B4F;position:relative}
+  .gira .hos{position:relative;margin:-8px -16px 22px;padding:0 16px 22px;text-align:center;
+     border-bottom:1px solid rgba(226,190,106,.18)}
+  /* the backdrop (Bible reading + small community, generated) sits behind the coin in a veil, without a frame:
+     Boss 2026-10-30 TG 6126 */
+  .gira .kep{position:relative;aspect-ratio:1024/572;max-height:420px;margin:0 -16px 8px;display:flex;align-items:center;justify-content:center}
+  .gira .kep::before{content:"";position:absolute;inset:0;pointer-events:none;
+     background:linear-gradient(rgba(11,17,14,.40),rgba(11,17,14,.40)),url(/gira/kepek/gira-hatter.webp) center/cover no-repeat;
+     -webkit-mask-image:radial-gradient(ellipse 70% 68% at 50% 50%,#000 30%,transparent 100%);
+     mask-image:radial-gradient(ellipse 70% 68% at 50% 50%,#000 30%,transparent 100%)}
+  .gira .kep::after{content:"";position:absolute;inset:0;pointer-events:none;
+     background:radial-gradient(circle at 50% 50%,rgba(226,190,106,.20),rgba(226,190,106,0) 34%)}
+  .gira .erme{position:relative;z-index:1;width:min(34%,190px);aspect-ratio:1;margin:0;border-radius:50%;overflow:hidden;
+     animation:giralebeg 6s ease-in-out infinite;filter:drop-shadow(0 12px 22px rgba(0,0,0,.6)) drop-shadow(0 0 28px rgba(226,190,106,.28))}
+  .gira .erme img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;transform:scale(1.32)}
+  .gira .erme::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+     background:linear-gradient(115deg,transparent 35%,rgba(255,248,220,.55) 48%,transparent 60%);
+     background-size:250% 100%;animation:girafeny 4.5s ease-in-out infinite;mix-blend-mode:screen}
+  @keyframes giralebeg{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @keyframes girafeny{0%,55%{background-position:130% 0}100%{background-position:-130% 0}}
+  .gira h1{font-size:clamp(28px,6vw,40px);line-height:1.1;margin:0 0 10px;
+     background:linear-gradient(180deg,var(--arany2),var(--arany) 55%,#B8913F);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .gira .alcim{color:var(--ink);font-size:18px;max-width:560px;margin:0 auto}
+  .gira h2{color:var(--arany);letter-spacing:.3px}
+  .gira .forrasok{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0 8px}
+  .gira .forras{background:linear-gradient(160deg,rgba(226,190,106,.10),rgba(18,27,22,.9) 55%);border:1px solid rgba(226,190,106,.28);
+     border-radius:16px;padding:16px 16px 14px}
+  .gira .forras svg{width:30px;height:30px;color:var(--arany);display:block;margin-bottom:8px}
+  .gira .forras h3{margin:0 0 6px;font-size:17px;color:var(--ink)}
+  .gira .forras p{margin:0;color:var(--muted);font-size:15px}
+  .gira .szabaly{border-left:3px solid var(--arany);background:var(--panel);border-radius:0 12px 12px 0;padding:12px 16px}
+  .gira .szabalyok{margin:0;padding-left:20px}
+  .gira .szabalyok li{margin:0 0 8px}
+  .gira .hely{color:#d9a54a;font-style:italic}
+  @media (prefers-reduced-motion:reduce){.gira .erme,.gira .erme::after{animation:none}}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/gira/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/gira/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/gira/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/gira/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/gira/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/gira/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/gira/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/gira/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/gira/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/uk/konfidentsiinist.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Файли cookie і згода", "bevezeto": "Типово цей сайт не зберігає файли cookie на твоєму пристрої. Ми просимо згоди для двох цілей, її можна надати або відхилити окремо. Якщо відмовишся, усе однаково працює, а рішення можна будь-коли змінити в пункті «Налаштування cookie» внизу сторінки.", "p_cim": "Відстеження партнерів", "p_le": "Якщо ти прийшов за посиланням одного з наших партнерів, ми запам'ятовуємо у файлах cookie код партнера і час переходу (pp_ref і файли cookie GoAffPro, на 90 днів), щоб визначити, якому партнерові належить комісія, якщо ти купиш. Купон партнера зараховується йому й без файлів cookie.", "s_cim": "Статистика відвідувань", "s_le": "Анонімна статистика відвідувань із Google Analytics 4 (файли cookie _ga). Ми не використовуємо її для реклами чи профілювання; без твоєї згоди вона навіть не завантажується.", "igen": "Приймаю", "nem": "Відхиляю", "mind_igen": "Прийняти все", "mind_nem": "Відхилити все", "ment": "Зберегти вибір", "adatv": "Політика конфіденційності", "link": "Налаштування cookie"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<header><nav class="nav fej2">
+  <a class="brand" href="/uk/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/uk/">Головна</a> <a class="link" href="/uk/#video">Відео</a> <a class="link" href="/uk/statti.html">База знань</a> <a class="link" href="/uk/kalkuliatory/">Калькулятори</a> <a class="link" href="/uk/zastosunky/">Застосунок</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Форум спільноти</a> <a class="link" href="/uk/#kontakty">Контакти</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Підписатися</a>
+  <details class="nyelvv"><summary aria-label="Мова"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>UK</span></summary><ul><li><a href="/gira/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/gira/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/gira/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/gira/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/gira/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/gira/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/gira/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/gira/" hreflang="uk" lang="uk" data-nyelv="uk" aria-current="true">Українська</a></li></ul></details>
+  <button class="hamb" type="button" aria-label="Меню" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main class="ppm">
+<div class="pp gira">
+<section class="hos">
+<div class="kep"><div class="erme"><img src="/gira/kepek/gira-erme.webp" width="720" height="720" alt="Гіра"></div></div>
+<h1>Гіра</h1>
+<p class="alcim">Розрахункова одиниця спільноти PrepperPapa. Винагорода й засіб взаєморозрахунків між учасниками, а не гроші.</p>
+</section>
+
+<h2>Що таке Гіра?</h2>
+<p>Гіра є розрахунковою одиницею спільноти PrepperPapa. У застосунку ти зберігаєш її у своєму гаманці Гіри, який захищено PIN-кодом. Це винагорода й засіб взаєморозрахунків між учасниками, а не гроші.</p>
+
+<h2>Як отримати Гіру?</h2>
+<div class="forrasok">
+<div class="forras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6.5" rx="7" ry="2.5"/><path d="M5 6.5v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4M5 10.5v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4M5 14.5v3c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-3"/></svg><h3>Стартовий баланс</h3><p>Кожен один раз отримує 20 гір, коли створюється його гаманець Гіри.</p></div>
+<div class="forras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M10.5 20a5.5 5.5 0 0 1 11 0"/></svg><h3>Рекомендації</h3><p>За кожного друга, який приєднається за твоїм реферальним посиланням або кодом і активує свій профіль кодом з електронного листа, ти отримуєш 10 гір. Якщо він придбає преміум-доступ, тобі належить ще 50 гір. Ці 50 гір зараховуються через 14 днів після покупки, якщо покупка на той час усе ще дійсна; після поверненої покупки вони не нараховуються. Винагорода нараховується загалом не більше ніж за 50 рекомендацій на один обліковий запис.</p></div>
+<div class="forras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5.5c3-1.2 6.2-1 9.5 1 3.3-2 6.5-2.2 9.5-1v13c-3-1.2-6.2-1-9.5 1-3.3-2-6.5-2.2-9.5-1z"/><path d="M12 6.5v13"/></svg><h3>Щотижневе читання Біблії</h3><p>Якщо протягом повного тижня, з понеділка до неділі, ти щодня досягаєш своєї денної мети читання, наприкінці тижня ти отримуєш 1 гіру. Читання ранкового будильника не зараховується.</p></div>
+<div class="forras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><h3>Від інших</h3><p>Учасники спільноти теж можуть передати тобі гіри описаним нижче способом: наприклад, якщо ти працюєш на них, допомагаєш їм або позичаєш їм інструмент. Це учасники визначають між собою; PrepperPapa не дає за це гір і не встановлює за це ціну.</p></div>
+</div>
+
+<h2>Як нею користуватися?</h2>
+<p>Оплата в три кроки:</p>
+<ol>
+<li>Інша сторона показує свій QR-код особи або надсилає запит. Ти скануєш його, і в тебе заповнюється форма.</li>
+<li>Ти вводиш суму й призначення, тоді натискаєш кнопку «Підготувати платіж». Твій телефон підписує запис і показує QR-код.</li>
+<li>Інша сторона сканує цей QR-код. Саме тоді вартість переходить до неї: її телефон перевіряє підпис і зараховує її.</li>
+</ol>
+<p>Ти можеш і запросити гіру: вводиш скільки й навіщо, інша сторона сканує QR-код, у неї платіж уже заповнений, і їй лишається тільки підтвердити. Поруч передавання працює і дотиком (NFC). Інтернет не потрібен: усе відбувається між двома телефонами, за допомогою камери та екрана. Доки інша сторона не відсканувала квитанцію, запис у тебе стоїть із позначкою «очікує передавання».</p>
+
+<h2>Що таке Гіра, а чим вона не є?</h2>
+<ul>
+<li>Винагорода, а не гроші.</li>
+<li>Її не можна обміняти на гроші й не можна купити.</li>
+<li>PrepperPapa не гарантує її вартість і не є стороною угод між учасниками. Суперечки та розрахунки між учасниками користувачі вирішують між собою.</li>
+<li>Під час оплати без інтернету може статися, що хтось віддасть ту саму гіру двом людям. Це з’ясовується, коли два записи зустрічаються. Цей ризик несуть користувачі.</li>
+</ul>
+
+<h2>Резервна копія і втрата</h2>
+<p>Ключ твого гаманця Гіри є лише на твоєму телефоні; PrepperPapa не має до нього доступу й не може його відновити. Тому:</p>
+<ul>
+<li>Зроби резервну копію гаманця. Копія зашифрована й створюється з ключем копії, який ти обираєш сам.</li>
+<li>Запиши ключ копії та PIN-код гаманця і зберігай їх у надійному місці.</li>
+<li>Якщо ти загубиш або зміниш телефон, а резервної копії немає (або ти забув ключ чи PIN), твої гіри спільноти можуть бути втрачені назавжди.</li>
+</ul>
+
+<h2>Правила Гіри</h2>
+<!-- Section B of docs/gira-oldal-hu-2026-10-30.md, verbatim; approved by the Boss TG 1246 "Jóváhagyom a gíra szabályzatát"
+     (via István 26214) and TG 6156. Any change to these words needs his sign-off again (point 5 hangs on card 9d083269). -->
+<div class="szabaly">
+<ol class="szabalyok">
+<li><strong>Що таке Гіра.</strong> Гіра є винагородою та одиницею розрахунків усередині спільноти, а не грошима й не платіжним засобом. Її не можна обміняти на гроші, не можна купити, і PrepperPapa не гарантує її вартість.</li>
+<li><strong>Угоди між учасниками.</strong> PrepperPapa не є стороною угод між учасниками. Суперечки та розрахунки між учасниками користувачі вирішують між собою.</li>
+<li><strong>Зарахування.</strong> Кожен користувач один раз отримує стартовий баланс 20 гір (один раз на обліковий запис і на пристрій). Винагорода реферальної програми становить 10 гір за кожен новий профіль, активований кодом з електронного листа, і ще 50 гір, якщо запрошений придбає преміум-доступ; 50 гір зараховуються через 14 днів після покупки, якщо покупка на той час усе ще дійсна, а після поверненої покупки не нараховуються. Винагорода нараховується загалом не більше ніж за 50 рекомендацій на один обліковий запис. На один обліковий запис і один пристрій належить одна винагорода; рекомендувати самого себе не можна. Винагорода за щотижневе читання Біблії становить 1 гіру за повний тиждень з понеділка до неділі, у кожен день якого ти досяг своєї денної мети читання; читання ранкового будильника не зараховується.</li>
+<li><strong>Гаманець і ключ.</strong> Гаманець Гіри та його секретний ключ знаходяться на твоєму пристрої. PrepperPapa не має до них доступу й не може їх відновити. За надійне зберігання PIN-коду гаманця, ключа копії та резервної копії відповідаєш ти.</li>
+<li><strong>Втрата.</strong> Якщо в тебе немає резервної копії гаманця або ти загубиш ключ копії чи PIN-код, гіри в гаманці, отримані від учасників, можуть бути втрачені назавжди, і PrepperPapa їх не поверне.</li>
+<li><strong>Оплата без інтернету.</strong> Під час оплати без інтернету та сама гіра може бути витрачена двічі. Цей ризик несуть користувачі.</li>
+<li><strong>Утримання, зміна.</strong> У разі підозри на шахрайство ми можемо утримати винагороду до її зарахування. Ми можемо змінити або припинити програму на майбутнє; уже зараховану винагороду ми не відкликаємо, крім випадків шахрайства.</li>
+<li><strong>Відповідальність.</strong> PrepperPapa не несе відповідальності за шкоду, що виникла з ризиків, описаних у цих правилах, за винятком відповідальності, яку закон не дозволяє виключити.</li>
+<li><strong>Вік.</strong> Користуватися застосунком дозволено з 16 років.</li>
+</ol>
+</div>
+
+<p><a href="/uk/app/">&larr; Застосунок PrepperPapa</a></p>
+</div>
+</main>
+<footer><div>PrepperPapa &middot; Готуйся, не бійся! &middot; <a href="/uk/konfidentsiinist.html">Конфіденційність</a> &middot; <a href="/en/terms.html">Умови купівлі (EN)</a> &middot; <a href="/en/legal-notice.html">Правова інформація (EN)</a> &middot; <a href="/uk/partnery/">Партнерська програма</a></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+<script>(function(){var m={"videok": "video", "tudastar": "znannia", "kapcsolat": "kontakty", "bemutato": "ohliad", "vasarlas": "kupivlia", "ertesito": "spovishchennia", "osszevetes": "porivniannia", "partnerprogram": "partnery"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>
