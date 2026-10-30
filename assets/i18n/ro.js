@@ -4823,10 +4823,14 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Ma eddig {n} perc az Igével.": "Azi până acum: {n} min cu Cuvântul.",
   "A mai cél teljesült.": "Ținta de azi este atinsă.",
   "Még {m} perc a mai célig.": "Mai sunt {m} min până la ținta de azi.",
+  "Ma {n} / {c} perc az Igével": "Azi {n} / {c} min cu Cuvântul",
   "Gratulálok!": "Felicitări!",
   "Ma is {n} percet töltöttél Isten beszédével.": "Și azi ai petrecut {n} minute cu Cuvântul lui Dumnezeu.",
   "Köszönöm": "Mulțumesc",
   "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Măsoară cât timp petreci zilnic în Biblie și te felicită când îți atingi ținta zilnică.",
   "{n} perc": "{n} min",
   "Nincs cél": "Fără țintă",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public.",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public; textul dicționarului este o traducere automată.",
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Pentru această traducere nu există încă date despre cuvintele originale."
 });

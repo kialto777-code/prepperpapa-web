@@ -5170,10 +5170,14 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Ma eddig {n} perc az Igével.": "Today so far: {n} min with the Word.",
   "A mai cél teljesült.": "Today's goal is reached.",
   "Még {m} perc a mai célig.": "{m} min left to today's goal.",
+  "Ma {n} / {c} perc az Igével": "Today {n} / {c} min with the Word",
   "Gratulálok!": "Congratulations!",
   "Ma is {n} percet töltöttél Isten beszédével.": "Today, too, you spent {n} minutes with God's Word.",
   "Köszönöm": "Thank you",
   "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Measures how much time you spend in the Bible each day, and congratulates you when you reach your daily goal.",
   "{n} perc": "{n} min",
   "Nincs cél": "No goal",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Dictionary: Strong's Hebrew and Greek dictionaries (1894), public domain.",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Dictionary: Strong's Hebrew and Greek dictionaries (1894), public domain; the dictionary text is a machine translation.",
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "There is no original-word data for this translation yet."
 });

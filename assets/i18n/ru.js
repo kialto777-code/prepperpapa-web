@@ -4837,10 +4837,14 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Ma eddig {n} perc az Igével.": "Сегодня пока: {n} мин со Словом.",
   "A mai cél teljesült.": "Цель на сегодня достигнута.",
   "Még {m} perc a mai célig.": "До цели на сегодня осталось {m} мин.",
+  "Ma {n} / {c} perc az Igével": "Сегодня {n} / {c} мин со Словом",
   "Gratulálok!": "Поздравляем!",
   "Ma is {n} percet töltöttél Isten beszédével.": "И сегодня ты провёл {n} мин со Словом Божьим.",
   "Köszönöm": "Спасибо",
   "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Измеряет, сколько времени ты каждый день проводишь с Библией, и поздравляет, когда ты достигаешь дневной цели.",
   "{n} perc": "{n} мин",
   "Nincs cél": "Без цели",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Словарь: еврейский и греческий словарь Стронга (1894), общественное достояние.",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Словарь: еврейский и греческий словарь Стронга (1894), общественное достояние; текст словаря — машинный перевод.",
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Для этого перевода пока нет данных об исходных словах."
 });

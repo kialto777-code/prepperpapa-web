@@ -4894,10 +4894,14 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Ma eddig {n} perc az Igével.": "Сьогодні поки що: {n} хв зі Словом.",
   "A mai cél teljesült.": "Мету на сьогодні досягнуто.",
   "Még {m} perc a mai célig.": "До мети на сьогодні залишилося {m} хв.",
+  "Ma {n} / {c} perc az Igével": "Сьогодні {n} / {c} хв зі Словом",
   "Gratulálok!": "Вітаємо!",
   "Ma is {n} percet töltöttél Isten beszédével.": "І сьогодні ти провів {n} хв зі Словом Божим.",
   "Köszönöm": "Дякую",
   "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Вимірює, скільки часу ти щодня проводиш з Біблією, і вітає, коли ти досягаєш денної мети.",
   "{n} perc": "{n} хв",
   "Nincs cél": "Без мети",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs.": "Словник: єврейський і грецький словник Стронга (1894), суспільне надбання.",
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Словник: єврейський і грецький словник Стронга (1894), суспільне надбання; текст словника — машинний переклад.",
+  "Ehhez a fordításhoz még nincs eredeti szó adat.": "Для цього перекладу ще немає даних про слова оригіналу."
 });
