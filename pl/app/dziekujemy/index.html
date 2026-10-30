@@ -247,6 +247,12 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     <button type="button" class="masol" id="masol"></button>
   </div>
 
+  <div id="kodDoboz" class="doboz rejtett">
+    <h2 id="kodCim"></h2>
+    <div id="kodSor" class="rendeles rejtett"><code id="kodSzoveg" style="font:700 22px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;letter-spacing:.03em;color:#7CB342;word-break:break-all;-webkit-user-select:all;user-select:all"></code><button type="button" class="masol" id="kodMasol"></button></div>
+    <p class="halvany" id="kuldve" style="margin:8px 0 0"></p>
+  </div>
+
   <div id="lepesDoboz" class="doboz rejtett">
     <h2 id="lepesCim"></h2>
     <ol id="lepesek"></ol>
@@ -284,6 +290,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Köszönjük a vásárlást', rendeles: 'Rendelésszám', masol: 'Másolás', masolva: 'Kimásolva',
       teszt: 'TESZT: valódi fizetés nem történt',
       ok: ['Köszönjük a vásárlást!', 'A fizetés sikerült. A prémium kódodat elküldtük e-mailben.'],
+      kodCim: 'A prémium kódod', kuldve: 'A prémium kódodat elküldtük ide: {e}',
       lepesCim: 'A következő lépések',
       lepesek: ['Nyisd meg a levelet, amelynek tárgya: „A PrepperPapa prémium kódod”. Arra az e-mail-címre ment, amelyet a rendelésnél megadtál.',
         'Koppints a levélben a „Kód beváltása az appban” linkre: megnyitja az appot a kódoddal.',
@@ -309,6 +316,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Thank you for your purchase', rendeles: 'Order number', masol: 'Copy', masolva: 'Copied',
       teszt: 'TEST: no real payment was made',
       ok: ['Thank you for your purchase!', 'Your payment went through. We have e-mailed you your premium code.'],
+      kodCim: 'Your premium code', kuldve: 'We sent your premium code to {e}',
       lepesCim: 'Next steps',
       lepesek: ['Open the e-mail with the subject “Your PrepperPapa premium code”. It went to the address you entered with your order.',
         'Tap the “Redeem the code in the app” link in the e-mail: it opens the app with your code.',
@@ -334,6 +342,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Danke für deinen Kauf', rendeles: 'Bestellnummer', masol: 'Kopieren', masolva: 'Kopiert',
       teszt: 'TEST: Es wurde keine echte Zahlung ausgeführt',
       ok: ['Danke für deinen Kauf!', 'Die Zahlung war erfolgreich. Wir haben dir deinen Premium-Code per E-Mail geschickt.'],
+      kodCim: 'Dein Premium-Code', kuldve: 'Wir haben deinen Premium-Code an {e} geschickt.',
       lepesCim: 'Die nächsten Schritte',
       lepesek: ['Öffne die E-Mail mit dem Betreff „Dein PrepperPapa-Premium-Code“. Sie ging an die Adresse, die du bei der Bestellung angegeben hast.',
         'Tippe in der E-Mail auf den Link „Code in der App einlösen“: Er öffnet die App mit deinem Code.',
@@ -359,6 +368,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Gracias por tu compra', rendeles: 'Número de pedido', masol: 'Copiar', masolva: 'Copiado',
       teszt: 'PRUEBA: no se ha realizado ningún pago real',
       ok: ['¡Gracias por tu compra!', 'El pago se ha realizado. Te hemos enviado tu código premium por correo.'],
+      kodCim: 'Tu código premium', kuldve: 'Te hemos enviado tu código premium a {e}',
       lepesCim: 'Próximos pasos',
       lepesek: ['Abre el correo con el asunto «Tu código premium de PrepperPapa». Se envió a la dirección que indicaste en el pedido.',
         'Toca en el correo el enlace «Canjear el código en la app»: abre la app con tu código.',
@@ -384,6 +394,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Dziękujemy za zakup', rendeles: 'Numer zamówienia', masol: 'Kopiuj', masolva: 'Skopiowano',
       teszt: 'TEST: nie dokonano prawdziwej płatności',
       ok: ['Dziękujemy za zakup!', 'Płatność się powiodła. Wysłaliśmy Ci kod premium e-mailem.'],
+      kodCim: 'Twój kod premium', kuldve: 'Wysłaliśmy Twój kod premium na adres {e}',
       lepesCim: 'Co dalej',
       lepesek: ['Otwórz wiadomość z tematem „Twój kod premium PrepperPapa”. Przyszła na adres podany w zamówieniu.',
         'Dotknij w wiadomości linku „Zrealizuj kod w aplikacji”: otworzy aplikację z Twoim kodem.',
@@ -409,6 +420,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Îți mulțumim pentru cumpărare', rendeles: 'Număr comandă', masol: 'Copiază', masolva: 'Copiat',
       teszt: 'TEST: nu a avut loc nicio plată reală',
       ok: ['Îți mulțumim pentru cumpărare!', 'Plata a reușit. Ți-am trimis codul premium pe e-mail.'],
+      kodCim: 'Codul tău premium', kuldve: 'Ți-am trimis codul premium la {e}',
       lepesCim: 'Pașii următori',
       lepesek: ['Deschide e-mailul cu subiectul „Codul tău premium PrepperPapa”. A ajuns la adresa pe care ai dat-o la comandă.',
         'Atinge în e-mail linkul „Valorifică codul în aplicație”: deschide aplicația cu codul tău.',
@@ -434,6 +446,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Спасибо за покупку', rendeles: 'Номер заказа', masol: 'Копировать', masolva: 'Скопировано',
       teszt: 'ТЕСТ: реальной оплаты не было',
       ok: ['Спасибо за покупку!', 'Оплата прошла. Мы отправили вам премиум-код по e-mail.'],
+      kodCim: 'Ваш премиум-код', kuldve: 'Мы отправили ваш премиум-код на {e}',
       lepesCim: 'Что дальше',
       lepesek: ['Откройте письмо с темой «Ваш премиум-код PrepperPapa». Оно пришло на адрес, указанный в заказе.',
         'Нажмите в письме ссылку «Активировать код в приложении»: она откроет приложение с вашим кодом.',
@@ -459,6 +472,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       title: 'Дякуємо за покупку', rendeles: 'Номер замовлення', masol: 'Копіювати', masolva: 'Скопійовано',
       teszt: 'ТЕСТ: справжньої оплати не було',
       ok: ['Дякуємо за покупку!', 'Оплата пройшла. Ми надіслали вам преміум-код електронною поштою.'],
+      kodCim: 'Ваш преміум-код', kuldve: 'Ми надіслали ваш преміум-код на {e}',
       lepesCim: 'Що далі',
       lepesek: ['Відкрийте лист із темою «Ваш преміум-код PrepperPapa». Він надійшов на адресу, вказану в замовленні.',
         'Натисніть у листі посилання «Використати код у застосунку»: воно відкриє застосунок із вашим кодом.',
@@ -515,6 +529,11 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     $('lepesCim').textContent = T.lepesCim;
     var ol = $('lepesek'); ol.innerHTML = '';
     T.lepesek.forEach(function (s) { var li = document.createElement('li'); li.textContent = s; ol.appendChild(li); });
+    lat('kodDoboz', a === 'ok' && !!(allas.kod || allas.email));
+    lat('kodSor', !!allas.kod);
+    $('kodCim').textContent = T.kodCim; $('kodSzoveg').textContent = allas.kod || ''; $('kodMasol').textContent = T.masol;
+    lat('kuldve', !!allas.email); $('kuldve').textContent = allas.email ? T.kuldve.replace('{e}', allas.email) : '';
+    $('appGomb').href = 'https://app.prepperpapa.hu/' + (allas.kod ? '?kod=' + encodeURIComponent(allas.kod) : '');
     $('appGomb').textContent = T.app; $('appMegj').textContent = T.appMegj;
     var oldal = 'https://prepperpapa.hu/' + (ny === 'hu' ? '' : ny + '/') + 'app/';
     $('telep').textContent = T.telep; $('telepLink').textContent = oldal.replace('https://', ''); $('telepLink').href = oldal;
@@ -531,24 +550,30 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     $('tamCim2').textContent = TAMOGATAS; $('tamCim2').href = $('tamGomb').href;
   }
 
-  $('masol').addEventListener('click', function () {
-    var gomb = this, kesz = function () { gomb.textContent = SZ[ny].masolva; setTimeout(function () { gomb.textContent = SZ[ny].masol; }, 2000); };
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(id).then(kesz, regi); return; }
-    } catch (e) {}
-    regi();
-    function regi() {
-      var ta = document.createElement('textarea'); ta.value = id; ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); kesz(); } catch (e) {}
-      document.body.removeChild(ta);
-    }
-  });
+  function masolGomb(gombId, mit) {
+    $(gombId).addEventListener('click', function () {
+      var gomb = this, ertek = mit(), kesz = function () { gomb.textContent = SZ[ny].masolva; setTimeout(function () { gomb.textContent = SZ[ny].masol; }, 2000); };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(ertek).then(kesz, regi); return; }
+      } catch (e) {}
+      regi();
+      function regi() {
+        var ta = document.createElement('textarea'); ta.value = ertek; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); kesz(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  }
+  masolGomb('masol', function () { return id; });
+  masolGomb('kodMasol', function () { return allas.kod || ''; });
 
   function beallit(tipus, d) {
     allas.tipus = tipus;
     if (d) {
       allas.teszt = !!d.teszt;
+      allas.kod = typeof d.kod === 'string' ? d.kod : null;
+      allas.email = typeof d.email_maszkolt === 'string' ? d.email_maszkolt : null;
       if (d.ugyfelszolgalat && /^[^\s@<>]+@[^\s@<>]+$/.test(d.ugyfelszolgalat)) TAMOGATAS = d.ugyfelszolgalat;
       if (!SZ[kertNyelv] && d.nyelv && SZ[d.nyelv]) ny = d.nyelv;
     }
