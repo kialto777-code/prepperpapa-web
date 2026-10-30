@@ -4806,5 +4806,9 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
   "Az eredeti szavak betöltése…": "Cargando las palabras originales…",
   "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Ahora no se pueden cargar las palabras originales. La primera apertura necesita conexión a internet.",
   "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Fuente: STEP Bible (www.STEPBible.org), CC BY 4.0",
-  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Diccionario: diccionario hebreo y griego de Strong (1894), dominio público. El texto del diccionario está en inglés."
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Diccionario: diccionario hebreo y griego de Strong (1894), dominio público. El texto del diccionario está en inglés.",
+  "Válaszd ki, melyiket folytatod, vagy indíts újat.": "Elige cuál continuar o empieza uno nuevo.",
+  "Új terv": "Plan nuevo",
+  "Terveim": "Mis planes",
+  "Vissza a terveimhez": "Volver a mis planes",
 });

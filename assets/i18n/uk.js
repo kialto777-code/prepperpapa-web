@@ -4884,5 +4884,9 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Az eredeti szavak betöltése…": "Завантаження оригінальних слів…",
   "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Зараз не вдається завантажити оригінальні слова. Для першого відкриття потрібне з’єднання з інтернетом.",
   "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Джерело: STEP Bible (www.STEPBible.org), CC BY 4.0",
-  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Словник: єврейський і грецький словник Стронга (1894), суспільне надбання. Текст словника англійською."
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Словник: єврейський і грецький словник Стронга (1894), суспільне надбання. Текст словника англійською.",
+  "Válaszd ki, melyiket folytatod, vagy indíts újat.": "Обери, який продовжити, або почни новий.",
+  "Új terv": "Новий план",
+  "Terveim": "Мої плани",
+  "Vissza a terveimhez": "Назад до моїх планів",
 });

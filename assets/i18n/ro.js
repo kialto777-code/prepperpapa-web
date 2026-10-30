@@ -4813,5 +4813,9 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Az eredeti szavak betöltése…": "Se încarcă cuvintele originale…",
   "Az eredeti szavak most nem tölthetők be. Az első megnyitáshoz internetkapcsolat kell.": "Cuvintele originale nu pot fi încărcate acum. Prima deschidere necesită conexiune la internet.",
   "Forrás: STEP Bible (www.STEPBible.org), CC BY 4.0": "Sursa: STEP Bible (www.STEPBible.org), CC BY 4.0",
-  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public. Textul dicționarului este în engleză."
+  "Szótár: Strong-féle héber és görög szótár (1894), közkincs. A szótár szövege angol nyelvű.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public. Textul dicționarului este în engleză.",
+  "Válaszd ki, melyiket folytatod, vagy indíts újat.": "Alege pe care îl continui sau începe unul nou.",
+  "Új terv": "Plan nou",
+  "Terveim": "Planurile mele",
+  "Vissza a terveimhez": "Înapoi la planurile mele",
 });
