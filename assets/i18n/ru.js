@@ -4832,4 +4832,15 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Új terv": "Новый план",
   "Terveim": "Мои планы",
   "Vissza a terveimhez": "Назад к моим планам",
+  // Biblia premium: napi ido az Igevel (2026-10-30, kartya 38877050)
+  "Napi idő az Igével": "Ежедневное время со Словом",
+  "Ma eddig {n} perc az Igével.": "Сегодня пока: {n} мин со Словом.",
+  "A mai cél teljesült.": "Цель на сегодня достигнута.",
+  "Még {m} perc a mai célig.": "До цели на сегодня осталось {m} мин.",
+  "Gratulálok!": "Поздравляем!",
+  "Ma is {n} percet töltöttél Isten beszédével.": "И сегодня ты провёл {n} мин со Словом Божьим.",
+  "Köszönöm": "Спасибо",
+  "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Измеряет, сколько времени ты каждый день проводишь с Библией, и поздравляет, когда ты достигаешь дневной цели.",
+  "{n} perc": "{n} мин",
+  "Nincs cél": "Без цели",
 });

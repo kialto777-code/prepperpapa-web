@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aplicația PrepperPapa: pregătire și fără internet</title>
+<meta name="description" content="Calculul pregătirii, bază de cunoștințe, hartă, busolă, SOS și card de urgență într-o aplicație, esențialul și fără internet.">
+<link rel="canonical" href="https://prepperpapa.hu/ro/app/prepperpapa/">
+<link rel="icon" href="/assets/favicon-64.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aplicația PrepperPapa: pregătire și fără internet">
+<meta property="og:description" content="Calculul pregătirii, bază de cunoștințe, hartă, busolă, SOS și card de urgență într-o aplicație, esențialul și fără internet.">
+<meta property="og:url" content="https://prepperpapa.hu/ro/app/prepperpapa/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:image" content="https://prepperpapa.hu/ro/app/kepek/og-app.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/ro/app/kepek/og-app.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  /* Boss 2026-10-26 (TG 29604): the header uses the home page's width (1180 px), not the 760 px text column --
+     in the narrow column the logo sat in the middle of a wide screen. */
+  .nav{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;
+        gap:22px;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:920px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px 8px;gap:4px 20px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  main.appm{max-width:none;padding:0}
+  .sec{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
+       border-bottom:1px solid var(--line)}
+  .in{max-width:1100px;margin:0 auto;padding:64px 22px;width:100%}
+  .kicsi{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);
+         font-weight:700;margin-bottom:14px}
+  .nagy{font-size:clamp(38px,9vw,76px);line-height:1.04;font-weight:800;letter-spacing:-.01em;margin:0 0 18px}
+  .nagy em{font-style:normal;color:var(--borostyan)}
+  .lead{font-size:clamp(18px,2.4vw,22px);color:#cfd6cf;max-width:560px;margin:0 0 26px}
+  /* hero */
+  .hero{background:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.76)),url('/assets/hatter-topo.jpg') center/cover}
+  .telhely{position:relative;display:flex;justify-content:center;align-items:center;padding:30px 0}
+  .telhely::before{content:"";position:absolute;left:50%;top:50%;width:min(470px,108vw);aspect-ratio:1;
+        transform:translate(-50%,-50%);background:url('/assets/iranytu.png') center/contain no-repeat;opacity:.30;pointer-events:none}
+  .telhely .tel{position:relative}
+  .allit::before{content:"";position:absolute;left:50%;top:50%;width:min(620px,130vw);aspect-ratio:1;
+        transform:translate(-50%,-50%);background:url('/assets/iranytu.png') center/contain no-repeat;opacity:.10;pointer-events:none}
+  .allit .in{position:relative}
+  .hero .in{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+  .badges{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badge{position:relative;display:inline-block}
+  .badge img{height:52px;width:auto;display:block}
+  .badge.play img{height:70px;margin:-9px -8px}
+  .hamar{display:inline-block;background:var(--borostyan);color:#1b1407;margin:0 0 12px;
+        font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+  .badge[aria-disabled="true"]{cursor:default}
+  /* phone mockup */
+  /* realistic upright phone frames around the real app screenshots (Boss 22:54 via Marveen 23822):
+     Android with a punch-hole camera at the top of the page, iPhone with the Dynamic Island further down.
+     A status bar sits above the screenshot so the camera never covers the app header. */
+  .tel{display:block;position:relative;width:min(270px,62vw);margin:0 auto;padding:7px;border-radius:36px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .tel .kij{display:block;position:relative;overflow:hidden;border-radius:29px;background:#0B110E}
+  .tel .sb{display:flex;justify-content:space-between;align-items:center;height:26px;padding:0 16px 0 20px;
+       background:#0B110E;color:#e8efe9;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .tel .sb::before{content:"12:45"}
+  .tel .sb svg{height:9px;width:auto;fill:#e8efe9;display:block}
+  .tel .sb::after{content:"";position:absolute;left:50%;top:8px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022}
+  .tel img{display:block;width:100%;height:auto}
+  .tel .kij{padding-bottom:9px}
+  .tel .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .tel.iphone{padding:9px;border-radius:46px;background:linear-gradient(160deg,#6b6862,#2c2b29 42%,#57544f);
+       box-shadow:0 0 0 1px #8a867f,0 0 0 2.5px #111,0 26px 60px rgba(0,0,0,.6)}
+  .tel.iphone::before{right:-3.5px;top:24%;height:13%;background:#77736c}
+  .tel.iphone::after{content:"";position:absolute;left:-3.5px;top:18%;width:3px;height:7%;border-radius:3px 0 0 3px;background:#77736c;
+       box-shadow:0 calc(min(270px,62vw)*.2) 0 #77736c}
+  .tel.iphone .kij{border-radius:37px;padding-bottom:18px}
+  .tel.iphone .kij::after{bottom:6px;height:4px;width:34%;margin-left:-17%}
+  .tel.iphone .sb{height:34px;padding:0 22px 0 28px}
+  .tel.iphone .sb::before{content:"9:41"}
+  .tel.iphone .sb::after{top:8px;width:26%;height:20px;margin-left:-13%;border-radius:12px;box-shadow:none}
+  .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
+          letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
+  @keyframes lebeg{50%{transform:translate(-50%,6px)}}
+  /* slider */
+  .slider{background:#0d1511}
+  .slider .in{padding-left:0;padding-right:0;max-width:none}
+  .slider .fej{max-width:1100px;margin:0 auto;padding:0 22px 6px}
+  .sav{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .sav::-webkit-scrollbar{display:none}
+  .dia{flex:0 0 100%;scroll-snap-align:center;display:grid;grid-template-columns:1fr 1fr;align-items:center;
+       gap:24px;max-width:1100px;padding:18px 22px 10px;margin:0 auto}
+  .dia .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .dia h3{font-size:clamp(30px,6.5vw,52px);line-height:1.08;margin:8px 0 12px;font-weight:800}
+  .dia p{font-size:18px;color:#cfd6cf;max-width:460px}
+  .pottyok{display:flex;justify-content:center;gap:10px;padding:12px 0 4px}
+  .pottyok button{width:9px;height:9px;border-radius:9px;border:0;background:#3a4a40;padding:0;cursor:pointer;transition:.3s}
+  .pottyok button.akt{width:28px;background:var(--borostyan)}
+  .nyilak{display:flex;justify-content:center;gap:12px;margin-top:6px}
+  .nyilak button{width:44px;height:44px;border-radius:50%;border:1px solid #33453B;background:transparent;color:var(--ink);
+       font-size:20px;cursor:pointer}
+  /* statement */
+  .allit{background:linear-gradient(180deg,#0B110E,#142019);text-align:center}
+  .allit .nagy{max-width:900px;margin:0 auto 22px}
+  .allit .lead{margin:0 auto}
+  /* feature cards */
+  .tudas{display:block;min-height:auto}
+  .kartyak{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .kartya{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .kartya h3{color:var(--borostyan);font-size:20px;margin:0 0 10px}
+  .kartya ul{list-style:none;margin:0}
+  .kartya li{font-size:15px;color:#cfd6cf;margin-bottom:10px}
+  .kartya li b{color:var(--ink);display:block;font-size:16px}
+  /* price */
+  .arsec{display:block;min-height:auto}
+  .csomag{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  .csomag > div{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .csomag h3{margin:0 0 8px}
+  .csomag ul{margin:0 0 0 18px;font-size:15px;color:#cfd6cf}
+  .vasarlas{border-radius:18px;padding:24px}
+  .ar{font-size:44px}
+  #pp-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;
+       background:#0B110E;color:var(--ink);width:100%}
+  #pp-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-ertesito-uzenet.hiba{color:#ff8a65}
+  .letolt{display:block;min-height:auto;text-align:center}
+  .letolt .badges{justify-content:center;margin:22px 0 8px}
+  .gyik{display:block;min-height:auto}
+  .gyik .in{max-width:760px}
+  /* premium tiles + comparison table */
+  .elonyok{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+  .elony{background:linear-gradient(160deg,#1c2a21,#121B16);border:1px solid #2c3d33;border-radius:18px;padding:20px}
+  .elony h3{color:var(--borostyan);font-size:19px;margin:0 0 8px}
+  .elony p{font-size:15px;color:#cfd6cf;margin:0}
+  .osszevet{display:block;min-height:auto}
+  .tabla{overflow-x:auto;margin:22px 0 14px;border:1px solid var(--line);border-radius:16px}
+  .tabla table{width:100%;border-collapse:collapse;font-size:15px}
+  .tabla th,.tabla td{padding:12px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+  .tabla thead th{background:var(--panel);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tabla thead th.prem{color:var(--borostyan)}
+  .tabla tbody th{font-weight:600}
+  .tabla td{text-align:center;width:24%}
+  .tabla td.pipa{color:var(--zold);font-weight:800;font-size:18px}
+  .tabla td.nincs{color:#5d6b62}
+  .tabla td.korlat{color:#cfd6cf}
+  .tabla td:nth-child(3){background:rgba(255,179,64,.05)}
+  .tabla td.korlat:nth-child(3){color:var(--borostyan);font-weight:700}
+  .tabla td.korlat.azonos:nth-child(3){color:#cfd6cf;font-weight:400}
+  .tabla tr:last-child th,.tabla tr:last-child td{border-bottom:0}
+  .tabla thead th.vagy{color:var(--zold)}
+  .tabla tr.csop th{background:#18241d;color:var(--zold);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px}
+  .tabla td.valt{color:#5d6b62;font-size:13px}
+  .tabla td{width:19%}
+  .szintek{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 8px}
+  .szint{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .szint.kiemelt{border-color:rgba(255,179,64,.55);background:linear-gradient(160deg,#2a2414,#121B16)}
+  .szint .szar{font-size:30px;font-weight:800;margin:4px 0 10px}
+  .szint ul{margin:0 0 0 18px;font-size:15px;color:#cfd6cf}
+  .szint li{margin-bottom:6px}
+  @media (max-width:820px){.szintek{grid-template-columns:1fr}.tabla td.valt{font-size:11px}}
+  @media (max-width:560px){
+    .tabla table{table-layout:fixed}
+    .tabla table th,.tabla table td{padding:9px 5px;font-size:12.5px;overflow-wrap:normal;word-break:normal;hyphens:manual}
+    .tabla table thead th{width:30%}
+    .tabla table thead th:first-child{width:40%}
+    .tabla table td.arc small{font-size:11px}
+    .vk{display:none}
+    .tabla thead th{font-size:10px;letter-spacing:.03em}
+    .tabla td{width:auto}
+    .tabla tr.csop th{font-size:11px;padding:8px 6px}
+  }
+  .partner{display:block;min-height:auto}
+  .partner .in{padding-top:40px;padding-bottom:40px}
+  .pfeltetel{margin:14px 0 16px 20px;padding:0;font-size:17px;color:#cfd6cf;max-width:720px}
+  .pfeltetel li{margin-bottom:6px}
+  .pjel{font-size:17px;margin:0}.pjel a{color:var(--borostyan)}
+  @media (max-width:560px){.pfeltetel,.pjel{font-size:15px}.partner .in{padding-top:28px;padding-bottom:28px}}
+  .csakmobil{display:none}
+  @media (max-width:560px){.csakmobil{display:block}}
+  .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
+  .tabla td.arc .ar1{display:block;font-size:17px}
+  .szint .szkesobb{font-size:14px;margin:-8px 0 12px}
+  .kieg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}
+  .kieg h3{margin:0 0 8px;font-size:22px}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .rv.lat{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}
+    .lefele{animation:none}}
+  @media (max-width:820px){
+    .hero .in,.dia{grid-template-columns:1fr}
+    .hero .in{padding-top:36px;text-align:left}
+    .hero .tel{width:min(230px,60vw)}
+    .hero .cta,.hero .badges{justify-content:center}
+    .hero .cta .btn{min-width:240px;text-align:center}
+    .hero .hamar{display:table;margin:0 auto 12px}
+    .dia{text-align:center}.dia p{margin:0 auto}
+    .dia{gap:14px;padding-top:10px}
+    .dia h3{font-size:clamp(26px,7.5vw,34px)}
+    .dia p{font-size:16px}
+    .dia .tel{width:min(190px,50vw);order:2}
+    .kartyak,.csomag{grid-template-columns:1fr}
+    .elonyok{grid-template-columns:1fr}
+    .tabla th,.tabla td{padding:11px 9px;font-size:14px}
+    .sec{min-height:auto}
+    .hero{min-height:100svh}
+  }
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/app/prepperpapa/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/app/prepperpapa/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/app/prepperpapa/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/app/prepperpapa/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/app/prepperpapa/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/app/prepperpapa/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/app/prepperpapa/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/app/prepperpapa/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/app/prepperpapa/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/ro/confidentialitate.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Cookie-uri și consimțământ", "bevezeto": "Implicit, acest site nu plasează cookie-uri pe dispozitivul tău. Îți cerem consimțământul pentru două scopuri, pe care îl poți acorda sau refuza separat. Dacă refuzi, totul funcționează în continuare, iar decizia o poți schimba oricând la „Setări cookie” din subsolul paginii.", "p_cim": "Urmărirea partenerilor", "p_le": "Dacă vii de pe linkul unuia dintre partenerii noștri, reținem în cookie-uri codul partenerului și momentul clicului (pp_ref și cookie-urile GoAffPro, timp de 90 de zile), ca să stabilim cărui partener i se cuvine comisionul dacă cumperi. Codul de cupon al unui partener îi este atribuit și fără cookie-uri.", "s_cim": "Statistici de vizitare", "s_le": "Statistici anonime de vizitare cu Google Analytics 4 (cookie-uri _ga). Nu le folosim pentru publicitate sau profilare; fără consimțământul tău nici nu se încarcă.", "igen": "Accept", "nem": "Refuz", "mind_igen": "Accept tot", "mind_nem": "Refuz tot", "ment": "Salvez alegerea", "adatv": "Informare privind protecția datelor", "link": "Setări cookie"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+<script type="application/ld+json" id="pp-ld">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "PrepperPapa", "description": "Calculul pregătirii, bază de cunoștințe, hartă, busolă, SOS și card de urgență într-o aplicație, esențialul și fără internet.", "url": "https://prepperpapa.hu/ro/app/prepperpapa/", "inLanguage": "ro", "applicationCategory": "LifestyleApplication", "operatingSystem": "Android, iOS", "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, {"@type": "Offer", "price": "39.90", "priceCurrency": "EUR", "name": "Premium"}], "publisher": {"@type": "Organization", "name": "PrepperPapa", "url": "https://prepperpapa.hu/ro/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "PrepperPapa", "item": "https://prepperpapa.hu/ro/"}, {"@type": "ListItem", "position": 2, "name": "Pregătirea în buzunarul tău. Și fără internet.", "item": "https://prepperpapa.hu/ro/app/prepperpapa/"}]}]}</script>
+</head>
+<body>
+<header><nav class="nav fej2">
+  <a class="brand" href="/ro/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/ro/">Acasă</a> <a class="link" href="/ro/#videoclipuri">Videoclipuri</a> <a class="link" href="/ro/articole.html">Bază de cunoștințe</a> <a class="link" href="/ro/calculatoare/">Calculatoare</a> <a class="link" href="/ro/app/">Aplicație</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Forum comunitar</a> <a class="link" href="/ro/#contact">Contact</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Abonează-te</a>
+  <details class="nyelvv"><summary aria-label="Limba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>RO</span></summary><ul><li><a href="/app/prepperpapa/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/app/prepperpapa/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/app/prepperpapa/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/app/prepperpapa/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/app/prepperpapa/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/app/prepperpapa/" hreflang="ro" lang="ro" data-nyelv="ro" aria-current="true">Română</a></li><li><a href="/ru/app/prepperpapa/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/app/prepperpapa/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+  <button class="hamb" type="button" aria-label="Meniu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main class="appm">
+<section class="sec hero"><div class="in">
+<div class="rv lat">
+<div class="kicsi">Aplicația PrepperPapa</div>
+<h1 class="nagy">Pregătirea în buzunarul tău. <em>Și fără internet.</em></h1>
+<p class="lead">Tot ce îți trebuie într-o pană de curent, lângă o mașină rămasă în drum sau într-o drumeție prin pădure, într-un singur loc. Versiunea completă, inclusiv harta, funcționează și atunci când nu mai ai nici internet, nici semnal.</p>
+<div class="cta"><a class="btn amber" href="#cumparare">Anunță-mă la lansare</a><a class="btn ghost" href="#prezentare">Vezi ce poate</a></div>
+<div class="hamar">În curând</div>
+<div class="badges">
+<a class="badge play" id="pp-badge-play" aria-disabled="true" title="În curând în Google Play"><img src="/app/kepek/google-play-ro.png" alt="Descarcă de pe Google Play (în curând)" width="646" height="250"></a>
+<a class="badge appstore" id="pp-badge-appstore" aria-disabled="true" title="În curând în App Store"><img src="/app/kepek/app-store-ro.svg" alt="Descarcă din App Store (în curând)" width="151" height="40"></a>
+</div>
+</div>
+<div class="telhely rv lat"><div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/1-kezdolap.jpg" alt="Ecranul de start al aplicației PrepperPapa" width="480" height="1038"></span></div></div>
+</div><a class="lefele" href="#prezentare">Derulează &darr;</a></section>
+
+<section class="sec slider" id="prezentare"><div class="in">
+<div class="fej rv"><div class="kicsi">Prezentare</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Zece ecrane care contează.</h2></div>
+<div class="sav" aria-roledescription="lapozó">
+<div class="dia"><div><div class="szam">01 &middot; Grad de pregătire</div>
+<h3>O privire și știi unde vă aflați.</h3><p>Apă, hrană, încălzire, curent: pe fiecare loc, în procente. Dacă ceva nu ajunge, vezi și ce trebuie completat.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/1-kezdolap.jpg" alt="Grad de pregătire" loading="eager" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">02 &middot; Hartă</div>
+<h3>Și în pădure știi încotro.</h3><p>Trasee turistice, izvoare, cabane. Plan de tură cu distanță, durată și diferență de nivel, iar cu harta descărcată merge și fără semnal.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/2-terkep.jpg" alt="Hartă" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">03 &middot; Rezervă</div>
+<h3>Cămara în buzunarul tău.</h3><p>Ce ai acasă, unde îl păstrezi, când expiră. Articolele care urmează să expire sunt marcate cu culori.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/8-keszlet.jpg" alt="Rezervă" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">04 &middot; Bază de cunoștințe</div>
+<h3>Cunoștințe care sunt la îndemână și fără semnal.</h3><p>21 de teme, de la apă la primul ajutor, cu articole aprofundate și detaliate, care se pot citi și fără internet.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/3-tudastar.jpg" alt="Bază de cunoștințe" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">05 &middot; Busolă</div>
+<h3>Telefonul în buzunar, sunetul te ghidează.</h3><p>Înregistrezi direcția și te ghidează prin sunet. Îți arată și drumul înapoi. Cu camera vezi și drumul de azi al soarelui, pentru panoul solar.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/4-tajolo.jpg" alt="Busolă" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">06 &middot; Biblia</div>
+<h3>Putere pentru zilele grele.</h3><p>Biblia pe telefonul tău (traducerea Cornilescu), cu citire cu voce tare, fără internet.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/6-biblia.jpg" alt="Biblia" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">07 &middot; Card de urgență</div>
+<h3>Paramedicul află totul dintr-un singur cod QR.</h3><p>Grupa sanguină, alergii, medicamente și persoana de contact pentru fiecare membru al familiei, inclusiv tipărite.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/9-veszkartya.jpg" alt="Card de urgență" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">08 &middot; SOS</div>
+<h3>Un buton pentru când e nevoie.</h3><p>Semnal luminos și sonor, apel de urgență și cardul tău de urgență pe un singur ecran, chiar și fără internet.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/10-sos.jpg" alt="SOS" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">09 &middot; Morse</div>
+<h3>Un mesaj când nu mai merge nimic altceva.</h3><p>Transmite prin lumină și sunet, citește cu camera și cu microfonul și te poți și antrena cu el.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/11-morze.jpg" alt="Morse" loading="lazy" width="480" height="1038"></span></div></div>
+<div class="dia"><div><div class="szam">10 &middot; Portofel de documente</div>
+<h3>Actele tale, sub PIN.</h3><p>Fotografia buletinului, a permisului, a cardului de sănătate (TAJ) și a asigurării, criptată, doar pe telefonul tău.</p></div>
+<div class="tel android"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/ro/app/kepek/12-irattarca.jpg" alt="Portofel de documente" loading="lazy" width="480" height="1038"></span></div></div>
+</div>
+<div class="pottyok"></div>
+<div class="nyilak"><button type="button" id="dia-elozo" aria-label="Anterior">&larr;</button><button type="button" id="dia-kov" aria-label="Următor">&rarr;</button></div>
+</div></section>
+
+<section class="sec allit"><div class="in rv">
+<div class="kicsi">Promisiunea noastră</div>
+<h2 class="nagy">Nu se oprește atunci când ai cea mai mare nevoie de ea.</h2>
+<p class="lead">Aceasta este o aplicație pentru situații de urgență. Nu există niciun moment în care, la necaz, o deschizi și îți cere să plătești mai întâi. Lanterna, SOS-ul, Morse, cardul de urgență și articolele de bază din baza de cunoștințe funcționează și fără internet, pentru toată lumea, gratuit.</p>
+</div></section>
+
+<section class="sec tudas"><div class="in">
+<div class="rv"><div class="kicsi">Ce poate?</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Șase situații, optsprezece funcții.</h2></div>
+<div class="kartyak">
+<div class="kartya rv"><h3>Când pică internetul</h3><ul><li><b>Calculul gradului de pregătire</b>Introduci cine locuiește cu voi (și animalele de companie) și ce aveți în cămară. Aplicația arată, pe fiecare loc, în procente, cum stați cu apa, hrana, încălzirea și curentul. Dacă ceva nu ajunge, vezi ce trebuie completat.</li><li><b>Bază de cunoștințe fără internet</b>21 de teme, de la apă la primul ajutor, împreună cu articolele aprofundate și detaliate. Ce a ajuns pe telefonul tău se poate citi și fără semnal.</li><li><b>Mesaje locale</b>Mesaje text pentru cei din jurul tău, fără internet, printr-o rețea comună, chiar și prin hotspotul unui telefon.</li><li><b>Noah, inteligență artificială fără internet</b>Rulează pe telefon, nu în cloud, așa că răspunde și fără semnal. O poți întreba despre baza de cunoștințe, Biblie și propriile provizii, de exemplu ce a expirat. Funcționează în aplicația Android; modelul de limbaj se descarcă o singură dată.</li></ul></div>
+<div class="kartya rv"><h3>Pană de curent</h3><ul><li><b>Lanternă și lumină roșie de noapte</b>Lumina roșie nu orbește ochiul obișnuit cu întunericul.</li><li><b>Calculator de curent și încălzire</b>Cât te ține un powerbank sau o stație de alimentare și cât combustibil îți trebuie pentru iarnă.</li><li><b>Lista de rezerve</b>Ce ai acasă, unde îl păstrezi și când expiră. Articolele care urmează să expire sunt marcate cu culori.</li></ul></div>
+<div class="kartya rv"><h3>Apă și hrană</h3><ul><li><b>Calculator pentru purificarea apei</b>Câtă soluție de clor sau câte tablete îți trebuie pentru a dezinfecta o anumită cantitate de apă.</li><li><b>Calculator pentru apa de ploaie</b>Câtă apă poți colecta de pe acoperiș la o anumită cantitate de ploaie.</li><li><b>Lista de bagaje „Ce să iau?”</b>Se alcătuiește pe baza membrilor familiei tale, cu o limită de greutate, ca bagajul să rămână ușor de purtat.</li></ul></div>
+<div class="kartya rv"><h3>Fără semnal</h3><ul><li><b>Morse și fax</b>Semnale Morse prin sunet și lumină intermitentă, plus trimiterea de imagini prin sunet.</li><li><b>QR secret</b>Mesaj, poziție sau listă într-un cod QR pe care îl poate citi doar cine cunoaște parola voastră de familie.</li></ul></div>
+<div class="kartya rv"><h3>Pe teren</h3><ul><li><b>Hartă și planificare de ture</b>Trasee turistice, izvoare, vârfuri. Introduci de unde și până unde mergi, iar aplicația îți arată distanța, durata, diferența de nivel și marcajele de urmat. Harta se poate descărca și merge și în mijlocul pădurii, fără semnal.</li><li><b>Busolă cu ghidare sonoră</b>Înregistrezi direcția, iar aplicația te ghidează prin sunet, telefonul poate sta în buzunar. Îți arată și drumul înapoi, plus răsăritul soarelui și faza lunii. În vizualizarea cu camera desenează pe imagine drumul de azi al soarelui, cu repere orare, ca să orientezi un panou solar, și fără internet.</li><li><b>Detectarea căderii</b>Dacă rămâi nemișcat după o cădere și un impact, pornește o numărătoare inversă, iar dacă nu o anulezi, se trimite un mesaj SOS cu poziția ta și pornește fluierul de urgență.</li><li><b>Durata drumului și fulger</b>Cât durează pe jos până la destinație și la ce distanță a lovit fulgerul.</li></ul></div>
+<div class="kartya rv"><h3>Familie și suflet</h3><ul><li><b>Familie și card de urgență</b>Aici adaugi familia: pe baza ei se calculează gradul de pregătire și lista de bagaje. Pe cardul de urgență sunt grupa sanguină, alergiile, medicamentele și contactul de urgență.</li><li><b>Biblia fără internet</b>Biblia pe telefonul tău (traducerea Cornilescu), cu citire cu voce tare.</li><li><b>Fluier de urgență și ritm de resuscitare</b>Un fluier puternic și o voce care dictează ritmul resuscitării, ca nici în panică să nu fie nevoie să numeri.</li></ul></div>
+</div>
+</div></section>
+
+<section class="sec arsec" id="cumparare"><div class="in">
+<div class="rv"><div class="kicsi">Premium</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">PrepperPapa complet, <em>cu un singur cod.</em></h2>
+<p class="lead">Codul premium deblochează tot ce poate aplicația: hartă fără semnal, trasee nelimitate, toată familia, întreaga cămară și baza de cunoștințe extinsă.</p></div>
+<div class="elonyok">
+<div class="elony rv"><h3>Hartă fără semnal</h3><p>Poți descărca regiuni din Ungaria și țări din străinătate, iar în mijlocul pădurii vezi în continuare unde ești.</p></div>
+<div class="elony rv"><h3>Planificare nelimitată a traseelor</h3><p>Cu distanță, durată și diferență de nivel, pentru câte ture ai nevoie.</p></div>
+<div class="elony rv"><h3>Toată familia, întreaga cămară</h3><p>Membri ai familiei și produse în rezervă fără limită, ca socoteala să-i cuprindă pe toți.</p></div>
+<div class="elony rv"><h3>Bază de cunoștințe extinsă</h3><p>Articolele aprofundate și detaliate, care se pot citi și fără internet.</p></div>
+</div>
+<div class="vasarlas rv" id="pp-premium-vasarlas">
+<p class="ar">39,90 €</p>
+<p class="halk">Preț de lansare, ulterior 49,90 €. Dacă vii cu codul de cupon al unui partener, primești încă 5% reducere.</p>
+<!-- CHECKOUT HOOK (Marveen): a vásárlási űrlap/gomb ennek az elemnek a HELYÉRE kerül, amikor a pp-vasarlas élesbe áll.
+     Addig az indulási értesítő űrlap látszik. Element id: pp-checkout -->
+<div id="pp-checkout">
+<p><b>Disponibil în curând.</b> Lasă-ne adresa ta de e-mail și te anunțăm când se lansează.</p>
+<form id="pp-ertesito" novalidate>
+<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Adresa ta de e-mail" aria-label="Adresă de e-mail">
+<label><input type="checkbox" name="hozzajarul" required><span>Sunt de acord ca PrepperPapa să mă anunțe prin e-mail despre lansare. <a href="/ro/confidentialitate.html#notificari">Protecția datelor</a></span></label>
+<button class="btn amber" type="submit">Vreau să fiu anunțat(ă)</button>
+<p id="pp-ertesito-uzenet" role="status" aria-live="polite"></p>
+</form>
+</div>
+</div>
+</div></section>
+
+<section class="sec osszevet" id="comparatie"><div class="in">
+<div class="rv"><div class="kicsi">Comparație</div><h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Gratuit, premium și Patrimoniu</h2>
+<p class="lead">Pe module, într-un singur loc: ce e gratuit, ce deblochează codul premium și ce oferă Patrimoniu, produsul separat.</p></div>
+<div class="szintek"><div class="szint rv"><div class="kicsi">Gratuit</div><p class="szar">0 €</p><ul><li>Toate funcțiile de urgență, chiar și fără internet</li><li>2 membri ai familiei, 50 de articole în rezervă</li><li>2 planificări de traseu pe săptămână</li><li>1 dispozitiv</li></ul></div><div class="szint rv kiemelt"><div class="kicsi">Premium</div><p class="szar">39,90 €</p><p class="szkesobb">preț de lansare · ulterior 49,90 €</p><ul><li>Achiziție unică</li><li>Familie, rezervă și trasee nelimitate</li><li>Hartă descărcabilă și bază de cunoștințe extinsă</li><li>Fără oferte pop-up, pe 2 dispozitive</li></ul></div><div class="szint rv vk"><div class="kicsi">Patrimoniu</div><p class="szar">Modul suplimentar</p><ul><li>Produs separat, se adaugă atât la varianta gratuită, cât și la premium</li><li>Articole și conturi nelimitate</li><li>Funcționează la capacitate deplină și în PrepperPapa</li><li>Fără el: poate fi încercat până la 10 articole</li></ul></div></div>
+<div class="tabla rv"><table>
+<thead><tr><th scope="col">Funcție</th><th scope="col">Gratuit</th><th scope="col" class="prem">Premium</th><th scope="col" class="vagy vk">Extensia Patrimoniu</th></tr></thead>
+<tbody>
+<tr class="csop"><th scope="rowgroup" colspan="4">Preț și cont</th></tr>
+<tr><th scope="row">Preț</th><td class="korlat">0 €</td><td class="korlat arc"><span class="ar1">39,90 €</span><small>preț de lansare · ulterior 49,90 €</small></td><td class="vk korlat">produs separat</td></tr>
+<tr><th scope="row">Dispozitive pe cont în același timp</th><td class="korlat">1</td><td class="korlat">2</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Recomandări pop-up</th><td class="korlat">da</td><td class="korlat">nu</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Hartă</th></tr>
+<tr><th scope="row">Hartă și trasee turistice, online</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Planificare de traseu</th><td class="korlat">2 pe săptămână</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Hartă descărcabilă pentru utilizare fără internet (regiuni din Ungaria, țări străine și provinciile lor)</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Gospodărie și rezervă</th></tr>
+<tr><th scope="row">Membrii familiei</th><td class="korlat">2 persoane</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Rezervă</th><td class="korlat">50 de produse</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Grad de pregătire și analiza riscurilor</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Lista de bagaje „Ce să iau?”</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Bază de cunoștințe</th></tr>
+<tr><th scope="row">Articole de bază și articole care salvează vieți</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Bază de cunoștințe extinsă</th><td class="nincs">–</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Urgență</th></tr>
+<tr><th scope="row">SOS și lanternă</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Card de urgență</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Busolă</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Comunicare</th></tr>
+<tr><th scope="row">Morse</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Fax: trimiterea unei imagini prin sunet</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Camere (mesaje de grup și private): cameră proprie</th><td class="korlat">1</td><td class="korlat">10</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Camere: membru în camerele altora</th><td class="korlat">3</td><td class="korlat">nelimitat</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Mesaje locale fără internet</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Unelte și portofele</th></tr>
+<tr><th scope="row">Calculatoare</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Biblia cu citire cu voce tare</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">QR secret</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Portofel de documente</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr><th scope="row">Portofel de tokenuri</th><td class="pipa">✓</td><td class="pipa">✓</td><td class="vk valt">ca în varianta ta</td></tr>
+<tr class="csop"><th scope="rowgroup" colspan="4">Patrimoniu</th></tr>
+<tr><th scope="row">Articole proprii</th><td class="korlat">10 (probă)</td><td class="korlat azonos">10 (probă)</td><td class="vk korlat">nelimitat</td></tr>
+<tr><th scope="row">Conturi</th><td class="korlat">1 (probă)</td><td class="korlat azonos">1 (probă)</td><td class="vk korlat">nelimitat</td></tr>
+</tbody></table></div>
+<p class="halk rv">Premium este o achiziție unică.</p>
+<p class="halk rv csakmobil">Patrimoniu este un produs separat, cu pagină proprie.</p>
+<p class="halk rv vk">„Ca în varianta ta” înseamnă că extensia Patrimoniu nu schimbă nimic aici: funcționează după varianta ta, gratuită sau premium.</p>
+<p class="halk rv">Ce e gratuit rămâne gratuit și nicio funcție nu se oprește dacă nu cumperi un cod.</p>
+<div class="kieg rv vk"><div class="kicsi">Modul suplimentar</div><h3>Patrimoniu</h3>
+<p>Produs separat, în curând în Google Play și în App Store. În aplicație poate fi încercat, atât gratuit, cât și cu premium, până la 10 articole proprii și 1 cont. Pentru utilizarea completă ai nevoie de Patrimoniu, produsul separat, iar dacă îl cumperi, funcționează la capacitate deplină și în PrepperPapa.</p></div>
+</div></section>
+
+<!-- PARTNERPROGRAM: moved to its own page /partnerprogram/ (Boss 2026-10-25 22:17), linked only from the footers. -->
+<!-- DEVICES teaser (Boss 2026-10-29 15:57, TG 95 to Dénes, Marveen 25767): link to the new /eszkozok/ page. -->
+<section class="sec" id="eszkozok"><div class="in rv">
+<div class="kicsi">Unelte</div>
+<h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">O rețea proprie, fără internet.</h2>
+<p class="lead">Dispozitivele PrepperPapa sunt în pregătire: cutii mici din care se formează o rețea proprie în casă și între case. Prin ea, aplicația trimite mesaje și alarme chiar și fără internet și fără semnal.</p>
+<p><img src="/eszkozok/kepek/marketing/ro/csalad.webp" width="1600" height="1000" alt="Centrala PrepperPapa Központ cu ecran tactil și trei cutii mici PrepperPapa, una cu antenă." loading="lazy" style="display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin:8px 0 16px"></p>
+<p><a class="btn" href="/ro/dispozitive/">Dispozitivele și rețeaua &rarr;</a></p>
+</div></section>
+
+<section class="sec letolt" id="letoltes"><div class="in rv">
+<div class="kicsi">Descărcare</div>
+<h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">Pentru Android și iPhone.</h2>
+<p class="lead" style="margin:0 auto"><b>Android:</b> în curând în Google Play. Versiunea premium se poate cumpăra și direct din Google Play.<br><b>iPhone:</b> în curând în App Store.</p>
+<div class="hamar">În curând</div>
+<div class="badges">
+<a class="badge play" id="letolt-pp-badge-play" aria-disabled="true" title="În curând în Google Play"><img src="/app/kepek/google-play-ro.png" alt="Descarcă de pe Google Play (în curând)" width="646" height="250"></a>
+<a class="badge appstore" id="letolt-pp-badge-appstore" aria-disabled="true" title="În curând în App Store"><img src="/app/kepek/app-store-ro.svg" alt="Descarcă din App Store (în curând)" width="151" height="40"></a>
+</div>
+</div></section>
+
+<!-- TESZTELŐI VÉLEMÉNYEK: a tesztelési menet végén kérjük (26c3272b), engedéllyel.
+     Amíg nincs közzétehető vélemény, a szakasz rejtve marad (hidden), üres szakasz nem megy ki. -->
+<section id="velemenyek" hidden>
+<h2>Cei care au încercat-o deja</h2>
+</section>
+
+<section class="sec gyik"><div class="in rv">
+<h2>Întrebări frecvente</h2>
+<details><summary>Pe ce telefon funcționează?</summary><p>Pe Android și pe iPhone. În curând în Google Play și în App Store. Pe Android, versiunea premium se poate cumpăra și direct din Google Play.</p></details>
+<details><summary>Are nevoie de internet?</summary><p>Pentru părțile cele mai importante, nu: lanterna, SOS-ul, Morse, cardul de urgență și articolele de bază din baza de cunoștințe funcționează și fără internet. Harta gratuită are nevoie de internet; harta descărcabilă, care se poate folosi și fără internet, face parte din premium. Internetul e necesar și pentru descărcare, pentru actualizări și pentru valorificarea codului.</p></details>
+<details><summary>Unde sunt datele mele?</summary><p>Pe telefonul tău. Detaliile le găsești pe pagina <a href="/ro/confidentialitate.html">Protecția datelor</a>.</p></details>
+<details><summary>Se oprește ceva dacă nu cumpăr un cod?</summary><p>Nu. Partea gratuită rămâne gratuită și nicio funcție nu se oprește.</p></details>
+<details><summary>Unde găsesc ghidul de utilizare?</summary><p>Pe pagina <a href="/ro/ghid/">Ghid de utilizare</a>, dar și din Ajutorul aplicației.</p></details>
+</div></section>
+<script>
+(function(){
+  // reveal on scroll
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lat');io.unobserve(e.target);}});},{threshold:.15});
+    els.forEach(function(el){io.observe(el);});
+  } else { els.forEach(function(el){el.classList.add('lat');}); }
+  // slider: native swipe (scroll-snap) + dots + arrows + gentle autoplay until the visitor touches it
+  var sav=document.querySelector('.sav'); if(!sav) return;
+  var diak=sav.children, pk=document.querySelector('.pottyok'), akt=0, auto=true, t;
+  for(var i=0;i<diak.length;i++){(function(i){var b=document.createElement('button');b.type='button';
+    b.setAttribute('aria-label',(i+1)+'. diapozitiv');b.onclick=function(){stop();menj(i);};pk.appendChild(b);})(i);}
+  function menj(i){akt=(i+diak.length)%diak.length;sav.scrollTo({left:diak[akt].offsetLeft-sav.offsetLeft,behavior:'smooth'});}
+  function jelol(){var i=Math.round(sav.scrollLeft/sav.clientWidth);akt=i;
+    [].forEach.call(pk.children,function(b,j){b.classList.toggle('akt',j===i);});}
+  sav.addEventListener('scroll',function(){clearTimeout(sav._t);sav._t=setTimeout(jelol,60);},{passive:true});
+  function stop(){auto=false;clearInterval(t);}
+  ['touchstart','wheel','mousedown','keydown'].forEach(function(ev){sav.addEventListener(ev,stop,{passive:true});});
+  document.getElementById('dia-elozo').onclick=function(){stop();menj(akt-1);};
+  document.getElementById('dia-kov').onclick=function(){stop();menj(akt+1);};
+  jelol();
+  var csendes=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!csendes && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){clearInterval(t);
+      if(e.isIntersecting&&auto){t=setInterval(function(){menj(akt+1);},4500);}});},{threshold:.5}).observe(sav);
+  }
+})();
+(function(){
+  // launch-notice signup (endpoint: app.prepperpapa.hu, consent required)
+  var f=document.getElementById('pp-ertesito'); if(!f) return;
+  var u=document.getElementById('pp-ertesito-uzenet'), b=f.querySelector('button');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault(); u.className=''; u.textContent='';
+    var email=f.email.value.trim();
+    if(!f.hozzajarul.checked){u.className='hiba';u.textContent='Pentru notificare, te rugăm să bifezi consimțământul.';return;}
+    b.disabled=true; b.textContent='Se trimite...';
+    fetch('https://app.prepperpapa.hu/vasarlas/ertesites',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,hozzajarul:true,forras:'app-oldal-ro',nyelv:'ro'})})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {s:r.status,d:d};});})
+    .then(function(x){
+      if(x.s===200&&x.d&&x.d.ok){f.reset();u.className='ok';u.textContent='Mulțumim! Te anunțăm când PrepperPapa se poate cumpăra.';}
+      else if(x.s===429){u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Prea multe încercări. Te rugăm să încerci din nou peste câteva minute.';}
+      else {u.className='hiba';u.textContent=(x.d&&x.d.hiba)?x.d.hiba:'Momentan nu s-a putut trimite. Te rugăm să încerci din nou mai târziu.';}
+    })
+    .catch(function(){u.className='hiba';u.textContent='Momentan nu s-a putut trimite. Verifică conexiunea și încearcă din nou.';})
+    .then(function(){b.disabled=false;b.textContent='Vreau să fiu anunțat(ă)';});
+  });
+})();
+</script>
+</main>
+<footer><div>PrepperPapa &middot; Pregătește-te, nu te teme! &middot; <a href="/ro/confidentialitate.html">Protecția datelor</a> &middot; <a href="/en/terms.html">Termeni (EN)</a> &middot; <a href="/en/legal-notice.html">Mențiuni legale (EN)</a> &middot; <a href="/ro/program-parteneri/">Program de parteneri</a></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+<script>(function(){var m={"videok": "videoclipuri", "tudastar": "cunostinte", "kapcsolat": "contact", "bemutato": "prezentare", "vasarlas": "cumparare", "ertesito": "notificari", "osszevetes": "comparatie", "partnerprogram": "program-parteneri"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>

@@ -4818,4 +4818,15 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Új terv": "Plan nou",
   "Terveim": "Planurile mele",
   "Vissza a terveimhez": "Înapoi la planurile mele",
+  // Biblia premium: napi ido az Igevel (2026-10-30, kartya 38877050)
+  "Napi idő az Igével": "Timp zilnic cu Cuvântul",
+  "Ma eddig {n} perc az Igével.": "Azi până acum: {n} min cu Cuvântul.",
+  "A mai cél teljesült.": "Ținta de azi este atinsă.",
+  "Még {m} perc a mai célig.": "Mai sunt {m} min până la ținta de azi.",
+  "Gratulálok!": "Felicitări!",
+  "Ma is {n} percet töltöttél Isten beszédével.": "Și azi ai petrecut {n} minute cu Cuvântul lui Dumnezeu.",
+  "Köszönöm": "Mulțumesc",
+  "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Măsoară cât timp petreci zilnic în Biblie și te felicită când îți atingi ținta zilnică.",
+  "{n} perc": "{n} min",
+  "Nincs cél": "Fără țintă",
 });
