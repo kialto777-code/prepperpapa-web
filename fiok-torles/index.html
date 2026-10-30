@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrepperPapa – fiók törlése</title>
+<meta name="robots" content="noindex">
+<!-- ACCOUNT DELETION, THE PUBLIC WEB ROUTE (store compliance, 2026-10-27; Google Play "delete account URL").
+     Served by the gate at /gate/fiok-torles (outside the gate, no login needed). The same file also works as a static
+     page elsewhere (e.g. prepperpapa.hu/fiok-torles/): then it calls https://app.prepperpapa.hu cross-site, and the
+     gate allows that origin (K.torlesOriginek). Flow: e-mail -> 6-digit code by e-mail (only if an account exists; the
+     page says the SAME thing either way) -> code + explicit consent -> deleted. No inline event handlers, no external
+     resources: everything is in this file. -->
+<style>
+  :root { --hatter:#0B1613; --kartya:#13241f; --szoveg:#e8efe9; --halvany:#9fb3a6; --zold:#2f7a4a; --hiba:#ff8a80; --piros:#c0392b; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--hatter); color:var(--szoveg); }
+  main { max-width:520px; margin:0 auto; padding:24px 16px 40px; }
+  h1 { font-size:22px; margin:0 0 8px; }
+  h2 { font-size:16px; margin:0 0 8px; }
+  p { line-height:1.5; margin:0 0 10px; }
+  ul { margin:0 0 10px; padding-left:20px; line-height:1.5; }
+  .halvany { color:var(--halvany); font-size:14px; }
+  .figyelem { font-weight:600; }
+  .kartya { background:var(--kartya); border-radius:14px; padding:16px; margin-bottom:14px; }
+  label { display:block; font-size:14px; color:var(--halvany); margin:10px 0 4px; }
+  input[type=email], input[type=text] { width:100%; padding:12px; font-size:16px; border-radius:8px; border:1px solid #2c4a3e; background:#0e1c18; color:var(--szoveg); }
+  .jelolo { display:flex; gap:10px; align-items:flex-start; margin:12px 0 0; font-size:15px; color:var(--szoveg); }
+  .jelolo input { width:20px; height:20px; margin-top:2px; flex:none; }
+  button { display:block; width:100%; padding:14px; border:0; border-radius:10px; font-size:16px; font-weight:600; cursor:pointer; margin-top:12px; }
+  .fo { background:#e8efe9; color:#173d27; border:2px solid var(--zold); }
+  .torol { background:var(--piros); color:#fff; }
+  button:disabled { opacity:.55; cursor:default; }
+  .masodik { background:transparent; color:var(--halvany); font-weight:500; text-decoration:underline; }
+  .uzenet { min-height:20px; margin-top:10px; font-size:14px; }
+  .uzenet.hiba { color:var(--hiba); }
+  .fejlec { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+  select { padding:6px 8px; font-size:14px; border-radius:8px; background:#0e1c18; color:var(--szoveg); border:1px solid #2c4a3e; }
+  [hidden] { display:none !important; }
+  a { color:#cfe0d4; }
+</style>
+</head>
+<body>
+<main>
+  <div class="fejlec">
+    <strong>PrepperPapa</strong>
+    <select id="nyelv" aria-label="Nyelv / Language">
+      <option value="hu">Magyar</option><option value="en">English</option><option value="de">Deutsch</option>
+      <option value="es">Español</option><option value="pl">Polski</option><option value="ro">Română</option>
+      <option value="ru">Русский</option><option value="uk">Українська</option>
+    </select>
+  </div>
+  <h1 data-t="cim"></h1>
+  <p data-t="bevezeto"></p>
+  <p class="halvany" data-t="appban"></p>
+
+  <div class="kartya">
+    <h2 data-t="mi_torlodik"></h2>
+    <ul data-l="torlodik"></ul>
+    <h2 data-t="mi_marad"></h2>
+    <ul data-l="marad"></ul>
+  </div>
+
+  <div class="kartya" id="lepes1">
+    <label for="email" data-t="email_cimke"></label>
+    <input type="email" id="email" autocomplete="email" inputmode="email" maxlength="254">
+    <button class="fo" id="kodKer" data-t="kod_kuldes"></button>
+    <div class="uzenet" id="uz1" role="status"></div>
+  </div>
+
+  <div class="kartya" id="lepes2" hidden>
+    <p data-t="kod_elkuldve"></p>
+    <label for="kod" data-t="kod_cimke"></label>
+    <input type="text" id="kod" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]*">
+    <p class="figyelem" data-t="mentes_figyelem"></p>
+    <label class="jelolo"><input type="checkbox" id="ertem"><span data-t="ertem"></span></label>
+    <button class="torol" id="torol" disabled data-t="torles_gomb"></button>
+    <button class="masodik" id="ujKod" data-t="uj_kod"></button>
+    <div class="uzenet" id="uz2" role="status"></div>
+  </div>
+
+  <div class="kartya" id="kesz" hidden>
+    <h2 data-t="kesz_cim"></h2>
+    <p data-t="kesz_szoveg"></p>
+  </div>
+
+  <p class="halvany"><span data-t="kerdes"></span> <a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></p>
+</main>
+<script>
+(function () {
+  'use strict';
+  // THE PAGE'S TRANSLATION TABLE (8 languages, the app's set). The deletion code e-mail has its own table in
+  // pp-kapu/torles-level.mjs; the in-app texts are in web-demo/index.html (PP_FTORL_SZOTAR).
+  var T = {
+    hu: { cim: 'PrepperPapa-fiók törlése',
+      bevezeto: 'Itt kérheted a PrepperPapa-fiókod és a hozzá tartozó adatok végleges törlését, az app nélkül is.',
+      appban: 'Az appban ugyanez: Profil › Fiók › Fiók törlése.',
+      mi_torlodik: 'Ami törlődik',
+      torlodik: ['a fiókod: az e-mail-címed, a jelszavad és a belépési adataid',
+        'a szobák, amelyeknek te vagy a gazdája, az összes üzenetükkel együtt',
+        'a tagságaid más szobákban, a neved és a profilképed',
+        'az üzeneteid más szobákban (a helyükön „törölt üzenet” jelzés marad)',
+        'az értesítési feliratkozásaid, a letiltásaid és a beküldött visszajelzéseid'],
+      mi_marad: 'Ami megmarad',
+      marad: ['a megvásárolt prémium vásárlási bizonylata (számviteli kötelezettség); a már feloldott készülékeiden a prémium tovább működik, de új készülékhez nem köthető',
+        'a mások által rólad tett bejelentések és a bejelentett üzenet másolata a moderálási döntés után legfeljebb 12 hónapig; az általad tett bejelentések név és e-mail-cím nélkül',
+        'az ajánlási programban az e-mail-címed egyirányú, visszafejthetetlennek szánt lenyomata és a beváltás dátuma, legfeljebb 24 hónapig, a visszaélés elleni védelem miatt; a Gíra-jóváírások a közös könyvben, név és e-mail-cím nélkül; ha 24 hónapon belül ugyanezzel az e-mail-címmel újra regisztrálsz, az ajánlásért kapott Gíráidat visszakapod',
+        'a biztonsági mentésekben a törölt adatok legfeljebb kb. 12 hétig még szerepelhetnek, utána kikerülnek',
+        'a telefonodon tárolt adatok: ezeket az app törlésével távolíthatod el'],
+      email_cimke: 'A fiókod e-mail-címe', kod_kuldes: 'Törlési kód küldése',
+      kod_elkuldve: 'Ha ehhez a címhez tartozik PrepperPapa-fiók, elküldtük rá a 6 jegyű törlési kódot. Nézd meg a leveleidet (a spam mappát is). A kód 10 percig érvényes.',
+      kod_cimke: 'Törlési kód', ertem: 'Értem, hogy a törlés végleges, és nem vonható vissza.',
+      mentes_figyelem: 'Mielőtt törlöd: a telefonodon lévő Gíra a fiók törlése után is megmarad, de az app törlésével vagy a telefon elvesztésével elvész. Ha később vissza szeretnéd állítani, előbb készíts biztonsági mentést, és a Gírát mentsd jelszóval.',
+      torles_gomb: 'Fiók végleges törlése', uj_kod: 'Új kód kérése',
+      kesz_cim: 'A fiókodat töröltük.', kesz_szoveg: 'A PrepperPapa-fiókodat és a hozzá tartozó adatokat véglegesen töröltük.',
+      kerdes: 'Kérdésed van?',
+      h_email: 'Adj meg egy érvényes e-mail-címet.', h_kod: 'A kód 6 számjegy.', h_hibas: 'Hibás kód.',
+      h_lejart: 'A kód lejárt vagy elfogyott a próbálkozás. Kérj új kódot.', h_sok: 'Túl sok próbálkozás. Várj pár percet.',
+      h_szerver: 'A törlést most nem sikerült elvégezni. Próbáld újra pár perc múlva.', h_halo: 'Nincs kapcsolat a szerverrel. Ellenőrizd az internetet.' },
+    en: { cim: 'Delete your PrepperPapa account',
+      bevezeto: 'Here you can request the permanent deletion of your PrepperPapa account and its data, without the app.',
+      appban: 'In the app: Profile › Account › Delete account.',
+      mi_torlodik: 'What is deleted',
+      torlodik: ['your account: your e-mail address, password and sign-in data',
+        'the rooms you host, with all their messages',
+        'your memberships in other rooms, your name and profile picture',
+        'your messages in other rooms (a "deleted message" marker stays in their place)',
+        'your notification subscriptions, blocks and the feedback you sent'],
+      mi_marad: 'What is kept',
+      marad: ['the purchase record of premium you bought (accounting obligation); premium keeps working on devices already unlocked, but cannot be added to a new device',
+        'reports others made about you and the copy of the reported message, for at most 12 months after the moderation decision; the reports you made, without your name and e-mail address',
+        'in the referral programme, a one-way fingerprint of your e-mail address, intended to be irreversible, and the date of redemption, for at most 24 months, to protect against abuse; the Gíra credits in the shared book, without name or e-mail address; if you register again with the same e-mail address within 24 months, you get back the Gíra you received for referrals',
+        'deleted data may still appear in backups for at most about 12 weeks, after which it is removed',
+        'data stored on your phone: uninstall the app to remove it'],
+      email_cimke: 'Your account e-mail address', kod_kuldes: 'Send deletion code',
+      kod_elkuldve: 'If a PrepperPapa account belongs to this address, we have sent a 6-digit deletion code to it. Check your e-mail (and the spam folder). The code is valid for 10 minutes.',
+      kod_cimke: 'Deletion code', ertem: 'I understand that deletion is permanent and cannot be undone.',
+      mentes_figyelem: 'Before you delete: the Gíra on your phone stays after the account is deleted, but it is lost if you delete the app or lose the phone. If you want to restore it later, make a backup first, and save the Gíra with a password.',
+      torles_gomb: 'Permanently delete account', uj_kod: 'Request a new code',
+      kesz_cim: 'Your account has been deleted.', kesz_szoveg: 'Your PrepperPapa account and its data have been permanently deleted.',
+      kerdes: 'Questions?',
+      h_email: 'Enter a valid e-mail address.', h_kod: 'The code has 6 digits.', h_hibas: 'Wrong code.',
+      h_lejart: 'The code has expired or the attempts are used up. Request a new code.', h_sok: 'Too many attempts. Wait a few minutes.',
+      h_szerver: 'The deletion could not be completed right now. Try again in a few minutes.', h_halo: 'No connection to the server. Check your internet.' },
+    de: { cim: 'PrepperPapa-Konto löschen',
+      bevezeto: 'Hier kannst du die endgültige Löschung deines PrepperPapa-Kontos und der zugehörigen Daten beantragen, auch ohne die App.',
+      appban: 'In der App: Profil › Konto › Konto löschen.',
+      mi_torlodik: 'Was gelöscht wird',
+      torlodik: ['dein Konto: deine E-Mail-Adresse, dein Passwort und deine Anmeldedaten',
+        'die Räume, deren Gastgeber du bist, mit allen Nachrichten',
+        'deine Mitgliedschaften in anderen Räumen, dein Name und dein Profilbild',
+        'deine Nachrichten in anderen Räumen (an ihrer Stelle bleibt ein Hinweis „gelöschte Nachricht“)',
+        'deine Benachrichtigungs-Abos, Blockierungen und gesendeten Rückmeldungen'],
+      mi_marad: 'Was bleibt',
+      marad: ['der Kaufbeleg für gekauftes Premium (Buchführungspflicht); auf bereits freigeschalteten Geräten funktioniert Premium weiter, kann aber keinem neuen Gerät zugeordnet werden',
+        'Meldungen anderer über dich und die Kopie der gemeldeten Nachricht, höchstens 12 Monate nach der Moderationsentscheidung; deine eigenen Meldungen ohne Namen und E-Mail-Adresse',
+        'im Empfehlungsprogramm ein einseitiger, als nicht umkehrbar gedachter Fingerabdruck deiner E-Mail-Adresse und das Datum der Einlösung, höchstens 24 Monate lang, zum Schutz vor Missbrauch; die Gíra-Gutschriften im gemeinsamen Buch, ohne Namen und E-Mail-Adresse; wenn du dich innerhalb von 24 Monaten mit derselben E-Mail-Adresse erneut registrierst, bekommst du die Gíra zurück, die du für Empfehlungen erhalten hast',
+        'in Sicherungskopien können die gelöschten Daten noch höchstens etwa 12 Wochen lang enthalten sein, danach werden sie entfernt',
+        'auf deinem Telefon gespeicherte Daten: diese entfernst du, indem du die App deinstallierst'],
+      email_cimke: 'E-Mail-Adresse deines Kontos', kod_kuldes: 'Löschcode senden',
+      kod_elkuldve: 'Wenn zu dieser Adresse ein PrepperPapa-Konto gehört, haben wir einen 6-stelligen Löschcode dorthin gesendet. Sieh in deinen E-Mails nach (auch im Spam-Ordner). Der Code ist 10 Minuten gültig.',
+      kod_cimke: 'Löschcode', ertem: 'Ich verstehe, dass die Löschung endgültig ist und nicht rückgängig gemacht werden kann.',
+      mentes_figyelem: 'Bevor du löschst: Die Gíra auf deinem Telefon bleiben auch nach dem Löschen des Kontos erhalten, gehen aber verloren, wenn du die App löschst oder das Telefon verlierst. Wenn du sie später wiederherstellen möchtest, erstelle zuerst eine Sicherung und sichere die Gíra mit einem Passwort.',
+      torles_gomb: 'Konto endgültig löschen', uj_kod: 'Neuen Code anfordern',
+      kesz_cim: 'Dein Konto wurde gelöscht.', kesz_szoveg: 'Dein PrepperPapa-Konto und die zugehörigen Daten wurden endgültig gelöscht.',
+      kerdes: 'Fragen?',
+      h_email: 'Gib eine gültige E-Mail-Adresse ein.', h_kod: 'Der Code hat 6 Ziffern.', h_hibas: 'Falscher Code.',
+      h_lejart: 'Der Code ist abgelaufen oder die Versuche sind aufgebraucht. Fordere einen neuen Code an.', h_sok: 'Zu viele Versuche. Warte ein paar Minuten.',
+      h_szerver: 'Die Löschung konnte gerade nicht durchgeführt werden. Versuche es in ein paar Minuten erneut.', h_halo: 'Keine Verbindung zum Server. Prüfe deine Internetverbindung.' },
+    es: { cim: 'Eliminar tu cuenta de PrepperPapa',
+      bevezeto: 'Aquí puedes solicitar la eliminación definitiva de tu cuenta de PrepperPapa y de sus datos, también sin la app.',
+      appban: 'En la app: Perfil › Cuenta › Eliminar cuenta.',
+      mi_torlodik: 'Qué se elimina',
+      torlodik: ['tu cuenta: tu dirección de correo, tu contraseña y tus datos de acceso',
+        'las salas de las que eres anfitrión, con todos sus mensajes',
+        'tus membresías en otras salas, tu nombre y tu foto de perfil',
+        'tus mensajes en otras salas (en su lugar queda un aviso de «mensaje eliminado»)',
+        'tus suscripciones a notificaciones, tus bloqueos y los comentarios que enviaste'],
+      mi_marad: 'Qué se conserva',
+      marad: ['el comprobante de compra del prémium que compraste (obligación contable); el prémium sigue funcionando en los dispositivos ya desbloqueados, pero no se puede vincular a un dispositivo nuevo',
+        'las denuncias que otros hicieron sobre ti y la copia del mensaje denunciado, como máximo 12 meses después de la decisión de moderación; las denuncias que hiciste tú, sin tu nombre ni tu correo',
+        'en el programa de recomendación, una huella unidireccional de tu correo, pensada para que no pueda revertirse, y la fecha del canje, como máximo 24 meses, para proteger contra abusos; los créditos Gíra en el libro común, sin nombre ni correo; si vuelves a registrarte con el mismo correo dentro de 24 meses, recuperas los Gíra que recibiste por recomendaciones',
+        'los datos eliminados pueden seguir figurando en las copias de seguridad como máximo unas 12 semanas; después se eliminan',
+        'los datos guardados en tu teléfono: se eliminan al desinstalar la app'],
+      email_cimke: 'Correo de tu cuenta', kod_kuldes: 'Enviar código de eliminación',
+      kod_elkuldve: 'Si a esta dirección le corresponde una cuenta de PrepperPapa, le hemos enviado un código de eliminación de 6 cifras. Revisa tu correo (también la carpeta de spam). El código es válido durante 10 minutos.',
+      kod_cimke: 'Código de eliminación', ertem: 'Entiendo que la eliminación es definitiva y no se puede deshacer.',
+      mentes_figyelem: 'Antes de eliminarla: los Gíra de tu teléfono se conservan después de eliminar la cuenta, pero se pierden si eliminas la app o pierdes el teléfono. Si quieres recuperarlos más adelante, haz primero una copia de seguridad y guarda los Gíra con contraseña.',
+      torles_gomb: 'Eliminar la cuenta definitivamente', uj_kod: 'Pedir un código nuevo',
+      kesz_cim: 'Tu cuenta ha sido eliminada.', kesz_szoveg: 'Tu cuenta de PrepperPapa y sus datos se han eliminado definitivamente.',
+      kerdes: '¿Tienes preguntas?',
+      h_email: 'Introduce un correo válido.', h_kod: 'El código tiene 6 cifras.', h_hibas: 'Código incorrecto.',
+      h_lejart: 'El código ha caducado o se han agotado los intentos. Pide un código nuevo.', h_sok: 'Demasiados intentos. Espera unos minutos.',
+      h_szerver: 'Ahora no se ha podido completar la eliminación. Inténtalo de nuevo en unos minutos.', h_halo: 'Sin conexión con el servidor. Comprueba tu conexión a internet.' },
+    pl: { cim: 'Usuń konto PrepperPapa',
+      bevezeto: 'Tutaj możesz poprosić o trwałe usunięcie konta PrepperPapa i powiązanych z nim danych, także bez aplikacji.',
+      appban: 'W aplikacji: Profil › Konto › Usuń konto.',
+      mi_torlodik: 'Co zostanie usunięte',
+      torlodik: ['Twoje konto: adres e-mail, hasło i dane logowania',
+        'pokoje, których jesteś gospodarzem, wraz ze wszystkimi wiadomościami',
+        'Twoje członkostwa w innych pokojach, Twoja nazwa i zdjęcie profilowe',
+        'Twoje wiadomości w innych pokojach (w ich miejscu zostaje oznaczenie „usunięta wiadomość”)',
+        'Twoje subskrypcje powiadomień, blokady i wysłane opinie'],
+      mi_marad: 'Co zostaje',
+      marad: ['dowód zakupu kupionej wersji premium (obowiązek księgowy); na odblokowanych już urządzeniach premium działa dalej, ale nie można go przypisać do nowego urządzenia',
+        'zgłoszenia innych osób dotyczące Ciebie oraz kopia zgłoszonej wiadomości, najdłużej 12 miesięcy po decyzji moderacyjnej; Twoje zgłoszenia bez imienia i adresu e-mail',
+        'w programie poleceń jednokierunkowy, pomyślany jako nieodwracalny odcisk Twojego adresu e-mail i data wykorzystania kodu, najdłużej 24 miesiące, w celu ochrony przed nadużyciami; środki Gíra we wspólnej księdze, bez imienia i adresu e-mail; jeśli w ciągu 24 miesięcy zarejestrujesz się ponownie tym samym adresem e-mail, odzyskasz Gíra otrzymane za polecenia',
+        'usunięte dane mogą jeszcze najdłużej około 12 tygodni znajdować się w kopiach zapasowych, potem są z nich usuwane',
+        'dane zapisane w telefonie: usuniesz je, odinstalowując aplikację'],
+      email_cimke: 'Adres e-mail konta', kod_kuldes: 'Wyślij kod usunięcia',
+      kod_elkuldve: 'Jeśli do tego adresu należy konto PrepperPapa, wysłaliśmy na niego 6-cyfrowy kod usunięcia. Sprawdź pocztę (również folder spam). Kod jest ważny przez 10 minut.',
+      kod_cimke: 'Kod usunięcia', ertem: 'Rozumiem, że usunięcie jest trwałe i nie można go cofnąć.',
+      mentes_figyelem: 'Zanim usuniesz: Gíra w Twoim telefonie zostają po usunięciu konta, ale przepadną, jeśli usuniesz aplikację lub zgubisz telefon. Jeśli chcesz je później odzyskać, najpierw zrób kopię zapasową i zapisz Gíra z hasłem.',
+      torles_gomb: 'Trwale usuń konto', uj_kod: 'Poproś o nowy kod',
+      kesz_cim: 'Twoje konto zostało usunięte.', kesz_szoveg: 'Twoje konto PrepperPapa i powiązane z nim dane zostały trwale usunięte.',
+      kerdes: 'Masz pytania?',
+      h_email: 'Podaj prawidłowy adres e-mail.', h_kod: 'Kod ma 6 cyfr.', h_hibas: 'Nieprawidłowy kod.',
+      h_lejart: 'Kod wygasł lub wykorzystano próby. Poproś o nowy kod.', h_sok: 'Zbyt wiele prób. Odczekaj kilka minut.',
+      h_szerver: 'Nie udało się teraz przeprowadzić usunięcia. Spróbuj ponownie za kilka minut.', h_halo: 'Brak połączenia z serwerem. Sprawdź internet.' },
+    ro: { cim: 'Șterge contul PrepperPapa',
+      bevezeto: 'Aici poți cere ștergerea definitivă a contului PrepperPapa și a datelor asociate, chiar și fără aplicație.',
+      appban: 'În aplicație: Profil › Cont › Șterge contul.',
+      mi_torlodik: 'Ce se șterge',
+      torlodik: ['contul tău: adresa de e-mail, parola și datele de conectare',
+        'camerele în care ești gazdă, cu toate mesajele lor',
+        'calitatea ta de membru în alte camere, numele și poza de profil',
+        'mesajele tale din alte camere (în locul lor rămâne marcajul „mesaj șters”)',
+        'abonamentele la notificări, blocările și feedbackul trimis'],
+      mi_marad: 'Ce rămâne',
+      marad: ['documentul de achiziție al premiumului cumpărat (obligație contabilă); pe dispozitivele deja deblocate premiumul funcționează în continuare, dar nu poate fi legat de un dispozitiv nou',
+        'raportările făcute de alții despre tine și copia mesajului raportat, cel mult 12 luni după decizia de moderare; raportările tale, fără nume și adresă de e-mail',
+        'în programul de recomandare, o amprentă unidirecțională a adresei tale de e-mail, concepută să nu poată fi inversată, și data folosirii codului, cel mult 24 de luni, pentru protecția împotriva abuzurilor; creditele Gíra în registrul comun, fără nume și adresă de e-mail; dacă te înregistrezi din nou cu aceeași adresă de e-mail în 24 de luni, primești înapoi Gíra primite pentru recomandări',
+        'datele șterse pot apărea încă în copiile de rezervă cel mult aproximativ 12 săptămâni, după care sunt eliminate',
+        'datele stocate pe telefon: le elimini dezinstalând aplicația'],
+      email_cimke: 'Adresa de e-mail a contului', kod_kuldes: 'Trimite codul de ștergere',
+      kod_elkuldve: 'Dacă acestei adrese îi aparține un cont PrepperPapa, i-am trimis un cod de ștergere din 6 cifre. Verifică e-mailul (și dosarul spam). Codul este valabil 10 minute.',
+      kod_cimke: 'Cod de ștergere', ertem: 'Înțeleg că ștergerea este definitivă și nu poate fi anulată.',
+      mentes_figyelem: 'Înainte de ștergere: Gíra de pe telefon rămân și după ștergerea contului, dar se pierd dacă ștergi aplicația sau pierzi telefonul. Dacă vrei să le restabilești mai târziu, fă mai întâi o copie de rezervă și salvează Gíra cu parolă.',
+      torles_gomb: 'Șterge definitiv contul', uj_kod: 'Cere un cod nou',
+      kesz_cim: 'Contul tău a fost șters.', kesz_szoveg: 'Contul tău PrepperPapa și datele asociate au fost șterse definitiv.',
+      kerdes: 'Ai întrebări?',
+      h_email: 'Introdu o adresă de e-mail validă.', h_kod: 'Codul are 6 cifre.', h_hibas: 'Cod greșit.',
+      h_lejart: 'Codul a expirat sau s-au epuizat încercările. Cere un cod nou.', h_sok: 'Prea multe încercări. Așteaptă câteva minute.',
+      h_szerver: 'Ștergerea nu a putut fi efectuată acum. Încearcă din nou peste câteva minute.', h_halo: 'Nu există conexiune cu serverul. Verifică internetul.' },
+    ru: { cim: 'Удаление аккаунта PrepperPapa',
+      bevezeto: 'Здесь можно запросить окончательное удаление аккаунта PrepperPapa и связанных с ним данных, даже без приложения.',
+      appban: 'В приложении: Профиль › Аккаунт › Удалить аккаунт.',
+      mi_torlodik: 'Что удаляется',
+      torlodik: ['твой аккаунт: адрес электронной почты, пароль и данные входа',
+        'комнаты, где ты хозяин, со всеми сообщениями',
+        'твоё участие в других комнатах, твоё имя и фото профиля',
+        'твои сообщения в других комнатах (на их месте остаётся отметка «сообщение удалено»)',
+        'подписки на уведомления, блокировки и отправленные отзывы'],
+      mi_marad: 'Что сохраняется',
+      marad: ['документ о покупке премиума (требование бухгалтерского учёта); на уже разблокированных устройствах премиум продолжает работать, но привязать его к новому устройству нельзя',
+        'жалобы других пользователей на тебя и копия сообщения, на которое пожаловались, не дольше 12 месяцев после решения модерации; твои жалобы без имени и адреса почты',
+        'в реферальной программе односторонний, задуманный как необратимый отпечаток адреса твоей почты и дата активации кода, не дольше 24 месяцев, для защиты от злоупотреблений; начисления Gíra в общей книге, без имени и адреса почты; если в течение 24 месяцев ты снова зарегистрируешься с тем же адресом почты, Gíra, полученные за приглашения, вернутся к тебе',
+        'удалённые данные могут ещё оставаться в резервных копиях не дольше примерно 12 недель, после этого они удаляются',
+        'данные на телефоне: удали приложение, чтобы удалить их'],
+      email_cimke: 'Адрес почты аккаунта', kod_kuldes: 'Отправить код удаления',
+      kod_elkuldve: 'Если к этому адресу привязан аккаунт PrepperPapa, мы отправили на него 6-значный код удаления. Проверь почту (и папку «Спам»). Код действует 10 минут.',
+      kod_cimke: 'Код удаления', ertem: 'Я понимаю, что удаление окончательное и его нельзя отменить.',
+      mentes_figyelem: 'Перед удалением: Gíra на твоём телефоне сохранятся и после удаления аккаунта, но пропадут, если удалить приложение или потерять телефон. Если захочешь потом их восстановить, сначала сделай резервную копию и сохрани Gíra с паролем.',
+      torles_gomb: 'Удалить аккаунт навсегда', uj_kod: 'Запросить новый код',
+      kesz_cim: 'Аккаунт удалён.', kesz_szoveg: 'Твой аккаунт PrepperPapa и связанные с ним данные удалены навсегда.',
+      kerdes: 'Есть вопросы?',
+      h_email: 'Введи правильный адрес почты.', h_kod: 'Код состоит из 6 цифр.', h_hibas: 'Неверный код.',
+      h_lejart: 'Срок действия кода истёк или попытки закончились. Запроси новый код.', h_sok: 'Слишком много попыток. Подожди несколько минут.',
+      h_szerver: 'Сейчас удалить не удалось. Попробуй ещё раз через несколько минут.', h_halo: 'Нет связи с сервером. Проверь интернет.' },
+    uk: { cim: 'Видалення облікового запису PrepperPapa',
+      bevezeto: 'Тут можна попросити остаточно видалити обліковий запис PrepperPapa і пов’язані з ним дані, навіть без застосунку.',
+      appban: 'У застосунку: Профіль › Обліковий запис › Видалити обліковий запис.',
+      mi_torlodik: 'Що видаляється',
+      torlodik: ['твій обліковий запис: адреса пошти, пароль і дані входу',
+        'кімнати, де ти господар, з усіма повідомленнями',
+        'твоє членство в інших кімнатах, твоє ім’я та фото профілю',
+        'твої повідомлення в інших кімнатах (на їхньому місці лишається позначка «повідомлення видалено»)',
+        'підписки на сповіщення, блокування та надіслані відгуки'],
+      mi_marad: 'Що зберігається',
+      marad: ['документ про купівлю преміуму (вимога бухгалтерського обліку); на вже розблокованих пристроях преміум і далі працює, але прив’язати його до нового пристрою не можна',
+        'скарги інших на тебе та копія повідомлення, на яке поскаржилися, не довше 12 місяців після рішення модерації; твої скарги без імені й адреси пошти',
+        'у реферальній програмі односторонній, задуманий як незворотний відбиток адреси твоєї пошти та дата активації коду, не довше 24 місяців, для захисту від зловживань; нарахування Gíra у спільній книзі, без імені й адреси пошти; якщо протягом 24 місяців ти знову зареєструєшся з тією самою адресою пошти, Gíra, отримані за запрошення, повернуться до тебе',
+        'видалені дані можуть ще залишатися в резервних копіях не довше приблизно 12 тижнів, після цього їх буде прибрано',
+        'дані на телефоні: видали застосунок, щоб їх прибрати'],
+      email_cimke: 'Адреса пошти облікового запису', kod_kuldes: 'Надіслати код видалення',
+      kod_elkuldve: 'Якщо до цієї адреси прив’язаний обліковий запис PrepperPapa, ми надіслали на неї 6-значний код видалення. Перевір пошту (і теку «Спам»). Код дійсний 10 хвилин.',
+      kod_cimke: 'Код видалення', ertem: 'Я розумію, що видалення остаточне і його не можна скасувати.',
+      mentes_figyelem: 'Перед видаленням: Gíra на твоєму телефоні залишаться й після видалення облікового запису, але зникнуть, якщо видалити застосунок або загубити телефон. Якщо захочеш потім їх відновити, спершу зроби резервну копію та збережи Gíra з паролем.',
+      torles_gomb: 'Видалити обліковий запис назавжди', uj_kod: 'Запросити новий код',
+      kesz_cim: 'Обліковий запис видалено.', kesz_szoveg: 'Твій обліковий запис PrepperPapa і пов’язані з ним дані видалено назавжди.',
+      kerdes: 'Є запитання?',
+      h_email: 'Введи правильну адресу пошти.', h_kod: 'Код складається з 6 цифр.', h_hibas: 'Неправильний код.',
+      h_lejart: 'Термін дії коду минув або спроби вичерпано. Запроси новий код.', h_sok: 'Забагато спроб. Зачекай кілька хвилин.',
+      h_szerver: 'Зараз видалити не вдалося. Спробуй ще раз за кілька хвилин.', h_halo: 'Немає зв’язку із сервером. Перевір інтернет.' }
+  };
+  var NYELVEK = Object.keys(T);
+  // served by the gate -> same origin; anywhere else -> the gate's public address (CORS allowed for listed origins)
+  var ALAP = location.pathname.indexOf('/gate/') === 0 ? '' : 'https://app.prepperpapa.hu';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function nyelvValaszt() {
+    var q = (new URLSearchParams(location.search).get('lang') || '').slice(0, 2).toLowerCase();
+    if (NYELVEK.indexOf(q) >= 0) return q;
+    var l = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < l.length; i++) { var n = String(l[i] || '').slice(0, 2).toLowerCase(); if (NYELVEK.indexOf(n) >= 0) return n; }
+    return 'en';
+  }
+  var ny = nyelvValaszt();
+  function t(k) { return (T[ny] && T[ny][k] != null) ? T[ny][k] : T.en[k]; }
+  function rajzol() {
+    document.documentElement.lang = ny;
+    document.title = 'PrepperPapa – ' + t('cim');
+    $('nyelv').value = ny;
+    var el = document.querySelectorAll('[data-t]');
+    for (var i = 0; i < el.length; i++) el[i].textContent = t(el[i].getAttribute('data-t'));
+    var ls = document.querySelectorAll('[data-l]');
+    for (var j = 0; j < ls.length; j++) {
+      var ul = ls[j]; ul.textContent = '';
+      t(ul.getAttribute('data-l')).forEach(function (s) { var li = document.createElement('li'); li.textContent = s; ul.appendChild(li); });
+    }
+  }
+  function uzen(id, kulcs, hiba) { var e = $(id); e.textContent = kulcs ? t(kulcs) : ''; e.className = 'uzenet' + (hiba ? ' hiba' : ''); }
+  function post(ut, obj) {
+    return fetch(ALAP + ut, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(obj) })
+      .then(function (v) { return v.json().catch(function () { return {}; }).then(function (j) { return { st: v.status, j: j }; }); });
+  }
+  function emailJo(e) { return /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/.test(e); }
+
+  function kodKer() {
+    var email = $('email').value.trim().toLowerCase();
+    if (!emailJo(email)) return uzen('uz1', 'h_email', true);
+    $('kodKer').disabled = true; uzen('uz1', '');
+    post('/gate/fiok-torles/kod', { email: email, nyelv: ny }).then(function (r) {
+      $('kodKer').disabled = false;
+      if (r.st === 200) { $('lepes1').hidden = true; $('lepes2').hidden = false; uzen('uz2', ''); $('kod').focus(); return; }
+      uzen('uz1', r.st === 429 ? 'h_sok' : r.st === 400 ? 'h_email' : 'h_szerver', true);
+    }, function () { $('kodKer').disabled = false; uzen('uz1', 'h_halo', true); });
+  }
+  function gombAllit() { $('torol').disabled = !($('ertem').checked && /^\d{6}$/.test($('kod').value.trim())); }
+  function torol() {
+    var kod = $('kod').value.trim();
+    if (!/^\d{6}$/.test(kod)) return uzen('uz2', 'h_kod', true);
+    if (!$('ertem').checked) return;
+    $('torol').disabled = true; uzen('uz2', '');
+    post('/gate/fiok-torles/megerosit', { email: $('email').value.trim().toLowerCase(), kod: kod }).then(function (r) {
+      if (r.st === 200 && r.j && r.j.ok) { $('lepes2').hidden = true; $('lepes1').hidden = true; $('kesz').hidden = false; return; }
+      gombAllit();
+      if (r.st === 401) return uzen('uz2', r.j && r.j.lejart ? 'h_lejart' : 'h_hibas', true);
+      uzen('uz2', r.st === 429 ? 'h_sok' : 'h_szerver', true);
+    }, function () { gombAllit(); uzen('uz2', 'h_halo', true); });
+  }
+  $('nyelv').addEventListener('change', function () { ny = this.value; rajzol(); });
+  $('kodKer').addEventListener('click', kodKer);
+  $('email').addEventListener('keydown', function (e) { if (e.key === 'Enter') kodKer(); });
+  $('kod').addEventListener('input', gombAllit);
+  $('ertem').addEventListener('change', gombAllit);
+  $('torol').addEventListener('click', torol);
+  $('ujKod').addEventListener('click', function () { $('lepes2').hidden = true; $('lepes1').hidden = false; $('kod').value = ''; $('ertem').checked = false; gombAllit(); uzen('uz1', ''); });
+  rajzol();
+})();
+</script>
+</body>
+</html>
