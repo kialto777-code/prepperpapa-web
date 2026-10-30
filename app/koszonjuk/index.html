@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Köszönjük a vásárlást | PrepperPapa</title>
+<meta name="description" content="A PrepperPapa prémium kód rendelésének állapota.">
+<link rel="canonical" href="https://prepperpapa.hu/app/koszonjuk/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Köszönjük a vásárlást | PrepperPapa">
+<meta property="og:description" content="A PrepperPapa prémium kód rendelésének állapota.">
+<meta property="og:url" content="https://prepperpapa.hu/app/koszonjuk/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:image" content="https://prepperpapa.hu/app/kepek/og-app.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/app/kepek/og-app.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  /* Boss 2026-10-26 (TG 29604): the header uses the home page's width (1180 px), not the 760 px text column --
+     in the narrow column the logo sat in the middle of a wide screen. */
+  .nav{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;
+        gap:22px;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:920px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px 8px;gap:4px 20px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  .nav .pt-zar{margin:0;display:flex;align-items:center;gap:7px;color:var(--muted);font-size:14px;letter-spacing:.03em}
+  @media (max-width:920px){.nav .pt-zar{display:none}}
+
+  main.ppk{max-width:620px;padding-top:34px}
+  .ppk .marka{display:none}
+  .ppk .fej{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+  .ppk .ikon{flex:0 0 56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+             font-size:28px;font-weight:700;background:var(--panel);border:1px solid var(--line)}
+  .ppk .ikon.ok{background:var(--zold);border-color:var(--zold);color:#0B110E}
+  .ppk .ikon.hiba{background:#E57373;border-color:#E57373;color:#0B110E}
+  .ppk .ikon.var{border:4px solid var(--line);border-top-color:var(--borostyan);background:none;animation:ptforog 1s linear infinite}
+  @keyframes ptforog{to{transform:rotate(360deg)}}
+  .ppk h1{font-size:28px;line-height:1.25;margin:0}
+  .ppk .al{margin:6px 0 0;color:var(--muted);font-size:16px;line-height:1.5}
+  .ppk .teszt{display:inline-block;margin-top:8px;padding:2px 9px;border-radius:6px;background:#3A2A0C;color:var(--borostyan);font-size:13px;font-weight:700}
+  .ppk .doboz{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+  .ppk .doboz h2{font-size:18px;margin:0 0 12px}
+  .ppk .rendeles{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+  .ppk .rendeles .cimke{color:var(--muted);font-size:14px}
+  .ppk .rendeles code{font:600 17px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+  .ppk button.masol{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:10px;
+                    padding:8px 14px;font:inherit;font-size:15px;cursor:pointer;min-height:42px}
+  .ppk ol{margin:0 0 14px;padding-left:22px}
+  .ppk ol li{margin:0 0 8px;line-height:1.5}
+  .ppk .gomb{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:10px;padding:13px 16px;
+             min-height:48px;margin:4px 0 0;letter-spacing:.02em}
+  .ppk .gomb.fo{background:var(--borostyan);color:#1b1407}
+  .ppk .gomb.masod{border:1px solid var(--line);color:var(--ink)}
+  .ppk .halvany{color:var(--muted);font-size:15px;line-height:1.5}
+  .ppk .megj{border-left:4px solid var(--borostyan)}
+  .ppk .megj p,.ppk .tam p{margin:0 0 10px}
+  .ppk .megj p:last-child{margin:0}
+  .ppk a.email{color:var(--borostyan);overflow-wrap:anywhere}
+  .ppk .rejtett{display:none}
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/app/koszonjuk/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/app/thank-you/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/app/danke/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/app/gracias/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/app/dziekujemy/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/app/multumim/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/app/spasibo/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/app/diakuiemo/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/app/koszonjuk/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/adatkezeles.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Sütik és hozzájárulás", "bevezeto": "Ez az oldal alapból nem tesz sütit az eszközödre. Két célra kérünk hozzájárulást, külön-külön megadhatod vagy elutasíthatod. Elutasítás esetén is minden működik, és a döntésedet bármikor megváltoztathatod a lábléc „Sütibeállítások” pontjánál.", "p_cim": "Partneri követés", "p_le": "Ha egy partnerünk linkjéről érkezel, sütiben megjegyezzük a partner kódját és a kattintás idejét (pp_ref és a GoAffPro sütijei, 90 napig), hogy megállapíthassuk, melyik partnernek jár jutalék, ha vásárolsz. A partner kuponkódja süti nélkül is a partnernek számít.", "s_cim": "Látogatottság-statisztika", "s_le": "Névtelen látogatottsági statisztika a Google Analytics 4 szolgáltatással (_ga sütik). Hirdetésre és profilalkotásra nem használjuk; hozzájárulás nélkül be sem töltődik.", "igen": "Elfogadom", "nem": "Elutasítom", "mind_igen": "Mindet elfogadom", "mind_nem": "Mindet elutasítom", "ment": "Választásom mentése", "adatv": "Adatkezelési tájékoztató", "link": "Sütibeállítások"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<header><nav class="nav">
+  <a class="brand" href="/app/"><img src="/assets/applogo-96.png" alt=""><span>PrepperPapa</span></a>
+  <p class="pt-zar"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg><span>Biztonságos fizetés</span></p>
+<details class="nyelvv"><summary aria-label="Nyelv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>HU</span></summary><ul><li><a href="/app/koszonjuk/" hreflang="hu" lang="hu" data-nyelv="hu" aria-current="true">Magyar</a></li><li><a href="/en/app/thank-you/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/app/danke/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/app/gracias/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/app/dziekujemy/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/app/multumim/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/app/spasibo/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/app/diakuiemo/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details></nav></header>
+<main class="ppk">
+<p class="marka">PrepperPapa</p>
+  <div class="fej">
+    <div id="ikon" class="ikon var" aria-hidden="true"></div>
+    <div>
+      <h1 id="cim"></h1>
+      <p id="al" class="al"></p>
+      <span id="tesztjel" class="teszt rejtett"></span>
+    </div>
+  </div>
+
+  <div id="rendelesDoboz" class="doboz rendeles rejtett">
+    <div><div class="cimke" id="rendelesCimke"></div><code id="rendelesSzam"></code></div>
+    <button type="button" class="masol" id="masol"></button>
+  </div>
+
+  <div id="lepesDoboz" class="doboz rejtett">
+    <h2 id="lepesCim"></h2>
+    <ol id="lepesek"></ol>
+    <a id="appGomb" class="gomb fo" href="https://app.prepperpapa.hu/"></a>
+    <p class="halvany" style="margin:8px 0 0"><span id="telep"></span> <a id="telepLink" class="email" href="https://prepperpapa.hu/app/"></a></p>
+    <p class="halvany" id="appMegj" style="margin:8px 0 0"></p>
+  </div>
+
+  <div id="spamDoboz" class="doboz megj rejtett"><p id="spam"></p></div>
+
+  <div id="ujraDoboz" class="doboz rejtett">
+    <a id="ujraGomb" class="gomb fo" href="#"></a>
+  </div>
+
+  <div id="tamDoboz" class="doboz tam rejtett">
+    <h2 id="tamCim"></h2>
+    <p id="tamSzoveg"></p>
+    <a id="tamGomb" class="gomb masod" href="#"></a>
+    <p class="halvany" style="margin:8px 0 0"><a id="tamCim2" class="email" href="#"></a></p>
+  </div>
+<script>
+(function () {
+  var OLDAL_NY = (location.pathname.match(/^\/(en|de|es|pl|ro|ru|uk)\//) || [])[1] || '';
+  var PENZTAR_UT = {"": "/app/penztar/", "en": "/en/app/checkout/", "de": "/de/app/kasse/", "es": "/es/app/pago/", "pl": "/pl/app/kasa/", "ro": "/ro/app/plata/", "ru": "/ru/app/oplata/", "uk": "/uk/app/oplata/"};
+  // The API lives on app.prepperpapa.hu; on the test page (same host) a relative URL is used.
+  var API = location.hostname === 'app.prepperpapa.hu' ? '' : 'https://app.prepperpapa.hu';
+  var q = new URLSearchParams(location.search);
+  var id = q.get('rendeles'), t = q.get('t');
+  var TAMOGATAS = 'prepperpapa@gmail.com';   // the server's `ugyfelszolgalat` overrides it
+  var VASARLAS = /^\/vasarlas\/teszt/.test(location.pathname) ? '/vasarlas/teszt/' : PENZTAR_UT[OLDAL_NY] || '/app/penztar/';
+
+  var SZ = {
+    hu: {
+      telep: 'Ha még nincs telepítve az app:',
+      title: 'Köszönjük a vásárlást', rendeles: 'Rendelésszám', masol: 'Másolás', masolva: 'Kimásolva',
+      teszt: 'TESZT: valódi fizetés nem történt',
+      ok: ['Köszönjük a vásárlást!', 'A fizetés sikerült. A prémium kódodat elküldtük e-mailben.'],
+      lepesCim: 'A következő lépések',
+      lepesek: ['Nyisd meg a levelet, amelynek tárgya: „A PrepperPapa prémium kódod”. Arra az e-mail-címre ment, amelyet a rendelésnél megadtál.',
+        'Koppints a levélben a „Kód beváltása az appban” linkre: megnyitja az appot a kódoddal.',
+        'Vagy írd be kézzel: az appban Beállítások, Feloldás rész, majd a „Kód beváltása” gomb.'],
+      app: 'Kód beváltása az appban',
+      appMegj: 'Ugyanazzal az e-mail-címmel lépj be az appba, amellyel a kódot használni szeretnéd. A kód az első beváltáskor a fiókodhoz kötődik.',
+      spam: '<b>Nem látod a levelet?</b> Nézd meg a Spam (Levélszemét) és a Promóciók mappát is.',
+      tamCim: 'Nem érkezett meg a kód?',
+      tam: 'Ha 15 percen belül sem érkezik meg, írj az ügyfélszolgálatunknak, és add meg a rendelésszámot. A levélbe már beírtuk.',
+      tamGomb: 'E-mail az ügyfélszolgálatnak', targy: 'Prémium kód nem érkezett meg, rendelés: ',
+      tamAlt: 'Kérdésed van a rendeléssel kapcsolatban? Írj nekünk, a rendelésszámmal együtt.', targyAlt: 'Rendelés: ',
+      var: ['A fizetés visszaigazolására várunk…', 'Ez általában néhány másodperc. Ne zárd be az oldalt.'],
+      keses: ['A visszaigazolás késik', 'A fizetést még nem kaptuk vissza a fizetési szolgáltatótól. Ha sikeres volt, a kódot e-mailben ettől függetlenül elküldjük.'],
+      sikertelen: ['A fizetés nem sikerült', 'Nem vontunk le pénzt. Próbáld újra, akár másik kártyával.'], ujra: 'Újrapróbálom',
+      tiltva: ['Ide a weboldalon nem árulunk', 'A kártyád kibocsátó országába a weboldalon nem árulunk, ezért kódot nem küldtünk, és az összeget visszatérítjük. Az alkalmazás a Google Play áruházban érhető el.'],
+      vissza: ['A rendelést visszatérítettük', 'Az összeget visszautaltuk, a hozzá tartozó prémium kódot visszavontuk.'],
+      nincsId: ['Nem találjuk a rendelést', 'A link nem tartalmazza a rendelés azonosítóját. Nézd meg a leveleidet, vagy írj nekünk.'],
+      nincs: ['Nem találjuk ezt a rendelést', 'Ellenőrizd, hogy a teljes linket nyitottad-e meg, vagy írj nekünk.'],
+      hiba: ['Az állapot most nem kérdezhető le', 'Ha a fizetés sikerült, a kódot e-mailben ettől függetlenül megkapod.']
+    },
+    en: {
+      telep: 'If the app is not installed yet:',
+      title: 'Thank you for your purchase', rendeles: 'Order number', masol: 'Copy', masolva: 'Copied',
+      teszt: 'TEST: no real payment was made',
+      ok: ['Thank you for your purchase!', 'Your payment went through. We have e-mailed you your premium code.'],
+      lepesCim: 'Next steps',
+      lepesek: ['Open the e-mail with the subject “Your PrepperPapa premium code”. It went to the address you entered with your order.',
+        'Tap the “Redeem the code in the app” link in the e-mail: it opens the app with your code.',
+        'Or enter it by hand: in the app go to Settings, Unlock section, then tap “Redeem code”.'],
+      app: 'Redeem the code in the app',
+      appMegj: 'Sign in to the app with the e-mail address you want to use the code with. The code is tied to your account on first redemption.',
+      spam: '<b>Can’t see the e-mail?</b> Check your Spam (Junk) and Promotions folders too.',
+      tamCim: 'Code not arrived?',
+      tam: 'If it has not arrived within 15 minutes, write to our customer service with your order number. We have already put it in the e-mail for you.',
+      tamGomb: 'E-mail customer service', targy: 'Premium code not received, order: ',
+      tamAlt: 'A question about your order? Write to us with your order number.', targyAlt: 'Order: ',
+      var: ['Waiting for payment confirmation…', 'This usually takes a few seconds. Please keep this page open.'],
+      keses: ['Confirmation is delayed', 'We have not yet heard back from the payment provider. If the payment succeeded, we will e-mail your code anyway.'],
+      sikertelen: ['The payment did not go through', 'No money was taken. Please try again, with another card if needed.'], ujra: 'Try again',
+      tiltva: ['We cannot sell here from the website', 'We cannot sell to the country that issued your card from this website, so no code was sent and the amount will be refunded. The app is available on Google Play.'],
+      vissza: ['This order has been refunded', 'The amount has been refunded and the premium code that came with it has been revoked.'],
+      nincsId: ['Order not found', 'The link does not contain the order number. Check your e-mails or write to us.'],
+      nincs: ['We cannot find this order', 'Check that you opened the full link, or write to us.'],
+      hiba: ['The status cannot be checked right now', 'If the payment succeeded, you will receive the code by e-mail anyway.']
+    },
+    de: {
+      telep: 'Wenn die App noch nicht installiert ist:',
+      title: 'Danke für deinen Kauf', rendeles: 'Bestellnummer', masol: 'Kopieren', masolva: 'Kopiert',
+      teszt: 'TEST: Es wurde keine echte Zahlung ausgeführt',
+      ok: ['Danke für deinen Kauf!', 'Die Zahlung war erfolgreich. Wir haben dir deinen Premium-Code per E-Mail geschickt.'],
+      lepesCim: 'Die nächsten Schritte',
+      lepesek: ['Öffne die E-Mail mit dem Betreff „Dein PrepperPapa-Premium-Code“. Sie ging an die Adresse, die du bei der Bestellung angegeben hast.',
+        'Tippe in der E-Mail auf den Link „Code in der App einlösen“: Er öffnet die App mit deinem Code.',
+        'Oder gib ihn von Hand ein: in der App unter Einstellungen, Bereich Entsperren, dann „Code einlösen“.'],
+      app: 'Code in der App einlösen',
+      appMegj: 'Melde dich in der App mit der E-Mail-Adresse an, mit der du den Code nutzen möchtest. Beim ersten Einlösen wird der Code an dein Konto gebunden.',
+      spam: '<b>Keine E-Mail zu sehen?</b> Sieh auch im Spam-Ordner (Junk) und unter „Werbung“ nach.',
+      tamCim: 'Code nicht angekommen?',
+      tam: 'Wenn er nach 15 Minuten noch nicht da ist, schreib unserem Kundenservice und gib die Bestellnummer an. Wir haben sie schon in die E-Mail eingetragen.',
+      tamGomb: 'E-Mail an den Kundenservice', targy: 'Premium-Code nicht erhalten, Bestellung: ',
+      tamAlt: 'Eine Frage zu deiner Bestellung? Schreib uns mit der Bestellnummer.', targyAlt: 'Bestellung: ',
+      var: ['Wir warten auf die Zahlungsbestätigung…', 'Das dauert meist nur ein paar Sekunden. Bitte lass die Seite offen.'],
+      keses: ['Die Bestätigung verzögert sich', 'Vom Zahlungsanbieter kam noch keine Rückmeldung. War die Zahlung erfolgreich, schicken wir dir den Code trotzdem per E-Mail.'],
+      sikertelen: ['Die Zahlung hat nicht geklappt', 'Es wurde kein Geld abgebucht. Versuch es noch einmal, notfalls mit einer anderen Karte.'], ujra: 'Noch einmal versuchen',
+      tiltva: ['Hierhin verkaufen wir nicht über die Website', 'In das Ausgabeland deiner Karte können wir über diese Website nicht verkaufen. Daher wurde kein Code verschickt, und der Betrag wird erstattet. Die App ist bei Google Play erhältlich.'],
+      vissza: ['Diese Bestellung wurde erstattet', 'Der Betrag wurde erstattet und der zugehörige Premium-Code widerrufen.'],
+      nincsId: ['Bestellung nicht gefunden', 'Der Link enthält keine Bestellnummer. Sieh in deinen E-Mails nach oder schreib uns.'],
+      nincs: ['Wir finden diese Bestellung nicht', 'Prüfe, ob du den vollständigen Link geöffnet hast, oder schreib uns.'],
+      hiba: ['Der Status lässt sich gerade nicht abfragen', 'War die Zahlung erfolgreich, bekommst du den Code trotzdem per E-Mail.']
+    },
+    es: {
+      telep: 'Si aún no tienes la app instalada:',
+      title: 'Gracias por tu compra', rendeles: 'Número de pedido', masol: 'Copiar', masolva: 'Copiado',
+      teszt: 'PRUEBA: no se ha realizado ningún pago real',
+      ok: ['¡Gracias por tu compra!', 'El pago se ha realizado. Te hemos enviado tu código premium por correo.'],
+      lepesCim: 'Próximos pasos',
+      lepesek: ['Abre el correo con el asunto «Tu código premium de PrepperPapa». Se envió a la dirección que indicaste en el pedido.',
+        'Toca en el correo el enlace «Canjear el código en la app»: abre la app con tu código.',
+        'O introdúcelo a mano: en la app, Ajustes, sección Desbloquear, y luego «Canjear código».'],
+      app: 'Canjear el código en la app',
+      appMegj: 'Inicia sesión en la app con la dirección de correo con la que quieres usar el código. En el primer canje, el código queda vinculado a tu cuenta.',
+      spam: '<b>¿No ves el correo?</b> Revisa también las carpetas de Spam (correo no deseado) y Promociones.',
+      tamCim: '¿No te ha llegado el código?',
+      tam: 'Si no llega en 15 minutos, escribe a nuestro servicio de atención al cliente con tu número de pedido. Ya lo hemos incluido en el correo.',
+      tamGomb: 'Escribir a atención al cliente', targy: 'No he recibido el código premium, pedido: ',
+      tamAlt: '¿Tienes una pregunta sobre tu pedido? Escríbenos con el número de pedido.', targyAlt: 'Pedido: ',
+      var: ['Esperando la confirmación del pago…', 'Suele tardar unos segundos. No cierres esta página.'],
+      keses: ['La confirmación se está retrasando', 'Aún no tenemos respuesta del proveedor de pagos. Si el pago se realizó, te enviaremos el código por correo igualmente.'],
+      sikertelen: ['El pago no se ha realizado', 'No se ha cobrado nada. Inténtalo de nuevo, si hace falta con otra tarjeta.'], ujra: 'Intentarlo de nuevo',
+      tiltva: ['No vendemos aquí desde la web', 'No podemos vender desde esta web al país emisor de tu tarjeta, así que no se ha enviado ningún código y se reembolsará el importe. La app está disponible en Google Play.'],
+      vissza: ['Este pedido ha sido reembolsado', 'Hemos devuelto el importe y revocado el código premium asociado.'],
+      nincsId: ['No encontramos el pedido', 'El enlace no contiene el número de pedido. Revisa tu correo o escríbenos.'],
+      nincs: ['No encontramos este pedido', 'Comprueba que abriste el enlace completo, o escríbenos.'],
+      hiba: ['Ahora no se puede consultar el estado', 'Si el pago se realizó, recibirás el código por correo igualmente.']
+    },
+    pl: {
+      telep: 'Jeśli aplikacja nie jest jeszcze zainstalowana:',
+      title: 'Dziękujemy za zakup', rendeles: 'Numer zamówienia', masol: 'Kopiuj', masolva: 'Skopiowano',
+      teszt: 'TEST: nie dokonano prawdziwej płatności',
+      ok: ['Dziękujemy za zakup!', 'Płatność się powiodła. Wysłaliśmy Ci kod premium e-mailem.'],
+      lepesCim: 'Co dalej',
+      lepesek: ['Otwórz wiadomość z tematem „Twój kod premium PrepperPapa”. Przyszła na adres podany w zamówieniu.',
+        'Dotknij w wiadomości linku „Zrealizuj kod w aplikacji”: otworzy aplikację z Twoim kodem.',
+        'Albo wpisz go ręcznie: w aplikacji Ustawienia, sekcja Odblokuj, potem „Zrealizuj kod”.'],
+      app: 'Zrealizuj kod w aplikacji',
+      appMegj: 'Zaloguj się w aplikacji adresem e-mail, z którym chcesz używać kodu. Przy pierwszej realizacji kod zostaje powiązany z Twoim kontem.',
+      spam: '<b>Nie widzisz wiadomości?</b> Sprawdź też folder Spam (Wiadomości-śmieci) i Oferty.',
+      tamCim: 'Kod nie dotarł?',
+      tam: 'Jeśli nie dotrze w ciągu 15 minut, napisz do naszego biura obsługi klienta i podaj numer zamówienia. Już wpisaliśmy go w wiadomość.',
+      tamGomb: 'Napisz do obsługi klienta', targy: 'Nie otrzymałem kodu premium, zamówienie: ',
+      tamAlt: 'Masz pytanie o zamówienie? Napisz do nas, podając numer zamówienia.', targyAlt: 'Zamówienie: ',
+      var: ['Czekamy na potwierdzenie płatności…', 'Zwykle trwa to kilka sekund. Nie zamykaj tej strony.'],
+      keses: ['Potwierdzenie się opóźnia', 'Operator płatności jeszcze nie odpowiedział. Jeśli płatność się powiodła, i tak wyślemy Ci kod e-mailem.'],
+      sikertelen: ['Płatność się nie powiodła', 'Nie pobraliśmy pieniędzy. Spróbuj ponownie, w razie potrzeby inną kartą.'], ujra: 'Spróbuj ponownie',
+      tiltva: ['Tu nie sprzedajemy przez stronę', 'Do kraju, który wydał Twoją kartę, nie możemy sprzedawać przez tę stronę, dlatego nie wysłaliśmy kodu, a kwotę zwrócimy. Aplikacja jest dostępna w Google Play.'],
+      vissza: ['To zamówienie zostało zwrócone', 'Zwróciliśmy kwotę i unieważniliśmy powiązany kod premium.'],
+      nincsId: ['Nie znaleziono zamówienia', 'Link nie zawiera numeru zamówienia. Sprawdź swoją pocztę albo napisz do nas.'],
+      nincs: ['Nie możemy znaleźć tego zamówienia', 'Sprawdź, czy otworzyłeś(-aś) pełny link, albo napisz do nas.'],
+      hiba: ['Nie można teraz sprawdzić statusu', 'Jeśli płatność się powiodła, i tak otrzymasz kod e-mailem.']
+    },
+    ro: {
+      telep: 'Dacă aplicația nu este încă instalată:',
+      title: 'Îți mulțumim pentru cumpărare', rendeles: 'Număr comandă', masol: 'Copiază', masolva: 'Copiat',
+      teszt: 'TEST: nu a avut loc nicio plată reală',
+      ok: ['Îți mulțumim pentru cumpărare!', 'Plata a reușit. Ți-am trimis codul premium pe e-mail.'],
+      lepesCim: 'Pașii următori',
+      lepesek: ['Deschide e-mailul cu subiectul „Codul tău premium PrepperPapa”. A ajuns la adresa pe care ai dat-o la comandă.',
+        'Atinge în e-mail linkul „Valorifică codul în aplicație”: deschide aplicația cu codul tău.',
+        'Sau introdu-l manual: în aplicație, Setări, secțiunea Deblochează, apoi „Valorifică codul”.'],
+      app: 'Valorifică codul în aplicație',
+      appMegj: 'Autentifică-te în aplicație cu adresa de e-mail cu care vrei să folosești codul. La prima valorificare, codul se leagă de contul tău.',
+      spam: '<b>Nu vezi e-mailul?</b> Verifică și dosarele Spam (Nedorite) și Promoții.',
+      tamCim: 'Nu a sosit codul?',
+      tam: 'Dacă nu sosește în 15 minute, scrie serviciului nostru pentru clienți și menționează numărul comenzii. L-am trecut deja în e-mail.',
+      tamGomb: 'Scrie serviciului pentru clienți', targy: 'Nu am primit codul premium, comanda: ',
+      tamAlt: 'Ai o întrebare despre comandă? Scrie-ne, împreună cu numărul comenzii.', targyAlt: 'Comanda: ',
+      var: ['Așteptăm confirmarea plății…', 'De obicei durează câteva secunde. Nu închide pagina.'],
+      keses: ['Confirmarea întârzie', 'Încă nu am primit răspuns de la procesatorul de plăți. Dacă plata a reușit, îți trimitem oricum codul pe e-mail.'],
+      sikertelen: ['Plata nu a reușit', 'Nu am încasat bani. Încearcă din nou, la nevoie cu alt card.'], ujra: 'Încearcă din nou',
+      tiltva: ['Aici nu vindem prin site', 'Nu putem vinde prin acest site în țara emitentă a cardului tău, așa că nu am trimis niciun cod, iar suma va fi rambursată. Aplicația este disponibilă pe Google Play.'],
+      vissza: ['Comanda a fost rambursată', 'Am rambursat suma și am revocat codul premium aferent.'],
+      nincsId: ['Comanda nu a fost găsită', 'Linkul nu conține numărul comenzii. Verifică-ți e-mailurile sau scrie-ne.'],
+      nincs: ['Nu găsim această comandă', 'Verifică dacă ai deschis linkul complet sau scrie-ne.'],
+      hiba: ['Starea nu poate fi verificată acum', 'Dacă plata a reușit, vei primi oricum codul pe e-mail.']
+    },
+    ru: {
+      telep: 'Если приложение ещё не установлено:',
+      title: 'Спасибо за покупку', rendeles: 'Номер заказа', masol: 'Копировать', masolva: 'Скопировано',
+      teszt: 'ТЕСТ: реальной оплаты не было',
+      ok: ['Спасибо за покупку!', 'Оплата прошла. Мы отправили вам премиум-код по e-mail.'],
+      lepesCim: 'Что дальше',
+      lepesek: ['Откройте письмо с темой «Ваш премиум-код PrepperPapa». Оно пришло на адрес, указанный в заказе.',
+        'Нажмите в письме ссылку «Активировать код в приложении»: она откроет приложение с вашим кодом.',
+        'Или введите код вручную: в приложении «Настройки», раздел «Разблокировать», затем «Активировать код».'],
+      app: 'Активировать код в приложении',
+      appMegj: 'Войдите в приложение с тем адресом e-mail, с которым хотите использовать код. При первой активации код привязывается к вашей учётной записи.',
+      spam: '<b>Не видите письмо?</b> Проверьте также папки «Спам» и «Промоакции».',
+      tamCim: 'Код не пришёл?',
+      tam: 'Если он не придёт в течение 15 минут, напишите в нашу службу поддержки и укажите номер заказа. Мы уже вписали его в письмо.',
+      tamGomb: 'Написать в поддержку', targy: 'Не получил премиум-код, заказ: ',
+      tamAlt: 'Есть вопрос по заказу? Напишите нам, указав номер заказа.', targyAlt: 'Заказ: ',
+      var: ['Ждём подтверждения оплаты…', 'Обычно это занимает несколько секунд. Не закрывайте страницу.'],
+      keses: ['Подтверждение задерживается', 'Платёжный сервис ещё не ответил. Если оплата прошла, мы всё равно отправим код по e-mail.'],
+      sikertelen: ['Оплата не прошла', 'Деньги не списаны. Попробуйте ещё раз, при необходимости другой картой.'], ujra: 'Попробовать снова',
+      tiltva: ['Сюда мы не продаём через сайт', 'В страну, выпустившую вашу карту, мы не можем продавать через этот сайт, поэтому код не отправлен, а сумма будет возвращена. Приложение доступно в Google Play.'],
+      vissza: ['Деньги за заказ возвращены', 'Мы вернули сумму и отозвали связанный премиум-код.'],
+      nincsId: ['Заказ не найден', 'В ссылке нет номера заказа. Проверьте почту или напишите нам.'],
+      nincs: ['Мы не нашли этот заказ', 'Проверьте, что открыли ссылку полностью, или напишите нам.'],
+      hiba: ['Статус сейчас недоступен', 'Если оплата прошла, вы всё равно получите код по e-mail.']
+    },
+    uk: {
+      telep: 'Якщо застосунок ще не встановлено:',
+      title: 'Дякуємо за покупку', rendeles: 'Номер замовлення', masol: 'Копіювати', masolva: 'Скопійовано',
+      teszt: 'ТЕСТ: справжньої оплати не було',
+      ok: ['Дякуємо за покупку!', 'Оплата пройшла. Ми надіслали вам преміум-код електронною поштою.'],
+      lepesCim: 'Що далі',
+      lepesek: ['Відкрийте лист із темою «Ваш преміум-код PrepperPapa». Він надійшов на адресу, вказану в замовленні.',
+        'Натисніть у листі посилання «Використати код у застосунку»: воно відкриє застосунок із вашим кодом.',
+        'Або введіть код вручну: у застосунку «Налаштування», розділ «Розблокувати», потім «Використати код».'],
+      app: 'Використати код у застосунку',
+      appMegj: 'Увійдіть у застосунок з тією адресою e-mail, з якою хочете використовувати код. Під час першого використання код прив’язується до вашого облікового запису.',
+      spam: '<b>Не бачите листа?</b> Перевірте також папки «Спам» і «Промоакції».',
+      tamCim: 'Код не надійшов?',
+      tam: 'Якщо він не надійде протягом 15 хвилин, напишіть до нашої служби підтримки й укажіть номер замовлення. Ми вже вписали його в лист.',
+      tamGomb: 'Написати в підтримку', targy: 'Не отримав преміум-код, замовлення: ',
+      tamAlt: 'Маєте питання щодо замовлення? Напишіть нам, указавши номер замовлення.', targyAlt: 'Замовлення: ',
+      var: ['Чекаємо на підтвердження оплати…', 'Зазвичай це кілька секунд. Не закривайте сторінку.'],
+      keses: ['Підтвердження затримується', 'Платіжний сервіс ще не відповів. Якщо оплата пройшла, ми все одно надішлемо код електронною поштою.'],
+      sikertelen: ['Оплата не пройшла', 'Гроші не списано. Спробуйте ще раз, за потреби іншою карткою.'], ujra: 'Спробувати ще раз',
+      tiltva: ['Сюди ми не продаємо через сайт', 'До країни, що випустила вашу картку, ми не можемо продавати через цей сайт, тому код не надіслано, а суму буде повернуто. Застосунок доступний у Google Play.'],
+      vissza: ['Кошти за замовлення повернуто', 'Ми повернули суму й відкликали пов’язаний преміум-код.'],
+      nincsId: ['Замовлення не знайдено', 'Посилання не містить номера замовлення. Перевірте пошту або напишіть нам.'],
+      nincs: ['Ми не знайшли це замовлення', 'Перевірте, що відкрили посилання повністю, або напишіть нам.'],
+      hiba: ['Статус зараз недоступний', 'Якщо оплата пройшла, ви все одно отримаєте код електронною поштою.']
+    }
+  };
+  function bongeszoNyelv() {
+    var l = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
+    for (var i = 0; i < l.length; i++) { var n = String(l[i] || '').slice(0, 2).toLowerCase(); if (SZ[n]) return n; }
+    return 'en';
+  }
+  var kertNyelv = String(q.get('lang') || OLDAL_NY || '').slice(0, 2).toLowerCase();
+  var ny = SZ[kertNyelv] ? kertNyelv : bongeszoNyelv();
+
+  var $ = function (x) { return document.getElementById(x); };
+  var allas = { tipus: 'var', teszt: false };
+  function lat(x, igen) { $(x).classList.toggle('rejtett', !igen); }
+  function mailto(targy) { return 'mailto:' + TAMOGATAS + '?subject=' + encodeURIComponent(targy + (id || '')); }
+
+  function rajzol() {
+    var T = SZ[ny], a = allas.tipus;
+    document.documentElement.lang = ny;
+    document.title = T.title + ' | PrepperPapa';
+    var szoveg = { ok: T.ok, var: T.var, keses: T.keses, sikertelen: T.sikertelen, tiltva: T.tiltva, vissza: T.vissza,
+      nincsId: T.nincsId, nincs: T.nincs, hiba: T.hiba }[a];
+    $('cim').textContent = szoveg[0];
+    $('al').textContent = szoveg[1];
+    var ikon = $('ikon');
+    ikon.className = 'ikon ' + (a === 'ok' ? 'ok' : a === 'var' ? 'var' : (a === 'sikertelen' || a === 'tiltva' || a === 'nincs' || a === 'nincsId') ? 'hiba' : '');
+    ikon.textContent = a === 'ok' ? '✓' : a === 'var' ? '' : (ikon.className.indexOf('hiba') > 0 ? '!' : 'i');
+    $('tesztjel').textContent = T.teszt; lat('tesztjel', !!allas.teszt);
+
+    lat('rendelesDoboz', !!id && a !== 'nincsId');
+    $('rendelesCimke').textContent = T.rendeles; $('rendelesSzam').textContent = id || '';
+    $('masol').textContent = T.masol;
+
+    var kodUt = a === 'ok' || a === 'keses' || a === 'hiba';   // the code is (or may be) on its way by e-mail
+    lat('lepesDoboz', a === 'ok');
+    $('lepesCim').textContent = T.lepesCim;
+    var ol = $('lepesek'); ol.innerHTML = '';
+    T.lepesek.forEach(function (s) { var li = document.createElement('li'); li.textContent = s; ol.appendChild(li); });
+    $('appGomb').textContent = T.app; $('appMegj').textContent = T.appMegj;
+    var oldal = 'https://prepperpapa.hu/' + (ny === 'hu' ? '' : ny + '/') + 'app/';
+    $('telep').textContent = T.telep; $('telepLink').textContent = oldal.replace('https://', ''); $('telepLink').href = oldal;
+    lat('spamDoboz', kodUt); $('spam').innerHTML = T.spam;
+
+    lat('ujraDoboz', a === 'sikertelen'); $('ujraGomb').textContent = T.ujra; $('ujraGomb').href = VASARLAS;
+
+    lat('tamDoboz', a !== 'var');
+    var alt = T.tamAlt.split('? ');
+    $('tamCim').textContent = kodUt ? T.tamCim : alt[0] + '?';
+    $('tamSzoveg').textContent = kodUt ? T.tam : alt.slice(1).join('? ');
+    $('tamGomb').textContent = T.tamGomb;
+    $('tamGomb').href = mailto(kodUt ? T.targy : T.targyAlt);
+    $('tamCim2').textContent = TAMOGATAS; $('tamCim2').href = $('tamGomb').href;
+  }
+
+  $('masol').addEventListener('click', function () {
+    var gomb = this, kesz = function () { gomb.textContent = SZ[ny].masolva; setTimeout(function () { gomb.textContent = SZ[ny].masol; }, 2000); };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(id).then(kesz, regi); return; }
+    } catch (e) {}
+    regi();
+    function regi() {
+      var ta = document.createElement('textarea'); ta.value = id; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); kesz(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+
+  function beallit(tipus, d) {
+    allas.tipus = tipus;
+    if (d) {
+      allas.teszt = !!d.teszt;
+      if (d.ugyfelszolgalat && /^[^\s@<>]+@[^\s@<>]+$/.test(d.ugyfelszolgalat)) TAMOGATAS = d.ugyfelszolgalat;
+      if (!SZ[kertNyelv] && d.nyelv && SZ[d.nyelv]) ny = d.nyelv;
+    }
+    rajzol();
+  }
+
+  if (!id || !t) { beallit('nincsId'); return; }
+  rajzol();
+  var probak = 0;
+  function lekerdez() {
+    fetch(API + '/vasarlas/rendeles/' + encodeURIComponent(id) + '?t=' + encodeURIComponent(t), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) { beallit('nincs'); return; }
+        if (d.allapot === 'fizetve') {
+          beallit('ok', d);
+          konverzio(d.goaffpro);
+        } else if (d.allapot === 'letrehozva' && probak++ < 20) {
+          beallit('var', d);
+          setTimeout(lekerdez, 3000);
+        } else if (d.allapot === 'tiltva') {
+          beallit('tiltva', d);
+        } else if (d.allapot === 'sikertelen') {
+          beallit('sikertelen', d);
+        } else if (d.allapot === 'visszaterites') {
+          beallit('vissza', d);
+        } else {
+          beallit('keses', d);
+        }
+      })
+      .catch(function () { beallit('hiba'); });
+  }
+  // GoAffPro custom SDK (loader.js?shop=<store public key>, then goaffproTrackConversion(...)).
+  // The server sends `goaffpro` ONLY for a paid order with a code, so nothing fires before the
+  // payment is confirmed. Signed mode: the server-signed JWT. Unsigned mode: the order object the
+  // server built from the confirmed payment (number, paid total, currency, coupon) -- no secret here.
+  // Once per order number: localStorage (survives reloads and new tabs) + sessionStorage fallback,
+  // marked right before the call; a failed loader leaves no mark, so a reload may retry.
+  function megvolt(kulcs) {
+    try { if (localStorage.getItem(kulcs)) return true; } catch (e) {}
+    try { if (sessionStorage.getItem(kulcs)) return true; } catch (e) {}
+    return false;
+  }
+  function jelol(kulcs) {
+    try { localStorage.setItem(kulcs, String(Date.now())); } catch (e) {}
+    try { sessionStorage.setItem(kulcs, '1'); } catch (e) {}
+  }
+  function konverzio(g) {
+    if (!g) return;
+    var alairt = g.be && g.site_id && g.jwt;
+    var nyilt = !alairt && g.alairatlan && g.bolt && g.rendeles && g.rendeles.number;
+    if (!alairt && !nyilt) return;
+    var szam = (g.rendeles && g.rendeles.number) || id;
+    var kulcs = 'pp_goaffpro_' + szam;
+    if (megvolt(kulcs) || window.__pp_goaffpro_kuldve) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://api.goaffpro.com/loader.js?shop=' + encodeURIComponent(alairt ? g.site_id : g.bolt);
+    s.onload = function () {
+      if (typeof window.goaffproTrackConversion !== 'function' || megvolt(kulcs) || window.__pp_goaffpro_kuldve) return;
+      var o = g.rendeles || {};
+      if (!alairt) {
+        // our checkout decided the attribution (live partner cookie > coupon, Boss 2026-10-28): hand it to
+        // the SDK, which reads the referral and discount code from its own cookies. The server leaves the
+        // coupon out of `coupons` when another partner's cookie won; then a stale `dcode` cookie is removed
+        // too, because GoAffPro ranks coupon tracking before the referral link.
+        try {
+          if (o.ref && typeof window.gfpSetCookie === 'function') window.gfpSetCookie('ref', o.ref);
+          if (o.coupons && o.coupons[0] && typeof window.gfpSetCookie === 'function') window.gfpSetCookie('dcode', o.coupons[0]);
+          else if (o.ref && typeof window.gfpDeleteCookie === 'function') window.gfpDeleteCookie('dcode');
+        } catch (e) {}
+      }
+      window.__pp_goaffpro_kuldve = true;
+      jelol(kulcs);
+      try {
+        window.goaffproTrackConversion(alairt ? g.jwt : {
+          id: o.id, number: o.number, total: o.total, subtotal: o.subtotal, currency: o.currency,
+          coupons: o.coupons || [], line_items: o.line_items || [], customer: o.customer || {},
+          forceSDK: true
+        });
+      } catch (e) {}
+    };
+    document.head.appendChild(s);
+  }
+  lekerdez();
+})();
+</script>
+</main>
+<footer><div>PrepperPapa &middot; Készülj, ne félj!
+&middot; <a href="/adatkezeles.html">Adatkezelés</a>
+&middot; <a href="/aszf.html">ÁSZF</a>
+&middot; <a href="/impresszum.html">Impresszum</a></div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>
