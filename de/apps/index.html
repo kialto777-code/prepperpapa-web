@@ -101,7 +101,12 @@
   .appok{display:grid;gap:16px;margin:8px 0 10px}
   @media (min-width:720px){.appok{grid-template-columns:1fr 1fr}}
   .appk{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;
-        padding:20px 20px 18px;text-decoration:none;color:var(--ink)}
+        padding:0 20px 18px;text-decoration:none;color:var(--ink);overflow:hidden;transition:border-color .2s,transform .2s}
+  .appk:hover{transform:translateY(-2px)}
+  /* card artwork (Boss 2026-10-30 09:40, TG 5974: "klassz grafikus anyagot [...] Nem csak egy egyszerű gombot"):
+     the app icon and its start screen on the app's own background, composed in ../wordlight-aloldal/ (banner.py) */
+  .appk .appkep{display:block;width:calc(100% + 40px);height:auto;aspect-ratio:5/3;object-fit:cover;margin:0 -20px 16px;
+        border-bottom:1px solid var(--line)}
   .appk:hover{border-color:var(--zold)}
   .appk h2{margin:0 0 4px;font-size:clamp(22px,4vw,28px)}
   .appk .al{color:var(--borostyan);font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
@@ -264,10 +269,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h1>PrepperPapa-Apps</h1>
 <p>Wähle die App, die dich interessiert. Jede wird separat installiert.</p>
 <div class="appok">
-<a class="appk" href="/de/app/"><h2>PrepperPapa</h2><div class="al">Vorsorge ohne Internet</div>
+<a class="appk" href="/de/app/"><img class="appkep" src="/alkalmazasok/kepek/kartya-prepperpapa.webp" width="1200" height="720" alt=""><h2>PrepperPapa</h2><div class="al">Vorsorge ohne Internet</div>
 <p>Vorsorge-Check, Wissensbasis, Karte, Kompass, SOS und Notfallkarte in einer App, das Wichtigste auch ohne Internet.</p>
 <p class="tovabb">Ansehen &rarr;</p></a>
-<a class="appk" href="/de/app/wordlight/"><h2>Wordlight</h2><div class="al">PrepperPapa Bibel</div>
+<a class="appk" href="/de/app/wordlight/"><img class="appkep" src="/alkalmazasok/kepek/kartya-wordlight.webp" width="1200" height="720" alt="" loading="lazy"><h2>Wordlight</h2><div class="al">PrepperPapa Bibel</div>
 <p>Die Bibel in acht Sprachen, auch ohne Internet: Vorlesen, Lesepläne, Wecker mit Bibelwort, Gebete und Bibelverse für Notlagen.</p>
 <p class="tovabb">Ansehen &rarr;</p></a>
 </div>
