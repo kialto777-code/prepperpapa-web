@@ -4511,6 +4511,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
 // Bible alarms on their own screen (owner 2026-10-26 17:54): several alarms, each with its own plan
 Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Ébresztő törlése": "Șterge alarma",
+ "Ébresztő kipróbálása": "Încearcă alarma",
  "Új ébresztő": "Alarmă nouă",
  "Válassz tervet": "Alege un plan",
  "Törlöd ezt az ébresztőt?": "Ștergi această alarmă?",
@@ -4862,4 +4863,8 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Szótár: Strong-féle héber és görög szótár (1894), közkincs; a szótár szövege gépi fordítás.": "Dicționar: dicționarul ebraic și grec al lui Strong (1894), domeniu public; textul dicționarului este o traducere automată.",
   "Ehhez a fordításhoz még nincs eredeti szó adat.": "Pentru această traducere nu există încă date despre cuvintele originale.",
   "Hiányzó engedély az ébresztőhöz": "Alarmei îi lipsește o permisiune"
+});
+// reader panel layout (2026-10-31, TG 31909)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Letölthető zenék": "Muzică descărcabilă"
 });
