@@ -274,6 +274,23 @@
     .sec{min-height:auto}
     .hero{min-height:100svh}
   }
+
+  .trio{margin:40px 0 8px}
+  .trio .kicsi{color:var(--zold);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .trio h2{margin:0 0 8px}
+  .trio .bev{color:var(--muted);margin:0 0 18px}
+  .trio .tk{display:grid;gap:16px}
+  @media (min-width:720px){.trio .tk{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1000px){.trio.harom .tk{grid-template-columns:repeat(3,1fr)}}
+  .trio a.tkk{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+        padding:0 20px 18px;text-decoration:none;color:var(--ink);overflow:hidden;transition:border-color .2s,transform .2s}
+  .trio a.tkk:hover{transform:translateY(-2px);border-color:var(--zold)}
+  .trio a.tkk img{display:block;max-width:none;width:calc(100% + 40px);height:auto;aspect-ratio:5/3;object-fit:cover;margin:0 -20px 16px;border-bottom:1px solid var(--line)}
+  .trio a.tkk h3{margin:0 0 4px;font-size:clamp(21px,3.4vw,26px)}
+  .trio a.tkk .al{color:var(--borostyan);font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
+  .trio a.tkk p{flex:1;margin:0 0 12px}
+  .trio a.tkk .tovabb{flex:0;color:var(--zold);font-weight:700;margin:0}
+  .trio a.tkk p.megj{flex:0;font-size:13px;line-height:1.45;color:var(--muted);margin:0 0 12px}
 </style>
 <style id="fej2">
   header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
@@ -421,7 +438,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <body>
 <header><nav class="nav fej2">
   <a class="brand" href="/de/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
-  <div class="linkek"><a class="link" href="/de/">Startseite</a> <a class="link" href="/de/#videos">Videos</a> <a class="link" href="/de/artikel.html">Wissensbasis</a> <a class="link" href="/de/rechner/">Rechner</a> <a class="link" href="/de/apps/" aria-current="page">App</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Community-Forum</a> <a class="link" href="/de/#kontakt">Kontakt</a></div>
+  <div class="linkek"><a class="link" href="/de/">Startseite</a> <a class="link" href="/de/#videos">Videos</a> <a class="link" href="/de/artikel.html">Wissensbasis</a> <a class="link" href="/de/rechner/">Rechner</a> <a class="link" href="/de/apps/" aria-current="page">App</a> <a class="link" href="/de/gira/">Gíra</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Community-Forum</a> <a class="link" href="/de/#kontakt">Kontakt</a></div>
   <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Abonnieren</a>
   <details class="nyelvv"><summary aria-label="Sprache"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>DE</span></summary><ul><li><a href="/app/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/app/" hreflang="en" lang="en" data-nyelv="en">English</a></li><li><a href="/de/app/" hreflang="de" lang="de" data-nyelv="de" aria-current="true">Deutsch</a></li><li><a href="/es/app/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/app/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/app/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/app/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/app/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
   <button class="hamb" type="button" aria-label="Menü" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
@@ -602,6 +619,16 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <section id="velemenyek" hidden>
 <h2>Was Tester sagen</h2>
 </section>
+
+<div class="sec"><div class="in"><section class="trio">
+<div class="kicsi">Entdecken</div>
+<h2>Die Welt von PrepperPapa</h2>
+<p class="bev">Zwei Apps und die eigene Verrechnung der Gemeinschaft, miteinander verbunden.</p>
+<div class="tk">
+<a class="tkk" href="/de/app/wordlight/"><img src="/alkalmazasok/kepek/kartya-wordlight.webp" width="1200" height="720" alt="" loading="lazy"><h3>Wordlight</h3><div class="al">PrepperPapa Bibel</div><p>Die Bibel in acht Sprachen, auch ohne Internet: Vorlesen, Lesepläne, Wecker mit Bibelwort, Gebete und Bibelverse für Notlagen.</p><p class="tovabb">Ansehen &rarr;</p></a>
+<a class="tkk" href="/de/gira/"><img src="/alkalmazasok/kepek/kartya-gira.webp" width="1200" height="720" alt="" loading="lazy"><h3>Gíra</h3><div class="al">Gíra-Mining</div><p>Die Gemeinschafts-Verrechnungseinheit von PrepperPapa: Du bekommst sie für tägliches Bibellesen und Empfehlungen, und die Mitglieder können sie einander weitergeben, ohne Internet. Eine Belohnung, kein Geld.</p><p class="megj">Die Bezeichnung „Gíra-Mining“ ist nur ein spielerischer Name: Die Gíra erhältst du für das Lesen, sie wird nicht durch Rechenarbeit erzeugt, und die Gíra ist kein Geld und nicht in Geld umtauschbar.</p><p class="tovabb">Ansehen &rarr;</p></a>
+</div>
+</section></div></div>
 
 <section class="sec gyik"><div class="in rv">
 <h2>Häufige Fragen</h2>

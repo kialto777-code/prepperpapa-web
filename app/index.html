@@ -274,6 +274,23 @@
     .sec{min-height:auto}
     .hero{min-height:100svh}
   }
+
+  .trio{margin:40px 0 8px}
+  .trio .kicsi{color:var(--zold);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
+  .trio h2{margin:0 0 8px}
+  .trio .bev{color:var(--muted);margin:0 0 18px}
+  .trio .tk{display:grid;gap:16px}
+  @media (min-width:720px){.trio .tk{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1000px){.trio.harom .tk{grid-template-columns:repeat(3,1fr)}}
+  .trio a.tkk{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+        padding:0 20px 18px;text-decoration:none;color:var(--ink);overflow:hidden;transition:border-color .2s,transform .2s}
+  .trio a.tkk:hover{transform:translateY(-2px);border-color:var(--zold)}
+  .trio a.tkk img{display:block;max-width:none;width:calc(100% + 40px);height:auto;aspect-ratio:5/3;object-fit:cover;margin:0 -20px 16px;border-bottom:1px solid var(--line)}
+  .trio a.tkk h3{margin:0 0 4px;font-size:clamp(21px,3.4vw,26px)}
+  .trio a.tkk .al{color:var(--borostyan);font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
+  .trio a.tkk p{flex:1;margin:0 0 12px}
+  .trio a.tkk .tovabb{flex:0;color:var(--zold);font-weight:700;margin:0}
+  .trio a.tkk p.megj{flex:0;font-size:13px;line-height:1.45;color:var(--muted);margin:0 0 12px}
 </style>
 <style id="fej2">
   header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
@@ -427,6 +444,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     <a class="link" href="/cikkek.html">Tudástár</a>
     <a class="link" href="/kalkulator/">Kalkulátorok</a>
     <a class="link" href="/alkalmazasok/" aria-current="page">Alkalmazás</a>
+    <a class="link" href="/gira/">Gíra</a>
     <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező fórum</a>
     <a class="link" href="/#kapcsolat">Kapcsolat</a>
   </div>
@@ -610,6 +628,16 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <section id="velemenyek" hidden>
 <h2>Akik már kipróbálták</h2>
 </section>
+
+<div class="sec"><div class="in"><section class="trio">
+<div class="kicsi">Fedezd fel</div>
+<h2>A PrepperPapa világa</h2>
+<p class="bev">Két alkalmazás és a közösség saját elszámolása, egymással összekötve.</p>
+<div class="tk">
+<a class="tkk" href="/app/wordlight/"><img src="/alkalmazasok/kepek/kartya-wordlight.webp" width="1200" height="720" alt="" loading="lazy"><h3>Wordlight</h3><div class="al">PrepperPapa Biblia</div><p>A Biblia nyolc nyelven, internet nélkül is: felolvasás, olvasási tervek, ébresztő igével, imák és vészhelyzeti igék.</p><p class="tovabb">Megnézem &rarr;</p></a>
+<a class="tkk" href="/gira/"><img src="/alkalmazasok/kepek/kartya-gira.webp" width="1200" height="720" alt="" loading="lazy"><h3>Gíra</h3><div class="al">Gíra-bányászat</div><p>A PrepperPapa közösségi elszámolási egysége: napi Bibliaolvasásért és ajánlásért jár, és a tagok egymás között is átadhatják, internet nélkül. Jutalom, nem pénz.</p><p class="megj">A „gíra-bányászat” név csak játékos elnevezés: a gírát az olvasásért kapod, nem számítógépes munkával állítjuk elő, és a gíra nem pénz, nem váltható pénzre.</p><p class="tovabb">Megnézem &rarr;</p></a>
+</div>
+</section></div></div>
 
 <section class="sec gyik"><div class="in rv">
 <h2>Gyakori kérdések</h2>

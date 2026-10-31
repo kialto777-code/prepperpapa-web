@@ -202,6 +202,19 @@
   .mini img{border-radius:12px}
   .nagy{border-radius:18px;background:linear-gradient(160deg,#1c2a21,#121B16);border-color:#2c3d33}
   /* app showcase */
+
+  /* app + gíra cards (Boss 2026-10-31 TG 31995): same block as on the app pages, epit-app.py TRIO_KARTYAK */
+  .triosav .tk{display:grid;gap:18px;margin-top:30px}
+  @media (min-width:760px){.triosav .tk{grid-template-columns:repeat(3,1fr)}}
+  .triosav a.tkk{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+        padding:0 20px 18px;text-decoration:none;color:var(--ink);overflow:hidden;transition:border-color .2s,transform .2s}
+  .triosav a.tkk:hover{transform:translateY(-2px);border-color:var(--zold)}
+  .triosav a.tkk img{display:block;max-width:none;width:calc(100% + 40px);height:auto;aspect-ratio:5/3;object-fit:cover;margin:0 -20px 16px;border-bottom:1px solid var(--line)}
+  .triosav a.tkk h3{margin:0 0 4px;font-size:clamp(21px,2.4vw,26px)}
+  .triosav a.tkk .al{color:var(--borostyan);font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0 0 10px}
+  .triosav a.tkk p{flex:1;margin:0 0 12px;color:#C3CCC5}
+  .triosav a.tkk .tovabb{flex:0;color:var(--zold);font-weight:700;margin:0}
+  .triosav a.tkk p.megj{flex:0;font-size:13px;line-height:1.45;color:#9AA59D;margin:0 0 12px}
   .appsav{background:radial-gradient(120% 80% at 80% 30%,#1d2c22 0%,#0B110E 60%);overflow:hidden}
   .appsav .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
   .appsav p.lead{margin-top:16px}
@@ -447,6 +460,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     <a class="link" href="#tudastar">Tudástár</a>
     <a class="link" href="/kalkulator/">Kalkulátorok</a>
     <a class="link" href="/alkalmazasok/">Alkalmazás</a>
+    <a class="link" href="/gira/">Gíra</a>
     <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező fórum</a>
     <a class="link" href="#kapcsolat">Kapcsolat</a>
   </div>
@@ -624,6 +638,21 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       <a class="btn amber" href="/app/">Részletek és prémium</a>
     </div>
     <div class="telhely rv"><a class="tel android" href="/app/" aria-label="PrepperPapa app"><span class="kij"><span class="sb" aria-hidden="true"><svg viewBox="0 0 50 10"><rect x="0" y="7" width="2.6" height="3" rx=".6"/><rect x="4" y="5" width="2.6" height="5" rx=".6"/><rect x="8" y="3" width="2.6" height="7" rx=".6"/><rect x="12" y="0.5" width="2.6" height="9.5" rx=".6"/><path d="M24 9.6l-2.2-2.6a3.4 3.4 0 0 1 4.4 0zM19.6 4.6a6.8 6.8 0 0 1 8.8 0l-1.3 1.5a4.8 4.8 0 0 0-6.2 0zM17.3 2a10.2 10.2 0 0 1 13.4 0l-1.3 1.5a8.2 8.2 0 0 0-10.8 0z"/><rect x="33.5" y="1" width="13" height="8" rx="2" fill="none" stroke="#e8efe9" stroke-width="1"/><rect x="35" y="2.5" width="9" height="5" rx="1"/><rect x="47.2" y="3.6" width="1.4" height="2.8" rx=".5"/></svg></span><img src="/app/kepek/1-kezdolap.jpg" width="480" height="1038" loading="lazy" alt="PrepperPapa app"></span></a></div>
+  </div>
+</section>
+
+<section class="blk triosav" id="vilag">
+  <div class="wrap">
+    <div class="rv">
+      <span class="szam">Fedezd fel</span>
+      <h2 class="disp">A PrepperPapa világa</h2>
+      <p class="lead">Két alkalmazás és a közösség saját elszámolása, egymással összekötve.</p>
+    </div>
+    <div class="tk rv">
+      <a class="tkk" href="/app/"><img src="/alkalmazasok/kepek/kartya-prepperpapa.webp" width="1200" height="720" alt="" loading="lazy"><h3>PrepperPapa</h3><div class="al">Felkészülés internet nélkül</div><p>Készültség-számítás, tudástár, térkép, tájoló, SOS és vészkártya egy alkalmazásban, a legfontosabbak internet nélkül is.</p><p class="tovabb">Megnézem &rarr;</p></a>
+      <a class="tkk" href="/app/wordlight/"><img src="/alkalmazasok/kepek/kartya-wordlight.webp" width="1200" height="720" alt="" loading="lazy"><h3>Wordlight</h3><div class="al">PrepperPapa Biblia</div><p>A Biblia nyolc nyelven, internet nélkül is: felolvasás, olvasási tervek, ébresztő igével, imák és vészhelyzeti igék.</p><p class="tovabb">Megnézem &rarr;</p></a>
+      <a class="tkk" href="/gira/"><img src="/alkalmazasok/kepek/kartya-gira.webp" width="1200" height="720" alt="" loading="lazy"><h3>Gíra</h3><div class="al">Gíra-bányászat</div><p>A PrepperPapa közösségi elszámolási egysége: napi Bibliaolvasásért és ajánlásért jár, és a tagok egymás között is átadhatják, internet nélkül. Jutalom, nem pénz.</p><p class="megj">A „gíra-bányászat” név csak játékos elnevezés: a gírát az olvasásért kapod, nem számítógépes munkával állítjuk elő, és a gíra nem pénz, nem váltható pénzre.</p><p class="tovabb">Megnézem &rarr;</p></a>
+    </div>
   </div>
 </section>
 
