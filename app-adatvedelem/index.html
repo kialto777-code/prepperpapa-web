@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrepperPapa és Wordlight alkalmazás: adatkezelési tájékoztató - PrepperPapa</title>
+<meta name="description" content="A PrepperPapa és a Wordlight alkalmazás adatkezelési tájékoztatója.">
+<link rel="canonical" href="https://prepperpapa.hu/app-adatvedelem/">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PrepperPapa és Wordlight alkalmazás: adatkezelési tájékoztató">
+<meta property="og:description" content="A PrepperPapa és a Wordlight alkalmazás adatkezelési tájékoztatója.">
+<meta property="og:url" content="https://prepperpapa.hu/app-adatvedelem/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<meta property="og:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* phones: the language picker needs the room (2026-10-19); the page ends with a link back home */
+  @media(max-width:520px){.nav{gap:12px;padding:0 16px}.nav a.link{display:none}}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+</style>
+<style id="appadat">
+  .nyelvek{font-size:14px;color:var(--muted);margin:0 0 18px}.nyelvek a{margin-right:10px}
+  .nyelvek b{margin-right:10px;color:var(--ink)}
+  table.adat{border-collapse:collapse;width:100%;margin:0 0 18px;font-size:15px}
+  table.adat th,table.adat td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  table.adat th{color:var(--ink);background:rgba(255,255,255,.03)}
+  .tabla{overflow-x:auto;-webkit-overflow-scrolling:touch}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/adatkezeles.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Sütik és hozzájárulás", "bevezeto": "Ez az oldal alapból nem tesz sütit az eszközödre. Két célra kérünk hozzájárulást, külön-külön megadhatod vagy elutasíthatod. Elutasítás esetén is minden működik, és a döntésedet bármikor megváltoztathatod a lábléc „Sütibeállítások” pontjánál.", "p_cim": "Partneri követés", "p_le": "Ha egy partnerünk linkjéről érkezel, sütiben megjegyezzük a partner kódját és a kattintás idejét (pp_ref és a GoAffPro sütijei, 90 napig), hogy megállapíthassuk, melyik partnernek jár jutalék, ha vásárolsz. A partner kuponkódja süti nélkül is a partnernek számít.", "s_cim": "Látogatottság-statisztika", "s_le": "Névtelen látogatottsági statisztika a Google Analytics 4 szolgáltatással (_ga sütik). Hirdetésre és profilalkotásra nem használjuk; hozzájárulás nélkül be sem töltődik.", "igen": "Elfogadom", "nem": "Elutasítom", "mind_igen": "Mindet elfogadom", "mind_nem": "Mindet elutasítom", "ment": "Választásom mentése", "adatv": "Adatkezelési tájékoztató", "link": "Sütibeállítások"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav fej2">
+  <a class="brand" href="/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek">
+    <a class="link" href="/">Kezdőlap</a>
+    <a class="link" href="/#videok">Videók</a>
+    <a class="link" href="/cikkek.html">Tudástár</a>
+    <a class="link" href="/kalkulator/">Kalkulátorok</a>
+    <a class="link" href="/alkalmazasok/">Alkalmazás</a>
+    <a class="link" href="/gira/">Gíra</a>
+    <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Gyülekező fórum</a>
+    <a class="link" href="/#kapcsolat">Kapcsolat</a>
+  </div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Feliratkozom</a>
+  <button class="hamb" type="button" aria-label="Menü" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main>
+<p class="nyelvek"><b>Magyar</b> <a href="/en/app-adatvedelem/" hreflang="en">English</a> <a href="/de/app-adatvedelem/" hreflang="de">Deutsch</a> <a href="/es/app-adatvedelem/" hreflang="es">Español</a> <a href="/pl/app-adatvedelem/" hreflang="pl">Polski</a> <a href="/ro/app-adatvedelem/" hreflang="ro">Română</a> <a href="/ru/app-adatvedelem/" hreflang="ru">Русский</a> <a href="/uk/app-adatvedelem/" hreflang="uk">Українська</a></p>
+<h1>PrepperPapa és Wordlight alkalmazás: adatkezelési tájékoztató</h1>
+<p>Ez a tájékoztató a <strong>PrepperPapa</strong> alkalmazásra és a <strong>Wordlight</strong> alkalmazásra (a PrepperPapa Biblia-olvasója, külön alkalmazás) vonatkozik. Ahol a két alkalmazás eltér, külön jelöljük. A prepperpapa.hu weboldal tájékoztatója külön dokumentum.</p>
+<p><strong>Hatályos: 2026. október 31. (a közzététel napja).</strong></p>
+<h2>1. Röviden</h2>
+<ul>
+<li>A PrepperPapa appot offline használatra építettük: a készleted, a jegyzeteid, a térképpontjaid, a Vészkártyád, a tárcád és a Noah-val folytatott beszélgetésed a telefonodon marad. A Wordlight egy Biblia-olvasó: a szöveg a telefonodon van, olvasáshoz nem kell fiók.</li>
+<li>A szerverünkre akkor kerül adat, ha <strong>fiókot hozol létre vagy belépsz</strong>, <strong>szobát használsz</strong>, <strong>SOS-t vagy helyzetet küldesz a szobáidba</strong>, <strong>visszajelzést vagy jelentést küldesz</strong>, <strong>prémiumot váltasz be</strong>, <strong>ajánlóprogramot használsz</strong>, <strong>napi olvasási gírát kapsz</strong>, vagy <strong>hírlevélre iratkozol fel</strong>. A Wordlightban a belépés nem kötelező, csak a prémium beváltásához és a hírlevélhez kell. A Wordlightban végzett olvasás jelenleg nem jár gírával, és a Wordlight erről nem küld adatot.</li>
+<li>A szobák üzenetszövegét a telefonod titkosítja, mielőtt elküldi. A szerver a szöveget nem látja. Azt viszont látja, hogy ki melyik szobának a tagja, milyen néven, mikor írt, és hogy volt-e SOS-jelzés.</li>
+<li>Nincs az appban hirdetési azonosító, követő, viselkedéselemzés, Google Analytics és hibajelentő szolgáltatás. Nem adunk el adatot, és nem készítünk rólad profilt. Az egyetlen követés a hírlevél megnyitás-követése, és csak akkor, ha te külön feliratkozol (3.11).</li>
+<li>A fiókodat és a hozzá tartozó adatokat törölheted: lásd a 9. pontot.</li>
+</ul>
+<h2>2. Ki kezeli az adataidat</h2>
+<p>Adatkezelő: <strong>Nagy János László egyéni vállalkozó</strong> (székhely: 3128 Vizslás, József Attila út 15.; nyilvántartási szám: 63017434; adószám: 92514027-1-32; működés kezdete: 2026-10-28).<br>
+Elérhetőség adatvédelmi kérdésekben: <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong>.<br>
+A szervert egy tárhelyszolgáltató üzemelteti (lásd a 6. pontot), az adatkezelő mi vagyunk.</p>
+<h2>3. Mit kezelünk, miért, milyen jogalappal, meddig</h2>
+<p>A jogalapok a GDPR (az Európai Parlament és a Tanács (EU) 2016/679 rendelete) 6. cikk (1) bekezdésén alapulnak. A „szerződés teljesítése" itt azt jelenti, hogy az adat nélkül a kért funkciót nem tudjuk nyújtani.</p>
+<h3>3.1. Fiók és belépés</h3>
+<ul>
+<li><strong>Adat:</strong> e-mail-cím; ha jelszóval regisztrálsz, a jelszó egyirányú (scrypt) lenyomata, sosem a jelszó maga; ha Google-fiókkal lépsz be, a Google által igazolt e-mail-cím; a fiók létrehozásának és az utolsó belépésnek az ideje; a fiók állapota (aktív, várakozó, visszavont); az e-mailben kapott megerősítő kód (rövid ideig, a szerver memóriájában vagy lenyomatként).</li>
+<li><strong>Tesztelői változat:</strong> a tesztelői változat induláskor az e-mail-címedet és a készülék-azonosítódat elküldi a szervernek, amely aláírt, lejárattal ellátott engedélyt ad vissza; ezt a szerver nem tárolja.</li>
+<li><strong>Cél:</strong> belépés, a szobák, a prémium, az ajánlóprogram, a napi olvasási gíra és a hírlevél a fiókodhoz kötése, visszaélés elleni védelem. A PrepperPapa ezekhez a funkciókhoz fiókot kér; a Wordlightban a belépés nem kötelező (ugyanaz a fiók, e-mail-cím és egy hatjegyű kód, jelszó nélkül).</li>
+<li><strong>Jogalap:</strong> szerződés teljesítése (6. cikk (1) b)); a belépési kísérletek korlátozása jogos érdek (6. cikk (1) f)).</li>
+<li><strong>Meddig:</strong> a fiók törléséig. A törlés után a biztonsági mentésekben legfeljebb kb. 12 hétig marad meg (a szerveren 14 napi és 8 heti mentés van, egy másik, magyarországi gépen 30 napi és 12 heti másolat; a fórum mentése 7 napi, ugyanazon a szerveren).</li>
+<li><strong>Megjegyzés:</strong> az ellenőrző kódot Gmail-fiókból küldjük (Google mint e-mail-szolgáltató).</li>
+</ul>
+<h3>3.2. Szobák (csoportos üzenetváltás)</h3>
+<ul>
+<li><strong>Adat, amit a szerver tisztán lát:</strong> szobanév és szobanyelv; a tagok azonosítója és megjelenített neve; profilkép; ki mikor kért belépést, a kérelemhez írt bemutatkozás, és hogy elfogadtad a szabályzatot és nyilatkoztál a 16. életévről (egy érték, a kérelem idejével); meghívók (lejárattal); az üzenetek küldője, ideje, sürgős jelölése, szerkesztési és törlési ideje; reakciók, mentések, olvasási jelzések; a tag fiókhoz kötött azonosítója; az eltávolított tagok jegyzéke (e-mail, név, időpont). Ezek az adatok <strong>nem titkosítottak</strong>.</li>
+<li><strong>Adat, amit a szerver rendes esetben csak titkosítva kap:</strong> az üzenetek szövege (AES-GCM 256, a szoba kulcsával; a kulcsot a tagok telefonjai kezelik) és a tag-közi titkos üzenetek. Néhány régebbi vagy rendszer által küldött üzenet szövege a szerveren titkosítatlanul van tárolva. Az üzenetekhez csatolt képeket (legfeljebb 500 kB) az app rendes esetben a telefonon titkosítja, de a szerver titkosítatlan képet is elfogad, ezért a titkosítás az app működése, nem a szerver garanciája. <strong>A szoba képe és a tagok profilképe titkosítatlanul tárolódik</strong> az adatbázisban.</li>
+<li><strong>Cél:</strong> a szoba működtetése.</li>
+<li><strong>Jogalap:</strong> szerződés teljesítése. A belépési kérelemnél a szabályzat elfogadása után a szoba gazdája és tagjai látják, amit megadtál.</li>
+<li><strong>Meddig:</strong> amíg a szoba, illetve a fiókod létezik; a szoba törlésekor a szobához tartozó adat is törlődik. A szoba eseménynaplója 90 napig marad meg. Biztonsági mentésben kb. 12 hétig.</li>
+<li><strong>Fontos:</strong> amit egy szobába írsz, azt a szoba tagjai látják, és ők le is menthetik vagy továbbadhatják. Rájuk a mi felelősségünk nem terjed ki. A titkosítás a szervertől védi az üzenetet, a tagoktól nem. A szobát létrehozó gazda felel a szobában folytatott tartalomért: ő dönt a belépésről, ő távolíthat el tagot, és más üzenetét is csak ő törölheti; a gazda a szobát bármikor törölheti, ami minden tag üzenetét visszavonhatatlanul megszünteti. Ha kilépsz vagy eltávolítanak, a szerver több üzenetet nem ad ki neked, a készülékeden már meglévők viszont olvashatók maradnak. A szobában megosztott hely- vagy készletadat érzékeny, a saját biztonságodért te felelsz. A szobák tartalmát nem ellenőrizzük előre; bejelentés után járunk el (lásd a Közösségi irányelveket és a Felhasználási feltételeket).</li>
+</ul>
+<h3>3.3. SOS, esés-érzékelés, „Helyzetem küldése", Vészkártya</h3>
+<ul>
+<li><strong>Adat:</strong> amikor SOS-t küldesz (kézzel, vagy az esés-érzékelés után, ha be van kapcsolva), a pontos helyzeted a szobáidba megy a telefonod által titkosított üzenetben. Ha külön bejelölted, a Vészkártyád (vércsoport, allergia, gyógyszer, betegség, kontakt) is. A „Helyzetem küldése" gomb ugyanígy működik, de csak a helyzetet küldi.</li>
+<li><strong>Mi látszik titkosítás nélkül:</strong> hogy SOS-jelzés volt, a küldő neve, a szoba neve és az idő. Ez az értesítésben is megjelenik (lásd 3.4).</li>
+<li><strong>Egészségügyi adat:</strong> a Vészkártya egészségügyi adat (GDPR 9. cikk). Alapból <strong>ki van kapcsolva</strong>, csak a te kifejezett bejelölésedre megy el, minden SOS előtt újra eldöntheted. A jogalap a hozzájárulásod (9. cikk (2) a)); visszavonhatod, ha kikapcsolod.</li>
+<li><strong>Jogalap (helyzet):</strong> a hozzájárulásod (6. cikk (1) a)), amit a helymeghatározás engedélyezésével és az SOS elküldésével adsz meg.</li>
+<li><strong>Meddig:</strong> a szoba üzenetei között marad, amíg te vagy a szoba gazdája nem törli az üzenetet, vagy a szoba, illetve a fiók meg nem szűnik. Mentésekben kb. 12 hétig.</li>
+<li><strong>Amit tudnod kell:</strong> az SOS <strong>nem segélyhívás</strong>. Nem hívja a mentőket, a rendőrséget vagy a tűzoltókat, és csak a te szobáid tagjai kapnak róla értesítést. Életveszélyben hívd a 112-t. Háttérben, folyamatosan nem követjük a helyzetedet; a helyzetet az app csak akkor olvassa, amikor te kéred vagy SOS indul.</li>
+</ul>
+<h3>3.4. Értesítések (push)</h3>
+<ul>
+<li><strong>Adat:</strong> az eszközöd értesítési azonosítója (Firebase Cloud Messaging token, vagy böngészőben webes push végpont és kulcsok), a készülék nyelve és a helyi segélyhívószám (hogy az SOS-értesítés a megfelelő nyelven és számmal szóljon), a szoba, amelyhez tartozik; némítás.</li>
+<li><strong>Az értesítés tartalma:</strong> a küldő neve, a szoba neve, az idő és egy rövid, tartalmatlan szöveg („X írt", SOS esetén az SOS-szöveg). Az üzenet szövege nem megy át ezen. Az értesítés a Google (Firebase Cloud Messaging) szerverein halad át.</li>
+<li><strong>Jogalap:</strong> szerződés teljesítése; az értesítési engedélyt a telefonod beállításában adod meg és vonhatod vissza.</li>
+<li><strong>Meddig:</strong> az azonosító törlődik, ha kilépsz, a szobát elhagyod, a fiókot törlöd, vagy a szolgáltató érvénytelennek jelöli.</li>
+</ul>
+<h3>3.5. Visszajelzés és Noah-válasz jelentése</h3>
+<ul>
+<li><strong>Adat:</strong> a beírt szöveg, kép (ha csatolsz), a típus és a modul; a verzió, a platform, a készülék, a böngésző/UA, a képernyőméret, a nyelv, az aktuális nézet és az utolsó legfeljebb 20 hiba; az app saját készülék-azonosítója; a belépési e-mail-címed (ezt a szerver teszi hozzá). A Noah-válasz jelentésénél a kérdésed és Noah válasza. Mást nem küldünk el.</li>
+<li><strong>Cél:</strong> hibajavítás, a jelentett tartalom kijavítása.</li>
+<li><strong>Jogalap:</strong> a kérésed (szerződés teljesítése) és jogos érdek a termék javítására (6. cikk (1) f)).</li>
+<li><strong>Meddig:</strong> a hiba lezárása után 12 hónapig.</li>
+<li>Noah beszélgetései egyébként a telefonodon futnak, és nem kerülnek a szerverünkre.</li>
+</ul>
+<h3>3.6. Használati napló (névtelen)</h3>
+<ul>
+<li><strong>Adat:</strong> melyik képernyő, melyik gomb, milyen hiba, melyik verzió, és hogy natív app vagy böngésző. Az app indulásakor képzett véletlen munkamenet-azonosítóval, amely csak a memóriában él.</li>
+<li><strong>Nincs benne:</strong> e-mail-cím, készülék-azonosító, IP-cím, név. Egy személyhez nem kapcsolható.</li>
+<li><strong>Jogalap:</strong> jogos érdek (6. cikk (1) f)): a használat megértése. Mivel személyhez nem kötött, a tárolt adatsor nem személyes adat. Az app címén a webszerver nem vezet hozzáférési naplót, így nincs mivel összekötni (lásd 3.9).</li>
+<li><strong>Meddig:</strong> 90 nap.</li>
+</ul>
+<h3>3.7. Prémium és vásárlás</h3>
+<ul>
+<li><strong>Google Play vásárlás:</strong> a Google Play által adott vásárlási jelzés (token), a termék, a rendelés azonosítója, a készülék azonosítója, a belépési e-mail, a feloldott modulok. A tokennek a szerverünk csak a lenyomatát őrzi. A fizetést a Google kezeli; a bankkártyaadatot mi nem látjuk.</li>
+<li><strong>Prémium kód (weboldalról vásárolt):</strong> a kód, az e-mail-cím és a készülék-azonosító; egy kód legfeljebb 2 (vagy a termék szerinti) készüléken váltható be.</li>
+<li><strong>Cél:</strong> a prémium feloldása és a visszaélés (kódmegosztás) megakadályozása.</li>
+<li><strong>Jogalap:</strong> szerződés teljesítése; a számviteli bizonylatokra a vonatkozó adó- és számviteli jogszabályok szerinti megőrzési kötelezettség (jogi kötelezettség teljesítése, 6. cikk (1) c)).</li>
+<li><strong>Meddig:</strong> amíg a prémium érvényes, utána a jogszabályi megőrzési időig a bizonylati adat; ha törlöd a fiókodat, a már feloldott készülékeiden a prémium tovább működik, új készülékhez azonban nem köthető; a törlés után a vásárlás bizonylati adata (rendelésazonosító, feloldott készülékek listája) név és e-mail-cím nélkül, véletlen jelölő alatt marad meg.</li>
+<li>A weboldali vásárlás részleteit (név, cím, ország, elállási nyilatkozat, számla) a vásárlás oldalának adatkezelési tájékoztatója tartalmazza.</li>
+</ul>
+<h3>3.8. Ajánlóprogram és Gíra</h3>
+<ul>
+<li><strong>Adat:</strong> a meghívó (ajánlókód) azonosítója; az ajánlókód beváltásának ténye és napja; az e-mail-cím kivonata (nem maga a cím); a készülék azonosítója; a Gíra-tárcád azonosítója; a kapott jutalom (és a 14 napos várakozás utáni prémium-bónusz). Ajánló linken át telepítésnél a Google Play az ajánlókódot a telepítéskor adja át az appnak (install referrer). A Gíra-tranzakciók aláírt rekordok, amelyek a szobák üzenetei között mennek. <strong>Napi olvasási jutalom:</strong> ha a napi olvasási célodat elérted, az app a jóváíráshoz elküldi a szervernek a napot, az aznap olvasással töltött másodperceket és a napi célodat, a Gíra-azonosítódat (a nyilvános kulcs ujjlenyomata), a készülék azonosítóját és a belépési e-mail-címedet. A szerver naptári naponként fiókonként, készülékenként és Gíra-azonosítónként legfeljebb egy napot számol, és aláírt jóváírást ad vissza.</li>
+<li><strong>Mit lát az ajánló:</strong> nem látja a meghívott nevét, e-mail-címét vagy azonosítóit, csak a jóváírás tényét és napját.</li>
+<li><strong>Cél:</strong> a jutalom jóváírása, visszaélés (önajánlás, többszörös igénylés) kizárása; a fiók törlése után a megőrzött lenyomat arra szolgál, hogy ugyanazzal az e-mail-címmel újra regisztrálva a korábbi fiókod ajánlási jutalmait egyszer visszakapd, és hogy az ajánlási jutalom és az induló egyenleg ne járjon másodszor.</li>
+<li><strong>Jogalap:</strong> szerződés teljesítése (a programba lépéssel); jogos érdek a visszaélés ellen.</li>
+<li><strong>Meddig:</strong> a program fennállása alatt, utána csak a jogszabály által megkívánt ideig; a fiók törlése után az e-mail-cím kulcsos lenyomata, a beváltás dátuma és az induló egyenleg jóváírásának dátuma legfeljebb 24 hónapig (a készülék- és tárcaazonosító nem marad meg); a törölt fiók által beváltott ajánlókód és jutalom-jelzései az ajánlód nyilvántartásában név nélkül megmaradnak, mert az ő darabszám-korlátját és jutalmait ez adja; a jutalmak aláírt rekordjai a szobák üzenetei között maradnak, amíg az üzenetet vagy a szobát nem törlik.</li>
+<li><strong>Napi jóváírás adatai:</strong> a fiókhoz kötve az utolsó beszámított nap és a beszámított napok száma, a készülék-azonosító és a Gíra-azonosító, valamint az aláírt jóváírás marad a szerveren, amíg a fiókod él; a fiók törlésekor ezek törlődnek (biztonsági mentésben legfeljebb kb. 12 hétig). A gírát csak a PrepperPapa alkalmazás tárcája tárolja. A Wordlightban végzett olvasás jelenleg nem jár gírával, és a Wordlight erről nem küld adatot.</li>
+<li>A gíra nem pénz, nem váltható forintra. A „gíra-bányászat” név csak játékos elnevezés: a gírát az olvasásért kapod, nem számítógépes munkával állítjuk elő.</li>
+</ul>
+<h3>3.9. Kiszolgálói napló</h3>
+<ul>
+<li>Az app címén (app.prepperpapa.hu) a webszerver nem vezet hozzáférési naplót. A szolgáltatás futási naplója (események, hibák, értesítések kézbesítése) a szerver rendszernaplójába kerül, biztonsági és hibakeresési célból; ebben a szolgáltatások (szoba, vásárlás, ajánló, belépés) a mérés szerint nem naplóznak ügyfél IP-címet. Jogalap: jogos érdek (6. cikk (1) f)). Meddig: legfeljebb 30 napig őrizzük. A belépési kód küldésekor a belépési kapu naplózza az e-mail-címet is, ezt szintén legfeljebb 30 napig őrizzük. <strong>Kivétel:</strong> az App Store átnéző fiókjával való belépéskor a kapu naplózza az e-mail-címet, az IP-címet és a böngésző-azonosítót (User-Agent), és erről értesítést küld az üzemeltetőnek.</li>
+<li><strong>Frissítés-ellenőrzés és zár-/telepítési napló (a tesztelői APK-ban, a PrepperPapában és a Wordlightban is; a bolti változatban önfrissítés nincs):</strong> a frissítés-ellenőrzéskor a szerverünket kérdezi le az app. Ha a tesztelői változat zárolva van, vagy a telepítés nem sikerül, az app egy legfeljebb 160 karakteres, névtelen naplóbejegyzést küld: az app saját és a kötelező verziója, az Android és a WebView verziója, a készülék gyártója és típusa, telepítési hibánál a rendszer állapotkódjai, az azóta eltelt idő és a rendszer hibaüzenete. Nincs benne e-mail-cím, név és készülék-azonosító; IP-címet nem tárolunk (csak a memóriában, a kérések korlátozásához). Jogalap: jogos érdek (6. cikk (1) f)), a hibakeresés. Meddig: 90 nap.</li>
+</ul>
+<h3>3.10. Ami a telefonodon marad</h3>
+<p>A készlet, a jegyzetek, a térképpontok és az offline térkép, a beállítások, a Vészkártya, a Token tárca és az Irattárca (a PIN-ből képzett kulccsal titkosítva), a Noah beszélgetései és a letöltött MI-modell a telefonodon vannak. Ezekhez a szervereink nem férnek hozzá, ha te nem küldöd el. A telefon elvesztése esetén a PIN-t és a helyreállító kódot mi nem tudjuk visszaállítani.</p>
+<h3>3.11. Hírlevél (csak ha te kéred)</h3>
+<ul>
+<li><strong>Adat:</strong> a belépett fiókod e-mail-címe; a hozzájáruló szöveg úgy, ahogy az appban láttad (nyelvével együtt); hogy a kérés az appból jött; a feliratkozás ideje és az akkori IP-címedből képzett rövid lenyomat (SHA-256, 16 hexa jegy, a hozzájárulás igazolására; nem az IP-cím maga, de sót nem használunk, ezért személyes adatnak tekintjük); a megerősítés ténye, ideje és ugyanilyen IP-lenyomata. A megerősítetlen feliratkozási kérést 7 nap után töröljük. A hírlevélhez használt levelező rendszer a megnyitás ideje és IP-címe alapján rögzíti, hogy megnyitottad-e a levelet.</li>
+<li><strong>Cél:</strong> a hírek, tippek és ajánlatok küldése a PrepperPapáról, legfeljebb havonta néhány alkalommal.</li>
+<li><strong>Jogalap:</strong> a hozzájárulásod (GDPR 6. cikk (1) a)). A négyzet <strong>soha nincs előre bejelölve</strong>; a feliratkozás kettős megerősítéssel lép életbe (megerősítő e-mailt küldünk, és csak a levélben lévő gomb után leszel feliratkozva). A fiók e-mail-címe önmagában nem hozzájárulás.</li>
+<li><strong>Megnyitás-követés:</strong> a hírlevél egy láthatatlan képet tartalmaz; amikor betöltődik, a küldő szolgáltatás rögzíti a megnyitást (időpont, IP-cím). Ezt a levélben nem lehet kikapcsolni; ha nem akarod, ne iratkozz fel, vagy iratkozz le.</li>
+<li><strong>Visszavonás:</strong> bármikor, az appban a négyzet kikapcsolásával, minden levél alján a leiratkozás hivatkozással, vagy a <a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a> címen. Ekkor a címedet a hírlevél-listáról töröljük.</li>
+<li><strong>Meddig:</strong> a visszavonásig. A fiók törlése a hírlevélről is leiratkoztat: a megerősített és a függő feliratkozás is törlődik, megerősítő levél nélkül.</li>
+<li><strong>Adatfeldolgozó:</strong> Brevo (Brevo, société par actions simplifiée, párizsi cégjegyzékszám: 498 019 298, székhely: 9-17, rue Salneuve, 75017 Párizs, Franciaország). Az adatokat az EGT-n kívülre is továbbíthatja; a garanciák a Brevo adatfeldolgozási szerződésében szerepelnek.</li>
+</ul>
+<h3>3.12. Wordlight: mi más</h3>
+<ul>
+<li>A Wordlight a PrepperPapa Biblia-olvasója, külön alkalmazás. A Biblia szövege a telefonodon van, olvasáshoz nem kell fiók, és az olvasott szöveg nem megy a szerverre.</li>
+<li>A szerverre kerülő adat ugyanaz, mint a PrepperPapában, de csak akkor, ha a funkciót használod: belépés (3.1), Biblia prémium kód beváltása (3.7), hírlevél (3.11), visszajelzés (3.5). A névtelen használati napló (3.6) a Wordlightban is fut.</li>
+<li>A tesztelői változat frissítés-naplóját a 3.9 pont írja le; az a Wordlightra is vonatkozik.</li>
+<li>A Wordlightban nincs Gíra-tárca: a gíra a PrepperPapa alkalmazásban él (3.8). A Wordlightban végzett olvasás jelenleg nem jár gírával, és a Wordlight erről nem küld adatot.</li>
+</ul>
+<h2>4. Hozzáférések az appban</h2>
+<p>A telefon engedélyeit te adod meg, és a telefon beállításaiban bármikor visszavonhatod: <strong>helyzet</strong> (térkép, iránytű, napnyugta, SOS, Helyzetem küldése), <strong>kamera</strong> (QR-kód, fényjel-olvasás; felvétel nem készül és nem kerül sehova), <strong>mikrofon</strong> (hanggal érkező jelek, például SSTV, morze; hangfelvétel nem készül és nem kerül sehova), <strong>értesítések</strong>, <strong>Bluetooth</strong> (közeli eszközök), <strong>mozgás- és légnyomás-érzékelők</strong> (esés-érzékelés, viharjelzés; a mért értékek a készüléken maradnak), <strong>ujjlenyomat/arc</strong> (a tárca feloldása a telefon saját rendszerével). Ezek közül a helyzeten és az SOS-en kívül semmi nem megy a szerverünkre.</p>
+<h2>5. Külső szolgáltatások, amelyekkel kapcsolatba lép az app</h2>
+<p>Amikor ezeket a funkciókat használod, a telefonod közvetlenül kapcsolatba lép a szolgáltatóval, és az IP-címed eljut hozzá. Rájuk a saját adatkezelési tájékoztatójuk vonatkozik.</p>
+<div class="tabla"><table class="adat">
+<tr><th>Szolgáltató</th><th>Mire</th><th>Mit lát</th></tr>
+<tr><td>Google (Firebase Cloud Messaging, Google Play, Google-belépés, Gmail)</td><td>értesítések, vásárlás, belépés, ellenőrző kód e-mail</td><td>értesítési azonosító; a push tartalma (név, szoba, idő); vásárlási adat; e-mail-cím</td></tr>
+<tr><td>Térképszolgáltatók: OpenStreetMap, OpenTopoMap, Esri (ArcGIS), EFFIS (Copernicus)</td><td>térképcsempék, tűzveszély-réteg</td><td>a megjelenített térképrész és az IP-cím</td></tr>
+<tr><td>Open Food Facts</td><td>vonalkód-keresés</td><td>a beolvasott vonalkód és az IP-cím</td></tr>
+<tr><td>Brevo</td><td>a hírlevél kiküldése és a megnyitás-követés (csak ha feliratkozol)</td><td>e-mail-cím, a levél megnyitásának ideje és IP-címe</td></tr>
+<tr><td>Hugging Face</td><td>a Noah MI-modell letöltése, csak ha kéred</td><td>IP-cím</td></tr>
+<tr><td>Árfolyam- és világhelyzet-források (MNB, USGS, GDACS, ECDC, NÉBIH és társaik)</td><td>adatok frissítése</td><td>a szerverünk kéri le, nem a te telefonod</td></tr>
+</table></div>
+<h2>6. Kinek adjuk tovább az adatot</h2>
+<ul>
+<li><strong>Tárhelyszolgáltató:</strong> Hetzner Online GmbH (az app, a belépési kapu, a webshop háttere és a mentések szervere: Németország, Nürnberg; adatfeldolgozási megállapodás: 2026. október 27-től).</li>
+<li><strong>A prepperpapa.hu statikus oldal tárhelye:</strong> GitHub Pages (GitHub, Inc.); az oldal megnyitásakor az IP-címed eljut hozzájuk.</li>
+<li><strong>Google</strong> (a fenti szolgáltatásokhoz): az EGT-n kívül, többek között az Egyesült Államokban is feldolgozhat adatot; a garanciák a Google adatkezelési feltételeiben szerepelnek.</li>
+<li><strong>Hírlevél-küldés:</strong> Brevo (adatfeldolgozó, Franciaország; adatai a 3.11 pontban).</li>
+<li><strong>Fizetés, számlázás (weboldali vásárlás):</strong> Revolut, Számlázz.hu (KBOSS.hu Kft.), GoAffPro (ajánlói jutalék).</li>
+<li><strong>A szoba többi tagja</strong> azt látja, amit a szobába küldesz, vagy ami a tagságod része (név, profilkép, üzenetek, SOS, helyzet).</li>
+<li><strong>Hatóság</strong>, ha jogszabály kötelez rá, vagy bűncselekmény gyanúja miatt (lásd a Felhasználási feltételeket).</li>
+<li>Adatot nem adunk el, hirdetési célra nem adunk át, és adatközvetítőnek nem adunk.</li>
+</ul>
+<h2>7. Biztonság</h2>
+<p>A szoba üzenetszövegét a telefonod titkosítja (AES-GCM 256; a kulcsot a tagok telefonjai kezelik, a szerver nem). A jelszavakat nem tároljuk, csak lenyomatot. A kapcsolat HTTPS. A tárca PIN-nel titkosított. A szerver lemeze és a mentések nincsenek külön titkosítva, hozzáférési jogosultsággal védettek; a tulajdonos gépén tárolt másolat titkosított lemezen van. Egyetlen rendszer sem tévedhetetlen: a szerver az üzenetek szövegét nem, de a tagságot, a neveket és az időpontokat látja (3.2), és a telefon elvesztése vagy egy tag rosszindulata ellen nem tudunk védeni.</p>
+<h2>8. Életkor</h2>
+<p>Az app használata 16 éves kortól engedélyezett. A szobába lépéskor külön jelölőnégyzettel nyilatkozol, hogy elmúltál 16 éves, vagy van szülői hozzájárulásod. Ha 16 évnél fiatalabb vagy, kérd a szülőd vagy gondviselőd hozzájárulását, és vele együtt használd. Nem ellenőrizzük az életkort; ha tudomásunkra jut, hogy gyermek adata került hozzánk szülői hozzájárulás nélkül, töröljük.</p>
+<h2>9. A jogaid és a fiók törlése</h2>
+<ul>
+<li><strong>Fiók és adatok törlése:</strong> az appban a <strong>Profil › Fiók › Fiók törlése</strong> pontnál. Törli a fiókot, a tagságaidat, az általad létrehozott szobákat (ha nincs más gazda), a push-azonosítóidat, a visszajelzéseidet, a hírlevél-feliratkozásodat és az ajánló/feloldási adatot. A már feloldott készülékeiden a prémium a törlés után is működik, új készülékhez nem köthető; a vásárlás bizonylata számviteli kötelezettség miatt név nélkül megmarad. <strong>Ami a törlés után megmarad:</strong> a rólad tett bejelentések a moderálási döntésig; az általad tett bejelentés a kifogásolt üzenet másolatával, a neved és e-mail-címed nélkül, a moderálási döntéstől számított 12 hónapig; az ajánlási programban az e-mail-címed egyirányú lenyomata (hash) és a beváltás dátuma a fiók törlésétől számított legfeljebb 24 hónapig, a visszaélés elleni védelem miatt, és hogy ugyanazzal az e-mail-címmel újra regisztrálva a korábbi fiókod ajánlási jutalmait egyszer visszakapd (a tagok közötti gírát, vagyis amit telefonról telefonra kaptál, nem tudjuk visszaadni); a Gíra-jóváírások a közös könyvben, név és e-mail-cím nélkül. Ugyanezt az app nélkül is kérheted a <strong><a href="https://prepperpapa.hu/fiok-torles/" rel="noopener">https://prepperpapa.hu/fiok-torles/</a></strong> oldalon (az e-mail-címedre küldött 6 jegyű kóddal), vagy a <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong> címen. A törölt adatok a biztonsági mentésekben legfeljebb kb. 12 hétig még szerepelhetnek, utána kikerülnek.</li>
+<li><strong>További jogok</strong> (GDPR 15-21. cikk): hozzáférés, helyesbítés, törlés, korlátozás, adathordozhatóság, tiltakozás a jogos érdeken alapuló kezelés ellen; a hozzájárulásod visszavonása bármikor (a visszavonás előtti kezelés jogszerű marad). Kérésedre egy hónapon belül válaszolunk.</li>
+<li>Mivel a szobák üzenetét titkosítva tároljuk, a hozzáférési és törlési kérésnél csak a szerveren lévő adatot tudjuk kiadni vagy törölni; a tagok telefonjain lévő másolatot nem.</li>
+<li><strong>Panasz:</strong> Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH), 1055 Budapest, Falk Miksa utca 9-11.; levélcím: 1363 Budapest, Pf.: 9.; +36 (1) 391 1400; <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>; naih.hu. Bírósághoz is fordulhatsz.</li>
+</ul>
+<h2>10. Automatizált döntés, profilalkotás</h2>
+<p>Nincs. Noah egy, a telefonodon futó nyílt nyelvi modell (Gemma 4), amely nem hoz rólad döntést, és a beszélgetést nem küldi el. Tévedhet; életveszélyben a 112 az első.</p>
+<h2>11. Változások</h2>
+<p>Ha a tájékoztató érdemben változik, az appban értesítünk. A hatályos változat a fenti dátumú. Korábbi változatok kérésre elérhetők.</p>
+<a class="vissza" href="/">&larr; Vissza a főoldalra</a>
+</main>
+<footer><div>PrepperPapa &middot; Készülj, ne félj! &middot; <a href="/aszf.html">ÁSZF</a> &middot; <a href="/impresszum.html">Impresszum</a> &middot; <a href="/partnerprogram/">Partnerprogram</a> &middot; <a href="/gira/">Gíra</a></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+</body>
+</html>

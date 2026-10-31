@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aplicațiile PrepperPapa și Wordlight: notă de informare privind prelucrarea datelor - PrepperPapa</title>
+<meta name="description" content="Informarea privind prelucrarea datelor în aplicațiile PrepperPapa și Wordlight.">
+<link rel="canonical" href="https://prepperpapa.hu/ro/app-adatvedelem/">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aplicațiile PrepperPapa și Wordlight: notă de informare privind prelucrarea datelor">
+<meta property="og:description" content="Informarea privind prelucrarea datelor în aplicațiile PrepperPapa și Wordlight.">
+<meta property="og:url" content="https://prepperpapa.hu/ro/app-adatvedelem/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<meta property="og:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* phones: the language picker needs the room (2026-10-19); the page ends with a link back home */
+  @media(max-width:520px){.nav{gap:12px;padding:0 16px}.nav a.link{display:none}}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+</style>
+<style id="appadat">
+  .nyelvek{font-size:14px;color:var(--muted);margin:0 0 18px}.nyelvek a{margin-right:10px}
+  .nyelvek b{margin-right:10px;color:var(--ink)}
+  table.adat{border-collapse:collapse;width:100%;margin:0 0 18px;font-size:15px}
+  table.adat th,table.adat td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  table.adat th{color:var(--ink);background:rgba(255,255,255,.03)}
+  .tabla{overflow-x:auto;-webkit-overflow-scrolling:touch}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/ro/confidentialitate.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Cookie-uri și consimțământ", "bevezeto": "Implicit, acest site nu plasează cookie-uri pe dispozitivul tău. Îți cerem consimțământul pentru două scopuri, pe care îl poți acorda sau refuza separat. Dacă refuzi, totul funcționează în continuare, iar decizia o poți schimba oricând la „Setări cookie” din subsolul paginii.", "p_cim": "Urmărirea partenerilor", "p_le": "Dacă vii de pe linkul unuia dintre partenerii noștri, reținem în cookie-uri codul partenerului și momentul clicului (pp_ref și cookie-urile GoAffPro, timp de 90 de zile), ca să stabilim cărui partener i se cuvine comisionul dacă cumperi. Codul de cupon al unui partener îi este atribuit și fără cookie-uri.", "s_cim": "Statistici de vizitare", "s_le": "Statistici anonime de vizitare cu Google Analytics 4 (cookie-uri _ga). Nu le folosim pentru publicitate sau profilare; fără consimțământul tău nici nu se încarcă.", "igen": "Accept", "nem": "Refuz", "mind_igen": "Accept tot", "mind_nem": "Refuz tot", "ment": "Salvez alegerea", "adatv": "Informare privind protecția datelor", "link": "Setări cookie"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav fej2">
+  <a class="brand" href="/ro/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/ro/">Acasă</a> <a class="link" href="/ro/#videoclipuri">Videoclipuri</a> <a class="link" href="/ro/articole.html">Bază de cunoștințe</a> <a class="link" href="/ro/calculatoare/">Calculatoare</a> <a class="link" href="/ro/aplicatii/">Aplicație</a> <a class="link" href="/ro/gira/">Gíra</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Forum comunitar</a> <a class="link" href="/ro/#contact">Contact</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Abonează-te</a>
+  <button class="hamb" type="button" aria-label="Meniu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main>
+<p class="nyelvek"><a href="/app-adatvedelem/" hreflang="hu">Magyar</a> <a href="/en/app-adatvedelem/" hreflang="en">English</a> <a href="/de/app-adatvedelem/" hreflang="de">Deutsch</a> <a href="/es/app-adatvedelem/" hreflang="es">Español</a> <a href="/pl/app-adatvedelem/" hreflang="pl">Polski</a> <b>Română</b> <a href="/ru/app-adatvedelem/" hreflang="ru">Русский</a> <a href="/uk/app-adatvedelem/" hreflang="uk">Українська</a></p>
+<h1>Aplicațiile PrepperPapa și Wordlight: notă de informare privind prelucrarea datelor</h1>
+<p>Această notă se aplică aplicației <strong>PrepperPapa</strong> și aplicației <strong>Wordlight</strong> (cititorul de Biblie al PrepperPapa, aplicație separată). Acolo unde cele două aplicații diferă, indicăm acest lucru separat. Nota de informare a site-ului prepperpapa.hu este un document separat.</p>
+<p><strong>În vigoare de la: 31 octombrie 2026 (data publicării).</strong></p>
+<h2>1. Pe scurt</h2>
+<ul>
+<li>Aplicația PrepperPapa a fost construită pentru utilizare offline: stocul tău, notițele tale, punctele de pe hartă, Cardul tău de urgență, portofelul tău și conversația ta cu Noah rămân pe telefonul tău. Wordlight este un cititor de Biblie: textul se află pe telefonul tău, iar pentru citire nu ai nevoie de cont.</li>
+<li>Date ajung pe serverul nostru atunci când <strong>creezi un cont sau te autentifici</strong>, <strong>folosești camere</strong>, <strong>trimiți SOS sau poziția ta în camerele tale</strong>, <strong>trimiți un feedback sau o raportare</strong>, <strong>activezi premium</strong>, <strong>folosești programul de recomandare</strong>, <strong>primești gíra pentru citirea zilnică</strong> sau <strong>te abonezi la buletinul informativ</strong>. În Wordlight autentificarea nu este obligatorie, este necesară doar pentru activarea premium și pentru buletinul informativ. Citirea în Wordlight nu aduce în prezent gíra, iar Wordlight nu trimite date despre aceasta.</li>
+<li>Textul mesajelor din camere este criptat de telefonul tău înainte de trimitere. Serverul nu vede textul. Vede însă cine este membru al cărei camere, sub ce nume, când a scris și dacă a existat un semnal SOS.</li>
+<li>În aplicație nu există identificator publicitar, instrument de urmărire, analiză comportamentală, Google Analytics și nici serviciu de raportare a erorilor. Nu vindem date și nu creăm un profil despre tine. Singura urmărire este urmărirea deschiderii buletinului informativ, și numai dacă te abonezi separat (3.11).</li>
+<li>Îți poți șterge contul și datele aferente: vezi punctul 9.</li>
+</ul>
+<h2>2. Cine îți prelucrează datele</h2>
+<p>Operator: <strong>Nagy János László, întreprinzător individual</strong> (sediu: 3128 Vizslás, József Attila út 15.; număr de înregistrare: 63017434; cod fiscal: 92514027-1-32; începutul activității: 2026-10-28).<br>
+Date de contact pentru întrebări privind protecția datelor: <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong>.<br>
+Serverul este operat de un furnizor de găzduire (vezi punctul 6); operatorul suntem noi.</p>
+<h2>3. Ce prelucrăm, de ce, pe ce temei juridic, cât timp</h2>
+<p>Temeiurile juridice se bazează pe articolul 6 alin. (1) din RGPD (Regulamentul (UE) 2016/679 al Parlamentului European și al Consiliului). „Executarea contractului" înseamnă aici că fără acea dată nu putem furniza funcția solicitată.</p>
+<h3>3.1. Cont și autentificare</h3>
+<ul>
+<li><strong>Date:</strong> adresa de e-mail; dacă te înregistrezi cu parolă, amprenta unidirecțională (scrypt) a parolei, niciodată parola însăși; dacă te autentifici cu un cont Google, adresa de e-mail confirmată de Google; momentul creării contului și al ultimei autentificări; starea contului (activ, în așteptare, revocat); codul de confirmare primit prin e-mail (pentru o perioadă scurtă, în memoria serverului sau sub formă de amprentă).</li>
+<li><strong>Versiunea pentru testeri:</strong> la pornire, versiunea pentru testeri trimite serverului adresa ta de e-mail și identificatorul dispozitivului tău, iar serverul returnează o permisiune semnată, cu termen de expirare; serverul nu o stochează.</li>
+<li><strong>Scop:</strong> autentificare, legarea camerelor, a premium, a programului de recomandare, a gíra pentru citirea zilnică și a buletinului informativ de contul tău, protecție împotriva abuzurilor. PrepperPapa cere un cont pentru aceste funcții; în Wordlight autentificarea nu este obligatorie (același cont, adresa de e-mail și un cod din șase cifre, fără parolă).</li>
+<li><strong>Temei juridic:</strong> executarea contractului (art. 6 alin. (1) lit. b)); limitarea încercărilor de autentificare este interes legitim (art. 6 alin. (1) lit. f)).</li>
+<li><strong>Cât timp:</strong> până la ștergerea contului. După ștergere, datele se mai păstrează în copiile de siguranță cel mult aproximativ 12 săptămâni (pe server există 14 copii zilnice și 8 săptămânale, pe un alt calculator din Ungaria 30 de copii zilnice și 12 săptămânale; copia de siguranță a forumului este de 7 zile, pe același server).</li>
+<li><strong>Observație:</strong> codul de verificare îl trimitem dintr-un cont Gmail (Google în calitate de furnizor de e-mail).</li>
+</ul>
+<h3>3.2. Camere (schimb de mesaje de grup)</h3>
+<ul>
+<li><strong>Date pe care serverul le vede în clar:</strong> numele și limba camerei; identificatorul și numele afișat al membrilor; poza de profil; cine a cerut când intrarea, prezentarea scrisă la cerere și faptul că ai acceptat regulamentul și ai declarat că ai împlinit 16 ani (o singură valoare, cu momentul cererii); invitațiile (cu termen de expirare); expeditorul, momentul, marcajul de urgență, momentul editării și al ștergerii mesajelor; reacții, salvări, semnale de citire; identificatorul membrului legat de cont; lista membrilor eliminați (e-mail, nume, moment). Aceste date <strong>nu sunt criptate</strong>.</li>
+<li><strong>Date pe care serverul, în mod normal, le primește doar criptate:</strong> textul mesajelor (AES-GCM 256, cu cheia camerei; cheia este gestionată de telefoanele membrilor) și mesajele secrete dintre membri. Textul unor mesaje mai vechi sau trimise de sistem este stocat pe server necriptat. Imaginile atașate mesajelor (cel mult 500 kB) sunt criptate de aplicație pe telefon în mod normal, dar serverul acceptă și imagini necriptate, de aceea criptarea este o funcționare a aplicației, nu o garanție a serverului. <strong>Imaginea camerei și pozele de profil ale membrilor sunt stocate necriptat</strong> în baza de date.</li>
+<li><strong>Scop:</strong> funcționarea camerei.</li>
+<li><strong>Temei juridic:</strong> executarea contractului. La cererea de intrare, după acceptarea regulamentului, gazda camerei și membrii văd ceea ce ai furnizat.</li>
+<li><strong>Cât timp:</strong> cât timp există camera, respectiv contul tău; la ștergerea camerei se șterg și datele aferente camerei. Jurnalul de evenimente al camerei se păstrează 90 de zile. În copiile de siguranță aproximativ 12 săptămâni.</li>
+<li><strong>Important:</strong> ceea ce scrii într-o cameră văd membrii camerei, iar aceștia pot și să salveze sau să transmită mai departe. Răspunderea noastră nu se extinde asupra lor. Criptarea protejează mesajul de server, nu de membri. Gazda care a creat camera răspunde de conținutul din cameră: ea decide asupra intrării, ea poate elimina un membru, și mesajul altcuiva îl poate șterge numai ea; gazda poate șterge camera oricând, ceea ce elimină irevocabil mesajele tuturor membrilor. Dacă ieși sau ești eliminat, serverul nu îți mai furnizează mesaje noi, dar cele aflate deja pe dispozitivul tău rămân lizibile. Datele de poziție sau de stoc partajate într-o cameră sunt sensibile, pentru siguranța ta răspunzi tu. Conținutul camerelor nu îl verificăm în prealabil; acționăm după o sesizare (vezi Regulile comunității și Condițiile de utilizare).</li>
+</ul>
+<h3>3.3. SOS, detectarea căderii, „Trimite poziția mea", Card de urgență</h3>
+<ul>
+<li><strong>Date:</strong> când trimiți SOS (manual sau, dacă este activată, după detectarea căderii), poziția ta exactă ajunge în camerele tale într-un mesaj criptat de telefonul tău. Dacă ai bifat separat, și Cardul tău de urgență (grupa sanguină, alergii, medicamente, boli, persoană de contact). Butonul „Trimite poziția mea" funcționează la fel, dar trimite doar poziția.</li>
+<li><strong>Ce se vede fără criptare:</strong> faptul că a existat un semnal SOS, numele expeditorului, numele camerei și ora. Acestea apar și în notificare (vezi 3.4).</li>
+<li><strong>Date privind sănătatea:</strong> Cardul de urgență conține date privind sănătatea (art. 9 din RGPD). Implicit este <strong>dezactivat</strong>, se trimite doar la bifarea ta expresă, înainte de fiecare SOS poți decide din nou. Temeiul juridic este consimțământul tău (art. 9 alin. (2) lit. a)); îl poți retrage dacă îl dezactivezi.</li>
+<li><strong>Temei juridic (poziție):</strong> consimțământul tău (art. 6 alin. (1) lit. a)), pe care îl exprimi prin permiterea localizării și prin trimiterea SOS.</li>
+<li><strong>Cât timp:</strong> rămâne printre mesajele camerei până când tu sau gazda camerei ștergi mesajul, sau până când camera, respectiv contul încetează. În copiile de siguranță aproximativ 12 săptămâni.</li>
+<li><strong>Ce trebuie să știi:</strong> SOS <strong>nu este apel de urgență</strong>. Nu apelează salvarea, poliția sau pompierii, și doar membrii camerelor tale primesc notificare despre el. În pericol de moarte sună la 112. Nu îți urmărim poziția continuu în fundal; aplicația citește poziția doar când o ceri tu sau când pornește un SOS.</li>
+</ul>
+<h3>3.4. Notificări (push)</h3>
+<ul>
+<li><strong>Date:</strong> identificatorul de notificare al dispozitivului tău (token Firebase Cloud Messaging sau, în browser, punctul final și cheile push web), limba dispozitivului și numărul local de urgență (pentru ca notificarea SOS să fie în limba și cu numărul potrivit), camera căreia îi aparține; dezactivarea sunetului.</li>
+<li><strong>Conținutul notificării:</strong> numele expeditorului, numele camerei, ora și un text scurt, fără conținut („X a scris", în caz de SOS textul SOS). Textul mesajului nu trece pe aici. Notificarea trece prin serverele Google (Firebase Cloud Messaging).</li>
+<li><strong>Temei juridic:</strong> executarea contractului; permisiunea pentru notificări o dai și o retragi din setările telefonului tău.</li>
+<li><strong>Cât timp:</strong> identificatorul se șterge dacă ieși, părăsești camera, îți ștergi contul sau furnizorul îl marchează ca invalid.</li>
+</ul>
+<h3>3.5. Feedback și raportarea unui răspuns Noah</h3>
+<ul>
+<li><strong>Date:</strong> textul introdus, imaginea (dacă atașezi), tipul și modulul; versiunea, platforma, dispozitivul, browserul/UA, dimensiunea ecranului, limba, vizualizarea curentă și ultimele cel mult 20 de erori; identificatorul propriu al dispozitivului al aplicației; adresa ta de e-mail de autentificare (o adaugă serverul). La raportarea unui răspuns Noah, întrebarea ta și răspunsul lui Noah. Altceva nu trimitem.</li>
+<li><strong>Scop:</strong> remedierea erorilor, corectarea conținutului raportat.</li>
+<li><strong>Temei juridic:</strong> cererea ta (executarea contractului) și interesul legitim de a îmbunătăți produsul (art. 6 alin. (1) lit. f)).</li>
+<li><strong>Cât timp:</strong> 12 luni după închiderea erorii.</li>
+<li>Conversațiile cu Noah rulează, de altfel, pe telefonul tău și nu ajung pe serverul nostru.</li>
+</ul>
+<h3>3.6. Jurnal de utilizare (anonim)</h3>
+<ul>
+<li><strong>Date:</strong> care ecran, care buton, ce eroare, care versiune și dacă este aplicație nativă sau browser. Cu un identificator de sesiune aleatoriu generat la pornirea aplicației, care există doar în memorie.</li>
+<li><strong>Nu conține:</strong> adresă de e-mail, identificator de dispozitiv, adresă IP, nume. Nu poate fi legat de o persoană.</li>
+<li><strong>Temei juridic:</strong> interes legitim (art. 6 alin. (1) lit. f)): înțelegerea utilizării. Deoarece nu este legat de o persoană, șirul de date stocat nu este dată cu caracter personal. Pe adresa aplicației serverul web nu ține jurnal de acces, deci nu există cu ce să fie corelat (vezi 3.9).</li>
+<li><strong>Cât timp:</strong> 90 de zile.</li>
+</ul>
+<h3>3.7. Premium și achiziție</h3>
+<ul>
+<li><strong>Achiziție prin Google Play:</strong> semnalul de achiziție (token) dat de Google Play, produsul, identificatorul comenzii, identificatorul dispozitivului, e-mailul de autentificare, modulele deblocate. Serverul nostru păstrează doar amprenta tokenului. Plata este gestionată de Google; datele cardului bancar nu le vedem.</li>
+<li><strong>Cod premium (achiziționat de pe site):</strong> codul, adresa de e-mail și identificatorul dispozitivului; un cod poate fi valorificat pe cel mult 2 dispozitive (sau câte permite produsul).</li>
+<li><strong>Scop:</strong> deblocarea premium și prevenirea abuzurilor (partajarea codului).</li>
+<li><strong>Temei juridic:</strong> executarea contractului; pentru documentele contabile, obligația de păstrare prevăzută de legislația fiscală și contabilă aplicabilă (îndeplinirea unei obligații legale, art. 6 alin. (1) lit. c)).</li>
+<li><strong>Cât timp:</strong> cât timp premium este valabil, apoi datele de document până la termenul legal de păstrare; dacă îți ștergi contul, premium continuă să funcționeze pe dispozitivele tale deja deblocate, dar nu poate fi legat de un dispozitiv nou; după ștergere, datele de document ale achiziției (identificatorul comenzii, lista dispozitivelor deblocate) se păstrează fără nume și adresă de e-mail, sub un marcaj aleatoriu.</li>
+<li>Detaliile achiziției de pe site (nume, adresă, țară, declarația de retragere, factură) sunt cuprinse în nota de informare privind prelucrarea datelor a paginii de achiziție.</li>
+</ul>
+<h3>3.8. Program de recomandare și Gíra</h3>
+<ul>
+<li><strong>Date:</strong> identificatorul invitației (codul de recomandare); faptul și ziua valorificării codului de recomandare; rezumatul (hash) adresei de e-mail (nu adresa însăși); identificatorul dispozitivului; identificatorul portofelului tău Gíra; recompensa primită (și bonusul premium de după așteptarea de 14 zile). La instalarea printr-un link de recomandare, Google Play transmite aplicației codul de recomandare la instalare (install referrer). Tranzacțiile Gíra sunt înregistrări semnate, care circulă printre mesajele camerelor. <strong>Recompensa de citire zilnică:</strong> dacă ți-ai atins obiectivul zilnic de citire, aplicația trimite serverului, pentru creditare, ziua, secundele petrecute citind în ziua respectivă și obiectivul tău zilnic, identificatorul tău Gíra (amprenta cheii publice), identificatorul dispozitivului și adresa ta de e-mail de autentificare. Serverul numără cel mult o zi pe zi calendaristică, pe cont, pe dispozitiv și pe identificator Gíra, și returnează o creditare semnată.</li>
+<li><strong>Ce vede cel care recomandă:</strong> nu vede numele, adresa de e-mail sau identificatorii celui invitat, ci doar faptul și ziua creditării.</li>
+<li><strong>Scop:</strong> creditarea recompensei, excluderea abuzurilor (autorecomandare, solicitare multiplă); după ștergerea contului, amprenta păstrată servește pentru ca, la o nouă înregistrare cu aceeași adresă de e-mail, să primești o singură dată înapoi recompensele de recomandare ale contului tău anterior și pentru ca recompensa de recomandare și soldul inițial să nu fie acordate a doua oară.</li>
+<li><strong>Temei juridic:</strong> executarea contractului (prin intrarea în program); interes legitim împotriva abuzurilor.</li>
+<li><strong>Cât timp:</strong> cât timp există programul, apoi doar pe durata cerută de lege; după ștergerea contului, amprenta cu cheie a adresei de e-mail, data valorificării și data creditării soldului inițial cel mult 24 de luni (identificatorul dispozitivului și al portofelului nu se păstrează); codul de recomandare valorificat de contul șters și semnalele de recompensă rămân fără nume în evidența celui care te-a recomandat, deoarece limita lui de număr și recompensele lui rezultă din acestea; înregistrările semnate ale recompenselor rămân printre mesajele camerelor până când mesajul sau camera este ștearsă.</li>
+<li><strong>Datele creditării zilnice:</strong> legate de cont, ultima zi luată în calcul și numărul zilelor luate în calcul, identificatorul dispozitivului și identificatorul Gíra, precum și creditarea semnată rămân pe server cât timp contul tău există; la ștergerea contului acestea se șterg (în copiile de siguranță cel mult aproximativ 12 săptămâni). Gíra este stocată doar în portofelul aplicației PrepperPapa. Citirea în Wordlight nu aduce în prezent gíra, iar Wordlight nu trimite date despre aceasta.</li>
+<li>gíra nu este bani, nu poate fi schimbată în forinți. Denumirea „minatul de gíra" este doar o denumire jucăușă: gíra o primești pentru citire, nu o producem prin muncă de calcul pe calculator.</li>
+</ul>
+<h3>3.9. Jurnalul serverului</h3>
+<ul>
+<li>Pe adresa aplicației (app.prepperpapa.hu) serverul web nu ține jurnal de acces. Jurnalul de execuție al serviciului (evenimente, erori, livrarea notificărilor) ajunge în jurnalul de sistem al serverului, în scopuri de securitate și depanare; în acesta serviciile (cameră, achiziție, recomandare, autentificare), potrivit măsurătorii, nu înregistrează adresa IP a clientului. Temei juridic: interes legitim (art. 6 alin. (1) lit. f)). Cât timp: îl păstrăm cel mult 30 de zile. La trimiterea codului de autentificare, poarta de autentificare înregistrează și adresa de e-mail, pe care o păstrăm de asemenea cel mult 30 de zile. <strong>Excepție:</strong> la autentificarea cu contul de revizuire al App Store, poarta înregistrează adresa de e-mail, adresa IP și identificatorul browserului (User-Agent) și trimite o notificare operatorului.</li>
+<li><strong>Verificarea actualizărilor și jurnalul de blocare/instalare (în APK-ul pentru testeri, în PrepperPapa și în Wordlight; în versiunea din magazin nu există autoactualizare):</strong> la verificarea actualizărilor, aplicația interoghează serverul nostru. Dacă versiunea pentru testeri este blocată sau instalarea nu reușește, aplicația trimite o înregistrare anonimă în jurnal, de cel mult 160 de caractere: versiunea proprie și cea obligatorie a aplicației, versiunea Android și WebView, producătorul și tipul dispozitivului, în caz de eroare de instalare codurile de stare ale sistemului, timpul scurs de atunci și mesajul de eroare al sistemului. Nu conține adresă de e-mail, nume și identificator de dispozitiv; adresa IP nu o stocăm (doar în memorie, pentru limitarea cererilor). Temei juridic: interes legitim (art. 6 alin. (1) lit. f)), depanarea. Cât timp: 90 de zile.</li>
+</ul>
+<h3>3.10. Ce rămâne pe telefonul tău</h3>
+<p>Stocul, notițele, punctele de pe hartă și harta offline, setările, Cardul de urgență, Portofelul de tokeni și portofelul de documente (criptat cu o cheie derivată din PIN), conversațiile cu Noah și modelul IA descărcat se află pe telefonul tău. Serverele noastre nu au acces la acestea, dacă nu le trimiți tu. În caz de pierdere a telefonului, PIN-ul și codul de recuperare nu le putem restabili.</p>
+<h3>3.11. Buletin informativ (doar dacă îl ceri tu)</h3>
+<ul>
+<li><strong>Date:</strong> adresa de e-mail a contului tău autentificat; textul consimțământului, așa cum l-ai văzut în aplicație (împreună cu limba lui); faptul că cererea a venit din aplicație; momentul abonării și o amprentă scurtă a adresei tale IP de atunci (SHA-256, 16 cifre hexazecimale, pentru dovedirea consimțământului; nu este adresa IP însăși, dar fiindcă nu folosim sare, o considerăm dată cu caracter personal); faptul, momentul confirmării și amprenta IP de același fel. Cererea de abonare neconfirmată o ștergem după 7 zile. Sistemul de e-mail folosit pentru buletinul informativ înregistrează, pe baza momentului și a adresei IP a deschiderii, dacă ai deschis mesajul.</li>
+<li><strong>Scop:</strong> trimiterea de știri, sfaturi și oferte despre PrepperPapa, cel mult de câteva ori pe lună.</li>
+<li><strong>Temei juridic:</strong> consimțământul tău (art. 6 alin. (1) lit. a) din RGPD). Căsuța <strong>nu este niciodată bifată în prealabil</strong>; abonarea intră în vigoare cu dublă confirmare (trimitem un e-mail de confirmare și vei fi abonat doar după butonul din mesaj). Adresa de e-mail a contului nu reprezintă, în sine, consimțământ.</li>
+<li><strong>Urmărirea deschiderii:</strong> buletinul informativ conține o imagine invizibilă; când aceasta se încarcă, serviciul de trimitere înregistrează deschiderea (moment, adresă IP). Aceasta nu poate fi dezactivată în mesaj; dacă nu o dorești, nu te abona sau dezabonează-te.</li>
+<li><strong>Retragere:</strong> oricând, în aplicație prin debifarea căsuței, la finalul fiecărui mesaj prin linkul de dezabonare, sau la adresa <a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a>. În acest caz îți ștergem adresa din lista buletinului informativ.</li>
+<li><strong>Cât timp:</strong> până la retragere. Ștergerea contului te dezabonează și de la buletinul informativ: se șterg atât abonarea confirmată, cât și cea în așteptare, fără e-mail de confirmare.</li>
+<li><strong>Persoană împuternicită:</strong> Brevo (Brevo, société par actions simplifiée, număr de înregistrare în registrul comerțului din Paris: 498 019 298, sediu: 9-17, rue Salneuve, 75017 Paris, Franța). Poate transmite datele și în afara SEE; garanțiile se regăsesc în acordul de prelucrare a datelor al Brevo.</li>
+</ul>
+<h3>3.12. Wordlight: ce este altfel</h3>
+<ul>
+<li>Wordlight este cititorul de Biblie al PrepperPapa, aplicație separată. Textul Bibliei se află pe telefonul tău, pentru citire nu ai nevoie de cont, iar textul citit nu este trimis către server.</li>
+<li>Datele care ajung pe server sunt aceleași ca în PrepperPapa, dar doar dacă folosești funcția: autentificare (3.1), valorificarea unui cod Biblia premium (3.7), buletin informativ (3.11), feedback (3.5). Jurnalul de utilizare anonim (3.6) rulează și în Wordlight.</li>
+<li>Jurnalul de actualizare al versiunii pentru testeri este descris la punctul 3.9; acesta se aplică și Wordlight.</li>
+<li>În Wordlight nu există portofel Gíra: gíra există în aplicația PrepperPapa (3.8). Citirea în Wordlight nu aduce în prezent gíra, iar Wordlight nu trimite date despre aceasta.</li>
+</ul>
+<h2>4. Accesuri în aplicație</h2>
+<p>Permisiunile telefonului le dai tu și le poți retrage oricând din setările telefonului: <strong>poziție</strong> (hartă, busolă, apusul soarelui, SOS, Trimite poziția mea), <strong>cameră</strong> (cod QR, citirea semnalelor luminoase; nu se face înregistrare și nu ajunge nicăieri), <strong>microfon</strong> (semnale care sosesc prin sunet, de exemplu SSTV, morse; nu se face înregistrare audio și nu ajunge nicăieri), <strong>notificări</strong>, <strong>Bluetooth</strong> (dispozitive din apropiere), <strong>senzori de mișcare și de presiune atmosferică</strong> (detectarea căderii, avertizare de furtună; valorile măsurate rămân pe dispozitiv), <strong>amprentă/față</strong> (deblocarea portofelului prin sistemul propriu al telefonului). Dintre acestea, în afară de poziție și SOS, nimic nu ajunge pe serverul nostru.</p>
+<h2>5. Servicii externe cu care intră în legătură aplicația</h2>
+<p>Când folosești aceste funcții, telefonul tău intră direct în legătură cu furnizorul, iar adresa ta IP ajunge la acesta. Se aplică nota de informare proprie a acestora.</p>
+<div class="tabla"><table class="adat">
+<tr><th>Furnizor</th><th>Pentru ce</th><th>Ce vede</th></tr>
+<tr><td>Google (Firebase Cloud Messaging, Google Play, autentificare Google, Gmail)</td><td>notificări, achiziție, autentificare, e-mail cu cod de verificare</td><td>identificator de notificare; conținutul push (nume, cameră, oră); date de achiziție; adresă de e-mail</td></tr>
+<tr><td>Furnizori de hărți: OpenStreetMap, OpenTopoMap, Esri (ArcGIS), EFFIS (Copernicus)</td><td>dale de hartă, strat de pericol de incendiu</td><td>porțiunea de hartă afișată și adresa IP</td></tr>
+<tr><td>Open Food Facts</td><td>căutare după cod de bare</td><td>codul de bare scanat și adresa IP</td></tr>
+<tr><td>Brevo</td><td>trimiterea buletinului informativ și urmărirea deschiderii (doar dacă te abonezi)</td><td>adresa de e-mail, momentul și adresa IP ale deschiderii mesajului</td></tr>
+<tr><td>Hugging Face</td><td>descărcarea modelului IA Noah, doar dacă o ceri</td><td>adresa IP</td></tr>
+<tr><td>Surse de curs valutar și de situație mondială (MNB, USGS, GDACS, ECDC, NÉBIH și similare)</td><td>actualizarea datelor</td><td>serverul nostru le solicită, nu telefonul tău</td></tr>
+</table></div>
+<h2>6. Cui transmitem datele</h2>
+<ul>
+<li><strong>Furnizor de găzduire:</strong> Hetzner Online GmbH (serverul aplicației, al porții de autentificare, al backend-ului magazinului online și al copiilor de siguranță: Germania, Nürnberg; acord de prelucrare a datelor: din 27 octombrie 2026).</li>
+<li><strong>Găzduirea paginii statice prepperpapa.hu:</strong> GitHub Pages (GitHub, Inc.); la deschiderea paginii, adresa ta IP ajunge la ei.</li>
+<li><strong>Google</strong> (pentru serviciile de mai sus): poate prelucra date în afara SEE, inclusiv în Statele Unite; garanțiile se regăsesc în condițiile de prelucrare a datelor ale Google.</li>
+<li><strong>Trimiterea buletinului informativ:</strong> Brevo (persoană împuternicită, Franța; datele ei la punctul 3.11).</li>
+<li><strong>Plată, facturare (achiziție de pe site):</strong> Revolut, Számlázz.hu (KBOSS.hu Kft.), GoAffPro (comision de recomandare).</li>
+<li><strong>Ceilalți membri ai camerei</strong> văd ceea ce trimiți în cameră sau ceea ce face parte din calitatea ta de membru (nume, poză de profil, mesaje, SOS, poziție).</li>
+<li><strong>Autoritate</strong>, dacă legea o impune sau din cauza suspiciunii unei infracțiuni (vezi Condițiile de utilizare).</li>
+<li>Nu vindem date, nu le transmitem în scop publicitar și nu le dăm intermediarilor de date.</li>
+</ul>
+<h2>7. Securitate</h2>
+<p>Textul mesajelor din cameră este criptat de telefonul tău (AES-GCM 256; cheia este gestionată de telefoanele membrilor, nu de server). Parolele nu le stocăm, ci doar amprenta. Conexiunea este HTTPS. Portofelul este criptat cu PIN. Discul serverului și copiile de siguranță nu sunt criptate separat, sunt protejate prin drepturi de acces; copia stocată pe calculatorul proprietarului se află pe un disc criptat. Niciun sistem nu este infailibil: serverul nu vede textul mesajelor, dar vede calitatea de membru, numele și momentele (3.2), și împotriva pierderii telefonului sau a relei-voințe a unui membru nu ne putem apăra.</p>
+<h2>8. Vârsta</h2>
+<p>Utilizarea aplicației este permisă de la vârsta de 16 ani. La intrarea într-o cameră declari, printr-o casetă de selectare separată, că ai împlinit 16 ani sau că ai consimțământul părinților. Dacă ai sub 16 ani, cere consimțământul părintelui sau al tutorelui tău și folosește aplicația împreună cu el. Nu verificăm vârsta; dacă aflăm că datele unui copil au ajuns la noi fără consimțământul părinților, le ștergem.</p>
+<h2>9. Drepturile tale și ștergerea contului</h2>
+<ul>
+<li><strong>Ștergerea contului și a datelor:</strong> în aplicație, la <strong>Profil › Cont › Ștergerea contului</strong>. Șterge contul, calitatea ta de membru, camerele create de tine (dacă nu există altă gazdă), identificatorii tăi push, feedbackurile tale, abonarea la buletinul informativ și datele de recomandare/deblocare. Pe dispozitivele tale deja deblocate premium continuă să funcționeze și după ștergere, nu poate fi legat de un dispozitiv nou; documentul achiziției se păstrează fără nume, din cauza obligației contabile. <strong>Ce rămâne după ștergere:</strong> sesizările făcute despre tine până la decizia de moderare; sesizarea făcută de tine, cu copia mesajului contestat, fără numele și adresa ta de e-mail, timp de 12 luni de la decizia de moderare; în programul de recomandare, amprenta unidirecțională (hash) a adresei tale de e-mail și data valorificării, cel mult 24 de luni de la ștergerea contului, pentru protecția împotriva abuzurilor și pentru ca, la o nouă înregistrare cu aceeași adresă de e-mail, să primești o singură dată înapoi recompensele de recomandare ale contului tău anterior (gíra dintre membri, adică cea primită de pe telefon pe telefon, nu o putem returna); creditările de Gíra în registrul comun, fără nume și adresă de e-mail. Același lucru îl poți cere și fără aplicație, pe pagina <strong><a href="https://prepperpapa.hu/fiok-torles/" rel="noopener">https://prepperpapa.hu/fiok-torles/</a></strong> (cu codul de 6 cifre trimis pe adresa ta de e-mail) sau la adresa <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong>. Datele șterse pot figura încă în copiile de siguranță cel mult aproximativ 12 săptămâni, apoi dispar.</li>
+<li><strong>Alte drepturi</strong> (art. 15-21 din RGPD): acces, rectificare, ștergere, restricționare, portabilitatea datelor, opoziție față de prelucrarea bazată pe interes legitim; retragerea consimțământului în orice moment (prelucrarea anterioară retragerii rămâne legală). La cererea ta răspundem în termen de o lună.</li>
+<li>Deoarece mesajele camerelor le stocăm criptat, la cererile de acces și de ștergere putem furniza sau șterge doar datele aflate pe server; nu și copia aflată pe telefoanele membrilor.</li>
+<li><strong>Plângere:</strong> Autoritatea Națională pentru Protecția Datelor și Libertatea Informației (NAIH), 1055 Budapesta, Falk Miksa utca 9-11.; adresă poștală: 1363 Budapesta, Pf.: 9.; +36 (1) 391 1400; <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>; naih.hu. Te poți adresa și instanței judecătorești.</li>
+</ul>
+<h2>10. Decizie automatizată, creare de profiluri</h2>
+<p>Nu există. Noah este un model lingvistic deschis care rulează pe telefonul tău (Gemma 4), care nu ia decizii despre tine și nu trimite conversația. Poate greși; în pericol de moarte 112 este primul.</p>
+<h2>11. Modificări</h2>
+<p>Dacă nota se modifică în mod substanțial, te înștiințăm în aplicație. Versiunea în vigoare este cea cu data de mai sus. Versiunile anterioare sunt disponibile la cerere.</p>
+<a class="vissza" href="/ro/">&larr; Înapoi la pagina principală</a>
+</main>
+<footer><div>PrepperPapa &middot; Pregătește-te, nu te teme! &middot; <a href="/ro/program-parteneri/">Program de parteneri</a> &middot; <a href="/ro/gira/">Gíra</a></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+</body>
+</html>

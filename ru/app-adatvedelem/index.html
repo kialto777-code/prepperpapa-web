@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Приложения PrepperPapa и Wordlight: информация об обработке персональных данных - PrepperPapa</title>
+<meta name="description" content="Уведомление об обработке данных в приложениях PrepperPapa и Wordlight.">
+<link rel="canonical" href="https://prepperpapa.hu/ru/app-adatvedelem/">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Приложения PrepperPapa и Wordlight: информация об обработке персональных данных">
+<meta property="og:description" content="Уведомление об обработке данных в приложениях PrepperPapa и Wordlight.">
+<meta property="og:url" content="https://prepperpapa.hu/ru/app-adatvedelem/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<meta property="og:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* phones: the language picker needs the room (2026-10-19); the page ends with a link back home */
+  @media(max-width:520px){.nav{gap:12px;padding:0 16px}.nav a.link{display:none}}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+</style>
+<style id="appadat">
+  .nyelvek{font-size:14px;color:var(--muted);margin:0 0 18px}.nyelvek a{margin-right:10px}
+  .nyelvek b{margin-right:10px;color:var(--ink)}
+  table.adat{border-collapse:collapse;width:100%;margin:0 0 18px;font-size:15px}
+  table.adat th,table.adat td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  table.adat th{color:var(--ink);background:rgba(255,255,255,.03)}
+  .tabla{overflow-x:auto;-webkit-overflow-scrolling:touch}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/ru/konfidentsialnost.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Файлы cookie и согласие", "bevezeto": "По умолчанию этот сайт не сохраняет файлы cookie на твоём устройстве. Мы просим согласия для двух целей, его можно дать или отклонить отдельно. Если откажешься, всё равно всё работает, а решение можно в любой момент изменить в пункте «Настройки cookie» внизу страницы.", "p_cim": "Отслеживание партнёров", "p_le": "Если ты пришёл по ссылке одного из наших партнёров, мы запоминаем в файлах cookie код партнёра и время перехода (pp_ref и файлы cookie GoAffPro, на 90 дней), чтобы определить, какому партнёру положена комиссия, если ты совершишь покупку. Купон партнёра засчитывается ему и без файлов cookie.", "s_cim": "Статистика посещений", "s_le": "Анонимная статистика посещений с Google Analytics 4 (файлы cookie _ga). Мы не используем её для рекламы и профилирования; без твоего согласия она даже не загружается.", "igen": "Принимаю", "nem": "Отклоняю", "mind_igen": "Принять все", "mind_nem": "Отклонить все", "ment": "Сохранить выбор", "adatv": "Политика конфиденциальности", "link": "Настройки cookie"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav fej2">
+  <a class="brand" href="/ru/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/ru/">Главная</a> <a class="link" href="/ru/#video">Видео</a> <a class="link" href="/ru/stati.html">База знаний</a> <a class="link" href="/ru/kalkulyatory/">Калькуляторы</a> <a class="link" href="/ru/prilozheniya/">Приложение</a> <a class="link" href="/ru/gira/">Гира</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Форум сообщества</a> <a class="link" href="/ru/#kontakty">Контакты</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Подписаться</a>
+  <button class="hamb" type="button" aria-label="Меню" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main>
+<p class="nyelvek"><a href="/app-adatvedelem/" hreflang="hu">Magyar</a> <a href="/en/app-adatvedelem/" hreflang="en">English</a> <a href="/de/app-adatvedelem/" hreflang="de">Deutsch</a> <a href="/es/app-adatvedelem/" hreflang="es">Español</a> <a href="/pl/app-adatvedelem/" hreflang="pl">Polski</a> <a href="/ro/app-adatvedelem/" hreflang="ro">Română</a> <b>Русский</b> <a href="/uk/app-adatvedelem/" hreflang="uk">Українська</a></p>
+<h1>Приложения PrepperPapa и Wordlight: информация об обработке персональных данных</h1>
+<p>Эта информация относится к приложению <strong>PrepperPapa</strong> и приложению <strong>Wordlight</strong> (читалка Библии PrepperPapa, отдельное приложение). Там, где приложения различаются, мы отмечаем это отдельно. Информация об обработке данных на сайте prepperpapa.hu - отдельный документ.</p>
+<p><strong>Действует с: 31 октября 2026 г. (день публикации).</strong></p>
+<h2>1. Коротко</h2>
+<ul>
+<li>Приложение PrepperPapa создано для работы офлайн: твои запасы, заметки, точки на карте, Аварийная карточка, кошелёк и разговор с Noah остаются на твоём телефоне. Wordlight - читалка Библии: текст находится на твоём телефоне, для чтения аккаунт не нужен.</li>
+<li>Данные попадают на наш сервер, когда ты <strong>создаёшь аккаунт или входишь</strong>, <strong>пользуешься комнатами</strong>, <strong>отправляешь SOS или своё местоположение в свои комнаты</strong>, <strong>отправляешь отзыв или жалобу</strong>, <strong>активируешь премиум</strong>, <strong>пользуешься партнёрской программой</strong>, <strong>получаешь гиру за ежедневное чтение</strong> или <strong>подписываешься на рассылку</strong>. В Wordlight вход не обязателен, он нужен только для активации премиума и рассылки. Чтение в Wordlight сейчас не приносит гиры, и Wordlight не отправляет об этом данных.</li>
+<li>Текст сообщений в комнатах шифруется твоим телефоном перед отправкой. Сервер этот текст не видит. Но он видит, кто является участником какой комнаты, под каким именем, когда он писал и был ли сигнал SOS.</li>
+<li>В приложении нет рекламного идентификатора, трекеров, анализа поведения, Google Analytics и сервиса отчётов об ошибках. Мы не продаём данные и не составляем твой профиль. Единственное отслеживание - отслеживание открытия рассылки, и только если ты отдельно на неё подписался (3.11).</li>
+<li>Ты можешь удалить свой аккаунт и связанные с ним данные: см. пункт 9.</li>
+</ul>
+<h2>2. Кто обрабатывает твои данные</h2>
+<p>Оператор данных: <strong>индивидуальный предприниматель Nagy János László</strong> (адрес: 3128 Vizslás, József Attila út 15.; регистрационный номер: 63017434; налоговый номер: 92514027-1-32; начало деятельности: 2026-10-28).<br>
+Контакт по вопросам защиты данных: <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong>.<br>
+Сервер обслуживает хостинг-провайдер (см. пункт 6), оператором данных являемся мы.</p>
+<h2>3. Что мы обрабатываем, зачем, на каком правовом основании, как долго</h2>
+<p>Правовые основания опираются на статью 6 (1) GDPR (Регламент (ЕС) 2016/679 Европейского парламента и Совета). «Исполнение договора» здесь означает, что без этих данных мы не можем предоставить запрошенную функцию.</p>
+<h3>3.1. Аккаунт и вход</h3>
+<ul>
+<li><strong>Данные:</strong> адрес электронной почты; если ты регистрируешься с паролем, односторонний (scrypt) отпечаток пароля, но никогда не сам пароль; если ты входишь через аккаунт Google, адрес электронной почты, подтверждённый Google; время создания аккаунта и последнего входа; состояние аккаунта (активный, ожидающий, отозванный); код подтверждения, полученный по электронной почте (на короткое время, в памяти сервера или в виде отпечатка).</li>
+<li><strong>Тестовая версия:</strong> при запуске тестовая версия отправляет на сервер твой адрес электронной почты и идентификатор устройства, а сервер возвращает подписанное разрешение со сроком действия; сервер его не хранит.</li>
+<li><strong>Цель:</strong> вход, привязка комнат, премиума, партнёрской программы, ежедневной гиры за чтение и рассылки к твоему аккаунту, защита от злоупотреблений. PrepperPapa для этих функций запрашивает аккаунт; в Wordlight вход не обязателен (тот же аккаунт, адрес электронной почты и шестизначный код, без пароля).</li>
+<li><strong>Правовое основание:</strong> исполнение договора (статья 6 (1) b)); ограничение попыток входа - законный интерес (статья 6 (1) f)).</li>
+<li><strong>Как долго:</strong> до удаления аккаунта. После удаления данные остаются в резервных копиях не дольше чем примерно 12 недель (на сервере хранятся 14 ежедневных и 8 еженедельных копий, на другой машине в Венгрии - 30 ежедневных и 12 еженедельных копий; резервная копия форума - 7 ежедневных, на том же сервере).</li>
+<li><strong>Примечание:</strong> код подтверждения мы отправляем из аккаунта Gmail (Google как почтовый сервис).</li>
+</ul>
+<h3>3.2. Комнаты (групповой обмен сообщениями)</h3>
+<ul>
+<li><strong>Данные, которые сервер видит в открытом виде:</strong> название и язык комнаты; идентификаторы и отображаемые имена участников; фото профиля; кто и когда запросил вход, представление, написанное к запросу, а также то, что ты принял правила и заявил о достижении 16 лет (одно значение, со временем запроса); приглашения (со сроком действия); отправитель, время, пометка срочности, время редактирования и удаления сообщений; реакции, сохранения, отметки о прочтении; идентификатор участника, привязанный к аккаунту; список удалённых участников (электронная почта, имя, время). Эти данные <strong>не зашифрованы</strong>.</li>
+<li><strong>Данные, которые сервер в обычном случае получает только в зашифрованном виде:</strong> текст сообщений (AES-GCM 256, с ключом комнаты; ключом управляют телефоны участников) и тайные сообщения между участниками. Текст некоторых более старых или отправленных системой сообщений хранится на сервере в незашифрованном виде. Изображения, прикреплённые к сообщениям (не более 500 кБ), приложение в обычном случае шифрует на телефоне, но сервер принимает и незашифрованное изображение, поэтому шифрование - это свойство работы приложения, а не гарантия сервера. <strong>Изображение комнаты и фото профиля участников хранятся в базе данных в незашифрованном виде.</strong></li>
+<li><strong>Цель:</strong> работа комнаты.</li>
+<li><strong>Правовое основание:</strong> исполнение договора. При запросе на вход после принятия правил хозяин комнаты и участники видят то, что ты указал.</li>
+<li><strong>Как долго:</strong> пока существует комната или твой аккаунт; при удалении комнаты данные, относящиеся к комнате, также удаляются. Журнал событий комнаты хранится 90 дней. В резервных копиях примерно 12 недель.</li>
+<li><strong>Важно:</strong> то, что ты пишешь в комнату, видят участники комнаты, и они могут это сохранить или передать дальше. На них наша ответственность не распространяется. Шифрование защищает сообщение от сервера, но не от участников. Хозяин, создавший комнату, отвечает за содержание, которое ведётся в комнате: он решает о входе, он может удалить участника, и сообщения других удалять может только он; хозяин может в любой момент удалить комнату, что безвозвратно уничтожает сообщения всех участников. Если ты выйдешь или тебя удалят, сервер больше не выдаёт тебе сообщений, но те, что уже есть на твоём устройстве, остаются читаемыми. Данные о месте или запасах, которыми ты делишься в комнате, являются чувствительными, за свою безопасность отвечаешь ты. Содержимое комнат мы заранее не проверяем; мы действуем после жалобы (см. Правила сообщества и Условия использования).</li>
+</ul>
+<h3>3.3. SOS, обнаружение падения, «Отправить моё местоположение», Аварийная карточка</h3>
+<ul>
+<li><strong>Данные:</strong> когда ты отправляешь SOS (вручную или после обнаружения падения, если оно включено), твоё точное местоположение отправляется в твои комнаты в сообщении, зашифрованном твоим телефоном. Если ты отдельно отметил, то и твоя Аварийная карточка (группа крови, аллергия, лекарства, заболевания, контакт). Кнопка «Отправить моё местоположение» работает так же, но отправляет только местоположение.</li>
+<li><strong>Что видно без шифрования:</strong> что был сигнал SOS, имя отправителя, название комнаты и время. Это отображается и в уведомлении (см. 3.4).</li>
+<li><strong>Данные о здоровье:</strong> Аварийная карточка - данные о здоровье (статья 9 GDPR). По умолчанию она <strong>отключена</strong>, отправляется только по твоей прямой отметке, перед каждым SOS ты можешь решить заново. Правовое основание - твоё согласие (статья 9 (2) a)); ты можешь отозвать его, отключив её.</li>
+<li><strong>Правовое основание (местоположение):</strong> твоё согласие (статья 6 (1) a)), которое ты даёшь, разрешив определение местоположения и отправив SOS.</li>
+<li><strong>Как долго:</strong> остаётся среди сообщений комнаты, пока ты или хозяин комнаты не удалите сообщение либо пока не прекратит существование комната или аккаунт. В резервных копиях примерно 12 недель.</li>
+<li><strong>Что тебе нужно знать:</strong> SOS - <strong>не вызов экстренных служб</strong>. Он не вызывает скорую помощь, полицию или пожарных, и о нём уведомляются только участники твоих комнат. При угрозе жизни звони 112. Твоё местоположение мы не отслеживаем непрерывно в фоновом режиме; приложение считывает местоположение только тогда, когда ты просишь об этом или запускается SOS.</li>
+</ul>
+<h3>3.4. Уведомления (push)</h3>
+<ul>
+<li><strong>Данные:</strong> идентификатор уведомлений твоего устройства (токен Firebase Cloud Messaging, а в браузере конечная точка веб-push и ключи), язык устройства и местный номер экстренной службы (чтобы уведомление SOS сообщало на нужном языке и с нужным номером), комната, к которой оно относится; отключение звука.</li>
+<li><strong>Содержание уведомления:</strong> имя отправителя, название комнаты, время и короткий, не содержащий сути текст («X написал», при SOS - текст SOS). Текст сообщения через это не передаётся. Уведомление проходит через серверы Google (Firebase Cloud Messaging).</li>
+<li><strong>Правовое основание:</strong> исполнение договора; разрешение на уведомления ты даёшь и можешь отозвать в настройках своего телефона.</li>
+<li><strong>Как долго:</strong> идентификатор удаляется, если ты выходишь, покидаешь комнату, удаляешь аккаунт или поставщик помечает его недействительным.</li>
+</ul>
+<h3>3.5. Отзыв и жалоба на ответ Noah</h3>
+<ul>
+<li><strong>Данные:</strong> введённый текст, изображение (если ты прикрепляешь), тип и модуль; версия, платформа, устройство, браузер/UA, размер экрана, язык, текущий экран и последние (не более 20) ошибок; собственный идентификатор устройства приложения; твой адрес электронной почты для входа (его добавляет сервер). При жалобе на ответ Noah - твой вопрос и ответ Noah. Ничего другого мы не отправляем.</li>
+<li><strong>Цель:</strong> исправление ошибок, исправление содержания, на которое пожаловались.</li>
+<li><strong>Правовое основание:</strong> твой запрос (исполнение договора) и законный интерес в улучшении продукта (статья 6 (1) f)).</li>
+<li><strong>Как долго:</strong> 12 месяцев после закрытия ошибки.</li>
+<li>Разговоры с Noah в остальном выполняются на твоём телефоне и не попадают на наш сервер.</li>
+</ul>
+<h3>3.6. Журнал использования (анонимный)</h3>
+<ul>
+<li><strong>Данные:</strong> какой экран, какая кнопка, какая ошибка, какая версия, а также нативное приложение или браузер. С помощью случайного идентификатора сеанса, создаваемого при запуске приложения и существующего только в памяти.</li>
+<li><strong>В нём нет:</strong> адреса электронной почты, идентификатора устройства, IP-адреса, имени. К конкретному человеку он не привязывается.</li>
+<li><strong>Правовое основание:</strong> законный интерес (статья 6 (1) f)): понимание использования. Поскольку он не привязан к человеку, сохранённый набор данных не является персональными данными. По адресу приложения веб-сервер не ведёт журнал доступа, поэтому связать нечем (см. 3.9).</li>
+<li><strong>Как долго:</strong> 90 дней.</li>
+</ul>
+<h3>3.7. Премиум и покупка</h3>
+<ul>
+<li><strong>Покупка в Google Play:</strong> сигнал о покупке, выданный Google Play (токен), продукт, идентификатор заказа, идентификатор устройства, электронная почта для входа, разблокированные модули. Наш сервер хранит от токена только отпечаток. Платёж обрабатывает Google; данные банковской карты мы не видим.</li>
+<li><strong>Премиум-код (купленный на сайте):</strong> код, адрес электронной почты и идентификатор устройства; один код можно активировать максимум на 2 (или согласно продукту) устройствах.</li>
+<li><strong>Цель:</strong> разблокировка премиума и предотвращение злоупотреблений (передачи кода другим).</li>
+<li><strong>Правовое основание:</strong> исполнение договора; для бухгалтерских документов - обязанность хранения по соответствующему налоговому и бухгалтерскому законодательству (исполнение юридической обязанности, статья 6 (1) c)).</li>
+<li><strong>Как долго:</strong> пока премиум действителен, затем данные документа - до срока хранения, установленного законом; если ты удалишь аккаунт, на уже разблокированных устройствах премиум продолжит работать, однако к новому устройству его привязать нельзя; после удаления данные документа о покупке (идентификатор заказа, список разблокированных устройств) сохраняются без имени и адреса электронной почты, под случайной меткой.</li>
+<li>Подробности покупки на сайте (имя, адрес, страна, заявление об отказе, счёт) содержатся в информации об обработке данных на странице покупки.</li>
+</ul>
+<h3>3.8. Партнёрская программа и гира</h3>
+<ul>
+<li><strong>Данные:</strong> идентификатор приглашения (партнёрского кода); факт и день активации партнёрского кода; хеш адреса электронной почты (не сам адрес); идентификатор устройства; идентификатор твоего кошелька гиры; полученное вознаграждение (и премиум-бонус после 14-дневного ожидания). При установке по партнёрской ссылке Google Play передаёт партнёрский код приложению при установке (install referrer). Транзакции гиры - это подписанные записи, которые передаются среди сообщений комнат. <strong>Ежедневное вознаграждение за чтение:</strong> если ты достиг своей ежедневной цели чтения, приложение для зачисления отправляет на сервер день, секунды, проведённые в этот день за чтением, и твою ежедневную цель, твой идентификатор гиры (отпечаток открытого ключа), идентификатор устройства и твой адрес электронной почты для входа. Сервер засчитывает не более одного дня в календарные сутки на аккаунт, на устройство и на идентификатор гиры и возвращает подписанное зачисление.</li>
+<li><strong>Что видит пригласивший:</strong> он не видит имя, адрес электронной почты или идентификаторы приглашённого, только факт и день зачисления.</li>
+<li><strong>Цель:</strong> зачисление вознаграждения, исключение злоупотреблений (самоприглашение, многократное получение); после удаления аккаунта сохранённый отпечаток служит тому, чтобы при повторной регистрации с тем же адресом электронной почты ты один раз получил обратно партнёрские вознаграждения прежнего аккаунта и чтобы партнёрское вознаграждение и стартовый баланс не выдавались второй раз.</li>
+<li><strong>Правовое основание:</strong> исполнение договора (вступлением в программу); законный интерес для защиты от злоупотреблений.</li>
+<li><strong>Как долго:</strong> пока существует программа, затем только в течение срока, требуемого законом; после удаления аккаунта ключевой отпечаток адреса электронной почты, дата активации и дата зачисления стартового баланса - не более 24 месяцев (идентификатор устройства и кошелька не сохраняется); партнёрский код, активированный удалённым аккаунтом, и его отметки о вознаграждении остаются в учёте пригласившего без имени, потому что на них основаны его ограничение по количеству и его вознаграждения; подписанные записи вознаграждений остаются среди сообщений комнат, пока не будет удалено сообщение или комната.</li>
+<li><strong>Данные ежедневного зачисления:</strong> на сервере, привязанные к аккаунту, остаются последний засчитанный день и число засчитанных дней, идентификатор устройства и идентификатор гиры, а также подписанное зачисление, пока существует твой аккаунт; при удалении аккаунта они удаляются (в резервных копиях не дольше примерно 12 недель). Гиру хранит только кошелёк приложения PrepperPapa. Чтение в Wordlight сейчас не приносит гиры, и Wordlight не отправляет об этом данных.</li>
+<li>Гира - не деньги, её нельзя обменять на форинты. Название «майнинг гиры» - лишь игровое название: гиру ты получаешь за чтение, мы не создаём её вычислительной работой компьютера.</li>
+</ul>
+<h3>3.9. Журнал сервера</h3>
+<ul>
+<li>По адресу приложения (app.prepperpapa.hu) веб-сервер не ведёт журнал доступа. Журнал работы сервиса (события, ошибки, доставка уведомлений) попадает в системный журнал сервера в целях безопасности и поиска ошибок; в нём сервисы (комната, покупка, партнёр, вход) по результатам измерения не записывают IP-адрес клиента. Правовое основание: законный интерес (статья 6 (1) f)). Как долго: хранится не более 30 дней. При отправке кода входа шлюз входа записывает в журнал и адрес электронной почты, его мы тоже храним не более 30 дней. <strong>Исключение:</strong> при входе с аккаунтом проверяющего App Store шлюз записывает в журнал адрес электронной почты, IP-адрес и идентификатор браузера (User-Agent) и отправляет оператору уведомление об этом.</li>
+<li><strong>Проверка обновлений и журнал блокировки/установки (в тестовом APK, в PrepperPapa и в Wordlight; в магазинной версии самообновления нет):</strong> при проверке обновлений приложение обращается к нашему серверу. Если тестовая версия заблокирована или установка не удалась, приложение отправляет анонимную запись в журнал длиной не более 160 символов: собственная и обязательная версия приложения, версии Android и WebView, производитель и модель устройства, при ошибке установки коды состояния системы, прошедшее с тех пор время и сообщение системы об ошибке. В ней нет адреса электронной почты, имени и идентификатора устройства; IP-адрес мы не храним (только в памяти, для ограничения числа запросов). Правовое основание: законный интерес (статья 6 (1) f)), поиск ошибок. Как долго: 90 дней.</li>
+</ul>
+<h3>3.10. Что остаётся на твоём телефоне</h3>
+<p>Запасы, заметки, точки на карте и офлайн-карта, настройки, Аварийная карточка, Кошелёк токенов и кошелёк документов (зашифрованный ключом, образованным из PIN-кода), разговоры с Noah и загруженная ИИ-модель находятся на твоём телефоне. Наши серверы не имеют к ним доступа, если ты сам их не отправишь. При потере телефона PIN-код и код восстановления мы восстановить не можем.</p>
+<h3>3.11. Рассылка (только если ты этого хочешь)</h3>
+<ul>
+<li><strong>Данные:</strong> адрес электронной почты твоего аккаунта, в который ты вошёл; текст согласия в том виде, как ты видел его в приложении (вместе с его языком); то, что запрос пришёл из приложения; время подписки и короткий отпечаток твоего IP-адреса на тот момент (SHA-256, 16 шестнадцатеричных знаков, для подтверждения согласия; это не сам IP-адрес, но соль мы не используем, поэтому считаем его персональными данными); факт, время подтверждения и такой же отпечаток IP-адреса. Неподтверждённый запрос на подписку мы удаляем через 7 дней. Почтовая система, используемая для рассылки, по времени и IP-адресу открытия фиксирует, открыл ли ты письмо.</li>
+<li><strong>Цель:</strong> отправка новостей, советов и предложений о PrepperPapa, не более нескольких раз в месяц.</li>
+<li><strong>Правовое основание:</strong> твоё согласие (статья 6 (1) a) GDPR). Флажок <strong>никогда не отмечен заранее</strong>; подписка вступает в силу с двойным подтверждением (мы отправляем письмо с подтверждением, и ты становишься подписанным только после кнопки в письме). Адрес электронной почты аккаунта сам по себе не является согласием.</li>
+<li><strong>Отслеживание открытия:</strong> рассылка содержит невидимое изображение; когда оно загружается, отправляющий сервис фиксирует открытие (время, IP-адрес). Отключить это в письме нельзя; если ты этого не хочешь, не подписывайся или отпишись.</li>
+<li><strong>Отзыв:</strong> в любое время, отключив флажок в приложении, по ссылке для отписки внизу каждого письма или по адресу <a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a>. В этом случае мы удаляем твой адрес из списка рассылки.</li>
+<li><strong>Как долго:</strong> до отзыва. Удаление аккаунта также отписывает от рассылки: удаляется и подтверждённая, и ожидающая подписка, без письма с подтверждением.</li>
+<li><strong>Обработчик данных:</strong> Brevo (Brevo, société par actions simplifiée, номер в парижском торговом реестре: 498 019 298, адрес: 9-17, rue Salneuve, 75017 Париж, Франция). Он может передавать данные и за пределы ЕЭЗ; гарантии содержатся в договоре Brevo об обработке данных.</li>
+</ul>
+<h3>3.12. Wordlight: что иначе</h3>
+<ul>
+<li>Wordlight - читалка Библии PrepperPapa, отдельное приложение. Текст Библии находится на твоём телефоне, для чтения аккаунт не нужен, и читаемый текст не передаётся на сервер.</li>
+<li>Данные, попадающие на сервер, те же, что и в PrepperPapa, но только если ты пользуешься функцией: вход (3.1), активация кода Библия премиум (3.7), рассылка (3.11), отзыв (3.5). Анонимный журнал использования (3.6) работает и в Wordlight.</li>
+<li>Журнал обновлений тестовой версии описан в пункте 3.9; он относится и к Wordlight.</li>
+<li>В Wordlight нет кошелька гиры: гира живёт в приложении PrepperPapa (3.8). Чтение в Wordlight сейчас не приносит гиры, и Wordlight не отправляет об этом данных.</li>
+</ul>
+<h2>4. Доступы в приложении</h2>
+<p>Разрешения телефона даёшь ты и можешь в любой момент отозвать в настройках телефона: <strong>местоположение</strong> (карта, компас, закат, SOS, Отправить моё местоположение), <strong>камера</strong> (QR-код, считывание световых сигналов; запись не делается и никуда не передаётся), <strong>микрофон</strong> (сигналы, поступающие звуком, например SSTV, морзе; звукозапись не делается и никуда не передаётся), <strong>уведомления</strong>, <strong>Bluetooth</strong> (ближайшие устройства), <strong>датчики движения и давления</strong> (обнаружение падения, предупреждение о шторме; измеренные значения остаются на устройстве), <strong>отпечаток пальца/лицо</strong> (разблокировка кошелька средствами самого телефона). Из них, кроме местоположения и SOS, на наш сервер ничего не передаётся.</p>
+<h2>5. Внешние сервисы, с которыми связывается приложение</h2>
+<p>Когда ты пользуешься этими функциями, твой телефон напрямую связывается с поставщиком, и твой IP-адрес доходит до него. На них распространяется их собственная информация об обработке данных.</p>
+<div class="tabla"><table class="adat">
+<tr><th>Поставщик</th><th>Для чего</th><th>Что видит</th></tr>
+<tr><td>Google (Firebase Cloud Messaging, Google Play, вход через Google, Gmail)</td><td>уведомления, покупка, вход, письмо с кодом подтверждения</td><td>идентификатор уведомлений; содержание push (имя, комната, время); данные о покупке; адрес электронной почты</td></tr>
+<tr><td>Картографические сервисы: OpenStreetMap, OpenTopoMap, Esri (ArcGIS), EFFIS (Copernicus)</td><td>тайлы карты, слой пожарной опасности</td><td>отображаемый участок карты и IP-адрес</td></tr>
+<tr><td>Open Food Facts</td><td>поиск по штрихкоду</td><td>считанный штрихкод и IP-адрес</td></tr>
+<tr><td>Brevo</td><td>отправка рассылки и отслеживание открытия (только если ты подписываешься)</td><td>адрес электронной почты, время открытия письма и IP-адрес</td></tr>
+<tr><td>Hugging Face</td><td>загрузка ИИ-модели Noah, только если ты просишь</td><td>IP-адрес</td></tr>
+<tr><td>Источники курсов валют и мировой обстановки (MNB, USGS, GDACS, ECDC, NÉBIH и другие)</td><td>обновление данных</td><td>запрашивает наш сервер, а не твой телефон</td></tr>
+</table></div>
+<h2>6. Кому мы передаём данные</h2>
+<ul>
+<li><strong>Хостинг-провайдер:</strong> Hetzner Online GmbH (сервер приложения, шлюза входа, бэкенда веб-магазина и резервных копий: Германия, Нюрнберг; соглашение об обработке данных: с 27 октября 2026 года).</li>
+<li><strong>Хостинг статического сайта prepperpapa.hu:</strong> GitHub Pages (GitHub, Inc.); при открытии сайта твой IP-адрес доходит до них.</li>
+<li><strong>Google</strong> (для перечисленных выше сервисов): может обрабатывать данные за пределами ЕЭЗ, в том числе в Соединённых Штатах; гарантии содержатся в условиях Google об обработке данных.</li>
+<li><strong>Отправка рассылки:</strong> Brevo (обработчик данных, Франция; его данные в пункте 3.11).</li>
+<li><strong>Оплата, выставление счетов (покупка на сайте):</strong> Revolut, Számlázz.hu (KBOSS.hu Kft.), GoAffPro (партнёрское вознаграждение).</li>
+<li><strong>Остальные участники комнаты</strong> видят то, что ты отправляешь в комнату или что является частью твоего членства (имя, фото профиля, сообщения, SOS, местоположение).</li>
+<li><strong>Орган власти</strong>, если этого требует закон или из-за подозрения в преступлении (см. Условия использования).</li>
+<li>Данные мы не продаём, в рекламных целях не передаём и посредникам по данным не отдаём.</li>
+</ul>
+<h2>7. Безопасность</h2>
+<p>Текст сообщений в комнате шифруется твоим телефоном (AES-GCM 256; ключом управляют телефоны участников, а не сервер). Пароли мы не храним, только отпечаток. Соединение - HTTPS. Кошелёк зашифрован PIN-кодом. Диск сервера и резервные копии отдельно не зашифрованы, они защищены правами доступа; копия, хранящаяся на машине владельца, находится на зашифрованном диске. Ни одна система не безошибочна: сервер не видит текст сообщений, но видит членство, имена и время (3.2), и от потери телефона или злонамеренности участника мы защитить не можем.</p>
+<h2>8. Возраст</h2>
+<p>Использование приложения разрешено с 16 лет. При входе в комнату ты отдельным флажком заявляешь, что тебе исполнилось 16 лет или у тебя есть согласие родителей. Если тебе меньше 16 лет, попроси согласие родителя или опекуна и пользуйся приложением вместе с ним. Мы не проверяем возраст; если нам станет известно, что данные ребёнка попали к нам без согласия родителей, мы их удалим.</p>
+<h2>9. Твои права и удаление аккаунта</h2>
+<ul>
+<li><strong>Удаление аккаунта и данных:</strong> в приложении в пункте <strong>Профиль › Аккаунт › Удалить аккаунт</strong>. Удаляются аккаунт, твои членства, созданные тобой комнаты (если нет другого хозяина), твои push-идентификаторы, твои отзывы, твою подписку на рассылку и данные партнёра/разблокировки. На уже разблокированных устройствах премиум продолжает работать и после удаления, к новому устройству его привязать нельзя; документ о покупке сохраняется без имени из-за бухгалтерской обязанности. <strong>Что остаётся после удаления:</strong> жалобы, поданные на тебя, до решения модерации; жалоба, поданная тобой, с копией оспариваемого сообщения, без твоего имени и адреса электронной почты, в течение 12 месяцев со дня решения модерации; в партнёрской программе односторонний отпечаток (хеш) твоего адреса электронной почты и дата активации не более 24 месяцев со дня удаления аккаунта, для защиты от злоупотреблений и чтобы при повторной регистрации с тем же адресом электронной почты ты один раз получил обратно партнёрские вознаграждения прежнего аккаунта (гиру между участниками, то есть полученную с телефона на телефон, мы вернуть не можем); зачисления гиры в общей книге, без имени и адреса электронной почты. То же самое можно запросить и без приложения на странице <strong><a href="https://prepperpapa.hu/fiok-torles/" rel="noopener">https://prepperpapa.hu/fiok-torles/</a></strong> (с помощью 6-значного кода, отправленного на твой адрес электронной почты) или по адресу <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong>. Удалённые данные могут ещё присутствовать в резервных копиях не более примерно 12 недель, после чего исчезают.</li>
+<li><strong>Другие права</strong> (статьи 15-21 GDPR): доступ, исправление, удаление, ограничение, переносимость данных, возражение против обработки на основании законного интереса; отзыв согласия в любое время (обработка до отзыва остаётся законной). Мы отвечаем на твой запрос в течение одного месяца.</li>
+<li>Поскольку сообщения комнат мы храним в зашифрованном виде, при запросе на доступ и удаление мы можем выдать или удалить только данные, находящиеся на сервере; копии на телефонах участников - нет.</li>
+<li><strong>Жалоба:</strong> Национальное управление по защите данных и свободе информации (NAIH), 1055 Budapest, Falk Miksa utca 9-11.; почтовый адрес: 1363 Budapest, Pf.: 9.; +36 (1) 391 1400; <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>; naih.hu. Ты также можешь обратиться в суд.</li>
+</ul>
+<h2>10. Автоматизированное решение, профилирование</h2>
+<p>Нет. Noah - открытая языковая модель (Gemma 4), работающая на твоём телефоне, которая не принимает решений о тебе и не отправляет разговор. Она может ошибаться; при угрозе жизни на первом месте 112.</p>
+<h2>11. Изменения</h2>
+<p>Если информация существенно изменится, мы уведомим тебя в приложении. Действующая версия - с датой, указанной выше. Прежние версии доступны по запросу.</p>
+<a class="vissza" href="/ru/">&larr; На главную</a>
+</main>
+<footer><div>PrepperPapa &middot; Готовься, не бойся! &middot; <a href="/ru/partnyory/">Партнёрская программа</a> &middot; <a href="/ru/gira/">Гира</a></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+</body>
+</html>

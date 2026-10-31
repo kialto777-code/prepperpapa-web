@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aplicaciones PrepperPapa y Wordlight: información sobre el tratamiento de datos - PrepperPapa</title>
+<meta name="description" content="Aviso de privacidad de las aplicaciones PrepperPapa y Wordlight.">
+<link rel="canonical" href="https://prepperpapa.hu/es/app-adatvedelem/">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aplicaciones PrepperPapa y Wordlight: información sobre el tratamiento de datos">
+<meta property="og:description" content="Aviso de privacidad de las aplicaciones PrepperPapa y Wordlight.">
+<meta property="og:url" content="https://prepperpapa.hu/es/app-adatvedelem/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<meta property="og:image" content="https://prepperpapa.hu/assets/hero.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block;border-radius:8px;margin:26px auto}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  .nav{max-width:var(--max);margin:0 auto;padding:0 22px;display:flex;align-items:center;
+        gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%;margin:0}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  /* phones: the language picker needs the room (2026-10-19); the page ends with a link back home */
+  @media(max-width:520px){.nav{gap:12px;padding:0 16px}.nav a.link{display:none}}
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:38px 0 12px}
+  h3{font-size:19px;margin:28px 0 10px}
+  h4{font-size:17px;margin:22px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:30px}
+  .cimkek{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 0}
+  .cimke{background:var(--panel);border:1px solid var(--line);border-radius:999px;
+          padding:5px 13px;font-size:13px;color:var(--muted)}
+  .video{position:relative;padding-bottom:56.25%;height:0;margin:26px 0;border-radius:8px;
+          overflow:hidden}
+  .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+  .vissza{display:inline-block;margin-top:44px;color:var(--muted);text-decoration:none;font-size:15px}
+  .vissza:hover{color:var(--ink)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+</style>
+<style id="appadat">
+  .nyelvek{font-size:14px;color:var(--muted);margin:0 0 18px}.nyelvek a{margin-right:10px}
+  .nyelvek b{margin-right:10px;color:var(--ink)}
+  table.adat{border-collapse:collapse;width:100%;margin:0 0 18px;font-size:15px}
+  table.adat th,table.adat td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  table.adat th{color:var(--ink);background:rgba(255,255,255,.03)}
+  .tabla{overflow-x:auto;-webkit-overflow-scrolling:touch}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/es/privacidad.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Cookies y consentimiento", "bevezeto": "Por defecto, este sitio no instala cookies en tu dispositivo. Te pedimos el consentimiento para dos fines, que puedes aceptar o rechazar por separado. Si lo rechazas, todo sigue funcionando, y puedes cambiar tu decisión en cualquier momento en «Configuración de cookies», en el pie de página.", "p_cim": "Seguimiento de socios", "p_le": "Si llegas desde el enlace de uno de nuestros socios, guardamos en cookies el código del socio y la hora del clic (pp_ref y las cookies de GoAffPro, durante 90 días) para saber a qué socio le corresponde la comisión si compras. El código de cupón de un socio se le atribuye también sin cookies.", "s_cim": "Estadísticas de visitas", "s_le": "Estadísticas de visitas anónimas con Google Analytics 4 (cookies _ga). No las usamos para publicidad ni para crear perfiles; sin tu consentimiento ni siquiera se cargan.", "igen": "Aceptar", "nem": "Rechazar", "mind_igen": "Aceptar todo", "mind_nem": "Rechazar todo", "ment": "Guardar mi elección", "adatv": "Política de privacidad", "link": "Configuración de cookies"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<svg class="pp-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+<defs>
+<symbol id="pp-fenyszoro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 8.5 H10 V15.5 H3 Z"/><path d="M10 9.8 L15 7.5 V16.5 L10 14.2 Z"/><path d="M18 9 H21.5"/><path d="M18 12 H22.5"/><path d="M18 15 H21.5"/></g></symbol>
+<symbol id="pp-terkep" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 3.5 L3 6 V20.5 L9 18 L15 20.5 L21 18 V3.5 L15 6 Z"/><path d="M9 3.5 V18"/><path d="M15 6 V20.5"/></g></symbol>
+<symbol id="pp-kommunikacio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 21 V13"/><path d="M8 21 H16"/><circle cx="12" cy="10.5" r="1.7"/><path d="M8.6 8.6 A4.8 4.8 0 0 1 15.4 8.6"/><path d="M5.6 5.6 A9 9 0 0 1 18.4 5.6"/></g></symbol>
+<symbol id="pp-tudastar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 6.6 L3.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 L20.5 4.4 V18.6 L12 20.8"/><path d="M12 6.6 V20.8"/><path d="M6 9 H9.5"/><path d="M6 12.2 H9.5"/><path d="M14.5 9 H18"/><path d="M14.5 12.2 H18"/></g></symbol>
+<symbol id="pp-keszlet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><rect x="2.5" y="13" width="8.5" height="7.5"/><rect x="13" y="13" width="8.5" height="7.5"/><rect x="7.75" y="4" width="8.5" height="7.5"/><path d="M6.75 13 V20.5"/><path d="M17.25 13 V20.5"/><path d="M12 4 V11.5"/></g></symbol>
+<symbol id="pp-vissza" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M20 12 H4.5"/><path d="M10.5 5.5 L4 12 L10.5 18.5"/></g></symbol>
+<symbol id="pp-tobb" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="19" cy="12" r="1.9"/></g></symbol>
+</defs>
+</svg>
+<header><nav class="nav fej2">
+  <a class="brand" href="/es/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/es/">Inicio</a> <a class="link" href="/es/#videos">Vídeos</a> <a class="link" href="/es/articulos.html">Base de conocimientos</a> <a class="link" href="/es/calculadoras/">Calculadoras</a> <a class="link" href="/es/aplicaciones/">App</a> <a class="link" href="/es/gira/">Gíra</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Foro comunitario</a> <a class="link" href="/es/#contacto">Contacto</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Suscribirme</a>
+  <button class="hamb" type="button" aria-label="Menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main>
+<p class="nyelvek"><a href="/app-adatvedelem/" hreflang="hu">Magyar</a> <a href="/en/app-adatvedelem/" hreflang="en">English</a> <a href="/de/app-adatvedelem/" hreflang="de">Deutsch</a> <b>Español</b> <a href="/pl/app-adatvedelem/" hreflang="pl">Polski</a> <a href="/ro/app-adatvedelem/" hreflang="ro">Română</a> <a href="/ru/app-adatvedelem/" hreflang="ru">Русский</a> <a href="/uk/app-adatvedelem/" hreflang="uk">Українська</a></p>
+<h1>Aplicaciones PrepperPapa y Wordlight: información sobre el tratamiento de datos</h1>
+<p>Esta información se refiere a la aplicación <strong>PrepperPapa</strong> y a la aplicación <strong>Wordlight</strong> (el lector de la Biblia de PrepperPapa, una aplicación independiente). Donde las dos aplicaciones difieren, lo indicamos por separado. La información del sitio web prepperpapa.hu es un documento aparte.</p>
+<p><strong>En vigor desde: 31 de octubre de 2026 (fecha de publicación).</strong></p>
+<h2>1. En breve</h2>
+<ul>
+<li>Hemos diseñado la app PrepperPapa para su uso sin conexión: tus existencias, tus notas, tus puntos del mapa, tu Tarjeta de emergencia, tu cartera y tu conversación con Noah se quedan en tu teléfono. Wordlight es un lector de la Biblia: el texto está en tu teléfono y no necesitas una cuenta para leer.</li>
+<li>Los datos llegan a nuestro servidor cuando <strong>creas una cuenta o inicias sesión</strong>, <strong>usas salas</strong>, <strong>envías un SOS o tu ubicación a tus salas</strong>, <strong>envías un comentario o una denuncia</strong>, <strong>canjeas el premium</strong>, <strong>usas el programa de recomendación</strong>, <strong>recibes la gíra de lectura diaria</strong> o <strong>te suscribes al boletín</strong>. En Wordlight, iniciar sesión no es obligatorio: solo hace falta para canjear el premium y para el boletín. La lectura en Wordlight no da actualmente ninguna gíra, y Wordlight no envía ningún dato sobre ello.</li>
+<li>Tu teléfono cifra el texto de los mensajes de las salas antes de enviarlo. El servidor no ve el texto. Sin embargo, sí ve quién es miembro de qué sala, con qué nombre, cuándo escribió y si hubo una señal de SOS.</li>
+<li>La app no incluye identificador publicitario, rastreadores, análisis de comportamiento, Google Analytics ni servicio de notificación de errores. No vendemos datos y no elaboramos perfiles sobre ti. El único seguimiento es el seguimiento de apertura del boletín, y solo si te suscribes por separado (3.11).</li>
+<li>Puedes eliminar tu cuenta y los datos asociados: véase el apartado 9.</li>
+</ul>
+<h2>2. Quién trata tus datos</h2>
+<p>Responsable del tratamiento: <strong>Nagy János László, empresario individual</strong> (domicilio: 3128 Vizslás, József Attila út 15.; número de registro: 63017434; número de identificación fiscal: 92514027-1-32; inicio de la actividad: 2026-10-28).<br>
+Contacto para cuestiones de protección de datos: <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong>.<br>
+El servidor lo opera un proveedor de alojamiento (véase el apartado 6); el responsable del tratamiento somos nosotros.</p>
+<h2>3. Qué tratamos, para qué, con qué base jurídica y durante cuánto tiempo</h2>
+<p>Las bases jurídicas se fundamentan en el artículo 6, apartado 1, del RGPD (Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo). La «ejecución del contrato» significa aquí que, sin el dato, no podemos prestar la función solicitada.</p>
+<h3>3.1. Cuenta e inicio de sesión</h3>
+<ul>
+<li><strong>Datos:</strong> dirección de correo electrónico; si te registras con contraseña, la huella unidireccional (scrypt) de la contraseña, nunca la contraseña misma; si inicias sesión con una cuenta de Google, la dirección de correo electrónico verificada por Google; la fecha de creación de la cuenta y del último inicio de sesión; el estado de la cuenta (activa, pendiente, revocada); el código de confirmación recibido por correo electrónico (durante un breve tiempo, en la memoria del servidor o como huella).</li>
+<li><strong>Versión de prueba:</strong> al iniciarse, la versión de prueba envía al servidor tu dirección de correo electrónico y el identificador de tu dispositivo, y el servidor devuelve un permiso firmado y con fecha de caducidad; el servidor no lo almacena.</li>
+<li><strong>Finalidad:</strong> iniciar sesión, vincular a tu cuenta las salas, el premium, el programa de recomendación, la gíra de lectura diaria y el boletín, y protección contra abusos. PrepperPapa solicita una cuenta para estas funciones; en Wordlight iniciar sesión no es obligatorio (es la misma cuenta, con correo electrónico y un código de seis dígitos, sin contraseña).</li>
+<li><strong>Base jurídica:</strong> ejecución del contrato (artículo 6, apartado 1, letra b)); la limitación de los intentos de inicio de sesión es interés legítimo (artículo 6, apartado 1, letra f)).</li>
+<li><strong>Durante cuánto tiempo:</strong> hasta que elimines la cuenta. Tras la eliminación, los datos permanecen en las copias de seguridad como máximo unas 12 semanas (en el servidor hay 14 copias diarias y 8 semanales, y en otro equipo en Hungría una copia de 30 diarias y 12 semanales; la copia del foro es de 7 días, en el mismo servidor).</li>
+<li><strong>Observación:</strong> enviamos el código de verificación desde una cuenta de Gmail (Google como proveedor de correo electrónico).</li>
+</ul>
+<h3>3.2. Salas (mensajería de grupo)</h3>
+<ul>
+<li><strong>Datos que el servidor ve en claro:</strong> nombre e idioma de la sala; identificador y nombre visible de los miembros; imagen de perfil; quién solicitó entrar y cuándo, la presentación escrita en la solicitud, y que aceptaste el reglamento y declaraste tener 16 años (un único valor, con la fecha de la solicitud); invitaciones (con caducidad); remitente, hora, marca de urgencia, hora de edición y de eliminación de los mensajes; reacciones, mensajes guardados, indicadores de lectura; el identificador del miembro vinculado a la cuenta; el registro de miembros expulsados (correo electrónico, nombre, fecha y hora). Estos datos <strong>no están cifrados</strong>.</li>
+<li><strong>Datos que el servidor, en el caso normal, recibe solo cifrados:</strong> el texto de los mensajes (AES-GCM 256, con la clave de la sala; las claves las gestionan los teléfonos de los miembros) y los mensajes secretos entre miembros. El texto de algunos mensajes más antiguos o enviados por el sistema está almacenado en el servidor sin cifrar. Las imágenes adjuntas a los mensajes (hasta 500 kB) las cifra la app en el teléfono en el caso normal, pero el servidor también acepta imágenes sin cifrar, por lo que el cifrado es una característica de la app, no una garantía del servidor. <strong>La imagen de la sala y la imagen de perfil de los miembros se almacenan sin cifrar</strong> en la base de datos.</li>
+<li><strong>Finalidad:</strong> el funcionamiento de la sala.</li>
+<li><strong>Base jurídica:</strong> ejecución del contrato. En la solicitud de entrada, tras aceptar el reglamento, el anfitrión de la sala y los miembros ven lo que has indicado.</li>
+<li><strong>Durante cuánto tiempo:</strong> mientras exista la sala o tu cuenta; al eliminar la sala, también se eliminan los datos de la sala. El registro de eventos de la sala se conserva 90 días. En las copias de seguridad, unas 12 semanas.</li>
+<li><strong>Importante:</strong> lo que escribes en una sala lo ven los miembros de la sala, que también pueden guardarlo o transmitirlo. Nuestra responsabilidad no se extiende a ellos. El cifrado protege el mensaje frente al servidor, no frente a los miembros. El anfitrión que crea la sala es responsable del contenido que se comparte en ella: él decide la entrada, solo él puede expulsar a un miembro y solo él puede eliminar el mensaje de otro; el anfitrión puede eliminar la sala en cualquier momento, lo que suprime de forma irrevocable los mensajes de todos los miembros. Si sales o te expulsan, el servidor deja de entregarte más mensajes, pero los que ya tienes en tu dispositivo siguen siendo legibles. Los datos de ubicación o de existencias compartidos en una sala son sensibles; eres responsable de tu propia seguridad. No revisamos previamente el contenido de las salas; actuamos tras una denuncia (véanse las Normas de la comunidad y las Condiciones de uso).</li>
+</ul>
+<h3>3.3. SOS, detección de caídas, «Enviar mi ubicación», Tarjeta de emergencia</h3>
+<ul>
+<li><strong>Datos:</strong> cuando envías un SOS (manualmente o tras la detección de caídas, si está activada), tu ubicación exacta va a tus salas en un mensaje cifrado por tu teléfono. Si lo marcas expresamente, también tu Tarjeta de emergencia (grupo sanguíneo, alergia, medicamento, enfermedad, contacto). El botón «Enviar mi ubicación» funciona igual, pero solo envía la ubicación.</li>
+<li><strong>Qué se ve sin cifrar:</strong> que hubo una señal de SOS, el nombre del remitente, el nombre de la sala y la hora. Esto aparece también en la notificación (véase 3.4).</li>
+<li><strong>Datos de salud:</strong> la Tarjeta de emergencia es un dato de salud (artículo 9 del RGPD). Por defecto está <strong>desactivada</strong>, solo se envía con tu marcado expreso, y puedes decidir de nuevo antes de cada SOS. La base jurídica es tu consentimiento (artículo 9, apartado 2, letra a)); puedes retirarlo desactivándola.</li>
+<li><strong>Base jurídica (ubicación):</strong> tu consentimiento (artículo 6, apartado 1, letra a)), que das al permitir la geolocalización y al enviar el SOS.</li>
+<li><strong>Durante cuánto tiempo:</strong> permanece entre los mensajes de la sala hasta que tú o el anfitrión de la sala eliminéis el mensaje, o hasta que se extinga la sala o la cuenta. En las copias de seguridad, unas 12 semanas.</li>
+<li><strong>Lo que debes saber:</strong> el SOS <strong>no es una llamada de emergencia</strong>. No avisa a los servicios de ambulancia, a la policía ni a los bomberos, y solo los miembros de tus salas reciben la notificación. En caso de peligro de muerte, llama al 112. No seguimos tu ubicación de forma continua en segundo plano; la app lee la ubicación solo cuando tú lo pides o cuando se inicia un SOS.</li>
+</ul>
+<h3>3.4. Notificaciones (push)</h3>
+<ul>
+<li><strong>Datos:</strong> el identificador de notificaciones de tu dispositivo (token de Firebase Cloud Messaging o, en el navegador, el punto final y las claves de push web), el idioma del dispositivo y el número local de emergencias (para que la notificación de SOS avise en el idioma y con el número adecuados), la sala a la que pertenece; silenciado.</li>
+<li><strong>Contenido de la notificación:</strong> el nombre del remitente, el nombre de la sala, la hora y un texto breve sin contenido («X escribió»; en caso de SOS, el texto del SOS). El texto del mensaje no pasa por este canal. La notificación pasa por los servidores de Google (Firebase Cloud Messaging).</li>
+<li><strong>Base jurídica:</strong> ejecución del contrato; el permiso de notificaciones lo concedes y lo retiras en los ajustes de tu teléfono.</li>
+<li><strong>Durante cuánto tiempo:</strong> el identificador se elimina si sales, abandonas la sala, eliminas la cuenta o el proveedor lo marca como no válido.</li>
+</ul>
+<h3>3.5. Comentarios y denuncia de una respuesta de Noah</h3>
+<ul>
+<li><strong>Datos:</strong> el texto escrito, la imagen (si la adjuntas), el tipo y el módulo; la versión, la plataforma, el dispositivo, el navegador/UA, el tamaño de pantalla, el idioma, la vista actual y los últimos 20 errores como máximo; el identificador propio de dispositivo de la app; tu correo electrónico de inicio de sesión (lo añade el servidor). En la denuncia de una respuesta de Noah, tu pregunta y la respuesta de Noah. No enviamos nada más.</li>
+<li><strong>Finalidad:</strong> corrección de errores, corrección del contenido denunciado.</li>
+<li><strong>Base jurídica:</strong> tu solicitud (ejecución del contrato) e interés legítimo en mejorar el producto (artículo 6, apartado 1, letra f)).</li>
+<li><strong>Durante cuánto tiempo:</strong> 12 meses tras el cierre del error.</li>
+<li>Por lo demás, las conversaciones de Noah se ejecutan en tu teléfono y no llegan a nuestro servidor.</li>
+</ul>
+<h3>3.6. Registro de uso (anónimo)</h3>
+<ul>
+<li><strong>Datos:</strong> qué pantalla, qué botón, qué error, qué versión, y si es app nativa o navegador. Con un identificador de sesión aleatorio generado al iniciar la app, que solo existe en la memoria.</li>
+<li><strong>No contiene:</strong> correo electrónico, identificador de dispositivo, dirección IP, nombre. No se puede vincular a una persona.</li>
+<li><strong>Base jurídica:</strong> interés legítimo (artículo 6, apartado 1, letra f)): comprender el uso. Como no está vinculado a una persona, la serie de datos almacenada no es un dato personal. En la dirección de la app el servidor web no lleva registro de accesos, por lo que no hay con qué vincularlo (véase 3.9).</li>
+<li><strong>Durante cuánto tiempo:</strong> 90 días.</li>
+</ul>
+<h3>3.7. Premium y compra</h3>
+<ul>
+<li><strong>Compra en Google Play:</strong> la señal de compra (token) que da Google Play, el producto, el identificador del pedido, el identificador del dispositivo, el correo electrónico de inicio de sesión, los módulos desbloqueados. De este token nuestro servidor solo conserva la huella. El pago lo gestiona Google; nosotros no vemos los datos de la tarjeta bancaria.</li>
+<li><strong>Código premium (comprado en el sitio web):</strong> el código, el correo electrónico y el identificador del dispositivo; un código puede canjearse en 2 dispositivos como máximo (o los que corresponda según el producto).</li>
+<li><strong>Finalidad:</strong> desbloquear el premium e impedir el abuso (compartir códigos).</li>
+<li><strong>Base jurídica:</strong> ejecución del contrato; para los justificantes contables, la obligación de conservación prevista en la legislación fiscal y contable aplicable (cumplimiento de una obligación legal, artículo 6, apartado 1, letra c)).</li>
+<li><strong>Durante cuánto tiempo:</strong> mientras el premium sea válido, y después, hasta el plazo legal de conservación, el dato del justificante; si eliminas tu cuenta, el premium sigue funcionando en los dispositivos ya desbloqueados, pero no se puede vincular a un dispositivo nuevo; tras la eliminación, el dato justificativo de la compra (identificador del pedido, lista de dispositivos desbloqueados) se conserva sin nombre ni correo electrónico, bajo un marcador aleatorio.</li>
+<li>Los detalles de la compra en el sitio web (nombre, dirección, país, declaración de desistimiento, factura) figuran en la información sobre el tratamiento de datos de la página de compra.</li>
+</ul>
+<h3>3.8. Programa de recomendación y Gíra</h3>
+<ul>
+<li><strong>Datos:</strong> el identificador de la invitación (código de recomendación); el hecho y el día del canje del código de recomendación; el resumen (hash) del correo electrónico (no la dirección misma); el identificador del dispositivo; el identificador de tu cartera de Gíra; la recompensa recibida (y la bonificación premium tras la espera de 14 días). En la instalación mediante un enlace de recomendación, Google Play entrega el código de recomendación a la app en el momento de la instalación (install referrer). Las transacciones de Gíra son registros firmados que circulan entre los mensajes de las salas. <strong>Recompensa de lectura diaria:</strong> si has alcanzado tu objetivo diario de lectura, para el abono la app envía al servidor el día, los segundos dedicados ese día a la lectura y tu objetivo diario, tu identificador de Gíra (la huella de la clave pública), el identificador de tu dispositivo y tu correo electrónico de inicio de sesión. El servidor cuenta como máximo un día por cuenta, por dispositivo y por identificador de Gíra en cada día natural, y devuelve un abono firmado.</li>
+<li><strong>Qué ve quien recomienda:</strong> no ve el nombre, el correo electrónico ni los identificadores del invitado, solo el hecho y el día del abono.</li>
+<li><strong>Finalidad:</strong> abonar la recompensa y excluir el abuso (autorrecomendación, solicitudes múltiples); tras la eliminación de la cuenta, la huella conservada sirve para que, si te registras de nuevo con el mismo correo electrónico, recuperes una vez las recompensas de recomendación de tu cuenta anterior, y para que la recompensa de recomendación y el saldo inicial no se concedan por segunda vez.</li>
+<li><strong>Base jurídica:</strong> ejecución del contrato (al entrar en el programa); interés legítimo frente al abuso.</li>
+<li><strong>Durante cuánto tiempo:</strong> mientras exista el programa, y después solo durante el tiempo exigido por la ley; tras la eliminación de la cuenta, la huella con clave del correo electrónico, la fecha de canje y la fecha del abono del saldo inicial, como máximo 24 meses (el identificador del dispositivo y de la cartera no se conservan); el código de recomendación canjeado por la cuenta eliminada y sus indicadores de recompensa permanecen sin nombre en el registro de quien te recomendó, porque de ahí proviene su límite de cantidad y sus recompensas; los registros firmados de las recompensas permanecen entre los mensajes de las salas hasta que se elimine el mensaje o la sala.</li>
+<li><strong>Datos del abono diario:</strong> vinculados a la cuenta, permanecen en el servidor el último día computado y el número de días computados, el identificador del dispositivo y el identificador de Gíra, así como el abono firmado, mientras exista tu cuenta; al eliminar la cuenta se eliminan (en las copias de seguridad, como máximo unas 12 semanas). La gíra solo la almacena la cartera de la aplicación PrepperPapa. La lectura en Wordlight no da actualmente ninguna gíra, y Wordlight no envía ningún dato sobre ello.</li>
+<li>La gíra no es dinero y no se puede canjear por forints. El nombre «minería de gíras» es solo una denominación lúdica: la gíra la recibes por leer, no la generamos con trabajo informático.</li>
+</ul>
+<h3>3.9. Registro del servidor</h3>
+<ul>
+<li>En la dirección de la app (app.prepperpapa.hu) el servidor web no lleva registro de accesos. El registro de ejecución del servicio (eventos, errores, entrega de notificaciones) va al registro del sistema del servidor, con fines de seguridad y de depuración de errores; según la medición, en él los servicios (sala, compra, recomendación, inicio de sesión) no registran la dirección IP del cliente. Base jurídica: interés legítimo (artículo 6, apartado 1, letra f)). Durante cuánto tiempo: lo conservamos como máximo 30 días. Al enviar el código de inicio de sesión, la puerta de acceso registra también el correo electrónico, que igualmente conservamos como máximo 30 días. <strong>Excepción:</strong> al iniciar sesión con la cuenta de revisión de la App Store, la puerta de acceso registra el correo electrónico, la dirección IP y el identificador del navegador (User-Agent), y envía un aviso al operador.</li>
+<li><strong>Comprobación de actualizaciones y registro de bloqueo/instalación (en el APK de prueba, en PrepperPapa y en Wordlight; en la versión de la tienda no hay actualización automática):</strong> al comprobar las actualizaciones, la app consulta nuestro servidor. Si la versión de prueba está bloqueada o la instalación falla, la app envía una entrada de registro anónima de 160 caracteres como máximo: la versión propia de la app y la obligatoria, la versión de Android y de WebView, el fabricante y el modelo del dispositivo, en caso de error de instalación los códigos de estado del sistema, el tiempo transcurrido desde entonces y el mensaje de error del sistema. No contiene correo electrónico, nombre ni identificador de dispositivo; no almacenamos la dirección IP (solo en la memoria, para limitar las solicitudes). Base jurídica: interés legítimo (artículo 6, apartado 1, letra f)), depuración de errores. Durante cuánto tiempo: 90 días.</li>
+</ul>
+<h3>3.10. Lo que se queda en tu teléfono</h3>
+<p>Las existencias, las notas, los puntos del mapa y el mapa sin conexión, los ajustes, la Tarjeta de emergencia, la Cartera de tokens y la cartera de documentos (cifradas con una clave derivada del PIN), las conversaciones de Noah y el modelo de IA descargado están en tu teléfono. Nuestros servidores no tienen acceso a ellos si tú no los envías. Si pierdes el teléfono, no podemos restablecer el PIN ni el código de recuperación.</p>
+<h3>3.11. Boletín (solo si lo solicitas)</h3>
+<ul>
+<li><strong>Datos:</strong> el correo electrónico de tu cuenta con sesión iniciada; el texto de consentimiento tal como lo viste en la app (con su idioma); que la solicitud vino de la app; la fecha de la suscripción y una huella corta de tu dirección IP en ese momento (SHA-256, 16 dígitos hexadecimales, para acreditar el consentimiento; no es la dirección IP misma, pero como no usamos sal la consideramos un dato personal); el hecho, la fecha de la confirmación y la huella de IP equivalente. La solicitud de suscripción no confirmada se elimina a los 7 días. El sistema de correo utilizado para el boletín registra, a partir de la hora de apertura y de la dirección IP, si has abierto el correo.</li>
+<li><strong>Finalidad:</strong> enviar noticias, consejos y ofertas de PrepperPapa, como máximo unas pocas veces al mes.</li>
+<li><strong>Base jurídica:</strong> tu consentimiento (artículo 6, apartado 1, letra a) del RGPD). La casilla <strong>nunca está premarcada</strong>; la suscripción surte efecto con doble confirmación (enviamos un correo de confirmación y solo quedas suscrito después de pulsar el botón del correo). El correo electrónico de la cuenta no es, por sí solo, un consentimiento.</li>
+<li><strong>Seguimiento de apertura:</strong> el boletín contiene una imagen invisible; cuando se carga, el servicio de envío registra la apertura (hora, dirección IP). Esto no se puede desactivar en el correo; si no lo quieres, no te suscribas o date de baja.</li>
+<li><strong>Retirada:</strong> en cualquier momento, desactivando la casilla en la app, con el enlace de baja al pie de cada correo, o en la dirección <a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a>. En ese caso eliminamos tu dirección de la lista del boletín.</li>
+<li><strong>Durante cuánto tiempo:</strong> hasta la retirada. Al eliminar tu cuenta también se te da de baja del boletín: se eliminan tanto la suscripción confirmada como la pendiente, sin correo de confirmación.</li>
+<li><strong>Encargado del tratamiento:</strong> Brevo (Brevo, société par actions simplifiée, número de registro mercantil de París: 498 019 298, domicilio: 9-17, rue Salneuve, 75017 París, Francia). Puede transferir los datos también fuera del EEE; las garantías figuran en el contrato de encargo del tratamiento de Brevo.</li>
+</ul>
+<h3>3.12. Wordlight: qué es diferente</h3>
+<ul>
+<li>Wordlight es el lector de la Biblia de PrepperPapa, una aplicación independiente. El texto de la Biblia está en tu teléfono; para leer no se necesita cuenta, y el texto leído no se envía al servidor.</li>
+<li>Los datos que llegan al servidor son los mismos que en PrepperPapa, pero solo si usas la función: inicio de sesión (3.1), canje del código premium de la Biblia (3.7), boletín (3.11), comentarios (3.5). El registro de uso anónimo (3.6) también funciona en Wordlight.</li>
+<li>El registro de actualizaciones de la versión de prueba lo describe el apartado 3.9; también se aplica a Wordlight.</li>
+<li>En Wordlight no hay cartera de Gíra: la gíra vive en la aplicación PrepperPapa (3.8). La lectura en Wordlight no da actualmente ninguna gíra, y Wordlight no envía ningún dato sobre ello.</li>
+</ul>
+<h2>4. Accesos en la app</h2>
+<p>Los permisos del teléfono los concedes tú y puedes retirarlos en cualquier momento en los ajustes del teléfono: <strong>ubicación</strong> (mapa, brújula, puesta de sol, SOS, Enviar mi ubicación), <strong>cámara</strong> (código QR, lectura de señales luminosas; no se hace ninguna grabación ni se envía a ningún sitio), <strong>micrófono</strong> (señales que llegan por sonido, por ejemplo SSTV, morse; no se hace ninguna grabación de audio ni se envía a ningún sitio), <strong>notificaciones</strong>, <strong>Bluetooth</strong> (dispositivos cercanos), <strong>sensores de movimiento y de presión atmosférica</strong> (detección de caídas, aviso de tormenta; los valores medidos permanecen en el dispositivo), <strong>huella dactilar/rostro</strong> (desbloqueo de la cartera con el propio sistema del teléfono). De estos, aparte de la ubicación y el SOS, nada va a nuestro servidor.</p>
+<h2>5. Servicios externos con los que se conecta la app</h2>
+<p>Cuando usas estas funciones, tu teléfono se conecta directamente con el proveedor y tu dirección IP llega hasta él. A ellos se aplica su propia información sobre el tratamiento de datos.</p>
+<div class="tabla"><table class="adat">
+<tr><th>Proveedor</th><th>Para qué</th><th>Qué ve</th></tr>
+<tr><td>Google (Firebase Cloud Messaging, Google Play, inicio de sesión con Google, Gmail)</td><td>notificaciones, compra, inicio de sesión, correo con el código de verificación</td><td>identificador de notificaciones; el contenido del push (nombre, sala, hora); datos de la compra; correo electrónico</td></tr>
+<tr><td>Proveedores de mapas: OpenStreetMap, OpenTopoMap, Esri (ArcGIS), EFFIS (Copernicus)</td><td>teselas del mapa, capa de riesgo de incendio</td><td>la parte del mapa mostrada y la dirección IP</td></tr>
+<tr><td>Open Food Facts</td><td>búsqueda por código de barras</td><td>el código de barras escaneado y la dirección IP</td></tr>
+<tr><td>Brevo</td><td>envío del boletín y seguimiento de apertura (solo si te suscribes)</td><td>correo electrónico, hora y dirección IP de la apertura del correo</td></tr>
+<tr><td>Hugging Face</td><td>descarga del modelo de IA de Noah, solo si lo solicitas</td><td>dirección IP</td></tr>
+<tr><td>Fuentes de tipos de cambio y de la situación mundial (MNB, USGS, GDACS, ECDC, NÉBIH y similares)</td><td>actualización de datos</td><td>las consulta nuestro servidor, no tu teléfono</td></tr>
+</table></div>
+<h2>6. A quién transmitimos los datos</h2>
+<ul>
+<li><strong>Proveedor de alojamiento:</strong> Hetzner Online GmbH (servidor de la app, de la puerta de acceso, del back-end de la tienda web y de las copias de seguridad: Alemania, Núremberg; acuerdo de encargo del tratamiento: desde el 27 de octubre de 2026).</li>
+<li><strong>Alojamiento de la página estática prepperpapa.hu:</strong> GitHub Pages (GitHub, Inc.); al abrir la página, tu dirección IP llega hasta ellos.</li>
+<li><strong>Google</strong> (para los servicios mencionados): puede tratar datos fuera del EEE, entre otros lugares también en los Estados Unidos; las garantías figuran en las condiciones de tratamiento de datos de Google.</li>
+<li><strong>Envío del boletín:</strong> Brevo (encargado del tratamiento, Francia; sus datos en el apartado 3.11).</li>
+<li><strong>Pago, facturación (compra en el sitio web):</strong> Revolut, Számlázz.hu (KBOSS.hu Kft.), GoAffPro (comisión de recomendación).</li>
+<li><strong>Los demás miembros de la sala</strong> ven lo que envías a la sala o lo que forma parte de tu pertenencia (nombre, imagen de perfil, mensajes, SOS, ubicación).</li>
+<li><strong>Autoridad</strong>, si una ley nos obliga a ello, o por sospecha de un delito (véanse las Condiciones de uso).</li>
+<li>No vendemos datos, no los cedemos con fines publicitarios y no los entregamos a intermediarios de datos.</li>
+</ul>
+<h2>7. Seguridad</h2>
+<p>Tu teléfono cifra el texto de los mensajes de la sala (AES-GCM 256; las claves las gestionan los teléfonos de los miembros, no el servidor). No almacenamos las contraseñas, solo una huella. La conexión es HTTPS. La cartera está cifrada con PIN. El disco del servidor y las copias de seguridad no están cifrados por separado, están protegidos mediante permisos de acceso; la copia almacenada en el equipo del propietario está en un disco cifrado. Ningún sistema es infalible: el servidor no ve el texto de los mensajes, pero sí ve la pertenencia, los nombres y las horas (3.2), y no podemos protegerte frente a la pérdida del teléfono ni frente a la mala fe de un miembro.</p>
+<h2>8. Edad</h2>
+<p>El uso de la app está permitido a partir de los 16 años. Al entrar en una sala declaras, con una casilla de verificación aparte, que has cumplido 16 años o que cuentas con el consentimiento de tus padres. Si tienes menos de 16 años, pide el consentimiento de tu padre, madre o tutor, y usa la app junto con él o ella. No comprobamos la edad; si llegamos a saber que los datos de un menor han llegado a nosotros sin consentimiento de los padres, los eliminamos.</p>
+<h2>9. Tus derechos y la eliminación de la cuenta</h2>
+<ul>
+<li><strong>Eliminación de la cuenta y de los datos:</strong> en la app, en <strong>Perfil › Cuenta › Eliminar cuenta</strong>. Elimina la cuenta, tus membresías, las salas creadas por ti (si no hay otro anfitrión), tus identificadores push, tus comentarios, tu suscripción al boletín y los datos de recomendación/desbloqueo. En los dispositivos ya desbloqueados, el premium sigue funcionando tras la eliminación, pero no se puede vincular a un dispositivo nuevo; el justificante de la compra se conserva sin nombre por obligación contable. <strong>Lo que permanece tras la eliminación:</strong> las denuncias realizadas sobre ti hasta la decisión de moderación; la denuncia que hayas hecho tú, con copia del mensaje denunciado, sin tu nombre ni tu correo electrónico, durante 12 meses desde la decisión de moderación; en el programa de recomendación, la huella unidireccional (hash) de tu correo electrónico y la fecha del canje, como máximo 24 meses desde la eliminación de la cuenta, para la protección contra el abuso y para que, si te registras de nuevo con el mismo correo electrónico, recuperes una vez las recompensas de recomendación de tu cuenta anterior (la gíra entre miembros, es decir, la que recibiste de teléfono a teléfono, no podemos devolverla); los abonos de Gíra en el libro común, sin nombre ni correo electrónico. Puedes solicitar lo mismo sin la app en la página <strong><a href="https://prepperpapa.hu/fiok-torles/" rel="noopener">https://prepperpapa.hu/fiok-torles/</a></strong> (con el código de 6 dígitos enviado a tu correo electrónico) o en la dirección <strong><a href="mailto:prepperpapa@gmail.com">prepperpapa@gmail.com</a></strong>. Los datos eliminados pueden seguir figurando en las copias de seguridad durante unas 12 semanas como máximo; después desaparecen.</li>
+<li><strong>Otros derechos</strong> (artículos 15 a 21 del RGPD): acceso, rectificación, supresión, limitación, portabilidad, oposición al tratamiento basado en el interés legítimo; retirada de tu consentimiento en cualquier momento (el tratamiento anterior a la retirada sigue siendo lícito). Respondemos a tu solicitud en el plazo de un mes.</li>
+<li>Como almacenamos cifrados los mensajes de las salas, en las solicitudes de acceso y de supresión solo podemos entregar o eliminar los datos que están en el servidor; no la copia que está en los teléfonos de los miembros.</li>
+<li><strong>Reclamación:</strong> Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH, Autoridad Nacional de Protección de Datos y Libertad de Información de Hungría), 1055 Budapest, Falk Miksa utca 9-11.; dirección postal: 1363 Budapest, Pf.: 9.; +36 (1) 391 1400; <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a>; naih.hu. También puedes acudir a los tribunales.</li>
+</ul>
+<h2>10. Decisiones automatizadas, elaboración de perfiles</h2>
+<p>No hay. Noah es un modelo de lenguaje abierto (Gemma 4) que se ejecuta en tu teléfono, que no toma decisiones sobre ti y que no envía la conversación. Puede equivocarse; en peligro de muerte, el 112 es lo primero.</p>
+<h2>11. Cambios</h2>
+<p>Si la información cambia de forma sustancial, te avisaremos en la app. La versión en vigor es la de la fecha indicada arriba. Las versiones anteriores están disponibles previa solicitud.</p>
+<a class="vissza" href="/es/">&larr; Volver a la página principal</a>
+</main>
+<footer><div>PrepperPapa &middot; ¡Prepárate, no temas! &middot; <a href="/es/programa-de-socios/">Programa de socios</a> &middot; <a href="/es/gira/">Gíra</a></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+</body>
+</html>
