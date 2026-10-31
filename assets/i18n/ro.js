@@ -15,6 +15,21 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
+  "Bejelentkezve:": "Autentificat:",
+  "Bejelentkeztél.": "Autentificat.",
+  "Hírlevél": "Buletin informativ",
+  "Fiók és hírlevél": "Cont și buletin informativ",
+  "Nem kötelező. Ugyanaz a fiók, mint a PrepperPapában: e-mail cím és egy 6 jegyű kód, jelszó nem kell. A prémium kód beváltásához és a hírlevélhez kell.": "Opțional. Același cont ca în PrepperPapa: adresa de e-mail și un cod din 6 cifre, fără parolă. Este necesar pentru a folosi un cod premium și pentru buletinul informativ.",
+  "Bejelölés után megerősítő e-mailt küldünk; a feliratkozás a levélben lévő gombbal lép életbe. Leiratkozni a pipa kivételével vagy bármelyik hírlevél leiratkozás linkjével lehet.": "După bifare îți trimitem un e-mail de confirmare; abonarea intră în vigoare cu butonul din acel e-mail. Te poți dezabona debifând căsuța sau cu linkul de dezabonare din orice buletin.",
+  "Feliratkozva.": "Abonat.",
+  "Megerősítésre vár: küldtünk egy levelet ide:": "Așteaptă confirmarea: am trimis un e-mail la",
+  "A feliratkozás a levélben lévő gombbal lép életbe (nézd meg a Spam mappát is).": "Abonarea intră în vigoare cu butonul din e-mail (verifică și dosarul Spam).",
+  "A hírlevélhez be kell lépned; a pipa bejelölésekor felajánljuk a belépést.": "Pentru buletinul informativ trebuie să te autentifici; când bifezi căsuța îți oferim autentificarea.",
+  "Küldés folyamatban…": "Se trimite…",
+  "Leiratkoztál a hírlevélről.": "Te-ai dezabonat de la buletinul informativ.",
+  "Elküldtük a megerősítő levelet.": "Am trimis e-mailul de confirmare.",
+  "Ma már több megerősítő levelet nem küldhetünk erre a címre. Próbáld újra holnap.": "Astăzi nu mai putem trimite e-mailuri de confirmare la această adresă. Încearcă din nou mâine.",
   // ===== 2026-10-28 SOS sharing per room (TG 30631) =====
   "Vészhelyzet ebben a szobában": "Urgență în această cameră",
   "Szobánként döntöd el, mit kapnak meg az SOS-odból. Ha az SOS-t kikapcsolod, ebbe a szobába semmi nem megy; a hely és a vércsoport csak az SOS-üzenetben jelenik meg.": "Hotărăști pentru fiecare cameră ce primește din SOS-ul tău. Dacă oprești SOS-ul, în această cameră nu ajunge nimic; locația și grupa sanguină apar doar în mesajul SOS.",
@@ -4818,7 +4833,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Új terv": "Plan nou",
   "Terveim": "Planurile mele",
   "Vissza a terveimhez": "Înapoi la planurile mele",
-  // Biblia premium: napi ido az Igevel (2026-10-30, kartya 38877050)
+  // napi ido az Igevel, mindenkinek (2026-10-30, kartya 38877050; nem premium: TG 31829, 2026-10-31)
   "Napi idő az Igével": "Timp zilnic cu Cuvântul",
   "Ma eddig {n} perc az Igével.": "Azi până acum: {n} min cu Cuvântul.",
   "A mai cél teljesült.": "Ținta de azi este atinsă.",
@@ -4828,17 +4843,18 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Dacă ți-a făcut bine, mai rămâi puțin: mâine încearcă {m} minute.",
   "Holnaptól {m} perc": "De mâine {m} min",
   "Mi a gíra?": "Ce este gira?",
-  "Az ébresztő felolvasása nem számít bele a heti gírába: még {m} perc.": "Lectura alarmei de dimineață nu contează pentru gira săptămânală: mai sunt {m} min.",
   "Ezen a héten kimaradt egy nap, jövő hétfőtől újra gyűjtheted a heti gírát.": "Săptămâna aceasta a lipsit o zi; de lunea viitoare poți aduna din nou gira săptămânală.",
   "Megvan a hét mind a 7 napja: ez egy egész gíra.": "Toate cele 7 zile ale săptămânii sunt îndeplinite: asta înseamnă o gira întreagă.",
   "Megvan a heti gíra: +1 gíra a tárcádba.": "Gira săptămânală e a ta: +1 gira în portofel.",
   "Ma megvan a heti gíra {n}/7 része.": "Azi ai {n}/7 din gira săptămânală.",
   "A heti gírát a PrepperPapa alkalmazás adja:": "Gira săptămânală o dă aplicația PrepperPapa:",
+  "Eddig összesen {n} gírát kaphattál volna a PrepperPapa alkalmazásban.": "Până acum ai fi putut primi în total {n} gira în aplicația PrepperPapa.",
+  "Wordlight — Biblia, internet nélkül is.": "Wordlight — Biblia, și fără internet.",
+  "A kód a fiókodhoz kötődik: lépj be, utána nyomd meg újra a Kód beváltása gombot.": "Codul este legat de contul tău: autentifică-te, apoi apasă din nou Activează codul.",
   "Ámen": "Amin",
   "Gratulálok!": "Felicitări!",
   "Ma is {n} percet töltöttél Isten beszédével.": "Și azi ai petrecut {n} minute cu Cuvântul lui Dumnezeu.",
   "Köszönöm": "Mulțumesc",
-  "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Măsoară cât timp petreci zilnic în Biblie și te felicită când îți atingi ținta zilnică.",
   "Részletek": "Detalii",
   "{n} perc": "{n} min",
   "Nincs cél": "Fără țintă",

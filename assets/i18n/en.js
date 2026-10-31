@@ -18,6 +18,21 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
+  "Bejelentkezve:": "Signed in:",
+  "Bejelentkeztél.": "Signed in.",
+  "Hírlevél": "Newsletter",
+  "Fiók és hírlevél": "Account and newsletter",
+  "Nem kötelező. Ugyanaz a fiók, mint a PrepperPapában: e-mail cím és egy 6 jegyű kód, jelszó nem kell. A prémium kód beváltásához és a hírlevélhez kell.": "Optional. The same account as in PrepperPapa: your e-mail address and a 6-digit code, no password needed. It is needed to redeem a premium code and for the newsletter.",
+  "Bejelölés után megerősítő e-mailt küldünk; a feliratkozás a levélben lévő gombbal lép életbe. Leiratkozni a pipa kivételével vagy bármelyik hírlevél leiratkozás linkjével lehet.": "After you tick the box we send a confirmation e-mail; the subscription takes effect with the button in that e-mail. You can unsubscribe by unticking the box or with the unsubscribe link in any newsletter.",
+  "Feliratkozva.": "Subscribed.",
+  "Megerősítésre vár: küldtünk egy levelet ide:": "Waiting for confirmation: we sent an e-mail to",
+  "A feliratkozás a levélben lévő gombbal lép életbe (nézd meg a Spam mappát is).": "The subscription takes effect with the button in the e-mail (check the Spam folder too).",
+  "A hírlevélhez be kell lépned; a pipa bejelölésekor felajánljuk a belépést.": "You need to sign in for the newsletter; we offer the sign-in when you tick the box.",
+  "Küldés folyamatban…": "Sending…",
+  "Leiratkoztál a hírlevélről.": "You have unsubscribed from the newsletter.",
+  "Elküldtük a megerősítő levelet.": "We have sent the confirmation e-mail.",
+  "Ma már több megerősítő levelet nem küldhetünk erre a címre. Próbáld újra holnap.": "We cannot send more confirmation e-mails to this address today. Please try again tomorrow.",
   // ===== 2026-10-28 SOS sharing per room (TG 30631) =====
   "Vészhelyzet ebben a szobában": "Emergency in this room",
   "Szobánként döntöd el, mit kapnak meg az SOS-odból. Ha az SOS-t kikapcsolod, ebbe a szobába semmi nem megy; a hely és a vércsoport csak az SOS-üzenetben jelenik meg.": "You decide per room what it gets from your SOS. If you switch the SOS off, nothing goes to this room; the location and the blood type only ever appear in the SOS message.",
@@ -2148,7 +2163,7 @@ window.PP_FORD_SZOTAR.en = {
   'Új dokumentum': 'New document',
   'Ehhez a dokumentumhoz: kié? Személy, állat vagy jármű. Ha egyiket sem jelölöd, közösként mentjük.':
     'For this document: whose is it? A person, an animal or a vehicle. If you mark none, we save it as shared.',
-  'Magyar': 'Hungarian',
+  'Magyar': 'Magyar',   // language names are autonyms in every UI language, like de/es/pl/ro/ru (Thomas, iPhone, card 85463120)
   'véglegesen': 'permanently',
   'szól erre a készülékre, nincs lejárata és nincs megújítás. Ha kódot kaptál, itt válthatod be.':
     'applies to this device, with no expiry and no renewal. If you received a code, you can redeem it here.',
@@ -5165,7 +5180,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Új terv": "New plan",
   "Terveim": "My plans",
   "Vissza a terveimhez": "Back to my plans",
-  // Biblia premium: napi ido az Igevel (2026-10-30, kartya 38877050)
+  // napi ido az Igevel, mindenkinek (2026-10-30, kartya 38877050; nem premium: TG 31829, 2026-10-31)
   "Napi idő az Igével": "Daily time with the Word",
   "Ma eddig {n} perc az Igével.": "Today so far: {n} min with the Word.",
   "A mai cél teljesült.": "Today's goal is reached.",
@@ -5175,17 +5190,18 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "If it did you good, stay a little longer: tomorrow try {m} minutes.",
   "Holnaptól {m} perc": "{m} min from tomorrow",
   "Mi a gíra?": "What is gira?",
-  "Az ébresztő felolvasása nem számít bele a heti gírába: még {m} perc.": "The morning alarm reading does not count toward the weekly gira: {m} min to go.",
   "Ezen a héten kimaradt egy nap, jövő hétfőtől újra gyűjtheted a heti gírát.": "This week a day was missed; from next Monday you can collect the weekly gira again.",
   "Megvan a hét mind a 7 napja: ez egy egész gíra.": "All 7 days of the week are done: that is one whole gira.",
   "Megvan a heti gíra: +1 gíra a tárcádba.": "The weekly gira is yours: +1 gira to your wallet.",
   "Ma megvan a heti gíra {n}/7 része.": "Today you have {n}/7 of the weekly gira.",
   "A heti gírát a PrepperPapa alkalmazás adja:": "The weekly gira comes with the PrepperPapa app:",
+  "Eddig összesen {n} gírát kaphattál volna a PrepperPapa alkalmazásban.": "So far you could have earned {n} gira in the PrepperPapa app.",
+  "Wordlight — Biblia, internet nélkül is.": "Wordlight — the Bible, offline too.",
+  "A kód a fiókodhoz kötődik: lépj be, utána nyomd meg újra a Kód beváltása gombot.": "The code belongs to your account: log in, then tap Redeem code again.",
   "Ámen": "Amen",
   "Gratulálok!": "Congratulations!",
   "Ma is {n} percet töltöttél Isten beszédével.": "Today, too, you spent {n} minutes with God's Word.",
   "Köszönöm": "Thank you",
-  "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Measures how much time you spend in the Bible each day, and congratulates you when you reach your daily goal.",
   "Részletek": "Details",
   "{n} perc": "{n} min",
   "Nincs cél": "No goal",

@@ -15,6 +15,21 @@
 // `app-nyelvi-valtozat-hianypotlas` skill irja le.
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.uk = {
+  // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
+  "Bejelentkezve:": "Ви увійшли:",
+  "Bejelentkeztél.": "Ви увійшли.",
+  "Hírlevél": "Розсилка",
+  "Fiók és hírlevél": "Обліковий запис і розсилка",
+  "Nem kötelező. Ugyanaz a fiók, mint a PrepperPapában: e-mail cím és egy 6 jegyű kód, jelszó nem kell. A prémium kód beváltásához és a hírlevélhez kell.": "Необов'язково. Той самий обліковий запис, що й у PrepperPapa: адреса електронної пошти та 6-значний код, пароль не потрібен. Він потрібен для активації преміум-коду та для розсилки.",
+  "Bejelölés után megerősítő e-mailt küldünk; a feliratkozás a levélben lévő gombbal lép életbe. Leiratkozni a pipa kivételével vagy bármelyik hírlevél leiratkozás linkjével lehet.": "Після позначки ми надішлемо лист із підтвердженням; підписка набуде чинності після натискання кнопки в цьому листі. Відписатися можна, знявши позначку, або за посиланням для відписки в будь-якому листі розсилки.",
+  "Feliratkozva.": "Підписку оформлено.",
+  "Megerősítésre vár: küldtünk egy levelet ide:": "Очікує підтвердження: ми надіслали лист на",
+  "A feliratkozás a levélben lévő gombbal lép életbe (nézd meg a Spam mappát is).": "Підписка набуде чинності після натискання кнопки в листі (перевірте й теку «Спам»).",
+  "A hírlevélhez be kell lépned; a pipa bejelölésekor felajánljuk a belépést.": "Для розсилки потрібно увійти; під час позначки ми запропонуємо вхід.",
+  "Küldés folyamatban…": "Надсилання…",
+  "Leiratkoztál a hírlevélről.": "Ви відписалися від розсилки.",
+  "Elküldtük a megerősítő levelet.": "Ми надіслали лист із підтвердженням.",
+  "Ma már több megerősítő levelet nem küldhetünk erre a címre. Próbáld újra holnap.": "Сьогодні ми більше не можемо надсилати листи з підтвердженням на цю адресу. Спробуйте завтра.",
   // ===== 2026-10-28 SOS sharing per room (TG 30631) =====
   "Vészhelyzet ebben a szobában": "Надзвичайна ситуація в цій кімнаті",
   "Szobánként döntöd el, mit kapnak meg az SOS-odból. Ha az SOS-t kikapcsolod, ebbe a szobába semmi nem megy; a hely és a vércsoport csak az SOS-üzenetben jelenik meg.": "Для кожної кімнати ти вирішуєш, що вона отримає з твого SOS. Якщо вимкнути SOS, до цієї кімнати нічого не піде; місцезнаходження і група крові з'являються лише в повідомленні SOS.",
@@ -2140,7 +2155,7 @@ window.PP_FORD_SZOTAR.uk = {
   'Névjegy': 'Про застосунок',
   'PrepperPapa — vészhelyzeti prepper eszköztár.': 'PrepperPapa — набір інструментів для надзвичайних ситуацій.',
   'Verzió:': 'Версія:',
-  'Magyar': 'Угорська',
+  'Magyar': 'Magyar',   // language names are autonyms in every UI language (Thomas, iPhone, card 85463120)
   'Új dokumentum': 'Новий документ',
   'Új bejegyzés': 'Новий запис',
   'Szűrés: kinek az iratait mutassuk': 'Фільтр: чиї документи показати',
@@ -4889,7 +4904,7 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Új terv": "Новий план",
   "Terveim": "Мої плани",
   "Vissza a terveimhez": "Назад до моїх планів",
-  // Biblia premium: napi ido az Igevel (2026-10-30, kartya 38877050)
+  // napi ido az Igevel, mindenkinek (2026-10-30, kartya 38877050; nem premium: TG 31829, 2026-10-31)
   "Napi idő az Igével": "Щоденний час зі Словом",
   "Ma eddig {n} perc az Igével.": "Сьогодні поки що: {n} хв зі Словом.",
   "A mai cél teljesült.": "Мету на сьогодні досягнуто.",
@@ -4899,17 +4914,18 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Якщо було добре, побудь ще трохи: завтра спробуй {m} хвилин.",
   "Holnaptól {m} perc": "З завтра {m} хв",
   "Mi a gíra?": "Що таке гіра?",
-  "Az ébresztő felolvasása nem számít bele a heti gírába: még {m} perc.": "Читання ранкового будильника не зараховується до тижневої гіри: залишилося {m} хв.",
   "Ezen a héten kimaradt egy nap, jövő hétfőtől újra gyűjtheted a heti gírát.": "Цього тижня пропущено один день; з наступного понеділка ви знову можете збирати тижневу гіру.",
   "Megvan a hét mind a 7 napja: ez egy egész gíra.": "Усі 7 днів тижня виконано: це одна ціла гіра.",
   "Megvan a heti gíra: +1 gíra a tárcádba.": "Тижнева гіра ваша: +1 гіра до гаманця.",
   "Ma megvan a heti gíra {n}/7 része.": "Сьогодні у вас {n}/7 тижневої гіри.",
   "A heti gírát a PrepperPapa alkalmazás adja:": "Тижневу гіру дає застосунок PrepperPapa:",
+  "Eddig összesen {n} gírát kaphattál volna a PrepperPapa alkalmazásban.": "Досі ти міг би отримати загалом {n} гір у застосунку PrepperPapa.",
+  "Wordlight — Biblia, internet nélkül is.": "Wordlight — Біблія, і без інтернету.",
+  "A kód a fiókodhoz kötődik: lépj be, utána nyomd meg újra a Kód beváltása gombot.": "Код привʼязаний до твого облікового запису: увійди, потім знову натисни «Активувати код».",
   "Ámen": "Амінь",
   "Gratulálok!": "Вітаємо!",
   "Ma is {n} percet töltöttél Isten beszédével.": "І сьогодні ти провів {n} хв зі Словом Божим.",
   "Köszönöm": "Дякую",
-  "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Вимірює, скільки часу ти щодня проводиш з Біблією, і вітає, коли ти досягаєш денної мети.",
   "Részletek": "Докладніше",
   "{n} perc": "{n} хв",
   "Nincs cél": "Без мети",

@@ -22,6 +22,21 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ru = {
+  // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
+  "Bejelentkezve:": "Вы вошли:",
+  "Bejelentkeztél.": "Вы вошли.",
+  "Hírlevél": "Рассылка",
+  "Fiók és hírlevél": "Аккаунт и рассылка",
+  "Nem kötelező. Ugyanaz a fiók, mint a PrepperPapában: e-mail cím és egy 6 jegyű kód, jelszó nem kell. A prémium kód beváltásához és a hírlevélhez kell.": "Необязательно. Тот же аккаунт, что и в PrepperPapa: адрес электронной почты и 6-значный код, пароль не нужен. Он нужен для активации премиум-кода и для рассылки.",
+  "Bejelölés után megerősítő e-mailt küldünk; a feliratkozás a levélben lévő gombbal lép életbe. Leiratkozni a pipa kivételével vagy bármelyik hírlevél leiratkozás linkjével lehet.": "После отметки мы отправим письмо с подтверждением; подписка вступит в силу после нажатия кнопки в этом письме. Отписаться можно, сняв отметку, или по ссылке для отписки в любом письме рассылки.",
+  "Feliratkozva.": "Подписка оформлена.",
+  "Megerősítésre vár: küldtünk egy levelet ide:": "Ожидает подтверждения: мы отправили письмо на",
+  "A feliratkozás a levélben lévő gombbal lép életbe (nézd meg a Spam mappát is).": "Подписка вступит в силу после нажатия кнопки в письме (проверьте и папку «Спам»).",
+  "A hírlevélhez be kell lépned; a pipa bejelölésekor felajánljuk a belépést.": "Для рассылки нужно войти; при отметке мы предложим вход.",
+  "Küldés folyamatban…": "Отправка…",
+  "Leiratkoztál a hírlevélről.": "Вы отписались от рассылки.",
+  "Elküldtük a megerősítő levelet.": "Мы отправили письмо с подтверждением.",
+  "Ma már több megerősítő levelet nem küldhetünk erre a címre. Próbáld újra holnap.": "Сегодня мы больше не можем отправлять письма с подтверждением на этот адрес. Попробуйте завтра.",
   // ===== 2026-10-28 SOS sharing per room (TG 30631) =====
   "Vészhelyzet ebben a szobában": "Экстренная ситуация в этой комнате",
   "Szobánként döntöd el, mit kapnak meg az SOS-odból. Ha az SOS-t kikapcsolod, ebbe a szobába semmi nem megy; a hely és a vércsoport csak az SOS-üzenetben jelenik meg.": "Для каждой комнаты ты решаешь, что она получит из твоего SOS. Если выключить SOS, в эту комнату ничего не уйдёт; местоположение и группа крови появляются только в сообщении SOS.",
@@ -4832,7 +4847,7 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Új terv": "Новый план",
   "Terveim": "Мои планы",
   "Vissza a terveimhez": "Назад к моим планам",
-  // Biblia premium: napi ido az Igevel (2026-10-30, kartya 38877050)
+  // napi ido az Igevel, mindenkinek (2026-10-30, kartya 38877050; nem premium: TG 31829, 2026-10-31)
   "Napi idő az Igével": "Ежедневное время со Словом",
   "Ma eddig {n} perc az Igével.": "Сегодня пока: {n} мин со Словом.",
   "A mai cél teljesült.": "Цель на сегодня достигнута.",
@@ -4842,17 +4857,18 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Если было хорошо, побудь ещё немного: завтра попробуй {m} минут.",
   "Holnaptól {m} perc": "С завтра {m} мин",
   "Mi a gíra?": "Что такое гира?",
-  "Az ébresztő felolvasása nem számít bele a heti gírába: még {m} perc.": "Чтение утреннего будильника не засчитывается в недельную гиру: осталось {m} мин.",
   "Ezen a héten kimaradt egy nap, jövő hétfőtől újra gyűjtheted a heti gírát.": "На этой неделе пропущен один день; со следующего понедельника вы снова можете собирать недельную гиру.",
   "Megvan a hét mind a 7 napja: ez egy egész gíra.": "Все 7 дней недели выполнены: это одна целая гира.",
   "Megvan a heti gíra: +1 gíra a tárcádba.": "Недельная гира ваша: +1 гира в кошелёк.",
   "Ma megvan a heti gíra {n}/7 része.": "Сегодня у вас {n}/7 недельной гиры.",
   "A heti gírát a PrepperPapa alkalmazás adja:": "Недельную гиру даёт приложение PrepperPapa:",
+  "Eddig összesen {n} gírát kaphattál volna a PrepperPapa alkalmazásban.": "До сих пор ты мог бы получить всего {n} гир в приложении PrepperPapa.",
+  "Wordlight — Biblia, internet nélkül is.": "Wordlight — Библия, и без интернета.",
+  "A kód a fiókodhoz kötődik: lépj be, utána nyomd meg újra a Kód beváltása gombot.": "Код привязан к твоей учётной записи: войди, затем снова нажми «Активировать код».",
   "Ámen": "Аминь",
   "Gratulálok!": "Поздравляем!",
   "Ma is {n} percet töltöttél Isten beszédével.": "И сегодня ты провёл {n} мин со Словом Божьим.",
   "Köszönöm": "Спасибо",
-  "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Измеряет, сколько времени ты каждый день проводишь с Библией, и поздравляет, когда ты достигаешь дневной цели.",
   "Részletek": "Подробнее",
   "{n} perc": "{n} мин",
   "Nincs cél": "Без цели",

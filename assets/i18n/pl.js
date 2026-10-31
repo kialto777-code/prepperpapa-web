@@ -23,6 +23,21 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.pl = {
+  // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
+  "Bejelentkezve:": "Zalogowano:",
+  "Bejelentkeztél.": "Zalogowano.",
+  "Hírlevél": "Newsletter",
+  "Fiók és hírlevél": "Konto i newsletter",
+  "Nem kötelező. Ugyanaz a fiók, mint a PrepperPapában: e-mail cím és egy 6 jegyű kód, jelszó nem kell. A prémium kód beváltásához és a hírlevélhez kell.": "Nieobowiązkowe. To samo konto co w PrepperPapa: adres e-mail i 6-cyfrowy kod, bez hasła. Jest potrzebne do realizacji kodu premium i do newslettera.",
+  "Bejelölés után megerősítő e-mailt küldünk; a feliratkozás a levélben lévő gombbal lép életbe. Leiratkozni a pipa kivételével vagy bármelyik hírlevél leiratkozás linkjével lehet.": "Po zaznaczeniu pola wyślemy e-mail z potwierdzeniem; zapis zacznie obowiązywać po naciśnięciu przycisku w tej wiadomości. Wypisać się możesz, odznaczając pole, lub linkiem do wypisania się w dowolnym newsletterze.",
+  "Feliratkozva.": "Zapisano.",
+  "Megerősítésre vár: küldtünk egy levelet ide:": "Czeka na potwierdzenie: wysłaliśmy wiadomość na adres",
+  "A feliratkozás a levélben lévő gombbal lép életbe (nézd meg a Spam mappát is).": "Zapis zacznie obowiązywać po naciśnięciu przycisku w wiadomości (sprawdź też folder Spam).",
+  "A hírlevélhez be kell lépned; a pipa bejelölésekor felajánljuk a belépést.": "Do newslettera musisz się zalogować; po zaznaczeniu pola zaproponujemy logowanie.",
+  "Küldés folyamatban…": "Wysyłanie…",
+  "Leiratkoztál a hírlevélről.": "Wypisano cię z newslettera.",
+  "Elküldtük a megerősítő levelet.": "Wysłaliśmy e-mail z potwierdzeniem.",
+  "Ma már több megerősítő levelet nem küldhetünk erre a címre. Próbáld újra holnap.": "Dziś nie możemy wysłać więcej wiadomości z potwierdzeniem na ten adres. Spróbuj jutro.",
   // ===== 2026-10-28 SOS sharing per room (TG 30631) =====
   "Vészhelyzet ebben a szobában": "Sytuacja awaryjna w tym pokoju",
   "Szobánként döntöd el, mit kapnak meg az SOS-odból. Ha az SOS-t kikapcsolod, ebbe a szobába semmi nem megy; a hely és a vércsoport csak az SOS-üzenetben jelenik meg.": "Dla każdego pokoju decydujesz, co dostanie z twojego SOS. Jeśli wyłączysz SOS, do tego pokoju nic nie trafi; lokalizacja i grupa krwi pojawiają się tylko w wiadomości SOS.",
@@ -4829,7 +4844,7 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Új terv": "Nowy plan",
   "Terveim": "Moje plany",
   "Vissza a terveimhez": "Wróć do moich planów",
-  // Biblia premium: napi ido az Igevel (2026-10-30, kartya 38877050)
+  // napi ido az Igevel, mindenkinek (2026-10-30, kartya 38877050; nem premium: TG 31829, 2026-10-31)
   "Napi idő az Igével": "Codzienny czas ze Słowem",
   "Ma eddig {n} perc az Igével.": "Dziś do tej pory: {n} min ze Słowem.",
   "A mai cél teljesült.": "Dzisiejszy cel osiągnięty.",
@@ -4839,17 +4854,18 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Jeśli było ci dobrze, zostań jeszcze chwilę: jutro spróbuj {m} minut.",
   "Holnaptól {m} perc": "Od jutra {m} min",
   "Mi a gíra?": "Co to jest gira?",
-  "Az ébresztő felolvasása nem számít bele a heti gírába: még {m} perc.": "Czytanie budzika porannego nie liczy się do tygodniowej giry: zostało {m} min.",
   "Ezen a héten kimaradt egy nap, jövő hétfőtől újra gyűjtheted a heti gírát.": "W tym tygodniu ominięto jeden dzień; od przyszłego poniedziałku możesz znów zbierać tygodniową girę.",
   "Megvan a hét mind a 7 napja: ez egy egész gíra.": "Wszystkie 7 dni tygodnia zaliczone: to jedna cała gira.",
   "Megvan a heti gíra: +1 gíra a tárcádba.": "Tygodniowa gira jest twoja: +1 gira do portfela.",
   "Ma megvan a heti gíra {n}/7 része.": "Dziś masz {n}/7 tygodniowej giry.",
   "A heti gírát a PrepperPapa alkalmazás adja:": "Tygodniową girę daje aplikacja PrepperPapa:",
+  "Eddig összesen {n} gírát kaphattál volna a PrepperPapa alkalmazásban.": "Do tej pory mógłbyś zdobyć łącznie {n} gir w aplikacji PrepperPapa.",
+  "Wordlight — Biblia, internet nélkül is.": "Wordlight — Biblia, także bez internetu.",
+  "A kód a fiókodhoz kötődik: lépj be, utána nyomd meg újra a Kód beváltása gombot.": "Kod jest przypisany do Twojego konta: zaloguj się, a potem ponownie naciśnij Zrealizuj kod.",
   "Ámen": "Amen",
   "Gratulálok!": "Gratulacje!",
   "Ma is {n} percet töltöttél Isten beszédével.": "Również dziś spędziłeś {n} min ze Słowem Bożym.",
   "Köszönöm": "Dziękuję",
-  "Méri, mennyi időt töltesz naponta a Bibliában, és gratulál, amikor eléred a napi célodat.": "Mierzy, ile czasu codziennie spędzasz z Biblią, i gratuluje, gdy osiągniesz swój dzienny cel.",
   "Részletek": "Szczegóły",
   "{n} perc": "{n} min",
   "Nincs cél": "Bez celu",
