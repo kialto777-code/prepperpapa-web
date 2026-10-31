@@ -3862,6 +3862,12 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
  "Epikus 1": "Епічна 1",
  "Epikus 2": "Епічна 2",
  "Epikus 3": "Епічна 3",
+ "Epikus 4": "Епічна 4",
+ "Epikus 5": "Епічна 5",
+ "Epikus 6": "Епічна 6",
+ "Gitár 1": "Гітара 1",
+ "Gitár 2": "Гітара 2",
+ "Gitár 3": "Гітара 3",
  "Zene": "Музика",
  "Háttérzenét a Biblia beállításaiban (fogaskerék) tölthetsz le.": "Фонову музику можна завантажити в налаштуваннях Біблії (шестерня).",
  "A letöltött zene hiányos volt, ezért nem mentettük el. Próbáld újra.": "Завантажена музика була неповною, тому її не збережено. Спробуйте ще раз.",
@@ -4915,11 +4921,13 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Якщо було добре, побудь ще трохи: завтра спробуй {m} хвилин.",
   "Holnaptól {m} perc": "З завтра {m} хв",
   "Mi a gíra?": "Що таке гіра?",
-  "Ezen a héten kimaradt egy nap, jövő hétfőtől újra gyűjtheted a heti gírát.": "Цього тижня пропущено один день; з наступного понеділка ви знову можете збирати тижневу гіру.",
-  "Megvan a hét mind a 7 napja: ez egy egész gíra.": "Усі 7 днів тижня виконано: це одна ціла гіра.",
-  "Megvan a heti gíra: +1 gíra a tárcádba.": "Тижнева гіра ваша: +1 гіра до гаманця.",
-  "Ma megvan a heti gíra {n}/7 része.": "Сьогодні у вас {n}/7 тижневої гіри.",
-  "A heti gírát a PrepperPapa alkalmazás adja:": "Тижневу гіру дає застосунок PrepperPapa:",
+  "Ma kibányásztál 1 gírát!": "Сьогодні ви видобули 1 гіру!",
+  "Hogyan bányászhatsz gírát?": "Як видобувати гіру?",
+  "Napi Bibliaolvasás: {n} gíra minden nap, amikor eléred a napi célodat (a reggeli ébresztő felolvasása is beleszámít).": "Щоденне читання Біблії: {n} гіра за кожен день, коли ви досягаєте денної мети (читання вголос ранкового будильника теж зараховується).",
+  "Ajánlás: {n} gíra minden barátodért, aki aktiválja a profilját.": "Запрошення: {n} гіра за кожного друга, який активує профіль.",
+  "Ha a barátod prémiumot vásárol: további {n} gíra ({d} nap után).": "Якщо друг купить преміум: ще {n} гіра (через {d} днів).",
+  "Induló egyenleg: {n} gíra, egyszer.": "Стартовий баланс: {n} гіра, один раз.",
+  "A napi gírát a PrepperPapa alkalmazás adja:": "Щоденну гіру дає застосунок PrepperPapa:",
   "Eddig összesen {n} gírát kaphattál volna a PrepperPapa alkalmazásban.": "Досі ти міг би отримати загалом {n} гір у застосунку PrepperPapa.",
   "Wordlight — Biblia, internet nélkül is.": "Wordlight — Біблія, і без інтернету.",
   "A kód a fiókodhoz kötődik: lépj be, utána nyomd meg újra a Kód beváltása gombot.": "Код привʼязаний до твого облікового запису: увійди, потім знову натисни «Активувати код».",
@@ -4939,4 +4947,8 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
 Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Letölthető zenék": "Музика для завантаження",
   "Nincs": "Немає"
+});
+// reader panel music preview (2026-10-31, TG 31957)
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Kipróbálom": "Спробувати"
 });
