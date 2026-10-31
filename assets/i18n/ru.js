@@ -22,6 +22,28 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ru = {
+  // ===== 2026-10-31 Bible dedication statistics (Boss TG 6455, card cf02b3ee) =====
+  "Elhivatottság": "Постоянство",
+  "nap egymás után": "дней подряд",
+  "Mostani sorozat": "Текущая серия",
+  "Leghosszabb sorozat": "Самая длинная серия",
+  "Az elmúlt 7 nap": "Последние 7 дней",
+  "Ezen a héten {n} perc": "На этой неделе {n} мин",
+  "Az elmúlt 30 nap": "Последние 30 дней",
+  "cél teljesült": "цель достигнута",
+  "olvastál, de kevesebbet": "читал, но меньше",
+  "nem olvastál": "без чтения",
+  "{k} napon teljesült a cél az utolsó {n} napból ({p}%).": "Цель достигнута в {k} из последних {n} дней ({p}%).",
+  "Ebben a hónapban": "В этом месяце",
+  "A napló kezdete óta": "С начала журнала",
+  "Napok teljesült céllal": "Дней с достигнутой целью",
+  "A napi percek naplója {d} óta készül. A korábbi napokról csak az ismert, hogy teljesült-e a cél (✓).": "Ежедневные минуты записываются с {d}. О более ранних днях известно только, была ли достигнута цель (✓).",
+  "Napi cél: {n} perc · módosítás": "Цель на день: {n} мин · изменить",
+  "Napi cél beállítása": "Задать цель на день",
+  "napi cél: {n} perc": "цель на день: {n} мин",
+  "{n} nap egymás után": "{n} дн. подряд",
+  // ===== 2026-10-31 app privacy notice link in About (card 44533242, decision 6A, TG 32126) =====
+  "Adatkezelési tájékoztató": "Политика конфиденциальности",
   // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
   "Bejelentkezve:": "Вы вошли:",
   "Bejelentkeztél.": "Вы вошли.",
@@ -70,7 +92,7 @@ window.PP_FORD_SZOTAR.ru = {
   "Ez a készülék nem ad iránytű-adatot, vagy nincs rá engedély.": "Это устройство не даёт данных компаса, или нет разрешения.",
   "A nap pályájához tudni kell, hol vagy: az Eszközök, Napkelte, napnyugta lapon nyomd meg a „Mérés a helyzetemre” gombot.": "Для пути солнца нужно знать, где ты: в разделе Инструменты, Восход, закат нажми «Рассчитать для моего места».",
   "Tájoló: irány és azimut, a visszaút is.": "Компас: направление и азимут, а также обратный путь.",
-  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a vad- és rovarriasztó, a barométer és a napkelte-napnyugta egy helyen.": "Инструменты: калькуляторы, металлоискатель, зеркало, отпугиватель зверей и насекомых, барометр и восход-закат в одном месте.",
+  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a hanggenerátor, a barométer és a napkelte-napnyugta egy helyen.": "Инструменты: калькуляторы, металлоискатель, зеркало, генератор тона, барометр и восход-закат в одном месте.",
   // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
   "Ez a fájl nem PrepperPapa mentés.": "Этот файл не является резервной копией PrepperPapa.",
   "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "На этом устройстве недостаточно места для восстановления. Ничего не изменено.",
@@ -122,7 +144,7 @@ window.PP_FORD_SZOTAR.ru = {
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Вы ввели слишком много неверных кодов. В целях безопасности повторить попытку пока нельзя.",
   "Újra próbálhatod ekkor:": "Повторить можно в:",
-  "A vásárlási levélben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "Код из письма о покупке уже введён. Нажмите «Активировать код».",
+  "A linkben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "Код из ссылки уже введён. Нажмите «Активировать код».",
   // ===== 2026-10-25 v43.380 (Thomas 24623): stale offline region =====
   "Új változat a szerveren": "Новая версия на сервере",
   // ===== 2026-10-25 v43.380 (card 6b287cfb, Boss 20:13): Solar panel setup tool =====
@@ -1477,23 +1499,17 @@ window.PP_FORD_SZOTAR.ru = {
     "Название точки",
   "Koppints a térképre újra, ha arrébb tennéd. A pont csak a Mentéssel jön létre.":
     "Коснись карты ещё раз, чтобы переместить. Точка создаётся только при сохранении.",
-  // VAD- ES ROVAR-TAVOLTARTO (Fonok kerese 2026-10-05 20:16)
-  "Vad- és rovar-távoltartó":
-    "Отпугиватель зверей и насекомых",
-  "Vadak ellen":
-    "Против зверей",
-  "Szúnyogok ellen":
-    "Против комаров",
-  "Vad-frekvencia":
-    "Частота для зверей",
-  "Szúnyog-frekvencia":
-    "Частота для комаров",
+  // HANGGENERATOR (store compliance, owner choice "3b", 2026-10-31)
+  "Magas hang": "Высокий тон",
+  "Söprő hang": "Плавающий тон",
+  "Folyamatos hang": "Непрерывный тон",
+  "Söprő hang frekvenciája": "Частота плавающего тона",
+  "Folyamatos hang frekvenciája": "Частота непрерывного тона",
   "Hz, lassan söprő hang. A legtöbb felnőtt ezt már nem hallja.":
     "Гц, медленно скользящий тон. Большинство взрослых его уже не слышит.",
   "Hz, folyamatos hang.":
     "Гц, непрерывный тон.",
-  "AMIT EZ TUD ÉS AMIT NEM. A telefon hangszórója ilyen magas hangon lényegesen halkabb, mint a vészsípnál, és ezt a készüléked dönti el, nem az app. A szúnyogriasztó ultrahangnak nincs bizonyított hatása, több vizsgálat is eredménytelennek találta. Nagyobb vadnál a bizonyítottan működő eszköz a HANGOS, EMBERI FÜLNEK IS HALLHATÓ zaj, tehát az SOS lap vészsípja, nem ez. Ezt a két gombot akkor használd, ha ki akarod próbálni, és ne építs rá védelmet.":
-    "ЧТО ЭТО МОЖЕТ И ЧЕГО НЕ МОЖЕТ. На таком высоком тоне динамик твоего телефона заметно тише, чем при аварийном свистке, и это решает твоё устройство, а не приложение. У ультразвука против комаров нет доказанного действия; несколько исследований признали его бесполезным. Против крупного зверя средство с доказанным действием — ГРОМКИЙ шум, СЛЫШИМЫЙ И ЧЕЛОВЕКУ, то есть свисток на странице SOS, а не это. Пользуйся этими двумя кнопками, если хочешь попробовать, и не строй на них свою защиту.",
+  "A telefon hangszórója ilyen magas hangon lényegesen halkabb, mint a vészsípnál, és ezt a készüléked dönti el, nem az app.": "На таком высоком тоне динамик твоего телефона заметно тише, чем при аварийном свистке, и это решает твоё устройство, а не приложение.",
   "Ne tartsd a füledhez, és ne irányítsd más fülére. Kutya, macska és más házi állat jóval magasabbra hall, mint az ember: nekik ez zavaró lehet akkor is, ha te nem hallod.":
     "Не подноси его к уху и не направляй в ухо другому. Собаки, кошки и другие домашние животные слышат намного выше человека: их это может беспокоить, даже если ты ничего не слышишь.",
   // TERKEP mester-gomb es funkcio-tabla (Fonok kerese 2026-10-05 20:11)
@@ -3609,7 +3625,6 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
  "Eszközök": "Инструменты",
  "Fémdetektor": "Металлоискатель",
  "Víz, áram, kalória, fűtés és a többi számoló": "Вода, электричество, калории, отопление и другие калькуляторы",
- "Eszközök: a kalkulátorok, a fémdetektor, a tükör és a vad- és rovarriasztó egy helyen.": "Инструменты: калькуляторы, металлоискатель, зеркало и отпугиватель зверей и насекомых в одном месте.",
  "Tükör": "Зеркало",
  "Előlapi kamera fénykerettel, sérülés megnézéséhez": "Фронтальная камера со световой рамкой, чтобы осмотреть травму",
  "Fény: be": "Свет: вкл.",
@@ -3618,9 +3633,9 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
  "Két ujjal csippentve nagyítasz. A fehér keret világítja meg az arcod; sötétben tedd a képernyő fényerejét maximumra.": "Сведите два пальца, чтобы увеличить. Белая рамка освещает лицо; в темноте поставьте яркость экрана на максимум.",
  "Privát üzenet": "Личное сообщение",
  "Gíra küldése": "Отправить гиру",
- "Vad- és rovarriasztó": "Отпугиватель зверей и насекомых",
- "Magas hang vadak és szúnyogok ellen": "Высокий звук против диких зверей и комаров",
- "A riasztó hangja most nem indult el.": "Звук отпугивателя не запустился.",
+ "Hanggenerátor": "Генератор тона",
+ "Magas hang állítható frekvenciával": "Высокий тон с регулируемой частотой",
+ "A hang most nem indult el.": "Звук не запустился.",
  "Előzmény": "История",
  "Legutóbb olvasott igék": "Недавно прочитанные стихи",
  "Korábbi keresések": "Предыдущие поиски",
@@ -4585,6 +4600,16 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
  "Letiltott felhasználók": "Заблокированные пользователи",
  "Az internetes szobákban letiltott felhasználók. Az üzeneteiket nálad elrejtjük, és privát üzenetet nem küldhetnek neked.": "Пользователи, заблокированные вами в интернет-комнатах. Их сообщения у вас скрыты, и они не могут отправлять вам личные сообщения."
 });
+
+// ===== 2026-10-31: report + block in local (Wi-Fi / Bluetooth / mesh) rooms (store audit item 9, owner "10a") =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "A bejelentéssel az üzenet szövege (ahogy a te telefonod megfejtette), a küldője és a szoba neve a PrepperPapa csapatához kerül. Nálad az üzenet azonnal eltűnik. A helyi szobának nincs szervere, ezért a bejelentés a következő internetkapcsolatkor megy el.": "Вместе с жалобой текст сообщения (так, как его расшифровал твой телефон), его отправитель и название комнаты передаются команде PrepperPapa. У тебя сообщение сразу исчезает. У локальной комнаты нет сервера, поэтому жалоба будет отправлена при следующем подключении к интернету.",
+  "A bejelentéssel a felhasználó neve és a szoba neve a PrepperPapa csapatához kerül, hogy ellenőrizhessük. A helyi szobának nincs szervere, ezért a bejelentés a következő internetkapcsolatkor megy el.": "Вместе с жалобой имя пользователя и название комнаты передаются команде PrepperPapa, чтобы мы могли это проверить. У локальной комнаты нет сервера, поэтому жалоба будет отправлена при следующем подключении к интернету.",
+  "Az üzeneteit nálad elrejtjük, és értesítést sem kapsz tőle. A Beállításokban bármikor feloldhatod.": "Мы скрываем у тебя его сообщения, и уведомлений от него ты тоже не получишь. Отменить это можно в любой момент в Настройках.",
+  "A bejelentést elmentettük. A következő internetkapcsolatkor elküldjük.": "Жалоба сохранена. Мы отправим её при следующем подключении к интернету.",
+  "Túl sok bejelentés vár elküldésre. Próbáld újra később.": "Слишком много жалоб ждут отправки. Попробуй позже.",
+  "A helyi (Wi-Fi, Bluetooth) szobákban letiltott felhasználók. Az üzeneteiket és az értesítéseiket nálad elrejtjük.": "Пользователи, заблокированные в локальных комнатах (Wi-Fi, Bluetooth). Их сообщения и уведомления у тебя скрыты."
+});
 // v43.393: map search -- coordinate result
 Object.assign(window.PP_FORD_SZOTAR.ru, {
  "Mentés pontként": "Сохранить как точку",
@@ -4893,4 +4918,27 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
 // reader panel music preview (2026-10-31, TG 31957)
 Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Kipróbálom": "Попробовать"
+});
+
+// ===== 2026-10-31: store channels keep only the mandatory account, no tester lock (card 44533242, decision 1a) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "A PrepperPapa használatához fiók kell. Lépj be az e-mail címeddel: kapsz egy 6 jegyű kódot, és utána a telefon megjegyzi, frissítés után sem kell újra.": "Для PrepperPapa нужна учётная запись. Войдите с помощью своего адреса электронной почты: вы получите 6-значный код, после чего телефон запомнит вход, даже после обновления."
+});
+// map tile store compliance: non-own layers are view-only (2026-10-31, TG 32073)
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Ezt a réteget csak megnézni lehet, előre letölteni nem: a szolgáltatója ezt nem engedi (a megnézett részek megmaradnak). Internet nélkül a Saját térkép működik: Magyarországra tájegységenként letöltheted itt lent, az „Offline térkép” csoportban.": "Этот слой можно только просматривать, скачать его заранее нельзя: поставщик этого не разрешает (просмотренные части сохраняются). Без интернета работает Своя карта: для Венгрии её можно скачать по регионам прямо ниже, в группе «Офлайн-карта»."
+});
+
+// UJ OLVASASI TERVEK (Fonok 2026-10-31, TG 32337/32339, kartya cf02b3ee)
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Ószövetség és Újszövetség párhuzamosan": "Ветхий и Новый Завет параллельно",
+  "Naponta egy fejezet az Ószövetségből és egy az Újszövetségből. Az Ószövetséget egyszer olvasod végig, az Újszövetség a végére érve elölről kezdődik.": "Каждый день одна глава из Ветхого Завета и одна из Нового Завета. Ветхий Завет вы прочитываете один раз, Новый Завет, дойдя до конца, начинается сначала.",
+  "Próféciák 41 nap alatt": "Пророчества за 41 день",
+  "Messiási próféciák az újszövetségi beteljesedésükkel párban, utána Dániel könyve, végül az utolsó időkről szóló részek és a Jelenések könyve.": "Мессианские пророчества в паре с их исполнением в Новом Завете, затем книга Даниила и, наконец, отрывки о последних временах и Откровение.",
+  "Jézus példázatai 17 nap alatt": "Притчи Иисуса за 17 дней",
+  "Naponta egy fejezet az evangéliumokból, amelyben Jézus példázatokban tanít, a magvetőtől a tékozló fiúig.": "Каждый день одна глава из Евангелий, в которой Иисус учит притчами, от сеятеля до блудного сына.",
+  "A Biblia imádságai 20 nap alatt": "Молитвы Библии за 20 дней",
+  "Naponta egy fejezet egy nagy imádsággal: Ábrahám, Mózes, Anna, Salamon, Dániel, Jézus és Pál imái és mások.": "Каждый день одна глава с великой молитвой: молитвы Авраама, Моисея, Анны, Соломона, Даниила, Иисуса, Павла и других.",
+  "Pál levelei 30 nap alatt": "Послания Павла за 30 дней",
+  "A rómaiakhoz írt levéltől a Filemonhoz írt levélig.": "От Послания к Римлянам до Послания к Филимону."
 });

@@ -15,6 +15,28 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // ===== 2026-10-31 Bible dedication statistics (Boss TG 6455, card cf02b3ee) =====
+  "Elhivatottság": "Statornicie",
+  "nap egymás után": "zile la rând",
+  "Mostani sorozat": "Seria actuală",
+  "Leghosszabb sorozat": "Cea mai lungă serie",
+  "Az elmúlt 7 nap": "Ultimele 7 zile",
+  "Ezen a héten {n} perc": "Săptămâna aceasta {n} min",
+  "Az elmúlt 30 nap": "Ultimele 30 de zile",
+  "cél teljesült": "obiectiv atins",
+  "olvastál, de kevesebbet": "ai citit, dar mai puțin",
+  "nem olvastál": "fără citire",
+  "{k} napon teljesült a cél az utolsó {n} napból ({p}%).": "Obiectivul a fost atins în {k} din ultimele {n} zile ({p}%).",
+  "Ebben a hónapban": "Luna aceasta",
+  "A napló kezdete óta": "De la începutul jurnalului",
+  "Napok teljesült céllal": "Zile cu obiectivul atins",
+  "A napi percek naplója {d} óta készül. A korábbi napokról csak az ismert, hogy teljesült-e a cél (✓).": "Minutele zilnice sunt înregistrate din {d}. Pentru zilele anterioare se știe doar dacă obiectivul a fost atins (✓).",
+  "Napi cél: {n} perc · módosítás": "Obiectiv zilnic: {n} min · modifică",
+  "Napi cél beállítása": "Stabilește un obiectiv zilnic",
+  "napi cél: {n} perc": "obiectiv zilnic: {n} min",
+  "{n} nap egymás után": "{n} zile la rând",
+  // ===== 2026-10-31 app privacy notice link in About (card 44533242, decision 6A, TG 32126) =====
+  "Adatkezelési tájékoztató": "Notă de confidențialitate",
   // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
   "Bejelentkezve:": "Autentificat:",
   "Bejelentkeztél.": "Autentificat.",
@@ -63,7 +85,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Ez a készülék nem ad iránytű-adatot, vagy nincs rá engedély.": "Acest dispozitiv nu furnizează date de busolă sau nu există permisiune.",
   "A nap pályájához tudni kell, hol vagy: az Eszközök, Napkelte, napnyugta lapon nyomd meg a „Mérés a helyzetemre” gombot.": "Pentru traiectoria soarelui aplicația trebuie să știe unde ești: în Unelte, Răsărit, apus apasă „Calculează pentru poziția mea”.",
   "Tájoló: irány és azimut, a visszaút is.": "Busolă: direcție și azimut, și drumul înapoi.",
-  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a vad- és rovarriasztó, a barométer és a napkelte-napnyugta egy helyen.": "Unelte: calculatoarele, detectorul de metale, oglinda, repelentul pentru animale și insecte, barometrul și răsăritul-apusul într-un singur loc.",
+  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a hanggenerátor, a barométer és a napkelte-napnyugta egy helyen.": "Unelte: calculatoarele, detectorul de metale, oglinda, generatorul de ton, barometrul și răsăritul-apusul într-un singur loc.",
   // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
   "Ez a fájl nem PrepperPapa mentés.": "Acest fișier nu este o copie de siguranță PrepperPapa.",
   "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "Nu este destul spațiu pe acest dispozitiv pentru restaurare. Nu s-a schimbat nimic.",
@@ -115,7 +137,7 @@ window.PP_FORD_SZOTAR.ro = {
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Ai introdus prea multe coduri greșite. Din motive de securitate nu poți încerca din nou o vreme.",
   "Újra próbálhatod ekkor:": "Poți încerca din nou la:",
-  "A vásárlási levélben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "Codul din e-mailul de cumpărare este deja completat. Atinge „Valorifică codul”.",
+  "A linkben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "Codul din link este deja completat. Atinge „Valorifică codul”.",
   // ===== 2026-10-25 v43.380 (Thomas 24623): stale offline region =====
   "Új változat a szerveren": "Versiune nouă pe server",
   // ===== 2026-10-25 v43.380 (card 6b287cfb, Boss 20:13): Solar panel setup tool =====
@@ -1470,23 +1492,17 @@ window.PP_FORD_SZOTAR.ro = {
     "Numele punctului",
   "Koppints a térképre újra, ha arrébb tennéd. A pont csak a Mentéssel jön létre.":
     "Atinge harta din nou ca să îl muți. Punctul se creează doar la salvare.",
-  // VAD- ES ROVAR-TAVOLTARTO (Fonok kerese 2026-10-05 20:16)
-  "Vad- és rovar-távoltartó":
-    "Dispozitiv de îndepărtare a animalelor și insectelor",
-  "Vadak ellen":
-    "Împotriva animalelor sălbatice",
-  "Szúnyogok ellen":
-    "Împotriva țânțarilor",
-  "Vad-frekvencia":
-    "Frecvență pentru animale",
-  "Szúnyog-frekvencia":
-    "Frecvență pentru țânțari",
+  // HANGGENERATOR (store compliance, owner choice "3b", 2026-10-31)
+  "Magas hang": "Ton înalt",
+  "Söprő hang": "Ton variabil",
+  "Folyamatos hang": "Ton continuu",
+  "Söprő hang frekvenciája": "Frecvența tonului variabil",
+  "Folyamatos hang frekvenciája": "Frecvența tonului continuu",
   "Hz, lassan söprő hang. A legtöbb felnőtt ezt már nem hallja.":
     "Hz, un ton care baleiază lent. Majoritatea adulților nu îl mai aud.",
   "Hz, folyamatos hang.":
     "Hz, un ton continuu.",
-  "AMIT EZ TUD ÉS AMIT NEM. A telefon hangszórója ilyen magas hangon lényegesen halkabb, mint a vészsípnál, és ezt a készüléked dönti el, nem az app. A szúnyogriasztó ultrahangnak nincs bizonyított hatása, több vizsgálat is eredménytelennek találta. Nagyobb vadnál a bizonyítottan működő eszköz a HANGOS, EMBERI FÜLNEK IS HALLHATÓ zaj, tehát az SOS lap vészsípja, nem ez. Ezt a két gombot akkor használd, ha ki akarod próbálni, és ne építs rá védelmet.":
-    "CE POATE ȘI CE NU POATE. La un sunet atât de înalt difuzorul telefonului este considerabil mai slab decât la fluierul de urgență, iar asta o decide dispozitivul tău, nu aplicația. Ultrasunetele împotriva țânțarilor nu au efect dovedit; mai multe studii le-au găsit ineficiente. Împotriva animalelor mari mijlocul cu efect dovedit este zgomotul PUTERNIC, AUZIBIL ȘI PENTRU OM, adică fluierul de pe pagina SOS, nu acesta. Folosește aceste două butoane dacă vrei să le încerci și nu-ți baza protecția pe ele.",
+  "A telefon hangszórója ilyen magas hangon lényegesen halkabb, mint a vészsípnál, és ezt a készüléked dönti el, nem az app.": "La un sunet atât de înalt difuzorul telefonului este considerabil mai slab decât la fluierul de urgență, iar asta o decide dispozitivul tău, nu aplicația.",
   "Ne tartsd a füledhez, és ne irányítsd más fülére. Kutya, macska és más házi állat jóval magasabbra hall, mint az ember: nekik ez zavaró lehet akkor is, ha te nem hallod.":
     "Nu îl ține la ureche și nu îl îndrepta spre urechea altcuiva. Câinii, pisicile și alte animale de companie aud mult mai sus decât omul: asta îi poate deranja chiar dacă tu nu auzi nimic.",
   // TERKEP mester-gomb es funkcio-tabla (Fonok kerese 2026-10-05 20:11)
@@ -3595,7 +3611,6 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Eszközök": "Unelte",
  "Fémdetektor": "Detector de metale",
  "Víz, áram, kalória, fűtés és a többi számoló": "Apă, curent, calorii, încălzire și celelalte calculatoare",
- "Eszközök: a kalkulátorok, a fémdetektor, a tükör és a vad- és rovarriasztó egy helyen.": "Unelte: calculatoarele, detectorul de metale, oglinda și repelentul pentru animale și insecte într-un singur loc.",
  "Tükör": "Oglindă",
  "Előlapi kamera fénykerettel, sérülés megnézéséhez": "Camera frontală cu ramă luminoasă, pentru a verifica o rană",
  "Fény: be": "Lumină: pornită",
@@ -3604,9 +3619,9 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Két ujjal csippentve nagyítasz. A fehér keret világítja meg az arcod; sötétben tedd a képernyő fényerejét maximumra.": "Ciupește cu două degete pentru zoom. Rama albă îți luminează fața; pe întuneric, pune luminozitatea ecranului la maxim.",
  "Privát üzenet": "Mesaj privat",
  "Gíra küldése": "Trimite gíra",
- "Vad- és rovarriasztó": "Repelent pentru animale și insecte",
- "Magas hang vadak és szúnyogok ellen": "Sunet înalt împotriva animalelor sălbatice și țânțarilor",
- "A riasztó hangja most nem indult el.": "Sunetul repelentului nu a pornit.",
+ "Hanggenerátor": "Generator de ton",
+ "Magas hang állítható frekvenciával": "Ton înalt cu frecvență reglabilă",
+ "A hang most nem indult el.": "Sunetul nu a pornit.",
  "Előzmény": "Istoric",
  "Legutóbb olvasott igék": "Versete citite recent",
  "Korábbi keresések": "Căutări anterioare",
@@ -4571,6 +4586,16 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Letiltott felhasználók": "Utilizatori blocați",
  "Az internetes szobákban letiltott felhasználók. Az üzeneteiket nálad elrejtjük, és privát üzenetet nem küldhetnek neked.": "Utilizatorii blocați în camerele de internet. Mesajele lor sunt ascunse la tine și nu îți pot trimite mesaje private."
 });
+
+// ===== 2026-10-31: report + block in local (Wi-Fi / Bluetooth / mesh) rooms (store audit item 9, owner "10a") =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A bejelentéssel az üzenet szövege (ahogy a te telefonod megfejtette), a küldője és a szoba neve a PrepperPapa csapatához kerül. Nálad az üzenet azonnal eltűnik. A helyi szobának nincs szervere, ezért a bejelentés a következő internetkapcsolatkor megy el.": "Odată cu raportarea, textul mesajului (așa cum l-a decriptat telefonul tău), expeditorul și numele camerei ajung la echipa PrepperPapa. La tine mesajul dispare imediat. O cameră locală nu are server, așa că raportarea se trimite la următoarea conectare la internet.",
+  "A bejelentéssel a felhasználó neve és a szoba neve a PrepperPapa csapatához kerül, hogy ellenőrizhessük. A helyi szobának nincs szervere, ezért a bejelentés a következő internetkapcsolatkor megy el.": "Odată cu raportarea, numele utilizatorului și numele camerei ajung la echipa PrepperPapa, ca să putem verifica. O cameră locală nu are server, așa că raportarea se trimite la următoarea conectare la internet.",
+  "Az üzeneteit nálad elrejtjük, és értesítést sem kapsz tőle. A Beállításokban bármikor feloldhatod.": "Îi ascundem mesajele la tine și nici nu vei primi notificări de la el. Poți anula oricând din Setări.",
+  "A bejelentést elmentettük. A következő internetkapcsolatkor elküldjük.": "Raportarea ta a fost salvată. O vom trimite la următoarea conectare la internet.",
+  "Túl sok bejelentés vár elküldésre. Próbáld újra később.": "Prea multe raportări așteaptă să fie trimise. Încearcă din nou mai târziu.",
+  "A helyi (Wi-Fi, Bluetooth) szobákban letiltott felhasználók. Az üzeneteiket és az értesítéseiket nálad elrejtjük.": "Utilizatori blocați în camerele locale (Wi-Fi, Bluetooth). Le ascundem mesajele și notificările la tine."
+});
 // v43.393: map search -- coordinate result
 Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Mentés pontként": "Salvează ca punct",
@@ -4879,4 +4904,27 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
 // reader panel music preview (2026-10-31, TG 31957)
 Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Kipróbálom": "Încearcă"
+});
+
+// ===== 2026-10-31: store channels keep only the mandatory account, no tester lock (card 44533242, decision 1a) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A PrepperPapa használatához fiók kell. Lépj be az e-mail címeddel: kapsz egy 6 jegyű kódot, és utána a telefon megjegyzi, frissítés után sem kell újra.": "PrepperPapa necesită un cont. Autentifică-te cu adresa ta de e-mail: primești un cod de 6 cifre, iar apoi telefonul te ține minte, chiar și după o actualizare."
+});
+// map tile store compliance: non-own layers are view-only (2026-10-31, TG 32073)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Ezt a réteget csak megnézni lehet, előre letölteni nem: a szolgáltatója ezt nem engedi (a megnézett részek megmaradnak). Internet nélkül a Saját térkép működik: Magyarországra tájegységenként letöltheted itt lent, az „Offline térkép” csoportban.": "Acest strat poate fi doar vizualizat, nu descărcat în avans: furnizorul său nu permite acest lucru (părțile deja vizualizate se păstrează). Fără internet funcționează Harta proprie: pentru Ungaria o poți descărca pe regiuni chiar mai jos, în grupul „Hartă offline”."
+});
+
+// UJ OLVASASI TERVEK (Fonok 2026-10-31, TG 32337/32339, kartya cf02b3ee)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Ószövetség és Újszövetség párhuzamosan": "Vechiul și Noul Testament în paralel",
+  "Naponta egy fejezet az Ószövetségből és egy az Újszövetségből. Az Ószövetséget egyszer olvasod végig, az Újszövetség a végére érve elölről kezdődik.": "În fiecare zi un capitol din Vechiul Testament și unul din Noul Testament. Vechiul Testament îl citești o dată în întregime, Noul Testament reîncepe de la început când se termină.",
+  "Próféciák 41 nap alatt": "Profeții în 41 de zile",
+  "Messiási próféciák az újszövetségi beteljesedésükkel párban, utána Dániel könyve, végül az utolsó időkről szóló részek és a Jelenések könyve.": "Profeții mesianice în pereche cu împlinirea lor în Noul Testament, apoi cartea lui Daniel și, la final, pasajele despre vremurile din urmă și Apocalipsa.",
+  "Jézus példázatai 17 nap alatt": "Pildele lui Isus în 17 zile",
+  "Naponta egy fejezet az evangéliumokból, amelyben Jézus példázatokban tanít, a magvetőtől a tékozló fiúig.": "În fiecare zi un capitol din Evanghelii în care Isus învață în pilde, de la semănător la fiul risipitor.",
+  "A Biblia imádságai 20 nap alatt": "Rugăciunile Bibliei în 20 de zile",
+  "Naponta egy fejezet egy nagy imádsággal: Ábrahám, Mózes, Anna, Salamon, Dániel, Jézus és Pál imái és mások.": "În fiecare zi un capitol cu o mare rugăciune: rugăciunile lui Avraam, Moise, Ana, Solomon, Daniel, Isus, Pavel și ale altora.",
+  "Pál levelei 30 nap alatt": "Epistolele lui Pavel în 30 de zile",
+  "A rómaiakhoz írt levéltől a Filemonhoz írt levélig.": "De la epistola către Romani până la epistola către Filimon."
 });

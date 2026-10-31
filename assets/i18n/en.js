@@ -18,6 +18,28 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  // ===== 2026-10-31 Bible dedication statistics (Boss TG 6455, card cf02b3ee) =====
+  "Elhivatottság": "Dedication",
+  "nap egymás után": "days in a row",
+  "Mostani sorozat": "Current streak",
+  "Leghosszabb sorozat": "Longest streak",
+  "Az elmúlt 7 nap": "The last 7 days",
+  "Ezen a héten {n} perc": "This week {n} min",
+  "Az elmúlt 30 nap": "The last 30 days",
+  "cél teljesült": "goal reached",
+  "olvastál, de kevesebbet": "you read, but less",
+  "nem olvastál": "no reading",
+  "{k} napon teljesült a cél az utolsó {n} napból ({p}%).": "The goal was reached on {k} of the last {n} days ({p}%).",
+  "Ebben a hónapban": "This month",
+  "A napló kezdete óta": "Since the log began",
+  "Napok teljesült céllal": "Days with the goal reached",
+  "A napi percek naplója {d} óta készül. A korábbi napokról csak az ismert, hogy teljesült-e a cél (✓).": "The daily minutes are logged since {d}. For earlier days only whether the goal was reached is known (✓).",
+  "Napi cél: {n} perc · módosítás": "Daily goal: {n} min · change",
+  "Napi cél beállítása": "Set a daily goal",
+  "napi cél: {n} perc": "daily goal: {n} min",
+  "{n} nap egymás után": "{n} days in a row",
+  // ===== 2026-10-31 app privacy notice link in About (card 44533242, decision 6A, TG 32126) =====
+  "Adatkezelési tájékoztató": "Privacy notice",
   // ===== 2026-10-31 newsletter + Wordlight optional account in Settings (card cf02b3ee, TG 31883) =====
   "Bejelentkezve:": "Signed in:",
   "Bejelentkeztél.": "Signed in.",
@@ -66,7 +88,7 @@ window.PP_FORD_SZOTAR.en = {
   "Ez a készülék nem ad iránytű-adatot, vagy nincs rá engedély.": "This device gives no compass data, or there is no permission.",
   "A nap pályájához tudni kell, hol vagy: az Eszközök, Napkelte, napnyugta lapon nyomd meg a „Mérés a helyzetemre” gombot.": "For the sun's path the app needs to know where you are: on the Tools, Sunrise, sunset screen press “Calculate for my position”.",
   "Tájoló: irány és azimut, a visszaút is.": "Compass: direction and azimuth, the way back too.",
-  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a vad- és rovarriasztó, a barométer és a napkelte-napnyugta egy helyen.": "Tools: the calculators, the metal detector, the mirror, the wildlife and insect repeller, the barometer and sunrise-sunset in one place.",
+  "Eszközök: a kalkulátorok, a fémdetektor, a tükör, a hanggenerátor, a barométer és a napkelte-napnyugta egy helyen.": "Tools: the calculators, the metal detector, the mirror, the tone generator, the barometer and sunrise-sunset in one place.",
   // ===== 2026-10-27 titkosított teljes mentés: Token tárca + Gíra (kártya 96306244) =====
   "Ez a fájl nem PrepperPapa mentés.": "This file is not a PrepperPapa backup.",
   "Nincs elég tárhely ezen a készüléken a visszatöltéshez. Semmi nem változott.": "Not enough storage on this device for the restore. Nothing was changed.",
@@ -121,7 +143,7 @@ window.PP_FORD_SZOTAR.en = {
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "You entered too many wrong codes. For security you cannot try again for a while.",
   "Újra próbálhatod ekkor:": "You can try again at:",
-  "A vásárlási levélben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "The code from your purchase e-mail has been entered. Tap “Redeem code”.",
+  "A linkben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "The code from your link has been entered. Tap “Redeem code”.",
   // ===== 2026-10-25 v43.380 (Thomas 24623): stale offline region =====
   "Új változat a szerveren": "New version on the server",
   // ===== 2026-10-25 v43.380 (card 6b287cfb, Boss 20:13): Solar panel setup tool =====
@@ -1484,23 +1506,17 @@ window.PP_FORD_SZOTAR.en = {
     "Name of the point",
   "Koppints a térképre újra, ha arrébb tennéd. A pont csak a Mentéssel jön létre.":
     "Tap the map again to move it. The point is created only by Save.",
-  // VAD- ES ROVAR-TAVOLTARTO (Fonok kerese 2026-10-05 20:16)
-  "Vad- és rovar-távoltartó":
-    "Wildlife and insect deterrent",
-  "Vadak ellen":
-    "Against wildlife",
-  "Szúnyogok ellen":
-    "Against mosquitoes",
-  "Vad-frekvencia":
-    "Wildlife frequency",
-  "Szúnyog-frekvencia":
-    "Mosquito frequency",
+  // HANGGENERATOR (store compliance, owner choice "3b", 2026-10-31)
+  "Magas hang": "High-pitched tone",
+  "Söprő hang": "Sweeping tone",
+  "Folyamatos hang": "Steady tone",
+  "Söprő hang frekvenciája": "Sweeping tone frequency",
+  "Folyamatos hang frekvenciája": "Steady tone frequency",
   "Hz, lassan söprő hang. A legtöbb felnőtt ezt már nem hallja.":
     "Hz, a slowly sweeping tone. Most adults can no longer hear this.",
   "Hz, folyamatos hang.":
     "Hz, a continuous tone.",
-  "AMIT EZ TUD ÉS AMIT NEM. A telefon hangszórója ilyen magas hangon lényegesen halkabb, mint a vészsípnál, és ezt a készüléked dönti el, nem az app. A szúnyogriasztó ultrahangnak nincs bizonyított hatása, több vizsgálat is eredménytelennek találta. Nagyobb vadnál a bizonyítottan működő eszköz a HANGOS, EMBERI FÜLNEK IS HALLHATÓ zaj, tehát az SOS lap vészsípja, nem ez. Ezt a két gombot akkor használd, ha ki akarod próbálni, és ne építs rá védelmet.":
-    "WHAT THIS CAN AND CANNOT DO. At such a high pitch your phone's speaker is considerably quieter than it is for the emergency whistle, and that is decided by your device, not by the app. Ultrasonic mosquito repelling has no proven effect; several studies found it ineffective. Against larger wildlife the tool with proven effect is LOUD noise that HUMANS CAN HEAR TOO, that is, the emergency whistle on the SOS page, not this. Use these two buttons if you want to try them, and do not build your safety on them.",
+  "A telefon hangszórója ilyen magas hangon lényegesen halkabb, mint a vészsípnál, és ezt a készüléked dönti el, nem az app.": "At such a high pitch your phone's speaker is considerably quieter than it is for the emergency whistle, and that is decided by your device, not by the app.",
   "Ne tartsd a füledhez, és ne irányítsd más fülére. Kutya, macska és más házi állat jóval magasabbra hall, mint az ember: nekik ez zavaró lehet akkor is, ha te nem hallod.":
     "Do not hold it to your ear and do not point it at anyone else's ear. Dogs, cats and other pets hear much higher than people do: this can disturb them even when you hear nothing.",
   // TERKEP mester-gomb es funkcio-tabla (Fonok kerese 2026-10-05 20:11)
@@ -3931,7 +3947,6 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "Eszközök": "Tools",
  "Fémdetektor": "Metal detector",
  "Víz, áram, kalória, fűtés és a többi számoló": "Water, power, calories, heating and the other calculators",
- "Eszközök: a kalkulátorok, a fémdetektor, a tükör és a vad- és rovarriasztó egy helyen.": "Tools: the calculators, the metal detector, the mirror and the wildlife and insect repeller in one place.",
  "Tükör": "Mirror",
  "Előlapi kamera fénykerettel, sérülés megnézéséhez": "Front camera with a light frame, to check an injury",
  "Fény: be": "Light: on",
@@ -3940,9 +3955,9 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "Két ujjal csippentve nagyítasz. A fehér keret világítja meg az arcod; sötétben tedd a képernyő fényerejét maximumra.": "Pinch with two fingers to zoom. The white frame lights your face; in the dark, turn the screen brightness to maximum.",
  "Privát üzenet": "Private message",
  "Gíra küldése": "Send gíra",
- "Vad- és rovarriasztó": "Wildlife and insect repeller",
- "Magas hang vadak és szúnyogok ellen": "High-pitched sound against wildlife and mosquitoes",
- "A riasztó hangja most nem indult el.": "The repeller sound did not start.",
+ "Hanggenerátor": "Tone generator",
+ "Magas hang állítható frekvenciával": "High-pitched tone with adjustable frequency",
+ "A hang most nem indult el.": "The sound did not start.",
  "Előzmény": "History",
  "Legutóbb olvasott igék": "Recently read verses",
  "Korábbi keresések": "Previous searches",
@@ -4918,6 +4933,16 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "kép": "picture",
  "Feloldás": "Unblock"
 });
+
+// ===== 2026-10-31: report + block in local (Wi-Fi / Bluetooth / mesh) rooms (store audit item 9, owner "10a") =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "A bejelentéssel az üzenet szövege (ahogy a te telefonod megfejtette), a küldője és a szoba neve a PrepperPapa csapatához kerül. Nálad az üzenet azonnal eltűnik. A helyi szobának nincs szervere, ezért a bejelentés a következő internetkapcsolatkor megy el.": "With the report, the text of the message (as your phone decrypted it), its sender and the room name go to the PrepperPapa team. The message disappears for you at once. A local room has no server, so the report is sent at your next internet connection.",
+  "A bejelentéssel a felhasználó neve és a szoba neve a PrepperPapa csapatához kerül, hogy ellenőrizhessük. A helyi szobának nincs szervere, ezért a bejelentés a következő internetkapcsolatkor megy el.": "With the report, the user's name and the room name go to the PrepperPapa team so that we can check it. A local room has no server, so the report is sent at your next internet connection.",
+  "Az üzeneteit nálad elrejtjük, és értesítést sem kapsz tőle. A Beállításokban bármikor feloldhatod.": "We hide their messages for you, and you get no notifications from them either. You can undo this any time in Settings.",
+  "A bejelentést elmentettük. A következő internetkapcsolatkor elküldjük.": "Your report has been saved. We will send it at your next internet connection.",
+  "Túl sok bejelentés vár elküldésre. Próbáld újra később.": "Too many reports are waiting to be sent. Please try again later.",
+  "A helyi (Wi-Fi, Bluetooth) szobákban letiltott felhasználók. Az üzeneteiket és az értesítéseiket nálad elrejtjük.": "Users blocked in local (Wi-Fi, Bluetooth) rooms. We hide their messages and notifications for you."
+});
 // v43.393: map search -- coordinate result
 Object.assign(window.PP_FORD_SZOTAR.en, {
  "Mentés pontként": "Save as point",
@@ -5227,4 +5252,27 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
 // reader panel music preview (2026-10-31, TG 31957)
 Object.assign(window.PP_FORD_SZOTAR.en, {
   "Kipróbálom": "Try it"
+});
+
+// ===== 2026-10-31: store channels keep only the mandatory account, no tester lock (card 44533242, decision 1a) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "A PrepperPapa használatához fiók kell. Lépj be az e-mail címeddel: kapsz egy 6 jegyű kódot, és utána a telefon megjegyzi, frissítés után sem kell újra.": "PrepperPapa needs an account. Sign in with your e-mail address: you get a 6-digit code, and after that the phone remembers you, even after an update."
+});
+// map tile store compliance: non-own layers are view-only (2026-10-31, TG 32073)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Ezt a réteget csak megnézni lehet, előre letölteni nem: a szolgáltatója ezt nem engedi (a megnézett részek megmaradnak). Internet nélkül a Saját térkép működik: Magyarországra tájegységenként letöltheted itt lent, az „Offline térkép” csoportban.": "This layer can only be viewed, not downloaded in advance: its provider does not allow it (the parts you have viewed are kept). Without internet the Own map works: for Hungary you can download it by region right below, in the “Offline map” group."
+});
+
+// UJ OLVASASI TERVEK (Fonok 2026-10-31, TG 32337/32339, kartya cf02b3ee)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Ószövetség és Újszövetség párhuzamosan": "Old and New Testament side by side",
+  "Naponta egy fejezet az Ószövetségből és egy az Újszövetségből. Az Ószövetséget egyszer olvasod végig, az Újszövetség a végére érve elölről kezdődik.": "One chapter from the Old Testament and one from the New Testament each day. You read the Old Testament through once; the New Testament starts again from the beginning when it ends.",
+  "Próféciák 41 nap alatt": "Prophecies in 41 days",
+  "Messiási próféciák az újszövetségi beteljesedésükkel párban, utána Dániel könyve, végül az utolsó időkről szóló részek és a Jelenések könyve.": "Messianic prophecies paired with their New Testament fulfilment, then the Book of Daniel, and finally the passages on the end times and the Book of Revelation.",
+  "Jézus példázatai 17 nap alatt": "The parables of Jesus in 17 days",
+  "Naponta egy fejezet az evangéliumokból, amelyben Jézus példázatokban tanít, a magvetőtől a tékozló fiúig.": "One chapter a day from the Gospels in which Jesus teaches in parables, from the sower to the prodigal son.",
+  "A Biblia imádságai 20 nap alatt": "The prayers of the Bible in 20 days",
+  "Naponta egy fejezet egy nagy imádsággal: Ábrahám, Mózes, Anna, Salamon, Dániel, Jézus és Pál imái és mások.": "One chapter a day with a great prayer: the prayers of Abraham, Moses, Hannah, Solomon, Daniel, Jesus, Paul and others.",
+  "Pál levelei 30 nap alatt": "Paul's letters in 30 days",
+  "A rómaiakhoz írt levéltől a Filemonhoz írt levélig.": "From the letter to the Romans to the letter to Philemon."
 });
