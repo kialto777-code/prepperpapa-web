@@ -52,7 +52,7 @@ function ppSzovegForditas(gyoker) {
       // kovetkezetes magyar: ugy nez ki, mintha a forditas felig kesz lenne.
       // Ami ITT MARAD forditando: a keret (a "Tudastar" fejlec, a keresomezo, a
       // hibauzenetek, a "Betoltes...", a feloldo-kartya) -- azok felulet.
-      if (p.closest('.kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat, .biberedeti-forma, .biberedeti-hu, .biberedeti-sor > span + span, .biberedeti-szotar p')) continue;
+      if (p.closest('.kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat, .bkp-szo, .biberedeti-forma, .biberedeti-hu, .biberedeti-sor > span + span, .biberedeti-szotar p, .bibjz-user')) continue;
       const eredeti = PP_FORD_EREDETI.has(cs) ? PP_FORD_EREDETI.get(cs) : cs.textContent;
       const kulcs = eredeti.replace(/\s+/g, ' ').trim();
       if (!kulcs) continue;
@@ -203,8 +203,18 @@ function ppForditSzoveg(sz) {
 // no longer breaks the key; the slots are filled AFTER the lookup, in every language (Hungarian too).
 // Slot values go in as given: the caller escapes them when the result is used as HTML.
 function ppForditKitolt(sz, o) {
-  return ppForditSzoveg(sz).replace(/\{(\w+)\}/g, (_, k) => (o && o[k] != null) ? String(o[k]) : '');
+  return ppGerahEgyezes(ppForditSzoveg(sz).replace(/\{(\w+)\}/g, (_, k) => (o && o[k] != null) ? String(o[k]) : ''));
 }
+// THE NAME OF THE GIRA IS THE BRAND "GERAH" IN EVERY LANGUAGE (owner 2026-11-01, TG 32722/32725/32728, via Agnes
+// TG 6626): Latin letters everywhere (Cyrillic too), undeclined; amounts lowercase "40 gerah", ALL-CAPS labels "GERAH",
+// as a name "Gerah". Hungarian: the h is silent, suffixes hyphenated after the pronounced -a (Gerah-t, Gerah-val).
+// ppGerah(n, hu): the unit word after an amount -- "gerah" in every language; Hungarian may pass a suffixed form.
+function ppGerah(n, hu) {
+  if (ppNyelv() !== 'hu') return 'gerah';
+  return hu == null ? 'gerah' : hu;
+}
+// Kept for the callers: the English plural ("1 gerahs" -> "1 gerah") is gone with the undeclined brand, so this is a no-op.
+function ppGerahEgyezes(s) { return s; }
 let ppFordTimer = null, ppFordElsoJel = 0, ppFordUjraKell = false;
 function ppFordFigyeloIndit() {
   if (window.__ppFordFigyelo) return;
