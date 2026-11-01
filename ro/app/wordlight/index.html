@@ -101,6 +101,14 @@
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
+  .ppm .wlt{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:.95rem}
+  .ppm .wlt th,.ppm .wlt td{border-bottom:1px solid rgba(255,255,255,.14);padding:8px 6px;vertical-align:top;text-align:left}
+  .ppm .wlt th{font-weight:600;opacity:.8}
+  .ppm .wlt th:nth-child(n+2),.ppm .wlt td:nth-child(n+2){width:17%;text-align:center;white-space:nowrap}
+  .ppm .wlt td.ok{color:#9ad88a;font-weight:600}.ppm .wlt td.no{opacity:.55}
+  .ppm .wlt .megj{display:block;font-size:.85rem;opacity:.72;margin-top:3px;white-space:normal}
+  .ppm h3{margin:22px 0 6px;font-size:1.05rem}
+
   .trio{margin:40px 0 8px}
   .trio .kicsi{color:var(--zold);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
   .trio h2{margin:0 0 8px}
@@ -303,13 +311,54 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li>Versete pentru situații de urgență pentru treizeci de situații de viață și profeții grupate pe teme.</li>
 </ul>
 
-<h2>Biblia Premium</h2>
-<p>Tot restul este gratuit. Un cod Biblia Premium adaugă:</p>
-<ul>
-<li>Cuvântul original la o atingere: în textul maghiar Károli, atingi un cuvânt și apare originalul ebraic, aramaic sau grecesc, cu transliterare, număr Strong și sens din dicționar.</li>
-<li>O voce de citire de calitate pentru toate cărțile, descărcabilă și ascultabilă fără internet.</li>
-</ul>
-<p class="halk">Biblia Premium este un produs separat: codul premium PrepperPapa nu îl deblochează.</p>
+<h2>Ce este gratuit și ce este Biblia Premium?</h2>
+<p>Trei lucruri stau în spatele Biblia Premium: cuvântul original la o atingere, descărcarea înregistrărilor audio ale celorlalte cărți și muzicile de fundal premium. Tot restul este gratuit.</p>
+<h3>Citire</h3>
+<table class="wlt"><thead><tr><th>Funcție</th><th>Gratuit</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Textul Bibliei în 8 limbi, cu traducerea proprie a fiecărei limbi (Károli, KJV, Luther 1912, UBG 2017, Biblia 1914, Reina-Valera, Sinodală, Kuliș)<br><span class="megj">Descărcare și citire și fără internet.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Cărți apocrife, împreună cu cărțile lui Enoh<br><span class="megj">Se descarcă împreună cu Biblia.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Cuvintele lui Isus colorate<br><span class="megj">Activat implicit, se poate dezactiva din setări.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Mărimea literelor, culorile cărților (Colorat / Monocrom)</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Trimiteri încrucișate<br><span class="megj">Sursa: OpenBible.info.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Se deschide unde ai rămas<br><span class="megj">Doar în Wordlight (PrepperPapa se deschide cu plăcile).</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+</tbody></table>
+<h3>Audio</h3>
+<table class="wlt"><thead><tr><th>Funcție</th><th>Gratuit</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Citire cu voce tare, cu vocea telefonului, pentru toate cărțile</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Cartea Apocalipsei cu înregistrare audio, descărcată, fără internet<br><span class="megj">Acolo unde înregistrarea pentru limba respectivă nu se află încă pe server, apare „în curând”. Pentru descărcare trebuie să te autentifici.</span></td><td>da (mostră gratuită)</td><td class="ok">da</td></tr>
+<tr><td>Descărcarea înregistrărilor audio ale celorlalte cărți, fără internet<br><span class="megj">Ce este deja descărcat rămâne și se aude și fără premium.</span></td><td class="no">nu</td><td class="ok">da</td></tr>
+<tr><td>Panou de citire cu voce tare (viteză, pauză între versete, volumul muzicii)</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Muzică de fundal: Epic 1–3, Chitară acustică, Celtic, Muzică de luptă</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Muzică de fundal: Epic 4–6, Chitară 1–3<br><span class="megj">Toată lumea le vede în listă, dar se pot descărca și se aud doar cu premium.</span></td><td class="no">nu</td><td class="ok">da</td></tr>
+</tbody></table>
+<h3>Studiu</h3>
+<table class="wlt"><thead><tr><th>Funcție</th><th>Gratuit</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Cuvântul original la o atingere: cuvânt ebraic, aramaic sau grecesc, transcriere, număr Strong, sens din dicționar<br><span class="megj">În toate cele 8 traduceri, doar în cele 66 de cărți canonice. Dicționarul este tradus în maghiară și germană, în celelalte limbi apare în engleză. Acolo unde legătura automată dintre cuvinte nu este suficient de sigură, apare „Nu există o corespondență sigură”.</span></td><td class="no">nu</td><td class="ok">da</td></tr>
+<tr><td>Note Scofield și unități de măsură</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Evidențieri, Notițele mele, Comentariile mele<br><span class="megj">Stocate pe dispozitiv.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Versete pentru situații de urgență, Profeții</td><td class="ok">da</td><td class="ok">da</td></tr>
+</tbody></table>
+<h3>Rugăciune și alarmă</h3>
+<table class="wlt"><thead><tr><th>Funcție</th><th>Gratuit</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Rugăciuni, Mărturisiri, adăugarea unei rugăciuni proprii</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Camera de rugăciune: rugăciune ghidată, teme de rugăciune proprii, memento zilnic<br><span class="megj">Memento-ul sub formă de notificare vine doar în aplicația Android; pe iPhone și în browser doar când aplicația este deschisă.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Plan de citire</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Alarmă pentru planul de citire<br><span class="megj">Sună doar în aplicația Android; pe iPhone și în browser nu poate suna (setarea se păstrează).</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Timp zilnic cu Cuvântul: obiectiv, inel care se micșorează, felicitare, statistici<br><span class="megj">Obiectivul implicit: 5 minute.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+</tbody></table>
+<h3>Hartă</h3>
+<table class="wlt"><thead><tr><th>Funcție</th><th>Gratuit</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Hartă biblică pentru locurile din versete (de ex. Madian), pe internet<br><span class="megj">Se deschide din semnul de hartă al unui verset. În Wordlight există harta de bază, satelit și stratul de poziție pe glob.</span></td><td class="ok">da</td><td class="ok">da</td></tr>
+</tbody></table>
+<h3>Altele</h3>
+<table class="wlt"><thead><tr><th>Funcție</th><th>Gratuit</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Gerah (recompensă pentru obiectivul și planul de citire)<br><span class="megj">În Wordlight nu există Gerah. Acolo doar un rând lunar arată cât ai fi putut primi în PrepperPapa. În PrepperPapa, Gerah se primește și fără premium.</span></td><td>–</td><td>–</td></tr>
+<tr><td>Recomandare Biblia Premium (rară, o fereastră discretă la capitol)<br><span class="megj">Cel mai devreme după 3 zile diferite de citire, cel mult o dată pe săptămână, niciodată în timpul citirii cu voce tare. Se poate dezactiva cu butonul „Nu mai arăta”.</span></td><td>apare</td><td>nu apare</td></tr>
+<tr><td>Reclame<br><span class="megj">În Wordlight nu există reclame și nici nu vor exista, în niciuna dintre variante.</span></td><td>nu</td><td>nu</td></tr>
+<tr><td>Copie de siguranță criptată, alegerea limbii, cont și buletin informativ</td><td class="ok">da</td><td class="ok">da</td></tr>
+<tr><td>Modul de deblocare<br><span class="megj">În Wordlight se poate valorifica doar un cod Biblia Premium. În aplicație nu există buton de cumpărare, link sau preț.</span></td><td>–</td><td>cu cod</td></tr>
+</tbody></table>
+<p class="halk">Biblia Premium este un produs separat: codul PrepperPapa Premium nu o deblochează. Starea este conform versiunii din 1 noiembrie 2026.</p>
 
 <h2>Fără internet și în siguranță</h2>
 <p>După o singură descărcare funcționează fără internet (întreaga Biblie maghiară Károli are aproximativ 4 MB). Evidențierile și notițele le poți muta pe alt telefon cu o copie de siguranță criptată.</p>

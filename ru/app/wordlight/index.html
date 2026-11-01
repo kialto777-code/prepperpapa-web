@@ -101,6 +101,14 @@
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
+  .ppm .wlt{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:.95rem}
+  .ppm .wlt th,.ppm .wlt td{border-bottom:1px solid rgba(255,255,255,.14);padding:8px 6px;vertical-align:top;text-align:left}
+  .ppm .wlt th{font-weight:600;opacity:.8}
+  .ppm .wlt th:nth-child(n+2),.ppm .wlt td:nth-child(n+2){width:17%;text-align:center;white-space:nowrap}
+  .ppm .wlt td.ok{color:#9ad88a;font-weight:600}.ppm .wlt td.no{opacity:.55}
+  .ppm .wlt .megj{display:block;font-size:.85rem;opacity:.72;margin-top:3px;white-space:normal}
+  .ppm h3{margin:22px 0 6px;font-size:1.05rem}
+
   .trio{margin:40px 0 8px}
   .trio .kicsi{color:var(--zold);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
   .trio h2{margin:0 0 8px}
@@ -303,13 +311,54 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li>Стихи для экстренных ситуаций на тридцать жизненных случаев и пророчества, сгруппированные по темам.</li>
 </ul>
 
-<h2>Библия Премиум</h2>
-<p>Всё остальное бесплатно. Код Библия Премиум добавляет:</p>
-<ul>
-<li>Исходное слово одним касанием: в венгерском тексте Кароли коснись слова, и появится еврейский, арамейский или греческий оригинал с транслитерацией, номером Стронга и словарным значением.</li>
-<li>Качественный голос чтеца для всех книг, можно скачать и слушать без интернета.</li>
-</ul>
-<p class="halk">Библия Премиум - отдельный продукт: премиум-код PrepperPapa её не открывает.</p>
+<h2>Что бесплатно, а что входит в Библию Премиум?</h2>
+<p>За Библией Премиум стоят три вещи: исходное слово в одно касание, скачивание записанной озвучки остальных книг и премиум-фоновая музыка. Всё остальное бесплатно.</p>
+<h3>Чтение</h3>
+<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
+<tr><td>Текст Библии на 8 языках, с собственным переводом для каждого языка (Károli, KJV, Luther 1912, UBG 2017, Biblia 1914, Reina-Valera, Синодальный, Кулиша)<br><span class="megj">Скачивание и чтение возможны и без интернета.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Апокрифические книги, включая книги Еноха<br><span class="megj">Скачиваются вместе с Библией.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Слова Иисуса цветом<br><span class="megj">По умолчанию включено, в настройках можно отключить.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Размер шрифта, цвета книг (Цветные / Одноцветные)</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Перекрёстные ссылки<br><span class="megj">Источник: OpenBible.info.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Открывается там, где ты закончил чтение<br><span class="megj">Только в Wordlight (PrepperPapa открывается с плитками).</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+</tbody></table>
+<h3>Аудио</h3>
+<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
+<tr><td>Озвучка голосом телефона, все книги</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Книга Откровение с записанной озвучкой, скачанная, без интернета<br><span class="megj">Там, где записи для этого языка ещё нет на сервере, показывается «скоро». Для скачивания нужно войти в аккаунт.</span></td><td>да (бесплатный образец)</td><td class="ok">да</td></tr>
+<tr><td>Скачивание записанной озвучки остальных книг, без интернета<br><span class="megj">То, что уже скачано, остаётся и звучит и без премиума.</span></td><td class="no">нет</td><td class="ok">да</td></tr>
+<tr><td>Панель озвучки (скорость, пауза между стихами, громкость музыки)</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Фоновая музыка: Эпическая 1–3, Акустическая гитара, Кельтская, Боевая музыка</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Фоновая музыка: Эпическая 4–6, Гитара 1–3<br><span class="megj">Все видят их в списке, но скачать и слушать можно только с премиумом.</span></td><td class="no">нет</td><td class="ok">да</td></tr>
+</tbody></table>
+<h3>Изучение</h3>
+<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
+<tr><td>Исходное слово в одно касание: еврейское, арамейское или греческое слово, транскрипция, номер Стронга, словарное значение<br><span class="megj">Во всех 8 переводах, только в 66 канонических книгах. Словарь переведён на венгерский и немецкий, на остальных языках показывается на английском. Там, где автоматическая привязка слов недостаточно надёжна, показывается «Нет надёжного совпадения».</span></td><td class="no">нет</td><td class="ok">да</td></tr>
+<tr><td>Примечания Скофилда и единицы измерения</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Выделения, Мои заметки, Мои комментарии<br><span class="megj">Хранится на устройстве.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Стихи для экстренных ситуаций, Пророчества</td><td class="ok">да</td><td class="ok">да</td></tr>
+</tbody></table>
+<h3>Молитва и будильник</h3>
+<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
+<tr><td>Молитвы, Исповедания, добавление собственной молитвы</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Молитвенная комната: ведомая молитва, собственные темы для молитвы, ежедневное напоминание<br><span class="megj">Напоминание приходит уведомлением только в приложении для Android, на iPhone и в браузере только при открытом приложении.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>План чтения</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Будильник для плана чтения<br><span class="megj">Звучит только в приложении для Android; на iPhone и в браузере звучать не может (настройка сохраняется).</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Ежедневное время со Словом: цель, убывающее кольцо, поздравление, статистика<br><span class="megj">Цель по умолчанию: 5 минут.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+</tbody></table>
+<h3>Карта</h3>
+<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
+<tr><td>Библейская карта к местам из стихов (напр., Мидиан), через интернет<br><span class="megj">Открывается по значку карты у стиха. В Wordlight есть слои: базовая карта, спутник и положение в мире.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
+</tbody></table>
+<h3>Прочее</h3>
+<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
+<tr><td>Gerah (награда за цель чтения и за план)<br><span class="megj">В Wordlight нет Gerah. Там раз в месяц одна строка показывает, сколько ты мог бы получить в PrepperPapa. В PrepperPapa Gerah начисляется и без премиума.</span></td><td>–</td><td>–</td></tr>
+<tr><td>Предложение Библии Премиум (редкое, ненавязчивое всплывающее окно у главы)<br><span class="megj">Не раньше чем после 3 разных дней чтения, не чаще раза в неделю, во время озвучки никогда. Можно отключить кнопкой «Больше не показывать».</span></td><td>показывается</td><td>не показывается</td></tr>
+<tr><td>Реклама<br><span class="megj">В Wordlight нет рекламы и не будет ни в одной из версий.</span></td><td>нет</td><td>нет</td></tr>
+<tr><td>Резервная копия в зашифрованном виде, выбор языка, аккаунт и рассылка</td><td class="ok">да</td><td class="ok">да</td></tr>
+<tr><td>Способ разблокировки<br><span class="megj">В Wordlight можно активировать только код Библии Премиум. В приложении нет кнопки покупки, ссылки или цены.</span></td><td>–</td><td>по коду</td></tr>
+</tbody></table>
+<p class="halk">Библия Премиум является отдельным продуктом: код премиума PrepperPapa её не разблокирует. Состояние по версии от 1 ноября 2026 г.</p>
 
 <h2>Без интернета и в безопасности</h2>
 <p>После однократной загрузки работает без интернета (полная венгерская Библия Кароли занимает около 4 МБ). Выделения и заметки можно перенести на другой телефон с помощью зашифрованной резервной копии.</p>

@@ -101,6 +101,14 @@
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
+  .ppm .wlt{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:.95rem}
+  .ppm .wlt th,.ppm .wlt td{border-bottom:1px solid rgba(255,255,255,.14);padding:8px 6px;vertical-align:top;text-align:left}
+  .ppm .wlt th{font-weight:600;opacity:.8}
+  .ppm .wlt th:nth-child(n+2),.ppm .wlt td:nth-child(n+2){width:17%;text-align:center;white-space:nowrap}
+  .ppm .wlt td.ok{color:#9ad88a;font-weight:600}.ppm .wlt td.no{opacity:.55}
+  .ppm .wlt .megj{display:block;font-size:.85rem;opacity:.72;margin-top:3px;white-space:normal}
+  .ppm h3{margin:22px 0 6px;font-size:1.05rem}
+
   .trio{margin:40px 0 8px}
   .trio .kicsi{color:var(--zold);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
   .trio h2{margin:0 0 8px}
@@ -312,13 +320,54 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li>Vészhelyzeti igék harminc élethelyzetre, és próféciák témák szerint csoportosítva.</li>
 </ul>
 
-<h2>Biblia prémium</h2>
-<p>Minden más funkció ingyenes. A Biblia prémium kód ezt adja hozzá:</p>
-<ul>
-<li>Eredeti szó egy koppintásra: a Károli szövegében egy szóra koppintva megjelenik a héber, arámi vagy görög eredeti, átírással, Strong-számmal és szótári jelentéssel.</li>
-<li>Jó minőségű felolvasó hang az összes könyvhöz, letölthető és internet nélkül is hallgatható.</li>
-</ul>
-<p class="halk">A Biblia prémium külön termék: a PrepperPapa prémium kódja nem oldja fel.</p>
+<h2>Mi ingyenes, mi Biblia prémium?</h2>
+<p>Három dolog van a Biblia prémium mögött: az eredeti szó egy koppintásra, a többi könyv felvett hangjának letöltése, és a prémium háttérzenék. Minden más ingyenes.</p>
+<h3>Olvasás</h3>
+<table class="wlt"><thead><tr><th>Funkció</th><th>Ingyenes</th><th>Biblia prémium</th></tr></thead><tbody>
+<tr><td>A Biblia szövege 8 nyelven, a nyelv saját fordításával (Károli, KJV, Luther 1912, UBG 2017, Biblia 1914, Reina-Valera, Szinodális, Kulis)<br><span class="megj">Letöltés és olvasás internet nélkül is.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Apokrif könyvek, Énok könyveivel együtt<br><span class="megj">A Bibliával együtt töltődnek le.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Jézus szavai színnel<br><span class="megj">Alapból bekapcsolva, a beállításokban kikapcsolható.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Betűméret, könyvszínek (Színes / Egyszínű)</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Kereszthivatkozások<br><span class="megj">Forrás: OpenBible.info.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Ott nyílik meg, ahol abbahagytad<br><span class="megj">Csak a Wordlightban (a PrepperPapa a csempékkel nyílik).</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+</tbody></table>
+<h3>Hang</h3>
+<table class="wlt"><thead><tr><th>Funkció</th><th>Ingyenes</th><th>Biblia prémium</th></tr></thead><tbody>
+<tr><td>Felolvasás a telefon hangján, minden könyv</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>A Jelenések könyve felvett hanggal, letöltve, internet nélkül<br><span class="megj">Ahol az adott nyelv felvétele még nincs a szerveren, ott „hamarosan” látszik. A letöltéshez be kell jelentkezni.</span></td><td>igen (ingyenes minta)</td><td class="ok">igen</td></tr>
+<tr><td>A többi könyv felvett hangjának letöltése, internet nélkül<br><span class="megj">Ami már le van töltve, prémium nélkül is megmarad és szól.</span></td><td class="no">nem</td><td class="ok">igen</td></tr>
+<tr><td>Felolvasó panel (sebesség, versek közötti szünet, zene hangereje)</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Háttérzene: Epikus 1–3, Akusztikus gitár, Kelta, Csatazene</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Háttérzene: Epikus 4–6, Gitár 1–3<br><span class="megj">Mindenki látja őket a listában, de csak prémiummal tölthetők le és szólnak.</span></td><td class="no">nem</td><td class="ok">igen</td></tr>
+</tbody></table>
+<h3>Tanulmányozás</h3>
+<table class="wlt"><thead><tr><th>Funkció</th><th>Ingyenes</th><th>Biblia prémium</th></tr></thead><tbody>
+<tr><td>Eredeti szó egy koppintásra: héber, arámi vagy görög szó, átírás, Strong-szám, szótári jelentés<br><span class="megj">Mind a 8 fordításban, csak a 66 kanonikus könyvben. A szótár magyarul és németül lefordítva, a többi nyelven angolul jelenik meg. Ahol a gépi szó-összekötés nem elég biztos, ott „Nincs megbízható egyezés”.</span></td><td class="no">nem</td><td class="ok">igen</td></tr>
+<tr><td>Scofield-jegyzetek és mértékegységek</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Kiemelések, Jegyzeteim, Kommentárjaim<br><span class="megj">A készüléken tárolva.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Vészhelyzeti igék, Próféciák</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+</tbody></table>
+<h3>Ima és ébresztő</h3>
+<table class="wlt"><thead><tr><th>Funkció</th><th>Ingyenes</th><th>Biblia prémium</th></tr></thead><tbody>
+<tr><td>Imák, Megvallások, saját ima hozzáadása</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Imaszoba: vezetett ima, saját imatémák, napi emlékeztető<br><span class="megj">Az emlékeztető értesítésként csak az Android appban jön, iPhone-on és böngészőben csak nyitott appnál.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Olvasási terv</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Ébresztő az olvasási tervhez<br><span class="megj">Csak az Android appban szólal meg; iPhone-on és böngészőben nem tud megszólalni (a beállítás megmarad).</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Napi idő az Igével: cél, fogyó gyűrű, gratuláció, statisztika<br><span class="megj">Alapcél 5 perc.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+</tbody></table>
+<h3>Térkép</h3>
+<table class="wlt"><thead><tr><th>Funkció</th><th>Ingyenes</th><th>Biblia prémium</th></tr></thead><tbody>
+<tr><td>Bibliai térkép az igehelyekhez (pl. Midián), interneten<br><span class="megj">Egy ige térkép-jeléről nyílik. A Wordlightban alaptérkép, műhold és világhelyzet réteg van.</span></td><td class="ok">igen</td><td class="ok">igen</td></tr>
+</tbody></table>
+<h3>Egyéb</h3>
+<table class="wlt"><thead><tr><th>Funkció</th><th>Ingyenes</th><th>Biblia prémium</th></tr></thead><tbody>
+<tr><td>Gerah (jutalom az olvasási célért és a tervért)<br><span class="megj">A Wordlightban nincs Gerah. Ott csak havonta egy sor jelzi, mennyit kaphattál volna a PrepperPapában. A PrepperPapában a Gerah prémium nélkül is jár.</span></td><td>–</td><td>–</td></tr>
+<tr><td>Biblia prémium ajánló (ritka, nem zavaró felugró a fejezetnél)<br><span class="megj">Legkorábban 3 különböző olvasási nap után, legfeljebb hetente egyszer, felolvasás közben soha. „Ne mutasd többet” gombbal kikapcsolható.</span></td><td>megjelenik</td><td>nem jelenik meg</td></tr>
+<tr><td>Hirdetések<br><span class="megj">A Wordlightban nincs hirdetés, és nem is lesz, egyik változatban sem.</span></td><td>nincs</td><td>nincs</td></tr>
+<tr><td>Biztonsági mentés titkosítva, nyelvválasztás, fiók és hírlevél</td><td class="ok">igen</td><td class="ok">igen</td></tr>
+<tr><td>Feloldás módja<br><span class="megj">A Wordlightban csak Biblia prémium kód váltható be. Az appban nincs vásárlás-gomb, link vagy ár.</span></td><td>–</td><td>kóddal</td></tr>
+</tbody></table>
+<p class="halk">A Biblia prémium külön termék: a PrepperPapa prémium kódja nem oldja fel. Az állapot a 2026. november 1-i változat szerint.</p>
 
 <h2>Internet nélkül, biztonságban</h2>
 <p>Egyszeri letöltés után internet nélkül is működik (a teljes Károli-fordítás kb. 4 MB). A kiemeléseidet és jegyzeteidet titkosított mentéssel viheted át másik telefonra.</p>

@@ -101,6 +101,14 @@
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
+  .ppm .wlt{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:.95rem}
+  .ppm .wlt th,.ppm .wlt td{border-bottom:1px solid rgba(255,255,255,.14);padding:8px 6px;vertical-align:top;text-align:left}
+  .ppm .wlt th{font-weight:600;opacity:.8}
+  .ppm .wlt th:nth-child(n+2),.ppm .wlt td:nth-child(n+2){width:17%;text-align:center;white-space:nowrap}
+  .ppm .wlt td.ok{color:#9ad88a;font-weight:600}.ppm .wlt td.no{opacity:.55}
+  .ppm .wlt .megj{display:block;font-size:.85rem;opacity:.72;margin-top:3px;white-space:normal}
+  .ppm h3{margin:22px 0 6px;font-size:1.05rem}
+
   .trio{margin:40px 0 8px}
   .trio .kicsi{color:var(--zold);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
   .trio h2{margin:0 0 8px}
@@ -303,13 +311,54 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li>Versículos para emergencias para treinta situaciones de la vida, y profecías agrupadas por temas.</li>
 </ul>
 
-<h2>Biblia Premium</h2>
-<p>Todo lo demás es gratis. Un código de Biblia Premium añade:</p>
-<ul>
-<li>La palabra original con un toque: en el texto húngaro de Károli, toca una palabra para ver el original hebreo, arameo o griego, con transliteración, número Strong y significado del diccionario.</li>
-<li>Una voz de lectura de alta calidad para todos los libros, descargable y para escuchar sin internet.</li>
-</ul>
-<p class="halk">Biblia Premium es un producto aparte: el código premium de PrepperPapa no lo desbloquea.</p>
+<h2>¿Qué es gratis y qué es Biblia Premium?</h2>
+<p>Tres cosas están detrás de Biblia Premium: la palabra original con un toque, la descarga de la voz grabada del resto de los libros y la música de fondo premium. Todo lo demás es gratis.</p>
+<h3>Lectura</h3>
+<table class="wlt"><thead><tr><th>Función</th><th>Gratis</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>El texto de la Biblia en 8 idiomas, con la traducción propia de cada idioma (Károli, KJV, Luther 1912, UBG 2017, Biblia 1914, Reina-Valera, Sinodal, Kulish)<br><span class="megj">Descarga y lectura también sin internet.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Libros apócrifos, incluidos los libros de Enoc<br><span class="megj">Se descargan junto con la Biblia.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Las palabras de Jesús en color<br><span class="megj">Activado por defecto, se puede desactivar en los ajustes.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Tamaño de letra, colores de los libros (en color / de un solo color)</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Referencias cruzadas<br><span class="megj">Fuente: OpenBible.info.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Se abre donde lo dejaste<br><span class="megj">Solo en Wordlight (PrepperPapa se abre con los mosaicos).</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+</tbody></table>
+<h3>Audio</h3>
+<table class="wlt"><thead><tr><th>Función</th><th>Gratis</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Lectura en voz alta con la voz del teléfono, todos los libros</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>El libro de Apocalipsis con voz grabada, descargado, sin internet<br><span class="megj">Donde la grabación de ese idioma aún no está en el servidor, se muestra «próximamente». Para descargar hay que iniciar sesión.</span></td><td>sí (muestra gratuita)</td><td class="ok">sí</td></tr>
+<tr><td>Descarga de la voz grabada del resto de los libros, sin internet<br><span class="megj">Lo que ya está descargado se conserva y suena también sin premium.</span></td><td class="no">no</td><td class="ok">sí</td></tr>
+<tr><td>Panel de lectura en voz alta (velocidad, pausa entre versículos, volumen de la música)</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Música de fondo: Épica 1–3, Guitarra acústica, Celta, Música de batalla</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Música de fondo: Épica 4–6, Guitarra 1–3<br><span class="megj">Todo el mundo las ve en la lista, pero solo se pueden descargar y reproducir con premium.</span></td><td class="no">no</td><td class="ok">sí</td></tr>
+</tbody></table>
+<h3>Estudio</h3>
+<table class="wlt"><thead><tr><th>Función</th><th>Gratis</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Palabra original con un toque: palabra hebrea, aramea o griega, transliteración, número Strong, significado del diccionario<br><span class="megj">En las 8 traducciones, solo en los 66 libros canónicos. El diccionario está traducido al húngaro y al alemán; en los demás idiomas se muestra en inglés. Donde la vinculación automática de palabras no es lo bastante fiable, aparece «No hay coincidencia fiable».</span></td><td class="no">no</td><td class="ok">sí</td></tr>
+<tr><td>Notas de Scofield y unidades de medida</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Resaltados, Mis notas, Mis comentarios<br><span class="megj">Guardados en el dispositivo.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Versículos de emergencia, Profecías</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+</tbody></table>
+<h3>Oración y despertador</h3>
+<table class="wlt"><thead><tr><th>Función</th><th>Gratis</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Oraciones, Confesiones, añadir una oración propia</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Sala de oración: oración guiada, temas de oración propios, recordatorio diario<br><span class="megj">El recordatorio llega como notificación solo en la app de Android; en iPhone y en el navegador, solo con la app abierta.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Plan de lectura</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Despertador para el plan de lectura<br><span class="megj">Solo suena en la app de Android; en iPhone y en el navegador no puede sonar (el ajuste se conserva).</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Tiempo diario con la Palabra: meta, anillo que se agota, felicitación, estadísticas<br><span class="megj">Meta por defecto: 5 minutos.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+</tbody></table>
+<h3>Mapa</h3>
+<table class="wlt"><thead><tr><th>Función</th><th>Gratis</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Mapa bíblico para los lugares de los versículos (p. ej. Madián), con internet<br><span class="megj">Se abre desde el marcador de mapa de un versículo. En Wordlight hay capa de mapa base, satélite y situación mundial.</span></td><td class="ok">sí</td><td class="ok">sí</td></tr>
+</tbody></table>
+<h3>Otros</h3>
+<table class="wlt"><thead><tr><th>Función</th><th>Gratis</th><th>Biblia Premium</th></tr></thead><tbody>
+<tr><td>Gerah (recompensa por la meta de lectura y por el plan)<br><span class="megj">En Wordlight no hay Gerah. Allí solo una línea mensual indica cuánto habrías podido recibir en PrepperPapa. En PrepperPapa el Gerah se recibe también sin premium.</span></td><td>–</td><td>–</td></tr>
+<tr><td>Recomendación de Biblia Premium (ventana emergente poco frecuente y discreta en el capítulo)<br><span class="megj">Como pronto tras 3 días de lectura distintos, como máximo una vez por semana, nunca durante la lectura en voz alta. Se puede desactivar con el botón «No mostrar más».</span></td><td>se muestra</td><td>no se muestra</td></tr>
+<tr><td>Anuncios<br><span class="megj">En Wordlight no hay anuncios, ni los habrá, en ninguna de las versiones.</span></td><td>no</td><td>no</td></tr>
+<tr><td>Copia de seguridad cifrada, selección de idioma, cuenta y boletín</td><td class="ok">sí</td><td class="ok">sí</td></tr>
+<tr><td>Forma de desbloquear<br><span class="megj">En Wordlight solo se puede canjear un código de Biblia Premium. En la app no hay botón de compra, enlace ni precio.</span></td><td>–</td><td>con código</td></tr>
+</tbody></table>
+<p class="halk">Biblia Premium es un producto aparte: el código premium de PrepperPapa no lo desbloquea. El estado corresponde a la versión del 1 de noviembre de 2026.</p>
 
 <h2>Sin internet y seguro</h2>
 <p>Tras una sola descarga funciona sin internet (la Biblia húngara Károli completa ocupa unos 4 MB). Puedes pasar tus subrayados y notas a otro teléfono con una copia de seguridad cifrada.</p>
