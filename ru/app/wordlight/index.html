@@ -98,15 +98,201 @@
   .pp .cta{margin:24px 0 10px}
   .pp .halk{color:var(--muted);font-size:15px}
 
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  main.appm{max-width:none;padding:0}
+  .sec{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
+       border-bottom:1px solid var(--line)}
+  .in{max-width:1100px;margin:0 auto;padding:64px 22px;width:100%}
+  .kicsi{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--borostyan);
+         font-weight:700;margin-bottom:14px}
+  .nagy{font-size:clamp(38px,9vw,76px);line-height:1.04;font-weight:800;letter-spacing:-.01em;margin:0 0 18px}
+  .nagy em{font-style:normal;color:var(--borostyan)}
+  .lead{font-size:clamp(18px,2.4vw,22px);color:#cfd6cf;max-width:560px;margin:0 0 26px}
+  /* hero */
+  .hero{background:linear-gradient(rgba(11,17,14,.62),rgba(11,17,14,.76)),url('/assets/hatter-topo.jpg') center/cover}
+  .telhely{position:relative;display:flex;justify-content:center;align-items:center;padding:30px 0}
+  .telhely::before{content:"";position:absolute;left:50%;top:50%;width:min(470px,108vw);aspect-ratio:1;
+        transform:translate(-50%,-50%);background:url('/assets/iranytu.png') center/contain no-repeat;opacity:.30;pointer-events:none}
+  .telhely .tel{position:relative}
+  .allit::before{content:"";position:absolute;left:50%;top:50%;width:min(620px,130vw);aspect-ratio:1;
+        transform:translate(-50%,-50%);background:url('/assets/iranytu.png') center/contain no-repeat;opacity:.10;pointer-events:none}
+  .allit .in{position:relative}
+  .hero .in{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+  .badges{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .badge{position:relative;display:inline-block}
+  .badge img{height:52px;width:auto;display:block}
+  .badge.play img{height:70px;margin:-9px -8px}
+  .hamar{display:inline-block;background:var(--borostyan);color:#1b1407;margin:0 0 12px;
+        font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+  .badge[aria-disabled="true"]{cursor:default}
+  /* phone mockup */
+  /* realistic upright phone frames around the real app screenshots (Boss 22:54 via Marveen 23822):
+     Android with a punch-hole camera at the top of the page, iPhone with the Dynamic Island further down.
+     A status bar sits above the screenshot so the camera never covers the app header. */
+  .tel{display:block;position:relative;width:min(270px,62vw);margin:0 auto;padding:7px;border-radius:36px;
+       background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
+       box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
+  .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
+  .tel .kij{display:block;position:relative;overflow:hidden;border-radius:29px;background:#0B110E}
+  .tel .sb{display:flex;justify-content:space-between;align-items:center;height:26px;padding:0 16px 0 20px;
+       background:#0B110E;color:#e8efe9;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .tel .sb::before{content:"12:45"}
+  .tel .sb svg{height:9px;width:auto;fill:#e8efe9;display:block}
+  .tel .sb::after{content:"";position:absolute;left:50%;top:8px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+       background:#000;box-shadow:0 0 0 1.5px #1d2022}
+  .tel img{display:block;width:100%;height:auto}
+  .tel .kij{padding-bottom:9px}
+  .tel .kij::after{content:"";position:absolute;left:50%;bottom:3px;width:30%;height:3px;margin-left:-15%;border-radius:2px;background:#cfd8d2;opacity:.75}
+  .tel.iphone{padding:9px;border-radius:46px;background:linear-gradient(160deg,#6b6862,#2c2b29 42%,#57544f);
+       box-shadow:0 0 0 1px #8a867f,0 0 0 2.5px #111,0 26px 60px rgba(0,0,0,.6)}
+  .tel.iphone::before{right:-3.5px;top:24%;height:13%;background:#77736c}
+  .tel.iphone::after{content:"";position:absolute;left:-3.5px;top:18%;width:3px;height:7%;border-radius:3px 0 0 3px;background:#77736c;
+       box-shadow:0 calc(min(270px,62vw)*.2) 0 #77736c}
+  .tel.iphone .kij{border-radius:37px;padding-bottom:18px}
+  .tel.iphone .kij::after{bottom:6px;height:4px;width:34%;margin-left:-17%}
+  .tel.iphone .sb{height:34px;padding:0 22px 0 28px}
+  .tel.iphone .sb::before{content:"9:41"}
+  .tel.iphone .sb::after{top:8px;width:26%;height:20px;margin-left:-13%;border-radius:12px;box-shadow:none}
+  .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
+          letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
+  @keyframes lebeg{50%{transform:translate(-50%,6px)}}
+  /* slider */
+  .slider{background:#0d1511}
+  .slider .in{padding-left:0;padding-right:0;max-width:none}
+  .slider .fej{max-width:1100px;margin:0 auto;padding:0 22px 6px}
+  .sav{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .sav::-webkit-scrollbar{display:none}
+  .dia{flex:0 0 100%;scroll-snap-align:center;display:grid;grid-template-columns:1fr 1fr;align-items:center;
+       gap:24px;max-width:1100px;padding:18px 22px 10px;margin:0 auto}
+  .dia .szam{font-size:13px;letter-spacing:.2em;color:var(--zold);font-weight:700;text-transform:uppercase}
+  .dia h3{font-size:clamp(30px,6.5vw,52px);line-height:1.08;margin:8px 0 12px;font-weight:800}
+  .dia p{font-size:18px;color:#cfd6cf;max-width:460px}
+  .pottyok{display:flex;justify-content:center;gap:10px;padding:12px 0 4px}
+  .pottyok button{width:9px;height:9px;border-radius:9px;border:0;background:#3a4a40;padding:0;cursor:pointer;transition:.3s}
+  .pottyok button.akt{width:28px;background:var(--borostyan)}
+  .nyilak{display:flex;justify-content:center;gap:12px;margin-top:6px}
+  .nyilak button{width:44px;height:44px;border-radius:50%;border:1px solid #33453B;background:transparent;color:var(--ink);
+       font-size:20px;cursor:pointer}
+  /* statement */
+  .allit{background:linear-gradient(180deg,#0B110E,#142019);text-align:center}
+  .allit .nagy{max-width:900px;margin:0 auto 22px}
+  .allit .lead{margin:0 auto}
+  /* feature cards */
+  .tudas{display:block;min-height:auto}
+  .kartyak{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .kartya{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .kartya h3{color:var(--borostyan);font-size:20px;margin:0 0 10px}
+  .kartya ul{list-style:none;margin:0}
+  .kartya li{font-size:15px;color:#cfd6cf;margin-bottom:10px}
+  .kartya li b{color:var(--ink);display:block;font-size:16px}
+  /* price */
+  .arsec{display:block;min-height:auto}
+  .csomag{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  .csomag > div{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .csomag h3{margin:0 0 8px}
+  .csomag ul{margin:0 0 0 18px;font-size:15px;color:#cfd6cf}
+  .vasarlas{border-radius:18px;padding:24px}
+  .ar{font-size:44px}
+  #pp-ertesito{display:grid;gap:12px;margin-top:10px;max-width:480px}
+  #pp-ertesito input[type=email]{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid #33453B;
+       background:#0B110E;color:var(--ink);width:100%}
+  #pp-ertesito label{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#cfd6cf;line-height:1.5}
+  #pp-ertesito input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--borostyan)}
+  #pp-ertesito button{font:inherit;font-weight:700;border:0;cursor:pointer;justify-self:start}
+  #pp-ertesito button[disabled]{opacity:.6;cursor:wait}
+  #pp-ertesito-uzenet{font-size:15px;min-height:1.4em}
+  #pp-ertesito-uzenet.ok{color:var(--zold);font-weight:700}
+  #pp-ertesito-uzenet.hiba{color:#ff8a65}
+  .letolt{display:block;min-height:auto;text-align:center}
+  .letolt .badges{justify-content:center;margin:22px 0 8px}
+  .gyik{display:block;min-height:auto}
+  .gyik .in{max-width:760px}
+  /* premium tiles + comparison table */
+  .elonyok{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+  .elony{background:linear-gradient(160deg,#1c2a21,#121B16);border:1px solid #2c3d33;border-radius:18px;padding:20px}
+  .elony h3{color:var(--borostyan);font-size:19px;margin:0 0 8px}
+  .elony p{font-size:15px;color:#cfd6cf;margin:0}
+  .osszevet{display:block;min-height:auto}
+  .tabla{overflow-x:auto;margin:22px 0 14px;border:1px solid var(--line);border-radius:16px}
+  .tabla table{width:100%;border-collapse:collapse;font-size:15px}
+  .tabla th,.tabla td{padding:12px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+  .tabla thead th{background:var(--panel);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tabla thead th.prem{color:var(--borostyan)}
+  .tabla tbody th{font-weight:600}
+  .tabla td{text-align:center;width:24%}
+  .tabla td.pipa{color:var(--zold);font-weight:800;font-size:18px}
+  .tabla td.nincs{color:#5d6b62}
+  .tabla td.korlat{color:#cfd6cf}
+  .tabla td:nth-child(3){background:rgba(255,179,64,.05)}
+  .tabla td.korlat:nth-child(3){color:var(--borostyan);font-weight:700}
+  .tabla td.korlat.azonos:nth-child(3){color:#cfd6cf;font-weight:400}
+  .tabla tr:last-child th,.tabla tr:last-child td{border-bottom:0}
+  .tabla thead th.vagy{color:var(--zold)}
+  .tabla tr.csop th{background:#18241d;color:var(--zold);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px}
+  .tabla td.valt{color:#5d6b62;font-size:13px}
+  .tabla td{width:19%}
+  .szintek{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 8px}
+  .szint{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .szint.kiemelt{border-color:rgba(255,179,64,.55);background:linear-gradient(160deg,#2a2414,#121B16)}
+  .szint .szar{font-size:30px;font-weight:800;margin:4px 0 10px}
+  .szint ul{margin:0 0 0 18px;font-size:15px;color:#cfd6cf}
+  .szint li{margin-bottom:6px}
+  @media (max-width:820px){.szintek{grid-template-columns:1fr}.tabla td.valt{font-size:11px}}
+  @media (max-width:560px){
+    .tabla table{table-layout:fixed}
+    .tabla table th,.tabla table td{padding:9px 5px;font-size:12.5px;overflow-wrap:normal;word-break:normal;hyphens:manual}
+    .tabla table thead th{width:30%}
+    .tabla table thead th:first-child{width:40%}
+    .tabla table td.arc small{font-size:11px}
+    .vk{display:none}
+    .tabla thead th{font-size:10px;letter-spacing:.03em}
+    .tabla td{width:auto}
+    .tabla tr.csop th{font-size:11px;padding:8px 6px}
+  }
+  .partner{display:block;min-height:auto}
+  .partner .in{padding-top:40px;padding-bottom:40px}
+  .pfeltetel{margin:14px 0 16px 20px;padding:0;font-size:17px;color:#cfd6cf;max-width:720px}
+  .pfeltetel li{margin-bottom:6px}
+  .pjel{font-size:17px;margin:0}.pjel a{color:var(--borostyan)}
+  @media (max-width:560px){.pfeltetel,.pjel{font-size:15px}.partner .in{padding-top:28px;padding-bottom:28px}}
+  .csakmobil{display:none}
+  @media (max-width:560px){.csakmobil{display:block}}
+  .tabla td.arc small,.szint .szkesobb{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.3}
+  .tabla td.arc .ar1{display:block;font-size:17px}
+  .szint .szkesobb{font-size:14px;margin:-8px 0 12px}
+  .kieg{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:20px}
+  .kieg h3{margin:0 0 8px;font-size:22px}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .rv.lat{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}
+    .lefele{animation:none}}
+  @media (max-width:820px){
+    .hero .in,.dia{grid-template-columns:1fr}
+    .hero .in{padding-top:36px;text-align:left}
+    .hero .tel{width:min(230px,60vw)}
+    .hero .cta,.hero .badges{justify-content:center}
+    .hero .cta .btn{min-width:240px;text-align:center}
+    .hero .hamar{display:table;margin:0 auto 12px}
+    .dia{text-align:center}.dia p{margin:0 auto}
+    .dia{gap:14px;padding-top:10px}
+    .dia h3{font-size:clamp(26px,7.5vw,34px)}
+    .dia p{font-size:16px}
+    .dia .tel{width:min(190px,50vw);order:2}
+    .kartyak,.csomag{grid-template-columns:1fr}
+    .elonyok{grid-template-columns:1fr}
+    .tabla th,.tabla td{padding:11px 9px;font-size:14px}
+    .sec{min-height:auto}
+    .hero{min-height:100svh}
+  }
+
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
-  .ppm .wlt{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:.95rem}
-  .ppm .wlt th,.ppm .wlt td{border-bottom:1px solid rgba(255,255,255,.14);padding:8px 6px;vertical-align:top;text-align:left}
-  .ppm .wlt th{font-weight:600;opacity:.8}
-  .ppm .wlt th:nth-child(n+2),.ppm .wlt td:nth-child(n+2){width:17%;text-align:center;white-space:nowrap}
-  .ppm .wlt td.ok{color:#9ad88a;font-weight:600}.ppm .wlt td.no{opacity:.55}
-  .ppm .wlt .megj{display:block;font-size:.85rem;opacity:.72;margin-top:3px;white-space:normal}
+  .tabla th small.wlm{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.35}
+  .tabla tbody th{text-align:left}
   .ppm h3{margin:22px 0 6px;font-size:1.05rem}
 
   .trio{margin:40px 0 8px}
@@ -313,51 +499,48 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <h2>Что бесплатно, а что входит в Библию Премиум?</h2>
 <p>За Библией Премиум стоят три вещи: исходное слово в одно касание, скачивание записанной озвучки остальных книг и премиум-фоновая музыка. Всё остальное бесплатно.</p>
-<h3>Чтение</h3>
-<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
-<tr><td>Текст Библии на 8 языках, с собственным переводом для каждого языка (Károli, KJV, Luther 1912, UBG 2017, Biblia 1914, Reina-Valera, Синодальный, Кулиша)<br><span class="megj">Скачивание и чтение возможны и без интернета.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Апокрифические книги, включая книги Еноха<br><span class="megj">Скачиваются вместе с Библией.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Слова Иисуса цветом<br><span class="megj">По умолчанию включено, в настройках можно отключить.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Размер шрифта, цвета книг (Цветные / Одноцветные)</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Перекрёстные ссылки<br><span class="megj">Источник: OpenBible.info.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Открывается там, где ты закончил чтение<br><span class="megj">Только в Wordlight (PrepperPapa открывается с плитками).</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-</tbody></table>
-<h3>Аудио</h3>
-<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
-<tr><td>Озвучка голосом телефона, все книги</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Книга Откровение с записанной озвучкой, скачанная, без интернета<br><span class="megj">Там, где записи для этого языка ещё нет на сервере, показывается «скоро». Для скачивания нужно войти в аккаунт.</span></td><td>да (бесплатный образец)</td><td class="ok">да</td></tr>
-<tr><td>Скачивание записанной озвучки остальных книг, без интернета<br><span class="megj">То, что уже скачано, остаётся и звучит и без премиума.</span></td><td class="no">нет</td><td class="ok">да</td></tr>
-<tr><td>Панель озвучки (скорость, пауза между стихами, громкость музыки)</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Фоновая музыка: Эпическая 1–3, Акустическая гитара, Кельтская, Боевая музыка</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Фоновая музыка: Эпическая 4–6, Гитара 1–3<br><span class="megj">Все видят их в списке, но скачать и слушать можно только с премиумом.</span></td><td class="no">нет</td><td class="ok">да</td></tr>
-</tbody></table>
-<h3>Изучение</h3>
-<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
-<tr><td>Исходное слово в одно касание: еврейское, арамейское или греческое слово, транскрипция, номер Стронга, словарное значение<br><span class="megj">Во всех 8 переводах, только в 66 канонических книгах. Словарь переведён на венгерский и немецкий, на остальных языках показывается на английском. Там, где автоматическая привязка слов недостаточно надёжна, показывается «Нет надёжного совпадения».</span></td><td class="no">нет</td><td class="ok">да</td></tr>
-<tr><td>Примечания Скофилда и единицы измерения</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Выделения, Мои заметки, Мои комментарии<br><span class="megj">Хранится на устройстве.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Стихи для экстренных ситуаций, Пророчества</td><td class="ok">да</td><td class="ok">да</td></tr>
-</tbody></table>
-<h3>Молитва и будильник</h3>
-<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
-<tr><td>Молитвы, Исповедания, добавление собственной молитвы</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Молитвенная комната: ведомая молитва, собственные темы для молитвы, ежедневное напоминание<br><span class="megj">Напоминание приходит уведомлением только в приложении для Android, на iPhone и в браузере только при открытом приложении.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>План чтения</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Будильник для плана чтения<br><span class="megj">Звучит только в приложении для Android; на iPhone и в браузере звучать не может (настройка сохраняется).</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Ежедневное время со Словом: цель, убывающее кольцо, поздравление, статистика<br><span class="megj">Цель по умолчанию: 5 минут.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-</tbody></table>
-<h3>Карта</h3>
-<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
-<tr><td>Библейская карта к местам из стихов (напр., Мидиан), через интернет<br><span class="megj">Открывается по значку карты у стиха. В Wordlight есть слои: базовая карта, спутник и положение в мире.</span></td><td class="ok">да</td><td class="ok">да</td></tr>
-</tbody></table>
-<h3>Прочее</h3>
-<table class="wlt"><thead><tr><th>Функция</th><th>Бесплатно</th><th>Библия Премиум</th></tr></thead><tbody>
-<tr><td>Gerah (награда за цель чтения и за план)<br><span class="megj">В Wordlight нет Gerah. Там раз в месяц одна строка показывает, сколько ты мог бы получить в PrepperPapa. В PrepperPapa Gerah начисляется и без премиума.</span></td><td>–</td><td>–</td></tr>
-<tr><td>Предложение Библии Премиум (редкое, ненавязчивое всплывающее окно у главы)<br><span class="megj">Не раньше чем после 3 разных дней чтения, не чаще раза в неделю, во время озвучки никогда. Можно отключить кнопкой «Больше не показывать».</span></td><td>показывается</td><td>не показывается</td></tr>
-<tr><td>Реклама<br><span class="megj">В Wordlight нет рекламы и не будет ни в одной из версий.</span></td><td>нет</td><td>нет</td></tr>
-<tr><td>Резервная копия в зашифрованном виде, выбор языка, аккаунт и рассылка</td><td class="ok">да</td><td class="ok">да</td></tr>
-<tr><td>Способ разблокировки<br><span class="megj">В Wordlight можно активировать только код Библии Премиум. В приложении нет кнопки покупки, ссылки или цены.</span></td><td>–</td><td>по коду</td></tr>
-</tbody></table>
+<div class="tabla"><table>
+<thead><tr><th scope="col">Функция</th><th scope="col">Бесплатно</th><th scope="col" class="prem">Библия Премиум</th></tr></thead>
+<tbody>
+<tr class="csop"><th scope="rowgroup" colspan="3">Чтение</th></tr>
+<tr><th scope="row">Текст Библии на 8 языках, с собственным переводом для каждого языка (Károli, KJV, Luther 1912, UBG 2017, Biblia 1914, Reina-Valera, Синодальный, Кулиша)<small class="wlm">Скачивание и чтение возможны и без интернета.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Апокрифические книги, включая книги Еноха<small class="wlm">Скачиваются вместе с Библией.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Слова Иисуса цветом<small class="wlm">По умолчанию включено, в настройках можно отключить.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Размер шрифта, цвета книг (Цветные / Одноцветные)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Перекрёстные ссылки<small class="wlm">Источник: OpenBible.info.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Открывается там, где ты закончил чтение<small class="wlm">Только в Wordlight (PrepperPapa открывается с плитками).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Аудио</th></tr>
+<tr><th scope="row">Озвучка голосом телефона, все книги</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Книга Откровение с записанной озвучкой, скачанная, без интернета<small class="wlm">Бесплатный образец. Там, где записи для этого языка ещё нет на сервере, показывается «скоро». Для скачивания нужно войти в аккаунт.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Скачивание записанной озвучки остальных книг, без интернета<small class="wlm">То, что уже скачано, остаётся и звучит и без премиума.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Панель озвучки (скорость, пауза между стихами, громкость музыки)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Фоновая музыка: Эпическая 1–3, Акустическая гитара, Кельтская, Боевая музыка</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Фоновая музыка: Эпическая 4–6, Гитара 1–3<small class="wlm">Все видят их в списке, но скачать и слушать можно только с премиумом.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Изучение</th></tr>
+<tr><th scope="row">Исходное слово в одно касание: еврейское, арамейское или греческое слово, транскрипция, номер Стронга, словарное значение<small class="wlm">Во всех 8 переводах, только в 66 канонических книгах. Словарь переведён на венгерский и немецкий, на остальных языках показывается на английском. Там, где автоматическая привязка слов недостаточно надёжна, показывается «Нет надёжного совпадения».</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Примечания Скофилда и единицы измерения</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Выделения, Мои заметки, Мои комментарии<small class="wlm">Хранится на устройстве.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Стихи для экстренных ситуаций, Пророчества</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Молитва и будильник</th></tr>
+<tr><th scope="row">Молитвы, Исповедания, добавление собственной молитвы</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Молитвенная комната: ведомая молитва, собственные темы для молитвы, ежедневное напоминание<small class="wlm">Напоминание приходит уведомлением только в приложении для Android, на iPhone и в браузере только при открытом приложении.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">План чтения</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Будильник для плана чтения<small class="wlm">Звучит только в приложении для Android; на iPhone и в браузере звучать не может (настройка сохраняется).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Ежедневное время со Словом: цель, убывающее кольцо, поздравление, статистика<small class="wlm">Цель по умолчанию: 5 минут.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Карта</th></tr>
+<tr><th scope="row">Библейская карта к местам из стихов (напр., Мидиан), через интернет<small class="wlm">Открывается по значку карты у стиха. В Wordlight есть слои: базовая карта, спутник и положение в мире.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Прочее</th></tr>
+<tr><th scope="row">Gerah (награда за цель чтения и за план)<small class="wlm">В Wordlight нет Gerah. Там раз в месяц одна строка показывает, сколько ты мог бы получить в PrepperPapa. В PrepperPapa Gerah начисляется и без премиума.</small></th><td class="korlat">–</td><td class="korlat">–</td></tr>
+<tr><th scope="row">Предложение Библии Премиум (редкое, ненавязчивое всплывающее окно у главы)<small class="wlm">Не раньше чем после 3 разных дней чтения, не чаще раза в неделю, во время озвучки никогда. Можно отключить кнопкой «Больше не показывать».</small></th><td class="korlat">показывается</td><td class="korlat">не показывается</td></tr>
+<tr><th scope="row">Реклама<small class="wlm">В Wordlight нет рекламы и не будет ни в одной из версий.</small></th><td class="korlat">нет</td><td class="korlat">нет</td></tr>
+<tr><th scope="row">Резервная копия в зашифрованном виде, выбор языка, аккаунт и рассылка</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Способ разблокировки<small class="wlm">В Wordlight можно активировать только код Библии Премиум. В приложении нет кнопки покупки, ссылки или цены.</small></th><td class="korlat">–</td><td class="korlat">по коду</td></tr>
+</tbody></table></div>
 <p class="halk">Библия Премиум является отдельным продуктом: код премиума PrepperPapa её не разблокирует. Состояние по версии от 1 ноября 2026 г.</p>
 
 <h2>Без интернета и в безопасности</h2>
