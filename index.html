@@ -280,6 +280,15 @@
   @media(max-width:520px){
     .nav > .btn{display:none}
   }
+  /* MOBILE HERO: image above the headline, fully visible; buttons full width, aligned with the text (Boss 2026-11-02, TG 7501/7503) */
+  @media(max-width:920px){
+    .hero{flex-direction:column;align-items:stretch;min-height:0}
+    .hero .bg{position:relative;inset:auto;width:100%;aspect-ratio:16/10;background-position:96% 70%;background-size:185% auto}
+    .hero .veil{inset:auto;top:0;left:0;right:0;width:100%;aspect-ratio:16/10;background:linear-gradient(180deg,rgba(11,17,14,0) 55%,rgba(11,17,14,1) 100%)}
+    .hero .wrap{padding-top:18px;padding-bottom:64px}
+    .hero .cta{flex-direction:column;align-items:stretch;justify-content:flex-start}
+    .hero .cta .btn{width:100%;min-width:0;text-align:center}
+  }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "PrepperPapa", "url": "https://prepperpapa.hu/", "logo": "https://prepperpapa.hu/assets/applogo-192.png", "description": "Felszerelés-tesztek valós használatban, gyakorlati útmutatók és tudástár. Áramszünet, víz, hő, kommunikáció. Készülj, de ne félj.", "sameAs": ["https://www.youtube.com/@PrepperPapa", "https://www.tiktok.com/@prepperpapa", "https://www.facebook.com/prepperpapa", "https://www.instagram.com/prepperpapa"], "email": "prepperpapa@gmail.com"}</script>
 <style id="fej2">
