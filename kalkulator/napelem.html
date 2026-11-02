@@ -410,7 +410,7 @@ function ppFrissHelyzet(){
   return new Promise((megvan, hiba)=>{
     if(!navigator.geolocation){ hiba(new Error('Ezen az eszközön nincs helymeghatározás.')); return; }
     navigator.geolocation.getCurrentPosition(
-      p=>megvan({ lat:p.coords.latitude, lng:p.coords.longitude, pont:p.coords.accuracy }),
+      p=>{ try{ ppFixJegyez(p.coords); }catch(e){} megvan({ lat:p.coords.latitude, lng:p.coords.longitude, pont:p.coords.accuracy }); },
       e=>hiba(new Error(e.message||'Nem sikerült a helymeghatározás.')),
       { enableHighAccuracy:true, timeout:12000, maximumAge:5000 }
     );
