@@ -291,6 +291,8 @@
     .hero{min-height:100svh}
   }
 
+  .wlvideo{display:flex;justify-content:center;margin:26px 0}
+  .wlvideo video{width:min(300px,72vw);height:auto;border-radius:22px;box-shadow:0 0 0 1px #50565a,0 22px 50px rgba(0,0,0,.55);background:#0B110E}
   .wlkepek{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:6px 0 20px;padding-bottom:6px}
   .wlkepek figure{flex:0 0 180px;scroll-snap-align:start;margin:0}
   .wlkepek img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
@@ -475,6 +477,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="kicsi">Wordlight &middot; PrepperPapa Bible</div>
 <h1>The Bible in your pocket, even without internet.</h1>
 <p>Wordlight is the PrepperPapa Bible app. You can read and listen to it in eight languages, and after a single download it works without internet too. It installs separately, next to PrepperPapa.</p>
+<div class="wlvideo"><video src="/app/kepek/wl-bemutato.mp4" poster="/app/kepek/wl-bemutato-poszter.jpg" width="590" height="1280" controls muted playsinline loop autoplay preload="metadata" aria-label="Wordlight"></video></div>
 <div class="wlkepek"><figure><img src="/app/kepek/wl-1-kezdolap.webp" width="480" height="1044" alt="Home screen" loading="lazy"><figcaption>Home screen</figcaption></figure><figure><img src="/app/kepek/wl-2-konyvek.webp" width="480" height="1044" alt="Illustrated book tiles" loading="lazy"><figcaption>Illustrated book tiles</figcaption></figure><figure><img src="/app/kepek/wl-3-fejezetek.webp" width="480" height="1044" alt="Chapter picker with scene drawings" loading="lazy"><figcaption>Chapter picker with scene drawings</figcaption></figure><figure><img src="/app/kepek/wl-4-olvasas.webp" width="480" height="1044" alt="Reading" loading="lazy"><figcaption>Reading</figcaption></figure><figure><img src="/app/kepek/wl-5-ima.webp" width="480" height="1044" alt="Prayer" loading="lazy"><figcaption>Prayer</figcaption></figure><figure><img src="/app/kepek/wl-6-terv.webp" width="480" height="1044" alt="Reading plans" loading="lazy"><figcaption>Reading plans</figcaption></figure></div>
 
 <h2>Eight languages, eight Bibles</h2>
