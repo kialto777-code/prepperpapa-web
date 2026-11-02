@@ -123,6 +123,9 @@
        box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
   .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
   .tel .kij{display:block;position:relative;overflow:hidden;border-radius:29px;background:#0B110E}
+  /* glass reflection on the screen (Boss 2026-11-02 TG 7631: more believable) */
+  .tel .kij::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;
+       background:linear-gradient(115deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 30.5%),linear-gradient(115deg,rgba(255,255,255,0) 62%,rgba(255,255,255,.035) 62.5%,rgba(255,255,255,0) 80%)}
   .tel .sb{display:flex;justify-content:space-between;align-items:center;height:26px;padding:0 16px 0 20px;
        background:#0B110E;color:#e8efe9;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   .tel .sb::before{content:"12:45"}
