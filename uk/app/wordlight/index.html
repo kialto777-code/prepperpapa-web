@@ -288,6 +288,10 @@
     .hero{min-height:100svh}
   }
 
+  .wlkepek{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:6px 0 20px;padding-bottom:6px}
+  .wlkepek figure{flex:0 0 180px;scroll-snap-align:start;margin:0}
+  .wlkepek img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+  .wlkepek figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
@@ -468,6 +472,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="kicsi">Wordlight &middot; Біблія PrepperPapa</div>
 <h1>Біблія у твоїй кишені, навіть без інтернету.</h1>
 <p>Wordlight - біблійний застосунок PrepperPapa. Його можна читати й слухати вісьмома мовами, а після одноразового завантаження і без інтернету. Встановлюється окремо, поруч із PrepperPapa.</p>
+<div class="wlkepek"><figure><img src="/app/kepek/wl-1-kezdolap.webp" width="480" height="1044" alt="Головний екран" loading="lazy"><figcaption>Головний екран</figcaption></figure><figure><img src="/app/kepek/wl-2-konyvek.webp" width="480" height="1044" alt="Ілюстровані плитки книг" loading="lazy"><figcaption>Ілюстровані плитки книг</figcaption></figure><figure><img src="/app/kepek/wl-3-fejezetek.webp" width="480" height="1044" alt="Вибір розділу з малюнками сцен" loading="lazy"><figcaption>Вибір розділу з малюнками сцен</figcaption></figure><figure><img src="/app/kepek/wl-4-olvasas.webp" width="480" height="1044" alt="Читання" loading="lazy"><figcaption>Читання</figcaption></figure><figure><img src="/app/kepek/wl-5-ima.webp" width="480" height="1044" alt="Молитва" loading="lazy"><figcaption>Молитва</figcaption></figure><figure><img src="/app/kepek/wl-6-terv.webp" width="480" height="1044" alt="Плани читання" loading="lazy"><figcaption>Плани читання</figcaption></figure></div>
 
 <h2>Вісім мов, вісім Біблій</h2>
 <p>Кароі угорською, King James англійською, Лютер 1912 німецькою, переклад Куліша українською, Синодальний російською, UBG 2017 польською, Biblia 1914 румунською та Reina-Valera іспанською. Між завантаженими перекладами можна перемикатися одним дотиком.</p>
@@ -491,6 +496,12 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h2>Прокидайся зі Словом</h2>
 <p>Будильник можна прив'язати до плану читання, у вибрані дні тижня. На Android він будить телефон і читає вголос уривок на день.</p>
 
+<h2>Ігри</h2>
+<ul>
+<li>Ігри з віршами в дорослому та дитячому режимі, з балами та серіями: Вікторина з віршів, Хто це сказав?, Де це?, Знайди місце та Порядок книг.</li>
+<li>У дитячому режимі чотири ігри з картинками для малечі: Гра на пам'ять, Ноїв ковчег, Хто є хто? та Пазл.</li>
+</ul>
+
 <h2>Молитва та надзвичайні ситуації</h2>
 <ul>
 <li>Вбудовані та власні молитви, таймер молитви з тихим дзвіночком; під час молитви екран не гасне.</li>
@@ -507,6 +518,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Апокрифічні книги, разом із книгами Еноха<small class="wlm">Завантажуються разом із Біблією.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Слова Ісуса кольором<small class="wlm">Типово ввімкнено, у налаштуваннях можна вимкнути.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Розмір шрифту, кольори книг (Кольорові / Одноколірні)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Малюнки сцен на плитках книг, за вибором розділу й вірша, і 144 розділи з власним малюнком<small class="wlm">Також на апокрифічних книгах.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Перехресні посилання<small class="wlm">Джерело: OpenBible.info.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Відкривається там, де ти зупинився<small class="wlm">Лише у Wordlight (PrepperPapa відкривається з плитками).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
@@ -514,6 +526,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Читання вголос голосом телефону, усі книги</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Книга Одкровення в аудіозаписі, завантажена, без інтернету<small class="wlm">Безкоштовний зразок. Там, де запису цієї мови ще немає на сервері, показується «незабаром». Для завантаження потрібно увійти в обліковий запис.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Завантаження аудіозаписів решти книг, без інтернету<small class="wlm">Те, що вже завантажено, залишається й звучить навіть без преміуму.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Під час читання вголос виділення стежить за словом, яке голос саме вимовляє</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Панель читання вголос (швидкість, пауза між віршами, гучність музики)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Фонова музика: Епічна 1–3, Акустична гітара, Кельтська, Бойова музика</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Фонова музика: Епічна 4–6, Гітара 1–3<small class="wlm">Усі бачать їх у списку, але завантажити й слухати їх можна лише з преміумом.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
@@ -521,13 +534,17 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr class="csop"><th scope="rowgroup" colspan="3">Вивчення</th></tr>
 <tr><th scope="row">Оригінальне слово одним дотиком: староєврейське, арамейське або грецьке слово, транскрипція, номер Стронга, значення зі словника<small class="wlm">У всіх 8 перекладах, лише в 66 канонічних книгах. Словник перекладено угорською та німецькою, іншими мовами він показується англійською. Там, де машинне зіставлення слів недостатньо надійне, показується «Немає надійного збігу».</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Примітки Скофілда та одиниці виміру</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Виділення, Мої нотатки, Мої коментарі<small class="wlm">Зберігається на пристрої.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Вивчення віршів: вірші запам’ятовуються, коли слова поступово приховуються, з повторенням упродовж кількох днів<small class="wlm">Безкоштовно: один новий вірш на тиждень, повторення без обмежень. З Біблією преміум: нові вірші без обмежень.</small></th><td class="pipa">1 новий вірш/тиждень</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Виділення, Мої нотатки, Мої коментарі<small class="wlm">Зберігається на пристрої. У списку нотаток пошук шукає в нотатках.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Вивчення віршів: вірші запам’ятовуються, коли слова поступово приховуються, з повторенням упродовж кількох днів<small class="wlm">Три рівні; відповідь можна ввести або в Wordlight промовити в мікрофон. Безкоштовно: один новий вірш на тиждень, повторення без обмежень. З Біблією преміум: нові вірші без обмежень.</small></th><td class="pipa">1 новий вірш/тиждень</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Вірші на екстрені випадки, Пророцтва</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Ігри</th></tr>
+<tr><th scope="row">Ігри з віршами: Вікторина з віршів, Хто це сказав?, Де це?, Знайди місце, Порядок книг<small class="wlm">Дорослий і дитячий режим, бали та серії.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Ігри з картинками для малечі: Гра на пам'ять, Ноїв ковчег, Хто є хто?, Пазл<small class="wlm">З’являються в дитячому режимі.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
 <tr class="csop"><th scope="rowgroup" colspan="3">Молитва й будильник</th></tr>
 <tr><th scope="row">Молитви, Сповідання, додавання власної молитви</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Молитовна кімната: керована молитва, власні теми молитви, щоденне нагадування<small class="wlm">Нагадування як сповіщення приходить лише в Android-застосунку, на iPhone і в браузері лише за відкритого застосунку.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Молитовна кімната: керована молитва, власні теми молитви, щоденне нагадування<small class="wlm">Для керованої молитви є дві мелодії без ударних (фортепіано, струнні). Нагадування як сповіщення приходить лише в Android-застосунку, на iPhone і в браузері лише за відкритого застосунку.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">План читання</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Будильник для плану читання<small class="wlm">Лунає лише в Android-застосунку; на iPhone і в браузері не може пролунати (налаштування зберігається).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Щоденний час зі Словом: мета, кільце, що зменшується, вітання, статистика<small class="wlm">Типова мета: 5 хвилин.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
@@ -542,7 +559,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Зашифроване резервне копіювання, вибір мови, обліковий запис і розсилка</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Спосіб розблокування<small class="wlm">У Wordlight можна активувати лише код Біблія Преміум. У застосунку немає кнопки покупки, посилання чи ціни.</small></th><td class="korlat">–</td><td class="korlat">за кодом</td></tr>
 </tbody></table></div>
-<p class="halk">Біблія Преміум є окремим продуктом: код преміуму PrepperPapa цей продукт не розблоковує. Стан наведено за версією від 1 листопада 2026 року.</p>
+<p class="halk">Біблія Преміум є окремим продуктом: код преміуму PrepperPapa цей продукт не розблоковує. Стан наведено за версією від 2 листопада 2026 року.</p>
 
 <h2>Без інтернету й у безпеці</h2>
 <p>Після одноразового завантаження працює без інтернету (повна угорська Біблія Кароі займає близько 4 МБ). Виділення та нотатки можна перенести на інший телефон за допомогою зашифрованої резервної копії.</p>

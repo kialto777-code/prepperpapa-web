@@ -288,6 +288,10 @@
     .hero{min-height:100svh}
   }
 
+  .wlkepek{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:6px 0 20px;padding-bottom:6px}
+  .wlkepek figure{flex:0 0 180px;scroll-snap-align:start;margin:0}
+  .wlkepek img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+  .wlkepek figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
@@ -477,6 +481,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="kicsi">Wordlight &middot; PrepperPapa Biblia</div>
 <h1>A Biblia a zsebedben, internet nélkül is.</h1>
 <p>A Wordlight a PrepperPapa Biblia-alkalmazása. Nyolc nyelven olvasható és hallgatható, egyszeri letöltés után internet nélkül is. A PrepperPapa mellé külön telepíthető.</p>
+<div class="wlkepek"><figure><img src="/app/kepek/wl-1-kezdolap.webp" width="480" height="1044" alt="Kezdőképernyő" loading="lazy"><figcaption>Kezdőképernyő</figcaption></figure><figure><img src="/app/kepek/wl-2-konyvek.webp" width="480" height="1044" alt="A könyvek rajzos csempéi" loading="lazy"><figcaption>A könyvek rajzos csempéi</figcaption></figure><figure><img src="/app/kepek/wl-3-fejezetek.webp" width="480" height="1044" alt="Fejezetválasztó jelenetrajzokkal" loading="lazy"><figcaption>Fejezetválasztó jelenetrajzokkal</figcaption></figure><figure><img src="/app/kepek/wl-4-olvasas.webp" width="480" height="1044" alt="Olvasás" loading="lazy"><figcaption>Olvasás</figcaption></figure><figure><img src="/app/kepek/wl-5-ima.webp" width="480" height="1044" alt="Imádság" loading="lazy"><figcaption>Imádság</figcaption></figure><figure><img src="/app/kepek/wl-6-terv.webp" width="480" height="1044" alt="Olvasási tervek" loading="lazy"><figcaption>Olvasási tervek</figcaption></figure></div>
 
 <h2>Nyolc nyelv, nyolc Biblia</h2>
 <p>Magyarul a Károli-fordítás, angolul a King James, németül a Luther 1912, ukránul a Kulis-féle fordítás, oroszul a Szinodális, lengyelül az UBG 2017, románul a Biblia 1914, spanyolul a Reina-Valera. A letöltött fordítások között egy koppintással válthatsz.</p>
@@ -500,6 +505,12 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h2>Ébredj igével</h2>
 <p>Az ébresztő egy olvasási tervhez köthető, a hét kiválasztott napjain. Androidon felébreszti a telefont, és felolvassa a napi részt.</p>
 
+<h2>Játékok</h2>
+<ul>
+<li>Igés játékok felnőtt és gyerek módban, pontozással és sorozattal: Igekvíz, Ki mondta?, Hol van?, Igehely-párosító és Könyvsorrend.</li>
+<li>Gyerek módban négy képes játék a kicsiknek: Memóriajáték, Noé bárkája, Ki kicsoda? és Kirakós.</li>
+</ul>
+
 <h2>Imádság és vészhelyzet</h2>
 <ul>
 <li>Beépített és saját imák, imaidő-mérő halk csengővel; ima közben a képernyő nem alszik el.</li>
@@ -516,6 +527,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Apokrif könyvek, Énok könyveivel együtt<small class="wlm">A Bibliával együtt töltődnek le.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Jézus szavai színnel<small class="wlm">Alapból bekapcsolva, a beállításokban kikapcsolható.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Betűméret, könyvszínek (Színes / Egyszínű)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Jelenetrajzok a könyvcsempéken, a fejezet- és versválasztó mögött, és 144 fejezet saját rajza<small class="wlm">Az apokrif könyveken is.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Kereszthivatkozások<small class="wlm">Forrás: OpenBible.info.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Ott nyílik meg, ahol abbahagytad<small class="wlm">Csak a Wordlightban (a PrepperPapa a csempékkel nyílik).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
@@ -523,6 +535,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Felolvasás a telefon hangján, minden könyv</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">A Jelenések könyve felvett hanggal, letöltve, internet nélkül<small class="wlm">Ingyenes minta. Ahol az adott nyelv felvétele még nincs a szerveren, ott „hamarosan” látszik. A letöltéshez be kell jelentkezni.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">A többi könyv felvett hangjának letöltése, internet nélkül<small class="wlm">Ami már le van töltve, prémium nélkül is megmarad és szól.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Felolvasás közben a kiemelés azt a szót követi, amit a hang éppen kimond</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Felolvasó panel (sebesség, versek közötti szünet, zene hangereje)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Háttérzene: Epikus 1–3, Akusztikus gitár, Kelta, Csatazene</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Háttérzene: Epikus 4–6, Gitár 1–3<small class="wlm">Mindenki látja őket a listában, de csak prémiummal tölthetők le és szólnak.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
@@ -530,13 +543,17 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr class="csop"><th scope="rowgroup" colspan="3">Tanulmányozás</th></tr>
 <tr><th scope="row">Eredeti szó egy koppintásra: héber, arámi vagy görög szó, átírás, Strong-szám, szótári jelentés<small class="wlm">Mind a 8 fordításban, csak a 66 kanonikus könyvben. A szótár magyarul és németül lefordítva, a többi nyelven angolul jelenik meg. Ahol a gépi szó-összekötés nem elég biztos, ott „Nincs megbízható egyezés”.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Scofield-jegyzetek és mértékegységek</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Kiemelések, Jegyzeteim, Kommentárjaim<small class="wlm">A készüléken tárolva.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Igetanuló: versek memorizálása lépésenként eltűnő szavakkal, napokon át tartó ismétléssel<small class="wlm">Ingyenesen hetente egy új vers tanulható, a gyakorlás korlátlan. Biblia prémiummal korlátlan új vers.</small></th><td class="pipa">heti 1 új vers</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Kiemelések, Jegyzeteim, Kommentárjaim<small class="wlm">A készüléken tárolva. A jegyzetek listájában a kereső a jegyzetekben keres.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Igetanuló: versek memorizálása lépésenként eltűnő szavakkal, napokon át tartó ismétléssel<small class="wlm">Három fokozat; a megoldás beírva vagy a Wordlightban mikrofonnal, hanggal is bemondható. Ingyenesen hetente egy új vers tanulható, a gyakorlás korlátlan. Biblia prémiummal korlátlan új vers.</small></th><td class="pipa">heti 1 új vers</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Vészhelyzeti igék, Próféciák</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Játékok</th></tr>
+<tr><th scope="row">Igés játékok: Igekvíz, Ki mondta?, Hol van?, Igehely-párosító, Könyvsorrend<small class="wlm">Felnőtt és gyerek mód, pontozás és sorozat.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Képes játékok a kicsiknek: Memóriajáték, Noé bárkája, Ki kicsoda?, Kirakós<small class="wlm">Gyerek módban jelennek meg.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
 <tr class="csop"><th scope="rowgroup" colspan="3">Ima és ébresztő</th></tr>
 <tr><th scope="row">Imák, Megvallások, saját ima hozzáadása</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Imaszoba: vezetett ima, saját imatémák, napi emlékeztető<small class="wlm">Az emlékeztető értesítésként csak az Android appban jön, iPhone-on és böngészőben csak nyitott appnál.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Imaszoba: vezetett ima, saját imatémák, napi emlékeztető<small class="wlm">A vezetett imához két dob nélküli imazene szól (zongora, vonósok). Az emlékeztető értesítésként csak az Android appban jön, iPhone-on és böngészőben csak nyitott appnál.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Olvasási terv</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Ébresztő az olvasási tervhez<small class="wlm">Csak az Android appban szólal meg; iPhone-on és böngészőben nem tud megszólalni (a beállítás megmarad).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Napi idő az Igével: cél, fogyó gyűrű, gratuláció, statisztika<small class="wlm">Alapcél 5 perc.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
@@ -551,7 +568,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Biztonsági mentés titkosítva, nyelvválasztás, fiók és hírlevél</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Feloldás módja<small class="wlm">A Wordlightban csak Biblia prémium kód váltható be. Az appban nincs vásárlás-gomb, link vagy ár.</small></th><td class="korlat">–</td><td class="korlat">kóddal</td></tr>
 </tbody></table></div>
-<p class="halk">A Biblia prémium külön termék: a PrepperPapa prémium kódja nem oldja fel. Az állapot a 2026. november 1-i változat szerint.</p>
+<p class="halk">A Biblia prémium külön termék: a PrepperPapa prémium kódja nem oldja fel. Az állapot a 2026. november 2-i változat szerint.</p>
 
 <h2>Internet nélkül, biztonságban</h2>
 <p>Egyszeri letöltés után internet nélkül is működik (a teljes Károli-fordítás kb. 4 MB). A kiemeléseidet és jegyzeteidet titkosított mentéssel viheted át másik telefonra.</p>

@@ -288,6 +288,10 @@
     .hero{min-height:100svh}
   }
 
+  .wlkepek{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:6px 0 20px;padding-bottom:6px}
+  .wlkepek figure{flex:0 0 180px;scroll-snap-align:start;margin:0}
+  .wlkepek img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+  .wlkepek figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
@@ -468,6 +472,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="kicsi">Wordlight &middot; PrepperPapa Bible</div>
 <h1>The Bible in your pocket, even without internet.</h1>
 <p>Wordlight is the PrepperPapa Bible app. You can read and listen to it in eight languages, and after a single download it works without internet too. It installs separately, next to PrepperPapa.</p>
+<div class="wlkepek"><figure><img src="/app/kepek/wl-1-kezdolap.webp" width="480" height="1044" alt="Home screen" loading="lazy"><figcaption>Home screen</figcaption></figure><figure><img src="/app/kepek/wl-2-konyvek.webp" width="480" height="1044" alt="Illustrated book tiles" loading="lazy"><figcaption>Illustrated book tiles</figcaption></figure><figure><img src="/app/kepek/wl-3-fejezetek.webp" width="480" height="1044" alt="Chapter picker with scene drawings" loading="lazy"><figcaption>Chapter picker with scene drawings</figcaption></figure><figure><img src="/app/kepek/wl-4-olvasas.webp" width="480" height="1044" alt="Reading" loading="lazy"><figcaption>Reading</figcaption></figure><figure><img src="/app/kepek/wl-5-ima.webp" width="480" height="1044" alt="Prayer" loading="lazy"><figcaption>Prayer</figcaption></figure><figure><img src="/app/kepek/wl-6-terv.webp" width="480" height="1044" alt="Reading plans" loading="lazy"><figcaption>Reading plans</figcaption></figure></div>
 
 <h2>Eight languages, eight Bibles</h2>
 <p>Károli in Hungarian, the King James in English, Luther 1912 in German, Kulish in Ukrainian, the Synodal in Russian, UBG 2017 in Polish, Biblia 1914 in Romanian and Reina-Valera in Spanish. Switch between the downloaded translations with one tap.</p>
@@ -491,6 +496,12 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h2>Wake up with Scripture</h2>
 <p>The alarm can be tied to a reading plan, on the days of the week you choose. On Android it wakes the phone and reads the day's passage aloud.</p>
 
+<h2>Games</h2>
+<ul>
+<li>Verse games in adult and child mode, with points and streaks: Verse quiz, Who said it?, Where is it?, Reference match and Book order.</li>
+<li>In child mode, four picture games for little ones: Memory game, Noah's ark, Who is who? and Puzzle.</li>
+</ul>
+
 <h2>Prayer and emergencies</h2>
 <ul>
 <li>Built-in and your own prayers, a prayer timer with a soft bell; the screen stays on while you pray.</li>
@@ -507,6 +518,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Apocryphal books, including the Books of Enoch<small class="wlm">They download together with the Bible.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Words of Jesus in color<small class="wlm">On by default, can be turned off in the settings.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Font size, book colors (Colored / Single color)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Scene drawings on the book tiles, behind the chapter and verse picker, and 144 chapters with their own drawing<small class="wlm">On the apocryphal books too.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Cross-references<small class="wlm">Source: OpenBible.info.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Opens where you left off<small class="wlm">Only in Wordlight (PrepperPapa opens with the tiles).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
@@ -514,6 +526,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Read-aloud in your phone's voice, every book</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">The Book of Revelation with recorded audio, downloaded, offline<small class="wlm">Free sample. Where the recording for a language is not on the server yet, “coming soon” is shown. You need to sign in to download.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Downloading the recorded audio of the remaining books, offline<small class="wlm">What is already downloaded stays and plays without premium.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">While reading aloud, the highlight follows the word the voice is speaking</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Read-aloud panel (speed, pause between verses, music volume)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Background music: Epic 1–3, Acoustic guitar, Celtic, Battle music</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Background music: Epic 4–6, Guitar 1–3<small class="wlm">Everyone sees them in the list, but they can only be downloaded and played with premium.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
@@ -521,13 +534,17 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr class="csop"><th scope="rowgroup" colspan="3">Study</th></tr>
 <tr><th scope="row">Original word with one tap: Hebrew, Aramaic or Greek word, transliteration, Strong's number, dictionary meaning<small class="wlm">In all 8 translations, only in the 66 canonical books. The dictionary is translated into Hungarian and German; in the other languages it appears in English. Where the automatic word matching is not reliable enough, it says “No reliable match”.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Scofield notes and units of measure</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Highlights, My notes, My commentaries<small class="wlm">Stored on the device.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Verse memorizer: learn verses by hiding words step by step, with repetition over several days<small class="wlm">Free: one new verse per week, practising is unlimited. With Bible premium: unlimited new verses.</small></th><td class="pipa">1 new verse/week</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Highlights, My notes, My commentaries<small class="wlm">Stored on the device. In the notes list the search box searches your notes.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Verse memorizer: learn verses by hiding words step by step, with repetition over several days<small class="wlm">Three levels; the answer can be typed or, in Wordlight, spoken into the microphone. Free: one new verse per week, practising is unlimited. With Bible premium: unlimited new verses.</small></th><td class="pipa">1 new verse/week</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Emergency verses, Prophecies</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Games</th></tr>
+<tr><th scope="row">Verse games: Verse quiz, Who said it?, Where is it?, Reference match, Book order<small class="wlm">Adult and child mode, points and streaks.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Picture games for little ones: Memory game, Noah's ark, Who is who?, Puzzle<small class="wlm">They appear in child mode.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
 <tr class="csop"><th scope="rowgroup" colspan="3">Prayer and alarm</th></tr>
 <tr><th scope="row">Prayers, Declarations, adding your own prayer</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Prayer room: guided prayer, your own prayer topics, daily reminder<small class="wlm">The reminder arrives as a notification only in the Android app; on iPhone and in the browser only while the app is open.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Prayer room: guided prayer, your own prayer topics, daily reminder<small class="wlm">Guided prayer has two drum-free prayer tracks (piano, strings). The reminder arrives as a notification only in the Android app; on iPhone and in the browser only while the app is open.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Reading plan</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Alarm for the reading plan<small class="wlm">It only sounds in the Android app; on iPhone and in the browser it cannot sound (the setting is kept).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Daily time with the Word: goal, shrinking ring, congratulations, statistics<small class="wlm">Default goal: 5 minutes.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
@@ -542,7 +559,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Encrypted backup, language selection, account and newsletter</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">How to unlock<small class="wlm">In Wordlight, only a Bible Premium code can be redeemed. The app has no purchase button, link or price.</small></th><td class="korlat">–</td><td class="korlat">with a code</td></tr>
 </tbody></table></div>
-<p class="halk">Bible Premium is a separate product: the PrepperPapa premium code does not unlock it. The status is as of the version of 1 November 2026.</p>
+<p class="halk">Bible Premium is a separate product: the PrepperPapa premium code does not unlock it. The status is as of the version of 2 November 2026.</p>
 
 <h2>Offline and safe</h2>
 <p>After a single download it works without internet (the full Hungarian Károli Bible is about 4 MB). You can move your highlights and notes to another phone with an encrypted backup.</p>

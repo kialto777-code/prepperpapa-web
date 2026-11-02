@@ -288,6 +288,10 @@
     .hero{min-height:100svh}
   }
 
+  .wlkepek{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:6px 0 20px;padding-bottom:6px}
+  .wlkepek figure{flex:0 0 180px;scroll-snap-align:start;margin:0}
+  .wlkepek img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+  .wlkepek figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
   .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
         border:1px solid var(--line);margin:4px 0 18px}
 
@@ -468,6 +472,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="kicsi">Wordlight &middot; Biblia PrepperPapa</div>
 <h1>La Biblia en tu bolsillo, incluso sin internet.</h1>
 <p>Wordlight es la aplicación bíblica de PrepperPapa. Puedes leerla y escucharla en ocho idiomas y, tras una sola descarga, también sin internet. Se instala por separado, junto a PrepperPapa.</p>
+<div class="wlkepek"><figure><img src="/app/kepek/wl-1-kezdolap.webp" width="480" height="1044" alt="Pantalla de inicio" loading="lazy"><figcaption>Pantalla de inicio</figcaption></figure><figure><img src="/app/kepek/wl-2-konyvek.webp" width="480" height="1044" alt="Fichas ilustradas de los libros" loading="lazy"><figcaption>Fichas ilustradas de los libros</figcaption></figure><figure><img src="/app/kepek/wl-3-fejezetek.webp" width="480" height="1044" alt="Selector de capítulos con dibujos de escenas" loading="lazy"><figcaption>Selector de capítulos con dibujos de escenas</figcaption></figure><figure><img src="/app/kepek/wl-4-olvasas.webp" width="480" height="1044" alt="Lectura" loading="lazy"><figcaption>Lectura</figcaption></figure><figure><img src="/app/kepek/wl-5-ima.webp" width="480" height="1044" alt="Oración" loading="lazy"><figcaption>Oración</figcaption></figure><figure><img src="/app/kepek/wl-6-terv.webp" width="480" height="1044" alt="Planes de lectura" loading="lazy"><figcaption>Planes de lectura</figcaption></figure></div>
 
 <h2>Ocho idiomas, ocho Biblias</h2>
 <p>Károli en húngaro, la King James en inglés, Lutero 1912 en alemán, Kulish en ucraniano, la Sinodal en ruso, UBG 2017 en polaco, Biblia 1914 en rumano y Reina-Valera en español. Cambia entre las traducciones descargadas con un toque.</p>
@@ -491,6 +496,12 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h2>Despierta con la Palabra</h2>
 <p>La alarma se puede vincular a un plan de lectura, los días de la semana que elijas. En Android despierta el teléfono y lee en voz alta la porción del día.</p>
 
+<h2>Juegos</h2>
+<ul>
+<li>Juegos de versículos en modo adulto y niño, con puntos y rachas: Quiz de versículos, ¿Quién lo dijo?, ¿Dónde está?, Empareja las citas y Orden de los libros.</li>
+<li>En modo niño, cuatro juegos con imágenes para los pequeños: Juego de memoria, El arca de Noé, ¿Quién es quién? y Rompecabezas.</li>
+</ul>
+
 <h2>Oración y emergencias</h2>
 <ul>
 <li>Oraciones incluidas y propias, un temporizador de oración con campana suave; la pantalla no se apaga mientras oras.</li>
@@ -507,6 +518,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Libros apócrifos, incluidos los libros de Enoc<small class="wlm">Se descargan junto con la Biblia.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Las palabras de Jesús en color<small class="wlm">Activado por defecto, se puede desactivar en los ajustes.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Tamaño de letra, colores de los libros (en color / de un solo color)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Dibujos de escenas en las fichas de los libros, detrás del selector de capítulo y versículo, y 144 capítulos con su propio dibujo<small class="wlm">También en los libros apócrifos.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Referencias cruzadas<small class="wlm">Fuente: OpenBible.info.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Se abre donde lo dejaste<small class="wlm">Solo en Wordlight (PrepperPapa se abre con los mosaicos).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
@@ -514,6 +526,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Lectura en voz alta con la voz del teléfono, todos los libros</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">El libro de Apocalipsis con voz grabada, descargado, sin internet<small class="wlm">Muestra gratuita. Donde la grabación de ese idioma aún no está en el servidor, se muestra «próximamente». Para descargar hay que iniciar sesión.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Descarga de la voz grabada del resto de los libros, sin internet<small class="wlm">Lo que ya está descargado se conserva y suena también sin premium.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Durante la lectura en voz alta, el resaltado sigue la palabra que la voz está pronunciando</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Panel de lectura en voz alta (velocidad, pausa entre versículos, volumen de la música)</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Música de fondo: Épica 1–3, Guitarra acústica, Celta, Música de batalla</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Música de fondo: Épica 4–6, Guitarra 1–3<small class="wlm">Todo el mundo las ve en la lista, pero solo se pueden descargar y reproducir con premium.</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
@@ -521,13 +534,17 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr class="csop"><th scope="rowgroup" colspan="3">Estudio</th></tr>
 <tr><th scope="row">Palabra original con un toque: palabra hebrea, aramea o griega, transliteración, número Strong, significado del diccionario<small class="wlm">En las 8 traducciones, solo en los 66 libros canónicos. El diccionario está traducido al húngaro y al alemán; en los demás idiomas se muestra en inglés. Donde la vinculación automática de palabras no es lo bastante fiable, aparece «No hay coincidencia fiable».</small></th><td class="nincs">–</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Notas de Scofield y unidades de medida</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Resaltados, Mis notas, Mis comentarios<small class="wlm">Guardados en el dispositivo.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Memorizador de versículos: aprende versículos ocultando palabras paso a paso, con repaso durante varios días<small class="wlm">Gratis: un versículo nuevo por semana, la práctica es ilimitada. Con Biblia prémium: versículos nuevos ilimitados.</small></th><td class="pipa">1 versículo nuevo/semana</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Resaltados, Mis notas, Mis comentarios<small class="wlm">Guardados en el dispositivo. En la lista de notas, el buscador busca en tus notas.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Memorizador de versículos: aprende versículos ocultando palabras paso a paso, con repaso durante varios días<small class="wlm">Tres niveles; la respuesta se puede escribir o, en Wordlight, decir en voz alta con el micrófono. Gratis: un versículo nuevo por semana, la práctica es ilimitada. Con Biblia prémium: versículos nuevos ilimitados.</small></th><td class="pipa">1 versículo nuevo/semana</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Versículos de emergencia, Profecías</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+
+<tr class="csop"><th scope="rowgroup" colspan="3">Juegos</th></tr>
+<tr><th scope="row">Juegos de versículos: Quiz de versículos, ¿Quién lo dijo?, ¿Dónde está?, Empareja las citas, Orden de los libros<small class="wlm">Modo adulto y niño, puntos y rachas.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Juegos con imágenes para los pequeños: Juego de memoria, El arca de Noé, ¿Quién es quién?, Rompecabezas<small class="wlm">Aparecen en modo niño.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 
 <tr class="csop"><th scope="rowgroup" colspan="3">Oración y despertador</th></tr>
 <tr><th scope="row">Oraciones, Confesiones, añadir una oración propia</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
-<tr><th scope="row">Sala de oración: oración guiada, temas de oración propios, recordatorio diario<small class="wlm">El recordatorio llega como notificación solo en la app de Android; en iPhone y en el navegador, solo con la app abierta.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
+<tr><th scope="row">Sala de oración: oración guiada, temas de oración propios, recordatorio diario<small class="wlm">La oración guiada tiene dos músicas de oración sin percusión (piano, cuerdas). El recordatorio llega como notificación solo en la app de Android; en iPhone y en el navegador, solo con la app abierta.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Plan de lectura</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Despertador para el plan de lectura<small class="wlm">Solo suena en la app de Android; en iPhone y en el navegador no puede sonar (el ajuste se conserva).</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Tiempo diario con la Palabra: meta, anillo que se agota, felicitación, estadísticas<small class="wlm">Meta por defecto: 5 minutos.</small></th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
@@ -542,7 +559,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Copia de seguridad cifrada, selección de idioma, cuenta y boletín</th><td class="pipa">✓</td><td class="pipa">✓</td></tr>
 <tr><th scope="row">Forma de desbloquear<small class="wlm">En Wordlight solo se puede canjear un código de Biblia Premium. En la app no hay botón de compra, enlace ni precio.</small></th><td class="korlat">–</td><td class="korlat">con código</td></tr>
 </tbody></table></div>
-<p class="halk">Biblia Premium es un producto aparte: el código premium de PrepperPapa no lo desbloquea. El estado corresponde a la versión del 1 de noviembre de 2026.</p>
+<p class="halk">Biblia Premium es un producto aparte: el código premium de PrepperPapa no lo desbloquea. El estado corresponde a la versión del 2 de noviembre de 2026.</p>
 
 <h2>Sin internet y seguro</h2>
 <p>Tras una sola descarga funciona sin internet (la Biblia húngara Károli completa ocupa unos 4 MB). Puedes pasar tus subrayados y notas a otro teléfono con una copia de seguridad cifrada.</p>
