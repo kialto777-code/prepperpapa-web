@@ -406,6 +406,46 @@
     .wl .tabla thead th:first-child{width:52%}
   }
 
+  /* buy / download (Boss 2026-11-03 TG 8159, 8163): compact block on the first screen, full card in the premium section */
+  .wl .wlgyors{max-width:560px;margin:10px auto 0;padding:9px 12px 8px;text-align:center;border-radius:20px;
+     border:1px solid rgba(255,179,64,.38);background:linear-gradient(165deg,rgba(255,179,64,.12),rgba(18,27,22,.90) 60%);
+     box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .wl .wlnev{margin:0 0 4px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--borostyan);font-weight:800}
+  .wl .wlar{margin:0;font-size:16px;color:#e6ece6;line-height:1.4}
+  .wl .wlar b{font-size:26px;line-height:1.2;color:var(--borostyan);font-weight:800;white-space:nowrap}
+  .wl .wlarmegj{margin:2px 0 9px;font-size:13.5px;color:var(--muted)}
+  .wl .wlgomb{margin:8px 0 8px}
+  .wl .wlgyors .wlar{font-size:14.5px}
+  .wl .wlgyors .wlar b{font-size:24px}
+  .wl .wlgyors .wlgomb .btn{padding:9px 22px;min-height:44px;box-sizing:border-box}
+  .wl .wlgomb .btn,.wl .wlvesz .vesz .btn{min-width:220px;text-align:center}
+  .wl .wlhamar{display:inline-block;margin:0 0 8px;padding:3px 12px;border-radius:20px;background:rgba(255,179,64,.16);
+     border:1px solid rgba(255,179,64,.45);color:#FFD9A0;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .wl .wlgyors .badges,.wl .wlletolt .badges{justify-content:center;gap:10px}
+  .wl .wlgyors .badge img{height:38px}
+  .wl .wlgyors .badge.play img{height:52px;margin:-7px -6px}
+  .wl .wlgyors .wlhamar{display:block;margin:6px 0 0;padding:0;border:0;background:none;font-size:11.5px}
+  .wl .wlugro{margin:4px 0 0;font-size:14px}
+  .wl .wlugro a{color:var(--borostyan)}
+  .wl .wlvesz{max-width:560px;margin:0 auto 22px;text-align:center;border-style:solid;border-color:rgba(255,179,64,.45);
+     background:rgba(11,17,14,.72)}
+  @media (max-width:560px){.wl .wlvesz{padding:18px 14px}.wl .wlvesz .wlar{font-size:15px}}
+  .wl .wlvesz #pp-checkout{text-align:left;margin-top:14px;border-top:1px solid #2a3a31;padding-top:14px}
+  .wl .wlletolt{text-align:center}
+  .wl .wlletolt .badges{margin:6px 0 16px}
+  #vasarlas,#letoltes{scroll-margin-top:16px}
+  /* the read-aloud video's sound button: under the phone, so it never covers the app's own controls */
+  .wl .wlhang{position:relative;display:flex;margin:14px auto 0;width:52px;height:52px;
+     border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(11,17,14,.78);color:#fff;cursor:pointer;
+     align-items:center;justify-content:center;padding:0;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+  .wl .wlhang svg{width:58%;height:58%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .wl .wlhang .hsz{fill:currentColor}
+  .wl .wlhang .hbe{display:none}
+  .wl .wlhang[aria-pressed="true"]{background:var(--borostyan);color:#1b1407;border-color:var(--borostyan)}
+  .wl .wlhang[aria-pressed="true"] .hbe{display:inline}
+  .wl .wlhang[aria-pressed="true"] .hki{display:none}
+  .wl .wlhang:focus-visible{outline:3px solid #FFD9A0;outline-offset:2px}
+
   /* closing cards */
   .wl .wlzaro{display:grid;grid-template-columns:1fr;gap:16px;margin:56px 0 0}
   @media (min-width:760px){.wl .wlzaro{grid-template-columns:1fr 1fr}}
@@ -596,6 +636,17 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h1>La Biblia en tu bolsillo, incluso sin internet.</h1>
 <p>Wordlight es la aplicación bíblica de PrepperPapa. Puedes leerla y escucharla y, tras una sola descarga, también sin internet. Se instala por separado, junto a PrepperPapa.</p>
 </div>
+<div class="wlgyors" id="wl-gyors">
+<p class="wlnev">Biblia Premium</p>
+<p class="wlar">Precio de Navidad hasta el 6 de enero de 2027: <b>19,99 €</b> (7 777 Ft si pagas en forintos).</p>
+<p class="wlgomb"><a class="btn amber" href="#comprar">Comprar</a></p>
+<div class="badges">
+<a class="badge play" id="wl-badge-play" aria-disabled="true" title="Próximamente en Google Play"><img src="/app/kepek/google-play-es.png" alt="Disponible en Google Play (próximamente)" width="646" height="250"></a>
+<a class="badge appstore" id="wl-badge-appstore" aria-disabled="true" title="Próximamente en la App Store"><img src="/app/kepek/app-store-es.svg" alt="Descárgala en la App Store (próximamente)" width="151" height="40"></a>
+</div>
+<p class="wlhamar">Prueba pública próximamente</p>
+<p class="wlugro"><a href="#comprar">Biblia Premium</a> &middot; <a href="#letoltes">Descarga</a></p>
+</div>
 <div class="wlszinpad">
 <figure class="tf old bal"><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/es/app/kepek/wl-1-kezdolap.webp" width="900" height="1827" alt="Pantalla de inicio" loading="eager" decoding="async"></div></div></figure>
 <figure class="tf kozep"><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/es/app/kepek/wl-4-felolvasas.webp" width="900" height="1827" alt="Durante la lectura en voz alta, el resaltado sigue la palabra que la voz está pronunciando" loading="eager" decoding="async"></div></div></figure>
@@ -620,7 +671,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li>Las oraciones y las confesiones también se pueden leer en voz alta.</li>
 </ul>
 </div>
-<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/es/app/kepek/wl-10-panel.webp" width="900" height="1827" alt="Escucha" loading="lazy" decoding="async"></div></div></figure></div>
+<div class="wltel"><figure class="tf wlvid"><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><video autoplay muted loop playsinline preload="auto" poster="/es/app/kepek/wl-video-es-poszter.webp" width="786" height="1596" aria-label="Escucha"><source src="/es/app/kepek/wl-video-es.webm" type="video/webm"><source src="/es/app/kepek/wl-video-es.mp4" type="video/mp4"></video></div></div><button type="button" class="wlhang" aria-label="Audio" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="hsz" d="M4 9h4l5-4v14l-5-4H4z"/><path class="hki" d="M16 9l5 6M21 9l-5 6"/><path class="hbe" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg></button></figure></div>
 </section>
 
 <section class="wlsor">
@@ -667,13 +718,23 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/es/app/kepek/wl-6-ima.webp" width="900" height="1827" alt="Oración" loading="lazy" decoding="async"></div></div></figure></div>
 </section>
 
-<section class="wlprem">
+<section class="wlprem" id="comprar">
 <div class="wlsor">
 <div class="wlszoveg">
 <h2>¿Qué es gratis y qué es Biblia Premium?</h2>
 <p>Biblia Premium ofrece tiempo de lectura en voz alta ilimitado y la palabra original con un toque. Todo lo demás es gratis, también la descarga de las voces grabadas y de toda la música de fondo. Precio: 24,99 €, compra única, permanente. Precio de Navidad hasta el 6 de enero de 2027: 19,99 € (7 777 Ft si pagas en forintos).</p>
 </div>
 <div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#12110d"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/es/app/kepek/wl-5-eredeti.webp" width="900" height="1827" alt="Estudio" loading="lazy" decoding="async"></div></div></figure></div>
+</div>
+<div class="vasarlas wlvesz" id="wl-premium-vasarlas">
+<p class="wlnev">Biblia Premium</p>
+<p class="wlar">Precio de Navidad hasta el 6 de enero de 2027: <b>19,99 €</b> (7 777 Ft si pagas en forintos).</p>
+<p class="wlarmegj">Precio: 24,99 €, compra única, permanente.</p>
+<!-- CHECKOUT HOOK (Marveen): when the Biblia prémium is live in pp-vasarlas, set WL_PENZTAR in epit-app.py
+     (-> <a class="btn amber" href="/es/app/pago/?termek=biblia">Megveszem</a> here and on the first screen). -->
+<div id="pp-checkout">
+<p><b>Pronto a la venta.</b></p>
+</div>
 </div>
 <div class="tabla"><table>
 <thead><tr><th scope="col">Función</th><th scope="col">Gratis</th><th scope="col" class="prem">Biblia Premium</th></tr></thead>
@@ -732,9 +793,14 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h2>Sin internet y seguro</h2>
 <p>Tras una sola descarga funciona sin internet (la Biblia húngara Károli completa ocupa unos 4 MB). Puedes pasar tus subrayados y notas a otro teléfono con una copia de seguridad cifrada.</p>
 </div>
-<div class="wlkartya">
+<div class="wlkartya wlletolt" id="letoltes">
 <h2>Descarga</h2>
-<p>Disponible pronto.</p>
+<p><b>Android:</b> próximamente en Google Play.<br><b>iPhone:</b> próximamente en la App Store.</p>
+<p class="wlhamar">Prueba pública próximamente</p>
+<div class="badges">
+<a class="badge play" id="wl-letolt-badge-play" aria-disabled="true" title="Próximamente en Google Play"><img src="/app/kepek/google-play-es.png" alt="Disponible en Google Play (próximamente)" width="646" height="250"></a>
+<a class="badge appstore" id="wl-letolt-badge-appstore" aria-disabled="true" title="Próximamente en la App Store"><img src="/app/kepek/app-store-es.svg" alt="Descárgala en la App Store (próximamente)" width="151" height="40"></a>
+</div>
 </div>
 </section>
 <section class="trio">
@@ -747,7 +813,20 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </div>
 </section>
 <p><a href="/es/aplicaciones/">&larr; Volver a las aplicaciones</a></p>
-</div></div>
+</div></div><script>
+(function(){
+  // sound button of the read-aloud video: muted autoplay; a tap turns the sound on and starts from 0, a second tap mutes
+  [].forEach.call(document.querySelectorAll('.wlhang'),function(b){
+    var v=b.parentNode.querySelector('video'); if(!v) return;
+    b.addEventListener('click',function(){
+      var be=v.muted; v.muted=!be;
+      if(be){try{v.currentTime=0;}catch(e){}}
+      var p=v.play(); if(p&&p.catch) p.catch(function(){});
+      b.setAttribute('aria-pressed',be?'true':'false');
+    });
+  });
+})();
+</script>
 </main>
 <footer><div>PrepperPapa &middot; ¡Prepárate, no temas! &middot; <a href="/es/privacidad.html">Privacidad</a> &middot; <a href="/en/terms.html">Condiciones (EN)</a> &middot; <a href="/en/legal-notice.html">Aviso legal (EN)</a> &middot; <a href="/es/programa-de-socios/">Programa de socios</a> &middot; <a href="/es/gerah/">Gerah</a></div></footer>
 <script id="fej2js">
