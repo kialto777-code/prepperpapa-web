@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redeem a code | PrepperPapa</title>
+<meta name="description" content="Redeem a PrepperPapa premium code onto the account linked to your e-mail address.">
+<link rel="canonical" href="https://prepperpapa.hu/en/redeem/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon-64.png?v=20261030">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Redeem a code | PrepperPapa">
+<meta property="og:description" content="Redeem a PrepperPapa premium code onto the account linked to your e-mail address.">
+<meta property="og:url" content="https://prepperpapa.hu/en/redeem/">
+<meta property="og:site_name" content="PrepperPapa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://prepperpapa.hu/en/app/kepek/og-app.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://prepperpapa.hu/en/app/kepek/og-app.jpg">
+<link rel="preload" href="/assets/pacifico.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'PP Felirat';src:url('/assets/anton-felirat.woff') format('woff');font-display:swap;font-weight:400;font-style:normal}
+  @font-face{font-family:Pacifico;src:url('/assets/pacifico.woff2') format('woff2');
+             font-display:swap;font-weight:400;font-style:normal}
+  :root{--bg:#0B110E;--panel:#121B16;--line:#22302A;--ink:#EDEBE1;--muted:#98A69D;
+         --zold:#7CB342;--borostyan:#FFB340;--max:760px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+       font:17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--zold)}
+  header{border-bottom:1px solid var(--line);background:rgba(11,17,14,.92)}
+  /* Boss 2026-10-26 (TG 29604): the header uses the home page's width (1180 px), not the 760 px text column --
+     in the narrow column the logo sat in the middle of a wide screen. */
+  .nav{max-width:1180px;margin:0 auto;padding:0 26px;display:flex;align-items:center;
+        gap:22px;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .brand img{width:38px;height:38px;border-radius:50%}
+  .brand span{font-family:'PP Felirat',Impact,'Arial Narrow Bold',sans-serif;font-size:26px;font-weight:400;letter-spacing:.4px;color:#7CB342;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .brand img{border-radius:0}
+  /* Boss 2026-10-19 22:25: logo 30% larger, wordmark smaller on phones in portrait */
+  .brand img{width:50px;height:50px}
+  @media (max-width:480px) and (orientation:portrait){.brand span{font-size:20px}}
+  .nav a.link{color:var(--muted);font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+               text-decoration:none}
+  .nav a.link:hover{color:var(--ink)}
+  @media (max-width:920px){
+    .nav{flex-wrap:wrap;height:auto;padding:10px 16px 8px;gap:4px 20px}
+    .brand{width:100%;margin-right:0}
+    .nav a.link{font-size:13px}
+  }
+  main{max-width:var(--max);margin:0 auto;padding:44px 22px 80px}
+  h1{font-size:34px;line-height:1.22;margin-bottom:14px}
+  h2{font-size:24px;margin:42px 0 12px}
+  h3{font-size:19px;margin:26px 0 8px}
+  p{margin:0 0 17px}
+  ul,ol{margin:0 0 17px 22px}
+  li{margin-bottom:7px}
+  .beveze{font-size:18px}
+  .halk{color:var(--muted);font-size:15px}
+  .helyzet{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+           padding:18px 20px 6px;margin:0 0 16px}
+  .helyzet h3{margin-top:0;color:var(--borostyan)}
+  .helyzet ul{margin-left:0;list-style:none}
+  .helyzet li{margin-bottom:12px}
+  .helyzet b{color:var(--ink)}
+  .igeret{border-left:4px solid var(--zold);padding:4px 0 4px 18px;margin:0 0 17px}
+  .vasarlas{background:var(--panel);border:1px dashed var(--borostyan);border-radius:12px;
+            padding:20px;margin:0 0 17px}
+  .kepek{display:flex;gap:12px;overflow-x:auto;padding:4px 0 12px;margin:0 0 17px;
+         scroll-snap-type:x mandatory}
+  .kepek figure{flex:0 0 200px;scroll-snap-align:start;margin:0}
+  .kepek img{width:200px;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+  .kepek figcaption{color:var(--muted);font-size:13px;text-align:center;margin-top:6px}
+  .ar{font-size:30px;font-weight:700;color:var(--borostyan);margin:0 0 4px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;
+       text-decoration:none;letter-spacing:.03em}
+  .btn.amber{background:var(--borostyan);color:#1b1407}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  details{border-bottom:1px solid var(--line);padding:12px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 4px}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer div{max-width:var(--max);margin:0 auto;padding:26px 22px}
+  footer a{color:var(--muted)}
+
+  main.bv{max-width:620px;padding-top:34px}
+  .bv .alcim{color:var(--muted);margin:0 0 24px}
+  .bv-doboz{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 16px}
+  .bv-doboz h2{font-size:20px;margin:0 0 14px}
+  .bv label{display:block;font-weight:700;font-size:15px;margin:0 0 6px}
+  .bv input{display:block;width:100%;font:inherit;font-size:18px;color:var(--ink);background:var(--bg);
+            border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 16px;min-height:50px}
+  .bv input:focus{outline:2px solid var(--borostyan);outline-offset:1px}
+  .bv input.kod{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase}
+  .bv input.szam{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;font-size:22px;max-width:220px}
+  .bv button{display:block;width:100%;border:0;border-radius:10px;padding:13px 16px;min-height:50px;cursor:pointer;
+             font:inherit;font-weight:700;letter-spacing:.02em;background:var(--borostyan);color:#1b1407}
+  .bv button[disabled]{opacity:.6;cursor:default}
+  .bv button.masod{background:transparent;color:var(--ink);border:1px solid var(--line);margin-top:10px}
+  .bv .halk{margin:0 0 14px;line-height:1.5}
+  .bv .uzenet{min-height:1.5em;margin:12px 0 0;font-size:15px;line-height:1.5;color:var(--borostyan)}
+  .bv .uzenet:empty{display:none}
+  .bv .kesz{border-left:4px solid var(--zold)}
+  .bv .kesz h2{color:var(--zold)}
+  .bv .cim{overflow-wrap:anywhere}
+  .bv [hidden]{display:none !important}
+</style>
+<style id="fej2">
+  header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
+  header .nav.fej2 .brand{width:auto;margin-right:auto;flex-shrink:0}
+  header .nav.fej2 .brand img{width:52px;height:52px}
+  header .nav.fej2 .linkek{display:flex;align-items:center;gap:18px;flex-shrink:0;order:0;position:static;flex:0 0 auto;overflow:visible;padding:0;
+     background:none;border:0;box-shadow:none;-webkit-mask-image:none;mask-image:none}
+  header .nav.fej2 a.link{display:inline;flex-shrink:0;white-space:nowrap;color:var(--muted);font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  header .nav.fej2 a.link:hover{color:var(--ink)}
+  header .nav.fej2 a.link[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--zold);padding-bottom:3px}
+  header .nav.fej2 .fbtn{flex-shrink:0;display:inline-block;background:var(--zold);color:#0B110E;font-weight:700;padding:10px 16px;border-radius:6px;font-size:14px;text-decoration:none;white-space:nowrap}
+  header .nav.fej2 .fbtn:hover{filter:brightness(1.1)}
+  header .nav.fej2 .nyelvv,header .nav.fej2 .nyelvv.sarok{position:relative;right:auto;top:auto;margin-left:0;flex-shrink:0}
+  header .nav.fej2 .hamb{display:none;flex-shrink:0;width:44px;height:44px;align-items:center;justify-content:center;background:none;
+     border:1px solid #33453B;border-radius:8px;color:var(--ink);cursor:pointer;padding:0}
+  header .nav.fej2 .hamb svg{width:22px;height:22px}
+  header .nav.fej2.nyitva .hamb{border-color:var(--zold)}
+  /* the hamburger mode: phones by CSS, and any width where the row does not fit (JS adds .kompakt) */
+  header .nav.fej2.kompakt .hamb{display:flex}
+  header .nav.fej2.kompakt .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+     align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+     box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  header .nav.fej2.kompakt.nyitva .linkek{display:flex}
+  header .nav.fej2.kompakt a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+  header .nav.fej2.kompakt a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  @media(max-width:920px){
+    header .nav.fej2{padding:0 16px;gap:12px;height:70px}
+    header .nav.fej2 .hamb{display:flex}
+    header .nav.fej2 .linkek{display:none;position:absolute;right:16px;top:calc(100% - 6px);z-index:60;flex-direction:column;
+       align-items:stretch;gap:0;min-width:240px;padding:8px 0;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+       box-shadow:0 14px 40px rgba(0,0,0,.5)}
+    header .nav.fej2.nyitva .linkek{display:flex}
+    header .nav.fej2 a.link{display:block;padding:13px 20px;font-size:15px;color:var(--ink);box-shadow:none}
+    header .nav.fej2 a.link[aria-current]{color:var(--zold);box-shadow:inset 3px 0 0 var(--zold)}
+  }
+  @media(max-width:520px){ header .nav.fej2 .fbtn{display:none} }
+  @media (max-width:480px) and (orientation:portrait){ header .nav.fej2 .brand span{font-size:21px} }
+</style>
+<link rel="alternate" hreflang="hu" href="https://prepperpapa.hu/bevaltas/">
+<link rel="alternate" hreflang="en" href="https://prepperpapa.hu/en/redeem/">
+<link rel="alternate" hreflang="de" href="https://prepperpapa.hu/de/einloesen/">
+<link rel="alternate" hreflang="es" href="https://prepperpapa.hu/es/canjear/">
+<link rel="alternate" hreflang="pl" href="https://prepperpapa.hu/pl/realizacja-kodu/">
+<link rel="alternate" hreflang="ro" href="https://prepperpapa.hu/ro/activare-cod/">
+<link rel="alternate" hreflang="ru" href="https://prepperpapa.hu/ru/aktivatsiya-koda/">
+<link rel="alternate" hreflang="uk" href="https://prepperpapa.hu/uk/aktyvatsiia-kodu/">
+<link rel="alternate" hreflang="x-default" href="https://prepperpapa.hu/bevaltas/">
+<style>
+  .nyelvv{position:relative;margin-left:4px}
+  .nyelvv summary{list-style:none;cursor:pointer;height:40px;min-width:46px;padding:0 10px;display:flex;align-items:center;
+     justify-content:center;gap:6px;border:1px solid #33453B;border-radius:8px;color:#EDEBE1;font-size:13px;font-weight:700;
+     letter-spacing:.06em;text-transform:uppercase}
+  .nyelvv summary::-webkit-details-marker{display:none}
+  .nyelvv summary svg{width:16px;height:16px}
+  .nyelvv[open] summary{border-color:#7CB342}
+  .nyelvv ul{position:absolute;right:0;top:48px;list-style:none;margin:0;padding:6px 0;min-width:170px;z-index:60;
+     background:#121B16;border:1px solid #22302A;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .nyelvv li{margin:0}
+  .nyelvv a{display:block;padding:10px 16px;color:#EDEBE1;text-decoration:none;font-size:15px}
+  .nyelvv a:hover{background:#16211B}
+  .nyelvv a[aria-current]{color:#FFB340;font-weight:700}
+  /* /app/ and /utmutato/: on phones the brand takes the whole first row and the links wrap below it;
+     the picker sits in the first row's corner, so long link words (ru, uk) cannot push it to a third row */
+  /* the FAQ's generic details{border-bottom;padding} drew a stray line under the picker (2026-10-26) */
+  .nyelvv{border-bottom:0;padding:0}
+  @media (max-width:920px){ .nav{position:relative} .nyelvv.sarok{position:absolute;right:16px;top:10px;margin:0} }
+</style>
+<!-- goaffpro:general -->
+<style id="pp-suti-css">
+#pp-suti{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:720px;margin:0 auto;max-height:calc(100vh - 24px);
+  overflow:auto;background:#121B16;color:#EDEBE1;border:1px solid #33453B;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.6);
+  padding:18px 20px;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-align:left}
+#pp-suti[hidden]{display:none}
+#pp-suti h2{font-size:18px;margin:0 0 8px;color:#EDEBE1;font-weight:700;line-height:1.3}
+#pp-suti p{margin:0 0 10px;font-size:14px;color:#C9CFC6}
+#pp-suti a{color:#7CB342}
+#pp-suti .ppk{border-top:1px solid #22302A;padding:10px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+#pp-suti .ppk>div:first-child{flex:1 1 300px}
+#pp-suti .ppk b{display:block;font-size:15px;color:#EDEBE1}
+#pp-suti .ppk p{margin:2px 0 0;font-size:13px}
+#pp-suti .ppseg{display:flex;gap:6px;flex:0 0 auto}
+#pp-suti button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border-radius:6px;padding:9px 14px;
+  background:transparent;color:#EDEBE1;border:1px solid #7CB342;min-height:40px}
+#pp-suti button:hover{background:#1A2820}
+#pp-suti button:focus-visible{outline:2px solid #FFB340;outline-offset:2px}
+#pp-suti .ppseg button[aria-pressed="true"]{background:#7CB342;color:#0B110E}
+#pp-suti .ppgomb{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #22302A;padding-top:12px}
+#pp-suti .ppgomb button{flex:1 1 180px}
+@media(max-width:520px){#pp-suti{left:8px;right:8px;bottom:8px;padding:14px}#pp-suti .ppseg{width:100%}#pp-suti .ppseg button{flex:1}}
+</style>
+<script>window.PP_SUTI_CFG={"v": 1, "nap": 365, "shop": "zktbdakdtn", "ga": "G-K4K2L8JMN5", "gaExp": 36720000, "adatv": "/en/privacy.html", "pc": ["pp_ref", "ref", "source", "dcode", "discount_code", "sitestripe", "noref"], "pe": ["gfp_"], "sc": ["_ga", "_gid", "_gat"], "se": ["_ga_", "_gat_"], "t": {"cim": "Cookies and consent", "bevezeto": "By default this site places no cookies on your device. We ask for your consent for two purposes, which you can grant or refuse separately. If you decline, everything still works, and you can change your choice at any time under “Cookie settings” in the footer.", "p_cim": "Partner tracking", "p_le": "If you arrive from one of our partners' links, we remember the partner's code and the time of the click in cookies (pp_ref and GoAffPro cookies, for 90 days) so we can determine which partner is owed a commission if you buy. A partner's coupon code is credited to the partner even without cookies.", "s_cim": "Visitor statistics", "s_le": "Anonymous visitor statistics with Google Analytics 4 (_ga cookies). We do not use it for advertising or profiling; without your consent it is not even loaded.", "igen": "Accept", "nem": "Reject", "mind_igen": "Accept all", "mind_nem": "Reject all", "ment": "Save my choice", "adatv": "Privacy notice", "link": "Cookie settings"}};
+(function(){var C=window.PP_SUTI_CFG,K='pp-suti',mem=null,kesz={p:0,s:0},doboz=null,valasz={};
+function olvas(){var s=mem;try{var r=localStorage.getItem(K);if(r)s=JSON.parse(r);}catch(e){}
+ if(!s||s.v!==C.v||!(Date.now()-s.t<C.nap*864e5))return null;return s;}
+function ment(p,st){var s={v:C.v,p:p?1:0,s:st?1:0,t:Date.now()};mem=s;try{localStorage.setItem(K,JSON.stringify(s));}catch(e){}return s;}
+function partner(){if(kesz.p)return;kesz.p=1;(function(){try{var m=/[?&]ref=([^&#]*)/.exec(location.search);if(!m)return;var r=decodeURIComponent(m[1]).trim();if(!/^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$/.test(r))return;var d=/(^|\.)prepperpapa\.hu$/.test(location.hostname)?'; domain=.prepperpapa.hu':'';document.cookie='pp_ref='+encodeURIComponent(r+'~'+Date.now())+'; max-age=7776000; path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'')+d;}catch(e){}})();
+ var e=document.createElement('script');e.async=true;e.src='https://api.goaffpro.com/loader.js?shop='+C.shop;document.head.appendChild(e);}
+function stat(){if(kesz.s||!C.ga)return;kesz.s=1;window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+ gtag('js',new Date());gtag('config',C.ga,{cookie_expires:C.gaExp,allow_google_signals:false,allow_ad_personalization_signals:false});
+ var e=document.createElement('script');e.async=true;e.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(C.ga);document.head.appendChild(e);}
+function torol(nevek,elotag){var h=location.hostname,p=h.split('.'),dl=['','; domain='+h];
+ for(var i=0;i<p.length-1;i++)dl.push('; domain=.'+p.slice(i).join('.'));
+ document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(!n)return;
+  if(nevek.indexOf(n)<0&&!elotag.some(function(x){return n.indexOf(x)===0;}))return;
+  dl.forEach(function(d){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/'+d;});});
+ try{for(var j=localStorage.length-1;j>=0;j--){var k=localStorage.key(j);
+  if(nevek.indexOf(k)>=0||elotag.some(function(x){return k.indexOf(x)===0;}))localStorage.removeItem(k);}}catch(e){}}
+function alkalmaz(s){if(s.p)partner();if(s.s)stat();}
+function tilt(s){if(!s.s&&C.ga)window['ga-disable-'+C.ga]=true;if(!s.p)torol(C.pc,C.pe);if(!s.s)torol(C.sc,C.se);}
+function dont(p,st){var s=ment(p,st);tilt(s);bezar();
+ if((!p&&kesz.p)||(!st&&kesz.s)){location.reload();return;}alkalmaz(s);}
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x)e.textContent=x;return e;}
+function jelol(){doboz.querySelectorAll('.ppseg button').forEach(function(b){
+ b.setAttribute('aria-pressed',String(valasz[b.getAttribute('data-k')]===+b.getAttribute('data-v')));});}
+function kat(k,cim,le){var d=el('div',{'class':'ppk'}),t=el('div');t.appendChild(el('b',{id:'pp-suti-'+k},cim));t.appendChild(el('p',null,le));
+ var g=el('div',{'class':'ppseg',role:'group','aria-labelledby':'pp-suti-'+k});
+ [[1,C.t.igen],[0,C.t.nem]].forEach(function(x){var b=el('button',{type:'button','data-k':k,'data-v':x[0],'aria-pressed':'false'},x[1]);
+  b.addEventListener('click',function(){valasz[k]=x[0];jelol();});g.appendChild(b);});
+ d.appendChild(t);d.appendChild(g);return d;}
+function epit(){doboz=el('div',{id:'pp-suti',role:'dialog','aria-labelledby':'pp-suti-c'});
+ doboz.appendChild(el('h2',{id:'pp-suti-c'},C.t.cim));var p=el('p',null,C.t.bevezeto);
+ if(C.adatv){p.appendChild(document.createTextNode(' '));p.appendChild(el('a',{href:C.adatv},C.t.adatv));}
+ doboz.appendChild(p);doboz.appendChild(kat('p',C.t.p_cim,C.t.p_le));doboz.appendChild(kat('s',C.t.s_cim,C.t.s_le));
+ var g=el('div',{'class':'ppgomb'});
+ [['mind_igen',function(){dont(1,1);}],['mind_nem',function(){dont(0,0);}],['ment',function(){dont(valasz.p===1,valasz.s===1);}]]
+ .forEach(function(x){var b=el('button',{type:'button','data-pp':x[0]},C.t[x[0]]);b.addEventListener('click',x[1]);g.appendChild(b);});
+ doboz.appendChild(g);document.body.appendChild(doboz);}
+function nyit(){var s=olvas();valasz=s?{p:s.p,s:s.s}:{};if(!doboz)epit();doboz.hidden=false;jelol();
+ var f=doboz.querySelector('button');if(f&&s)f.focus();}
+function bezar(){if(doboz)doboz.hidden=true;}
+window.ppSutiBeallitas=nyit;
+function lablec(){var f=document.querySelector('footer');if(!f||f.querySelector('.pp-suti-link'))return;
+ var a=el('a',{href:'#','class':'pp-suti-link',role:'button'},C.t.link);
+ var n=f.querySelector('.fnav');if(n){n.appendChild(a);return;}
+ var d=f.querySelector('div')||f;d.appendChild(document.createTextNode(' · '));d.appendChild(a);}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.pp-suti-link,[data-pp-suti]');
+ if(a){e.preventDefault();nyit();}});
+var s0=olvas();if(s0){tilt(s0);alkalmaz(s0);}
+function indul(){lablec();if(!olvas())nyit();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',indul);else indul();})();</script>
+<!-- /goaffpro:general -->
+</head>
+<body>
+<header><nav class="nav fej2">
+  <a class="brand" href="/en/"><img src="/assets/applogo-96.png" width="52" height="52" alt=""><span>PrepperPapa</span></a>
+  <div class="linkek"><a class="link" href="/en/">Home</a> <a class="link" href="/en/#videos">Videos</a> <a class="link" href="/en/articles.html">Knowledge base</a> <a class="link" href="/en/calculators/">Calculators</a> <a class="link" href="/en/apps/">App</a> <a class="link" href="/en/gerah/">Gerah</a> <a class="link" href="https://forum.prepperpapa.hu" target="_blank" rel="noopener">Forum</a> <a class="link" href="/en/#contact">Contact</a></div>
+  <a class="fbtn" href="https://www.youtube.com/@PrepperPapa" target="_blank" rel="noopener">Subscribe</a>
+  <details class="nyelvv"><summary aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span>EN</span></summary><ul><li><a href="/bevaltas/" hreflang="hu" lang="hu" data-nyelv="hu">Magyar</a></li><li><a href="/en/redeem/" hreflang="en" lang="en" data-nyelv="en" aria-current="true">English</a></li><li><a href="/de/einloesen/" hreflang="de" lang="de" data-nyelv="de">Deutsch</a></li><li><a href="/es/canjear/" hreflang="es" lang="es" data-nyelv="es">Español</a></li><li><a href="/pl/realizacja-kodu/" hreflang="pl" lang="pl" data-nyelv="pl">Polski</a></li><li><a href="/ro/activare-cod/" hreflang="ro" lang="ro" data-nyelv="ro">Română</a></li><li><a href="/ru/aktivatsiya-koda/" hreflang="ru" lang="ru" data-nyelv="ru">Русский</a></li><li><a href="/uk/aktyvatsiia-kodu/" hreflang="uk" lang="uk" data-nyelv="uk">Українська</a></li></ul></details>
+  <button class="hamb" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
+</nav></header>
+<main class="bv">
+<h1>Redeem a code</h1>
+<p class="alcim">Did you buy a premium code or get one as a gift? Link it to your e-mail address here.</p>
+
+<section class="bv-doboz" id="bvLepes1" aria-labelledby="bvCim1">
+<h2 id="bvCim1">1. The code and your e-mail address</h2>
+<label for="bvKod">Premium code</label>
+<input id="bvKod" class="kod" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="PP-XXXX-XXXX-XXXX">
+<label for="bvEmail">E-mail address</label>
+<input id="bvEmail" type="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="name@example.com">
+<p class="halk">We will send a 6-digit confirmation code to this address. The code will be linked to this e-mail address.</p>
+<button type="button" id="bvKuld">Request a confirmation code</button>
+<p class="uzenet" id="bvMsg1" role="status" aria-live="polite"></p>
+</section>
+
+<section class="bv-doboz" id="bvLepes2" aria-labelledby="bvCim2" hidden>
+<h2 id="bvCim2">2. Confirmation</h2>
+<p class="halk">We sent the 6-digit confirmation code to this address: <b class="cim" id="bvHova"></b>. The code is valid for 10 minutes.</p>
+<label for="bvMeg">Confirmation code</label>
+<input id="bvMeg" class="szam" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000">
+<button type="button" id="bvBevalt">Redeem</button>
+<button type="button" class="masod" id="bvVissza">Other e-mail address or new code</button>
+<p class="uzenet" id="bvMsg2" role="status" aria-live="polite"></p>
+</section>
+
+<section class="bv-doboz kesz" id="bvLepes3" aria-labelledby="bvCim3" hidden>
+<h2 id="bvCim3">Redeemed</h2>
+<p>Sign in to the app with this e-mail address: <b class="cim" id="bvKeszCim"></b></p>
+<p class="halk">The premium belongs to your account, and you can use it on up to two devices.</p>
+</section>
+<noscript><p>To redeem a code, please enable JavaScript in your browser.</p></noscript>
+<script>
+(function () {
+  var API = 'https://app.prepperpapa.hu/gate/bevaltas/';
+  var NY = (document.documentElement.lang || 'hu').slice(0, 2);
+  function $(id) { return document.getElementById(id); }
+  var allapot = { email: '', kod: '' };
+  function lepes(n) { [1, 2, 3].forEach(function (i) { $('bvLepes' + i).hidden = i !== n; }); }
+  function kodNorm(k) { return String(k || '').trim().toUpperCase().replace(/\s+/g, ''); }
+  function kodJo(k) { return /^PP-[A-Z0-9]{4,8}(-[A-Z0-9]{4,8}){1,2}$/.test(k); }
+  function emailJo(e) { return e.length <= 200 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+  function hibaSzoveg(d, st) {
+    var o = d && d.ok_;
+    if (o === 'ismeretlen' || (d && d.mezo === 'kod')) return 'Unknown code. Check the letters and the hyphens.';
+    if (d && d.mezo === 'email') return 'This does not look like an e-mail address.';
+    if (o === 'visszavonva') return 'This code has been revoked.';
+    if (o === 'felhasznalva') return 'This code has already been redeemed.';
+    if (o === 'masik_fiok') return 'This code belongs to another account.';
+    if (o === 'probak') {
+      var ido = '';
+      try { ido = new Date(d.ujra).toLocaleString(NY === 'hu' ? 'hu-HU' : NY, { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }); } catch (e) {}
+      return 'You entered too many wrong codes. For security reasons you cannot try again for a while.' + (ido ? ' ' + 'You can try again at:' + ' ' + ido : '');
+    }
+    if (o === 'tul_sok' || st === 429) return 'Too many attempts. Please try again in a few minutes.';
+    if (o === 'lejart') return 'The confirmation code has expired. Request a new one.';
+    if (o === 'hibas_megerosito') return 'Wrong confirmation code.';
+    return 'That did not work. Check your connection and try again.';
+  }
+  function hiv(ut, torzs) {
+    return fetch(API + ut, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(torzs) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { st: r.status, d: d }; }); });
+  }
+  $('bvKuld').addEventListener('click', function () {
+    var kod = kodNorm($('bvKod').value), email = String($('bvEmail').value || '').trim().toLowerCase(), m = $('bvMsg1'), g = this;
+    if (!kodJo(kod)) { m.textContent = 'Enter the premium code (for example PP-ABCD-EFGH-JKLM).'; $('bvKod').focus(); return; }
+    if (!emailJo(email)) { m.textContent = 'This does not look like an e-mail address.'; $('bvEmail').focus(); return; }
+    g.disabled = true; m.textContent = 'Sending...';
+    hiv('kod', { kod: kod, email: email, nyelv: NY }).then(function (v) {
+      g.disabled = false;
+      if (v.st === 200 && v.d.ok) {
+        allapot = { email: email, kod: kod }; m.textContent = '';
+        $('bvHova').textContent = email; $('bvMeg').value = ''; $('bvMsg2').textContent = '';
+        lepes(2); $('bvMeg').focus(); return;
+      }
+      m.textContent = hibaSzoveg(v.d, v.st);
+    }).catch(function () { g.disabled = false; m.textContent = 'That did not work. Check your connection and try again.'; });
+  });
+  $('bvBevalt').addEventListener('click', function () {
+    var meg = String($('bvMeg').value || '').replace(/\D/g, ''), m = $('bvMsg2'), g = this;
+    if (meg.length !== 6) { m.textContent = 'Enter the 6-digit code from the e-mail.'; $('bvMeg').focus(); return; }
+    g.disabled = true; m.textContent = 'Checking...';
+    hiv('megerosit', { kod: allapot.kod, email: allapot.email, megerosito: meg }).then(function (v) {
+      g.disabled = false;
+      if (v.st === 200 && v.d.ok) { $('bvKeszCim').textContent = allapot.email; lepes(3); return; }
+      m.textContent = hibaSzoveg(v.d, v.st);
+      if (v.d && (v.d.ok_ === 'lejart' || v.d.ok_ === 'masik_fiok' || v.d.ok_ === 'visszavonva')) $('bvMeg').value = '';
+    }).catch(function () { g.disabled = false; m.textContent = 'That did not work. Check your connection and try again.'; });
+  });
+  $('bvVissza').addEventListener('click', function () { $('bvMsg1').textContent = ''; lepes(1); $('bvEmail').focus(); });
+  ['bvKod', 'bvEmail'].forEach(function (id) { $(id).addEventListener('keydown', function (e) { if (e.key === 'Enter') $('bvKuld').click(); }); });
+  $('bvMeg').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('bvBevalt').click(); });
+  // a link may carry the code: /bevaltas/?kod=PP-... prefills the field (it is NOT redeemed until the e-mail is confirmed)
+  try { var q = new URLSearchParams(location.search).get('kod'); if (q && kodJo(kodNorm(q))) $('bvKod').value = kodNorm(q); } catch (e) {}
+})();
+</script>
+</main>
+<footer><div>PrepperPapa &middot; Prepare, don't fear! &middot; <a href="/en/privacy.html">Privacy</a> &middot; <a href="/en/terms.html">Terms</a> &middot; <a href="/en/legal-notice.html">Legal notice</a> &middot; <a href="/en/partners/">Partner program</a> &middot; <a href="/en/gerah/">Gerah</a></div></footer>
+<script id="fej2js">
+(function(){var n=document.querySelector('header .nav.fej2');if(!n)return;
+  var h=n.querySelector('.hamb'), mq=window.matchMedia('(max-width:920px)');
+  // the row only where it fits; otherwise (and always on phones) the hamburger
+  function fit(){n.classList.remove('kompakt');
+    if(mq.matches||n.scrollWidth>n.clientWidth+1)n.classList.add('kompakt');
+    if(!n.classList.contains('kompakt'))zar();}
+  function zar(){n.classList.remove('nyitva');if(h)h.setAttribute('aria-expanded','false');}
+  if(h)h.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('nyitva');h.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!n.contains(e.target))zar();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')zar();});
+  n.querySelectorAll('.linkek a').forEach(function(a){a.addEventListener('click',zar);});
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+</script>
+<script>(function(){var m={"videok": "videos", "tudastar": "knowledge-base", "kapcsolat": "contact", "bemutato": "tour", "vasarlas": "buy", "ertesito": "notifications", "osszevetes": "comparison", "partnerprogram": "partners"};function f(){var h=decodeURIComponent(location.hash.slice(1));if(m[h]){var e=document.getElementById(m[h]);try{history.replaceState(null,'','#'+m[h]);}catch(x){}if(e)e.scrollIntoView();}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f);else f();window.addEventListener('hashchange',f);})();</script>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-nyelv]');
+  if(a){try{localStorage.setItem('pp-nyelv',a.getAttribute('data-nyelv'));}catch(x){}}});
+</script>
+</body>
+</html>
