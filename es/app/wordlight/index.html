@@ -131,7 +131,7 @@
   /* realistic upright phone frames around the real app screenshots (Boss 22:54 via Marveen 23822):
      Android with a punch-hole camera at the top of the page, iPhone with the Dynamic Island further down.
      A status bar sits above the screenshot so the camera never covers the app header. */
-  .tel{display:block;position:relative;width:min(270px,62vw);margin:0 auto;padding:7px;border-radius:36px;
+  .tel{display:block;position:relative;width:min(270px,62vw);margin:0 auto;padding:7px;border-radius:36px;container-type:inline-size;
        background:linear-gradient(160deg,#34383b,#121415 48%,#26292c);
        box-shadow:0 0 0 1px #50565a,0 0 0 2px #0a0b0c,0 26px 60px rgba(0,0,0,.6)}
   .tel::before{content:"";position:absolute;right:-3px;top:21%;width:3px;height:11%;border-radius:0 3px 3px 0;background:#3c4144}
@@ -139,11 +139,12 @@
   /* glass reflection on the screen (Boss 2026-11-02 TG 7631: more believable) */
   .tel .kij::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;
        background:linear-gradient(115deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 30.5%),linear-gradient(115deg,rgba(255,255,255,0) 62%,rgba(255,255,255,.035) 62.5%,rgba(255,255,255,0) 80%)}
-  .tel .sb{display:flex;justify-content:space-between;align-items:center;height:26px;padding:0 16px 0 20px;
-       background:#0B110E;color:#e8efe9;font:600 11px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  /* status bar scales with the phone (cqw = % of the phone's inner width); iPhone proportions (Boss TG 7923) */
+  .tel .sb{display:flex;justify-content:space-between;align-items:center;height:9.6cqw;padding:0 6.2cqw 0 7.6cqw;
+       background:#0B110E;color:#e8efe9;font:600 4.1cqw/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   .tel .sb::before{content:"12:45"}
-  .tel .sb svg{height:9px;width:auto;fill:#e8efe9;display:block}
-  .tel .sb::after{content:"";position:absolute;left:50%;top:8px;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+  .tel .sb svg{height:2.7cqw;width:auto;fill:#e8efe9;display:block}
+  .tel .sb::after{content:"";position:absolute;left:50%;top:2.8cqw;width:4.1cqw;height:4.1cqw;margin-left:-2.05cqw;border-radius:50%;
        background:#000;box-shadow:0 0 0 1.5px #1d2022}
   .tel img{display:block;width:100%;height:auto}
   .tel .kij{padding-bottom:9px}
@@ -155,9 +156,9 @@
        box-shadow:0 calc(min(270px,62vw)*.2) 0 #77736c}
   .tel.iphone .kij{border-radius:37px;padding-bottom:18px}
   .tel.iphone .kij::after{bottom:6px;height:4px;width:34%;margin-left:-17%}
-  .tel.iphone .sb{height:34px;padding:0 22px 0 28px}
+  .tel.iphone .sb{height:12.6cqw;padding:0 8.1cqw 0 10.4cqw}
   .tel.iphone .sb::before{content:"9:41"}
-  .tel.iphone .sb::after{top:8px;width:26%;height:20px;margin-left:-13%;border-radius:12px;box-shadow:none}
+  .tel.iphone .sb::after{top:3cqw;width:26%;height:7.4cqw;margin-left:-13%;border-radius:3.7cqw;box-shadow:none}
   .lefele{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:13px;
           letter-spacing:.15em;text-transform:uppercase;text-decoration:none;animation:lebeg 2.2s ease-in-out infinite}
   @keyframes lebeg{50%{transform:translate(-50%,6px)}}
