@@ -298,14 +298,123 @@
     .hero{min-height:100svh}
   }
 
-  .wlvideo{display:flex;justify-content:center;margin:26px 0}
-  .wlvideo video{width:min(300px,72vw);height:auto;border-radius:22px;box-shadow:0 0 0 1px #50565a,0 22px 50px rgba(0,0,0,.55);background:#0B110E}
-  .wlkepek{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:6px 0 20px;padding-bottom:6px}
-  .wlkepek figure{flex:0 0 180px;scroll-snap-align:start;margin:0}
-  .wlkepek img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
-  .wlkepek figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
-  .wlfej{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:14px;
-        border:1px solid var(--line);margin:4px 0 18px}
+  /* WORDLIGHT LANDING (Boss 2026-11-03 16:46: "Képernyőképekkel, nagyon dizájnossal, szép legyen."). Starry backdrop like
+     the app, real app screenshots in iPhone frames (Dynamic Island, iOS status bar, glass reflection: Boss 15:23/15:46),
+     feature rows text + phone, mobile first. Texts are unchanged; only the layout is new. */
+  .wlhatter{position:relative;overflow:hidden;isolation:isolate;
+     background:
+       radial-gradient(1.3px 1.3px at 23px 41px,rgba(255,255,255,.55),transparent 70%),
+       radial-gradient(1px 1px at 97px 13px,rgba(255,255,255,.40),transparent 70%),
+       radial-gradient(1.5px 1.5px at 151px 88px,rgba(255,244,214,.50),transparent 70%),
+       radial-gradient(1px 1px at 58px 132px,rgba(255,255,255,.32),transparent 70%),
+       radial-gradient(1.1px 1.1px at 189px 171px,rgba(255,255,255,.42),transparent 70%),
+       radial-gradient(1.2px 1.2px at 128px 196px,rgba(214,255,214,.32),transparent 70%);
+     background-size:211px 211px}
+  .wlhatter::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+     background:
+       radial-gradient(1px 1px at 61px 77px,rgba(255,255,255,.30),transparent 70%),
+       radial-gradient(1.6px 1.6px at 263px 211px,rgba(255,255,255,.45),transparent 70%),
+       radial-gradient(1px 1px at 190px 300px,rgba(255,255,255,.28),transparent 70%);
+     background-size:337px 337px}
+  .wlhatter::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+     background:
+       radial-gradient(70% 520px at 50% 0,rgba(124,179,66,.17),transparent 75%),
+       radial-gradient(45% 700px at 100% 38%,rgba(124,179,66,.07),transparent 75%),
+       radial-gradient(45% 700px at 0 64%,rgba(255,179,64,.05),transparent 75%),
+       radial-gradient(60% 600px at 50% 100%,rgba(124,179,66,.08),transparent 75%)}
+  .pp.wl{max-width:1120px;padding-top:28px}
+  .wl .wlfej{display:block;width:100%;max-width:980px;height:auto;aspect-ratio:5/3;object-fit:cover;margin:0 auto 26px;
+        border-radius:20px;border:1px solid rgba(124,179,66,.22);box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 80px rgba(124,179,66,.10)}
+  .wl .wlbev{max-width:720px;margin:0 auto;text-align:center}
+  .wl .wlbev .kicsi{margin-bottom:12px}
+  .wl .wlbev h1{font-size:clamp(32px,6.4vw,58px);line-height:1.06;letter-spacing:-.015em;margin:0 0 16px;font-weight:800}
+  .wl .wlbev p{font-size:clamp(17px,2.2vw,20px);color:#cfd6cf;margin:0 auto}
+
+  /* iPhone frame: 393 x 852 pt screen; the app shot is 393 x 798 under a 54 pt status bar. All sizes in cqw of the frame. */
+  .wl .tf{--w:270px;width:var(--w);margin:0;flex:0 0 auto;container-type:inline-size;position:relative}
+  .wl .ip{position:relative;padding:1.05cqw;border-radius:17.4cqw;
+     background:linear-gradient(140deg,#7a7d80 0%,#2b2d30 14%,#151618 38%,#1d1f21 62%,#3a3c40 86%,#86898c 100%);
+     box-shadow:inset 0 0 0 .3cqw rgba(255,255,255,.22),0 4cqw 9cqw rgba(0,0,0,.55),0 1cqw 2.5cqw rgba(0,0,0,.45)}
+  .wl .ip::before{content:"";position:absolute;right:-.75cqw;top:24%;width:.9cqw;height:11.5%;border-radius:0 .6cqw .6cqw 0;
+     background:linear-gradient(90deg,#2d2f32,#6c6f73)}
+  .wl .ip::after{content:"";position:absolute;left:-.75cqw;top:18.5%;width:.9cqw;height:4.2%;border-radius:.6cqw 0 0 .6cqw;
+     background:linear-gradient(270deg,#2d2f32,#6c6f73);box-shadow:0 8cqw 0 #55585b,0 16.5cqw 0 #55585b}
+  .wl .scr{position:relative;display:block;box-sizing:content-box;aspect-ratio:393/852;overflow:hidden;
+     border:2.75cqw solid #040405;border-radius:16.4cqw;background:var(--sb,#0c180e)}
+  .wl .scr img,.wl .scr video{position:absolute;left:0;top:6.338%;width:100%;height:93.662%;object-fit:cover;object-position:top;
+     display:block;background:var(--sb,#0c180e)}
+  .wl .scr svg.sb{position:absolute;left:0;top:0;width:100%;height:auto;z-index:2;display:block;
+     font:600 17px -apple-system,"SF Pro Text",BlinkMacSystemFont,system-ui,"Segoe UI",Roboto,sans-serif;letter-spacing:-.3px}
+  .wl .scr::before{content:"";position:absolute;z-index:3;left:32.9%;bottom:.55%;width:34.2%;height:.62%;border-radius:9px;
+     background:rgba(255,255,255,.78);pointer-events:none}
+  .wl .scr::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
+     background:linear-gradient(118deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.06) 24%,rgba(255,255,255,0) 24.4%),
+                linear-gradient(118deg,rgba(255,255,255,0) 58%,rgba(255,255,255,.035) 58.4%,rgba(255,255,255,0) 76%);
+     box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+
+  /* the stage under the intro: home screen, read-aloud with the word-follow highlight, the book tiles (the English demo
+     video is out until it is re-recorded per language) */
+  .wl .wlszinpad{position:relative;display:flex;justify-content:center;align-items:center;margin:30px -16px 0;padding:26px 0 40px}
+  .wl .wlszinpad::before{content:"";position:absolute;left:50%;top:50%;width:min(760px,120vw);aspect-ratio:1.4;transform:translate(-50%,-50%);
+     z-index:-1;pointer-events:none;
+     background:radial-gradient(closest-side,rgba(124,179,66,.30),rgba(124,179,66,.08) 55%,transparent),
+                radial-gradient(closest-side at 50% 70%,rgba(255,179,64,.10),transparent)}
+  .wl .wlszinpad .kozep{--w:min(300px,51vw);z-index:2}
+  .wl .wlszinpad .old{--w:min(252px,38vw);z-index:1;filter:brightness(.86)}
+  .wl .wlszinpad .bal{margin-right:calc(var(--w)*-.36);transform:translateY(7%) rotate(-8deg)}
+  .wl .wlszinpad .jobb{margin-left:calc(var(--w)*-.36);transform:translateY(7%) rotate(8deg)}
+  @media (min-width:860px){.wl .wlszinpad .bal{margin-right:-34px}.wl .wlszinpad .jobb{margin-left:-34px}}
+
+  /* feature rows */
+  .wl .wlsor{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;margin:58px 0 0}
+  .wl .wlszoveg{max-width:560px}
+  .wl .wlszam{display:flex;align-items:center;gap:12px;color:var(--borostyan);font-weight:800;font-size:14px;letter-spacing:.18em;margin:0 0 10px}
+  .wl .wlszam::after{content:"";height:1px;width:56px;background:linear-gradient(90deg,rgba(255,179,64,.7),transparent)}
+  .wl .wlsor h2,.wl .wlprem h2{font-size:clamp(28px,5.4vw,42px);line-height:1.08;letter-spacing:-.012em;font-weight:800;margin:0 0 16px}
+  .wl .wlszoveg p{font-size:17px}
+  .wl .wlszoveg ul{list-style:none;margin:0;padding:0}
+  .wl .wlszoveg li{position:relative;padding:0 0 0 34px;margin:0 0 13px;color:#cfd6cf}
+  .wl .wlszoveg li::before{content:"\2713";position:absolute;left:0;top:.18em;width:22px;height:22px;border-radius:50%;
+     display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#0B110E;
+     background:linear-gradient(160deg,#9ccc65,#7CB342);box-shadow:0 0 12px rgba(124,179,66,.35)}
+  .wl .wltel{position:relative;display:flex;justify-content:center;padding:6px 0 10px}
+  .wl .wltel::before{content:"";position:absolute;left:50%;top:50%;width:min(520px,110vw);aspect-ratio:1;transform:translate(-50%,-50%);
+     z-index:-1;pointer-events:none;background:radial-gradient(closest-side,rgba(124,179,66,.20),rgba(124,179,66,.05) 60%,transparent)}
+  .wl .wltel .tf{--w:min(286px,70vw)}
+  @media (min-width:860px){
+    .wl .wlsor{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;margin-top:96px}
+    .wl .wlsor.fordit .wlszoveg{order:2}
+    .wl .wlsor.fordit .wltel{order:1}
+    .wl .wltel .tf{--w:300px}
+  }
+
+  /* free vs Biblia premium */
+  .wl .wlprem{margin:84px -4px 0;padding:30px 14px 18px;border:1px solid rgba(255,179,64,.30);border-radius:26px;
+     background:linear-gradient(165deg,rgba(255,179,64,.10),rgba(18,27,22,.88) 34%,rgba(11,17,14,.92));
+     box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .wl .wlprem .wlsor{margin:0 0 18px;padding:0 6px}
+  .wl .wlprem h2{background:linear-gradient(180deg,#FFD9A0,var(--borostyan) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wl .wlprem .wltel::before{background:radial-gradient(closest-side,rgba(255,179,64,.18),rgba(255,179,64,.04) 60%,transparent)}
+  .wl .tabla{background:rgba(11,17,14,.72);border-color:#2a3a31;margin:8px 0 14px}
+  .wl .tabla thead th{background:#16211b;position:relative}
+  .wl .tabla thead th.prem{color:var(--borostyan)}
+  .wl .tabla tbody tr:not(.csop):hover th,.wl .tabla tbody tr:not(.csop):hover td{background-color:rgba(124,179,66,.05)}
+  .wl .wlprem > .halk{padding:0 4px;margin:0}
+  @media (min-width:860px){
+    .wl .wlprem{margin:110px 0 0;padding:44px 40px 30px}
+    .wl .wlprem .wlsor{margin:0 0 26px;padding:0}
+    .wl .tabla thead th:first-child{width:52%}
+  }
+
+  /* closing cards */
+  .wl .wlzaro{display:grid;grid-template-columns:1fr;gap:16px;margin:56px 0 0}
+  @media (min-width:760px){.wl .wlzaro{grid-template-columns:1fr 1fr}}
+  .wl .wlkartya{background:linear-gradient(160deg,rgba(124,179,66,.10),rgba(18,27,22,.92) 55%);border:1px solid #2c3d33;
+     border-radius:20px;padding:24px 22px 8px}
+  .wl .wlkartya h2{margin:0 0 10px;font-size:clamp(22px,3.4vw,28px)}
+  .wl .trio{margin-top:64px}
+  @media (max-width:560px){.wl .wlprem .tabla{margin-left:-6px;margin-right:-6px}
+    .wl .tabla table thead th{width:24%}.wl .tabla table thead th:first-child{width:52%}}
 
   .tabla th small.wlm{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.35}
   .tabla tbody th{text-align:left}
@@ -488,24 +597,43 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   <button class="hamb" type="button" aria-label="Menü" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 6.5 H20"/><path d="M4 12 H20"/><path d="M4 17.5 H20"/></svg></button>
 </nav></header>
 <main class="ppm">
-<div class="pp">
+<div class="wlhatter"><div class="pp wl">
+<section class="wlnyit">
 <img class="wlfej" src="/alkalmazasok/kepek/kartya-wordlight.webp" width="1200" height="720" alt="Wordlight">
+<div class="wlbev">
 <div class="kicsi">Wordlight &middot; PrepperPapa Biblia</div>
 <h1>A Biblia a zsebedben, internet nélkül is.</h1>
-<p>A Wordlight a PrepperPapa Biblia-alkalmazása. Nyolc nyelven olvasható és hallgatható, egyszeri letöltés után internet nélkül is. A PrepperPapa mellé külön telepíthető.</p>
-<div class="wlvideo"><video src="/app/kepek/wl-bemutato.mp4" poster="/app/kepek/wl-bemutato-poszter.jpg" width="590" height="1224" controls muted playsinline loop autoplay preload="metadata" aria-label="Wordlight"></video></div>
-<div class="wlkepek"><figure><img src="/app/kepek/wl-1-kezdolap.webp" width="480" height="1044" alt="Kezdőképernyő" loading="lazy"><figcaption>Kezdőképernyő</figcaption></figure><figure><img src="/app/kepek/wl-2-konyvek.webp" width="480" height="1044" alt="A könyvek rajzos csempéi" loading="lazy"><figcaption>A könyvek rajzos csempéi</figcaption></figure><figure><img src="/app/kepek/wl-3-fejezetek.webp" width="480" height="1044" alt="Fejezetválasztó jelenetrajzokkal" loading="lazy"><figcaption>Fejezetválasztó jelenetrajzokkal</figcaption></figure><figure><img src="/app/kepek/wl-4-olvasas.webp" width="480" height="1044" alt="Olvasás" loading="lazy"><figcaption>Olvasás</figcaption></figure><figure><img src="/app/kepek/wl-5-ima.webp" width="480" height="1044" alt="Imádság" loading="lazy"><figcaption>Imádság</figcaption></figure><figure><img src="/app/kepek/wl-6-terv.webp" width="480" height="1044" alt="Olvasási tervek" loading="lazy"><figcaption>Olvasási tervek</figcaption></figure></div>
+<p>A Wordlight a PrepperPapa Biblia-alkalmazása. Olvasható és hallgatható, egyszeri letöltés után internet nélkül is. A PrepperPapa mellé külön telepíthető.</p>
+</div>
+<div class="wlszinpad">
+<figure class="tf old bal"><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-1-kezdolap.webp" width="900" height="1827" alt="Kezdőképernyő" loading="eager" decoding="async"></div></div></figure>
+<figure class="tf kozep"><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-4-felolvasas.webp" width="900" height="1827" alt="Felolvasás közben a kiemelés azt a szót követi, amit a hang éppen kimond" loading="eager" decoding="async"></div></div></figure>
+<figure class="tf old jobb"><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-2-konyvek.webp" width="900" height="1827" alt="A könyvek rajzos csempéi" loading="eager" decoding="async"></div></div></figure>
+</div>
+</section>
 
-<h2>Nyolc nyelv, nyolc Biblia</h2>
-<p>Magyarul a Károli-fordítás, angolul a King James, németül a Luther 1912, ukránul a Kulis-féle fordítás, oroszul a Szinodális, lengyelül az UBG 2017, románul a Biblia 1914, spanyolul a Reina-Valera. A letöltött fordítások között egy koppintással válthatsz.</p>
+<section class="wlsor">
+<div class="wlszoveg"><div class="wlszam">01</div>
+<h2>A Biblia a te nyelveden</h2>
+<p>Minden nyelven a megszokott, ismert fordítás, ingyen letölthető. A letöltött fordítások között egy koppintással válthatsz.</p>
+</div>
+<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-3-fejezetek.webp" width="900" height="1827" alt="Fejezetválasztó jelenetrajzokkal" loading="lazy" decoding="async"></div></div></figure></div>
+</section>
 
+<section class="wlsor fordit">
+<div class="wlszoveg"><div class="wlszam">02</div>
 <h2>Hallgasd</h2>
 <ul>
 <li>A versszámokat nem olvassa fel, a tempó és a versek közti szünet állítható, háttérzene is szólhat alatta.</li>
 <li>Felolvasás a telefon hangjával vagy Stúdió hanggal (felvett, emberi felolvasás). Minden könyv Stúdió hangja ingyen letölthető, internet nélkül is. Ingyen naponta 5 perc felolvasás jár, Biblia prémiummal korlátlan. Az imák és a reggeli ébresztő felolvasása nem számít bele.</li>
 <li>Az imák és a megvallások is felolvashatók.</li>
 </ul>
+</div>
+<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-10-panel.webp" width="900" height="1827" alt="Hallgasd" loading="lazy" decoding="async"></div></div></figure></div>
+</section>
 
+<section class="wlsor">
+<div class="wlszoveg"><div class="wlszam">03</div>
 <h2>Olvasd, jelöld, kövesd</h2>
 <ul>
 <li>Keresés szóra vagy igehelyre, ékezet nélkül is.</li>
@@ -514,24 +642,48 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li>Nyolc olvasási terv, egyszerre több is, haladásjelzővel: a teljes Biblia egy év vagy 90 nap alatt, az Újszövetség, az evangéliumok, a Zsoltárok és a Példabeszédek.</li>
 <li>Automatikus görgetés, betűméret, könyvszínek és piros éjszakai mód.</li>
 </ul>
+</div>
+<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-7-terv.webp" width="900" height="1827" alt="Olvasási tervek" loading="lazy" decoding="async"></div></div></figure></div>
+</section>
 
+<section class="wlsor fordit">
+<div class="wlszoveg"><div class="wlszam">04</div>
 <h2>Ébredj igével</h2>
 <p>Az ébresztő egy olvasási tervhez köthető, a hét kiválasztott napjain. Androidon felébreszti a telefont, és felolvassa a napi részt.</p>
+</div>
+<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-8-ebreszto.webp" width="900" height="1827" alt="Ébredj igével" loading="lazy" decoding="async"></div></div></figure></div>
+</section>
 
+<section class="wlsor">
+<div class="wlszoveg"><div class="wlszam">05</div>
 <h2>Játékok</h2>
 <ul>
 <li>Igés játékok felnőtt és gyerek módban, pontozással és sorozattal: Igekvíz, Ki mondta?, Hol van?, Igehely-párosító és Könyvsorrend.</li>
 <li>Gyerek módban négy képes játék a kicsiknek: Memóriajáték, Noé bárkája, Ki kicsoda? és Kirakós.</li>
 </ul>
+</div>
+<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-9-jatekok.webp" width="900" height="1827" alt="Játékok" loading="lazy" decoding="async"></div></div></figure></div>
+</section>
 
+<section class="wlsor fordit">
+<div class="wlszoveg"><div class="wlszam">06</div>
 <h2>Imádság és vészhelyzet</h2>
 <ul>
 <li>Beépített és saját imák, imaidő-mérő halk csengővel; ima közben a képernyő nem alszik el.</li>
 <li>Vészhelyzeti igék harminc élethelyzetre, és próféciák témák szerint csoportosítva.</li>
 </ul>
+</div>
+<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-6-ima.webp" width="900" height="1827" alt="Imádság" loading="lazy" decoding="async"></div></div></figure></div>
+</section>
 
+<section class="wlprem">
+<div class="wlsor">
+<div class="wlszoveg">
 <h2>Mi ingyenes, mi Biblia prémium?</h2>
 <p>A Biblia prémium a korlátlan felolvasási időt és az eredeti szót egy koppintásra adja. Minden más ingyenes, a felvett hangok és az összes háttérzene letöltése is. Ára 24,99 €, egyszeri vásárlás, végleges. Karácsonyi ár 2027. január 6-ig: 7 777 Ft (eurós fizetésnél 19,99 €).</p>
+</div>
+<div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#12110d"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/app/kepek/wl-5-eredeti.webp" width="900" height="1827" alt="Tanulmányozás" loading="lazy" decoding="async"></div></div></figure></div>
+</div>
 <div class="tabla"><table>
 <thead><tr><th scope="col">Funkció</th><th scope="col">Ingyenes</th><th scope="col" class="prem">Biblia prémium</th></tr></thead>
 <tbody>
@@ -582,12 +734,18 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <tr><th scope="row">Feloldás módja<small class="wlm">A kódot a prepperpapa.hu/bevaltas oldalon kell beváltani, az e-mail címedre. Utána lépj be az appba ugyanazzal a címmel, és a prémium feloldódik. Az áruházi alkalmazásban is megvásárolható.</small></th><td class="korlat">–</td><td class="korlat">kóddal vagy áruházi vásárlással</td></tr>
 </tbody></table></div>
 <p class="halk">A Biblia prémium külön termék: a PrepperPapa prémium kódja nem oldja fel. Az állapot a 2026. november 3-i változat szerint.</p>
+</section>
 
+<section class="wlzaro">
+<div class="wlkartya">
 <h2>Internet nélkül, biztonságban</h2>
 <p>Egyszeri letöltés után internet nélkül is működik (a teljes Károli-fordítás kb. 4 MB). A kiemeléseidet és jegyzeteidet titkosított mentéssel viheted át másik telefonra.</p>
-
+</div>
+<div class="wlkartya">
 <h2>Letöltés</h2>
 <p>Hamarosan elérhető.</p>
+</div>
+</section>
 <section class="trio">
 <div class="kicsi">Fedezd fel</div>
 <h2>A PrepperPapa világa</h2>
@@ -598,7 +756,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </div>
 </section>
 <p><a href="/alkalmazasok/">&larr; Vissza az alkalmazásokhoz</a></p>
-</div>
+</div></div>
 </main>
 <footer><div>PrepperPapa &middot; Készülj, ne félj!
 &middot; <a href="/adatkezeles.html">Adatkezelés</a>
