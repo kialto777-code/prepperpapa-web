@@ -261,6 +261,28 @@
   .tabla tbody th{text-align:left}
   .ppm h3{margin:22px 0 6px;font-size:1.05rem}
 
+  main.bv{max-width:620px;padding-top:34px}
+  .bv .alcim{color:var(--muted);margin:0 0 24px}
+  .bv-doboz{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 16px}
+  .bv-doboz h2{font-size:20px;margin:0 0 14px}
+  .bv label{display:block;font-weight:700;font-size:15px;margin:0 0 6px}
+  .bv input{display:block;width:100%;font:inherit;font-size:18px;color:var(--ink);background:var(--bg);
+            border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 16px;min-height:50px}
+  .bv input:focus{outline:2px solid var(--borostyan);outline-offset:1px}
+  .bv input.kod{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase}
+  .bv input.szam{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;font-size:22px;max-width:220px}
+  .bv button{display:block;width:100%;border:0;border-radius:10px;padding:13px 16px;min-height:50px;cursor:pointer;
+             font:inherit;font-weight:700;letter-spacing:.02em;background:var(--borostyan);color:#1b1407}
+  .bv button[disabled]{opacity:.6;cursor:default}
+  .bv button.masod{background:transparent;color:var(--ink);border:1px solid var(--line);margin-top:10px}
+  .bv .halk{margin:0 0 14px;line-height:1.5}
+  .bv .uzenet{min-height:1.5em;margin:12px 0 0;font-size:15px;line-height:1.5;color:var(--borostyan)}
+  .bv .uzenet:empty{display:none}
+  .bv .kesz{border-left:4px solid var(--zold)}
+  .bv .kesz h2{color:var(--zold)}
+  .bv .cim{overflow-wrap:anywhere}
+  .bv [hidden]{display:none !important}
+
   /* Christmas thank-you page: the Wordlight starry backdrop (.wlhatter from WL_STYLE), one narrow reading column,
      phone first (most visitors scan the QR code on a phone). */
   .pp.kv{max-width:640px;padding-top:30px;padding-bottom:64px;text-align:left}
@@ -293,6 +315,10 @@
   .kv .kvzaro{text-align:center;font-size:19px;font-weight:700;color:var(--ink);margin:0 0 18px}
   .kv .kvalairas{text-align:center;margin:0;color:#cfd6cf;line-height:1.5}
   .kv .kvalairas .nev{display:block;font-size:18px;font-weight:700;color:var(--ink)}
+  /* embedded redemption form: keep its own box headings (the page h2 rule would centre and enlarge them) */
+  .kv .kvbv{margin:0 0 18px}
+  .kv .bv-doboz{background:rgba(18,27,22,.92)}
+  .kv .bv-doboz h2{text-align:left;font-size:20px;margin:0 0 14px}
   .kv .kvalairas .becenev{display:block;font-family:Pacifico,cursive;font-size:24px;color:var(--zold);margin-top:2px}
 </style>
 <style id="fej2">
@@ -373,8 +399,102 @@
 <hr class="kvdisz">
 
 <h2>Így váltod be az ajándékodat</h2>
-<ol class="kvlepes">
-<li>Nyisd meg a <a href="/bevaltas/">prepperpapa.hu/bevaltas</a> oldalt, és írd be a kártyán lévő kódot és az e-mail címedet.</li>
+<!-- the redemption form itself (bevaltas_oldal.py), owner TG 8375: no second page; the card's own QR carries ?kod=,
+     the script prefills it, the recipient only types the e-mail address -->
+<div class="bv kvbv">
+<section class="bv-doboz" id="bvLepes1" aria-labelledby="bvCim1">
+<h2 id="bvCim1">1. A kód és az e-mail címed</h2>
+<label for="bvKod">Prémium kód</label>
+<input id="bvKod" class="kod" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="PP-XXXX-XXXX-XXXX">
+<label for="bvEmail">E-mail cím</label>
+<input id="bvEmail" type="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="nev@pelda.hu">
+<p class="halk">Erre a címre küldünk egy 6 jegyű megerősítő kódot. A kód ehhez az e-mail címhez kötődik.</p>
+<button type="button" id="bvKuld">Megerősítő kód kérése</button>
+<p class="uzenet" id="bvMsg1" role="status" aria-live="polite"></p>
+</section>
+
+<section class="bv-doboz" id="bvLepes2" aria-labelledby="bvCim2" hidden>
+<h2 id="bvCim2">2. Megerősítés</h2>
+<p class="halk">Elküldtük a 6 jegyű megerősítő kódot erre a címre: <b class="cim" id="bvHova"></b>. A kód 10 percig érvényes.</p>
+<label for="bvMeg">Megerősítő kód</label>
+<input id="bvMeg" class="szam" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000">
+<button type="button" id="bvBevalt">Beváltás</button>
+<button type="button" class="masod" id="bvVissza">Másik e-mail cím vagy új kód</button>
+<p class="uzenet" id="bvMsg2" role="status" aria-live="polite"></p>
+</section>
+
+<section class="bv-doboz kesz" id="bvLepes3" aria-labelledby="bvCim3" hidden>
+<h2 id="bvCim3">Sikeres beváltás</h2>
+<p>Lépj be az alkalmazásban ezzel az e-mail címmel: <b class="cim" id="bvKeszCim"></b></p>
+<p class="halk">A prémium a fiókodhoz tartozik, és legfeljebb két készüléken használhatod.</p>
+</section>
+<noscript><p>A beváltáshoz engedélyezd a JavaScriptet a böngésződben.</p></noscript>
+<script>
+(function () {
+  var API = 'https://app.prepperpapa.hu/gate/bevaltas/';
+  var NY = (document.documentElement.lang || 'hu').slice(0, 2);
+  function $(id) { return document.getElementById(id); }
+  var allapot = { email: '', kod: '' };
+  function lepes(n) { [1, 2, 3].forEach(function (i) { $('bvLepes' + i).hidden = i !== n; }); }
+  function kodNorm(k) { return String(k || '').trim().toUpperCase().replace(/\s+/g, ''); }
+  function kodJo(k) { return /^PP-[A-Z0-9]{4,8}(-[A-Z0-9]{4,8}){1,2}$/.test(k); }
+  function emailJo(e) { return e.length <= 200 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+  function hibaSzoveg(d, st) {
+    var o = d && d.ok_;
+    if (o === 'ismeretlen' || (d && d.mezo === 'kod')) return 'Ismeretlen kód. Nézd meg a betűket és a kötőjeleket.';
+    if (d && d.mezo === 'email') return 'Ez nem tűnik e-mail címnek.';
+    if (o === 'visszavonva') return 'Ezt a kódot visszavonták.';
+    if (o === 'felhasznalva') return 'Ezt a kódot már beváltották.';
+    if (o === 'masik_fiok') return 'Ez a kód egy másik fiókhoz tartozik.';
+    if (o === 'probak') {
+      var ido = '';
+      try { ido = new Date(d.ujra).toLocaleString(NY === 'hu' ? 'hu-HU' : NY, { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }); } catch (e) {}
+      return 'Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.' + (ido ? ' ' + 'Újra próbálhatod ekkor:' + ' ' + ido : '');
+    }
+    if (o === 'tul_sok' || st === 429) return 'Túl sok próbálkozás. Kérjük, próbáld újra pár perc múlva.';
+    if (o === 'lejart') return 'A megerősítő kód lejárt. Kérj újat.';
+    if (o === 'hibas_megerosito') return 'Hibás megerősítő kód.';
+    return 'Most nem sikerült. Ellenőrizd a kapcsolatot, és próbáld újra.';
+  }
+  function hiv(ut, torzs) {
+    return fetch(API + ut, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(torzs) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { st: r.status, d: d }; }); });
+  }
+  $('bvKuld').addEventListener('click', function () {
+    var kod = kodNorm($('bvKod').value), email = String($('bvEmail').value || '').trim().toLowerCase(), m = $('bvMsg1'), g = this;
+    if (!kodJo(kod)) { m.textContent = 'Írd be a prémium kódot (például PP-ABCD-EFGH-JKLM).'; $('bvKod').focus(); return; }
+    if (!emailJo(email)) { m.textContent = 'Ez nem tűnik e-mail címnek.'; $('bvEmail').focus(); return; }
+    g.disabled = true; m.textContent = 'Küldés...';
+    hiv('kod', { kod: kod, email: email, nyelv: NY }).then(function (v) {
+      g.disabled = false;
+      if (v.st === 200 && v.d.ok) {
+        allapot = { email: email, kod: kod }; m.textContent = '';
+        $('bvHova').textContent = email; $('bvMeg').value = ''; $('bvMsg2').textContent = '';
+        lepes(2); $('bvMeg').focus(); return;
+      }
+      m.textContent = hibaSzoveg(v.d, v.st);
+    }).catch(function () { g.disabled = false; m.textContent = 'Most nem sikerült. Ellenőrizd a kapcsolatot, és próbáld újra.'; });
+  });
+  $('bvBevalt').addEventListener('click', function () {
+    var meg = String($('bvMeg').value || '').replace(/\D/g, ''), m = $('bvMsg2'), g = this;
+    if (meg.length !== 6) { m.textContent = 'A levélben kapott 6 jegyű kódot írd be.'; $('bvMeg').focus(); return; }
+    g.disabled = true; m.textContent = 'Ellenőrzés...';
+    hiv('megerosit', { kod: allapot.kod, email: allapot.email, megerosito: meg }).then(function (v) {
+      g.disabled = false;
+      if (v.st === 200 && v.d.ok) { $('bvKeszCim').textContent = allapot.email; lepes(3); return; }
+      m.textContent = hibaSzoveg(v.d, v.st);
+      if (v.d && (v.d.ok_ === 'lejart' || v.d.ok_ === 'masik_fiok' || v.d.ok_ === 'visszavonva')) $('bvMeg').value = '';
+    }).catch(function () { g.disabled = false; m.textContent = 'Most nem sikerült. Ellenőrizd a kapcsolatot, és próbáld újra.'; });
+  });
+  $('bvVissza').addEventListener('click', function () { $('bvMsg1').textContent = ''; lepes(1); $('bvEmail').focus(); });
+  ['bvKod', 'bvEmail'].forEach(function (id) { $(id).addEventListener('keydown', function (e) { if (e.key === 'Enter') $('bvKuld').click(); }); });
+  $('bvMeg').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('bvBevalt').click(); });
+  // a link may carry the code: /bevaltas/?kod=PP-... prefills the field (it is NOT redeemed until the e-mail is confirmed)
+  try { var q = new URLSearchParams(location.search).get('kod'); if (q && kodJo(kodNorm(q))) $('bvKod').value = kodNorm(q); } catch (e) {}
+})();
+</script>
+</div>
+<ol class="kvlepes" style="counter-reset:kv 2">
 <li><a href="/app/wordlight/">Töltsd le a Wordlight alkalmazást.</a></li>
 <li>Lépj be az alkalmazásban ugyanazzal az e-mail címmel.</li>
 </ol>
