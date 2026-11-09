@@ -5149,6 +5149,8 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Mai cél teljesítve · {n} perc": "Dzisiejszy cel osiągnięty · {n} min",
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Jeśli było ci dobrze, zostań jeszcze chwilę: jutro spróbuj {m} minut.",
   "Holnaptól {m} perc": "Od jutra {m} min",
+  "Ha jólesett, maradj még egy kicsit: ma próbáld meg {m} perccel.": "Jeśli było ci dobrze, zostań jeszcze chwilę: dziś spróbuj {m} minut.",
+  "Mától {m} perc": "Od dziś {m} min",
   "Mi a Gerah?": "Co to jest Gerah?",
   "Ma kibányásztál {n} gerah-t!": "Dziś wydobyłeś {n} gerah!",
   "{n} perc · {g} gerah/nap": "{n} min · {g} gerah/dzień",
@@ -7014,4 +7016,23 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Gerah: az éjfélen átnyúló olvasás teljes egészében a kezdés napjába számít: a percek, a napi cél, a gratuláció és a Gerah-nap is.": "Gerah: czytanie, które trwa po północy, liczy się w całości do dnia, w którym się zaczęło: minuty, cel dzienny, gratulacje i dzień Gerah.",
   "Gerah: a saját napi célod napját 3 napig visszamenőleg is jóváírjuk, a sorrendtől függetlenül; ha egy nap már nem írható jóvá, az app ezt megmondja.": "Gerah: dzień, w którym osiągnięto własny cel dzienny, jest zaliczany do 3 dni wstecz, w dowolnej kolejności; jeśli dnia nie można już zaliczyć, aplikacja o tym informuje.",
   "Wordlight: a Biblia-beállításokban nem jelenik meg kétszer a „Biblia” cím.": "Wordlight: w ustawieniach Biblii nagłówek „Biblia” nie pojawia się już dwa razy."
+});
+// ===== 2026-11-09 Éjfél text (Thomas 30737, card 4f0b74b5): the congratulation for yesterday shown after midnight names yesterday =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Tegnap is {n} percet töltöttél Isten beszédével.": "Również wczoraj spędziłeś {n} min ze Słowem Bożym.",
+  "Tegnapi cél teljesítve · {n} perc": "Wczorajszy cel osiągnięty · {n} min",
+  "A tegnapi napért {n} gerah járna, de még nincs Gerah-tárcád, ezért nem került letétbe. Hozd létre a tárcádat mielőbb, hogy a tegnapi nap is letétbe kerülhessen.": "Za wczorajszy dzień należałoby się {n} gerah, ale nie masz jeszcze portfela Gerah, więc nic nie trafiło do depozytu. Utwórz portfel jak najszybciej, aby wczorajszy dzień też mógł trafić do depozytu.",
+  "A tegnapi napért {n} gerah-t letétbe helyeztünk. Heti cél: {k} / {h} nap.": "Za wczorajszy dzień {n} gerah trafiło do depozytu. Cel tygodniowy: {k} / {h} dni.",
+  "A tegnapi napért kibányásztál {n} gerah-t!": "Za wczorajszy dzień wydobyłeś {n} gerah!",
+  "A tegnapi napot a PrepperPapa alkalmazás veszi át, amikor legközelebb megnyitod. Ha a nap csatlakozik a heti cél egymást követő napjaihoz, {n} gerah kerül érte letétbe, és a heti cél teljesítésekor a tárcádba.": "Wczorajszy dzień przejmie aplikacja PrepperPapa, gdy następnym razem ją otworzysz. Jeśli dzień dołącza do kolejnych dni twojego celu tygodniowego, {n} gerah trafi za niego do depozytu, a po osiągnięciu celu tygodniowego do twojego portfela."
+});
+// ===== Ujdonsagok v43.469 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Imaszoba: az egész évre szóló vezetett ima mostantól angol, német, spanyol, lengyel, román, orosz és ukrán nyelven is elérhető.": "Pokój modlitwy: całoroczna modlitwa prowadzona jest teraz dostępna także po angielsku, niemiecku, hiszpańsku, polsku, rumuńsku, rosyjsku i ukraińsku.",
+  "Gerah: éjfél után a tegnapi napról szóló gratuláció és célösszesítő a tegnapot nevezi meg, és helyesen jelzi, hogy a megemelt cél már mától érvényes.": "Gerah: po północy gratulacje i podsumowanie celu za wczoraj mówią o wczorajszym dniu i poprawnie podają, że podwyższony cel obowiązuje od dziś.",
+  "Gerah: a már jóvá nem írható napról szóló értesítést nem takarja el egy másik üzenet.": "Gerah: powiadomienia o dniu, którego nie można już zaliczyć, nie zasłania inna wiadomość.",
+  "Szobák: a hamis aláírású Gerah-könyv csomagra figyelmeztető üzenet minden nyelven megjelenik.": "Pokoje: ostrzeżenie o paczce Księgi Gerah ze sfałszowanym podpisem pojawia się teraz w każdym języku.",
+  "Szobák: meghívó linkkel csatlakozva és új szoba létrehozásakor is el kell fogadni a Szoba szabályzatát, és meg kell erősíteni, hogy elmúltál 16 éves, vagy van szülői hozzájárulásod.": "Pokoje: przy dołączaniu przez link z zaproszeniem i przy tworzeniu nowego pokoju także trzeba zaakceptować regulamin pokoju i potwierdzić ukończenie 16 lat lub zgodę rodzica.",
+  "Mentés: a hozzájáruláshoz kötött kapcsolókat a mentés és a visszaállítás nem viszi át; új telefonon az app újra megkérdez.": "Kopia zapasowa: przełączniki zależne od Twojej zgody nie są przenoszone przez kopię zapasową i przywracanie; na nowym telefonie aplikacja zapyta ponownie.",
+  "Imakérések: a feltételek elfogadása fiókhoz kötött; másik fiókkal belépve újra el kell fogadni őket.": "Prośby o modlitwę: akceptacja warunków jest przypisana do konta; po zalogowaniu na inne konto trzeba je zaakceptować ponownie."
 });

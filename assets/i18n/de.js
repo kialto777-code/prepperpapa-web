@@ -5136,6 +5136,8 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
   "Mai cél teljesítve · {n} perc": "Tagesziel erreicht · {n} Min.",
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Wenn es dir gutgetan hat, bleib noch ein wenig: Versuch es morgen mit {m} Minuten.",
   "Holnaptól {m} perc": "Ab morgen {m} Min.",
+  "Ha jólesett, maradj még egy kicsit: ma próbáld meg {m} perccel.": "Wenn es dir gutgetan hat, bleib noch ein wenig: Versuch es heute mit {m} Minuten.",
+  "Mától {m} perc": "Ab heute {m} Min.",
   "Mi a Gerah?": "Was ist Gerah?",
   "Ma kibányásztál {n} gerah-t!": "Heute hast du {n} gerah geschürft!",
   "{n} perc · {g} gerah/nap": "{n} Min. · {g} gerah/Tag",
@@ -7001,4 +7003,23 @@ Object.assign(window.PP_FORD_SZOTAR.de, {
   "Gerah: az éjfélen átnyúló olvasás teljes egészében a kezdés napjába számít: a percek, a napi cél, a gratuláció és a Gerah-nap is.": "Gerah: Eine Lesesitzung über Mitternacht zählt ganz zum Tag, an dem sie begann: die Minuten, das Tagesziel, der Glückwunsch und der Gerah-Tag.",
   "Gerah: a saját napi célod napját 3 napig visszamenőleg is jóváírjuk, a sorrendtől függetlenül; ha egy nap már nem írható jóvá, az app ezt megmondja.": "Gerah: Ein Tag, an dem du dein eigenes Tagesziel erreicht hast, wird bis zu 3 Tage rückwirkend gutgeschrieben, in beliebiger Reihenfolge; kann ein Tag nicht mehr gutgeschrieben werden, sagt es dir die App.",
   "Wordlight: a Biblia-beállításokban nem jelenik meg kétszer a „Biblia” cím.": "Wordlight: In den Bibel-Einstellungen erscheint die Überschrift „Bibel“ nicht mehr doppelt."
+});
+// ===== 2026-11-09 Éjfél text (Thomas 30737, card 4f0b74b5): the congratulation for yesterday shown after midnight names yesterday =====
+Object.assign(window.PP_FORD_SZOTAR.de, {
+  "Tegnap is {n} percet töltöttél Isten beszédével.": "Auch gestern hast du {n} Minuten mit Gottes Wort verbracht.",
+  "Tegnapi cél teljesítve · {n} perc": "Tagesziel von gestern erreicht · {n} Min.",
+  "A tegnapi napért {n} gerah járna, de még nincs Gerah-tárcád, ezért nem került letétbe. Hozd létre a tárcádat mielőbb, hogy a tegnapi nap is letétbe kerülhessen.": "Für gestern gäbe es {n} gerah, aber du hast noch keine Gerah-Börse, deshalb wurde nichts hinterlegt. Lege deine Börse bald an, damit auch der gestrige Tag hinterlegt werden kann.",
+  "A tegnapi napért {n} gerah-t letétbe helyeztünk. Heti cél: {k} / {h} nap.": "Für gestern wurde {n} gerah hinterlegt. Wochenziel: {k} / {h} Tage.",
+  "A tegnapi napért kibányásztál {n} gerah-t!": "Für gestern hast du {n} gerah geschürft!",
+  "A tegnapi napot a PrepperPapa alkalmazás veszi át, amikor legközelebb megnyitod. Ha a nap csatlakozik a heti cél egymást követő napjaihoz, {n} gerah kerül érte letétbe, és a heti cél teljesítésekor a tárcádba.": "Die PrepperPapa-App übernimmt den gestrigen Tag, wenn du sie das nächste Mal öffnest. Schließt der Tag an die aufeinanderfolgenden Tage deines Wochenziels an, werden dafür {n} gerah hinterlegt und kommen mit dem erreichten Wochenziel in deine Geldbörse."
+});
+// ===== Ujdonsagok v43.469 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.de, {
+  "Imaszoba: az egész évre szóló vezetett ima mostantól angol, német, spanyol, lengyel, román, orosz és ukrán nyelven is elérhető.": "Gebetsraum: Das geführte Gebet für das ganze Jahr ist jetzt auch auf Englisch, Deutsch, Spanisch, Polnisch, Rumänisch, Russisch und Ukrainisch verfügbar.",
+  "Gerah: éjfél után a tegnapi napról szóló gratuláció és célösszesítő a tegnapot nevezi meg, és helyesen jelzi, hogy a megemelt cél már mától érvényes.": "Gerah: Nach Mitternacht nennen der Glückwunsch und die Zielübersicht für gestern den gestrigen Tag und sagen richtig, dass das erhöhte Ziel ab heute gilt.",
+  "Gerah: a már jóvá nem írható napról szóló értesítést nem takarja el egy másik üzenet.": "Gerah: Der Hinweis auf einen Tag, der nicht mehr gutgeschrieben werden kann, wird nicht von einer anderen Meldung verdeckt.",
+  "Szobák: a hamis aláírású Gerah-könyv csomagra figyelmeztető üzenet minden nyelven megjelenik.": "Räume: Die Warnung zu einem Gerah-Kassenbuch-Paket mit gefälschter Signatur erscheint jetzt in jeder Sprache.",
+  "Szobák: meghívó linkkel csatlakozva és új szoba létrehozásakor is el kell fogadni a Szoba szabályzatát, és meg kell erősíteni, hogy elmúltál 16 éves, vagy van szülői hozzájárulásod.": "Räume: Auch beim Beitritt über einen Einladungslink und beim Erstellen eines neuen Raums musst du die Raumregeln akzeptieren und bestätigen, dass du über 16 bist oder die Zustimmung deiner Eltern hast.",
+  "Mentés: a hozzájáruláshoz kötött kapcsolókat a mentés és a visszaállítás nem viszi át; új telefonon az app újra megkérdez.": "Sicherung: Schalter, die an deine Zustimmung gebunden sind, werden von Sicherung und Wiederherstellung nicht übernommen; auf einem neuen Telefon fragt die App erneut.",
+  "Imakérések: a feltételek elfogadása fiókhoz kötött; másik fiókkal belépve újra el kell fogadni őket.": "Gebetsanliegen: Die Annahme der Bedingungen ist an dein Konto gebunden; mit einem anderen Konto musst du sie erneut annehmen."
 });

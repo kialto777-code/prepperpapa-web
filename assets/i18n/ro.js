@@ -5138,6 +5138,8 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Mai cél teljesítve · {n} perc": "Ținta de azi atinsă · {n} min",
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Dacă ți-a făcut bine, mai rămâi puțin: mâine încearcă {m} minute.",
   "Holnaptól {m} perc": "De mâine {m} min",
+  "Ha jólesett, maradj még egy kicsit: ma próbáld meg {m} perccel.": "Dacă ți-a făcut bine, mai rămâi puțin: azi încearcă {m} minute.",
+  "Mától {m} perc": "De azi {m} min",
   "Mi a Gerah?": "Ce este Gerah?",
   "Ma kibányásztál {n} gerah-t!": "Azi ai minat {n} gerah!",
   "{n} perc · {g} gerah/nap": "{n} min · {g} gerah/zi",
@@ -7003,4 +7005,23 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Gerah: az éjfélen átnyúló olvasás teljes egészében a kezdés napjába számít: a percek, a napi cél, a gratuláció és a Gerah-nap is.": "Gerah: o sesiune de citire care trece de miezul nopții se socotește în întregime la ziua în care a început: minutele, obiectivul zilnic, felicitarea și ziua de Gerah.",
   "Gerah: a saját napi célod napját 3 napig visszamenőleg is jóváírjuk, a sorrendtől függetlenül; ha egy nap már nem írható jóvá, az app ezt megmondja.": "Gerah: o zi în care ți-ai atins propriul obiectiv zilnic este creditată până la 3 zile mai târziu, în orice ordine; dacă o zi nu mai poate fi creditată, aplicația îți spune.",
   "Wordlight: a Biblia-beállításokban nem jelenik meg kétszer a „Biblia” cím.": "Wordlight: în setările Bibliei titlul „Biblia” nu mai apare de două ori."
+});
+// ===== 2026-11-09 Éjfél text (Thomas 30737, card 4f0b74b5): the congratulation for yesterday shown after midnight names yesterday =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Tegnap is {n} percet töltöttél Isten beszédével.": "Și ieri ai petrecut {n} minute cu Cuvântul lui Dumnezeu.",
+  "Tegnapi cél teljesítve · {n} perc": "Ținta de ieri atinsă · {n} min",
+  "A tegnapi napért {n} gerah járna, de még nincs Gerah-tárcád, ezért nem került letétbe. Hozd létre a tárcádat mielőbb, hogy a tegnapi nap is letétbe kerülhessen.": "Pentru ziua de ieri ți s-ar cuveni {n} gerah, dar încă nu ai portofel Gerah, așa că nu a intrat nimic în depozit. Creează-ți portofelul cât mai curând, ca și ziua de ieri să poată intra în depozit.",
+  "A tegnapi napért {n} gerah-t letétbe helyeztünk. Heti cél: {k} / {h} nap.": "Pentru ziua de ieri {n} gerah a fost pusă în depozit. Obiectiv săptămânal: {k} / {h} zile.",
+  "A tegnapi napért kibányásztál {n} gerah-t!": "Pentru ziua de ieri ai minat {n} gerah!",
+  "A tegnapi napot a PrepperPapa alkalmazás veszi át, amikor legközelebb megnyitod. Ha a nap csatlakozik a heti cél egymást követő napjaihoz, {n} gerah kerül érte letétbe, és a heti cél teljesítésekor a tárcádba.": "Aplicația PrepperPapa preia ziua de ieri data viitoare când o deschizi. Dacă ziua se leagă de zilele la rând ale obiectivului tău săptămânal, {n} gerah intră pentru ea în depozit, iar când atingi obiectivul săptămânal, în portofelul tău."
+});
+// ===== Ujdonsagok v43.469 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Imaszoba: az egész évre szóló vezetett ima mostantól angol, német, spanyol, lengyel, román, orosz és ukrán nyelven is elérhető.": "Camera de rugăciune: rugăciunea ghidată pentru tot anul este acum disponibilă și în engleză, germană, spaniolă, poloneză, română, rusă și ucraineană.",
+  "Gerah: éjfél után a tegnapi napról szóló gratuláció és célösszesítő a tegnapot nevezi meg, és helyesen jelzi, hogy a megemelt cél már mától érvényes.": "Gerah: după miezul nopții, felicitarea și rezumatul obiectivului pentru ieri numesc ziua de ieri și spun corect că obiectivul mărit se aplică de azi.",
+  "Gerah: a már jóvá nem írható napról szóló értesítést nem takarja el egy másik üzenet.": "Gerah: notificarea despre o zi care nu mai poate fi creditată nu mai este acoperită de alt mesaj.",
+  "Szobák: a hamis aláírású Gerah-könyv csomagra figyelmeztető üzenet minden nyelven megjelenik.": "Camere: avertismentul despre un pachet din Registrul Gerah cu semnătură falsificată apare acum în fiecare limbă.",
+  "Szobák: meghívó linkkel csatlakozva és új szoba létrehozásakor is el kell fogadni a Szoba szabályzatát, és meg kell erősíteni, hogy elmúltál 16 éves, vagy van szülői hozzájárulásod.": "Camere: la intrarea printr-un link de invitație și la crearea unei camere noi trebuie, de asemenea, să accepți regulamentul camerei și să confirmi că ai peste 16 ani sau acordul părinților.",
+  "Mentés: a hozzájáruláshoz kötött kapcsolókat a mentés és a visszaállítás nem viszi át; új telefonon az app újra megkérdez.": "Copie de rezervă: comutatoarele legate de consimțământul tău nu sunt preluate de copia de rezervă și de restaurare; pe un telefon nou aplicația te întreabă din nou.",
+  "Imakérések: a feltételek elfogadása fiókhoz kötött; másik fiókkal belépve újra el kell fogadni őket.": "Cereri de rugăciune: acceptarea condițiilor este legată de cont; cu alt cont trebuie acceptate din nou."
 });

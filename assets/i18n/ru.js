@@ -5152,6 +5152,8 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Mai cél teljesítve · {n} perc": "Цель на сегодня достигнута · {n} мин",
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "Если было хорошо, побудь ещё немного: завтра попробуй {m} минут.",
   "Holnaptól {m} perc": "С завтра {m} мин",
+  "Ha jólesett, maradj még egy kicsit: ma próbáld meg {m} perccel.": "Если было хорошо, побудь ещё немного: сегодня попробуй {m} минут.",
+  "Mától {m} perc": "С сегодняшнего дня {m} мин",
   "Mi a Gerah?": "Что такое Gerah?",
   "Ma kibányásztál {n} gerah-t!": "Сегодня вы добыли {n} gerah!",
   "{n} perc · {g} gerah/nap": "{n} мин · {g} gerah/день",
@@ -7017,4 +7019,23 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Gerah: az éjfélen átnyúló olvasás teljes egészében a kezdés napjába számít: a percek, a napi cél, a gratuláció és a Gerah-nap is.": "Gerah: чтение, которое продолжается после полуночи, целиком засчитывается дню, когда оно началось: минуты, дневная цель, поздравление и день Gerah.",
   "Gerah: a saját napi célod napját 3 napig visszamenőleg is jóváírjuk, a sorrendtől függetlenül; ha egy nap már nem írható jóvá, az app ezt megmondja.": "Gerah: день, когда ты достиг своей дневной цели, засчитывается в течение 3 дней задним числом, в любом порядке; если день уже нельзя зачислить, приложение об этом сообщает.",
   "Wordlight: a Biblia-beállításokban nem jelenik meg kétszer a „Biblia” cím.": "Wordlight: в настройках Библии заголовок «Библия» больше не показывается дважды."
+});
+// ===== 2026-11-09 Éjfél text (Thomas 30737, card 4f0b74b5): the congratulation for yesterday shown after midnight names yesterday =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Tegnap is {n} percet töltöttél Isten beszédével.": "И вчера ты провёл {n} мин со Словом Божьим.",
+  "Tegnapi cél teljesítve · {n} perc": "Цель на вчера достигнута · {n} мин",
+  "A tegnapi napért {n} gerah járna, de még nincs Gerah-tárcád, ezért nem került letétbe. Hozd létre a tárcádat mielőbb, hogy a tegnapi nap is letétbe kerülhessen.": "За вчерашний день полагалось бы {n} gerah, но у тебя ещё нет кошелька Gerah, поэтому на депозит ничего не попало. Создай кошелёк поскорее, чтобы и вчерашний день мог попасть на депозит.",
+  "A tegnapi napért {n} gerah-t letétbe helyeztünk. Heti cél: {k} / {h} nap.": "За вчерашний день {n} gerah помещено на депозит. Недельная цель: {k} / {h} дней.",
+  "A tegnapi napért kibányásztál {n} gerah-t!": "За вчерашний день вы добыли {n} gerah!",
+  "A tegnapi napot a PrepperPapa alkalmazás veszi át, amikor legközelebb megnyitod. Ha a nap csatlakozik a heti cél egymást követő napjaihoz, {n} gerah kerül érte letétbe, és a heti cél teljesítésekor a tárcádba.": "Вчерашний день примет приложение PrepperPapa, когда ты в следующий раз его откроешь. Если день продолжает дни подряд твоей недельной цели, за него {n} gerah попадут на депозит, а после выполнения недельной цели в твой кошелёк."
+});
+// ===== Ujdonsagok v43.469 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Imaszoba: az egész évre szóló vezetett ima mostantól angol, német, spanyol, lengyel, román, orosz és ukrán nyelven is elérhető.": "Комната молитвы: ведомая молитва на весь год теперь доступна также на английском, немецком, испанском, польском, румынском, русском и украинском языках.",
+  "Gerah: éjfél után a tegnapi napról szóló gratuláció és célösszesítő a tegnapot nevezi meg, és helyesen jelzi, hogy a megemelt cél már mától érvényes.": "Gerah: после полуночи поздравление и сводка цели за вчера называют вчерашний день и правильно сообщают, что повышенная цель действует с сегодняшнего дня.",
+  "Gerah: a már jóvá nem írható napról szóló értesítést nem takarja el egy másik üzenet.": "Gerah: уведомление о дне, который уже нельзя зачислить, больше не перекрывается другим сообщением.",
+  "Szobák: a hamis aláírású Gerah-könyv csomagra figyelmeztető üzenet minden nyelven megjelenik.": "Комнаты: предупреждение о пакете Книги Gerah с поддельной подписью теперь показывается на всех языках.",
+  "Szobák: meghívó linkkel csatlakozva és új szoba létrehozásakor is el kell fogadni a Szoba szabályzatát, és meg kell erősíteni, hogy elmúltál 16 éves, vagy van szülői hozzájárulásod.": "Комнаты: при входе по ссылке-приглашению и при создании новой комнаты тоже нужно принять правила комнаты и подтвердить, что вам больше 16 лет или у вас есть согласие родителей.",
+  "Mentés: a hozzájáruláshoz kötött kapcsolókat a mentés és a visszaállítás nem viszi át; új telefonon az app újra megkérdez.": "Резервная копия: переключатели, зависящие от вашего согласия, не переносятся при резервном копировании и восстановлении; на новом телефоне приложение спросит снова.",
+  "Imakérések: a feltételek elfogadása fiókhoz kötött; másik fiókkal belépve újra el kell fogadni őket.": "Молитвенные просьбы: принятие условий привязано к учётной записи; с другой учётной записью их нужно принять заново."
 });

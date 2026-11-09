@@ -5481,6 +5481,8 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Mai cél teljesítve · {n} perc": "Today's goal reached · {n} min",
   "Ha jólesett, maradj még egy kicsit: holnap próbáld meg {m} perccel.": "If it did you good, stay a little longer: tomorrow try {m} minutes.",
   "Holnaptól {m} perc": "{m} min from tomorrow",
+  "Ha jólesett, maradj még egy kicsit: ma próbáld meg {m} perccel.": "If it did you good, stay a little longer: today try {m} minutes.",
+  "Mától {m} perc": "{m} min from today",
   "Mi a Gerah?": "What is a Gerah?",
   "Ma kibányásztál {n} gerah-t!": "You mined {n} gerah today!",
   "{n} perc · {g} gerah/nap": "{n} min · {g} gerah/day",
@@ -7359,4 +7361,23 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Gerah: az éjfélen átnyúló olvasás teljes egészében a kezdés napjába számít: a percek, a napi cél, a gratuláció és a Gerah-nap is.": "Gerah: a reading session that runs past midnight counts entirely to the day it started: the minutes, the daily goal, the congratulation and the Gerah day.",
   "Gerah: a saját napi célod napját 3 napig visszamenőleg is jóváírjuk, a sorrendtől függetlenül; ha egy nap már nem írható jóvá, az app ezt megmondja.": "Gerah: a day you reached your own daily goal is credited up to 3 days later, in any order; if a day can no longer be credited, the app tells you.",
   "Wordlight: a Biblia-beállításokban nem jelenik meg kétszer a „Biblia” cím.": "Wordlight: the Bible settings no longer show the “Bible” heading twice."
+});
+// ===== 2026-11-09 Éjfél text (Thomas 30737, card 4f0b74b5): the congratulation for yesterday shown after midnight names yesterday =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Tegnap is {n} percet töltöttél Isten beszédével.": "Yesterday, too, you spent {n} minutes with God's Word.",
+  "Tegnapi cél teljesítve · {n} perc": "Yesterday's goal reached · {n} min",
+  "A tegnapi napért {n} gerah járna, de még nincs Gerah-tárcád, ezért nem került letétbe. Hozd létre a tárcádat mielőbb, hogy a tegnapi nap is letétbe kerülhessen.": "Yesterday would earn {n} gerah, but you have no Gerah wallet yet, so nothing went into escrow. Create your wallet soon so that yesterday can still go into escrow.",
+  "A tegnapi napért {n} gerah-t letétbe helyeztünk. Heti cél: {k} / {h} nap.": "For yesterday {n} gerah was placed in escrow. Weekly goal: {k} / {h} days.",
+  "A tegnapi napért kibányásztál {n} gerah-t!": "You mined {n} gerah for yesterday!",
+  "A tegnapi napot a PrepperPapa alkalmazás veszi át, amikor legközelebb megnyitod. Ha a nap csatlakozik a heti cél egymást követő napjaihoz, {n} gerah kerül érte letétbe, és a heti cél teljesítésekor a tárcádba.": "PrepperPapa takes over yesterday the next time you open it. If the day joins the consecutive days of your weekly goal, {n} gerah goes into escrow for it, and into your wallet when you reach the weekly goal."
+});
+// ===== Ujdonsagok v43.469 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Imaszoba: az egész évre szóló vezetett ima mostantól angol, német, spanyol, lengyel, román, orosz és ukrán nyelven is elérhető.": "Prayer room: the year-long guided prayer is now also available in English, German, Spanish, Polish, Romanian, Russian and Ukrainian.",
+  "Gerah: éjfél után a tegnapi napról szóló gratuláció és célösszesítő a tegnapot nevezi meg, és helyesen jelzi, hogy a megemelt cél már mától érvényes.": "Gerah: after midnight the congratulation and goal summary for yesterday name yesterday, and correctly say that the raised goal applies from today.",
+  "Gerah: a már jóvá nem írható napról szóló értesítést nem takarja el egy másik üzenet.": "Gerah: the notice about a day that can no longer be credited is not covered by another message.",
+  "Szobák: a hamis aláírású Gerah-könyv csomagra figyelmeztető üzenet minden nyelven megjelenik.": "Rooms: the warning about a Gerah ledger package with a forged signature now appears in every language.",
+  "Szobák: meghívó linkkel csatlakozva és új szoba létrehozásakor is el kell fogadni a Szoba szabályzatát, és meg kell erősíteni, hogy elmúltál 16 éves, vagy van szülői hozzájárulásod.": "Rooms: joining by invite link and creating a new room also ask you to accept the Room rules and to confirm that you are over 16 or have parental consent.",
+  "Mentés: a hozzájáruláshoz kötött kapcsolókat a mentés és a visszaállítás nem viszi át; új telefonon az app újra megkérdez.": "Backup: switches that depend on your consent are not carried over by backup and restore; on a new phone the app asks you again.",
+  "Imakérések: a feltételek elfogadása fiókhoz kötött; másik fiókkal belépve újra el kell fogadni őket.": "Prayer requests: accepting the terms is tied to your account; signed in with another account, you accept them again."
 });
