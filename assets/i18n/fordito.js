@@ -52,7 +52,15 @@ function ppSzovegForditas(gyoker) {
       // kovetkezetes magyar: ugy nez ki, mintha a forditas felig kesz lenne.
       // Ami ITT MARAD forditando: a keret (a "Tudastar" fejlec, a keresomezo, a
       // hibauzenetek, a "Betoltes...", a feloldo-kartya) -- azok felulet.
-      if (p.closest('.kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat, .bkp-szo, .biberedeti-forma, .biberedeti-hu, .biberedeti-sor > span + span, .biberedeti-szotar p, .bibjz-user')) continue;
+      // THE VERSE STUDY TEXT IS SCRIPTURE TOO (owner screenshot 2026-11-03 20:29, TG 34795): the word-diff <mark>s split a verse
+      // into short text nodes, and a lone "és" matched the UI dictionary (-> "und"). Its UI strings are translated at build time.
+      // BOOK ABBREVIATIONS ARE NAMES TOO (Thomas 2026-11-06, EN grid showed "1 Off" / "2 Off"): the tile splits "1 Ki" into
+      // "1" + "Ki", and the lone "Ki" matched the UI dictionary ("Ki" = Off). .bkn / .bkr are the book tile's two spans.
+      if (p.closest('.bkn, .bkr')) continue;
+      // PRAYER REQUESTS ARE USER TEXT (card 5cde756b): a nickname "Anna" became "Hannah" in the English UI (measured in
+      // imaszoba-imakeres-teszt.mjs). .ik-felh = the requester's own words (nickname, text, thank-you); never translated here.
+      if (p.closest('.ik-felh')) continue;
+      if (p.closest('.pp-nyb-szoveg, .kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat, .bibtm-cella, .bibtm-fejlec, .bibtm-forras, .bkp-szo, .biberedeti-forma, .biberedeti-hu, .biberedeti-sor > span + span, .biberedeti-szotar p, .bibjz-user')) continue;
       const eredeti = PP_FORD_EREDETI.has(cs) ? PP_FORD_EREDETI.get(cs) : cs.textContent;
       const kulcs = eredeti.replace(/\s+/g, ' ').trim();
       if (!kulcs) continue;
@@ -140,11 +148,12 @@ function ppSzovegForditas(gyoker) {
       // semmit, es CSENDBEN nem csinal semmit. A meres pontosan ezt mutatta: a hosszu
       // bekezdesek magyarul maradtak, holott a szotarban ott alltak. Ha nincs szo szerinti
       // egyezes, a TELJES csomopontot csereljuk, a koruloleo szokozt megtartva.
-      if (eredeti.indexOf(kulcs) >= 0) {
-        cs.textContent = eredeti.replace(kulcs, uj);
-      } else {
-        cs.textContent = (eredeti.match(/^\s*/) || [''])[0] + uj + (eredeti.match(/\s*$/) || [''])[0];
-      }
+      // WRITE ONLY WHEN THE TEXT CHANGES (#28, 2026-11-07, measured: on an idle EN home screen this line rewrote "Install to
+      // home screen" with the same text 7 times a second; every write is a DOM mutation that woke the translator's own
+      // observer and homeFit's, so the home grid was re-laid continuously under the user's finger)
+      const kesz = (eredeti.indexOf(kulcs) >= 0) ? eredeti.replace(kulcs, uj)
+        : (eredeti.match(/^\s*/) || [''])[0] + uj + (eredeti.match(/\s*$/) || [''])[0];
+      if (cs.textContent !== kesz) cs.textContent = kesz;
     }
 
     // AZ ATTRIBUTUMOK IS LATSZANAK (Fonok kepernyokepe, 2026-08-23 20:20: az angol lapon
