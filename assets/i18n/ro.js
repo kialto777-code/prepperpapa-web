@@ -15,6 +15,20 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  "LoRaWAN átjáró": "Gateway LoRaWAN",
+  "Meshtastic csomópont": "Nod Meshtastic",
+  "hozzávetőleges hely": "locație aproximativă",
+  "Várható befejezés: {d}": "Finalizare estimată: {d}",
+  "Várható befejezés: {d} (terv szerint: {t})": "Finalizare estimată: {d} (conform planului: {t})",
+  "Koppints egy típusra: elrejti vagy újra megmutatja a térképen.": "Atinge un tip: îl ascunde pe hartă sau îl arată din nou.",
+  "Az imakérések belépés után látszanak.": "Cererile de rugăciune apar după autentificare.",
+  "A kérésed átnézésre vár, mert most szokatlanul sok kérés érkezik. Hamarosan valaki megnézi.": "Cererea ta așteaptă verificarea, pentru că acum sosesc neobișnuit de multe cereri. În curând se va uita cineva la ea.",
+  // after sign-in, the offer to install the web version as a program (Boss TG 37263)
+  "Telepítsd programként": "Instalează ca program",
+  "A {app} telepíthető a számítógépedre vagy a telefonodra: saját ablakban, saját ikonnal nyílik, mint egy program.": "{app} se poate instala pe computer sau pe telefon: se deschide în fereastra proprie, cu pictograma proprie, ca un program.",
+  "Telepítés": "Instalează",
+  "iPhone-on és iPaden: koppints a Megosztás gombra, majd a Főképernyőhöz adás pontra. Ezután a {app} saját ikonnal nyílik, mint egy alkalmazás.": "Pe iPhone și iPad: atinge butonul Partajare, apoi „Adaugă pe ecranul principal”. După aceea {app} se deschide cu pictograma proprie, ca o aplicație.",
+  "Safariban: Fájl menü, Hozzáadás a Dockhoz. Ezután a {app} saját ablakban, saját ikonnal nyílik, mint egy program.": "În Safari: meniul Fișier, „Adaugă în Dock”. După aceea {app} se deschide în fereastra proprie, cu pictograma proprie, ca un program.",
   // ===== 2026-11-08 E2E-encrypted Bible data sync (owner TG 36957/36977/36978/36980/36987; István T4 signed TG 36993) =====
   "Biblia-adatok szinkronizálása": "Sincronizează datele Bibliei",
   "Titkosítva, csak te tudod megnyitni.": "Criptat, doar tu îl poți deschide.",
@@ -42,6 +56,31 @@ window.PP_FORD_SZOTAR.ro = {
   "A kikapcsolás most nem sikerült, mert a szervert nem értük el. Próbáld újra később.": "Dezactivarea nu a reușit acum, pentru că serverul nu a putut fi contactat. Încearcă mai târziu.",
   "A szinkron kikapcsolva, a szerveren tárolt adatok törölve.": "Sincronizare dezactivată, datele de pe server șterse.",
   "Egy pillanat…": "O clipă…",
+  // ===== 2026-11-09 Bible sync: new device by QR + the passphrase explained (Boss TG 37283, card c7b167f4) =====
+  "Új eszköz bekötése": "Conectarea unui dispozitiv nou",
+  "Mi a jelmondat? A szinkron saját kulcsa: ezzel nyílnak meg a titkosított Biblia-adataid. Nem azonos a fiókod belépő jelszavával. A belépő jelszó a fiókodba enged be, a jelmondat pedig az adataidat nyitja meg. A jelmondatot mi nem ismerjük.": "Ce este fraza de acces? Este cheia proprie a sincronizării: cu ea se deschid datele tale criptate din Biblie. Nu este parola de autentificare a contului tău. Parola de autentificare te lasă să intri în cont, iar fraza de acces îți deschide datele. Noi nu cunoaștem fraza ta de acces.",
+  "Miért kéri most? Mert ez a készülék még nem ismeri a kulcsot. Új készüléken egyszer kell megadnod, vagy átviheted QR-kóddal egy már bekötött készülékedről. Utána ez a készülék megjegyzi.": "De ce o cere acum? Pentru că acest dispozitiv încă nu cunoaște cheia. Pe un dispozitiv nou o introduci o singură dată, sau o aduci cu un cod QR de pe un dispozitiv deja conectat. După aceea, acest dispozitiv o ține minte.",
+  "QR-kóddal, a legegyszerűbb: a bekötött készülékeden nyisd meg a Biblia beállításokat, a szinkron alatt nyomd meg az „Új eszköz hozzáadása QR-kóddal” gombot, és olvasd be itt a kódot.": "Cu cod QR, cel mai simplu: pe dispozitivul deja conectat deschide Setări Biblie, apasă sub sincronizare pe „Adaugă un dispozitiv nou cu cod QR” și scanează aici codul.",
+  "QR-kód beolvasása": "Scanează codul QR",
+  "Vagy írd be a jelmondatot, amelyet a szinkron első bekapcsolásakor választottál.": "Sau scrie fraza de acces pe care ai ales-o când ai activat prima dată sincronizarea.",
+  "Új jelmondatot úgy választhatsz, hogy a bekötött készüléken kikapcsolod, majd újra bekapcsolod a szinkront. Kikapcsoláskor a szerveren lévő titkosított példány törlődik, a készülékeiden minden megmarad.": "O frază de acces nouă alegi dezactivând sincronizarea pe dispozitivul conectat și activând-o din nou. La dezactivare, copia criptată de pe server se șterge; pe dispozitivele tale totul rămâne.",
+  "Elfelejtetted a jelmondatot? Ha egy bekötött készüléked kéznél van, a QR-kóddal jelmondat nélkül is bekötheted ezt a készüléket.": "Ai uitat fraza de acces? Dacă ai la îndemână un dispozitiv deja conectat, poți conecta acest dispozitiv cu codul QR, fără fraza de acces.",
+  "Tartsd a bekötött készülékeden látható QR-kódot a keretbe.": "Ține în cadru codul QR afișat pe dispozitivul conectat.",
+  "Ez nem a szinkron QR-kódja. A bekötött készüléken az „Új eszköz hozzáadása QR-kóddal” gombbal kérj kódot.": "Acesta nu este codul QR al sincronizării. Pe dispozitivul conectat cere un cod cu butonul „Adaugă un dispozitiv nou cu cod QR”.",
+  "Ez a QR-kód lejárt, már felhasználták, vagy egy másik fiókhoz tartozik. Mindkét készüléken ugyanabba a fiókba lépj be, és kérj új kódot a bekötött készüléken.": "Acest cod QR a expirat, a fost deja folosit sau aparține altui cont. Autentifică-te în același cont pe ambele dispozitive și cere un cod nou pe dispozitivul conectat.",
+  "Túl sok sikertelen próbálkozás. Várj 10 percet, vagy írd be a jelmondatot.": "Prea multe încercări nereușite. Așteaptă 10 minute sau scrie fraza de acces.",
+  "Ez a QR-kód nem ehhez a szinkronhoz tartozik. Kérj új kódot a bekötött készüléken.": "Acest cod QR nu aparține acestei sincronizări. Cere un cod nou pe dispozitivul conectat.",
+  "Új eszköz hozzáadása QR-kóddal": "Adaugă un dispozitiv nou cu cod QR",
+  "Egy új telefonon vagy tableten így a jelmondat beírása nélkül is bekapcsolhatod a szinkront.": "Așa poți activa sincronizarea pe un telefon sau o tabletă nouă fără să scrii fraza de acces.",
+  "Új eszköz hozzáadása": "Adaugă un dispozitiv nou",
+  "Az új készüléken lépj be ugyanabba a fiókba, kapcsold be a Biblia-adatok szinkronizálását, és válaszd a QR-kód beolvasását. Ezután olvasd be ezt a kódot.": "Pe dispozitivul nou autentifică-te în același cont, activează „Sincronizează datele Bibliei” și alege scanarea codului QR. Apoi scanează acest cod.",
+  "A kód 10 percig érvényes, és csak egyszer használható. A kulcsot titkosítva adja át, mi nem tudjuk elolvasni. Ne mutasd meg másnak, és ne küldd el senkinek.": "Codul este valabil 10 minute și poate fi folosit o singură dată. Transmite cheia criptată, noi nu o putem citi. Nu-l arăta nimănui și nu-l trimite nimănui.",
+  "Érvényes még: {ido}": "Mai este valabil: {ido}",
+  "A QR-kód lejárt, és töröltük. Kérhetsz újat.": "Codul QR a expirat și a fost șters. Poți cere unul nou.",
+  "Új QR-kód": "Cod QR nou",
+  "Az új készülék átvette a kulcsot. A QR-kódot töröltük, többé nem használható.": "Dispozitivul nou a preluat cheia. Codul QR a fost șters și nu mai poate fi folosit.",
+  "A QR-kód most nem készült el, mert a szervert nem értük el. Próbáld újra később.": "Codul QR nu a putut fi creat acum, pentru că serverul nu a putut fi contactat. Încearcă din nou mai târziu.",
+  "Most túl sok QR-kódot kértél. Várj néhány percet, és próbáld újra.": "Ai cerut prea multe coduri QR acum. Așteaptă câteva minute și încearcă din nou.",
   // ===== 2026-11-03 store apps: the same sentences without the browser clause (owner TG 34773) =====
   "Ha meghívó linket kaptál, másold ide az egészet — innen az app váltja be.": "Dacă ai primit un link de invitație, lipește-l aici în întregime — aplicația îl va valida.",
   "Ha az app sötét vagy üres marad: engedélyezd a vírusirtóban (például Avast). A Play-áruházban vásárolt prémium árát 48 órán belül visszakérheted.": "Dacă aplicația rămâne întunecată sau goală: permite-o în antivirus (de exemplu Avast). Pentru premiumul cumpărat din Google Play poți cere rambursarea în 48 de ore.",
@@ -4724,6 +4763,8 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Erős koppanás": "Atingere puternică",
  "LoRa egység csatlakozva": "Unitate LoRa conectată",
  "küldés folyamatban…": "se trimite…",
+ "rádiónak átadva": "predat radioului",
+ "Közeli csomópontok térképe": "Harta nodurilor din apropiere",
  "LoRa-szoba": "Camera LoRa",
  "Meshtastic®-kompatibilis": "Compatibilă cu Meshtastic®",
  "A LoRa-szoba használatához LoRa vevőegység kell, amihez a telefon Bluetooth-on kapcsolódik.": "Pentru camera LoRa este nevoie de o unitate LoRa, la care telefonul se conectează prin Bluetooth.",
@@ -5059,7 +5100,8 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Jelöld ki a kártyára szánt igéket.": "Bifează versetele pe care le vrei pe cartonașe.",
   "Kártyára": "Pe cartonaș",
   "Kártyák nyomtatásra (PDF)": "Cartonașe de tipărit (PDF)",
-  "Vágás az előlap felől: először a kártyák közti csíkokban, a két jel között félúton szedd szét a lapot, aztán minden kártyát a jeleknél vágj 95 × 53 mm-re.": "Tăiere dinspre față: mai întâi desparte foaia în benzile dintre cartonașe, la jumătatea distanței dintre cele două semne, apoi taie fiecare cartonaș la semnele lui la 95 × 53 mm.",
+  "Vágás az előlap felől, a számok sorrendjében: 1 a függőleges csík közepén, 2 a vízszintes csíkok közepén.": "Taie dinspre față, în ordinea numerelor: 1 mijlocul fâșiei verticale, 2 mijloacele fâșiilor orizontale.",
+  "Utána kártyánként: 3 belső oldal, 4 felső és alsó él, 5 külső oldal, hogy 95 mm széles legyen.": "Apoi fiecare card: 3 latura interioară, 4 marginea de sus și de jos, 5 latura exterioară, ca să aibă 95 mm lățime.",
   "Hátoldal. Kétoldalas nyomtatás: hosszú él mentén fordítva, 100% (tényleges méret).": "Verso. Tipărire față-verso: întoarcere pe latura lungă, 100% (mărime reală).",
   "Készül a PDF…": "Se pregătește PDF-ul…",
   "Kész. Kártyák: {n} · A4 lapok: {l}. Nyomtatás: kétoldalas, hosszú él mentén fordítva, 100% (tényleges méret).": "Gata. Cartonașe: {n} · foi A4: {l}. Tipărește față-verso, întoarcere pe latura lungă, la 100% (mărime reală).",
@@ -7069,5 +7111,70 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Gerah küldés: ha egy tagnak több tárcája van, a tárcát eszközjelölés azonosítja, és a küldés mindig ugyanarra a tárcára megy.": "Trimitere Gerah: dacă un membru are mai multe portofele, un marcaj de dispozitiv identifică portofelul, iar trimiterea merge mereu în același portofel.",
   "Szobák: a szobameghívó linkek mindig a PrepperPapa alkalmazást nyitják meg.": "Camere: linkurile de invitație într-o cameră deschid întotdeauna aplicația PrepperPapa.",
   "Kisebb fordítási javítások.": "Mici corecturi de traducere.",
-  "Irányítópult: tableten, fekvő helyzetben új, zöld radaros irányítópult.": "Panou: un nou panou radar verde pe tablete, în modul peisaj."
+  "Irányítópult: tableten, fekvő helyzetben új, zöld radaros irányítópult.": "Panou: un nou panou radar verde pe tablete, în modul peisaj.",
+  // the map guide's layers steps (Boss TG 37261)
+  "Rétegek: itt kapcsolhatod be vagy ki a térkép rétegeit, köztük a Világhelyzetet és az Imakéréseket.": "Straturi: aici pornești sau oprești straturile hărții, printre ele Situația mondială și Cererile de rugăciune.",
+  "Imakérések: az emberek által beküldött imakérések, mindegyik kb. 50 km-es körzettel. A vezetett ima világhelyzet-témái a Világhelyzet rétegben vannak.": "Cereri de rugăciune: cererile trimise de oameni, fiecare cu o rază de aproximativ 50 km. Subiectele despre situația mondială din rugăciunea ghidată sunt în stratul Situația mondială.",
+  // ===== 2026-11-09 Bible workspace on wide screens (owner TG 9713/9714/9722/9728, card dfea1f7d) =====
+  "Kereszt-hivatk.": "Trimiteri",
+  "Elrendezés": "Aranjare",
+  "Kutatás": "Studiu",
+  "Strong nagy": "Strong mare",
+  "Jegyzetelés": "Notițe",
+  "Saját": "Propriu",
+  "Ablakok": "Ferestre",
+  "ablak": "ferestre",
+  "Olvasás": "Citire",
+  "Feljebb": "Mai sus",
+  "Lejjebb": "Mai jos",
+  "Átméretezés": "Redimensionare",
+  "Legfeljebb 5 ablak": "Cel mult 5 ferestre",
+  "lehet nyitva. Zárj be egyet, és ez megnyílik a helyén.": "pot fi deschise. Închide una și aceasta se va deschide în locul ei.",
+  "{n} kapcsolódó ige": "{n} versete legate",
+  "Ehhez a vershez nincs kereszthivatkozás.": "Acest verset nu are trimiteri.",
+  "Koppints egy szóra a Bibliában, és itt megjelenik az eredeti szó.": "Atinge un cuvânt din Biblie și aici apare cuvântul original.",
+});
+// ===== 2026-11-09 feedback sheet support hint (card a0a2d3d6, Boss TG 37291-37297): in-app only, never a web hint =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Az alkalmazás szándékosan nem havidíjas. Ha szeretnéd, egy kisebb összeggel hozzájárulhatsz az üzemeltetés költségeihez; hálásan köszönjük.": "Aplicația nu are, în mod intenționat, abonament lunar. Dacă vrei, poți contribui cu o sumă mai mică la costurile de funcționare; îți mulțumim din suflet."
+});
+
+// ===== 2026-11-09 dashboard news filter (Boss TG 9702/9706) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Mind": "Toate",
+  "Természet": "Natură",
+  "Hírek szűrése": "Filtrează știrile",
+  "Ebben a szűrőben most nincs friss hír.": "Momentan nu există știri recente în acest filtru."
+});
+
+// ===== 2026-11-09 QR pairing: camera error line in the UI language (Thomas 31160, Marveen 31161) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A kamera nem indult el: {hiba}": "Camera nu a pornit: {hiba}"
+});
+
+// ===== 2026-11-09 QR reader did not load (Marveen, follow-up of fix/wl-qr-kamera) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A QR-olvasó nem töltődött be ezen a készüléken. Próbáld újra, vagy használd a Beillesztés/Kép-ből gombot.": "Cititorul QR nu s-a încărcat pe acest dispozitiv. Încearcă din nou sau folosește butonul Lipește / Din imagine."
+});
+// ===== Ujdonsagok v43.471 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Biblia: laptopon és fekvő tableten új munkafelület, egyszerre akár öt ablakkal (szöveg, jegyzet, kereszthivatkozások, eredeti szó).": "Biblia: spațiu de lucru nou pe laptop și pe tabletă în modul peisaj, cu până la cinci ferestre deodată (text, notiță, trimiteri, cuvântul original).",
+  "Biblia jegyzetek: visszavonás és újra gomb a szerkesztőben; az „Új jegyzet” gomb mindig új jegyzetet nyit.": "Notițe biblice: butoane Anulează și Refă în editor; butonul „Notiță nouă” deschide mereu o notiță nouă.",
+  "Biblia: több vers másolásakor az egymást követő versek egy idézetbe kerülnek, egy helymegjelöléssel, és a megosztott igehely linkje az alkalmazásban nyílik meg.": "Biblia: la copierea mai multor versete, versetele consecutive devin un singur citat cu o singură referință, iar linkul unui pasaj partajat îl deschide în aplicație.",
+  "Biblia keresés: több szónál elöl a pontos kifejezés találatai állnak; egy oldal elhagyásakor a keresőmezők kiürülnek.": "Căutare în Biblie: la mai multe cuvinte, mai întâi apar rezultatele cu expresia exactă; la părăsirea unei pagini, câmpurile ei de căutare se golesc.",
+  "Biblia: a könyv-, fejezet- és versválasztó mögött is látszik a 3D galaxis, a könyvek rajzai finoman áttűnnek, és a szövegben a megfelelő verseknél ott vannak a piktogramok.": "Biblia: galaxia 3D se vede și în spatele selectorului de carte, capitol și verset, desenele cărților trec lin unul în altul, iar în text pictogramele apar la versetele lor.",
+  "Olvasási tervek: minden elkezdett tervnél látszik a várható befejezés a jelenlegi tempóval.": "Planuri de citire: fiecare plan început arată când se va termina în ritmul actual.",
+  "Kvíz: a válasz kiválasztása után rögzítő hang és rövid feszültség, mielőtt kiderül, jó-e a válasz.": "Quiz: după alegerea unui răspuns, un sunet de confirmare și un scurt moment de suspans înainte să afli dacă e corect.",
+  "Térkép: az imakérések csak a Biblia térképén látszanak, saját, kb. 50 km-es körrel; a világnézet kitölti a képernyőt, és a térképnek is van (?) súgója.": "Hartă: cererile de rugăciune apar doar pe harta Bibliei, fiecare cu propriul cerc de circa 50 km; vederea lumii umple ecranul, iar harta are propriul ajutor (?).",
+  "Világhelyzet: a jelmagyarázatban egy típusra koppintva az elrejthető vagy visszahozható a térképen, mellette a darabszám; kevesebb téves támadás-jelzés.": "Situația în lume: o atingere pe un tip din legendă îl ascunde pe hartă sau îl readuce, cu numărul alături; mai puține semnalări false de atacuri.",
+  "Átjátszók rétege: a LoRaWAN átjárók és a Meshtastic csomópontok is megjelennek, mindegyik saját színnel.": "Stratul de repetoare: apar și gateway-urile LoRaWAN și nodurile Meshtastic, fiecare cu culoarea sa.",
+  "LoRa szoba: ugyanolyan csevegőfelület, mint a többi szobában; a saját üzenet állapota „rádiónak átadva”.": "Camera LoRa: același ecran de chat ca în celelalte camere; mesajul propriu arată „predat stației radio”.",
+  "Imakérések: erősebb védelem kéretlen üzenetek, trágárság és rejtett linkek ellen; ha egyszerre szokatlanul sok kérés érkezik, az app ezt meg is mondja.": "Cereri de rugăciune: protecție mai puternică împotriva spamului, a vulgarităților și a linkurilor ascunse; dacă sosesc deodată neobișnuit de multe cereri, aplicația spune asta.",
+  "Biblia szinkron: új eszköz egyszeri QR-kóddal köthető be, és az app elmagyarázza a jelmondatot.": "Sincronizarea Bibliei: un dispozitiv nou se poate conecta cu un cod QR de unică folosință, iar aplicația explică fraza de acces.",
+  "Irányítópult: simább radar gyengébb tableten, hírszűrő (Mind / Imák / Természet), és a napi olvasás kártyája azonnal a friss perceket mutatja.": "Panou: radar mai fluid pe tabletele mai slabe, filtru de știri (Toate / Rugăciuni / Natură), iar cardul de citire zilnică arată imediat minutele actuale.",
+  "Ébresztő: a telefon újraindítása után, az első feloldás előtt is megszólal, lassan erősödő hanggal.": "Alarmă: după repornirea telefonului sună chiar înainte de prima deblocare, cu un sunet care crește treptat.",
+  "Visszajelzés: új Támogatás gomb a visszajelzés lapon.": "Feedback: buton nou Asistență în fereastra de feedback.",
+  "Webes változat: belépés után felajánlja, hogy programként telepíthető legyen.": "Versiunea web: după autentificare se oferă să se instaleze ca program.",
+  "iPad és iPhone: javított tabletes elrendezés, és az engedélykérő szövegek mind a 8 nyelven.": "iPad și iPhone: aranjare îmbunătățită pe tabletă și textele de permisiuni în toate cele 8 limbi.",
+  "Kisebb javítások és fordítások.": "Mici corecturi și traduceri."
 });

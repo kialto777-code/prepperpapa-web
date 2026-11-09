@@ -22,6 +22,20 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ru = {
+  "LoRaWAN átjáró": "Шлюз LoRaWAN",
+  "Meshtastic csomópont": "Узел Meshtastic",
+  "hozzávetőleges hely": "приблизительное местоположение",
+  "Várható befejezés: {d}": "Ожидаемое окончание: {d}",
+  "Várható befejezés: {d} (terv szerint: {t})": "Ожидаемое окончание: {d} (по плану: {t})",
+  "Koppints egy típusra: elrejti vagy újra megmutatja a térképen.": "Нажми на тип: он скроется на карте или снова появится.",
+  "Az imakérések belépés után látszanak.": "Молитвенные просьбы видны после входа.",
+  "A kérésed átnézésre vár, mert most szokatlanul sok kérés érkezik. Hamarosan valaki megnézi.": "Твоя просьба ждёт проверки, потому что сейчас поступает необычно много просьб. Скоро её кто-нибудь посмотрит.",
+  // after sign-in, the offer to install the web version as a program (Boss TG 37263)
+  "Telepítsd programként": "Установить как программу",
+  "A {app} telepíthető a számítógépedre vagy a telefonodra: saját ablakban, saját ikonnal nyílik, mint egy program.": "{app} можно установить на компьютер или телефон: он открывается в собственном окне, со своим значком, как программа.",
+  "Telepítés": "Установить",
+  "iPhone-on és iPaden: koppints a Megosztás gombra, majd a Főképernyőhöz adás pontra. Ezután a {app} saját ikonnal nyílik, mint egy alkalmazás.": "На iPhone и iPad: нажми кнопку «Поделиться», затем «На экран «Домой»». После этого {app} открывается со своим значком, как приложение.",
+  "Safariban: Fájl menü, Hozzáadás a Dockhoz. Ezután a {app} saját ablakban, saját ikonnal nyílik, mint egy program.": "В Safari: меню «Файл», «Добавить в Dock». После этого {app} открывается в собственном окне, со своим значком, как программа.",
   // ===== 2026-11-08 E2E-encrypted Bible data sync (owner TG 36957/36977/36978/36980/36987; István T4 signed TG 36993) =====
   "Biblia-adatok szinkronizálása": "Синхронизировать данные Библии",
   "Titkosítva, csak te tudod megnyitni.": "Зашифровано, открыть можешь только ты.",
@@ -49,6 +63,31 @@ window.PP_FORD_SZOTAR.ru = {
   "A kikapcsolás most nem sikerült, mert a szervert nem értük el. Próbáld újra később.": "Выключить сейчас не удалось: сервер недоступен. Попробуй позже.",
   "A szinkron kikapcsolva, a szerveren tárolt adatok törölve.": "Синхронизация выключена, данные на сервере удалены.",
   "Egy pillanat…": "Минутку…",
+  // ===== 2026-11-09 Bible sync: new device by QR + the passphrase explained (Boss TG 37283, card c7b167f4) =====
+  "Új eszköz bekötése": "Подключение нового устройства",
+  "Mi a jelmondat? A szinkron saját kulcsa: ezzel nyílnak meg a titkosított Biblia-adataid. Nem azonos a fiókod belépő jelszavával. A belépő jelszó a fiókodba enged be, a jelmondat pedig az adataidat nyitja meg. A jelmondatot mi nem ismerjük.": "Что такое парольная фраза? Это собственный ключ синхронизации: с ним открываются твои зашифрованные данные Библии. Это не пароль для входа в аккаунт. Пароль для входа пускает тебя в аккаунт, а парольная фраза открывает твои данные. Мы не знаем твою парольную фразу.",
+  "Miért kéri most? Mert ez a készülék még nem ismeri a kulcsot. Új készüléken egyszer kell megadnod, vagy átviheted QR-kóddal egy már bekötött készülékedről. Utána ez a készülék megjegyzi.": "Почему её спрашивают сейчас? Потому что это устройство ещё не знает ключ. На новом устройстве её вводят один раз, или переносят QR-кодом с уже подключённого устройства. После этого устройство её запоминает.",
+  "QR-kóddal, a legegyszerűbb: a bekötött készülékeden nyisd meg a Biblia beállításokat, a szinkron alatt nyomd meg az „Új eszköz hozzáadása QR-kóddal” gombot, és olvasd be itt a kódot.": "QR-кодом, проще всего: на уже подключённом устройстве открой Настройки Библии, под синхронизацией нажми «Добавить новое устройство по QR-коду» и отсканируй код здесь.",
+  "QR-kód beolvasása": "Сканировать QR-код",
+  "Vagy írd be a jelmondatot, amelyet a szinkron első bekapcsolásakor választottál.": "Или введи парольную фразу, которую ты выбрал при первом включении синхронизации.",
+  "Új jelmondatot úgy választhatsz, hogy a bekötött készüléken kikapcsolod, majd újra bekapcsolod a szinkront. Kikapcsoláskor a szerveren lévő titkosított példány törlődik, a készülékeiden minden megmarad.": "Чтобы выбрать новую парольную фразу, выключи синхронизацию на подключённом устройстве и включи её снова. При выключении зашифрованная копия на сервере удаляется; на твоих устройствах всё сохраняется.",
+  "Elfelejtetted a jelmondatot? Ha egy bekötött készüléked kéznél van, a QR-kóddal jelmondat nélkül is bekötheted ezt a készüléket.": "Забыл парольную фразу? Если под рукой есть уже подключённое устройство, это устройство можно подключить QR-кодом и без парольной фразы.",
+  "Tartsd a bekötött készülékeden látható QR-kódot a keretbe.": "Наведи рамку на QR-код, показанный на подключённом устройстве.",
+  "Ez nem a szinkron QR-kódja. A bekötött készüléken az „Új eszköz hozzáadása QR-kóddal” gombbal kérj kódot.": "Это не QR-код синхронизации. На подключённом устройстве получи код кнопкой «Добавить новое устройство по QR-коду».",
+  "Ez a QR-kód lejárt, már felhasználták, vagy egy másik fiókhoz tartozik. Mindkét készüléken ugyanabba a fiókba lépj be, és kérj új kódot a bekötött készüléken.": "Этот QR-код истёк, уже использован или относится к другому аккаунту. Войди в один и тот же аккаунт на обоих устройствах и получи новый код на подключённом устройстве.",
+  "Túl sok sikertelen próbálkozás. Várj 10 percet, vagy írd be a jelmondatot.": "Слишком много неудачных попыток. Подожди 10 минут или введи парольную фразу.",
+  "Ez a QR-kód nem ehhez a szinkronhoz tartozik. Kérj új kódot a bekötött készüléken.": "Этот QR-код не относится к этой синхронизации. Получи новый код на подключённом устройстве.",
+  "Új eszköz hozzáadása QR-kóddal": "Добавить новое устройство по QR-коду",
+  "Egy új telefonon vagy tableten így a jelmondat beírása nélkül is bekapcsolhatod a szinkront.": "Так синхронизацию можно включить на новом телефоне или планшете без ввода парольной фразы.",
+  "Új eszköz hozzáadása": "Добавить новое устройство",
+  "Az új készüléken lépj be ugyanabba a fiókba, kapcsold be a Biblia-adatok szinkronizálását, és válaszd a QR-kód beolvasását. Ezután olvasd be ezt a kódot.": "На новом устройстве войди в тот же аккаунт, включи «Синхронизировать данные Библии» и выбери сканирование QR-кода. Затем отсканируй этот код.",
+  "A kód 10 percig érvényes, és csak egyszer használható. A kulcsot titkosítva adja át, mi nem tudjuk elolvasni. Ne mutasd meg másnak, és ne küldd el senkinek.": "Код действует 10 минут и используется только один раз. Он передаёт ключ в зашифрованном виде, мы не можем его прочитать. Никому его не показывай и никому не отправляй.",
+  "Érvényes még: {ido}": "Действует ещё: {ido}",
+  "A QR-kód lejárt, és töröltük. Kérhetsz újat.": "Срок QR-кода истёк, и он удалён. Можно получить новый.",
+  "Új QR-kód": "Новый QR-код",
+  "Az új készülék átvette a kulcsot. A QR-kódot töröltük, többé nem használható.": "Новое устройство получило ключ. QR-код удалён и больше не действует.",
+  "A QR-kód most nem készült el, mert a szervert nem értük el. Próbáld újra később.": "Сейчас не удалось создать QR-код, потому что сервер недоступен. Попробуй позже.",
+  "Most túl sok QR-kódot kértél. Várj néhány percet, és próbáld újra.": "Ты только что запросил слишком много QR-кодов. Подожди несколько минут и попробуй снова.",
   // ===== 2026-11-03 store apps: the same sentences without the browser clause (owner TG 34773) =====
   "Ha meghívó linket kaptál, másold ide az egészet — innen az app váltja be.": "Если ты получил ссылку-приглашение, вставь её сюда целиком — приложение её активирует.",
   "Ha az app sötét vagy üres marad: engedélyezd a vírusirtóban (például Avast). A Play-áruházban vásárolt prémium árát 48 órán belül visszakérheted.": "Если приложение остаётся тёмным или пустым: разрешите его в антивирусе (например, Avast). Премиум, купленный в Google Play, можно вернуть в течение 48 часов.",
@@ -4738,6 +4777,8 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
  "Erős koppanás": "Сильный отклик",
  "LoRa egység csatlakozva": "LoRa-устройство подключено",
  "küldés folyamatban…": "отправляется…",
+ "rádiónak átadva": "передано в радио",
+ "Közeli csomópontok térképe": "Карта ближайших узлов",
  "LoRa-szoba": "Комната LoRa",
  "Meshtastic®-kompatibilis": "Совместима с Meshtastic®",
  "A LoRa-szoba használatához LoRa vevőegység kell, amihez a telefon Bluetooth-on kapcsolódik.": "Для комнаты LoRa нужно LoRa-устройство, к которому телефон подключается по Bluetooth.",
@@ -5073,7 +5114,8 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Jelöld ki a kártyára szánt igéket.": "Отметь стихи, которые нужны на карточках.",
   "Kártyára": "На карточку",
   "Kártyák nyomtatásra (PDF)": "Карточки для печати (PDF)",
-  "Vágás az előlap felől: először a kártyák közti csíkokban, a két jel között félúton szedd szét a lapot, aztán minden kártyát a jeleknél vágj 95 × 53 mm-re.": "Резка с лицевой стороны: сначала разрежь лист в полосах между карточками, посередине между двумя метками, затем обрежь каждую карточку по её меткам до 95 × 53 мм.",
+  "Vágás az előlap felől, a számok sorrendjében: 1 a függőleges csík közepén, 2 a vízszintes csíkok közepén.": "Режь с лицевой стороны, в порядке цифр: 1 середина вертикальной полосы, 2 середины горизонтальных полос.",
+  "Utána kártyánként: 3 belső oldal, 4 felső és alsó él, 5 külső oldal, hogy 95 mm széles legyen.": "Затем каждую карточку: 3 внутренняя сторона, 4 верхний и нижний край, 5 внешняя сторона, чтобы ширина была 95 мм.",
   "Hátoldal. Kétoldalas nyomtatás: hosszú él mentén fordítva, 100% (tényleges méret).": "Оборотная сторона. Двусторонняя печать: переворот по длинному краю, 100% (фактический размер).",
   "Készül a PDF…": "Готовлю PDF…",
   "Kész. Kártyák: {n} · A4 lapok: {l}. Nyomtatás: kétoldalas, hosszú él mentén fordítva, 100% (tényleges méret).": "Готово. Карточки: {n} · листы A4: {l}. Печатай с двух сторон, переворот по длинному краю, в масштабе 100% (фактический размер).",
@@ -7083,5 +7125,70 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Gerah küldés: ha egy tagnak több tárcája van, a tárcát eszközjelölés azonosítja, és a küldés mindig ugyanarra a tárcára megy.": "Отправка Gerah: если у участника несколько кошельков, кошелёк обозначается меткой устройства, и отправка всегда идёт на один и тот же кошелёк.",
   "Szobák: a szobameghívó linkek mindig a PrepperPapa alkalmazást nyitják meg.": "Комнаты: ссылки-приглашения в комнату всегда открывают приложение PrepperPapa.",
   "Kisebb fordítási javítások.": "Небольшие исправления перевода.",
-  "Irányítópult: tableten, fekvő helyzetben új, zöld radaros irányítópult.": "Панель: новая зелёная радарная панель на планшетах в горизонтальном положении."
+  "Irányítópult: tableten, fekvő helyzetben új, zöld radaros irányítópult.": "Панель: новая зелёная радарная панель на планшетах в горизонтальном положении.",
+  // the map guide's layers steps (Boss TG 37261)
+  "Rétegek: itt kapcsolhatod be vagy ki a térkép rétegeit, köztük a Világhelyzetet és az Imakéréseket.": "Слои: здесь можно включить или выключить слои карты, среди них «Ситуация в мире» и «Молитвенные просьбы».",
+  "Imakérések: az emberek által beküldött imakérések, mindegyik kb. 50 km-es körzettel. A vezetett ima világhelyzet-témái a Világhelyzet rétegben vannak.": "Молитвенные просьбы: просьбы, которые прислали люди, каждая с радиусом около 50 км. Темы ситуации в мире из молитвы с руководством находятся в слое «Ситуация в мире».",
+  // ===== 2026-11-09 Bible workspace on wide screens (owner TG 9713/9714/9722/9728, card dfea1f7d) =====
+  "Kereszt-hivatk.": "Перекр. ссылки",
+  "Elrendezés": "Раскладка",
+  "Kutatás": "Изучение",
+  "Strong nagy": "Стронг крупно",
+  "Jegyzetelés": "Заметки",
+  "Saját": "Своя",
+  "Ablakok": "Окна",
+  "ablak": "окна",
+  "Olvasás": "Чтение",
+  "Feljebb": "Выше",
+  "Lejjebb": "Ниже",
+  "Átméretezés": "Изменить размер",
+  "Legfeljebb 5 ablak": "Не более 5 окон",
+  "lehet nyitva. Zárj be egyet, és ez megnyílik a helyén.": "может быть открыто. Закройте одно, и это откроется на его месте.",
+  "{n} kapcsolódó ige": "Связанных стихов: {n}",
+  "Ehhez a vershez nincs kereszthivatkozás.": "У этого стиха нет перекрёстных ссылок.",
+  "Koppints egy szóra a Bibliában, és itt megjelenik az eredeti szó.": "Коснитесь слова в Библии, и здесь появится исходное слово.",
+});
+// ===== 2026-11-09 feedback sheet support hint (card a0a2d3d6, Boss TG 37291-37297): in-app only, never a web hint =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Az alkalmazás szándékosan nem havidíjas. Ha szeretnéd, egy kisebb összeggel hozzájárulhatsz az üzemeltetés költségeihez; hálásan köszönjük.": "У приложения намеренно нет ежемесячной платы. Если хочешь, можешь небольшой суммой помочь покрыть расходы на его работу; мы искренне благодарны."
+});
+
+// ===== 2026-11-09 dashboard news filter (Boss TG 9702/9706) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Mind": "Все",
+  "Természet": "Природа",
+  "Hírek szűrése": "Фильтр новостей",
+  "Ebben a szűrőben most nincs friss hír.": "Сейчас в этом фильтре нет свежих новостей."
+});
+
+// ===== 2026-11-09 QR pairing: camera error line in the UI language (Thomas 31160, Marveen 31161) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "A kamera nem indult el: {hiba}": "Камера не запустилась: {hiba}"
+});
+
+// ===== 2026-11-09 QR reader did not load (Marveen, follow-up of fix/wl-qr-kamera) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "A QR-olvasó nem töltődött be ezen a készüléken. Próbáld újra, vagy használd a Beillesztés/Kép-ből gombot.": "Считыватель QR не загрузился на этом устройстве. Попробуй ещё раз или воспользуйся кнопкой Вставить / Из изображения."
+});
+// ===== Ujdonsagok v43.471 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Biblia: laptopon és fekvő tableten új munkafelület, egyszerre akár öt ablakkal (szöveg, jegyzet, kereszthivatkozások, eredeti szó).": "Библия: новое рабочее пространство на ноутбуке и на планшете в горизонтальном положении, до пяти окон одновременно (текст, заметка, перекрёстные ссылки, исходное слово).",
+  "Biblia jegyzetek: visszavonás és újra gomb a szerkesztőben; az „Új jegyzet” gomb mindig új jegyzetet nyit.": "Заметки к Библии: кнопки «Отменить» и «Повторить» в редакторе; кнопка «Новая заметка» всегда открывает новую заметку.",
+  "Biblia: több vers másolásakor az egymást követő versek egy idézetbe kerülnek, egy helymegjelöléssel, és a megosztott igehely linkje az alkalmazásban nyílik meg.": "Библия: при копировании нескольких стихов идущие подряд стихи становятся одной цитатой с одной ссылкой, а ссылка на отправленный отрывок открывает его в приложении.",
+  "Biblia keresés: több szónál elöl a pontos kifejezés találatai állnak; egy oldal elhagyásakor a keresőmezők kiürülnek.": "Поиск по Библии: при нескольких словах сначала идут совпадения с точной фразой; при уходе со страницы её поля поиска очищаются.",
+  "Biblia: a könyv-, fejezet- és versválasztó mögött is látszik a 3D galaxis, a könyvek rajzai finoman áttűnnek, és a szövegben a megfelelő verseknél ott vannak a piktogramok.": "Библия: 3D-галактика видна и за выбором книги, главы и стиха, рисунки книг плавно сменяют друг друга, а в тексте у своих стихов стоят пиктограммы.",
+  "Olvasási tervek: minden elkezdett tervnél látszik a várható befejezés a jelenlegi tempóval.": "Планы чтения: у каждого начатого плана видно ожидаемое завершение при нынешнем темпе.",
+  "Kvíz: a válasz kiválasztása után rögzítő hang és rövid feszültség, mielőtt kiderül, jó-e a válasz.": "Викторина: после выбора ответа звук фиксации и короткая пауза напряжения, прежде чем станет ясно, верен ли ответ.",
+  "Térkép: az imakérések csak a Biblia térképén látszanak, saját, kb. 50 km-es körrel; a világnézet kitölti a képernyőt, és a térképnek is van (?) súgója.": "Карта: молитвенные просьбы видны только на карте Библии, у каждой свой круг около 50 км; вид мира заполняет экран, а у карты есть своя справка (?).",
+  "Világhelyzet: a jelmagyarázatban egy típusra koppintva az elrejthető vagy visszahozható a térképen, mellette a darabszám; kevesebb téves támadás-jelzés.": "Обстановка в мире: нажатие на тип в легенде скрывает его на карте или возвращает, рядом указано количество; меньше ложных сообщений о нападениях.",
+  "Átjátszók rétege: a LoRaWAN átjárók és a Meshtastic csomópontok is megjelennek, mindegyik saját színnel.": "Слой ретрансляторов: показываются также шлюзы LoRaWAN и узлы Meshtastic, каждый своим цветом.",
+  "LoRa szoba: ugyanolyan csevegőfelület, mint a többi szobában; a saját üzenet állapota „rádiónak átadva”.": "Комната LoRa: тот же экран чата, что и в других комнатах; у своего сообщения статус «передано рации».",
+  "Imakérések: erősebb védelem kéretlen üzenetek, trágárság és rejtett linkek ellen; ha egyszerre szokatlanul sok kérés érkezik, az app ezt meg is mondja.": "Молитвенные просьбы: усиленная защита от спама, брани и скрытых ссылок; если сразу приходит необычно много просьб, приложение об этом сообщает.",
+  "Biblia szinkron: új eszköz egyszeri QR-kóddal köthető be, és az app elmagyarázza a jelmondatot.": "Синхронизация Библии: новое устройство можно подключить одноразовым QR-кодом, а приложение объясняет кодовую фразу.",
+  "Irányítópult: simább radar gyengébb tableten, hírszűrő (Mind / Imák / Természet), és a napi olvasás kártyája azonnal a friss perceket mutatja.": "Панель: более плавный радар на слабых планшетах, фильтр новостей (Все / Молитвы / Природа), а карточка ежедневного чтения сразу показывает текущие минуты.",
+  "Ébresztő: a telefon újraindítása után, az első feloldás előtt is megszólal, lassan erősödő hanggal.": "Будильник: после перезапуска телефона звонит ещё до первой разблокировки, со звуком, который постепенно нарастает.",
+  "Visszajelzés: új Támogatás gomb a visszajelzés lapon.": "Отзыв: новая кнопка «Поддержка» в окне отзыва.",
+  "Webes változat: belépés után felajánlja, hogy programként telepíthető legyen.": "Веб-версия: после входа предлагает установить себя как программу.",
+  "iPad és iPhone: javított tabletes elrendezés, és az engedélykérő szövegek mind a 8 nyelven.": "iPad и iPhone: улучшенная раскладка на планшете и тексты разрешений на всех 8 языках.",
+  "Kisebb javítások és fordítások.": "Мелкие исправления и переводы."
 });
