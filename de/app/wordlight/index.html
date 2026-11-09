@@ -460,6 +460,53 @@
   .tabla tbody th{text-align:left}
   .ppm h3{margin:22px 0 6px;font-size:1.05rem}
 
+  /* 07 tablet + laptop (Boss 2026-11-09 TG 9656/9658/9659): the three real captures in simple device frames, the same
+     metal gradient as the iPhone frame, a soft diagonal reflection on the glass (as on the phones), captions under them.
+     Mobile: stacked; from 860 px one row, bottoms aligned. All frame sizes in cqw of the figure (= the device width). */
+  .wl .wleszk{margin:58px 0 0}
+  .wl .wleszk .wlszoveg{max-width:640px}
+  .wl .wleszsor{position:relative;display:flex;flex-direction:column;align-items:center;gap:30px;margin:26px 0 0;padding:10px 0 0}
+  .wl .wleszsor::before{content:"";position:absolute;left:50%;top:50%;width:min(900px,130vw);aspect-ratio:1.6;transform:translate(-50%,-50%);
+     z-index:-1;pointer-events:none;background:radial-gradient(closest-side,rgba(124,179,66,.18),rgba(124,179,66,.05) 60%,transparent)}
+  .wl .wlesz{margin:0;width:100%;display:flex;flex-direction:column;align-items:center;container-type:inline-size}
+  .wl .wlesz.allo{max-width:min(300px,72vw)}
+  .wl .wlesz.fekvo{max-width:460px}
+  .wl .wlesz.laptop{max-width:560px}
+  .wl .wlesz figcaption{margin:14px 0 0;color:var(--borostyan);font-weight:800;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+  .wl .wltab,.wl .wlgep{width:100%;position:relative}
+  .wl .wltab{box-sizing:border-box;padding:3.4cqw;border-radius:5.2cqw;
+     background:linear-gradient(140deg,#7a7d80 0%,#2b2d30 12%,#151618 38%,#1d1f21 62%,#3a3c40 88%,#86898c 100%);
+     box-shadow:inset 0 0 0 .35cqw rgba(255,255,255,.18),0 18px 44px rgba(0,0,0,.55),0 5px 14px rgba(0,0,0,.45)}
+  .wl .fekvo .wltab{padding:2.3cqw;border-radius:3.4cqw;box-shadow:inset 0 0 0 .24cqw rgba(255,255,255,.18),0 18px 44px rgba(0,0,0,.55),0 5px 14px rgba(0,0,0,.45)}
+  .wl .wltab::before{content:"";position:absolute;left:50%;top:1.45cqw;width:1.1cqw;height:1.1cqw;margin-left:-.55cqw;border-radius:50%;background:#0a0b0c;
+     box-shadow:inset 0 0 0 .2cqw #2a2c2f}
+  .wl .fekvo .wltab::before{left:.95cqw;top:50%;width:.75cqw;height:.75cqw;margin:-.37cqw 0 0}
+  .wl .wlkep{position:relative;display:block;overflow:hidden;background:#0B110E;border:.5cqw solid #040405;border-radius:1.6cqw}
+  .wl .wlkep img{display:block;width:100%;height:auto}
+  /* the glass: one soft diagonal glare + a faint second band, the screenshot stays fully legible */
+  .wl .wlkep::after{content:"";position:absolute;inset:0;pointer-events:none;
+     background:linear-gradient(118deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.05) 26%,rgba(255,255,255,0) 26.4%),
+                linear-gradient(118deg,rgba(255,255,255,0) 60%,rgba(255,255,255,.035) 60.4%,rgba(255,255,255,0) 78%);
+     box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+  .wl .wlfedel{box-sizing:border-box;padding:2.4cqw 2.4cqw 3.4cqw;border-radius:3cqw 3cqw .8cqw .8cqw;position:relative;
+     background:linear-gradient(160deg,#2b2d30,#141517 40%,#1b1d1f 70%,#2f3134);box-shadow:inset 0 0 0 .25cqw rgba(255,255,255,.16)}
+  .wl .wlfedel::before{content:"";position:absolute;left:50%;top:.85cqw;width:.8cqw;height:.8cqw;margin-left:-.4cqw;border-radius:50%;background:#0a0b0c;
+     box-shadow:inset 0 0 0 .15cqw #2a2c2f}
+  .wl .wlgep .wlkep{border-width:.3cqw;border-radius:.6cqw}
+  .wl .wltalp{position:relative;height:3.6cqw;margin:0 -8%;border-radius:0 0 8cqw 8cqw / 0 0 3.2cqw 3.2cqw;
+     background:linear-gradient(180deg,#8a8d91 0%,#55585c 30%,#2a2c2f 100%);box-shadow:0 16px 36px rgba(0,0,0,.55)}
+  .wl .wltalp::before{content:"";position:absolute;left:50%;top:0;width:16%;height:38%;transform:translateX(-50%);border-radius:0 0 2cqw 2cqw;
+     background:linear-gradient(180deg,#2a2c2f,#45484c)}
+  .wl .wlgep{margin:0 auto;width:86%}
+  @media (min-width:860px){
+    .wl .wleszk{margin-top:96px}
+    .wl .wleszsor{flex-direction:row;align-items:flex-end;justify-content:center;gap:3%;margin-top:34px}
+    .wl .wlesz.allo{flex:0 0 21%;max-width:none}
+    .wl .wlesz.fekvo{flex:0 0 32%;max-width:none}
+    .wl .wlesz.laptop{flex:0 0 40%;max-width:none}
+    .wl .wlgep{width:84%}
+  }
+
   .trio{margin:40px 0 8px}
   .trio .kicsi{color:var(--zold);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:0 0 6px}
   .trio h2{margin:0 0 8px}
@@ -716,6 +763,18 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </ul>
 </div>
 <div class="wltel"><figure class="tf "><div class="ip"><div class="scr" style="--sb:#0c180e"><svg class="sb" viewBox="0 0 393 54" aria-hidden="true"><text x="62" y="37.6" text-anchor="middle" fill="#fff">9:41</text><rect x="134" y="11.3" width="125" height="36.7" rx="18.35" fill="#000"/><g fill="#fff"><rect x="293.2" y="32.2" width="3.2" height="4.2" rx=".9"/><rect x="298.5" y="30" width="3.2" height="6.4" rx=".9"/><rect x="303.8" y="27.8" width="3.2" height="8.6" rx=".9"/><rect x="309.1" y="25.6" width="3.2" height="10.8" rx=".9"/><path d="M325.6 36.4 323.2 34a3.4 3.4 0 0 1 4.8 0z"/></g><g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M318.3 29.1a10.3 10.3 0 0 1 14.6 0"/><path d="M320.9 31.7a6.6 6.6 0 0 1 9.4 0"/></g><rect x="338.6" y="25.6" width="24.6" height="11.6" rx="3.7" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.1"/><rect x="340.7" y="27.7" width="18" height="7.4" rx="2.1" fill="#fff"/><path d="M364.4 29.6a1.9 1.9 0 0 1 0 3.6z" fill="#fff" fill-opacity=".42"/></svg><img src="/de/app/kepek/wl-6-ima.webp" width="900" height="1827" alt="Gebet" loading="lazy" decoding="async"></div></div></figure></div>
+</section>
+
+<section class="wleszk">
+<div class="wlszoveg"><div class="wlszam">07</div>
+<h2>Auch auf Tablet und Laptop</h2>
+<p>Wordlight passt sich dem größeren Bildschirm an: auf dem Tablet hochkant und quer, und auch auf dem Laptop öffnet es sich in einem eigenen Layout.</p>
+</div>
+<div class="wleszsor">
+<figure class="wlesz allo"><div class="wltab"><div class="wlkep"><img src="/de/app/kepek/wl-11-tablet-allo.webp" width="1000" height="1600" alt="Wordlight auf dem Tablet, hochkant: das erste Kapitel des Johannesevangeliums" loading="lazy" decoding="async"></div></div><figcaption>Tablet, hochkant: Lesen</figcaption></figure>
+<figure class="wlesz fekvo"><div class="wltab"><div class="wlkep"><img src="/de/app/kepek/wl-12-tablet-fekvo.webp" width="1600" height="1000" alt="Wordlight auf dem Tablet, quer: die Bücher der Bibel, Altes und Neues Testament nebeneinander" loading="lazy" decoding="async"></div></div><figcaption>Tablet, quer: Buchauswahl</figcaption></figure>
+<figure class="wlesz laptop"><div class="wlgep"><div class="wlfedel"><div class="wlkep"><img src="/de/app/kepek/wl-13-laptop.webp" width="1920" height="1200" alt="Wordlight auf dem Laptop: links das Menü, in der Mitte das grüne Radar-Dashboard mit der Weltkarte" loading="lazy" decoding="async"></div></div><div class="wltalp"></div></div><figcaption>Laptop: Dashboard</figcaption></figure>
+</div>
 </section>
 
 <section class="wlprem" id="kaufen">
