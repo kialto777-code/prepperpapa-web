@@ -5103,6 +5103,7 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
   "Kártyára": "En una tarjeta",
   "Kártyák nyomtatásra (PDF)": "Tarjetas para imprimir (PDF)",
   "Vágás az előlap felől, a számok sorrendjében: 1 a függőleges csík közepén, 2 a vízszintes csíkok közepén.": "Corta desde el anverso, en el orden de los números: 1 el centro de la franja vertical, 2 los centros de las franjas horizontales.",
+  "Vágás a számok sorrendjében: 1 körbe, 2 a függőleges középvonal, 3 a vízszintes vonalak; mindig sarokjeltől sarokjelig.": "Corta en el orden de los números: 1 todo alrededor, 2 la línea vertical central, 3 las líneas horizontales; siempre de marca de esquina a marca de esquina.",
   "Utána kártyánként: 3 belső oldal, 4 felső és alsó él, 5 külső oldal, hogy 95 mm széles legyen.": "Luego, tarjeta por tarjeta: 3 lado interior, 4 bordes superior e inferior, 5 lado exterior, hasta que mida 95 mm de ancho.",
   "Hátoldal. Kétoldalas nyomtatás: hosszú él mentén fordítva, 100% (tényleges méret).": "Reverso. Impresión a doble cara: voltear por el borde largo, 100 % (tamaño real).",
   "Készül a PDF…": "Preparando el PDF…",
@@ -7193,5 +7194,27 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
   "Felolvasás: ha a választott Samuel hang egy könyvhöz még nem készült el, az app a legjobb elérhető felvétellel olvas, és megmondja, kinek a hangján.": "Lectura en voz alta: si la voz elegida de Samuel aún no está lista para un libro, la app lo lee con la mejor grabación disponible y te dice de quién es la voz.",
   "Olvasási terv: a napi rész végén a felolvasás leáll, de a háttérzene szól tovább, amíg az „Elolvastam” vagy a „Vissza a tervemhez” gombot meg nem nyomod.": "Plan de lectura: al final de la porción del día la voz se detiene, pero la música de fondo sigue sonando hasta que pulses «Lo he leído» o «Volver a mi plan».",
   "Biblia: néhány jelenetkép a pontos versnél jelenik meg, minden fordításban.": "Biblia: algunas imágenes de escena aparecen ahora en el versículo exacto, en todas las traducciones.",
-  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Para testers: quien pase de la versión de prueba a la app de la tienda recibe una vez en su nuevo monedero el saldo de Gerah acreditado antes."
+  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Para testers: quien pase de la versión de prueba a la app de la tienda recibe una vez en su nuevo monedero el saldo de Gerah acreditado antes.",
+  "Csempe hozzáadása": "Añadir mosaico",
+  "Programok": "Programas",
+  "Kikapcsolás": "Desactivar",
+  "Nincs több hozzáadható csempe.": "No hay más mosaicos para añadir.",
+  "Bekapcsolás": "Activar",
+  "Útvonaltervező": "Planificador de rutas",
+  "Családfa": "Árbol genealógico",
+  "Kiindulás": "Salida"
+});
+// ===== Ujdonsagok v43.473 (2026-11-10) =====
+Object.assign(window.PP_FORD_SZOTAR.es, {
+  "Kezdőlap: hosszú nyomásra a csempék felemelkednek és lebegnek (hosszú rezgéssel); a zöld mínusszal kikapcsolhatod, a plusszal visszakapcsolhatod őket, a nagy, kereshető listából bármelyik programot, eszközt, szobát vagy Biblia-funkciót hozzáadhatod, húzással pedig átrendezheted; csak a Biblia csempe és az alsó kapszula marad a helyén.": "Pantalla de inicio: una pulsación larga levanta los iconos y los hace flotar, con una vibración larga; apaga iconos con el menos verde y vuélvelos a encender con el más, añade cualquier programa, herramienta, sala o función de la Biblia desde una lista grande con búsqueda y reordénalos arrastrando; solo el icono de la Biblia y la cápsula inferior quedan fijos.",
+  "Biblia: családfa mind a 8 nyelven; két szülő, „nem ismert” jelzés, széles képernyőn fa-nézet.": "Biblia: el árbol genealógico en los 8 idiomas; dos padres, una marca de «desconocido» y una vista de árbol en pantallas anchas.",
+  "A rögzített fejléc alatt görgetett tartalomnál a fejléc határvonalat és árnyékot kap, mindkét appban.": "Cuando el contenido se desplaza bajo un encabezado fijo, el encabezado muestra una línea de borde y una sombra, en ambas apps.",
+  "Könnyített megjelenítés: a műveleti lapok és panelek már nem átlátszók, jól olvashatók.": "Visualización ligera: las hojas de acciones y los paneles ya no son transparentes y se leen bien.",
+  "Térkép: a panelek gombjai (bezárás, súgó, vissza) újra működnek.": "Mapa: los botones de los paneles (cerrar, ayuda, volver) funcionan de nuevo.",
+  "QR-olvasó: letiltott kamera után az engedély megadásával újraindul a beolvasás, újraindítás nélkül.": "Lector QR: tras rechazar la cámara, al conceder el permiso el escaneo se reanuda solo, sin reiniciar.",
+  "Vezetett ima: minden lépésre elég idő jut az olvasásra és az imádkozásra.": "Oración guiada: cada paso deja tiempo suficiente para leer y orar.",
+  "Irányítópult: a radar könnyített módban is forog; az új pontok nagyobbat villannak, a Befutó hírek elemei megnyitják az eseményt, a térkép nagyítható és húzható.": "Panel de control: el radar sigue girando en visualización ligera; los puntos nuevos destellan más grande, los elementos de Noticias entrantes abren su evento y el mapa se puede ampliar y arrastrar.",
+  "Biblia: simább 3D galaxis a háttérben.": "Biblia: galaxia 3D más fluida de fondo.",
+  "Wordlight: minden megosztási link a wordlight.hu oldalra mutat.": "Wordlight: todos los enlaces para compartir apuntan ahora a wordlight.hu.",
+  "Kisebb javítások és fordítások.": "Pequeñas correcciones y traducciones."
 });

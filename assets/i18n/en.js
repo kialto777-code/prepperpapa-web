@@ -5453,6 +5453,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Kártyára": "On a card",
   "Kártyák nyomtatásra (PDF)": "Cards to print (PDF)",
   "Vágás az előlap felől, a számok sorrendjében: 1 a függőleges csík közepén, 2 a vízszintes csíkok közepén.": "Cut from the front, in the order of the numbers: 1 the middle of the vertical strip, 2 the middles of the horizontal strips.",
+  "Vágás a számok sorrendjében: 1 körbe, 2 a függőleges középvonal, 3 a vízszintes vonalak; mindig sarokjeltől sarokjelig.": "Cut in the order of the numbers: 1 all round, 2 the vertical middle line, 3 the horizontal lines; always from corner mark to corner mark.",
   "Utána kártyánként: 3 belső oldal, 4 felső és alsó él, 5 külső oldal, hogy 95 mm széles legyen.": "Then card by card: 3 inner side, 4 top and bottom edge, 5 outer side, so that it is 95 mm wide.",
   "Hátoldal. Kétoldalas nyomtatás: hosszú él mentén fordítva, 100% (tényleges méret).": "Back side. Double-sided printing: flip on long edge, 100% (actual size).",
   "Készül a PDF…": "Making the PDF…",
@@ -7556,5 +7557,29 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Felolvasás: ha a választott Samuel hang egy könyvhöz még nem készült el, az app a legjobb elérhető felvétellel olvas, és megmondja, kinek a hangján.": "Read aloud: if the chosen Samuel voice is not yet ready for a book, the app reads it with the best available recording and tells you whose voice it is.",
   "Olvasási terv: a napi rész végén a felolvasás leáll, de a háttérzene szól tovább, amíg az „Elolvastam” vagy a „Vissza a tervemhez” gombot meg nem nyomod.": "Reading plan: at the end of the day’s portion the reading voice stops, but the background music plays on until you tap “I have read it” or “Back to my plan”.",
   "Biblia: néhány jelenetkép a pontos versnél jelenik meg, minden fordításban.": "Bible: some scene pictures now appear at the exact verse, in every translation.",
-  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "For testers: when you move from the tester version to the app from the store, your previously credited Gerah balance is given once to your new wallet."
+  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "For testers: when you move from the tester version to the app from the store, your previously credited Gerah balance is given once to your new wallet.",
+  "Csempe hozzáadása": "Add tile",
+  "Programok": "Programs",
+  "Szobák": "Rooms",
+  "Kikapcsolás": "Switch off",
+  "Nincs több hozzáadható csempe.": "No more tiles to add.",
+  "Szoba": "Room",
+  "Bekapcsolás": "Switch on",
+  "Útvonaltervező": "Route planner",
+  "Családfa": "Family tree",
+  "Kiindulás": "Start"
+});
+// ===== Ujdonsagok v43.473 (2026-11-10) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Kezdőlap: hosszú nyomásra a csempék felemelkednek és lebegnek (hosszú rezgéssel); a zöld mínusszal kikapcsolhatod, a plusszal visszakapcsolhatod őket, a nagy, kereshető listából bármelyik programot, eszközt, szobát vagy Biblia-funkciót hozzáadhatod, húzással pedig átrendezheted; csak a Biblia csempe és az alsó kapszula marad a helyén.": "Home screen: long press and the tiles lift and float, with one long vibration; switch tiles off with the green minus and back on with the plus, add any program, tool, room or Bible feature from a big searchable list, and drag to reorder; only the Bible tile and the bottom capsule stay in place.",
+  "Biblia: családfa mind a 8 nyelven; két szülő, „nem ismert” jelzés, széles képernyőn fa-nézet.": "Bible: the family tree in all 8 languages; two parents, an “unknown” marker, and a tree view on wide screens.",
+  "A rögzített fejléc alatt görgetett tartalomnál a fejléc határvonalat és árnyékot kap, mindkét appban.": "When content is scrolled under a sticky header, the header gets a border line and a shadow, in both apps.",
+  "Könnyített megjelenítés: a műveleti lapok és panelek már nem átlátszók, jól olvashatók.": "Light display mode: action sheets and panels are no longer see-through and read clearly.",
+  "Térkép: a panelek gombjai (bezárás, súgó, vissza) újra működnek.": "Map: the buttons on the panels (close, help, back) work again.",
+  "QR-olvasó: letiltott kamera után az engedély megadásával újraindul a beolvasás, újraindítás nélkül.": "QR scanner: after a refused camera, allowing the permission restarts the scan by itself, no restart needed.",
+  "Vezetett ima: minden lépésre elég idő jut az olvasásra és az imádkozásra.": "Guided prayer: every step now gives you enough time to read and pray.",
+  "Irányítópult: a radar könnyített módban is forog; az új pontok nagyobbat villannak, a Befutó hírek elemei megnyitják az eseményt, a térkép nagyítható és húzható.": "Dashboard: the radar keeps turning in light mode; fresh dots flash bigger, the Incoming news items open their event, and the map can be zoomed and dragged.",
+  "Biblia: simább 3D galaxis a háttérben.": "Bible: smoother 3D galaxy in the background.",
+  "Wordlight: minden megosztási link a wordlight.hu oldalra mutat.": "Wordlight: every share link now points to wordlight.hu.",
+  "Kisebb javítások és fordítások.": "Small fixes and translations."
 });

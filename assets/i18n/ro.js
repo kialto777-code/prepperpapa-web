@@ -5110,6 +5110,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Kártyára": "Pe cartonaș",
   "Kártyák nyomtatásra (PDF)": "Cartonașe de tipărit (PDF)",
   "Vágás az előlap felől, a számok sorrendjében: 1 a függőleges csík közepén, 2 a vízszintes csíkok közepén.": "Taie dinspre față, în ordinea numerelor: 1 mijlocul fâșiei verticale, 2 mijloacele fâșiilor orizontale.",
+  "Vágás a számok sorrendjében: 1 körbe, 2 a függőleges középvonal, 3 a vízszintes vonalak; mindig sarokjeltől sarokjelig.": "Taie în ordinea numerelor: 1 de jur împrejur, 2 linia verticală din mijloc, 3 liniile orizontale; mereu de la un semn de colț la altul.",
   "Utána kártyánként: 3 belső oldal, 4 felső és alsó él, 5 külső oldal, hogy 95 mm széles legyen.": "Apoi fiecare card: 3 latura interioară, 4 marginea de sus și de jos, 5 latura exterioară, ca să aibă 95 mm lățime.",
   "Hátoldal. Kétoldalas nyomtatás: hosszú él mentén fordítva, 100% (tényleges méret).": "Verso. Tipărire față-verso: întoarcere pe latura lungă, 100% (mărime reală).",
   "Készül a PDF…": "Se pregătește PDF-ul…",
@@ -7200,5 +7201,27 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Felolvasás: ha a választott Samuel hang egy könyvhöz még nem készült el, az app a legjobb elérhető felvétellel olvas, és megmondja, kinek a hangján.": "Citire cu voce tare: dacă vocea aleasă, Samuel, nu este încă gata pentru o carte, aplicația o citește cu cea mai bună înregistrare disponibilă și îți spune a cui este vocea.",
   "Olvasási terv: a napi rész végén a felolvasás leáll, de a háttérzene szól tovább, amíg az „Elolvastam” vagy a „Vissza a tervemhez” gombot meg nem nyomod.": "Plan de citire: la finalul porțiunii zilei vocea se oprește, dar muzica de fundal continuă până apeși „Am citit” sau „Înapoi la planul meu”.",
   "Biblia: néhány jelenetkép a pontos versnél jelenik meg, minden fordításban.": "Biblia: unele imagini de scenă apar acum la versetul exact, în fiecare traducere.",
-  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Pentru testeri: cine trece de la versiunea de test la aplicația din magazin primește o dată în noul portofel soldul Gerah creditat anterior."
+  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Pentru testeri: cine trece de la versiunea de test la aplicația din magazin primește o dată în noul portofel soldul Gerah creditat anterior.",
+  "Csempe hozzáadása": "Adaugă o dală",
+  "Programok": "Programe",
+  "Kikapcsolás": "Dezactivează",
+  "Nincs több hozzáadható csempe.": "Nu mai sunt dale de adăugat.",
+  "Bekapcsolás": "Activează",
+  "Útvonaltervező": "Planificator de traseu",
+  "Családfa": "Arbore genealogic",
+  "Kiindulás": "Plecare"
+});
+// ===== Ujdonsagok v43.473 (2026-11-10) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Kezdőlap: hosszú nyomásra a csempék felemelkednek és lebegnek (hosszú rezgéssel); a zöld mínusszal kikapcsolhatod, a plusszal visszakapcsolhatod őket, a nagy, kereshető listából bármelyik programot, eszközt, szobát vagy Biblia-funkciót hozzáadhatod, húzással pedig átrendezheted; csak a Biblia csempe és az alsó kapszula marad a helyén.": "Ecranul principal: o apăsare lungă ridică plăcile și le face să plutească, cu o vibrație lungă; oprești plăcile cu minusul verde și le pornești la loc cu plusul, adaugi orice program, instrument, cameră sau funcție biblică dintr-o listă mare, cu căutare, și le reordonezi trăgând; doar placa Biblia și capsula de jos rămân pe loc.",
+  "Biblia: családfa mind a 8 nyelven; két szülő, „nem ismert” jelzés, széles képernyőn fa-nézet.": "Biblia: arborele genealogic în toate cele 8 limbi; doi părinți, marcajul „necunoscut” și o vedere de arbore pe ecrane late.",
+  "A rögzített fejléc alatt görgetett tartalomnál a fejléc határvonalat és árnyékot kap, mindkét appban.": "Când conținutul este derulat sub un antet fix, antetul primește o linie de contur și o umbră, în ambele aplicații.",
+  "Könnyített megjelenítés: a műveleti lapok és panelek már nem átlátszók, jól olvashatók.": "Afișare ușoară: foile de acțiuni și panourile nu mai sunt transparente și se citesc bine.",
+  "Térkép: a panelek gombjai (bezárás, súgó, vissza) újra működnek.": "Harta: butoanele panourilor (închide, ajutor, înapoi) funcționează din nou.",
+  "QR-olvasó: letiltott kamera után az engedély megadásával újraindul a beolvasás, újraindítás nélkül.": "Scaner QR: după o cameră refuzată, acordarea permisiunii reia singură scanarea, fără repornire.",
+  "Vezetett ima: minden lépésre elég idő jut az olvasásra és az imádkozásra.": "Rugăciune ghidată: fiecare pas lasă destul timp pentru citit și rugăciune.",
+  "Irányítópult: a radar könnyített módban is forog; az új pontok nagyobbat villannak, a Befutó hírek elemei megnyitják az eseményt, a térkép nagyítható és húzható.": "Panou de control: radarul se învârte și în afișarea ușoară; punctele noi clipesc mai mare, elementele din Știri în curs deschid evenimentul lor, iar harta poate fi mărită și trasă.",
+  "Biblia: simább 3D galaxis a háttérben.": "Biblia: galaxie 3D mai fluidă în fundal.",
+  "Wordlight: minden megosztási link a wordlight.hu oldalra mutat.": "Wordlight: toate linkurile de partajare duc acum la wordlight.hu.",
+  "Kisebb javítások és fordítások.": "Mici corecturi și traduceri."
 });

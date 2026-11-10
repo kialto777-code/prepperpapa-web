@@ -5182,6 +5182,7 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Kártyára": "На картку",
   "Kártyák nyomtatásra (PDF)": "Картки для друку (PDF)",
   "Vágás az előlap felől, a számok sorrendjében: 1 a függőleges csík közepén, 2 a vízszintes csíkok közepén.": "Ріж з лицьового боку, у порядку цифр: 1 середина вертикальної смуги, 2 середини горизонтальних смуг.",
+  "Vágás a számok sorrendjében: 1 körbe, 2 a függőleges középvonal, 3 a vízszintes vonalak; mindig sarokjeltől sarokjelig.": "Ріжте в порядку цифр: 1 по колу, 2 по вертикальній середній лінії, 3 по горизонтальних лініях; завжди від кутової мітки до кутової мітки.",
   "Utána kártyánként: 3 belső oldal, 4 felső és alsó él, 5 külső oldal, hogy 95 mm széles legyen.": "Потім кожну картку: 3 внутрішній бік, 4 верхній і нижній край, 5 зовнішній бік, щоб ширина була 95 мм.",
   "Hátoldal. Kétoldalas nyomtatás: hosszú él mentén fordítva, 100% (tényleges méret).": "Зворотний бік. Двосторонній друк: перевертання за довгим краєм, 100% (фактичний розмір).",
   "Készül a PDF…": "Готую PDF…",
@@ -7273,5 +7274,27 @@ Object.assign(window.PP_FORD_SZOTAR.uk, {
   "Felolvasás: ha a választott Samuel hang egy könyvhöz még nem készült el, az app a legjobb elérhető felvétellel olvas, és megmondja, kinek a hangján.": "Читання вголос: якщо вибраний голос Самуеля для книги ще не готовий, застосунок читає її найкращим доступним записом і каже, чий це голос.",
   "Olvasási terv: a napi rész végén a felolvasás leáll, de a háttérzene szól tovább, amíg az „Elolvastam” vagy a „Vissza a tervemhez” gombot meg nem nyomod.": "План читання: наприкінці денної частини голос замовкає, але фонова музика грає далі, доки ви не натиснете «Прочитано» або «Назад до мого плану».",
   "Biblia: néhány jelenetkép a pontos versnél jelenik meg, minden fordításban.": "Біблія: деякі картини сцен тепер з’являються біля точного вірша, в усіх перекладах.",
-  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Для тестувальників: під час переходу з тестової версії на застосунок із магазину раніше нарахований баланс Gerah один раз переноситься на новий гаманець."
+  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Для тестувальників: під час переходу з тестової версії на застосунок із магазину раніше нарахований баланс Gerah один раз переноситься на новий гаманець.",
+  "Csempe hozzáadása": "Додати плитку",
+  "Programok": "Програми",
+  "Kikapcsolás": "Вимкнути",
+  "Nincs több hozzáadható csempe.": "Більше немає плиток для додавання.",
+  "Bekapcsolás": "Увімкнути",
+  "Útvonaltervező": "Планувальник маршруту",
+  "Családfa": "Родовід",
+  "Kiindulás": "Старт"
+});
+// ===== Ujdonsagok v43.473 (2026-11-10) =====
+Object.assign(window.PP_FORD_SZOTAR.uk, {
+  "Kezdőlap: hosszú nyomásra a csempék felemelkednek és lebegnek (hosszú rezgéssel); a zöld mínusszal kikapcsolhatod, a plusszal visszakapcsolhatod őket, a nagy, kereshető listából bármelyik programot, eszközt, szobát vagy Biblia-funkciót hozzáadhatod, húzással pedig átrendezheted; csak a Biblia csempe és az alsó kapszula marad a helyén.": "Головний екран: довге натискання піднімає плитки й змушує їх ширяти, з однією довгою вібрацією; зеленим мінусом плитку можна вимкнути, плюсом увімкнути назад, із великого списку з пошуком додати будь-яку програму, інструмент, кімнату чи функцію Біблії, а перетягуванням змінити порядок; на місці лишаються тільки плитка Біблії та нижня капсула.",
+  "Biblia: családfa mind a 8 nyelven; két szülő, „nem ismert” jelzés, széles képernyőn fa-nézet.": "Біблія: родовід на всіх 8 мовах; двоє батьків, позначка «невідомий» і вигляд дерева на широких екранах.",
+  "A rögzített fejléc alatt görgetett tartalomnál a fejléc határvonalat és árnyékot kap, mindkét appban.": "Коли вміст прокручується під закріпленим заголовком, заголовок отримує лінію межі й тінь, в обох застосунках.",
+  "Könnyített megjelenítés: a műveleti lapok és panelek már nem átlátszók, jól olvashatók.": "Спрощений режим: панелі та аркуші дій більше не прозорі й добре читаються.",
+  "Térkép: a panelek gombjai (bezárás, súgó, vissza) újra működnek.": "Карта: кнопки на панелях (закрити, довідка, назад) знову працюють.",
+  "QR-olvasó: letiltott kamera után az engedély megadásával újraindul a beolvasás, újraindítás nélkül.": "Сканер QR: після відмови в доступі до камери надання дозволу саме відновлює сканування, без перезапуску.",
+  "Vezetett ima: minden lépésre elég idő jut az olvasásra és az imádkozásra.": "Керована молитва: на кожен крок вистачає часу, щоб прочитати й помолитися.",
+  "Irányítópult: a radar könnyített módban is forog; az új pontok nagyobbat villannak, a Befutó hírek elemei megnyitják az eseményt, a térkép nagyítható és húzható.": "Панель керування: радар обертається й у спрощеному режимі; нові точки спалахують більше, пункти Вхідних новин відкривають свою подію, а карту можна збільшувати й перетягувати.",
+  "Biblia: simább 3D galaxis a háttérben.": "Біблія: плавніша 3D-галактика на тлі.",
+  "Wordlight: minden megosztási link a wordlight.hu oldalra mutat.": "Wordlight: усі посилання для надсилання тепер ведуть на wordlight.hu.",
+  "Kisebb javítások és fordítások.": "Дрібні виправлення та переклади."
 });
