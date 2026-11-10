@@ -18,6 +18,15 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  "Könnyített megjelenítés": "Light display mode",
+  "Automatikus": "Automatic",
+  "Bekapcsolva": "On",
+  "Kikapcsolva": "Off",
+  "Gyengébb telefonon kikapcsolja a díszítő animációkat és az elmosást, és a Biblia-olvasó alapháttere a statikus zöld lesz, hogy ne akadozzon. Automatikus módban az app első induláskor felméri a telefont, és ha később akadozást érzékel, magától vált.": "On a weaker phone it turns off the decorative animations and the blur, and the Bible reader's default background becomes the static green, so nothing stutters. In automatic mode the app checks the phone on first start and switches by itself if it later notices stutter.",
+  "Ezen a telefonon most bekapcsolva.": "On this phone: currently on.",
+  "Ezen a telefonon most kikapcsolva.": "On this phone: currently off.",
+  "Akadozást érzékeltem, ezért könnyített megjelenítésre váltottam: kevesebb animáció és elmosás. Visszakapcsolás: Beállítások › Általános › Könnyített megjelenítés.": "I noticed stutter, so I switched to the light display mode: fewer animations and less blur. To switch back: Settings › General › Light display mode.",
+  "Rejtett szoba": "Hidden room",
   "LoRaWAN átjáró": "LoRaWAN gateway",
   "Meshtastic csomópont": "Meshtastic node",
   "hozzávetőleges hely": "approximate location",
@@ -5117,7 +5126,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
  "Még nincs üzenet a LongFast csatornán.": "No messages on the LongFast channel yet.",
  "Te": "You",
  "Mesélő · magyar": "Narrator · Hungarian",
- "Ez a könyv Samuel hangján hamarosan elérhető.": "This book will soon be available in Samuel\u2019s voice.",
+ "Ez a könyv Samuel hangján még nincs meg. Addig a legjobb elérhető felvételen hallgathatod: {hang}.": "This book is not yet available in Samuel\u2019s voice. Until then you can listen to the best available recording: {hang}.",
  "Professzionális · hamarosan": "Professional · coming soon",
  "Készül": "In progress",
  "Megszakítás": "Cancel",
@@ -7533,4 +7542,19 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Webes változat: belépés után felajánlja, hogy programként telepíthető legyen.": "Web version: after sign-in it offers to install itself as a program.",
   "iPad és iPhone: javított tabletes elrendezés, és az engedélykérő szövegek mind a 8 nyelven.": "iPad and iPhone: improved tablet layout, and the permission texts in all 8 languages.",
   "Kisebb javítások és fordítások.": "Small fixes and translations."
+});
+// ===== Ujdonsagok v43.472 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Wordlight: minden képernyőn egyszerű vissza nyíl, a beállításokban, a Biblia aloldalain és az irányítópulton is, a sötét sáv nélkül; a PrepperPapa Biblia aloldalain is.": "Wordlight: a plain back arrow on every screen, including settings, the Bible sub-pages and the dashboard, without the dark band; on the PrepperPapa Bible sub-pages too.",
+  "Kvíz: a várakozó zene már a kérdés megjelenésekor elindul, és az Ellenőrzés után sem csúszik el a hangneme.": "Quiz: the waiting music starts as soon as the question appears, and it stays in key after Check.",
+  "LoRa szoba (LongFast): az üzenetmező a szöveggel együtt nő, így a beírt szöveg mindig teljesen látszik.": "LoRa room (LongFast): the message box grows with the text, so what you type is always fully visible.",
+  "Térkép: mindig bekapcsolt Világhelyzet réteggel nyílik meg, így az eseményszűrő is látszik; a kikapcsolás csak az adott alkalomra szól.": "Map: it always opens with the World situation layer on, so the event filter is visible too; switching it off lasts for that visit only.",
+  "Biblia: a szövegben a piktogramok kétszer akkorák.": "Bible: the pictograms in the text are twice as large.",
+  "Wordlight: álló helyzetben, elforgatás után nem marad a kezdőlapon a „Panel összecsukása” gomb.": "Wordlight: in portrait, after a rotation, the “Collapse panel” button no longer stays on the start page.",
+  "Könnyített megjelenítés gyengébb telefonokra: az app magától felméri a telefont, és szükség esetén kevesebb animációval, elmosás nélkül fut; a Beállítások › Általános › Könnyített megjelenítés alatt át is állítható.": "Light display mode for weaker phones: the app checks the phone by itself and, if needed, runs with fewer animations and no blur; it can be changed under Settings › General › Light display mode.",
+  "Biblia: simább görgetés olvasás közben.": "Bible: smoother scrolling while reading.",
+  "Felolvasás: ha a választott Samuel hang egy könyvhöz még nem készült el, az app a legjobb elérhető felvétellel olvas, és megmondja, kinek a hangján.": "Read aloud: if the chosen Samuel voice is not yet ready for a book, the app reads it with the best available recording and tells you whose voice it is.",
+  "Olvasási terv: a napi rész végén a felolvasás leáll, de a háttérzene szól tovább, amíg az „Elolvastam” vagy a „Vissza a tervemhez” gombot meg nem nyomod.": "Reading plan: at the end of the day’s portion the reading voice stops, but the background music plays on until you tap “I have read it” or “Back to my plan”.",
+  "Biblia: néhány jelenetkép a pontos versnél jelenik meg, minden fordításban.": "Bible: some scene pictures now appear at the exact verse, in every translation.",
+  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "For testers: when you move from the tester version to the app from the store, your previously credited Gerah balance is given once to your new wallet."
 });

@@ -12,6 +12,15 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.es = {
+  "Könnyített megjelenítés": "Modo de visualización ligero",
+  "Automatikus": "Automático",
+  "Bekapcsolva": "Activado",
+  "Kikapcsolva": "Desactivado",
+  "Gyengébb telefonon kikapcsolja a díszítő animációkat és az elmosást, és a Biblia-olvasó alapháttere a statikus zöld lesz, hogy ne akadozzon. Automatikus módban az app első induláskor felméri a telefont, és ha később akadozást érzékel, magától vált.": "En un teléfono menos potente desactiva las animaciones decorativas y el desenfoque, y el fondo predeterminado del lector de la Biblia pasa a ser el verde estático, para que nada se trabe. En modo automático la app evalúa el teléfono al primer inicio y cambia sola si más tarde detecta tirones.",
+  "Ezen a telefonon most bekapcsolva.": "En este teléfono: ahora activado.",
+  "Ezen a telefonon most kikapcsolva.": "En este teléfono: ahora desactivado.",
+  "Akadozást érzékeltem, ezért könnyített megjelenítésre váltottam: kevesebb animáció és elmosás. Visszakapcsolás: Beállítások › Általános › Könnyített megjelenítés.": "Detecté tirones, así que cambié al modo de visualización ligero: menos animaciones y menos desenfoque. Para volver: Ajustes › General › Modo de visualización ligero.",
+  "Rejtett szoba": "Sala oculta",
   "LoRaWAN átjáró": "Pasarela LoRaWAN",
   "Meshtastic csomópont": "Nodo Meshtastic",
   "hozzávetőleges hely": "ubicación aproximada",
@@ -4770,7 +4779,7 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
  "Még nincs üzenet a LongFast csatornán.": "Aún no hay mensajes en el canal LongFast.",
  "Te": "Tú",
  "Mesélő · magyar": "Narrador · húngaro",
- "Ez a könyv Samuel hangján hamarosan elérhető.": "Este libro estará pronto disponible con la voz de Samuel.",
+ "Ez a könyv Samuel hangján még nincs meg. Addig a legjobb elérhető felvételen hallgathatod: {hang}.": "Este libro aún no está disponible con la voz de Samuel. Mientras tanto puedes escuchar la mejor grabación disponible: {hang}.",
  "Professzionális · hamarosan": "Profesional · próximamente",
  "Készül": "En preparación",
  "Megszakítás": "Cancelar",
@@ -7170,4 +7179,19 @@ Object.assign(window.PP_FORD_SZOTAR.es, {
   "Webes változat: belépés után felajánlja, hogy programként telepíthető legyen.": "Versión web: después de iniciar sesión ofrece instalarse como programa.",
   "iPad és iPhone: javított tabletes elrendezés, és az engedélykérő szövegek mind a 8 nyelven.": "iPad y iPhone: mejor diseño para tableta y los textos de permisos en los 8 idiomas.",
   "Kisebb javítások és fordítások.": "Pequeñas correcciones y traducciones."
+});
+// ===== Ujdonsagok v43.472 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.es, {
+  "Wordlight: minden képernyőn egyszerű vissza nyíl, a beállításokban, a Biblia aloldalain és az irányítópulton is, a sötét sáv nélkül; a PrepperPapa Biblia aloldalain is.": "Wordlight: una flecha de volver sencilla en todas las pantallas, también en Ajustes, en las subpáginas de la Biblia y en el panel, sin la franja oscura; también en las subpáginas de la Biblia de PrepperPapa.",
+  "Kvíz: a várakozó zene már a kérdés megjelenésekor elindul, és az Ellenőrzés után sem csúszik el a hangneme.": "Cuestionario: la música de espera empieza en cuanto aparece la pregunta y sigue afinada después de Comprobar.",
+  "LoRa szoba (LongFast): az üzenetmező a szöveggel együtt nő, így a beírt szöveg mindig teljesen látszik.": "Sala LoRa (LongFast): el cuadro de mensaje crece con el texto, así lo que escribes siempre se ve entero.",
+  "Térkép: mindig bekapcsolt Világhelyzet réteggel nyílik meg, így az eseményszűrő is látszik; a kikapcsolás csak az adott alkalomra szól.": "Mapa: siempre se abre con la capa Situación mundial activada, así también se ve el filtro de eventos; desactivarla vale solo para esa visita.",
+  "Biblia: a szövegben a piktogramok kétszer akkorák.": "Biblia: los pictogramas del texto son el doble de grandes.",
+  "Wordlight: álló helyzetben, elforgatás után nem marad a kezdőlapon a „Panel összecsukása” gomb.": "Wordlight: en vertical, tras girar el teléfono, el botón «Contraer panel» ya no se queda en la página de inicio.",
+  "Könnyített megjelenítés gyengébb telefonokra: az app magától felméri a telefont, és szükség esetén kevesebb animációval, elmosás nélkül fut; a Beállítások › Általános › Könnyített megjelenítés alatt át is állítható.": "Modo de visualización ligero para teléfonos más débiles: la app evalúa el teléfono por sí misma y, si hace falta, funciona con menos animaciones y sin desenfoque; se puede cambiar en Ajustes › General › Modo de visualización ligero.",
+  "Biblia: simább görgetés olvasás közben.": "Biblia: desplazamiento más fluido al leer.",
+  "Felolvasás: ha a választott Samuel hang egy könyvhöz még nem készült el, az app a legjobb elérhető felvétellel olvas, és megmondja, kinek a hangján.": "Lectura en voz alta: si la voz elegida de Samuel aún no está lista para un libro, la app lo lee con la mejor grabación disponible y te dice de quién es la voz.",
+  "Olvasási terv: a napi rész végén a felolvasás leáll, de a háttérzene szól tovább, amíg az „Elolvastam” vagy a „Vissza a tervemhez” gombot meg nem nyomod.": "Plan de lectura: al final de la porción del día la voz se detiene, pero la música de fondo sigue sonando hasta que pulses «Lo he leído» o «Volver a mi plan».",
+  "Biblia: néhány jelenetkép a pontos versnél jelenik meg, minden fordításban.": "Biblia: algunas imágenes de escena aparecen ahora en el versículo exacto, en todas las traducciones.",
+  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Para testers: quien pase de la versión de prueba a la app de la tienda recibe una vez en su nuevo monedero el saldo de Gerah acreditado antes."
 });

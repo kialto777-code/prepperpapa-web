@@ -15,6 +15,15 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  "Könnyített megjelenítés": "Afișare ușoară",
+  "Automatikus": "Automat",
+  "Bekapcsolva": "Activat",
+  "Kikapcsolva": "Dezactivat",
+  "Gyengébb telefonon kikapcsolja a díszítő animációkat és az elmosást, és a Biblia-olvasó alapháttere a statikus zöld lesz, hogy ne akadozzon. Automatikus módban az app első induláskor felméri a telefont, és ha később akadozást érzékel, magától vált.": "Pe un telefon mai slab oprește animațiile decorative și estomparea, iar fundalul implicit al cititorului Bibliei devine verdele static, ca să nu se blocheze nimic. În modul automat aplicația evaluează telefonul la prima pornire și comută singură dacă mai târziu observă sacadări.",
+  "Ezen a telefonon most bekapcsolva.": "Pe acest telefon: acum activat.",
+  "Ezen a telefonon most kikapcsolva.": "Pe acest telefon: acum dezactivat.",
+  "Akadozást érzékeltem, ezért könnyített megjelenítésre váltottam: kevesebb animáció és elmosás. Visszakapcsolás: Beállítások › Általános › Könnyített megjelenítés.": "Am observat sacadări, așa că am trecut la afișarea ușoară: mai puține animații și mai puțină estompare. Revenire: Setări › General › Afișare ușoară.",
+  "Rejtett szoba": "Cameră ascunsă",
   "LoRaWAN átjáró": "Gateway LoRaWAN",
   "Meshtastic csomópont": "Nod Meshtastic",
   "hozzávetőleges hely": "locație aproximativă",
@@ -4777,7 +4786,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
  "Még nincs üzenet a LongFast csatornán.": "Încă nu există mesaje pe canalul LongFast.",
  "Te": "Tu",
  "Mesélő · magyar": "Narator · maghiară",
- "Ez a könyv Samuel hangján hamarosan elérhető.": "Această carte va fi în curând disponibilă cu vocea lui Samuel.",
+ "Ez a könyv Samuel hangján még nincs meg. Addig a legjobb elérhető felvételen hallgathatod: {hang}.": "Această carte nu este încă disponibilă cu vocea lui Samuel. Până atunci poți asculta cea mai bună înregistrare disponibilă: {hang}.",
  "Professzionális · hamarosan": "Profesională · în curând",
  "Készül": "În pregătire",
  "Megszakítás": "Anulează",
@@ -7177,4 +7186,19 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Webes változat: belépés után felajánlja, hogy programként telepíthető legyen.": "Versiunea web: după autentificare se oferă să se instaleze ca program.",
   "iPad és iPhone: javított tabletes elrendezés, és az engedélykérő szövegek mind a 8 nyelven.": "iPad și iPhone: aranjare îmbunătățită pe tabletă și textele de permisiuni în toate cele 8 limbi.",
   "Kisebb javítások és fordítások.": "Mici corecturi și traduceri."
+});
+// ===== Ujdonsagok v43.472 (2026-11-09) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Wordlight: minden képernyőn egyszerű vissza nyíl, a beállításokban, a Biblia aloldalain és az irányítópulton is, a sötét sáv nélkül; a PrepperPapa Biblia aloldalain is.": "Wordlight: o săgeată simplă de înapoi pe fiecare ecran, inclusiv în setări, pe subpaginile Bibliei și pe panou, fără banda întunecată; și pe subpaginile Bibliei din PrepperPapa.",
+  "Kvíz: a várakozó zene már a kérdés megjelenésekor elindul, és az Ellenőrzés után sem csúszik el a hangneme.": "Quiz: muzica de așteptare pornește de cum apare întrebarea și rămâne în tonalitate și după Verifică.",
+  "LoRa szoba (LongFast): az üzenetmező a szöveggel együtt nő, így a beírt szöveg mindig teljesen látszik.": "Camera LoRa (LongFast): câmpul de mesaj crește odată cu textul, așa că ce scrii se vede mereu în întregime.",
+  "Térkép: mindig bekapcsolt Világhelyzet réteggel nyílik meg, így az eseményszűrő is látszik; a kikapcsolás csak az adott alkalomra szól.": "Hartă: se deschide mereu cu stratul Situația mondială pornit, deci se vede și filtrul de evenimente; oprirea lui ține doar pentru vizita respectivă.",
+  "Biblia: a szövegben a piktogramok kétszer akkorák.": "Biblia: pictogramele din text sunt de două ori mai mari.",
+  "Wordlight: álló helyzetben, elforgatás után nem marad a kezdőlapon a „Panel összecsukása” gomb.": "Wordlight: în poziție verticală, după rotire, butonul „Restrânge panoul” nu mai rămâne pe pagina de start.",
+  "Könnyített megjelenítés gyengébb telefonokra: az app magától felméri a telefont, és szükség esetén kevesebb animációval, elmosás nélkül fut; a Beállítások › Általános › Könnyített megjelenítés alatt át is állítható.": "Afișare ușoară pentru telefoane mai slabe: aplicația evaluează singură telefonul și, la nevoie, rulează cu mai puține animații și fără estompare; se poate schimba din Setări › General › Afișare ușoară.",
+  "Biblia: simább görgetés olvasás közben.": "Biblia: derulare mai fluidă în timpul citirii.",
+  "Felolvasás: ha a választott Samuel hang egy könyvhöz még nem készült el, az app a legjobb elérhető felvétellel olvas, és megmondja, kinek a hangján.": "Citire cu voce tare: dacă vocea aleasă, Samuel, nu este încă gata pentru o carte, aplicația o citește cu cea mai bună înregistrare disponibilă și îți spune a cui este vocea.",
+  "Olvasási terv: a napi rész végén a felolvasás leáll, de a háttérzene szól tovább, amíg az „Elolvastam” vagy a „Vissza a tervemhez” gombot meg nem nyomod.": "Plan de citire: la finalul porțiunii zilei vocea se oprește, dar muzica de fundal continuă până apeși „Am citit” sau „Înapoi la planul meu”.",
+  "Biblia: néhány jelenetkép a pontos versnél jelenik meg, minden fordításban.": "Biblia: unele imagini de scenă apar acum la versetul exact, în fiecare traducere.",
+  "Tesztelőknek: aki a tesztelői változatról a boltból letöltött appra vált, egyszer megkapja az új tárcájára a korábban jóváírt Gerah-egyenlegét.": "Pentru testeri: cine trece de la versiunea de test la aplicația din magazin primește o dată în noul portofel soldul Gerah creditat anterior."
 });
