@@ -293,6 +293,8 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 (function () {
   var API = 'https://app.prepperpapa.hu/gate/bevaltas/';
   var NY = (document.documentElement.lang || 'hu').slice(0, 2);
+  // the invisible proof of work before the code mail (kapu.mjs, card 5087022b): the solver comes from the gate itself
+  (function () { var sc = document.createElement('script'); sc.src = 'https://app.prepperpapa.hu/gate/szamitasi-proba.js'; document.head.appendChild(sc); })();
   function $(id) { return document.getElementById(id); }
   var allapot = { email: '', kod: '' };
   function lepes(n) { [1, 2, 3].forEach(function (i) { $('bvLepes' + i).hidden = i !== n; }); }
@@ -325,7 +327,8 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     if (!kodJo(kod)) { m.textContent = 'Introduce el código premium (por ejemplo PP-ABCD-EFGH-JKLM).'; $('bvKod').focus(); return; }
     if (!emailJo(email)) { m.textContent = 'Esto no parece una dirección de correo.'; $('bvEmail').focus(); return; }
     g.disabled = true; m.textContent = 'Enviando...';
-    hiv('kod', { kod: kod, email: email, nyelv: NY }).then(function (v) {
+    var ker = function (x) { var o = { kod: kod, email: email, nyelv: NY }; for (var k in x) o[k] = x[k]; return hiv('kod', o).then(function (v) { return { st: v.st, j: v.d, v: v }; }); };
+    (window.ppPowKuld ? window.ppPowKuld(ker).then(function (o) { return o.v; }) : hiv('kod', { kod: kod, email: email, nyelv: NY })).then(function (v) {
       g.disabled = false;
       if (v.st === 200 && v.d.ok) {
         allapot = { email: email, kod: kod }; m.textContent = '';
