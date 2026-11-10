@@ -297,7 +297,19 @@
   // served by the gate -> same origin; anywhere else -> the gate's public address (CORS allowed for listed origins)
   var ALAP = location.pathname.indexOf('/gate/') === 0 ? '' : 'https://app.prepperpapa.hu';
   // the invisible proof of work before the code mail (kapu.mjs, card 5087022b): the solver comes from the gate itself
-  (function () { var sc = document.createElement('script'); sc.src = ALAP + '/gate/szamitasi-proba.js'; document.head.appendChild(sc); })();
+  // THE SOLVER IS READY BEFORE THE FIRST CODE REQUEST (Agnes 32029 via Marveen 32030): loaded (again) on demand, at most
+  // 8 s of waiting; a failed load is retried on the next tap. Without it the request goes as before (transition mode).
+  function ppPowBetolt(alap) {
+    if (window.ppPowKuld) return Promise.resolve(true);
+    if (!ppPowBetolt.p) ppPowBetolt.p = new Promise(function (kesz) {
+      var sc = document.createElement('script');
+      var vege = function () { if (!window.ppPowKuld) ppPowBetolt.p = null; kesz(!!window.ppPowKuld); };
+      sc.src = alap + '/gate/szamitasi-proba.js'; sc.onload = vege; sc.onerror = vege; setTimeout(vege, 8000);
+      document.head.appendChild(sc);
+    });
+    return ppPowBetolt.p;
+  }
+  ppPowBetolt(ALAP);   // start loading at once; the code request waits for it
   var $ = function (id) { return document.getElementById(id); };
 
   function nyelvValaszt() {
@@ -333,7 +345,7 @@
     if (!emailJo(email)) return uzen('uz1', 'h_email', true);
     $('kodKer').disabled = true; uzen('uz1', '');
     var ker = function (x) { var o = { email: email, nyelv: ny }; for (var k in x) o[k] = x[k]; return post('/gate/fiok-torles/kod', o); };
-    (window.ppPowKuld ? window.ppPowKuld(ker) : ker({})).then(function (r) {
+    ppPowBetolt(ALAP).then(function () { return window.ppPowKuld ? window.ppPowKuld(ker) : ker({}); }).then(function (r) {
       $('kodKer').disabled = false;
       if (r.st === 200) { $('lepes1').hidden = true; $('lepes2').hidden = false; uzen('uz2', ''); $('kod').focus(); return; }
       uzen('uz1', r.st === 429 ? 'h_sok' : r.st === 400 ? 'h_email' : 'h_szerver', true);
