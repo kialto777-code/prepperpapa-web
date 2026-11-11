@@ -60,6 +60,9 @@ function ppSzovegForditas(gyoker) {
       // PRAYER REQUESTS ARE USER TEXT (card 5cde756b): a nickname "Anna" became "Hannah" in the English UI (measured in
       // imaszoba-imakeres-teszt.mjs). .ik-felh = the requester's own words (nickname, text, thank-you); never translated here.
       if (p.closest('.ik-felh')) continue;
+      // THE VERSE QUIZ / IGETANULÓ TEXT IS SCRIPTURE (Thomas 32280, 11-11): the first-letter hints split a verse into lone letters
+      // and short pieces, and pl 'D' -> 'S', 'p' -> 'min' came from the UI dictionary. .bibtanul-vers holds only verse text.
+      if (p.closest('.bibtanul-vers')) continue;
       if (p.closest('.pp-nyb-szoveg, .kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat, .bibtm-cella, .bibtm-fejlec, .bibtm-forras, .bkp-szo, .biberedeti-forma, .biberedeti-hu, .biberedeti-sor > span + span, .biberedeti-szotar p, .bibjz-user')) continue;
       const eredeti = PP_FORD_EREDETI.has(cs) ? PP_FORD_EREDETI.get(cs) : cs.textContent;
       const kulcs = eredeti.replace(/\s+/g, ' ').trim();

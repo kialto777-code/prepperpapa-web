@@ -7234,5 +7234,62 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Irányítópult: a radar könnyített módban is forog; az új pontok nagyobbat villannak, a Befutó hírek elemei megnyitják az eseményt, a térkép nagyítható és húzható.": "Pulpit: radar kręci się także w trybie uproszczonym; nowe punkty błyskają mocniej, pozycje Nadchodzących wiadomości otwierają swoje zdarzenie, a mapę można powiększać i przeciągać.",
   "Biblia: simább 3D galaxis a háttérben.": "Biblia: płynniejsza galaktyka 3D w tle.",
   "Wordlight: minden megosztási link a wordlight.hu oldalra mutat.": "Wordlight: wszystkie linki do udostępniania prowadzą teraz na wordlight.hu.",
-  "Kisebb javítások és fordítások.": "Drobne poprawki i tłumaczenia."
+  "Kisebb javítások és fordítások.": "Drobne poprawki i tłumaczenia.",
+  // Wordlight phone start page (Boss TG 10052): lantern aria-label, the ring centre button, the weekly card title
+  "Menü": "Menu",
+  "Bezár": "Zamknij",
+  "A héten": "W tym tygodniu"
+});
+// ===== Ujdonsagok v43.474 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Wordlight, telefon álló helyzetben: új kezdőlap, felül lapos térkép, alatta 2×2 csempe a lámpással a közepén; koppintásra forgatható modulgyűrű nyílik, lejjebb a Befutó hírek.": "Wordlight, telefon w pionie: nowa strona główna z płaską mapą u góry i kafelkami 2×2 poniżej, z latarnią pośrodku; dotknięcie otwiera obrotowy pierścień modułów, a niżej są Wiadomości przychodzące.",
+  "Az oldalfejlécek visszaálltak a korábbi kinézetre: görgetéskor nincs vonal és árnyék; a Biblia lapjainak fejléce megtartja.": "Nagłówki stron wróciły do dawnego wyglądu: przy przewijaniu bez linii i cienia; nagłówki arkuszy Biblii je zachowują.",
+  "Térkép: a hírfolyamból megnyitott esemény már nem kerül a keresősáv alá.": "Mapa: wydarzenie otwarte z kanału wiadomości nie chowa się już pod paskiem wyszukiwania.",
+  "Irányítópult: keskeny telefonon az üdvözlés már nem mutat levágott betűket.": "Pulpit: na wąskich telefonach powitanie nie pokazuje już ściętych liter.",
+  "Igekártyák nyomtatása: a telefon saját nyomtatási előnézetében nyílnak meg, és teljes vonalak helyett sarokjelek mutatják a vágást.": "Drukowanie kart z wersetami: otwierają się w podglądzie wydruku samego telefonu, a cięcie wskazują znaczniki narożne zamiast pełnych linii.",
+  "Kezdőlap szerkesztése: a KÉSZ gomb a helyére került, és nem takarja a fejléc gombjait.": "Edycja ekranu głównego: przycisk GOTOWE jest na właściwym miejscu i nie zasłania przycisków nagłówka.",
+  "Hirdetés: a teljes kártya megnyitja a terméket.": "Reklama: cała karta otwiera produkt.",
+  "Könnyített megjelenítés: erős telefon magától nem vált át, és a kereső- és üzenetmezők üveghatása megmarad.": "Tryb lekkiego wyświetlania: mocny telefon nie włącza go sam, a pola wyszukiwania i wiadomości zachowują efekt szkła.",
+  "Világhelyzet: csak az igazán figyelmet érdemlő események jelennek meg, a kisebb földrengések és az ismétlődő hírek nem.": "Sytuacja na świecie: pojawiają się tylko zdarzenia naprawdę warte uwagi; mniejsze trzęsienia ziemi i powtarzające się doniesienia są pomijane.",
+  "Bibliai játékok: a válasz megjelölése azonnal ellenőriz (nincs külön Ellenőrzés gomb), és közben egy rövid, a játék zenéjéhez illő felfokozó hang szól.": "Gry biblijne: zaznaczenie odpowiedzi od razu ją sprawdza (bez osobnego przycisku Sprawdź), a w tle rozbrzmiewa krótki, narastający dźwięk pasujący do muzyki gry.",
+  "Kisebb javítások és fordítások.": "Drobne poprawki i tłumaczenia.",
+  "A licenc szövege": "Tekst licencji",
+  "Linket nem tehetsz bele. Vedd ki, és küldd újra.": "Nie możesz wstawić linku. Usuń go i wyślij ponownie.",
+  "Háromnál több számjegy egymás után nem lehet benne (például telefonszám). Vedd ki, és küldd újra.": "Nie może zawierać więcej niż trzech cyfr z rzędu (na przykład numeru telefonu). Usuń je i wyślij ponownie."
+});
+// ===== Ujdonsagok v43.475 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Wordlight, telefonos kezdőlap: a modulgyűrű ott marad, ahová elforgattad, újraindítás után is; forgatás közben finoman kattog, mint egy racsnis tárcsa.": "Wordlight, ekran startowy na telefonie: pierścień modułów zostaje tam, gdzie go obróciłeś, także po ponownym uruchomieniu; przy obracaniu delikatnie klika jak pokrętło z zapadką.",
+  "Wordlight, telefonos kezdőlap: a lámpás csak középen áll, és úgy csillog, mint a fejléc keresztje; a fejléc a csempék széléhez igazodik.": "Wordlight, ekran startowy na telefonie: latarnia stoi tylko pośrodku i lśni jak krzyż w nagłówku; nagłówek wyrównuje się do krawędzi kafelków.",
+  "Wordlight, telefonos kezdőlap: a radarra koppintva megnyílik a világtérkép az eseményekkel; telefonon nincs jelmagyarázat, az UTC-idő zölden, háttér nélkül a radar alján áll.": "Wordlight, ekran startowy na telefonie: dotknięcie radaru otwiera mapę świata ze zdarzeniami; na telefonie nie ma legendy, a czas UTC widać na zielono, bez tła, na dole radaru.",
+  "Wordlight, telefonos kezdőlap: a hosszú feliratok (például oroszul, németül) már nem csúsznak egymásra.": "Wordlight, ekran startowy na telefonie: długie napisy (na przykład po rosyjsku lub niemiecku) już na siebie nie nachodzą.",
+  "Bibliai családfa: minden megnevezett bibliai szereplő benne van, mind időben elhelyezve, köztük Jób és gyermekei; a nagyszülők ágán a gyermekek és az unokák külön sorban állnak, a nézett személy a nevével, aranykeretben.": "Biblijne drzewo genealogiczne: są w nim wszystkie imiennie wymienione osoby Biblii, wszystkie osadzone w czasie, wśród nich Hiob i jego dzieci; na gałęzi dziadków dzieci i wnuki stoją w osobnych rzędach, a oglądana osoba z imieniem, w złotej ramce.",
+  "Biblia: a kijelölt vers számára újra koppintva a kijelölés megszűnik, akkor is, ha kicsit mellé koppintasz.": "Biblia: ponowne dotknięcie numeru zaznaczonego wersetu usuwa zaznaczenie, nawet jeśli dotkniesz trochę obok.",
+  "Imakérések: link és háromnál több egymás utáni számjegy nem küldhető be, és a szűrő 8 nyelven több sértő szót ismer fel.": "Prośby o modlitwę: nie można wysłać linku ani więcej niż trzech cyfr z rzędu, a filtr rozpoznaje więcej obraźliwych słów w 8 językach.",
+  "Névjegy: a Sámuel-hang hangkódolójának (Higgs Audio 2) licence-feltüntetése.": "O aplikacji: informacja licencyjna tokenizera audio (Higgs Audio 2) używanego w głosie Samuela.",
+  // Pipa A, prayer form (Boss TG 38204/38206)
+  "A Beküldés gombbal elfogadod a {link}.": "Naciskając Wyślij, akceptujesz {link}.",
+  "Felhasználási feltételeket": "Warunki korzystania",
+  "A beküldéshez jelöld be a hozzájárulást.": "Aby wysłać, zaznacz pole zgody."
+});
+// ===== Ujdonsagok v43.476 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Wordlight, telefonos kezdőlap: a pontok akkor villannak fel, amikor a radarvonal áthalad rajtuk, akkor is, ha az oldal sokáig nyitva van; a térkép kitölti a csempét, az UTC-idő a csempe alján áll.": "Wordlight, ekran startowy na telefonie: punkty rozbłyskują, gdy linia radaru nad nimi przechodzi, także gdy strona jest długo otwarta; mapa wypełnia kafelek, a czas UTC widać na dole kafelka.",
+  "Memóriajáték, két játékos: minden pár annak a játékosnak a színével kap keretet, aki megtalálta, és a pontszám is ugyanezekkel a színekkel látszik.": "Gra w pary, dwóch graczy: każda para dostaje kolor ramki gracza, który ją znalazł, a wynik pokazuje te same kolory.",
+  "Biblia: új mottó, „Ha pedig a világosságban járunk, közösségünk van egymással.” (1Ján 1:7), a nyitóképen, minden fejezet végén a forrássor alatt és a Mások imakérései oldal tetején.": "Biblia: nowe motto, „A jeśli chodzimy w światłości, mamy społeczność między sobą.” (1J 1,7), na ekranie startowym, pod linią źródła na końcu każdego rozdziału i na górze strony z prośbami innych.",
+  "Biblia: a könyvválasztó fejlécén a galaxis-háttér mellett is átlátszanak a csillagok, ahogy az imádság oldalán.": "Biblia: w nagłówku wyboru ksiąg gwiazdy prześwitują także przy tle galaktyki, jak na stronie modlitwy.",
+  "Imakérés beküldése: egyetlen jelölőnégyzet a hozzájárulásra, a Felhasználási feltételeket a Beküldés gomb melletti sor jelzi; a szűrő a kicsillagozott és kipontozott csúnya szavakat is felismeri.": "Wysyłanie prośby o modlitwę: jedno pole na zgodę, Warunki korzystania wskazuje wiersz obok przycisku Wyślij; filtr rozpoznaje też obraźliwe słowa pisane z gwiazdkami lub kropkami.",
+  "Beállítások: a választható mentési és szinkron-beállítások kapcsolóként jelennek meg.": "Ustawienia: opcjonalne ustawienia kopii zapasowej i synchronizacji wyglądają jak przełączniki.",
+  "Versek kvíz és Igetanuló: a kezdőbetűs segítség más nyelvű felületen sem változik meg.": "Quiz wersetów i nauka wersetów: podpowiedź z pierwszymi literami nie zmienia się już w innych językach interfejsu."
+});
+// ===== Biblia-kereso torlo X (2026-11-11, card 05df7bed) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Keresés törlése": "Wyczyść wyszukiwanie"
+});
+// ===== Ujdonsagok v43.477 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Wordlight: a Beállításokban a Használati útmutató gomb a Wordlight saját útmutatóját nyitja meg, a felület nyelvén.": "Wordlight: w Ustawieniach przycisk Przewodnik otwiera własny przewodnik Wordlight, w języku interfejsu.",
+  "Wordlight: az értesítéseknél a telefon fejlécében a Wordlight saját ikonja látszik a PrepperPapa lámpása helyett.": "Wordlight: powiadomienia pokazują na pasku stanu telefonu własną ikonę Wordlight zamiast latarni PrepperPapa.",
+  "Biblia-kereső: elírt szónál vagy rossz ragozásnál a hasonló alakokat ajánlja fel, és azokkal keres, több szónál az összesített találatban is.": "Wyszukiwanie w Biblii: przy literówce lub złej końcówce proponuje podobne formy i szuka z nimi, przy kilku słowach także w wyniku łącznym.",
+  "Biblia-kereső: a mezőt az X gombbal egy koppintással ki lehet üríteni.": "Wyszukiwanie w Biblii: przycisk X czyści pole jednym dotknięciem."
 });

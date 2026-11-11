@@ -6188,7 +6188,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Elfogadom a Felhasználási feltételeket.": "Accept Condițiile de utilizare.",
   "Felhasználási feltételek": "Condiții de utilizare",
   "Hozzájárulok, hogy a kérésem nyilvánosan megjelenjen, akkor is, ha a hitemre vagy az egészségemre utal.": "Sunt de acord ca cererea mea să apară public, chiar dacă se referă la credința sau la sănătatea mea.",
-  "Elmúltam 16 éves, vagy a szülőm hozzájárult.": "Am peste 16 ani sau părintele meu și-a dat consimțământul.",
+  "Elmúltam 16 éves, vagy a szülőm hozzájárult.": "Am împlinit 16 ani sau părintele meu și-a dat consimțământul.",
   "Beküldés": "Trimite",
   "A helyedet nem kaptam meg. Válaszd ki az országot és a megyét a listából.": "Nu am primit locația ta. Alege țara și județul din listă.",
   "Ellenőrizd a megyét: határ közelében átírhatod.": "Verifică județul: lângă o graniță îl poți schimba.",
@@ -7223,5 +7223,62 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Irányítópult: a radar könnyített módban is forog; az új pontok nagyobbat villannak, a Befutó hírek elemei megnyitják az eseményt, a térkép nagyítható és húzható.": "Panou de control: radarul se învârte și în afișarea ușoară; punctele noi clipesc mai mare, elementele din Știri în curs deschid evenimentul lor, iar harta poate fi mărită și trasă.",
   "Biblia: simább 3D galaxis a háttérben.": "Biblia: galaxie 3D mai fluidă în fundal.",
   "Wordlight: minden megosztási link a wordlight.hu oldalra mutat.": "Wordlight: toate linkurile de partajare duc acum la wordlight.hu.",
-  "Kisebb javítások és fordítások.": "Mici corecturi și traduceri."
+  "Kisebb javítások és fordítások.": "Mici corecturi și traduceri.",
+  // Wordlight phone start page (Boss TG 10052): lantern aria-label, the ring centre button, the weekly card title
+  "Menü": "Meniu",
+  "Bezár": "Închide",
+  "A héten": "Săptămâna aceasta"
+});
+// ===== Ujdonsagok v43.474 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Wordlight, telefon álló helyzetben: új kezdőlap, felül lapos térkép, alatta 2×2 csempe a lámpással a közepén; koppintásra forgatható modulgyűrű nyílik, lejjebb a Befutó hírek.": "Wordlight, telefon pe verticală: o pagină de start nouă, cu o hartă plată sus și dale 2×2 dedesubt, cu felinarul la mijloc; o atingere deschide un inel rotativ de module, iar mai jos sunt Știrile primite.",
+  "Az oldalfejlécek visszaálltak a korábbi kinézetre: görgetéskor nincs vonal és árnyék; a Biblia lapjainak fejléce megtartja.": "Antetele paginilor au revenit la aspectul anterior: fără linie și fără umbră la derulare; antetele foilor Bibliei le păstrează.",
+  "Térkép: a hírfolyamból megnyitott esemény már nem kerül a keresősáv alá.": "Hartă: un eveniment deschis din fluxul de știri nu mai rămâne ascuns sub bara de căutare.",
+  "Irányítópult: keskeny telefonon az üdvözlés már nem mutat levágott betűket.": "Panou: pe telefoanele înguste, salutul nu mai arată litere tăiate.",
+  "Igekártyák nyomtatása: a telefon saját nyomtatási előnézetében nyílnak meg, és teljes vonalak helyett sarokjelek mutatják a vágást.": "Tipărirea cardurilor cu versete: se deschid în previzualizarea de tipărire a telefonului, iar tăierea este marcată prin semne în colț în loc de linii întregi.",
+  "Kezdőlap szerkesztése: a KÉSZ gomb a helyére került, és nem takarja a fejléc gombjait.": "Editarea ecranului principal: butonul GATA este la locul lui și nu mai acoperă butoanele din antet.",
+  "Hirdetés: a teljes kártya megnyitja a terméket.": "Reclamă: întregul card deschide produsul.",
+  "Könnyített megjelenítés: erős telefon magától nem vált át, és a kereső- és üzenetmezők üveghatása megmarad.": "Mod de afișare ușor: un telefon puternic nu trece singur la el, iar câmpurile de căutare și de mesaj își păstrează efectul de sticlă.",
+  "Világhelyzet: csak az igazán figyelmet érdemlő események jelennek meg, a kisebb földrengések és az ismétlődő hírek nem.": "Situația mondială: apar doar evenimentele care merită cu adevărat atenție; cutremurele mici și știrile repetate sunt omise.",
+  "Bibliai játékok: a válasz megjelölése azonnal ellenőriz (nincs külön Ellenőrzés gomb), és közben egy rövid, a játék zenéjéhez illő felfokozó hang szól.": "Jocurile biblice: marcarea răspunsului îl verifică imediat (fără un buton Verifică separat), cu un scurt sunet de tensiune potrivit muzicii jocului.",
+  "Kisebb javítások és fordítások.": "Mici corecturi și traduceri.",
+  "A licenc szövege": "Textul licenței",
+  "Linket nem tehetsz bele. Vedd ki, és küldd újra.": "Nu poți pune un link. Scoate-l și trimite din nou.",
+  "Háromnál több számjegy egymás után nem lehet benne (például telefonszám). Vedd ki, és küldd újra.": "Nu poate conține mai mult de trei cifre la rând (de exemplu un număr de telefon). Scoate-le și trimite din nou."
+});
+// ===== Ujdonsagok v43.475 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Wordlight, telefonos kezdőlap: a modulgyűrű ott marad, ahová elforgattad, újraindítás után is; forgatás közben finoman kattog, mint egy racsnis tárcsa.": "Wordlight, pagina de start pe telefon: inelul de module rămâne unde l-ai rotit, chiar și după repornire; în timp ce îl rotești, face un clic ușor, ca o rotiță cu clichet.",
+  "Wordlight, telefonos kezdőlap: a lámpás csak középen áll, és úgy csillog, mint a fejléc keresztje; a fejléc a csempék széléhez igazodik.": "Wordlight, pagina de start pe telefon: felinarul stă doar în mijloc și strălucește ca crucea din antet; antetul se aliniază cu marginile plăcilor.",
+  "Wordlight, telefonos kezdőlap: a radarra koppintva megnyílik a világtérkép az eseményekkel; telefonon nincs jelmagyarázat, az UTC-idő zölden, háttér nélkül a radar alján áll.": "Wordlight, pagina de start pe telefon: o atingere pe radar deschide harta lumii cu evenimentele; pe telefon nu există legendă, iar ora UTC apare verde, fără fundal, în partea de jos a radarului.",
+  "Wordlight, telefonos kezdőlap: a hosszú feliratok (például oroszul, németül) már nem csúsznak egymásra.": "Wordlight, pagina de start pe telefon: etichetele lungi (de exemplu în rusă sau germană) nu se mai suprapun.",
+  "Bibliai családfa: minden megnevezett bibliai szereplő benne van, mind időben elhelyezve, köztük Jób és gyermekei; a nagyszülők ágán a gyermekek és az unokák külön sorban állnak, a nézett személy a nevével, aranykeretben.": "Arborele genealogic biblic: conține toate persoanele numite din Biblie, toate așezate în timp, printre ele Iov și copiii lui; pe ramura bunicilor, copiii și nepoții stau pe rânduri separate, iar persoana pe care o vezi apare cu numele ei, într-un chenar auriu.",
+  "Biblia: a kijelölt vers számára újra koppintva a kijelölés megszűnik, akkor is, ha kicsit mellé koppintasz.": "Biblia: o nouă atingere pe numărul unui verset selectat anulează selecția, chiar dacă atingi puțin alături.",
+  "Imakérések: link és háromnál több egymás utáni számjegy nem küldhető be, és a szűrő 8 nyelven több sértő szót ismer fel.": "Cereri de rugăciune: nu se pot trimite linkuri sau mai mult de trei cifre la rând, iar filtrul recunoaște mai multe cuvinte jignitoare în 8 limbi.",
+  "Névjegy: a Sámuel-hang hangkódolójának (Higgs Audio 2) licence-feltüntetése.": "Despre: mențiunea de licență a tokenizerului audio (Higgs Audio 2) din vocea lui Samuel.",
+  // Pipa A, prayer form (Boss TG 38204/38206)
+  "A Beküldés gombbal elfogadod a {link}.": "Apăsând Trimite, accepți {link}.",
+  "Felhasználási feltételeket": "Condițiile de utilizare",
+  "A beküldéshez jelöld be a hozzájárulást.": "Pentru a trimite, bifează caseta de consimțământ."
+});
+// ===== Ujdonsagok v43.476 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Wordlight, telefonos kezdőlap: a pontok akkor villannak fel, amikor a radarvonal áthalad rajtuk, akkor is, ha az oldal sokáig nyitva van; a térkép kitölti a csempét, az UTC-idő a csempe alján áll.": "Wordlight, pagina de start pe telefon: punctele se aprind când linia radarului trece peste ele, și când pagina e deschisă de mult; harta umple placa, iar ora UTC stă jos pe placă.",
+  "Memóriajáték, két játékos: minden pár annak a játékosnak a színével kap keretet, aki megtalálta, és a pontszám is ugyanezekkel a színekkel látszik.": "Jocul de memorie, doi jucători: fiecare pereche primește culoarea jucătorului care a găsit-o, iar scorul arată aceleași culori.",
+  "Biblia: új mottó, „Ha pedig a világosságban járunk, közösségünk van egymással.” (1Ján 1:7), a nyitóképen, minden fejezet végén a forrássor alatt és a Mások imakérései oldal tetején.": "Biblia: un motto nou, „Iar de vom umblà întru lumină, împărtășire avem unii cu alții.” (1Ioan 1:7), pe ecranul de pornire, sub rândul sursei la sfârșitul fiecărui capitol și sus pe pagina cererilor celorlalți.",
+  "Biblia: a könyvválasztó fejlécén a galaxis-háttér mellett is átlátszanak a csillagok, ahogy az imádság oldalán.": "Biblia: în antetul selectorului de cărți stelele se văd și cu fundalul galaxie, ca pe pagina de rugăciune.",
+  "Imakérés beküldése: egyetlen jelölőnégyzet a hozzájárulásra, a Felhasználási feltételeket a Beküldés gomb melletti sor jelzi; a szűrő a kicsillagozott és kipontozott csúnya szavakat is felismeri.": "Trimiterea unei cereri de rugăciune: o singură casetă pentru consimțământ, Condițiile de utilizare sunt indicate de un rând lângă butonul Trimite; filtrul recunoaște și cuvintele jignitoare scrise cu steluțe sau puncte.",
+  "Beállítások: a választható mentési és szinkron-beállítások kapcsolóként jelennek meg.": "Setări: setările opționale de copiere de rezervă și sincronizare apar ca întrerupătoare.",
+  "Versek kvíz és Igetanuló: a kezdőbetűs segítség más nyelvű felületen sem változik meg.": "Quizul de versete și învățarea versetelor: ajutorul cu inițiale nu se mai schimbă în alte limbi ale interfeței."
+});
+// ===== Biblia-kereso torlo X (2026-11-11, card 05df7bed) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Keresés törlése": "Șterge căutarea"
+});
+// ===== Ujdonsagok v43.477 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Wordlight: a Beállításokban a Használati útmutató gomb a Wordlight saját útmutatóját nyitja meg, a felület nyelvén.": "Wordlight: în Setări, butonul Ghid de utilizare deschide ghidul propriu Wordlight, în limba interfeței.",
+  "Wordlight: az értesítéseknél a telefon fejlécében a Wordlight saját ikonja látszik a PrepperPapa lámpása helyett.": "Wordlight: notificările arată în bara de stare a telefonului pictograma proprie Wordlight în locul felinarului PrepperPapa.",
+  "Biblia-kereső: elírt szónál vagy rossz ragozásnál a hasonló alakokat ajánlja fel, és azokkal keres, több szónál az összesített találatban is.": "Căutarea în Biblie: la un cuvânt scris greșit sau cu o terminație greșită oferă formele asemănătoare și caută cu ele, la mai multe cuvinte și în rezultatul comun.",
+  "Biblia-kereső: a mezőt az X gombbal egy koppintással ki lehet üríteni.": "Căutarea în Biblie: butonul X golește câmpul cu o atingere."
 });
