@@ -7282,3 +7282,88 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Biblia-kereső: elírt szónál vagy rossz ragozásnál a hasonló alakokat ajánlja fel, és azokkal keres, több szónál az összesített találatban is.": "Căutarea în Biblie: la un cuvânt scris greșit sau cu o terminație greșită oferă formele asemănătoare și caută cu ele, la mai multe cuvinte și în rezultatul comun.",
   "Biblia-kereső: a mezőt az X gombbal egy koppintással ki lehet üríteni.": "Căutarea în Biblie: butonul X golește câmpul cu o atingere."
 });
+// ===== Ujdonsagok v43.478 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Biblia-felolvasás: a sebesség csúszkájának vagy a felolvasó panel gombjainak megnyomása közben a görgetés nem torpan meg, csak az új sebességre vált; ugyanígy az automatikus görgetés +/- gombjánál.": "Citirea Bibliei cu voce tare: cât timp apeși glisorul de viteză sau butoanele panoului de citire, derularea nu se mai oprește, doar trece la noua viteză; la fel la butoanele +/- ale derulării automate."
+});
+// ===== Hirlevel megerosites ablak (2026-11-11, card fb0e3000, Istvan 32532) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Küldtünk egy megerősítő e-mailt ide:": "Ți-am trimis un e-mail de confirmare la adresa:",
+  "A feliratkozás akkor lesz érvényes, ha a levélben lévő linket megnyitod, és megnyomod a „Megerősítem” gombot.": "Abonarea devine valabilă când deschizi linkul din e-mail și apeși butonul „Confirm”.",
+  "Ha nem találod, nézd meg a Spam mappát is.": "Dacă nu îl găsești, uită-te și în dosarul Spam."
+});
+// ===== Ujdonsagok v43.479 (2026-11-12) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Wordlight: a Fiók és hírlevél részben feliratkozhatsz a havi Wordlight-hírlevélre: a hónap meghallgatott imakéréseinek összefoglalója és a havi statisztika, havonta legfeljebb egyszer. A feliratkozás a megerősítő levélben lévő gombbal lesz érvényes.": "Wordlight: la Cont și buletin informativ te poți abona la buletinul lunar Wordlight: un rezumat al cererilor de rugăciune ascultate din lună și statisticile lunare, cel mult o dată pe lună. Abonarea devine valabilă după butonul din e-mailul de confirmare.",
+  "Hírlevél: a pipa bejelölése után egy ablak megmondja, hogy a feliratkozást a kapott e-mailben kell megerősíteni.": "Buletin informativ: după bifarea căsuței, o fereastră îți spune că trebuie să confirmi abonarea în e-mailul primit.",
+  "Wordlight: egyetlen beállítási képernyő; a kezdőlap és az olvasó fogaskereke ugyanazt nyitja meg.": "Wordlight: un singur ecran de setări; rotița de pe pagina de start și cea din cititor deschid același ecran.",
+  "Wordlight: a Biblia keresőmezőjébe koppintva a fejléc már nem változik meg.": "Wordlight: atingerea câmpului de căutare din Biblie nu mai schimbă antetul.",
+  "Wordlight: a lámpás gyűrű kinyílásakor minden csempe egy finom rezgéssel érkezik.": "Wordlight: la deschiderea inelului felinarului, fiecare plăcuță sosește cu o vibrație ușoară.",
+  "A mottó a Wordlight nyitóképernyőjén, a „Mások imakérései” lap tetején és minden fejezet végén látszik; a PrepperPapa Biblia kezdőlapjáról lekerült.": "Motoul apare pe ecranul de pornire Wordlight, în partea de sus a paginii „Cererile altora” și la sfârșitul fiecărui capitol; a fost scos de pe pagina de start a Bibliei din PrepperPapa.",
+});
+// ===== Betumeret-valaszto (v43.479 nyelvi kapu: a Wordlight osszevont beallitasaban magyarul maradt) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Kicsi (90%)": "Mic (90%)",
+  "Nagyobb (115%)": "Mai mare (115%)",
+});
+
+// ===== PrepperPapa irányítópult (kártya d41df713, Főnök TG 38516) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "{n} esemény": "{n} evenimente",
+  "Most nincs friss esemény.": "Acum nu există evenimente noi.",
+  "A világhelyzet még nem töltődött le.": "Situația mondială nu s-a descărcat încă.",
+  "Hozzád legközelebb": "Cel mai aproape de tine",
+  "nap (gyűrű)": "z",
+  "hó (gyűrű)": "l",
+  "év (gyűrű)": "a",
+  "Kevés": "Puțin",
+  "Kritikus": "Critic",
+  "Nincs adat": "Fără date",
+  "Még nincs helyszín.": "Încă nu există locație.",
+  "Nap · légnyomás": "Soare · presiune",
+  "Légnyomás": "Presiune",
+  "nap múlva": "zile rămase",
+  "hónap múlva": "luni rămase",
+  "év múlva": "ani rămași",
+  "{mi} fogy el": "Se termină: {mi}",
+  "Nincs mért készlet.": "Nicio rezervă măsurată.",
+  "Lejárt": "Expirat",
+  "Ma jár le": "Expiră azi",
+  "Lejár {n} nap": "Expiră în {n} z",
+  "Szoba · üzenetek": "Cameră · mesaje",
+  "Még nem vagy tagja szobának. Koppints ide, és csatlakozz egyhez.": "Încă nu ești în nicio cameră. Atinge aici ca să intri într-una.",
+  "{n} új": "{n} noi",
+  "Titkosított üzenet": "Mesaj criptat",
+  "Még nincs üzenet ezen a készüléken. Koppints ide a szoba megnyitásához.": "Pe acest dispozitiv nu există încă mesaje. Atinge aici ca să deschizi camera.",
+  "Melyik szoba üzenetei látszódjanak?": "Mesajele cărei camere să apară?",
+  "Tudástár · napi kártya": "Bază de cunoștințe · cartea zilei",
+  "A mai kártya betöltése…": "Se încarcă cartea de azi…",
+  "Funkciók": "Funcții",
+});
+// the dashboard news rows use short category names (approved mockup, card d41df713)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Tűz": "Incendiu",
+  "Vihar": "Furtună",
+  "Vulkán": "Vulcan",
+  "Zavargás": "Tulburări",
+  "Konfliktus": "Conflict",
+});
+
+// ===== Ujdonsagok v43.480 (2026-11-12) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "PrepperPapa: új kezdőképernyő, az irányítópult. Egy helyen látod a helyszínek készültségét, a napkeltét, a légnyomást, a készletet, a világhelyzet-térképet, a szobákat és a tudástárat; a középső pajzs nyitja a funkciókat.": "PrepperPapa: un nou ecran de pornire, panoul. Într-un singur loc vezi gradul de pregătire al locurilor tale, răsăritul, presiunea atmosferică, stocul, harta situației mondiale, camerele și baza de cunoștințe; scutul din mijloc deschide funcțiile.",
+  "Irányítópult: a világhelyzet-térkép két ujjal nagyítható és mozgatható, dupla koppintással közelít, és megjegyzi a nézetet.": "Panou: harta situației mondiale se mărește și se mută cu două degete, o atingere dublă apropie, iar vederea este reținută.",
+  "Irányítópult: a helyszín állapota (Rendben, Kevés, Kritikus) a víz, az élelem és a fűtés alapján jön; az áram a Kockázat lapon látszik.": "Panou: starea unui loc (În regulă, Puțin, Critic) se calculează din apă, hrană și încălzire; curentul apare în fila Risc.",
+  "Biblia-felolvasás: a háttérzene az elején 3,5 másodperc alatt fokozatosan hangosodik fel.": "Citirea Bibliei cu voce tare: muzica de fundal crește treptat în primele 3,5 secunde.",
+  "Biblia-kvíz: a Ki mondta? és a Hol van? válaszai A, B, C, D betűs, TV-kvíz stílusú sávokon jelennek meg.": "Test biblic: răspunsurile de la Cine a spus? și Unde este? apar pe bare în stil de concurs TV, cu literele A, B, C, D.",
+  "Világhelyzet és imakérések: ország helyett a palesztin lakosokat nevezzük meg, és ahol az esemény ott történt, Gázát vagy Ciszjordániát is.": "Situația mondială și cererile de rugăciune: în loc de o țară, numim populația palestiniană și, unde evenimentul a avut loc acolo, Gaza sau Cisiordania.",
+});
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Irányítópult: a pajzs menüjének tetején, a pajzs fölött van az éjszakai (vörös) mód kapcsolója és a tesztelőknek a Visszajelzés gomb.": "Panou: în partea de sus a meniului scutului, deasupra scutului, se află comutatorul modului de noapte (roșu) și, pentru testeri, butonul Feedback.",
+  "Irányítópult: a világhelyzet akkor is frissül, ha a kezdőképernyő nyitva marad.": "Panou: situația mondială se actualizează și când ecranul de pornire rămâne deschis.",
+});
+
+// ===== II. Mihály book audio version offer (Boss TG 11158) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "{konyv}: ehhez a könyvhöz újabb felolvasás érhető el ({hang} {v}). Letöltöd most az újat?": "{konyv}: este disponibilă o înregistrare mai nouă a acestei cărți ({hang} {v}). Descarci acum varianta nouă?",
+});

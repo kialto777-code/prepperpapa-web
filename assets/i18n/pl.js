@@ -7293,3 +7293,88 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Biblia-kereső: elírt szónál vagy rossz ragozásnál a hasonló alakokat ajánlja fel, és azokkal keres, több szónál az összesített találatban is.": "Wyszukiwanie w Biblii: przy literówce lub złej końcówce proponuje podobne formy i szuka z nimi, przy kilku słowach także w wyniku łącznym.",
   "Biblia-kereső: a mezőt az X gombbal egy koppintással ki lehet üríteni.": "Wyszukiwanie w Biblii: przycisk X czyści pole jednym dotknięciem."
 });
+// ===== Ujdonsagok v43.478 (2026-11-11) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Biblia-felolvasás: a sebesség csúszkájának vagy a felolvasó panel gombjainak megnyomása közben a görgetés nem torpan meg, csak az új sebességre vált; ugyanígy az automatikus görgetés +/- gombjánál.": "Czytanie Biblii na głos: podczas naciskania suwaka prędkości lub przycisków panelu czytania przewijanie już się nie zatrzymuje, tylko zmienia się na nową prędkość; tak samo przy przyciskach +/- automatycznego przewijania."
+});
+// ===== Hirlevel megerosites ablak (2026-11-11, card fb0e3000, Istvan 32532) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Küldtünk egy megerősítő e-mailt ide:": "Wysłaliśmy e-mail z potwierdzeniem na adres:",
+  "A feliratkozás akkor lesz érvényes, ha a levélben lévő linket megnyitod, és megnyomod a „Megerősítem” gombot.": "Subskrypcja zacznie obowiązywać, gdy otworzysz link z wiadomości i naciśniesz przycisk „Potwierdzam”.",
+  "Ha nem találod, nézd meg a Spam mappát is.": "Jeśli nie możesz go znaleźć, sprawdź też folder Spam."
+});
+// ===== Ujdonsagok v43.479 (2026-11-12) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Wordlight: a Fiók és hírlevél részben feliratkozhatsz a havi Wordlight-hírlevélre: a hónap meghallgatott imakéréseinek összefoglalója és a havi statisztika, havonta legfeljebb egyszer. A feliratkozás a megerősítő levélben lévő gombbal lesz érvényes.": "Wordlight: w sekcji Konto i newsletter możesz zapisać się na miesięczny newsletter Wordlight: podsumowanie wysłuchanych próśb modlitewnych z danego miesiąca i miesięczne statystyki, najwyżej raz w miesiącu. Zapis staje się ważny po naciśnięciu przycisku w e-mailu potwierdzającym.",
+  "Hírlevél: a pipa bejelölése után egy ablak megmondja, hogy a feliratkozást a kapott e-mailben kell megerősíteni.": "Newsletter: po zaznaczeniu pola okno informuje, że zapis trzeba potwierdzić w otrzymanym e-mailu.",
+  "Wordlight: egyetlen beállítási képernyő; a kezdőlap és az olvasó fogaskereke ugyanazt nyitja meg.": "Wordlight: jeden ekran ustawień; koło zębate na stronie startowej i w czytniku otwiera ten sam ekran.",
+  "Wordlight: a Biblia keresőmezőjébe koppintva a fejléc már nem változik meg.": "Wordlight: dotknięcie pola wyszukiwania w Biblii nie zmienia już nagłówka.",
+  "Wordlight: a lámpás gyűrű kinyílásakor minden csempe egy finom rezgéssel érkezik.": "Wordlight: po otwarciu pierścienia latarni każdy kafelek pojawia się z delikatną wibracją.",
+  "A mottó a Wordlight nyitóképernyőjén, a „Mások imakérései” lap tetején és minden fejezet végén látszik; a PrepperPapa Biblia kezdőlapjáról lekerült.": "Motto widać na ekranie startowym Wordlight, na górze strony „Prośby innych” i na końcu każdego rozdziału; ze strony startowej Biblii w PrepperPapa zostało usunięte.",
+});
+// ===== Betumeret-valaszto (v43.479 nyelvi kapu: a Wordlight osszevont beallitasaban magyarul maradt) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Kicsi (90%)": "Mały (90%)",
+  "Nagyobb (115%)": "Większy (115%)",
+});
+
+// ===== PrepperPapa irányítópult (kártya d41df713, Főnök TG 38516) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "{n} esemény": "zdarzenia: {n}",
+  "Most nincs friss esemény.": "Teraz brak nowych zdarzeń.",
+  "A világhelyzet még nem töltődött le.": "Sytuacja na świecie nie została jeszcze pobrana.",
+  "Hozzád legközelebb": "Najbliżej ciebie",
+  "nap (gyűrű)": "d",
+  "hó (gyűrű)": "mies.",
+  "év (gyűrű)": "l.",
+  "Kevés": "Mało",
+  "Kritikus": "Krytycznie",
+  "Nincs adat": "Brak danych",
+  "Még nincs helyszín.": "Nie ma jeszcze lokalizacji.",
+  "Nap · légnyomás": "Słońce · ciśnienie",
+  "Légnyomás": "Ciśnienie",
+  "nap múlva": "dni zostało",
+  "hónap múlva": "mies. zostało",
+  "év múlva": "lat zostało",
+  "{mi} fogy el": "Kończy się: {mi}",
+  "Nincs mért készlet.": "Brak zmierzonych zapasów.",
+  "Lejárt": "Przeterminowane",
+  "Ma jár le": "Termin mija dziś",
+  "Lejár {n} nap": "Termin za {n} d",
+  "Szoba · üzenetek": "Pokój · wiadomości",
+  "Még nem vagy tagja szobának. Koppints ide, és csatlakozz egyhez.": "Nie należysz jeszcze do żadnego pokoju. Dotknij tutaj, aby dołączyć.",
+  "{n} új": "nowe: {n}",
+  "Titkosított üzenet": "Zaszyfrowana wiadomość",
+  "Még nincs üzenet ezen a készüléken. Koppints ide a szoba megnyitásához.": "Na tym urządzeniu nie ma jeszcze wiadomości. Dotknij tutaj, aby otworzyć pokój.",
+  "Melyik szoba üzenetei látszódjanak?": "Wiadomości którego pokoju mają być widoczne?",
+  "Tudástár · napi kártya": "Baza wiedzy · karta dnia",
+  "A mai kártya betöltése…": "Wczytywanie dzisiejszej karty…",
+  "Funkciók": "Funkcje",
+});
+// the dashboard news rows use short category names (approved mockup, card d41df713)
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Tűz": "Pożar",
+  "Vihar": "Burza",
+  "Vulkán": "Wulkan",
+  "Zavargás": "Zamieszki",
+  "Konfliktus": "Konflikt",
+});
+
+// ===== Ujdonsagok v43.480 (2026-11-12) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "PrepperPapa: új kezdőképernyő, az irányítópult. Egy helyen látod a helyszínek készültségét, a napkeltét, a légnyomást, a készletet, a világhelyzet-térképet, a szobákat és a tudástárat; a középső pajzs nyitja a funkciókat.": "PrepperPapa: nowy ekran startowy, pulpit. W jednym miejscu widzisz gotowość swoich miejsc, wschód słońca, ciśnienie, zapasy, mapę sytuacji na świecie, pokoje i bazę wiedzy; tarcza pośrodku otwiera funkcje.",
+  "Irányítópult: a világhelyzet-térkép két ujjal nagyítható és mozgatható, dupla koppintással közelít, és megjegyzi a nézetet.": "Pulpit: mapę sytuacji na świecie można powiększać i przesuwać dwoma palcami, podwójne stuknięcie przybliża, a widok zostaje zapamiętany.",
+  "Irányítópult: a helyszín állapota (Rendben, Kevés, Kritikus) a víz, az élelem és a fűtés alapján jön; az áram a Kockázat lapon látszik.": "Pulpit: stan miejsca (OK, Mało, Krytycznie) wynika z wody, żywności i ogrzewania; prąd jest pokazany na karcie Ryzyko.",
+  "Biblia-felolvasás: a háttérzene az elején 3,5 másodperc alatt fokozatosan hangosodik fel.": "Czytanie Biblii na głos: muzyka w tle na początku stopniowo narasta przez 3,5 sekundy.",
+  "Biblia-kvíz: a Ki mondta? és a Hol van? válaszai A, B, C, D betűs, TV-kvíz stílusú sávokon jelennek meg.": "Quiz biblijny: odpowiedzi w Kto to powiedział? i Gdzie to jest? pojawiają się na paskach w stylu teleturnieju z literami A, B, C, D.",
+  "Világhelyzet és imakérések: ország helyett a palesztin lakosokat nevezzük meg, és ahol az esemény ott történt, Gázát vagy Ciszjordániát is.": "Sytuacja na świecie i prośby o modlitwę: zamiast kraju podajemy ludność palestyńską, a jeśli zdarzenie miało tam miejsce, także Strefę Gazy lub Zachodni Brzeg.",
+});
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Irányítópult: a pajzs menüjének tetején, a pajzs fölött van az éjszakai (vörös) mód kapcsolója és a tesztelőknek a Visszajelzés gomb.": "Pulpit: na górze menu tarczy, nad tarczą, jest przełącznik trybu nocnego (czerwonego), a dla testerów przycisk Opinie.",
+  "Irányítópult: a világhelyzet akkor is frissül, ha a kezdőképernyő nyitva marad.": "Pulpit: sytuacja na świecie odświeża się także wtedy, gdy ekran startowy pozostaje otwarty.",
+});
+
+// ===== II. Mihály book audio version offer (Boss TG 11158) =====
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "{konyv}: ehhez a könyvhöz újabb felolvasás érhető el ({hang} {v}). Letöltöd most az újat?": "{konyv}: dostępne jest nowsze nagranie tej księgi ({hang} {v}). Pobrać teraz nowe?",
+});
