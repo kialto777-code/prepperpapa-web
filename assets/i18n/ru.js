@@ -22,6 +22,17 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ru = {
+  // Morse pages, designs 10A-13A (Boss TG 39464 / 39470 / 39476 / 39482)
+  'Tanulás': 'Обучение',
+  'Jelsor': 'Последовательность',
+  'Sebesség és hang': 'Скорость и тон',
+  'fényjelző · készen áll': 'световой индикатор · готов',
+  'fényjelző · adás': 'световой индикатор · передача',
+  'A fény a kép közepén': 'Свет в центре кадра',
+  'Vett szöveg': 'Принятый текст',
+  'Küszöb, tempó, vétel sebesség': 'Порог, темп, скорость приёма',
+  'hallgatás áll': 'прослушивание остановлено',
+  'hallgat': 'слушает',
   "Könnyített megjelenítés": "Облегчённый режим отображения",
   "Automatikus": "Автоматически",
   "Bekapcsolva": "Включено",
@@ -334,6 +345,9 @@ window.PP_FORD_SZOTAR.ru = {
   "A nap járása": "Путь солнца",
   "Ajánlott beállítás": "Рекомендуемая установка",
   "Panel igazítása a tájolóval": "Выставить панель по компасу",
+  "dőlésszög": "наклон",
+  "tájolás": "направление",
+  "Koppints: a nap íve a kamera képén": "Нажми: дуга солнца на изображении камеры",
   "Várható termelés ezen a napon": "Ожидаемая выработка в этот день",
   "Szélesség, pl. 47.50": "Широта, напр. 47.50",
   "Hosszúság, pl. 19.04": "Долгота, напр. 19.04",
@@ -391,6 +405,10 @@ window.PP_FORD_SZOTAR.ru = {
   "Export: a lista fájlba, például a családnak. A teljes készlet törlése (Készlet ürítése) a Beállítások > Adatkezelés alatt van; előtte exportálj.": "Экспорт: список в файл, например для семьи. Удаление всех запасов (Очистить запасы) находится в Настройки > Данные; сначала экспортируй.",
   // ===== 2026-10-11 23:4x: teljes atnezes (bemutatkozas, visszajelzes, hianyzo feliratok) =====
   "Üdv Prepperek!": "Привет, препперы!",
+  // ===== "Ki vagyok?" design 27A (Boss TG 39590): row title, its subtitle word, the lead over the photo (= the first two clauses of the article's first paragraph translation) =====
+  "A teljes történet": "Вся история",
+  "Küldetés": "Миссия",
+  "PrepperPapa vagyok, egy készülődő ember, aki mindenhez érteni szeret. Gyerekkorom óta vonz minden, ami hálózattól és rendszertől független.": "Я PrepperPapa, человек, который готовится и любит во всём разбираться. С детства меня привлекает всё, что не зависит от сетей и системы.",
   "PrepperPapa vagyok, egy készülődő ember, aki mindenhez érteni szeret. Gyerekkorom óta vonz minden, ami hálózattól és rendszertől független, és az az érzés, amikor arra számíthatsz, ami a fejedben van tudás, és ami nálad van eszköz.": "Я PrepperPapa, человек, который готовится и любит во всём разбираться. С детства меня привлекает всё, что не зависит от сетей и системы, и то чувство, когда можешь положиться на знания в голове и на инструменты в руках.",
   "A prepperekről sokan hideg, bezárkózó embereket képzelnek el. Én azt hiszem, hogy a felkészülést nem a félelemnek kell vezetnie, hanem az önfeláldozó szeretetnek.": "Многие представляют препперов холодными, замкнутыми людьми. Я верю, что подготовкой должен руководить не страх, а жертвенная любовь.",
   "Ezért álmodtam meg ezt az alkalmazást: hogy mindenkinek reménysége legyen a sötétségben, és a nehéz időkben valódi eszköz, valódi segítség legyen a kezében, akkor is, ha nincs áram és nincs térerő.": "Поэтому я задумал это приложение: чтобы у каждого была надежда во тьме, а в трудные времена настоящий инструмент, настоящая помощь в руках, даже без электричества и связи.",
@@ -1602,6 +1620,8 @@ window.PP_FORD_SZOTAR.ru = {
     "Фото профиля",
   "A neved mellett jelenik meg. Nem kötelező.":
     "Появляется рядом с твоим именем. Не обязательно.",
+  "Profilkép · nem kötelező":
+    "Фото профиля · не обязательно",
   "Húzd a képet a körben, a csúszkával nagyíts. Csak a körben látszó rész kerül mentésre.":
     "Перетащи изображение внутри круга, масштабируй ползунком. Сохраняется только видимая в круге часть.",
   // room cover crop (owner 2026-11-02, TG 33680)
@@ -1686,6 +1706,8 @@ window.PP_FORD_SZOTAR.ru = {
   "Folyamatos hang": "Непрерывный тон",
   "Söprő hang frekvenciája": "Частота плавающего тона",
   "Folyamatos hang frekvenciája": "Частота непрерывного тона",
+  "Tudnivalók": "Полезно знать",
+  "Hangerő, háziállatok, fül": "Громкость, домашние животные, ухо",
   "Hz, lassan söprő hang. A legtöbb felnőtt ezt már nem hallja.":
     "Гц, медленно скользящий тон. Большинство взрослых его уже не слышит.",
   "Hz, folyamatos hang.":
@@ -2106,6 +2128,9 @@ window.PP_FORD_SZOTAR.ru = {
   "Helyzetem küldése": "Отправить моё местоположение",
   "A mostani helyzetem": "Моё текущее местоположение",
   "Iratai az Irattárcában": "Его документы в Кошельке документов",
+  "Az iratai az Irattárcában vannak, PIN mögött.": "Документы хранятся в Кошельке документов, под PIN-кодом.",
+  "{n} irata van az Irattárcában.": "Документов в Кошельке документов: {n}.",
+  "Még nincs irata az Irattárcában.": "В Кошельке документов пока нет документов.",
   "Amikor akut helyzetben kell döntened": "Когда решать нужно в острой ситуации",
   "Amikor éjszaka nem hagy aludni a félelem": "Когда ночью страх не даёт уснуть",
   "Gyerekekkel és idősekkel": "С детьми и пожилыми",
@@ -2263,6 +2288,14 @@ window.PP_FORD_SZOTAR.ru = {
   "Új bejegyzés": "Новая запись",
   "Seed-mondatnál a papír-másolat nem elavult ötlet: egy elveszett vagy letörölt telefon a kulcsot is viszi. Amit ide beírsz, azt tartsd meg máshol is.": "Для seed-фразы бумажная копия — не устаревшая идея: потерянный или стёртый телефон забирает и ключ. То, что вводишь сюда, храни и где-то ещё.",
   "PIN-nel védett helyi tároló okmányokhoz (szig, jogosítvány, TAJ, biztosítás, forgalmi).": "Защищённое PIN-кодом локальное хранилище для документов (паспорт, права, медицинская карта, страховка, техпаспорт).",
+  // Irattarca lock screen 26A (owner pick, TG 39581)
+  "Személyi": "Паспорт",
+  "Jogosítvány": "Права",
+  "TAJ": "Мед. карта",
+  "Biztosítás": "Страховка",
+  "Forgalmi": "Техпаспорт",
+  "Hogyan védjük?": "Как мы это защищаем?",
+  "CSAK ezen az eszközön tárolódik": "Хранится ТОЛЬКО на этом устройстве",
   "Szűrés: kinek az iratait mutassuk": "Фильтр: чьи документы показать",
   "Új dokumentum": "Новый документ",
   "Ehhez a dokumentumhoz: kié? Személy, állat vagy jármű. Ha egyiket sem jelölöd, közösként mentjük.": "К этому документу: чей он? Человек, животное или транспорт. Если не отметишь ни одного, сохраним как общий.",
@@ -2470,6 +2503,9 @@ window.PP_FORD_SZOTAR.ru = {
   "Rádión ne add le.": "Не передавай по рации.",
   "Az amatőr sávokon tilos információrejtő módszert alkalmazni (15/2013. NMHH rendelet 15. § (6) e)), és a forgalmazást közérthető nyelven kell folytatni (15. § (4)). Ez a kód egyikbe sem fér bele, és a saját jelszó nélkül készült változatra is áll. Morzézni szabad, rejtett tartalmat leadni nem. QR-kódban, papíron, kézből átadva használható.": "На любительских диапазонах запрещено применять методы сокрытия информации (постановление NMHH 15/2013, § 15 (6) e)), а обмен должен вестись на понятном языке (§ 15 (4)). Этот код не укладывается ни в одно из требований, и это относится и к варианту, созданному без своего пароля. Передавать азбукой Морзе можно, скрытое содержимое — нет. В QR-коде, на бумаге, из рук в руки — можно.",
   "Kód beolvasása": "Считать код",
+  "Titkosított QR": "Зашифрованный QR",
+  "Csak a családi jelszóval fejthető meg": "Расшифровывается только семейным паролем",
+  "Saját jelszó nélkül ez csak álcázás, nem titkosítás": "Без собственного пароля это лишь маскировка, а не шифрование",
   "Vagy írd be a betűsort (morzéból, faxról)": "Или введи строку букв (из Морзе, с факса)",
   "Megfejtés": "Расшифровка",
   "Ahogy üzenni tudsz, amikor a telefonhálózat nem segít. Válaszd ki, mivel próbálkozol: a helyi szoba szöveget visz a közeledben lévőknek, a hang pedig ott is átmegy, ahol semmilyen hálózat nincs.": "Как передать весть, когда телефонная сеть не помогает. Выбери, чем попробуешь: локальная комната передаёт текст тем, кто рядом, а звук проходит и там, где никакой сети нет.",
@@ -3283,7 +3319,7 @@ window.PP_FORD_SZOTAR.ru = {
   "Böngészőből iPhone-on a vaku egyáltalán nem indul, Androidon sem mindenhol. A képernyő-fény viszont mindig van.": "Из браузера на iPhone вспышка не запускается вообще, да и на Android не везде. Свет экрана, напротив, есть всегда.",
   "Sípolás: éles hang a telefonból; a Folyamatos addig szól, amíg le nem állítod. A hangmagasság állítható.": "Свист: резкий звук из телефона; Непрерывный звучит, пока ты его не остановишь. Высоту тона можно настроить.",
   "Újraélesztés üteme: a gomb tartja a helyes tempót. Nyomd a mellkast a jelre.": "Ритм реанимации: кнопка держит правильный темп. Нажимай на грудь в такт.",
-  "112 hívása: közvetlenül tárcsáz. Ha nincs térerő, a segélyhívás akkor is próbálkozik.": "Вызов 112: набирает напрямую. Если нет покрытия, экстренный вызов всё равно пытается.",
+  "112 hívása: megnyitja a telefon tárcsázóját a 112-vel, a hívást te indítod. Ha nincs térerő, a segélyhívás akkor is próbálkozik.": "Вызов 112: открывает набор номера с 112, звонок начинаете вы. Если нет покрытия, экстренный вызов всё равно пытается.",
   "Mobiltelefon": "Мобильный телефон",
   "Kézi rádió (adóvevő)": "Портативная рация",
   "Zsebrádió": "Карманный радиоприёмник",
@@ -3291,6 +3327,11 @@ window.PP_FORD_SZOTAR.ru = {
   "Antenna": "Антенна",
   "Takaró / pokróc": "Одеяло",
 };
+
+// What to pack page, design 31B (2026-11-14, Boss TG 39742, Marveen 33829): the new heading of the top card
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Útiterv": "План поездки",
+});
 
 // ---------------------------------------------------------------------------
 // MINTAK -- ami SZAMOT tartalmaz, az nem lehet szotar-kulcs.
@@ -3303,6 +3344,10 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "A letöltés csak nyitott alkalmazással halad. Ha bezárod, a következő megnyitáskor magától folytatódik.": "Загрузка идёт, только пока приложение открыто. Если закрыть его, она сама продолжится при следующем открытии.",
   "A letöltés megállt": "Загрузка остановлена",
   "A letöltéshez be kell jelentkezned a fiókodba (Profil → Fiók).": "Чтобы скачать, войдите в свою учётную запись (Профиль → Аккаунт).",
+  "Magától is újrapróbálja.": "Приложение также повторит попытку само.",
+  "brit": "британский",
+  "amerikai": "американский",
+  "Most egy másik hang letöltése fut; ez utána következik.": "Сейчас загружается другой голос; этот будет следующим.",
   "A letöltéshez újra be kell lépned. Frissítsd az oldalt, és lépj be.": "Чтобы скачать, нужно войти снова. Обновите страницу и войдите.",
   "A telefon saját hangja": "Собственный голос телефона",
   "A vers a vágólapra került, illeszd be, ahová szeretnéd.": "Стих скопирован в буфер обмена; вставьте его куда нужно.",
@@ -3385,6 +3430,7 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Még nincs itt semmi. A jobb alsó plusz gombbal hozzáadhatsz egy sajátot.": "Здесь пока ничего нет. Кнопкой «плюс» справа внизу можно добавить своё.",
   "Csak ezen a készüléken tárolódik.": "Хранится только на этом устройстве.",
   "Saját hozzáadása": "Добавить своё",
+  "Saját megvallás": "Своё исповедание",
   "Add meg a címet és a szöveget.": "Введите заголовок и текст.",
   "Nem sikerült menteni.": "Не удалось сохранить.",
   "Biztosan törlöd?": "Точно удалить?",
@@ -5750,6 +5796,7 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Mai gyakorlás": "Сегодняшняя практика",
   "Gyakorlás indítása": "Начать практику",
   "Mára nincs esedékes ige.": "На сегодня нет стихов для повторения.",
+  "ige vár ma": "на сегодня",
   "Még nincs tanulandó ige. Tartsd nyomva egy verset, és válaszd a Tanulom pontot.": "Пока нет стихов для заучивания. Удерживайте стих и выберите «Учу».",
   "Ingyenesen hetente egy új ige vehető fel.": "Бесплатно можно добавлять один новый стих в неделю.",
   "Ezen a héten már felvettél egy igét. Biblia prémiummal bármennyit tanulhatsz.": "На этой неделе стих уже добавлен. С Библией Премиум можно учить сколько угодно.",
@@ -7803,4 +7850,110 @@ Object.assign(window.PP_FORD_SZOTAR.ru, {
   "Wordlight: a nyitókép lámpása a kezdőoldal közepére száll; a világtérképen a pásztázó vonal helyett a pontok villannak fel.": "Wordlight: фонарь заставки перелетает в центр главной страницы; на карте мира вместо бегущей линии вспыхивают точки.",
   "Visszajelzés: a Visszajelzés gomb mindenkinek elérhető, mindkét alkalmazásban. iPhone-on a képernyő bal széléről húzva vissza lehet lépni.": "Обратная связь: кнопка «Обратная связь» доступна всем, в обоих приложениях. На iPhone можно вернуться назад, проведя пальцем от левого края экрана.",
   "Világhelyzet: a hírek címe és szövege a saját nyelveden jelenik meg.": "Мировая обстановка: заголовки и тексты новостей показываются на твоём языке.",
+  // reading-plan page redesign (owner pick A, TG 39223)
+  "Mai olvasmány": "Чтение на сегодня",
+  "Folytatom": "Продолжить",
+  "Új terv indítása": "Начать новый план",
+  "nap / {D}": "день / {D}",
+  "hét / {D}": "неделя / {D}",
+  "Tétel": "Позиции",
+  "Hamarosan lejár": "Скоро истекает",
+  "Össztömeg": "Общий вес",
+  "72 ÓRA": "72 ЧАСА",
+  "72 órás alap-csomag: {a} / {b} kategória fedett": "Набор на 72 часа: покрыто категорий {a} / {b}",
+  "A fény- és hangjelek nem értesítik a mentőket.": "Световые и звуковые сигналы не оповещают экстренные службы.",
+});
+
+// Eszkozok page, design 22A (Boss TG 39555): the three topic group headings
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Mérés és tájékozódás": "Измерения и ориентация",
+  "Energia és idő": "Энергия и время",
+  "Hang és kép": "Звук и изображение",
+});
+
+// ===== Date / time picker + repeat row + length wheel (2026-11-13, Boss TG 39128 / 39132 / 39134, Marveen 33531-33541) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Hetente": "Каждую неделю",
+  "Kéthetente": "Раз в 2 недели",
+  "Háromhetente": "Раз в 3 недели",
+  "Havonta": "Каждый месяц",
+  "Kéthavonta": "Раз в 2 месяца",
+  "Félévente": "Раз в полгода",
+  "Évente|ismétlés": "Каждый год",
+  "Hányszor?": "Сколько раз?",
+  "Minden alkalom külön terv lesz a naptárban.": "Каждый раз станет отдельным планом в календаре.",
+  "Egyéni hossz": "Свой срок",
+  "Hetek": "Недели",
+  "Hónapok": "Месяцы",
+  "Egység": "Единица",
+  "Dátum és idő": "Дата и время",
+  "Több napig? Válaszd a Víz-böjtöt, a Dániel-böjtöt vagy a Hosszú böjtöt.": "Несколько дней? Выбери пост на воде, пост Даниила или длительный пост.",
+});
+
+// ===== Diary start page: announce a shared fast (2026-11-13, Boss TG 39169 / 39171, Marveen 33569) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Közös böjt meghirdetése": "Объявить общий пост",
+});
+
+// ===== Prayers hub, layout B: the card descriptions (2026-11-13, Boss TG 39173 / 39184 / 39186, Marveen 33571 / 33572) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Imádkozz a Szentírás szavaival": "Молись словами Писания",
+  "Oszd meg, hogy együtt imádkozzunk érted": "Поделись, чтобы мы молились за тебя вместе",
+  "Témák szerint rendezett imák": "Молитвы по темам",
+  "Igék, amelyeket hittel kimondhatsz": "Стихи, которые можно провозглашать с верой",
+  "Böjtjeid és tapasztalataid egy helyen": "Твои посты и опыт в одном месте",
+});
+
+// ===== Diary start page, design B: the dashboard, the week strip, the icon buttons (2026-11-13, Boss TG 39219, Marveen 33575) =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Futó böjt": "Идущий пост",
+  "Vége:": "Конец:",
+  "ma": "сегодня",
+  "Nincs futó böjt": "Нет идущего поста",
+  "Következő tervezett böjt": "Следующий запланированный пост",
+  "eltelt": "прошло",
+  "Új böjt": "Новый пост",
+  "Indíts egyet, vagy tervezz előre.": "Начни пост или запланируй заранее.",
+  "Ez a hét": "Эта неделя",
+});
+
+// Token tarca locked screens + Titkos kodok tab + Mozgasok (design 25A / 25bA / 25cA, Boss TG 39574 / 39625 / 39636): the new strings only
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "AES-256 titkosítás, helyben": "Шифрование AES-256, локально",
+  "Mentett bejegyzések": "Сохранённые записи",
+  "Tegnap": "Вчера",
+  "{n} tétel": "Записей: {n}",
+});
+
+// Fax (SSTV) chooser, design 35C (Boss TG 39748): the new info row
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "A kép hangként utazik: telefonról telefonra, vagy akár rádión át.": "Изображение передаётся звуком: с телефона на телефон или даже по радио.",
+});
+
+// ===== Menu window 36F2 (2026-11-14, Boss TG 39673/39688): the one-line descriptions under the menu tiles =====
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Család, helyszínek": "Семья, места",
+  "Mi van itthon": "Что есть дома",
+  "Mentős QR": "QR для медиков",
+  "Okmányok, PIN-zár": "Документы под PIN",
+  "Pénz, vagyon": "Деньги, имущество",
+  "Gerah, kódok": "Gerah, коды",
+  "Cikkek, offline": "Статьи офлайн",
+  "Titkos üzenet": "Тайное сообщение",
+  "Közösségi fórum": "Форум сообщества",
+  "Irány, égtájak": "Курс, компас",
+  "Olvasás és ima": "Чтение и молитва",
+  "Zseblámpa": "Фонарик",
+  "Számolók, segédek": "Расчёты и утилиты",
+  "Offline üzenetek": "Сообщения офлайн",
+  "Térkép, helyszínek": "Карта, места",
+  "Fiók és adatok": "Аккаунт и данные",
+  "Vissza a kezdőlapra": "Назад на главную",
+});
+
+// Family-member sheet 29A (Boss TG 39730): the card titles only
+Object.assign(window.PP_FORD_SZOTAR.ru, {
+  "Alapadatok": "Основные данные",
+  "Elérhetőség": "Контакты",
+  "Vészhelyzetben ezt látják": "Это увидят в экстренной ситуации",
 });

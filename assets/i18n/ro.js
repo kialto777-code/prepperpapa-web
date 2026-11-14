@@ -15,6 +15,17 @@
 
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.ro = {
+  // Morse pages, designs 10A-13A (Boss TG 39464 / 39470 / 39476 / 39482)
+  'Tanulás': 'Învățare',
+  'Jelsor': 'Secvență',
+  'Sebesség és hang': 'Viteză și ton',
+  'fényjelző · készen áll': 'indicator luminos · gata',
+  'fényjelző · adás': 'indicator luminos · transmite',
+  'A fény a kép közepén': 'Lumina în centrul imaginii',
+  'Vett szöveg': 'Text primit',
+  'Küszöb, tempó, vétel sebesség': 'Prag, tempo, viteza de recepție',
+  'hallgatás áll': 'nu ascultă',
+  'hallgat': 'ascultă',
   "Könnyített megjelenítés": "Afișare ușoară",
   "Automatikus": "Automat",
   "Bekapcsolva": "Activat",
@@ -327,6 +338,9 @@ window.PP_FORD_SZOTAR.ro = {
   "A nap járása": "Drumul soarelui",
   "Ajánlott beállítás": "Reglaj recomandat",
   "Panel igazítása a tájolóval": "Aliniază panoul cu busola",
+  "dőlésszög": "înclinare",
+  "tájolás": "orientare",
+  "Koppints: a nap íve a kamera képén": "Atinge: arcul soarelui pe imaginea camerei",
   "Várható termelés ezen a napon": "Producția estimată în această zi",
   "Szélesség, pl. 47.50": "Latitudine, de ex. 47.50",
   "Hosszúság, pl. 19.04": "Longitudine, de ex. 19.04",
@@ -384,6 +398,10 @@ window.PP_FORD_SZOTAR.ro = {
   "Export: a lista fájlba, például a családnak. A teljes készlet törlése (Készlet ürítése) a Beállítások > Adatkezelés alatt van; előtte exportálj.": "Export: lista într-un fișier, de exemplu pentru familie. Ștergerea întregului stoc (Golește stocul) este la Setări > Date; exportă înainte.",
   // ===== 2026-10-11 23:4x: teljes atnezes (bemutatkozas, visszajelzes, hianyzo feliratok) =====
   "Üdv Prepperek!": "Salut, prepperi!",
+  // ===== "Ki vagyok?" design 27A (Boss TG 39590): row title, its subtitle word, the lead over the photo (= the first two clauses of the article's first paragraph translation) =====
+  "A teljes történet": "Povestea completă",
+  "Küldetés": "Misiune",
+  "PrepperPapa vagyok, egy készülődő ember, aki mindenhez érteni szeret. Gyerekkorom óta vonz minden, ami hálózattól és rendszertől független.": "Sunt PrepperPapa, un om care se pregătește și căruia îi place să înțeleagă totul. Încă din copilărie mă atrage tot ce este independent de rețea și de sistem.",
   "PrepperPapa vagyok, egy készülődő ember, aki mindenhez érteni szeret. Gyerekkorom óta vonz minden, ami hálózattól és rendszertől független, és az az érzés, amikor arra számíthatsz, ami a fejedben van tudás, és ami nálad van eszköz.": "Sunt PrepperPapa, un om care se pregătește și căruia îi place să înțeleagă totul. Încă din copilărie mă atrage tot ce este independent de rețea și de sistem și sentimentul că te poți baza pe cunoștințele din mintea ta și pe uneltele pe care le ai la tine.",
   "A prepperekről sokan hideg, bezárkózó embereket képzelnek el. Én azt hiszem, hogy a felkészülést nem a félelemnek kell vezetnie, hanem az önfeláldozó szeretetnek.": "Mulți își imaginează prepperii ca pe niște oameni reci și închiși. Eu cred că pregătirea nu trebuie condusă de frică, ci de dragostea care se dăruiește.",
   "Ezért álmodtam meg ezt az alkalmazást: hogy mindenkinek reménysége legyen a sötétségben, és a nehéz időkben valódi eszköz, valódi segítség legyen a kezében, akkor is, ha nincs áram és nincs térerő.": "De aceea am visat această aplicație: ca fiecare să aibă speranță în întuneric și, în vremuri grele, un instrument real, un ajutor real în mână, chiar și fără curent și fără semnal.",
@@ -1595,6 +1613,8 @@ window.PP_FORD_SZOTAR.ro = {
     "Poză de profil",
   "A neved mellett jelenik meg. Nem kötelező.":
     "Apare lângă numele tău. Opțional.",
+  "Profilkép · nem kötelező":
+    "Poză de profil · opțional",
   "Húzd a képet a körben, a csúszkával nagyíts. Csak a körben látszó rész kerül mentésre.":
     "Trage imaginea în cerc, mărește cu glisorul. Se salvează doar partea vizibilă în cerc.",
   // room cover crop (owner 2026-11-02, TG 33680)
@@ -1679,6 +1699,8 @@ window.PP_FORD_SZOTAR.ro = {
   "Folyamatos hang": "Ton continuu",
   "Söprő hang frekvenciája": "Frecvența tonului variabil",
   "Folyamatos hang frekvenciája": "Frecvența tonului continuu",
+  "Tudnivalók": "De știut",
+  "Hangerő, háziállatok, fül": "Volum, animale de companie, ureche",
   "Hz, lassan söprő hang. A legtöbb felnőtt ezt már nem hallja.":
     "Hz, un ton care baleiază lent. Majoritatea adulților nu îl mai aud.",
   "Hz, folyamatos hang.":
@@ -2099,6 +2121,9 @@ window.PP_FORD_SZOTAR.ro = {
   "Helyzetem küldése": "Trimite poziția mea",
   "A mostani helyzetem": "Poziția mea actuală",
   "Iratai az Irattárcában": "Documentele sale în Portofelul de documente",
+  "Az iratai az Irattárcában vannak, PIN mögött.": "Documentele sunt în Portofelul de documente, protejate cu PIN.",
+  "{n} irata van az Irattárcában.": "{n} documente în Portofelul de documente.",
+  "Még nincs irata az Irattárcában.": "Încă nu există documente în Portofelul de documente.",
   "Amikor akut helyzetben kell döntened": "Când trebuie să decizi într-o situație acută",
   "Amikor éjszaka nem hagy aludni a félelem": "Când noaptea frica nu te lasă să dormi",
   "Gyerekekkel és idősekkel": "Cu copii și vârstnici",
@@ -2256,6 +2281,14 @@ window.PP_FORD_SZOTAR.ro = {
   "Új bejegyzés": "Înregistrare nouă",
   "Seed-mondatnál a papír-másolat nem elavult ötlet: egy elveszett vagy letörölt telefon a kulcsot is viszi. Amit ide beírsz, azt tartsd meg máshol is.": "La fraza seed, copia pe hârtie nu este o idee învechită: un telefon pierdut sau șters duce cu el și cheia. Ce scrii aici, păstrează și în altă parte.",
   "PIN-nel védett helyi tároló okmányokhoz (szig, jogosítvány, TAJ, biztosítás, forgalmi).": "Stocare locală protejată cu PIN pentru acte (buletin, permis, card de sănătate, asigurare, talon).",
+  // Irattarca lock screen 26A (owner pick, TG 39581)
+  "Személyi": "Buletin",
+  "Jogosítvány": "Permis",
+  "TAJ": "Card sănătate",
+  "Biztosítás": "Asigurare",
+  "Forgalmi": "Talon",
+  "Hogyan védjük?": "Cum o protejăm?",
+  "CSAK ezen az eszközön tárolódik": "Stocat DOAR pe acest dispozitiv",
   "Szűrés: kinek az iratait mutassuk": "Filtru: ale cui documente să afișăm",
   "Új dokumentum": "Document nou",
   "Ehhez a dokumentumhoz: kié? Személy, állat vagy jármű. Ha egyiket sem jelölöd, közösként mentjük.": "Pentru acest document: al cui este? Persoană, animal sau vehicul. Dacă nu bifezi niciunul, îl salvăm ca fiind comun.",
@@ -2463,6 +2496,9 @@ window.PP_FORD_SZOTAR.ro = {
   "Rádión ne add le.": "Nu-l transmite prin radio.",
   "Az amatőr sávokon tilos információrejtő módszert alkalmazni (15/2013. NMHH rendelet 15. § (6) e)), és a forgalmazást közérthető nyelven kell folytatni (15. § (4)). Ez a kód egyikbe sem fér bele, és a saját jelszó nélkül készült változatra is áll. Morzézni szabad, rejtett tartalmat leadni nem. QR-kódban, papíron, kézből átadva használható.": "Pe benzile de radioamatori este interzisă folosirea metodelor de ascundere a informației (regulamentul maghiar NMHH 15/2013, art. 15 alin. 6 lit. e), iar traficul trebuie purtat într-un limbaj inteligibil (art. 15 alin. 4). Acest cod nu se încadrează în niciuna dintre cerințe, iar acest lucru este valabil și pentru varianta creată fără parolă proprie. Este permis să transmiți în Morse, dar nu conținut ascuns. În cod QR, pe hârtie, predat din mână în mână, poate fi folosit.",
   "Kód beolvasása": "Scanează codul",
+  "Titkosított QR": "Cod QR criptat",
+  "Csak a családi jelszóval fejthető meg": "Se poate decripta doar cu parola de familie",
+  "Saját jelszó nélkül ez csak álcázás, nem titkosítás": "Fără o parolă proprie este doar o mascare, nu o criptare",
   "Vagy írd be a betűsort (morzéból, faxról)": "Sau introdu șirul de caractere (din Morse, de pe fax)",
   "Megfejtés": "Descifrare",
   "Ahogy üzenni tudsz, amikor a telefonhálózat nem segít. Válaszd ki, mivel próbálkozol: a helyi szoba szöveget visz a közeledben lévőknek, a hang pedig ott is átmegy, ahol semmilyen hálózat nincs.": "Cum poți transmite un mesaj când rețeaua de telefonie nu ajută. Alege cu ce încerci: camera locală duce text celor din apropierea ta, iar sunetul trece și acolo unde nu există nicio rețea.",
@@ -3276,7 +3312,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Böngészőből iPhone-on a vaku egyáltalán nem indul, Androidon sem mindenhol. A képernyő-fény viszont mindig van.": "Din browser, pe iPhone blițul nu pornește deloc, iar pe Android nici el peste tot. Lumina ecranului însă există întotdeauna.",
   "Sípolás: éles hang a telefonból; a Folyamatos addig szól, amíg le nem állítod. A hangmagasság állítható.": "Fluierat: un sunet ascuțit din telefon; cel Continuu sună până îl oprești. Înălțimea sunetului se poate regla.",
   "Újraélesztés üteme: a gomb tartja a helyes tempót. Nyomd a mellkast a jelre.": "Ritmul resuscitării: butonul ține tempoul corect. Apasă pieptul pe ritm.",
-  "112 hívása: közvetlenül tárcsáz. Ha nincs térerő, a segélyhívás akkor is próbálkozik.": "Apel la 112: formează direct. Dacă nu este semnal, apelul de urgență încearcă oricum.",
+  "112 hívása: megnyitja a telefon tárcsázóját a 112-vel, a hívást te indítod. Ha nincs térerő, a segélyhívás akkor is próbálkozik.": "Apel la 112: deschide aplicația de apel cu 112, apelul îl pornești tu. Dacă nu este semnal, apelul de urgență încearcă oricum.",
   "Mobiltelefon": "Telefon mobil",
   "Kézi rádió (adóvevő)": "Stație radio portabilă",
   "Zsebrádió": "Radio de buzunar",
@@ -3285,6 +3321,11 @@ window.PP_FORD_SZOTAR.ro = {
   "Takaró / pokróc": "Pătură",
 };
 
+// What to pack page, design 31B (2026-11-14, Boss TG 39742, Marveen 33829): the new heading of the top card
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Útiterv": "Plan de drum",
+});
+
 // 2026-10-11: Biblia nyito csempek, beallitasok, vers-menu, jegyzetek, kereszthivatkozasok, hang-letoltes
 Object.assign(window.PP_FORD_SZOTAR.ro, {
   "+ Új kategória…": "+ Categorie nouă…",
@@ -3292,6 +3333,10 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "A letöltés csak nyitott alkalmazással halad. Ha bezárod, a következő megnyitáskor magától folytatódik.": "Descărcarea avansează doar cu aplicația deschisă. Dacă o închizi, continuă singură la următoarea deschidere.",
   "A letöltés megállt": "Descărcarea s-a oprit",
   "A letöltéshez be kell jelentkezned a fiókodba (Profil → Fiók).": "Pentru descărcare, conectează-te la contul tău (Profil → Cont).",
+  "Magától is újrapróbálja.": "Reîncearcă și singur.",
+  "brit": "britanic",
+  "amerikai": "american",
+  "Most egy másik hang letöltése fut; ez utána következik.": "Acum se descarcă altă voce; aceasta urmează după ea.",
   "A letöltéshez újra be kell lépned. Frissítsd az oldalt, és lépj be.": "Pentru descărcare trebuie să te conectezi din nou. Reîncarcă pagina și conectează-te.",
   "A telefon saját hangja": "Vocea proprie a telefonului",
   "A vers a vágólapra került, illeszd be, ahová szeretnéd.": "Versetul a fost copiat în clipboard; lipește-l unde vrei.",
@@ -3374,6 +3419,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Még nincs itt semmi. A jobb alsó plusz gombbal hozzáadhatsz egy sajátot.": "Încă nu e nimic aici. Cu butonul plus din dreapta jos poți adăuga unul propriu.",
   "Csak ezen a készüléken tárolódik.": "Se păstrează doar pe acest dispozitiv.",
   "Saját hozzáadása": "Adaugă propriu",
+  "Saját megvallás": "Mărturisire proprie",
   "Add meg a címet és a szöveget.": "Introdu un titlu și textul.",
   "Nem sikerült menteni.": "Nu s-a putut salva.",
   "Biztosan törlöd?": "Sigur ștergi?",
@@ -5736,6 +5782,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Mai gyakorlás": "Exercițiul de azi",
   "Gyakorlás indítása": "Începe exercițiul",
   "Mára nincs esedékes ige.": "Azi nu este niciun verset de repetat.",
+  "ige vár ma": "pentru azi",
   "Még nincs tanulandó ige. Tartsd nyomva egy verset, és válaszd a Tanulom pontot.": "Încă nu ai versete de învățat. Ține apăsat un verset și alege Îl învăț.",
   "Ingyenesen hetente egy új ige vehető fel.": "Gratuit poți adăuga un verset nou pe săptămână.",
   "Ezen a héten már felvettél egy igét. Biblia prémiummal bármennyit tanulhatsz.": "Săptămâna aceasta ai adăugat deja un verset. Cu Biblia Premium poți învăța oricâte.",
@@ -7789,4 +7836,110 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Wordlight: a nyitókép lámpása a kezdőoldal közepére száll; a világtérképen a pásztázó vonal helyett a pontok villannak fel.": "Wordlight: felinarul din ecranul de deschidere zboară în mijlocul paginii principale; pe harta lumii se aprind punctele în locul liniei de scanare.",
   "Visszajelzés: a Visszajelzés gomb mindenkinek elérhető, mindkét alkalmazásban. iPhone-on a képernyő bal széléről húzva vissza lehet lépni.": "Feedback: butonul Feedback este disponibil pentru toți, în ambele aplicații. Pe iPhone poți reveni glisând de la marginea stângă a ecranului.",
   "Világhelyzet: a hírek címe és szövege a saját nyelveden jelenik meg.": "Situația mondială: titlul și textul știrilor apar în limba ta.",
+  // reading-plan page redesign (owner pick A, TG 39223)
+  "Mai olvasmány": "Citirea de azi",
+  "Folytatom": "Continui",
+  "Új terv indítása": "Începe un plan nou",
+  "nap / {D}": "ziua / {D}",
+  "hét / {D}": "săptămâna / {D}",
+  "Tétel": "Articole",
+  "Hamarosan lejár": "Expiră curând",
+  "Össztömeg": "Greutate totală",
+  "72 ÓRA": "72 DE ORE",
+  "72 órás alap-csomag: {a} / {b} kategória fedett": "Kit de 72 de ore: {a} / {b} categorii acoperite",
+  "A fény- és hangjelek nem értesítik a mentőket.": "Semnalele luminoase și sonore nu alertează serviciile de urgență.",
+});
+
+// Eszkozok page, design 22A (Boss TG 39555): the three topic group headings
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Mérés és tájékozódás": "Măsurare și orientare",
+  "Energia és idő": "Energie și timp",
+  "Hang és kép": "Sunet și imagine",
+});
+
+// ===== Date / time picker + repeat row + length wheel (2026-11-13, Boss TG 39128 / 39132 / 39134, Marveen 33531-33541) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Hetente": "Săptămânal",
+  "Kéthetente": "La 2 săptămâni",
+  "Háromhetente": "La 3 săptămâni",
+  "Havonta": "Lunar",
+  "Kéthavonta": "La 2 luni",
+  "Félévente": "La 6 luni",
+  "Évente|ismétlés": "Anual",
+  "Hányszor?": "De câte ori?",
+  "Minden alkalom külön terv lesz a naptárban.": "Fiecare apariție devine un plan separat în calendar.",
+  "Egyéni hossz": "Durată proprie",
+  "Hetek": "Săptămâni",
+  "Hónapok": "Luni",
+  "Egység": "Unitate",
+  "Dátum és idő": "Data și ora",
+  "Több napig? Válaszd a Víz-böjtöt, a Dániel-böjtöt vagy a Hosszú böjtöt.": "Mai multe zile? Alege postul cu apă, postul lui Daniel sau postul lung.",
+});
+
+// ===== Diary start page: announce a shared fast (2026-11-13, Boss TG 39169 / 39171, Marveen 33569) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Közös böjt meghirdetése": "Anunță un post comun",
+});
+
+// ===== Prayers hub, layout B: the card descriptions (2026-11-13, Boss TG 39173 / 39184 / 39186, Marveen 33571 / 33572) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Imádkozz a Szentírás szavaival": "Roagă-te cu cuvintele Scripturii",
+  "Oszd meg, hogy együtt imádkozzunk érted": "Împărtășește, ca să ne rugăm împreună pentru tine",
+  "Témák szerint rendezett imák": "Rugăciuni ordonate pe teme",
+  "Igék, amelyeket hittel kimondhatsz": "Versete pe care le poți rosti cu credință",
+  "Böjtjeid és tapasztalataid egy helyen": "Posturile și experiențele tale într-un singur loc",
+});
+
+// ===== Diary start page, design B: the dashboard, the week strip, the icon buttons (2026-11-13, Boss TG 39219, Marveen 33575) =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Futó böjt": "Post în desfășurare",
+  "Vége:": "Sfârșit:",
+  "ma": "azi",
+  "Nincs futó böjt": "Niciun post în desfășurare",
+  "Következő tervezett böjt": "Următorul post planificat",
+  "eltelt": "scurs",
+  "Új böjt": "Post nou",
+  "Indíts egyet, vagy tervezz előre.": "Începe unul sau planifică din timp.",
+  "Ez a hét": "Săptămâna aceasta",
+});
+
+// Token tarca locked screens + Titkos kodok tab + Mozgasok (design 25A / 25bA / 25cA, Boss TG 39574 / 39625 / 39636): the new strings only
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "AES-256 titkosítás, helyben": "Criptare AES-256, local",
+  "Mentett bejegyzések": "Înregistrări salvate",
+  "Tegnap": "Ieri",
+  "{n} tétel": "Înregistrări: {n}",
+});
+
+// Fax (SSTV) chooser, design 35C (Boss TG 39748): the new info row
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A kép hangként utazik: telefonról telefonra, vagy akár rádión át.": "Imaginea călătorește ca sunet: de la telefon la telefon, sau chiar prin radio.",
+});
+
+// ===== Menu window 36F2 (2026-11-14, Boss TG 39673/39688): the one-line descriptions under the menu tiles =====
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Család, helyszínek": "Familie, locuri",
+  "Mi van itthon": "Ce ai acasă",
+  "Mentős QR": "QR de urgență",
+  "Okmányok, PIN-zár": "Acte cu PIN",
+  "Pénz, vagyon": "Bani, avere",
+  "Gerah, kódok": "Gerah, coduri",
+  "Cikkek, offline": "Articole offline",
+  "Titkos üzenet": "Mesaj secret",
+  "Közösségi fórum": "Forum comunitar",
+  "Irány, égtájak": "Direcție, busolă",
+  "Olvasás és ima": "Citire și rugăciune",
+  "Zseblámpa": "Lanternă",
+  "Számolók, segédek": "Calculatoare, unelte",
+  "Offline üzenetek": "Mesaje offline",
+  "Térkép, helyszínek": "Hartă, locuri",
+  "Fiók és adatok": "Cont și date",
+  "Vissza a kezdőlapra": "Înapoi la început",
+});
+
+// Family-member sheet 29A (Boss TG 39730): the card titles only
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Alapadatok": "Date de bază",
+  "Elérhetőség": "Contact",
+  "Vészhelyzetben ezt látják": "Ce văd într-o urgență",
 });

@@ -18,6 +18,17 @@
 // es ez a fajl NEM irja felul oket (a fordito atlepi a mar megjelolt elemeket).
 window.PP_FORD_SZOTAR = window.PP_FORD_SZOTAR || {};
 window.PP_FORD_SZOTAR.en = {
+  // Morse pages, designs 10A-13A (Boss TG 39464 / 39470 / 39476 / 39482)
+  'Tanulás': 'Learn',
+  'Jelsor': 'Signal string',
+  'Sebesség és hang': 'Speed and tone',
+  'fényjelző · készen áll': 'light indicator · ready',
+  'fényjelző · adás': 'light indicator · sending',
+  'A fény a kép közepén': 'The light in the middle of the picture',
+  'Vett szöveg': 'Received text',
+  'Küszöb, tempó, vétel sebesség': 'Threshold, tempo, receive speed',
+  'hallgatás áll': 'not listening',
+  'hallgat': 'listening',
   "Könnyített megjelenítés": "Light display mode",
   "Automatikus": "Automatic",
   "Bekapcsolva": "On",
@@ -333,6 +344,9 @@ window.PP_FORD_SZOTAR.en = {
   "A nap járása": "The sun's path",
   "Ajánlott beállítás": "Recommended setting",
   "Panel igazítása a tájolóval": "Align the panel with the compass",
+  "dőlésszög": "tilt",
+  "tájolás": "direction",
+  "Koppints: a nap íve a kamera képén": "Tap: the sun's arc on the camera view",
   "Várható termelés ezen a napon": "Expected yield on this day",
   "Szélesség, pl. 47.50": "Latitude, e.g. 47.50",
   "Hosszúság, pl. 19.04": "Longitude, e.g. 19.04",
@@ -390,6 +404,10 @@ window.PP_FORD_SZOTAR.en = {
   "Export: a lista fájlba, például a családnak. A teljes készlet törlése (Készlet ürítése) a Beállítások > Adatkezelés alatt van; előtte exportálj.": "Export: the list into a file, for the family for example. Deleting the whole inventory (Clear inventory) is under Settings > Data; export first.",
   // ===== 2026-10-11 23:4x: teljes atnezes (bemutatkozas, visszajelzes, hianyzo feliratok) =====
   "Üdv Prepperek!": "Greetings, Preppers!",
+  // ===== "Ki vagyok?" design 27A (Boss TG 39590): row title, its subtitle word, the lead over the photo (= the first two clauses of the article's first paragraph translation) =====
+  "A teljes történet": "The full story",
+  "Küldetés": "Mission",
+  "PrepperPapa vagyok, egy készülődő ember, aki mindenhez érteni szeret. Gyerekkorom óta vonz minden, ami hálózattól és rendszertől független.": "I am PrepperPapa, a man who prepares and loves to understand everything. Since childhood I have been drawn to everything that is independent of the grid and the system.",
   "PrepperPapa vagyok, egy készülődő ember, aki mindenhez érteni szeret. Gyerekkorom óta vonz minden, ami hálózattól és rendszertől független, és az az érzés, amikor arra számíthatsz, ami a fejedben van tudás, és ami nálad van eszköz.": "I am PrepperPapa, a man who prepares and loves to understand everything. Since childhood I have been drawn to everything that is independent of the grid and the system, and to the feeling of being able to rely on the knowledge in your head and the tools in your hands.",
   "A prepperekről sokan hideg, bezárkózó embereket képzelnek el. Én azt hiszem, hogy a felkészülést nem a félelemnek kell vezetnie, hanem az önfeláldozó szeretetnek.": "Many imagine preppers as cold, withdrawn people. I believe that preparing should be driven not by fear, but by self-giving love.",
   "Ezért álmodtam meg ezt az alkalmazást: hogy mindenkinek reménysége legyen a sötétségben, és a nehéz időkben valódi eszköz, valódi segítség legyen a kezében, akkor is, ha nincs áram és nincs térerő.": "That is why I dreamed up this app: so that everyone has hope in the darkness, and in hard times a real tool, real help in their hands, even when there is no power and no signal.",
@@ -1610,6 +1628,8 @@ window.PP_FORD_SZOTAR.en = {
     "Profile picture",
   "A neved mellett jelenik meg. Nem kötelező.":
     "It appears next to your name. Optional.",
+  "Profilkép · nem kötelező":
+    "Profile picture · optional",
   "Húzd a képet a körben, a csúszkával nagyíts. Csak a körben látszó rész kerül mentésre.":
     "Drag the picture inside the circle, zoom with the slider. Only the part visible in the circle is saved.",
   // room cover crop (owner 2026-11-02, TG 33680)
@@ -1694,6 +1714,8 @@ window.PP_FORD_SZOTAR.en = {
   "Folyamatos hang": "Steady tone",
   "Söprő hang frekvenciája": "Sweeping tone frequency",
   "Folyamatos hang frekvenciája": "Steady tone frequency",
+  "Tudnivalók": "Good to know",
+  "Hangerő, háziállatok, fül": "Volume, pets, ears",
   "Hz, lassan söprő hang. A legtöbb felnőtt ezt már nem hallja.":
     "Hz, a slowly sweeping tone. Most adults can no longer hear this.",
   "Hz, folyamatos hang.":
@@ -2133,6 +2155,9 @@ window.PP_FORD_SZOTAR.en = {
   'Helyzetem küldése': 'Send my position',
   'A mostani helyzetem': 'My current position',
   'Iratai az Irattárcában': 'Their documents in the Document wallet',
+  "Az iratai az Irattárcában vannak, PIN mögött.": "Their documents are in the Document wallet, behind a PIN.",
+  "{n} irata van az Irattárcában.": "{n} documents in the Document wallet.",
+  "Még nincs irata az Irattárcában.": "No documents in the Document wallet yet.",
   'Amikor akut helyzetben kell döntened': 'When you must decide in an acute situation',
   'Amikor éjszaka nem hagy aludni a félelem': 'When fear keeps you awake at night',
   'Gyerekekkel és idősekkel': 'With children and elderly',
@@ -2358,6 +2383,14 @@ window.PP_FORD_SZOTAR.en = {
     'For a seed phrase a paper copy is not an outdated idea: a lost or wiped phone takes the key with it. Keep whatever you type here somewhere else too.',
   'PIN-nel védett helyi tároló okmányokhoz (szig, jogosítvány, TAJ, biztosítás, forgalmi).':
     'PIN-protected local store for documents (ID card, driving licence, health card, insurance, vehicle registration).',
+  // Irattarca lock screen 26A (owner pick, TG 39581)
+  "Személyi": "ID card",
+  "Jogosítvány": "Licence",
+  "TAJ": "Health card",
+  "Biztosítás": "Insurance",
+  "Forgalmi": "Vehicle",
+  "Hogyan védjük?": "How is it protected?",
+  "CSAK ezen az eszközön tárolódik": "Stored ONLY on this device",
   'Szűrés: kinek az iratait mutassuk': 'Filter: whose documents to show',
   'Új dokumentum': 'New document',
   'Ehhez a dokumentumhoz: kié? Személy, állat vagy jármű. Ha egyiket sem jelölöd, közösként mentjük.':
@@ -2585,6 +2618,9 @@ window.PP_FORD_SZOTAR.en = {
   'Az amatőr sávokon tilos információrejtő módszert alkalmazni (15/2013. NMHH rendelet 15. § (6) e)), és a forgalmazást közérthető nyelven kell folytatni (15. § (4)). Ez a kód egyikbe sem fér bele, és a saját jelszó nélkül készült változatra is áll. Morzézni szabad, rejtett tartalmat leadni nem. QR-kódban, papíron, kézből átadva használható.':
     'On amateur bands it is prohibited to use any method that conceals information (Hungarian NMHH decree 15/2013, § 15 (6) e)), and traffic must be conducted in plain language (§ 15 (4)). This code fits neither rule, and that also holds for the variant made without your own password. Sending Morse is allowed, transmitting hidden content is not. It can be used in a QR code, on paper, handed over in person.',
   'Kód beolvasása': 'Scan code',
+  'Titkosított QR': 'Encrypted QR',
+  'Csak a családi jelszóval fejthető meg': 'Can only be unlocked with the family password',
+  'Saját jelszó nélkül ez csak álcázás, nem titkosítás': 'Without your own password this is only a disguise, not encryption',
   'Vagy írd be a betűsort (morzéból, faxról)': 'Or type in the letter string (from Morse, from fax)',
   'Megfejtés': 'Decoded',
 
@@ -3050,9 +3086,11 @@ window.PP_FORD_SZOTAR.en = {
   '(tüzifa, fűtőolaj és gázpalack együtt) — ebből a berendezés': '(firewood, heating oil and gas cylinder together) — of which the appliance delivers',
   '%-ot ad át': '%',
   'Napi fűtésigény:': 'Daily heating demand:',
-  // ==========================================================================
+  // ===================================================================});
+
   // A 2026-08-24-I NAGY POTLAS -- 277 MERT HIANY (Fonok tizenegy kepernyokepe)
-  // ==========================================================================
+  // ===================================================================});
+
   // MIERT ILYEN NAGY EGY ADAG: 08-23-an azt jelentettem, hogy "0 magyar szoveg maradt".
   // A bongeszos mero valoban nullat adott -- de csak arra, ami AKKOR ki volt rajzolva.
   // Fonok sajat tesztadataival egy egesz kepernyo (Mit vigyek / csomaglista-generator)
@@ -3606,7 +3644,7 @@ window.PP_FORD_SZOTAR.en = {
   "Böngészőből iPhone-on a vaku egyáltalán nem indul, Androidon sem mindenhol. A képernyő-fény viszont mindig van.": "From a browser on an iPhone the flash does not start at all, and not everywhere on Android either. The screen light, however, is always there.",
   "Sípolás: éles hang a telefonból; a Folyamatos addig szól, amíg le nem állítod. A hangmagasság állítható.": "Whistling: a sharp sound from the phone; the Continuous one sounds until you stop it. The pitch can be adjusted.",
   "Újraélesztés üteme: a gomb tartja a helyes tempót. Nyomd a mellkast a jelre.": "Resuscitation rhythm: the button keeps the right tempo. Press the chest on the beat.",
-  "112 hívása: közvetlenül tárcsáz. Ha nincs térerő, a segélyhívás akkor is próbálkozik.": "Calling 112: it dials directly. If there is no signal, the emergency call still tries.",
+  "112 hívása: megnyitja a telefon tárcsázóját a 112-vel, a hívást te indítod. Ha nincs térerő, a segélyhívás akkor is próbálkozik.": "Calling 112: opens the phone's dialer with 112, you start the call. If there is no signal, the emergency call still tries.",
   'Mobiltelefon': 'Mobile phone',
   'Kézi rádió (adóvevő)': 'Handheld radio (transceiver)',
   'Zsebrádió': 'Pocket radio',
@@ -3615,9 +3653,16 @@ window.PP_FORD_SZOTAR.en = {
   'Takaró / pokróc': 'Blanket',
 };
 
-// ============================================================================
+// =====================================================================});
+
 // MINTAK -- ami SZAMOT tartalmaz, az nem lehet szotar-kulcs
-// ============================================================================
+// =====================================================================});
+
+// What to pack page, design 31B (2026-11-14, Boss TG 39742, Marveen 33829): the new heading of the top card
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Útiterv": "Trip plan",
+});
+
 // A keszultsegi csempen "3 fő · 7 nap" all, es ebbol annyi valtozat van, ahany szam-par.
 // Szotarba tenni oket nem lehet (sosem lenne kesz), ezert MINTAKENT allnak itt.
 // A csere a fordito `String.replace`-evel megy, tehat a `$1`/`$2` a szam-csoportokra utal.
@@ -3628,6 +3673,10 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "A letöltés csak nyitott alkalmazással halad. Ha bezárod, a következő megnyitáskor magától folytatódik.": "The download only progresses while the app is open. If you close it, it resumes by itself the next time you open it.",
   "A letöltés megállt": "The download stopped",
   "A letöltéshez be kell jelentkezned a fiókodba (Profil → Fiók).": "To download, sign in to your account (Profile → Account).",
+  "Magától is újrapróbálja.": "It also retries by itself.",
+  "brit": "British",
+  "amerikai": "American",
+  "Most egy másik hang letöltése fut; ez utána következik.": "Another voice is downloading now; this one comes next.",
   "A letöltéshez újra be kell lépned. Frissítsd az oldalt, és lépj be.": "To download, you need to log in again. Refresh the page and log in.",
   "A telefon saját hangja": "The phone's own voice",
   "A vers a vágólapra került, illeszd be, ahová szeretnéd.": "The verse has been copied to the clipboard; paste it wherever you like.",
@@ -3710,6 +3759,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Még nincs itt semmi. A jobb alsó plusz gombbal hozzáadhatsz egy sajátot.": "Nothing here yet. Use the plus button at the bottom right to add your own.",
   "Csak ezen a készüléken tárolódik.": "Stored on this device only.",
   "Saját hozzáadása": "Add your own",
+  "Saját megvallás": "Own confession",
   "Add meg a címet és a szöveget.": "Enter a title and the text.",
   "Nem sikerült menteni.": "Could not save.",
   "Biztosan törlöd?": "Delete it?",
@@ -6091,6 +6141,7 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Mai gyakorlás": "Today's practice",
   "Gyakorlás indítása": "Start practice",
   "Mára nincs esedékes ige.": "No verse is due today.",
+  "ige vár ma": "due today",
   "Még nincs tanulandó ige. Tartsd nyomva egy verset, és válaszd a Tanulom pontot.": "No verse to learn yet. Long-press a verse and choose Learn it.",
   "Ingyenesen hetente egy új ige vehető fel.": "For free you can add one new verse a week.",
   "Ezen a héten már felvettél egy igét. Biblia prémiummal bármennyit tanulhatsz.": "You already added a verse this week. With Bible Premium you can learn as many as you like.",
@@ -8147,4 +8198,112 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Wordlight: a nyitókép lámpása a kezdőoldal közepére száll; a világtérképen a pásztázó vonal helyett a pontok villannak fel.": "Wordlight: the start screen's lantern flies to the middle of the home page; on the world map the dots light up instead of the sweeping line.",
   "Visszajelzés: a Visszajelzés gomb mindenkinek elérhető, mindkét alkalmazásban. iPhone-on a képernyő bal széléről húzva vissza lehet lépni.": "Feedback: the Feedback button is available to everyone, in both apps. On iPhone you can go back by swiping from the left edge of the screen.",
   "Világhelyzet: a hírek címe és szövege a saját nyelveden jelenik meg.": "World situation: news titles and texts appear in your own language.",
+  // reading-plan page redesign (owner pick A, TG 39223)
+  "Mai olvasmány": "Today's reading",
+  "Folytatom": "Continue",
+  "Új terv indítása": "Start a new plan",
+  "nap / {D}": "day / {D}",
+  "hét / {D}": "week / {D}",
+  "Tétel": "Items",
+  "Hamarosan lejár": "Expiring soon",
+  "Össztömeg": "Total weight",
+  "72 ÓRA": "72 HOURS",
+  "72 órás alap-csomag: {a} / {b} kategória fedett": "72h kit: {a} / {b} categories covered",
+  "A fény- és hangjelek nem értesítik a mentőket.": "Light and sound signals do not alert the emergency services.",
+});
+
+// Eszkozok page, design 22A (Boss TG 39555): the three topic group headings
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Mérés és tájékozódás": "Measuring and navigation",
+  "Energia és idő": "Energy and time",
+  "Hang és kép": "Sound and image",
+});
+
+// ===== Date / time picker + repeat row + length wheel (2026-11-13, Boss TG 39128 / 39132 / 39134, Marveen 33531-33541) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Hetente": "Weekly",
+  "Kéthetente": "Every 2 weeks",
+  "Háromhetente": "Every 3 weeks",
+  "Havonta": "Monthly",
+  "Kéthavonta": "Every 2 months",
+  "Félévente": "Every 6 months",
+  "Évente|ismétlés": "Yearly",
+  "Hányszor?": "How many times?",
+  "Minden alkalom külön terv lesz a naptárban.": "Each occurrence becomes a separate plan in the calendar.",
+  "Egyéni hossz": "Custom length",
+  "Hetek": "Weeks",
+  "Hónapok": "Months",
+  "Egység": "Unit",
+  "Dátum és idő": "Date and time",
+  "Több napig? Válaszd a Víz-böjtöt, a Dániel-böjtöt vagy a Hosszú böjtöt.": "More than one day? Choose the Water fast, the Daniel fast or the Long fast.",
+});
+
+// ===== Diary start page: announce a shared fast (2026-11-13, Boss TG 39169 / 39171, Marveen 33569) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Közös böjt meghirdetése": "Announce a shared fast",
+});
+
+// ===== Prayers hub, layout B: the card descriptions (2026-11-13, Boss TG 39173 / 39184 / 39186, Marveen 33571 / 33572) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Imádkozz a Szentírás szavaival": "Pray with the words of Scripture",
+  "Oszd meg, hogy együtt imádkozzunk érted": "Share it, so we can pray for you together",
+  "Témák szerint rendezett imák": "Prayers arranged by topic",
+  "Igék, amelyeket hittel kimondhatsz": "Verses you can speak in faith",
+  "Böjtjeid és tapasztalataid egy helyen": "Your fasts and experiences in one place",
+});
+
+// ===== Diary start page, design B: the dashboard, the week strip, the icon buttons (2026-11-13, Boss TG 39219, Marveen 33575) =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Futó böjt": "Running fast",
+  "Vége:": "Ends:",
+  "ma": "today",
+  "Nincs futó böjt": "No fast running",
+  "Következő tervezett böjt": "Next planned fast",
+  "eltelt": "elapsed",
+  "Új böjt": "New fast",
+  "Indíts egyet, vagy tervezz előre.": "Start one, or plan ahead.",
+  "Ez a hét": "This week",
+});
+
+// Token tarca locked screens + Titkos kodok tab + Mozgasok (design 25A / 25bA / 25cA, Boss TG 39574 / 39625 / 39636): the new strings only
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Hogyan védjük?": "How is it protected?",
+  "AES-256 titkosítás, helyben": "AES-256 encryption, on your device",
+  "Mentett bejegyzések": "Saved entries",
+  "Tegnap": "Yesterday",
+  "{n} tétel": "Entries: {n}",
+});
+
+// Fax (SSTV) chooser, design 35C (Boss TG 39748): the new info row
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "A kép hangként utazik: telefonról telefonra, vagy akár rádión át.": "The picture travels as sound: from phone to phone, or even over the radio.",
+});
+
+// ===== Menu window 36F2 (2026-11-14, Boss TG 39673/39688): the one-line descriptions under the menu tiles =====
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Család, helyszínek": "Family, places",
+  "Mi van itthon": "What is at home",
+  "Készültség": "Readiness",
+  "Mentős QR": "Medic QR",
+  "Okmányok, PIN-zár": "Documents with PIN",
+  "Pénz, vagyon": "Money, assets",
+  "Gerah, kódok": "Gerah, codes",
+  "Cikkek, offline": "Articles, offline",
+  "Titkos üzenet": "Secret message",
+  "Közösségi fórum": "Community forum",
+  "Irány, égtájak": "Heading, compass",
+  "Olvasás és ima": "Reading and prayer",
+  "Zseblámpa": "Flashlight",
+  "Számolók, segédek": "Calculators, tools",
+  "Offline üzenetek": "Offline messages",
+  "Térkép, helyszínek": "Map, places",
+  "Fiók és adatok": "Account and data",
+  "Vissza a kezdőlapra": "Back to the start",
+});
+
+// Family-member sheet 29A (Boss TG 39730): the card titles only
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Alapadatok": "Basic details",
+  "Elérhetőség": "Contact",
+  "Vészhelyzetben ezt látják": "What they see in an emergency",
 });
