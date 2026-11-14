@@ -50,10 +50,10 @@ window.PP_FORD_SZOTAR.ro = {
   "iPhone-on és iPaden: koppints a Megosztás gombra, majd a Főképernyőhöz adás pontra. Ezután a {app} saját ikonnal nyílik, mint egy alkalmazás.": "Pe iPhone și iPad: atinge butonul Partajare, apoi „Adaugă pe ecranul principal”. După aceea {app} se deschide cu pictograma proprie, ca o aplicație.",
   "Safariban: Fájl menü, Hozzáadás a Dockhoz. Ezután a {app} saját ablakban, saját ikonnal nyílik, mint egy program.": "În Safari: meniul Fișier, „Adaugă în Dock”. După aceea {app} se deschide în fereastra proprie, cu pictograma proprie, ca un program.",
   // ===== 2026-11-08 E2E-encrypted Bible data sync (owner TG 36957/36977/36978/36980/36987; István T4 signed TG 36993) =====
-  "Biblia-adatok szinkronizálása": "Sincronizează datele Bibliei",
+  "Jegyzetek és kiemelések szinkronizálása": "Sincronizează notițele și evidențierile",
   "Titkosítva, csak te tudod megnyitni.": "Criptat, doar tu îl poți deschide.",
   "Ha bekapcsolod, a jegyzeteid, könyvjelzőid, kiemeléseid, a megtanult versek, az igekártyák, az olvasási tervek és az elolvasottnak jelölt fejezetek, a játékok, a keresési előzmények, a Biblia beállításai, az imacélok és a vezetett ima állása a fiókodon keresztül minden készülékeden és mindkét alkalmazásban (PrepperPapa, Wordlight) megjelennek. Titkosítva tároljuk, és csak te tudod megnyitni a jelmondatoddal; mi nem tudjuk elolvasni. Ha elfelejted a jelmondatot, a szerveren lévő adat nem nyitható meg. Ha nem kapcsolod be, ezek az adatok csak ezen a készüléken vannak meg, és egy másik telefonon akkor sem jelennek meg, ha ugyanazzal a fiókkal lépsz be.": "Dacă îl activezi, notițele, semnele de carte, evidențierile, versetele învățate, cartonașele cu versete, planurile de citire și capitolele marcate ca citite, jocurile, istoricul căutărilor, setările Bibliei, obiectivele de rugăciune și stadiul rugăciunii ghidate apar prin contul tău pe toate dispozitivele tale și în ambele aplicații (PrepperPapa, Wordlight). Le păstrăm criptat și doar tu le poți deschide cu fraza ta de acces; noi nu le putem citi. Dacă îți uiți fraza de acces, datele de pe server nu pot fi deschise. Dacă nu îl activezi, aceste date există doar pe acest dispozitiv și nu apar pe alt telefon nici dacă te autentifici cu același cont.",
-  "Saját imalista szinkronizálása": "Sincronizează propria listă de rugăciune",
+  "Imalista szinkronizálása": "Sincronizează lista de rugăciune",
   "A saját imalistádat, a mások kéréseiből felvetteket is, ugyanígy, titkosítva viszi át a többi készülékedre; csak te tudod megnyitni. Ha nem kapcsolod be, az imalistád csak ezen a készüléken marad.": "Propria ta listă de rugăciune, inclusiv cererile altora pe care le-ai adăugat, este dusă la fel, criptat, pe celelalte dispozitive ale tale; doar tu o poți deschide. Dacă nu îl activezi, lista ta de rugăciune rămâne doar pe acest dispozitiv.",
   "Jelmondat": "Fraza de acces",
   "Adj meg egy jelmondatot a szinkronhoz: egy általad kitalált szót vagy rövid mondatot (legalább 8 karakter és 2 szó, vagy legalább 12 karakter). Ne a neved legyen, és ne a fiókod jelszava. A kis- és nagybetű nem számít.": "Alege o frază de acces pentru sincronizare: un cuvânt sau o propoziție scurtă inventată de tine (cel puțin 8 caractere și 2 cuvinte sau cel puțin 12 caractere). Să nu fie numele tău și nici parola contului. Literele mari și mici nu contează.",
@@ -93,7 +93,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Új eszköz hozzáadása QR-kóddal": "Adaugă un dispozitiv nou cu cod QR",
   "Egy új telefonon vagy tableten így a jelmondat beírása nélkül is bekapcsolhatod a szinkront.": "Așa poți activa sincronizarea pe un telefon sau o tabletă nouă fără să scrii fraza de acces.",
   "Új eszköz hozzáadása": "Adaugă un dispozitiv nou",
-  "Az új készüléken lépj be ugyanabba a fiókba, kapcsold be a Biblia-adatok szinkronizálását, és válaszd a QR-kód beolvasását. Ezután olvasd be ezt a kódot.": "Pe dispozitivul nou autentifică-te în același cont, activează „Sincronizează datele Bibliei” și alege scanarea codului QR. Apoi scanează acest cod.",
+  "Az új készüléken lépj be ugyanabba a fiókba, kapcsold be a Jegyzetek és kiemelések szinkronizálását, és válaszd a QR-kód beolvasását. Ezután olvasd be ezt a kódot.": "Pe dispozitivul nou autentifică-te în același cont, activează „Sincronizează notițele și evidențierile” și alege scanarea codului QR. Apoi scanează acest cod.",
   "A kód 10 percig érvényes, és csak egyszer használható. A kulcsot titkosítva adja át, mi nem tudjuk elolvasni. Ne mutasd meg másnak, és ne küldd el senkinek.": "Codul este valabil 10 minute și poate fi folosit o singură dată. Transmite cheia criptată, noi nu o putem citi. Nu-l arăta nimănui și nu-l trimite nimănui.",
   "Érvényes még: {ido}": "Mai este valabil: {ido}",
   "A QR-kód lejárt, és töröltük. Kérhetsz újat.": "Codul QR a expirat și a fost șters. Poți cere unul nou.",
@@ -2612,7 +2612,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Húzd, ha görgetnél": "Trage pentru a derula",
   "Nyomtatás": "Tipărire",
   "Keresés: szó, vagy hely (Ján 3,16)": "Caută: cuvânt sau referință (Ioan 3,16)",
-  "Betűméret": "Mărimea literelor",
+  "Igeszöveg mérete": "Dimensiunea textului biblic",
   "Megnevezés (pl. Gmail helyreállítási kódok)": "Denumire (de ex. coduri de recuperare Gmail)",
   "A kód, kulcs vagy seed-mondat": "Codul, cheia sau fraza seed",
   "Megjegyzés (hol használod, melyik fiók)": "Notă (unde îl folosești, care cont)",
@@ -5217,7 +5217,7 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   // napi ido az Igevel, mindenkinek (2026-10-30, kartya 38877050; nem premium: TG 31829, 2026-10-31)
   "Napi idő az Igével": "Timp zilnic cu Cuvântul",
   // napi ido szinkron a fiokon at (opt-in, TG 34411/34413, 2026-11-03)
-  "Szinkronizálás a fiókoddal": "Sincronizare cu contul tău",
+  "Napi idő szinkronizálása": "Sincronizează timpul zilnic",
   "Ha bekapcsolod, a napi bibliaolvasási és imaidőd (naponta a másodpercek száma) a fiókodba kerül, és összeadódik a PrepperPapa és a Wordlight alkalmazásban, illetve a többi készülékeden töltött idővel.": "Dacă o activezi, timpul tău zilnic de citire a Bibliei și de rugăciune (numărul de secunde pe zi) se salvează în contul tău și se adună cu timpul petrecut în aplicațiile PrepperPapa și Wordlight și pe celelalte dispozitive ale tale.",
   "Ez az adat utalhat a vallási meggyőződésedre; a bekapcsolással ehhez kifejezetten hozzájárulsz. Bármikor kikapcsolhatod, és a tárolt adatot törölheted.": "Aceste date pot dezvălui convingerile tale religioase; prin activare îți dai consimțământul explicit. Poți dezactiva oricând și poți șterge datele stocate.",
   "Szinkronizálva a fiókoddal.": "Sincronizat cu contul tău.",
@@ -7942,4 +7942,41 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Alapadatok": "Date de bază",
   "Elérhetőség": "Contact",
   "Vészhelyzetben ezt látják": "Ce văd într-o urgență",
+});
+
+// v43.482 what's new (2026-11-14)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Imák: az éves vezetett ima napi szövegei angolul, németül és spanyolul a saját felvett hangunkon szólnak; a hangot internetről játssza le, a telefonon nem foglal helyet.": "Rugăciuni: textele zilnice ale rugăciunii ghidate a anului se aud în engleză, germană și spaniolă cu propria noastră voce înregistrată; sunetul este redat de pe internet și nu ocupă spațiu pe telefon.",
+  "Böjtnapló: új kezdőlap a futó böjt órájával és a heti sávval; a böjt kezdete ujjal görgethető választóval állítható; a böjt ismételhető hetente, kéthetente, háromhetente, havonta, kéthavonta, félévente vagy évente.": "Jurnal de post: o nouă pagină de start cu ceasul postului în curs și banda săptămânii; începutul unui post se alege cu un selector derulat cu degetul; un post se poate repeta săptămânal, la două săptămâni, la trei săptămâni, lunar, la două luni, la șase luni sau anual.",
+  "Böjtnapló: a böjt hossza napokban is megadható (étkezési böjtnél a biztonsági határokon belül); a nem étkezési böjt (például digitális vagy médiaböjt) napokban, hetekben vagy hónapokban, akár egy évig is tarthat.": "Jurnal de post: durata unui post se poate da și în zile (la postul alimentar, în limitele de siguranță); un post care nu este alimentar (de exemplu digital sau de la media) poate dura zile, săptămâni sau luni, până la un an.",
+  "Imák: új, kártyás Imák oldal, rajta a Közös böjt meghirdetése gomb; az Ima oldal új kinézetet kapott, imatérkép-előnézettel; az imakérés beküldése három lépésben történik.": "Rugăciuni: o nouă pagină Rugăciuni cu carduri și butonul Anunță un post comun; pagina Rugăciune are un aspect nou, cu o previzualizare a hărții rugăciunii; o cerere de rugăciune se trimite acum în trei pași.",
+  "Biblia: új kinézetet kapott a Jegyzetek, az Olvasási terv, az Igetanuló (kördiagram mutatja, mennyire stabil a tudás), a Próféciák, a Vészhelyzeti igék és a Játékok oldal.": "Biblia: aspect nou pentru paginile Notițe, Plan de citire, Memorare versete (un cerc arată cât de bine știi versetul), Profeții, Versete pentru situații de urgență și Jocuri.",
+  "Wordlight: a lámpás menü gombjai témánként saját, visszafogott színt kaptak.": "Wordlight: butoanele meniului lămpii au fiecare propria culoare discretă, după temă.",
+  "Biblia-felolvasás angolul: a King James amerikai kiejtéssel is meghallgatható, és a World English Bible is kapott stúdióhangot.": "Citirea Bibliei cu voce tare în engleză: Biblia King James se poate asculta și cu pronunție americană, iar World English Bible are și ea voce de studio.",
+  "Biblia-felolvasás: a brit King James, a német és a spanyol Biblia saját stúdióhangot kapott.": "Citirea Bibliei cu voce tare: Biblia King James britanică, Biblia germană și cea spaniolă au propria voce de studio.",
+  "Biblia-felolvasás: a Stúdióhang letöltése megszakadt internet után magától folytatódik, és látszik, hol tart; a letöltési sor minden hangnál egyformán jelenik meg.": "Citirea Bibliei cu voce tare: descărcarea vocii de studio continuă singură după o întrerupere a internetului și arată cât a ajuns; rândul de descărcare arată la fel pentru fiecare voce.",
+  "Biblia: új rajzok a fejezetek és igék mellé.": "Biblia: desene noi lângă capitole și versete.",
+  "PrepperPapa: új kinézetet kapott a főmenü (minden gomb alatt rövid leírással), az SOS, a Morze-oldalak, a Készlet, a Napelem-beállítás, a Hanggenerátor, az Eszközök, a Titkos QR, a Token tárca, az Irattárca, a Ki vagyok?, a Profil, a Kommunikáció, a Beállítások, a családtag adatlapja, a Vészkártya, a Mit vigyek? és a Fax (SSTV) oldal.": "PrepperPapa: aspect nou pentru meniul principal (cu o scurtă descriere sub fiecare buton), SOS, paginile Morse, Rezervă, Reglarea panoului solar, Generator de ton, Unelte, QR secret, Portofel de tokenuri, Portofel de documente, Cine sunt?, Profil, Comunicare, Setări, fișa unui membru al familiei, Card de urgență, Ce să iau? și Fax (SSTV).",
+  "A háttérből kikerült az iránytű-rajz; a szintvonalak maradtak.": "Desenul busolei a dispărut din fundal; curbele de nivel rămân.",
+  "Javítások: a bekapcsolt kapcsolók nem villognak pirosan; a világtérkép hírforrása csak az eseményt említő cikkre mutat; a World English Bible és az ASV könyvcímei rendben vannak; más nyelven is megmarad a családtag típusa; a böjt hossza hónapban valódi naptári hónap; az SOS-súgó pontosan írja, hogy a 112-es gomb a tárcsázót nyitja meg.": "Corecturi: comutatoarele pornite nu mai clipesc în roșu; sursa de știri de pe harta lumii trimite doar la un articol care numește evenimentul; titlurile cărților din World English Bible și ASV sunt corecte; tipul membrului familiei se păstrează în orice limbă; durata unui post în luni este o lună calendaristică reală; ajutorul SOS spune corect că butonul 112 deschide apelarea.",
+});
+
+// Wordlight colour themes + ring button colour (Boss TG 39841/39851, card fc63a4ba)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Színtéma": "Temă de culori",
+  "A színtéma az egész alkalmazást átszínezi. A választás ezen a készüléken marad meg.": "Tema de culori schimbă culorile întregii aplicații. Alegerea rămâne salvată pe acest dispozitiv.",
+  "Tárcsagombok színe": "Culoarea butoanelor inelului",
+  "Egyszínű zöld": "Verde uniform",
+  "Mai (sötétzöld)": "Actual (verde închis)",
+  "Pergamen": "Pergament",
+  "Lágy sötét": "Întuneric blând",
+  "Reggeli fény": "Lumina dimineții",
+});
+
+// Reader panel: phone voice Helyben / Interneten switch, Studio voice name (owner 2026-11-14, TG 39830)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Helyben (a telefonon)": "Pe telefon",
+  "Interneten (jobb minőség)": "Prin internet (calitate mai bună)",
+  "Ennek a hangnak nincs letöltött változata a telefonon, ezért most a nyelv legjobb letöltött hangja szól. A hangadatot a telefon beállításaiban lehet letölteni (Szövegfelolvasás).": "Această voce nu are o versiune descărcată pe telefon, așa că acum citește cea mai bună voce descărcată a limbii. Datele vocii se pot descărca din setările telefonului (Redare text în vorbire).",
+  "amerikai kiejtés": "pronunție americană",
 });

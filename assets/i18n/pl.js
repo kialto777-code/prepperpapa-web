@@ -58,10 +58,10 @@ window.PP_FORD_SZOTAR.pl = {
   "iPhone-on és iPaden: koppints a Megosztás gombra, majd a Főképernyőhöz adás pontra. Ezután a {app} saját ikonnal nyílik, mint egy alkalmazás.": "Na iPhonie i iPadzie: dotknij przycisku Udostępnij, a potem „Do ekranu początkowego”. Potem {app} otwiera się z własną ikoną, jak aplikacja.",
   "Safariban: Fájl menü, Hozzáadás a Dockhoz. Ezután a {app} saját ablakban, saját ikonnal nyílik, mint egy program.": "W Safari: menu Plik, „Dodaj do Docka”. Potem {app} otwiera się we własnym oknie, z własną ikoną, jak program.",
   // ===== 2026-11-08 E2E-encrypted Bible data sync (owner TG 36957/36977/36978/36980/36987; István T4 signed TG 36993) =====
-  "Biblia-adatok szinkronizálása": "Synchronizuj dane Biblii",
+  "Jegyzetek és kiemelések szinkronizálása": "Synchronizuj notatki i zaznaczenia",
   "Titkosítva, csak te tudod megnyitni.": "Zaszyfrowane, tylko ty możesz je otworzyć.",
   "Ha bekapcsolod, a jegyzeteid, könyvjelzőid, kiemeléseid, a megtanult versek, az igekártyák, az olvasási tervek és az elolvasottnak jelölt fejezetek, a játékok, a keresési előzmények, a Biblia beállításai, az imacélok és a vezetett ima állása a fiókodon keresztül minden készülékeden és mindkét alkalmazásban (PrepperPapa, Wordlight) megjelennek. Titkosítva tároljuk, és csak te tudod megnyitni a jelmondatoddal; mi nem tudjuk elolvasni. Ha elfelejted a jelmondatot, a szerveren lévő adat nem nyitható meg. Ha nem kapcsolod be, ezek az adatok csak ezen a készüléken vannak meg, és egy másik telefonon akkor sem jelennek meg, ha ugyanazzal a fiókkal lépsz be.": "Jeśli to włączysz, twoje notatki, zakładki, zaznaczenia, nauczone wersety, karty z wersetami, plany czytania i rozdziały oznaczone jako przeczytane, gry, historia wyszukiwania, ustawienia Biblii, cele modlitewne i stan modlitwy prowadzonej pojawią się przez twoje konto na wszystkich twoich urządzeniach i w obu aplikacjach (PrepperPapa, Wordlight). Przechowujemy je zaszyfrowane i tylko ty możesz je otworzyć swoim hasłem; my nie możemy ich przeczytać. Jeśli zapomnisz hasła, danych na serwerze nie da się otworzyć. Jeśli tego nie włączysz, te dane istnieją tylko na tym urządzeniu i nie pojawią się na innym telefonie, nawet jeśli zalogujesz się na to samo konto.",
-  "Saját imalista szinkronizálása": "Synchronizuj moją listę modlitw",
+  "Imalista szinkronizálása": "Synchronizuj listę modlitw",
   "A saját imalistádat, a mások kéréseiből felvetteket is, ugyanígy, titkosítva viszi át a többi készülékedre; csak te tudod megnyitni. Ha nem kapcsolod be, az imalistád csak ezen a készüléken marad.": "Twoja własna lista modlitw, łącznie z dodanymi prośbami innych, jest przenoszona na twoje inne urządzenia tak samo, zaszyfrowana; tylko ty możesz ją otworzyć. Jeśli tego nie włączysz, twoja lista modlitw zostaje tylko na tym urządzeniu.",
   "Jelmondat": "Hasło",
   "Adj meg egy jelmondatot a szinkronhoz: egy általad kitalált szót vagy rövid mondatot (legalább 8 karakter és 2 szó, vagy legalább 12 karakter). Ne a neved legyen, és ne a fiókod jelszava. A kis- és nagybetű nem számít.": "Wybierz hasło do synchronizacji: wymyślone przez siebie słowo lub krótkie zdanie (co najmniej 8 znaków i 2 słowa albo co najmniej 12 znaków). Nie twoje imię i nie hasło do konta. Wielkość liter nie ma znaczenia.",
@@ -101,7 +101,7 @@ window.PP_FORD_SZOTAR.pl = {
   "Új eszköz hozzáadása QR-kóddal": "Dodaj nowe urządzenie kodem QR",
   "Egy új telefonon vagy tableten így a jelmondat beírása nélkül is bekapcsolhatod a szinkront.": "Tak możesz włączyć synchronizację na nowym telefonie lub tablecie bez wpisywania hasła.",
   "Új eszköz hozzáadása": "Dodaj nowe urządzenie",
-  "Az új készüléken lépj be ugyanabba a fiókba, kapcsold be a Biblia-adatok szinkronizálását, és válaszd a QR-kód beolvasását. Ezután olvasd be ezt a kódot.": "Na nowym urządzeniu zaloguj się na to samo konto, włącz „Synchronizuj dane Biblii” i wybierz skanowanie kodu QR. Potem zeskanuj ten kod.",
+  "Az új készüléken lépj be ugyanabba a fiókba, kapcsold be a Jegyzetek és kiemelések szinkronizálását, és válaszd a QR-kód beolvasását. Ezután olvasd be ezt a kódot.": "Na nowym urządzeniu zaloguj się na to samo konto, włącz „Synchronizuj notatki i zaznaczenia” i wybierz skanowanie kodu QR. Potem zeskanuj ten kod.",
   "A kód 10 percig érvényes, és csak egyszer használható. A kulcsot titkosítva adja át, mi nem tudjuk elolvasni. Ne mutasd meg másnak, és ne küldd el senkinek.": "Kod jest ważny 10 minut i można go użyć tylko raz. Przekazuje klucz w postaci zaszyfrowanej, my nie możemy go odczytać. Nie pokazuj go nikomu i nikomu go nie wysyłaj.",
   "Érvényes még: {ido}": "Ważny jeszcze: {ido}",
   "A QR-kód lejárt, és töröltük. Kérhetsz újat.": "Kod QR wygasł i został usunięty. Możesz poprosić o nowy.",
@@ -2620,7 +2620,7 @@ window.PP_FORD_SZOTAR.pl = {
   "Húzd, ha görgetnél": "Przeciągnij, aby przewinąć",
   "Nyomtatás": "Drukuj",
   "Keresés: szó, vagy hely (Ján 3,16)": "Szukaj: słowo albo miejsce (J 3,16)",
-  "Betűméret": "Rozmiar czcionki",
+  "Igeszöveg mérete": "Rozmiar tekstu biblijnego",
   "Megnevezés (pl. Gmail helyreállítási kódok)": "Nazwa (np. kody odzyskiwania Gmail)",
   "A kód, kulcs vagy seed-mondat": "Kod, klucz albo fraza seed",
   "Megjegyzés (hol használod, melyik fiók)": "Notatka (gdzie używasz, które konto)",
@@ -5228,7 +5228,7 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   // napi ido az Igevel, mindenkinek (2026-10-30, kartya 38877050; nem premium: TG 31829, 2026-10-31)
   "Napi idő az Igével": "Codzienny czas ze Słowem",
   // napi ido szinkron a fiokon at (opt-in, TG 34411/34413, 2026-11-03)
-  "Szinkronizálás a fiókoddal": "Synchronizacja z kontem",
+  "Napi idő szinkronizálása": "Synchronizuj czas dzienny",
   "Ha bekapcsolod, a napi bibliaolvasási és imaidőd (naponta a másodpercek száma) a fiókodba kerül, és összeadódik a PrepperPapa és a Wordlight alkalmazásban, illetve a többi készülékeden töltött idővel.": "Po włączeniu Twój dzienny czas czytania Biblii i modlitwy (liczba sekund na dzień) zapisuje się na Twoim koncie i sumuje z czasem spędzonym w aplikacjach PrepperPapa i Wordlight oraz na Twoich innych urządzeniach.",
   "Ez az adat utalhat a vallási meggyőződésedre; a bekapcsolással ehhez kifejezetten hozzájárulsz. Bármikor kikapcsolhatod, és a tárolt adatot törölheted.": "Te dane mogą ujawniać Twoje przekonania religijne; włączając tę opcję, wyrażasz na to wyraźną zgodę. W każdej chwili możesz ją wyłączyć i usunąć zapisane dane.",
   "Szinkronizálva a fiókoddal.": "Zsynchronizowano z kontem.",
@@ -7954,4 +7954,41 @@ Object.assign(window.PP_FORD_SZOTAR.pl, {
   "Alapadatok": "Dane podstawowe",
   "Elérhetőség": "Kontakt",
   "Vészhelyzetben ezt látják": "To widzą w sytuacji awaryjnej",
+});
+
+// v43.482 what's new (2026-11-14)
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Imák: az éves vezetett ima napi szövegei angolul, németül és spanyolul a saját felvett hangunkon szólnak; a hangot internetről játssza le, a telefonon nem foglal helyet.": "Modlitwy: codzienne teksty rocznej modlitwy z przewodnikiem brzmią po angielsku, niemiecku i hiszpańsku naszym własnym nagranym głosem; dźwięk jest odtwarzany z internetu i nie zajmuje miejsca w telefonie.",
+  "Böjtnapló: új kezdőlap a futó böjt órájával és a heti sávval; a böjt kezdete ujjal görgethető választóval állítható; a böjt ismételhető hetente, kéthetente, háromhetente, havonta, kéthavonta, félévente vagy évente.": "Dziennik postu: nowa strona startowa z zegarem trwającego postu i paskiem tygodnia; początek postu ustawia się selektorem przewijanym palcem; post można powtarzać co tydzień, co dwa tygodnie, co trzy tygodnie, co miesiąc, co dwa miesiące, co pół roku lub co rok.",
+  "Böjtnapló: a böjt hossza napokban is megadható (étkezési böjtnél a biztonsági határokon belül); a nem étkezési böjt (például digitális vagy médiaböjt) napokban, hetekben vagy hónapokban, akár egy évig is tarthat.": "Dziennik postu: długość postu można też podać w dniach (przy poście od jedzenia w granicach bezpieczeństwa); post inny niż od jedzenia (na przykład cyfrowy lub od mediów) może trwać dni, tygodnie lub miesiące, nawet rok.",
+  "Imák: új, kártyás Imák oldal, rajta a Közös böjt meghirdetése gomb; az Ima oldal új kinézetet kapott, imatérkép-előnézettel; az imakérés beküldése három lépésben történik.": "Modlitwy: nowa strona Modlitwy z kartami i przyciskiem Ogłoś wspólny post; strona Modlitwy ma nowy wygląd z podglądem mapy modlitwy; prośbę o modlitwę wysyła się teraz w trzech krokach.",
+  "Biblia: új kinézetet kapott a Jegyzetek, az Olvasási terv, az Igetanuló (kördiagram mutatja, mennyire stabil a tudás), a Próféciák, a Vészhelyzeti igék és a Játékok oldal.": "Biblia: nowy wygląd stron Notatki, Plan czytania, Nauka wersetów (okrąg pokazuje, jak dobrze znasz werset), Proroctwa, Wersety na sytuacje kryzysowe i Gry.",
+  "Wordlight: a lámpás menü gombjai témánként saját, visszafogott színt kaptak.": "Wordlight: przyciski menu latarni mają każdy własny, stonowany kolor według tematu.",
+  "Biblia-felolvasás angolul: a King James amerikai kiejtéssel is meghallgatható, és a World English Bible is kapott stúdióhangot.": "Czytanie Biblii na głos po angielsku: Biblię Króla Jakuba można też usłyszeć z wymową amerykańską, a World English Bible również ma głos studyjny.",
+  "Biblia-felolvasás: a brit King James, a német és a spanyol Biblia saját stúdióhangot kapott.": "Czytanie Biblii na głos: brytyjska Biblia Króla Jakuba, Biblia niemiecka i hiszpańska mają własny głos studyjny.",
+  "Biblia-felolvasás: a Stúdióhang letöltése megszakadt internet után magától folytatódik, és látszik, hol tart; a letöltési sor minden hangnál egyformán jelenik meg.": "Czytanie Biblii na głos: pobieranie głosu studyjnego samo wznawia się po zerwaniu internetu i pokazuje postęp; wiersz pobierania wygląda tak samo dla każdego głosu.",
+  "Biblia: új rajzok a fejezetek és igék mellé.": "Biblia: nowe rysunki przy rozdziałach i wersetach.",
+  "PrepperPapa: új kinézetet kapott a főmenü (minden gomb alatt rövid leírással), az SOS, a Morze-oldalak, a Készlet, a Napelem-beállítás, a Hanggenerátor, az Eszközök, a Titkos QR, a Token tárca, az Irattárca, a Ki vagyok?, a Profil, a Kommunikáció, a Beállítások, a családtag adatlapja, a Vészkártya, a Mit vigyek? és a Fax (SSTV) oldal.": "PrepperPapa: nowy wygląd menu głównego (z krótkim opisem pod każdym przyciskiem), SOS, stron Morse’a, Zapas, Ustawienie panelu słonecznego, Generator tonów, Narzędzia, Tajny kod QR, Portfel tokenów, Teczka dokumentów, Kim jestem?, Profil, Komunikacja, Ustawienia, karta członka rodziny, Karta ratunkowa, Co zabrać? oraz Faks (SSTV).",
+  "A háttérből kikerült az iránytű-rajz; a szintvonalak maradtak.": "Z tła zniknął rysunek kompasu; poziomice zostały.",
+  "Javítások: a bekapcsolt kapcsolók nem villognak pirosan; a világtérkép hírforrása csak az eseményt említő cikkre mutat; a World English Bible és az ASV könyvcímei rendben vannak; más nyelven is megmarad a családtag típusa; a böjt hossza hónapban valódi naptári hónap; az SOS-súgó pontosan írja, hogy a 112-es gomb a tárcsázót nyitja meg.": "Poprawki: włączone przełączniki nie migają już na czerwono; źródło wiadomości na mapie świata prowadzi tylko do artykułu, który wymienia zdarzenie; tytuły ksiąg w World English Bible i ASV są poprawne; typ członka rodziny zostaje zachowany w każdym języku; długość postu w miesiącach to prawdziwy miesiąc kalendarzowy; pomoc SOS poprawnie mówi, że przycisk 112 otwiera wybieranie numeru.",
+});
+
+// Wordlight colour themes + ring button colour (Boss TG 39841/39851, card fc63a4ba)
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Színtéma": "Motyw kolorystyczny",
+  "A színtéma az egész alkalmazást átszínezi. A választás ezen a készüléken marad meg.": "Motyw kolorystyczny zmienia kolory całej aplikacji. Wybór zostaje zapisany na tym urządzeniu.",
+  "Tárcsagombok színe": "Kolor przycisków pierścienia",
+  "Egyszínű zöld": "Jednolita zieleń",
+  "Mai (sötétzöld)": "Obecny (ciemnozielony)",
+  "Pergamen": "Pergamin",
+  "Lágy sötét": "Łagodna ciemność",
+  "Reggeli fény": "Poranne światło",
+});
+
+// Reader panel: phone voice Helyben / Interneten switch, Studio voice name (owner 2026-11-14, TG 39830)
+Object.assign(window.PP_FORD_SZOTAR.pl, {
+  "Helyben (a telefonon)": "Na telefonie",
+  "Interneten (jobb minőség)": "Przez internet (lepsza jakość)",
+  "Ennek a hangnak nincs letöltött változata a telefonon, ezért most a nyelv legjobb letöltött hangja szól. A hangadatot a telefon beállításaiban lehet letölteni (Szövegfelolvasás).": "Ten głos nie ma pobranej wersji na telefonie, więc teraz czyta najlepszy pobrany głos tego języka. Dane głosu można pobrać w ustawieniach telefonu (Zamiana tekstu na mowę).",
+  "amerikai kiejtés": "wymowa amerykańska",
 });
