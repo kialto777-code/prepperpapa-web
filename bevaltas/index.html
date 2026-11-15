@@ -315,6 +315,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     if (o === 'visszavonva') return 'Ezt a kódot visszavonták.';
     if (o === 'felhasznalva') return 'Ezt a kódot már beváltották.';
     if (o === 'masik_fiok') return 'Ez a kód egy másik fiókhoz tartozik.';
+    if (o === 'teszt_kod') return 'Ez egy teszt-kód, csak a tesztelők válthatják be.';
     if (o === 'probak') {
       var ido = '';
       try { ido = new Date(d.ujra).toLocaleString(NY === 'hu' ? 'hu-HU' : NY, { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }); } catch (e) {}

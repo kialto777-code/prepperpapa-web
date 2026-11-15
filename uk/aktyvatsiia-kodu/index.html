@@ -306,6 +306,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     if (o === 'visszavonva') return 'Цей код відкликано.';
     if (o === 'felhasznalva') return 'Цей код уже активовано.';
     if (o === 'masik_fiok') return 'Цей код належить іншому обліковому запису.';
+    if (o === 'teszt_kod') return 'Це тестовий код; активувати його можуть лише тестувальники.';
     if (o === 'probak') {
       var ido = '';
       try { ido = new Date(d.ujra).toLocaleString(NY === 'hu' ? 'hu-HU' : NY, { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }); } catch (e) {}

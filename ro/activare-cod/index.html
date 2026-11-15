@@ -306,6 +306,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     if (o === 'visszavonva') return 'Acest cod a fost revocat.';
     if (o === 'felhasznalva') return 'Acest cod a fost deja activat.';
     if (o === 'masik_fiok') return 'Acest cod aparține altui cont.';
+    if (o === 'teszt_kod') return 'Acesta este un cod de test; îl pot activa doar testerii.';
     if (o === 'probak') {
       var ido = '';
       try { ido = new Date(d.ujra).toLocaleString(NY === 'hu' ? 'hu-HU' : NY, { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }); } catch (e) {}

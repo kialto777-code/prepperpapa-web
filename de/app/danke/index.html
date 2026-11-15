@@ -621,8 +621,19 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     try { localStorage.setItem(kulcs, String(Date.now())); } catch (e) {}
     try { sessionStorage.setItem(kulcs, '1'); } catch (e) {}
   }
+  // WEB-002 (2026-11-15): a conversion goes to GoAffPro only (1) for an order with an attributed partner (ref) and
+  // (2) when the visitor accepted PARTNER TRACKING in the cookie banner (localStorage 'pp-suti', p=1, same rule as
+  // the banner's own loader). Otherwise the GoAffPro script is not even loaded. No buyer e-mail is sent.
+  function partnerSuti() {
+    try {
+      var s = JSON.parse(localStorage.getItem('pp-suti'));
+      return !!(s && s.p === 1 && s.v === 1 && Date.now() - s.t < 365 * 864e5);
+    } catch (e) { return false; }
+  }
   function konverzio(g) {
     if (!g) return;
+    if (!g.rendeles || !g.rendeles.ref) return;
+    if (!partnerSuti()) return;
     var alairt = g.be && g.site_id && g.jwt;
     var nyilt = !alairt && g.alairatlan && g.bolt && g.rendeles && g.rendeles.number;
     if (!alairt && !nyilt) return;
@@ -651,7 +662,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       try {
         window.goaffproTrackConversion(alairt ? g.jwt : {
           id: o.id, number: o.number, total: o.total, subtotal: o.subtotal, currency: o.currency,
-          coupons: o.coupons || [], line_items: o.line_items || [], customer: o.customer || {},
+          coupons: o.coupons || [], line_items: o.line_items || [],
           forceSDK: true
         });
       } catch (e) {}
