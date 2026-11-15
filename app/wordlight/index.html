@@ -433,6 +433,16 @@
   .wl .wlvesz #pp-checkout{text-align:left;margin-top:14px;border-top:1px solid #2a3a31;padding-top:14px}
   .wl .wlletolt{text-align:center}
   .wl .wlletolt .badges{margin:6px 0 16px}
+  /* iPhone public test button (TestFlight), same height as the store badges; our own look, not Apple's badge */
+  .wl .tfgomb{display:inline-flex;flex-direction:column;justify-content:center;height:52px;box-sizing:border-box;padding:0 16px;
+     border-radius:9px;border:1px solid rgba(255,179,64,.6);background:rgba(11,17,14,.85);color:var(--ink);text-decoration:none;
+     line-height:1.15;text-align:left}
+  .wl .tfgomb:hover,.wl .tfgomb:focus-visible{border-color:var(--borostyan)}
+  .wl .tfgomb .tf1{font-size:11px;color:var(--muted)}
+  .wl .tfgomb .tf2{font-size:19px;font-weight:700}
+  .wl .wlgyors .tfgomb{height:38px;padding:0 12px}
+  .wl .wlgyors .tfgomb .tf1{font-size:9.5px}
+  .wl .wlgyors .tfgomb .tf2{font-size:15px}
   #vasarlas,#letoltes{scroll-margin-top:16px}
   /* the read-aloud video's sound button: under the phone, so it never covers the app's own controls */
   .wl .wlhang{position:relative;display:flex;margin:14px auto 0;width:52px;height:52px;
@@ -697,10 +707,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <p class="wlar">Karácsonyi ár 2027. január 6-ig: <b>7 777 Ft</b> (eurós fizetésnél 19,99 €).</p>
 <p class="wlgomb"><a class="btn amber" href="#vasarlas">Megveszem</a></p>
 <div class="badges">
-<a class="badge play" id="wl-badge-play" aria-disabled="true" title="Hamarosan a Google Play áruházban"><img src="/app/kepek/google-play-hu.png" alt="Szerezd be: Google Play (hamarosan)" width="646" height="250"></a>
-<a class="badge appstore" id="wl-badge-appstore" aria-disabled="true" title="Hamarosan az App Store-ban"><img src="/app/kepek/app-store-hu.svg" alt="Letölthető az App Store-ból (hamarosan)" width="151" height="40"></a>
+<a class="badge play" id="wl-badge-play" href="https://play.google.com/apps/testing/hu.prepperpapa.biblia" rel="noopener" title="Nyilvános teszt a Google Playen"><img src="/app/kepek/google-play-hu.png" alt="Szerezd be: Google Play (nyilvános teszt)" width="646" height="250"></a>
+<a class="tfgomb" id="wl-badge-appstore" href="https://testflight.apple.com/join/v8bMmDgY" rel="noopener" title="Nyilvános teszt a TestFlighton (iPhone)"><div class="tf1">iPhone: nyilvános teszt</div><div class="tf2">TestFlight</div></a>
 </div>
-<p class="wlhamar">Nyilvános teszt hamarosan</p>
+<p class="wlhamar">Nyilvános teszt: már csatlakozhatsz</p>
 <p class="wlugro"><a href="#vasarlas">Biblia prémium</a> &middot; <a href="#letoltes">Letöltés</a></p>
 </div>
 <div class="wlszinpad">
@@ -863,11 +873,11 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </div>
 <div class="wlkartya wlletolt" id="letoltes">
 <h2>Letöltés</h2>
-<p><b>Android:</b> hamarosan a Google Play áruházban.<br><b>iPhone:</b> hamarosan az App Store-ban.</p>
-<p class="wlhamar">Nyilvános teszt hamarosan</p>
+<p><b>Android:</b> nyilvános teszt a Google Playen.<br><b>iPhone:</b> nyilvános teszt a TestFlighton.</p>
+<p class="wlhamar">Nyilvános teszt: már csatlakozhatsz</p>
 <div class="badges">
-<a class="badge play" id="wl-letolt-badge-play" aria-disabled="true" title="Hamarosan a Google Play áruházban"><img src="/app/kepek/google-play-hu.png" alt="Szerezd be: Google Play (hamarosan)" width="646" height="250"></a>
-<a class="badge appstore" id="wl-letolt-badge-appstore" aria-disabled="true" title="Hamarosan az App Store-ban"><img src="/app/kepek/app-store-hu.svg" alt="Letölthető az App Store-ból (hamarosan)" width="151" height="40"></a>
+<a class="badge play" id="wl-letolt-badge-play" href="https://play.google.com/apps/testing/hu.prepperpapa.biblia" rel="noopener" title="Nyilvános teszt a Google Playen"><img src="/app/kepek/google-play-hu.png" alt="Szerezd be: Google Play (nyilvános teszt)" width="646" height="250"></a>
+<a class="tfgomb" id="wl-letolt-badge-appstore" href="https://testflight.apple.com/join/v8bMmDgY" rel="noopener" title="Nyilvános teszt a TestFlighton (iPhone)"><div class="tf1">iPhone: nyilvános teszt</div><div class="tf2">TestFlight</div></a>
 </div>
 </div>
 </section>
