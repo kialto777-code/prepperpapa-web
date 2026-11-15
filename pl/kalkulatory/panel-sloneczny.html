@@ -141,6 +141,35 @@
   .ppkalk .ne-jelmagy span{display:inline-block; width:18px; height:0; border-top:3px solid var(--accent);}
   .ppkalk .ne-jelmagy span.ne-j-ref{border-top:2px dashed var(--dim); margin-left:6px;}
   .ppkalk .egi-csempek b small{font-size:12px; color:var(--muted);}
+  .ppkalk /* DESIGN 17A (Boss TG 39508): the sun-arc hero. Olive base (opaque, .ppkalk so the light display never makes it see-through), .ppkalk orange
+     arc and numbers, .ppkalk subtle neutral edge; everything through the theme variables, .ppkalk so the night keeps red. */
+  .ne-hero-kartya{background:linear-gradient(160deg, color-mix(in srgb, var(--green) 22%, var(--bg)) 0%, color-mix(in srgb, var(--green) 8%, var(--bg)) 100%);
+    border:1px solid color-mix(in srgb, var(--text) 16%, transparent); border-radius:20px; padding:14px 14px 14px; margin:0 0 16px;}
+  .ppkalk .ne-hero{display:block; cursor:pointer; border-radius:12px; -webkit-tap-highlight-color:transparent;}
+  .ppkalk .ne-hero[aria-disabled="true"]{cursor:default;}
+  .ppkalk .ne-hero:focus-visible{outline:2px solid var(--accent); outline-offset:4px;}
+  .ppkalk .ne-hero-fej{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .ppkalk .ne-hero-fej label{margin:0; color:var(--muted);}
+  .ppkalk .ne-hero-kam{width:22px; height:22px; flex:0 0 auto; color:var(--muted);}
+  .ppkalk .ne-hero[aria-disabled="true"] .ne-hero-kam{opacity:.35;}
+  .ppkalk .ne-hero-torzs{display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); align-items:center; gap:10px; margin:6px 0 12px;}
+  .ppkalk .ne-hero-svg{display:block; width:100%; height:auto;}
+  .ppkalk .ne-hz0{stop-color:var(--text); stop-opacity:0;}
+  .ppkalk .ne-hz1{stop-color:var(--text); stop-opacity:.4;}
+  .ppkalk .ne-hero-iv-ut{fill:none; stroke:var(--accent); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:.1 7;}
+  .ppkalk .ne-hero-del{fill:var(--accent);}
+  .ppkalk .ne-hero-most{fill:none; stroke:var(--text); stroke-width:2;}
+  .ppkalk .ne-hero-ertek{text-align:right; min-width:0;}
+  .ppkalk .ne-hero-ertek div + div{margin-top:8px;}
+  .ppkalk .ne-hero-ertek b{display:block; font-weight:800; font-variant-numeric:tabular-nums; line-height:1.05; color:var(--text);}
+  .ppkalk .ne-hero-ertek div:first-child b{font-size:clamp(34px, 11vw, 46px);}
+  .ppkalk .ne-hero-ertek div:last-child b{font-size:clamp(24px, 7.5vw, 30px); color:var(--accent);}
+  .ppkalk .ne-hero-ertek span{display:block; font-size:13.5px; color:var(--muted); margin-top:2px; overflow-wrap:anywhere;}
+  .ppkalk /* the sunrise / noon / sunset tiles: min-content columns made "Sonnenuntergang" push the page to 444 px at 390 (German, .ppkalk measured on main too) */
+  .egi-csempek{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ppkalk .egi-csempek div{min-width:0; overflow-wrap:anywhere; font-size:clamp(13px, 3.9vw, 16px);}
+  .ppkalk .ne-hero-kartya .row{margin:0;}
+  .ppkalk .ne-hero-kartya button.primary{width:100%;}
   .ppkalk .ne-irany{display:flex; align-items:center; gap:12px; background:var(--raised); border:1px solid var(--border); border-radius:12px; padding:10px 12px; margin-bottom:8px;}
   .ppkalk .ne-irany b{font-family:var(--mono); font-size:22px; color:var(--accent);}
   .ppkalk .ne-irany span{display:block; font-size:13px; color:var(--muted); margin-top:2px;}
@@ -155,6 +184,7 @@
   .ppkalk .ne-hely{font-family:var(--mono)}
   .ppkalk .ne-applink{display:inline-block;background:var(--accent);color:#1b1407;font-weight:700;padding:11px 20px;border-radius:10px;text-decoration:none}
   .ppkalk #neDatum{max-width:220px}
+  .ppkalk .ne-hero{cursor:default}
 </style>
 <style id="fej2">
   header .nav.fej2{max-width:1320px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:74px;flex-wrap:nowrap;position:relative}
@@ -324,6 +354,23 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </div></div>
 <p class="beveze">W którą stronę ma patrzeć panel i jak mocno go pochylić? Podaj miejsce i dzień, albo jednym dotknięciem przesilenie zimowe lub letnie, a dostaniesz kąt nachylenia na ten dzień, na tę porę roku i na stałe na cały rok.</p>
 <div class="ppkalk" id="kalk-napelem">
+    <!-- DESIGN 17A (Boss TG 39508 / 39514): the sun-arc hero. Its numbers are the app's own results (the "Erre a napra" tilt and the
+         panel direction of the recommendation below); the arc is the chosen day's sun path (neNap). Tapping it opens the camera
+         sun-path view; the orange button below keeps opening the compass with the target. -->
+    <div class="ne-hero-kartya">
+      <div class="ne-hero" id="neHero">
+        <div class="ne-hero-fej"><label>Ajánlott beállítás</label></div>
+        <div class="ne-hero-torzs">
+          <div class="ne-hero-iv" id="neHeroIv"></div>
+          <div class="ne-hero-ertek">
+            <div><b id="neHeroDol">–</b><span>dőlésszög</span></div>
+            <div><b id="neHeroIrany">–</b><span id="neHeroIranyCim">tájolás</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="note ne-appjegyzet">A panelt a telefon tájolójával is a helyére igazíthatod: a kamerakép rárajzolja a nap pályáját, és a tájoló a panel irányára mutat. Ez a PrepperPapa alkalmazásban működik.</p>
+      <div class="row"><a class="ne-applink" href="/pl/app/">Nézd meg az alkalmazást</a></div>
+    </div>
     <div class="section">
       <label>Helyszín</label>
       <p class="note ne-hely" id="neHely"></p>
@@ -335,7 +382,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     </div>
     <div class="section">
       <label>Dátum</label>
-      <input type="date" id="neDatum">
+      <input type="text" readonly data-ppido="datum" data-ppido-kotelezo id="neDatum">
       <div class="ne-chipek" id="neEvszakok">
         <button data-nap="ma">Ma</button><button data-nap="tel">Téli napforduló</button><button data-nap="tavasz">Tavaszi napéjegyenlőség</button><button data-nap="nyar">Nyári napforduló</button><button data-nap="osz">Őszi napéjegyenlőség</button>
       </div>
@@ -349,8 +396,6 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     <div class="section">
       <label>Ajánlott beállítás</label>
       <div id="neAjanlas"></div>
-      <p class="note ne-appjegyzet">A panelt a telefon tájolójával is a helyére igazíthatod: a kamerakép rárajzolja a nap pályáját, és a tájoló a panel irányára mutat. Ez a PrepperPapa alkalmazásban működik.</p>
-      <div class="row"><a class="ne-applink" href="/pl/app/">Nézd meg az alkalmazást</a></div>
     </div>
     <div class="section">
       <label>Várható termelés ezen a napon</label>
@@ -550,7 +595,7 @@ function napelemRajz(){
   const T = ppForditSzoveg, h = neHelyAkt;
   const hely = $('neHely');
   if(!h){ hely.textContent = T('Még nem tudom, hol vagy. Nyomd meg a „Mérés a helyzetemre” gombot, vagy add meg kézzel.');
-    ['neAbra', 'neIdok', 'neNapfeny', 'neAjanlas', 'neBecsles'].forEach(id => { $(id).textContent = ''; }); return; }
+    ['neAbra', 'neIdok', 'neNapfeny', 'neAjanlas', 'neBecsles'].forEach(id => { $(id).textContent = ''; }); neHeroRajz(null); return; }
   hely.textContent = ppKoordFmt(h.lat, h.lng) + ' · ' + T(h.honnan || 'kézzel megadva');
   const nap = neNap(neDatum, h.lat, h.lng);
   // reference days: the two solstices and an equinox of the same year (dim), the chosen day on top
@@ -580,7 +625,39 @@ function napelemRajz(){
     + '<div><span>' + esc(T('Egész évre, fixen')) + '</span><b>' + dEv + '°</b></div></div>'
     + '<p class="note">' + esc(T('A dőlésszög a vízszinteshez mért szög: 0° = fekvő panel, 90° = függőleges.')) + '</p>';
   neUtolso = { nap, dNap, dEv, paz, h };
+  neHeroRajz(neUtolso);
   neBecslesRajz();
+}
+// the hero: the numbers are the recommendation's own (the day's best tilt, the panel direction), the arc is the chosen day's sun
+// path from neNap: time across (sunrise to sunset), elevation up (scaled to at least 60 degrees, so a winter arc stays low).
+// The dot marks solar noon; on today's date a ring marks the sun now. Without a place the arc is just the horizon.
+function neHeroIvSvg(nap){
+  const W = 300, H = 112, bal = 14, jobb = 14, fel = 14, alj = 96, sz = W - bal - jobb, mag = alj - fel;
+  let s = '<svg class="ne-hero-svg" viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true" focusable="false"><defs><linearGradient id="neHorizont" gradientUnits="userSpaceOnUse" x1="' + bal + '" x2="' + (W - jobb) + '" y1="0" y2="0">'
+    + '<stop offset="0" class="ne-hz0"/><stop offset=".18" class="ne-hz1"/><stop offset=".82" class="ne-hz1"/><stop offset="1" class="ne-hz0"/></linearGradient></defs>'
+    + '<line x1="' + bal + '" x2="' + (W - jobb) + '" y1="' + alj + '" y2="' + alj + '" stroke="url(#neHorizont)" stroke-width="1.5"/>';
+  const pts = nap ? nap.ut.filter(p => p.el > -0.833) : [];
+  if(pts.length > 1){
+    const t0 = pts[0].t.getTime(), t1 = pts[pts.length - 1].t.getTime(), span = Math.max(1, t1 - t0);
+    const emax = Math.max(60, nap.del.el), x = t => bal + (t - t0)/span*sz, y = el => alj - Math.max(0, el)/emax*mag;
+    s += '<path class="ne-hero-iv-ut" d="' + pts.map((p, i) => (i ? 'L' : 'M') + x(p.t.getTime()).toFixed(1) + ' ' + y(p.el).toFixed(1)).join('') + '"/>';
+    s += '<circle class="ne-hero-del" cx="' + x(nap.del.t.getTime()).toFixed(1) + '" cy="' + y(nap.del.el).toFixed(1) + '" r="7"/>';
+    const ma = new Date();
+    if(neDatum && neDatum.toDateString() === ma.toDateString() && ma.getTime() >= t0 && ma.getTime() <= t1 && neUtolso){
+      const p = ppNapPozicio(ma, neUtolso.h.lat, neUtolso.h.lng); if(p.el > 0) s += '<circle class="ne-hero-most" cx="' + x(ma.getTime()).toFixed(1) + '" cy="' + y(p.el).toFixed(1) + '" r="5"/>'; }
+  }
+  return s + '</svg>';
+}
+function neHeroRajz(u){
+  const T = ppForditSzoveg, hero = $('neHero'); if(!hero) return;
+  $('neHeroIv').innerHTML = neHeroIvSvg(u ? u.nap : null);
+  hero.setAttribute('aria-disabled', u ? 'false' : 'true');
+  if(!u){ $('neHeroDol').textContent = '–'; $('neHeroIrany').textContent = '–'; $('neHeroIranyCim').textContent = T('tájolás');
+    hero.setAttribute('aria-label', T('Ajánlott beállítás')); return; }
+  const betu = T(u.paz === 180 ? 'D' : 'É');
+  $('neHeroDol').textContent = u.dNap + '°'; $('neHeroIrany').textContent = betu;
+  $('neHeroIranyCim').textContent = T('tájolás') + ' ' + u.paz + '°';
+  hero.setAttribute('aria-label', T('Ajánlott beállítás') + ': ' + u.dNap + '° ' + T('dőlésszög') + ', ' + betu + ' ' + T('tájolás') + ' ' + u.paz + '°.');
 }
 function neBecslesRajz(){
   const T = ppForditSzoveg, b = $('neBecsles'); if(!b) return;

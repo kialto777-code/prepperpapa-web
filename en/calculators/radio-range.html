@@ -328,6 +328,12 @@ function ppUtolsoHely(){ return {lat:47.4979, lng:19.0402}; }
 function ppLocale(){ return 'en-GB'; }
 function ppSzam(x){ return Math.round(x).toLocaleString(ppLocale()); }
 
+function ppForditKitolt(sz, o) {
+  return ppGerahEgyezes(ppForditSzoveg(sz).replace(/\{(\w+)\}/g, (_, k) => (o && o[k] != null) ? String(o[k]) : ''));
+}
+
+function ppGerahEgyezes(s) { return s; }
+
 function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 function kalkHiba(elId, uzenet){
@@ -446,56 +452,52 @@ $('radSzamol').onclick = ()=>{
   // es epp ezert veszelyes: terepen a szoras konnyen ketszeres. A also/felso hatar a
   // becsult ertek 0,6- es 1,4-szerese -- ez a nagysagrendet adja at, nem hamis pontossagot.
   const also = r.varhato*0.6, felso = r.varhato*1.4;
-  const km = x => (x<10 ? (Math.round(x*10)/10).toString().replace('.',',') : Math.round(x).toString());
+  // THE RESULT TEXTS ARE WRITTEN IN THE UI LANGUAGE (Marta 35261 / APP-0xx: the LoRa legal warning stayed Hungarian in all 7
+  // foreign languages -- it had no dictionary key, and the text nodes with a band name or a number inside never matched one).
+  // Every sentence is a ppForditKitolt template (the Hungarian sentence with {slots} is the key, as in ba1ac73c); the numbers
+  // use the UI language's decimal mark. Hungarian output is unchanged character for character.
+  const T = ppForditSzoveg;
+  const radSzam = (n, max) => n.toLocaleString(ppLocale(), { useGrouping:false, maximumFractionDigits: max || 1 });
+  const km = x => (x<10 ? radSzam(Math.round(x*10)/10) : Math.round(x).toString());
 
   let fig='';
   if(r.s.id==='pmr' && r.w > r.s.maxW){
-    fig += '<p class="note koordfigy"><b>Ez a teljesítmény PMR446-on nem legális.</b> A sávon '
-      + 'maximum 0,5 watt engedélyezett, gyári antennával. A számot kiszámoltuk, de egy '
-      + 'erősebb adóval a saját frekvenciádon te zavarod meg azokat, akikkel beszélni akarsz.</p>';
+    fig += '<p class="note koordfigy"><b>'+T('Ez a teljesítmény PMR446-on nem legális.')+'</b> '
+      + T('A sávon maximum 0,5 watt engedélyezett, gyári antennával. A számot kiszámoltuk, de egy erősebb adóval a saját frekvenciádon te zavarod meg azokat, akikkel beszélni akarsz.')+'</p>';
   }
   if(r.s.id==='lora' && r.w > r.s.maxW){
-    fig += '<p class="note koordfigy"><b>Ez a teljesítmény LoRa-n nem legális.</b> A 868 MHz-es sávon '
-      + 'legfeljebb 0,5 watt (a 869,4-869,65 MHz-es alsávon), máshol 25 mW engedélyezett.</p>';
+    fig += '<p class="note koordfigy"><b>'+T('Ez a teljesítmény LoRa-n nem legális.')+'</b> '
+      + T('A 868 MHz-es sávon legfeljebb 0,5 watt (a 869,4-869,65 MHz-es alsávon), máshol 25 mW engedélyezett.')+'</p>';
   }
   if(r.s.maxW===0){
-    fig += '<p class="note koordfigy"><b>Ez a sáv engedélyköteles.</b> '+r.s.nev+' használatához '
-      + 'vizsga és hívójel kell. A vizsga előre megszerezhető — és pont ez a lényeg: '
-      + 'egy vészhelyzetben már késő elkezdeni.</p>';
+    fig += '<p class="note koordfigy"><b>'+T('Ez a sáv engedélyköteles.')+'</b> '
+      + ppForditKitolt('{sav} használatához vizsga és hívójel kell. A vizsga előre megszerezhető — és pont ez a lényeg: egy vészhelyzetben már késő elkezdeni.', {sav:T(r.s.nev)})+'</p>';
   }
 
   let celSor='';
+  const B = x => '<b>'+x+'</b>';   // the bold is added here, never inside a dictionary key
   if(r.celTul){
-    celSor = '<p class="note koordfigy"><b>'+km(r.cel)+' kilométerre ezen a sávon a teljesítmény '
-      + 'nem elég — bármennyi.</b> A rálátásod '+km(r.ralatas)+' kilométer, és a Föld görbülete '
-      + 'mögé a VHF/UHF jel nem hajlik be. Amin múlik: <b>magasság</b> (menj fel egy dombra vagy '
-      + 'tedd fel az antennát), <b>átjátszó</b>, vagy <b>alacsonyabb sáv</b> (CB vagy rövidhullám).</p>';
+    celSor = '<p class="note koordfigy">'+B(ppForditKitolt('{cel} kilométerre ezen a sávon a teljesítmény nem elég — bármennyi.', {cel:km(r.cel)})) + ' '
+      + ppForditKitolt('A rálátásod {ralatas} kilométer, és a Föld görbülete mögé a VHF/UHF jel nem hajlik be. Amin múlik: {mag} (menj fel egy dombra vagy tedd fel az antennát), {atj}, vagy {alsav} (CB vagy rövidhullám).',
+          {ralatas:km(r.ralatas), mag:B(T('magasság')), atj:B(T('átjátszó')), alsav:B(T('alacsonyabb sáv'))})+'</p>';
   } else if(r.kellW != null){
     const kw = r.kellW;
-    celSor = '<p class="note"><b>'+km(r.cel)+' kilométerhez kb. '
-      + (kw<1 ? (Math.round(kw*100)/100).toString().replace('.',',') : ppSzam(kw))
-      + ' watt kellene</b> ezen a sávon és ezen a terepen'
-      + (kw > 100 ? ' — ami már nem kézirádió-kategória, és rendszerint olcsóbb feljebb vinni az antennát.' : '.')
+    celSor = '<p class="note">'+B(ppForditKitolt('{cel} kilométerhez kb. {kw} watt kellene', {cel:km(r.cel), kw:(kw<1 ? radSzam(Math.round(kw*100)/100, 2) : ppSzam(kw))})) + ' '
+      + (kw > 100 ? T('ezen a sávon és ezen a terepen — ami már nem kézirádió-kategória, és rendszerint olcsóbb feljebb vinni az antennát.') : T('ezen a sávon és ezen a terepen.'))
       + '</p>';
   }
 
-  el.innerHTML='<div class="koorddoboz"><p class="eginagy">'+km(also)+'–'+km(felso)+' km</p>'
-    + '<p class="note">Ennyire várható összeköttetés '+r.s.nev.split(' — ')[0]+'-on, '
-    + r.t.nev+' terepen, '+String(r.w).replace('.',',')+' watttal, '
-    + r.h1+' és '+r.h2+' méter antennamagassággal.</p>'
-    + '<p class="note"><b>Amin most múlik: '+r.korlat+'.</b> '
-    + (r.hf ? 'Rövidhullámon a talajhullámmal számoltunk.'
-            : 'A rálátásod '+km(r.ralatas)+' km, a terep és a teljesítmény '+km(r.terepTav)+' km-t enged — a kettő közül a kisebbik számít.')
+  el.innerHTML='<div class="koorddoboz"><p class="eginagy">'+ppForditKitolt('{also}–{felso} km', {also:km(also), felso:km(felso)})+'</p>'
+    + '<p class="note">'+ppForditKitolt('Ennyire várható összeköttetés {sav}-on, {terep} terepen, {w} watttal, {h1} és {h2} méter antennamagassággal.',
+        {sav:T(r.s.nev).split(' — ')[0], terep:T(r.t.nev), w:radSzam(r.w, 10), h1:r.h1, h2:r.h2})+'</p>'
+    + '<p class="note">'+B(ppForditKitolt('Amin most múlik: {korlat}.', {korlat:T(r.korlat)})) + ' '
+    + (r.hf ? T('Rövidhullámon a talajhullámmal számoltunk.')
+            : ppForditKitolt('A rálátásod {ralatas} km, a terep és a teljesítmény {terep} km-t enged — a kettő közül a kisebbik számít.', {ralatas:km(r.ralatas), terep:km(r.terepTav)}))
     + '</p>'
     + fig
     + celSor
-    + '<p class="note"><b>A watt a leggyengébb eszközöd.</b> A távolság a teljesítmény negyedik '
-    + 'gyökével nő: négyszer annyi watt másfélszer nagyobb távolság. Egy méterrel feljebb tett '
-    + 'antenna rendszerint többet ad, mint a teljesítmény megduplázása — és nem fogyaszt.</p>'
-    + (r.hf ? '<p class="note"><b>Rövidhullámon ez a szám csak a talajhullám.</b> A 7 és a 3,6 '
-        + 'megahertzes sáv igazi hatótávját az ionoszféra adja: napszaktól és napfolt-tevékenységtől '
-        + 'függően 100-tól több ezer kilométerig. Azt ez a kalkulátor nem modellezi — arra '
-        + 'terjedési előrejelzés kell.</p>' : '')
+    + '<p class="note">'+B(T('A watt a leggyengébb eszközöd.')) + ' ' + T('A távolság a teljesítmény negyedik gyökével nő: négyszer annyi watt másfélszer nagyobb távolság. Egy méterrel feljebb tett antenna rendszerint többet ad, mint a teljesítmény megduplázása — és nem fogyaszt.')+'</p>'
+    + (r.hf ? '<p class="note">'+B(T('Rövidhullámon ez a szám csak a talajhullám.')) + ' ' + T('A 7 és a 3,6 megahertzes sáv igazi hatótávját az ionoszféra adja: napszaktól és napfolt-tevékenységtől függően 100-tól több ezer kilométerig. Azt ez a kalkulátor nem modellezi — arra terjedési előrejelzés kell.')+'</p>' : '')
     + '</div>';
   el.style.display='block';
 };

@@ -318,6 +318,7 @@ window.PP_FORD_SZOTAR.ro = {
   "2000 m felett": "Peste 2000 m",
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "Ai introdus prea multe coduri greșite. Din motive de securitate nu poți încerca din nou o vreme.",
+  "Ez egy teszt-kód, csak a tesztelők válthatják be.": "Acesta este un cod de test; îl pot activa doar testerii.",
   "Újra próbálhatod ekkor:": "Poți încerca din nou la:",
   "A linkben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "Codul din link este deja completat. Atinge „Valorifică codul”.",
   "A linkben kapott kód moduljai ezen a készüléken már fel vannak oldva, a kódot nem kell beváltanod.": "Modulele codului din link sunt deja deblocate pe acest dispozitiv; nu trebuie să valorifici codul.",
@@ -430,6 +431,7 @@ window.PP_FORD_SZOTAR.ro = {
   "Megnézem térképen": "Arată pe hartă",
   "Modulok": "Module",
   "Nincs internet: a telefon hangja olvas": "Fără internet: citește vocea telefonului",
+  "A stúdióhang átmenetileg szünetel, később visszatér. A letöltött könyvek továbbra is szólnak.": "Vocea de studio este oprită temporar și revine mai târziu. Cărțile descărcate se aud în continuare.",
   "Próba-mód kikapcsolva, a valódi feloldásod áll vissza.": "Modul de probă dezactivat, deblocarea ta reală a revenit.",
   "Szünet": "Pauză",
   "Termékek": "Produse",
@@ -7961,6 +7963,19 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Javítások: a bekapcsolt kapcsolók nem villognak pirosan; a világtérkép hírforrása csak az eseményt említő cikkre mutat; a World English Bible és az ASV könyvcímei rendben vannak; más nyelven is megmarad a családtag típusa; a böjt hossza hónapban valódi naptári hónap; az SOS-súgó pontosan írja, hogy a 112-es gomb a tárcsázót nyitja meg.": "Corecturi: comutatoarele pornite nu mai clipesc în roșu; sursa de știri de pe harta lumii trimite doar la un articol care numește evenimentul; titlurile cărților din World English Bible și ASV sunt corecte; tipul membrului familiei se păstrează în orice limbă; durata unui post în luni este o lună calendaristică reală; ajutorul SOS spune corect că butonul 112 deschide apelarea.",
 });
 
+// BEALL A settings cards (Boss TG 39923, card 39ff0365): new card titles and current-value subtitles
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Napi idő és emlékeztetők": "Timp zilnic și mementouri",
+  "Szinkron és adatvédelem": "Sincronizare și confidențialitate",
+  "Funkciók beállításai": "Setările funcțiilor",
+  "Lejáró készlet, Gerah-jóváírás": "Stocuri care expiră, creditări Gerah",
+  "Szinkron be": "Sincronizare activată",
+  "Szinkron ki": "Sincronizare dezactivată",
+  "statisztika be": "statistică activată",
+  "statisztika ki": "statistică dezactivată",
+  "Morze, Térkép, SOS, Noah, Szobák, Tárca, Alsó sáv": "Morse, Hartă, SOS, Noah, Camere, Portofel, Bara de jos",
+});
+
 // Wordlight colour themes + ring button colour (Boss TG 39841/39851, card fc63a4ba)
 Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Színtéma": "Temă de culori",
@@ -7979,4 +7994,202 @@ Object.assign(window.PP_FORD_SZOTAR.ro, {
   "Interneten (jobb minőség)": "Prin internet (calitate mai bună)",
   "Ennek a hangnak nincs letöltött változata a telefonon, ezért most a nyelv legjobb letöltött hangja szól. A hangadatot a telefon beállításaiban lehet letölteni (Szövegfelolvasás).": "Această voce nu are o versiune descărcată pe telefon, așa că acum citește cea mai bună voce descărcată a limbii. Datele vocii se pot descărca din setările telefonului (Redare text în vorbire).",
   "amerikai kiejtés": "pronunție americană",
+  "A telefon Ne zavarjanak módja most elnémítja ezt a hangot. Kapcsold ki, vagy engedélyezd benne a riasztásokat.": "Modul „Nu deranja” al telefonului oprește acum acest sunet. Dezactivează-l sau permite alarmele în el.",
+});
+
+// Household page, variant B (Boss 'Ház B', TG 40179, card 06b279a5): the add cards and the 'what is missing' pieces on the cards and the summary line
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Háziállat hozzáadása": "Adaugă animal de companie",
+  "Jármű hozzáadása": "Adaugă vehicul",
+  "telefonszám": "număr de telefon",
+  "születési dátum": "data nașterii",
+  "testsúly": "greutate",
+  "helye a térképen": "locația pe hartă",
+  "hiányos adatlap": "fișă incompletă",
+});
+
+// BEALL A PrepperPapa part (Boss TG 39923/39934): Funkciók beállításai links, Értesítések links, night switch, the shield's own-tiles editor (Csempe A)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Vörös éjszakai mód": "Mod de noapte roșu",
+  "Riasztás": "Alarmă",
+  "{n} ébresztő": "{n} alarme",
+  "bekapcsolva": "pornite",
+  "Nincs ébresztő": "Nicio alarmă",
+  "Morze: adás": "Morse: transmitere",
+  "Morze: vétel fénnyel": "Morse: recepție prin lumină",
+  "Morze: vétel hanggal": "Morse: recepție prin sunet",
+  "Térkép: alaptérkép és rétegek": "Hartă: harta de bază și straturi",
+  "Barométer-riasztás": "Alarmă barometru",
+  "Napelem": "Panou solar",
+  "Menetidő-ébresztő": "Alarmă timp de mers",
+  "Token tárca: PIN és ujjlenyomat": "Portofel de tokenuri: PIN și amprentă",
+  "Irattárca: PIN és ujjlenyomat": "Portofel de documente: PIN și amprentă",
+  "Bibliai ébresztők": "Alarme biblice",
+  "Megvallás": "Mărturisire",
+  "Bibliai játékok": "Jocuri biblice",
+  "Böjt": "Post",
+  "Irányítópult: hírek szűrése": "Panou: filtrul știrilor",
+  "Noah reggeli összefoglalója": "Rezumatul de dimineață al lui Noah",
+  "Kezdőlap és alsó sáv": "Ecranul de pornire și bara de jos",
+  "Értesítés, Gerah-közösség, SOS: szobánként, a szoba fogaskerekénél": "Notificări, comunitate Gerah, SOS: pe cameră, la rotița camerei",
+  "Név, kép, jelszó": "Nume, poză, parolă",
+  "Modell, válaszhossz, Rólam, reggeli összefoglaló": "Model, lungimea răspunsului, Despre mine, rezumat de dimineață",
+  "Rétegválasztó a térkép jobb felső sarkában": "Selectorul de straturi în colțul din dreapta sus al hărții",
+  "Helyszín, teljesítmény": "Locație, putere",
+  "Esés utáni SOS": "SOS după o cădere",
+  "Frekvenciák": "Frecvențe",
+  "Jelszó mentve": "Parolă salvată",
+  "Nincs mentett jelszó": "Nicio parolă salvată",
+  "Közös PIN a két tárcához": "PIN comun pentru cele două portofele",
+  "Név a szobákban, vészkártya": "Nume în camere, card de urgență",
+  "Normál tempó": "Tempo normal",
+  "Lassú tempó": "Tempo lent",
+  "Játékhang": "Sunetul jocului",
+  "Közös böjt, napló": "Post comun, jurnal",
+  "Világhelyzet, imakérés-jelölők": "Situația mondială, marcaje ale cererilor de rugăciune",
+  "Saját csempék a pajzs-menüben, alsó sáv": "Plăcile proprii în meniul scutului, bara de jos",
+  "Terep és tájékozódás": "Teren și orientare",
+  "Biztonság": "Siguranță",
+  "Biblia és ima": "Biblie și rugăciune",
+  "Megjelenítés": "Afișare",
+  "A funkciók saját értesítései": "Notificările proprii ale funcțiilor",
+  "Lejáró készlet, Gerah, ima, barométer, szobák": "Stocuri care expiră, Gerah, rugăciune, barometru, camere",
+  "Saját csempék": "Plăci proprii",
+  "A pajzs-menü utolsó sora. Az átrendezéshez húzd a sort a fogantyújánál, a mínusz kiveszi a csempét.": "Ultimul rând al meniului scutului. Pentru reordonare, trage un rând de mâner; minusul elimină placa.",
+  "Még nincs saját csempéd.": "Încă nu ai plăci proprii.",
+  "Alsó sáv: nyisd meg a pajzs-menüt, tartsd lenyomva bármelyik gombot, és húzd le az alsó sávra.": "Bara de jos: deschide meniul scutului, ține apăsat orice buton și trage-l pe bara de jos.",
+  "Értesítés: szobánként, a szoba fogaskerekénél": "Notificări: pe cameră, la rotița camerei",
+  "Áthelyezés": "Mută",
+});
+
+// BEALL A settings search (Boss TG 39923, spec 4A): the field's placeholder and the map layer group
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Keresés a beállításokban": "Caută în setări",
+  "Térkép rétegek": "Straturi de hartă",
+});
+
+// BEALL A content (Boss TG 39923/39926, card 39ff0365): the Olvasás live preview, the interface-size preview line
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Élő előnézet": "Previzualizare în timp real",
+  "Így néz ki a felület szövege.": "Așa arată textul interfeței.",
+});
+
+// PROTECTED NAMES (Boss TG 40303/40305/40307, card 9c9618c1): the refusal message ({app} = the brand of the flavour) and the official-account emblem label
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Az ingyenes változatban egy szobát hozhatsz létre.": "În versiunea gratuită poți crea o cameră.",
+  "Az ingyenes változatban három szobában lehetsz benne.": "În versiunea gratuită poți fi membru în trei camere.",
+  "Legfeljebb tíz saját szobád lehet.": "Poți avea cel mult zece camere proprii.",
+  "Elérted az ingyenes változat korlátját.": "Ai atins limita versiunii gratuite.",
+  "Ez a név foglalt. A {app} név és a rendszert utánzó nevek (pl. Admin, Moderátor, Ügyfélszolgálat) nem választhatók.": "Acest nume este rezervat. Numele {app} și numele care imită sistemul (de ex. Admin, Moderator, Asistență clienți) nu pot fi alese.",
+  "Hivatalos": "Oficial",
+});
+
+// PROTECTED ROOM NAMES (card 9c9618c1): the room-name refusal sentence
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Ez a szobanév foglalt: a {app} neve és a rendszert utánzó szobanevek (pl. Admin, Moderátor, Ügyfélszolgálat) nem választhatók.": "Acest nume de cameră este rezervat: numele {app} și numele de camere care imită sistemul (de ex. Admin, Moderator, Asistență clienți) nu pot fi alese.",
+});
+
+// HOME TOUR on the dashboard (Boss 'Tura A', TG 40284): the guide steps of Settings > 'Csempék bemutatása' (PP_SUGO.home, PP_SUGO_SAV)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "A világ most: friss események a világból (földrengés, tűz, árvíz, háború), a hozzád legközelebbivel. A radarra koppintva a térkép nyílik, a sorokra koppintva a teljes lista.": "Lumea acum: evenimente recente din lume (cutremur, incendiu, inundație, război), inclusiv cel mai apropiat de tine. Atinge radarul pentru hartă, rândurile pentru lista completă.",
+  "Készültség: a helyszíneid egy-egy gyűrűn, színnel és szóval: rendben, kevés vagy kritikus. Koppintásra megnyílik a Kockázat.": "Grad de pregătire: locațiile tale, câte un inel, cu culoare și cuvânt: în regulă, puțin sau critic. Atingerea deschide Riscul.",
+  "Nap · légnyomás: napkelte és napnyugta a helyeden, alatta a légnyomás a változás nyilával. A sorokra koppintva megnyílik a részlet.": "Soare · presiune: răsăritul și apusul la locul tău, iar dedesubt presiunea cu săgeata schimbării. Atinge un rând pentru detalii.",
+  "Készlet: hány nap múlva fogy el az első alapvető dolog (víz, élelem, fűtés vagy áram), és mi jár le hamarosan. Koppintásra megnyílik a készlet.": "Rezervă: în câte zile se termină primul lucru esențial (apă, mâncare, încălzire sau curent) și ce expiră curând. Atingerea deschide rezerva.",
+  "A pajzs: ide koppintva megnyílik a menü az összes funkcióval. Bármelyik gombját lenyomva tartva az alsó sávra húzhatod.": "Scutul: atinge-l și se deschide meniul cu toate funcțiile. Ține apăsat un buton și trage-l pe bara de jos.",
+  "Szoba · üzenetek: a szobád legutóbbi üzenetei, a sürgős SOS-sel kiemelve. A szoba nevére koppintva másik szobát választasz, máshová koppintva megnyílik a szoba.": "Cameră · mesaje: ultimele mesaje din camera ta, cele urgente marcate cu SOS. Atinge numele camerei ca să alegi alta, atinge în altă parte și se deschide camera.",
+  "Tudástár · napi kártya: minden napra egy mondat a felkészülésről, egész nap ugyanaz. Koppintásra megnyílik a teljes cikk.": "Bază de cunoștințe · cartea zilei: o propoziție pe zi despre pregătire, aceeași toată ziua. Atingerea deschide articolul întreg.",
+  "Hirdetés: a PrepperPapa saját ajánlata, például egy akció. A Megnézem gomb megnyitja.": "Reclamă: oferta proprie PrepperPapa, de exemplu o reducere. Butonul Vezi o deschide.",
+  "Gyorsgomb: a funkció egy koppintásra, bárhonnan.": "Buton rapid: funcția la o atingere distanță, de oriunde.",
+  "Lámpa: zseblámpa egy koppintásra, bármelyik képernyőről.": "Lampă: o lanternă dintr-o atingere, de pe orice ecran.",
+  "SOS: villogó fény, éles sípolás, a 112 hívása és az újraélesztés üteme egy helyen.": "SOS: lumină intermitentă, fluier strident, apelul 112 și ritmul resuscitării într-un singur loc.",
+  "Beállítások: nyelv, mentés és visszatöltés, súgó és az adataid kezelése.": "Setări: limba, copia de siguranță și restaurarea, ajutorul și gestionarea datelor tale.",
+});
+// THE DAILY WISDOM step of the yearly guided prayer (Boss TG 40222, card 94cb54d4)
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Napi bölcsesség": "Înțelepciunea zilei",
+});
+// CALCULATOR RESULTS AND THE EXPIRY NOTIFICATION (card 6333f2ec, Agnes 2026-11-15): the travel-time, power and heating results and the expiry notification are built at draw time with numbers
+// inside the sentence, so each key is the Hungarian TEMPLATE with {slots} (ppForditKitolt fills them after the lookup).
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "{tav} kilométer {seb} km/h-val, plusz {emel} méter emelkedés. Az emelkedés minden hatszáz métere egy órát ad hozzá. Most indulva {ido}-kor érnél oda.": "{tav} km cu {seb} km/h, plus {emel} m de urcare. Fiecare 600 m de urcare adaugă o oră. Dacă pleci acum, ajungi la {ido}.",
+  "Napnyugta {nyugta}, tehát világosban odaérsz, {tartalek} tartalékkal.": "Apusul este la {nyugta}, deci ajungi pe lumină, cu {tartalek} rezervă.",
+  "Napnyugta {nyugta}: ebből {sotet} már sötétben lenne. Vagy indulj hamarabb, vagy vigyél lámpát.": "Apusul este la {nyugta}: {sotet} din drum ar fi deja pe întuneric. Pleacă mai devreme sau ia o lanternă.",
+  "{kg} kg fa, ez körülbelül {m3} ömlesztett köbméter": "{kg} kg de lemne, aproximativ {m3} m³ vrac",
+  "Napi {nap} kWh hőigénnyel, összesen {ossz} kWh. Légszáraz keményfával és 70 százalékos kályha-hatásfokkal számolva. Nedves fa ennek a felét adja, tehát kétszer annyi kell belőle.": "Cu o necesitate de căldură de {nap} kWh pe zi, în total {ossz} kWh. Calculat cu lemn de esență tare uscat la aer și un randament al sobei de 70 la sută. Lemnul umed dă jumătate din asta, deci ai nevoie de două ori mai mult.",
+  "Napi {nap} kWh hőigénnyel, összesen {ossz} kWh.": "Cu o necesitate de căldură de {nap} kWh pe zi, în total {ossz} kWh.",
+  "{kg} kg gáz, ez {palack} darab 11,5 kilós palack": "{kg} kg de gaz, adică {palack} × butelie de 11.5 kg",
+  "PB-gázt zárt térben égetni életveszélyes lehet.": "Arderea gazului GPL într-un spațiu închis poate fi mortală.",
+  "Szén-monoxid keletkezik, ami szagtalan, és álmodban öl meg. Kell mellé szén-monoxid-érzékelő, és kell folyamatos szellőzés — nem elég percenként kinyitni az ablakot.": "Se formează monoxid de carbon, care este inodor și te omoară în somn. Ai nevoie de un detector de monoxid de carbon și de ventilație continuă: nu ajunge să deschizi fereastra scurt din când în când.",
+  "Párát is termel:": "Produce și umezeală:",
+  "minden elégetett kiló gázból másfél liter víz kerül a levegőbe. Ettől penészedik a fal, és hidegebbnek érzed a szobát.": "din fiecare kilogram de gaz ars ajunge în aer un litru și jumătate de apă. De aceea mucegăiesc pereții, iar camera pare mai rece.",
+  "Ez nem fér el egyszerre.": "Este prea mult deodată.",
+  "A felsorolt fogyasztók együtt {w} wattot kérnek, a gép {max} wattot tud leadni. Nem attól múlik, hogy mekkora a wattórája — ennyit egyszerre nem bír. Vagy nagyobb teljesítményű gép kell, vagy nem egyszerre kell működtetni őket.": "Aparatele din listă cer împreună {w} W, iar stația poate livra {max} W. Nu depinde de capacitatea în wattore: pur și simplu nu rezistă atât deodată. Ai nevoie fie de o stație mai puternică, fie să nu le folosești pe toate în același timp.",
+  "Az indulási áram kiviheti.": "Curentul de pornire îl poate scoate din funcțiune.",
+  "A folyamatos fogyasztás belefér, de a motoros készülék induláskor kb. {w} wattot húz pár másodpercig, a gép {max} wattos. Ilyenkor a gép lekapcsol, pedig „papíron belefért volna\".": "Consumul continuu se încadrează, dar aparatul cu motor trage la pornire cca {w} W câteva secunde, iar stația are {max} W. Atunci stația se oprește, deși „pe hârtie ar fi încăput”.",
+  "{napra} {wh} Wh valóban felhasználható energia kell": "Pentru {napra} sunt necesare {wh} Wh de energie cu adevărat utilizabilă",
+  "(névlegesen kb. {nom} Wh, a veszteség miatt). A választott gép ezt tudja.": "(nominal cca {nom} Wh, din cauza pierderilor). Stația aleasă face față.",
+  "(névlegesen kb. {nom} Wh, a veszteség miatt). A választott gép ehhez kevés.": "(nominal cca {nom} Wh, din cauza pierderilor). Stația aleasă este insuficientă pentru asta.",
+  "Ezek elegendők lennének erre a listára: {lista}.": "Acestea ar fi suficiente pentru această listă: {lista}.",
+  "{n} ó": "{n} h",
+  "{db} × {w} W": "{db} × {w} W",
+  "{n} Wh": "{n} Wh",
+  "Napi fogyasztás: {n} Wh": "Consum zilnic: {n} Wh",
+  "napelem: +{n} Wh": "solar: +{n} Wh",
+  "csúcsterhelés: {n} W": "sarcină maximă: {n} W",
+  "(a gép {n} W)": "(stația: {n} W)",
+  "{wh} Wh névlegesből {h} Wh a valóban felhasználható.": "Din {wh} Wh nominali, {h} Wh sunt cu adevărat utilizabili.",
+  "A napelem: {nev}, {evszak}, {ido}.": "Panoul solar: {nev}, {evszak}, {ido}.",
+  "Ez nagyjából {psh} napfényórának felel meg, tehát napi kb. {wh} Wh jön be. A névleges teljesítmény 70 százalékával számolunk: az állásszög, a hő és a töltésvezérlő mind levesz belőle.": "Asta echivalează cu aproximativ {psh} ore de soare plin, deci intră zilnic cca {wh} Wh. Socotim 70 la sută din puterea nominală: unghiul, căldura și controlerul de încărcare scad toate din ea.",
+  "{az}{nev} teletöltése ilyen időben {ido}": "Încărcarea completă a {nev} pe un asemenea timp durează {ido}",
+  ", ha közben nem használod.": ", dacă nu îl folosești între timp.",
+  "A napelem naponta {n} wattórával többet ad, mint amennyit elhasználsz. Ez így önfenntartó — de csak amíg süt: két borús nap {m} wattórát vinne el a tartalékból.": "Panoul solar produce zilnic cu {n} Wh mai mult decât consumi. Se menține singur, dar doar cât timp strălucește soarele: două zile noroase ar lua {m} Wh din rezervă.",
+  "Ennyi ideig tart {az}{nev} ezzel a listával.": "Atât ține {nev} cu această listă.",
+  "{nev}: {wh} Wh tárolt energia, {w} W folyamatos kimenet": "{nev}: {wh} Wh energie stocată, {w} W putere continuă",
+  "{nev}: {wh} Wh tárolt energia, a kimenet az inverteren múlik": "{nev}: {wh} Wh energie stocată, puterea depinde de invertor",
+  "saját panel": "panou propriu",
+  "PrepperPapa · Lejáró készlet": "PrepperPapa · Rezerve care expiră",
+  "{nev}: {nap} múlva lejár ({exp}).": "{nev}: expiră peste {nap} ({exp}).",
+  "{nev}: ma lejár.": "{nev}: expiră astăzi.",
+  "Egy tétel": "Un element",
+  "Próba: így szól, ha egy élelmiszer vagy készlet-tétel hamarosan lejár.": "Test: așa te anunță când un aliment sau un articol din rezervă este pe cale să expire.",
+  "{lejart} tétel lejárt, {m} hamarosan lejár": "Expirate: {lejartSz}, expiră curând: {mSz}",
+  "{kozel} tétel hamarosan lejár": "Expiră curând: {kozelSz}",
+  "ALLPOWERS SP002 (21 W, akkus)": "ALLPOWERS SP002 (21 W, cu acumulator)",
+});
+
+// FUN-001 / card de4582d9 "3a": the common "Gerah az olvasásért" reading consent, signed HU of the Boss (TG 40656, 2026-11-15) and the
+// translation of Istvan (docs/gerah-az-olvasasert-hozzajarulas-v2-ro-2026-11-15.md, Part 1), values verbatim. The key is the HU text itself.
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Hozzájárulok, hogy a Gerah-jóváíráshoz a PrepperPapa a fiókomhoz kötve tárolja, mely napon mennyi ideig olvastam vagy hallgattam a Bibliát, mekkora volt a napi célom, és ha olvasási tervet követek, mely napon mely bibliai fejezetet olvastam. Ez vallási meggyőződésre utaló adat lehet. A hozzájárulás bármikor visszavonható a Beállításokban.": "Sunt de acord ca, pentru creditarea Gerah, PrepperPapa să stocheze, legat de contul meu, în ce zi și cât timp am citit sau am ascultat Biblia, care a fost obiectivul meu zilnic și, dacă urmez un plan de citire, în ce zi ce capitol biblic am citit. Acestea pot fi date care dezvăluie convingeri religioase. Consimțământul poate fi retras oricând din Setări.",
+  "Gerah az olvasásért": "Gerah pentru citire",
+  "A Gerah-jóváíráshoz a telefon elküldi a szervernek, mely napon mennyi ideig olvastál vagy hallgattad a Bibliát, mekkora a napi célod, és ha olvasási tervet követsz, mely napon mely fejezetet olvastad. Ehhez a kifejezett hozzájárulásod kell. Hozzájárulás nélkül a napi cél és az olvasási terv ugyanúgy működik, csak Gerah-t nem ír jóvá.": "Pentru creditarea Gerah, telefonul trimite serverului în ce zi și cât timp ai citit sau ai ascultat Biblia, care este obiectivul tău zilnic și, dacă urmezi un plan de citire, în ce zi ce capitol ai citit. Pentru aceasta este nevoie de consimțământul tău explicit. Fără consimțământ, obiectivul zilnic și planul de citire funcționează la fel, doar că nu se creditează Gerah.",
+  "Nincs hozzájárulás: a napi cél és az olvasási terv működik, de Gerah-t nem ír jóvá.": "Fără consimțământ: obiectivul zilnic și planul de citire funcționează, dar nu creditează Gerah.",
+  "Visszavonod a hozzájárulást? A szerveren tárolt napi olvasási és olvasásiterv-adataidat töröljük. A már jóváírt Gerah megmarad, a folyamatban lévő hét még jóvá nem írt Gerah-ja elvész.": "Îți retragi consimțământul? Datele tale zilnice de citire și datele planului tău de citire stocate pe server vor fi șterse. Gerah deja creditat rămâne, iar Gerah încă necreditat din săptămâna în curs se pierde.",
+  "Hozzájárulás visszavonva. A tárolt olvasási adataidat töröltük, a már jóváírt Gerah megmarad.": "Consimțământ retras. Datele tale de citire stocate au fost șterse, Gerah deja creditat rămâne.",
+  "Az olvasásért járó Gerah-jóváírás ki van kapcsolva, mert nincs hozzájárulásod. Az olvasás ugyanúgy működik.": "Creditarea Gerah pentru citire este oprită, pentru că nu ți-ai dat consimțământul. Citirea funcționează la fel.",
+  "Az olvasásért járó Gerah-hoz mostantól kifejezett hozzájárulás kell. Ha {datum}-ig nem adod meg, a szerveren tárolt napi olvasási adataidat (napi olvasási idő és napi cél) töröljük. A már jóváírt Gerah megmarad.": "De acum înainte, pentru Gerah primit pentru citire este nevoie de consimțământ explicit. Dacă nu îl dai până la {datum}, ștergem datele tale zilnice de citire stocate pe server (timpul zilnic de citire și obiectivul zilnic). Gerah deja creditat rămâne.",
+});
+// RADIO RANGE CALCULATOR RESULT TEXTS (Marta 35261): the LoRa legal warning had no key and stayed Hungarian; every result sentence is a ppForditKitolt template (the Hungarian sentence with {slots} is the key). No markup inside a key: the bold is added by the code (the merge gate reads the literals markup-stripped).
+Object.assign(window.PP_FORD_SZOTAR.ro, {
+  "Ez a teljesítmény PMR446-on nem legális.": "Această putere nu e legală pe PMR446.",
+  "A sávon maximum 0,5 watt engedélyezett, gyári antennával. A számot kiszámoltuk, de egy erősebb adóval a saját frekvenciádon te zavarod meg azokat, akikkel beszélni akarsz.": "Pe această bandă sunt permiși maximum 0,5 wați, cu antenă originală. Am calculat cifra, dar cu un emițător mai puternic, pe propria frecvență îi perturbi chiar pe cei cu care vrei să vorbești.",
+  "Ez a teljesítmény LoRa-n nem legális.": "Această putere nu e legală pe LoRa.",
+  "A 868 MHz-es sávon legfeljebb 0,5 watt (a 869,4-869,65 MHz-es alsávon), máshol 25 mW engedélyezett.": "Pe banda de 868 MHz sunt permiși cel mult 0,5 wați (pe subbanda 869,4-869,65 MHz), în rest 25 mW.",
+  "{sav} használatához vizsga és hívójel kell. A vizsga előre megszerezhető — és pont ez a lényeg: egy vészhelyzetben már késő elkezdeni.": "Pentru folosirea {sav} îți trebuie examen și indicativ. Examenul se poate lua din timp — și exact asta e ideea: într-o situație de urgență e deja prea târziu să începi.",
+  "{also}–{felso} km": "{also}–{felso} km",
+  "Ennyire várható összeköttetés {sav}-on, {terep} terepen, {w} watttal, {h1} és {h2} méter antennamagassággal.": "Legătură estimată pe {sav}, teren: {terep}, cu {w} wați și antene la {h1} și {h2} metri înălțime.",
+  "A rálátásod {ralatas} km, a terep és a teljesítmény {terep} km-t enged — a kettő közül a kisebbik számít.": "Vizibilitatea ta directă e de {ralatas} km, iar terenul și puterea permit {terep} km — contează cea mai mică dintre cele două.",
+  "{cel} kilométerre ezen a sávon a teljesítmény nem elég — bármennyi.": "La {cel} kilometri, pe această bandă puterea nu ajunge — oricât ar fi.",
+  "A rálátásod {ralatas} kilométer, és a Föld görbülete mögé a VHF/UHF jel nem hajlik be. Amin múlik: {mag} (menj fel egy dombra vagy tedd fel az antennát), {atj}, vagy {alsav} (CB vagy rövidhullám).": "Vizibilitatea ta directă e de {ralatas} kilometri, iar după curbura Pământului semnalul VHF/UHF nu se curbează. De ce depinde: {mag} (urcă pe un deal sau pune antena sus), {atj} sau o {alsav} (CB sau unde scurte).",
+  "magasság": "înălțime",
+  "átjátszó": "repetor",
+  "alacsonyabb sáv": "bandă mai joasă",
+  "{cel} kilométerhez kb. {kw} watt kellene": "Pentru {cel} kilometri ar fi nevoie de cca {kw} wați",
+  "ezen a sávon és ezen a terepen — ami már nem kézirádió-kategória, és rendszerint olcsóbb feljebb vinni az antennát.": "pe această bandă și pe acest teren — ceea ce nu mai e categoria stațiilor portabile, și de obicei e mai ieftin să urci antena mai sus.",
+  "ezen a sávon és ezen a terepen.": "pe această bandă și pe acest teren.",
+  "Amin most múlik: {korlat}.": "De ce depinde acum: {korlat}.",
+  "A watt a leggyengébb eszközöd.": "Wații sunt cea mai slabă unealtă a ta.",
+  "A távolság a teljesítmény negyedik gyökével nő: négyszer annyi watt másfélszer nagyobb távolság. Egy méterrel feljebb tett antenna rendszerint többet ad, mint a teljesítmény megduplázása — és nem fogyaszt.": "Distanța crește cu rădăcina a patra a puterii: de patru ori mai mulți wați dau o distanță de o dată și jumătate mai mare. O antenă ridicată cu un metru dă de obicei mai mult decât dublarea puterii — și nu consumă.",
+  "Rövidhullámon ez a szám csak a talajhullám.": "Pe unde scurte, acest număr este doar unda de sol.",
+  "A 7 és a 3,6 megahertzes sáv igazi hatótávját az ionoszféra adja: napszaktól és napfolt-tevékenységtől függően 100-tól több ezer kilométerig. Azt ez a kalkulátor nem modellezi — arra terjedési előrejelzés kell.": "Raza reală a benzilor de 7 și 3,6 megahertzi o dă ionosfera: de la 100 la câteva mii de kilometri, după ora zilei și activitatea petelor solare. Calculatorul acesta nu modelează asta — pentru asta e nevoie de o prognoză de propagare.",
 });

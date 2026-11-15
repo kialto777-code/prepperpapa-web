@@ -324,6 +324,7 @@ window.PP_FORD_SZOTAR.en = {
   "2000 m felett": "Above 2000 m",
   // ===== 2026-10-25 v43.381 (card 43a80047, Boss 23:38): premium code from the purchase e-mail link =====
   "Túl sok hibás kódot írtál be. Biztonsági okból egy ideig nem próbálhatod újra.": "You entered too many wrong codes. For security you cannot try again for a while.",
+  "Ez egy teszt-kód, csak a tesztelők válthatják be.": "This is a test code; only testers can redeem it.",
   "Újra próbálhatod ekkor:": "You can try again at:",
   "A linkben kapott kódod be van írva. Koppints a „Kód beváltása” gombra.": "The code from your link has been entered. Tap “Redeem code”.",
   "A linkben kapott kód moduljai ezen a készüléken már fel vannak oldva, a kódot nem kell beváltanod.": "The modules of the code from your link are already unlocked on this device; you do not need to redeem the code.",
@@ -436,6 +437,7 @@ window.PP_FORD_SZOTAR.en = {
   "Megnézem térképen": "Show on map",
   "Modulok": "Modules",
   "Nincs internet: a telefon hangja olvas": "No internet: the phone's voice is reading",
+  "A stúdióhang átmenetileg szünetel, később visszatér. A letöltött könyvek továbbra is szólnak.": "The studio voice is paused for now and will be back later. Books you have downloaded still play.",
   "Próba-mód kikapcsolva, a valódi feloldásod áll vissza.": "Trial mode off, your real unlock is restored.",
   "Szünet": "Pause",
   "Termékek": "Items",
@@ -2773,7 +2775,7 @@ window.PP_FORD_SZOTAR.en = {
   'Teljes képernyő': 'Full screen',
   'Húzd, ha görgetnél': 'Drag to scroll',
   'Nyomtatás': 'Print',
-  'Keresés: szó, vagy hely (Ján 3,16)': 'Search: a word, or a reference (John 3:16)',
+  'Keresés: szó, vagy hely (Ján 3,16)': 'Search: word or place (John 3:16)',
   "Igeszöveg mérete": "Scripture text size",
   'Megnevezés (pl. Gmail helyreállítási kódok)': 'Name (e.g. Gmail recovery codes)',
   'A kód, kulcs vagy seed-mondat': 'The code, key or seed phrase',
@@ -8325,6 +8327,19 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Javítások: a bekapcsolt kapcsolók nem villognak pirosan; a világtérkép hírforrása csak az eseményt említő cikkre mutat; a World English Bible és az ASV könyvcímei rendben vannak; más nyelven is megmarad a családtag típusa; a böjt hossza hónapban valódi naptári hónap; az SOS-súgó pontosan írja, hogy a 112-es gomb a tárcsázót nyitja meg.": "Fixes: switches that are on no longer flash red; a world map news source now links only to an article that names the event; the book titles of the World English Bible and the ASV are correct; the family member type is kept in every language; a fast length in months is a real calendar month; the SOS help says correctly that the 112 button opens the dialer.",
 });
 
+// BEALL A settings cards (Boss TG 39923, card 39ff0365): new card titles and current-value subtitles
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Napi idő és emlékeztetők": "Daily time and reminders",
+  "Szinkron és adatvédelem": "Sync and privacy",
+  "Funkciók beállításai": "Feature settings",
+  "Lejáró készlet, Gerah-jóváírás": "Expiring stock, Gerah credits",
+  "Szinkron be": "Sync on",
+  "Szinkron ki": "Sync off",
+  "statisztika be": "statistics on",
+  "statisztika ki": "statistics off",
+  "Morze, Térkép, SOS, Noah, Szobák, Tárca, Alsó sáv": "Morse, Map, SOS, Noah, Rooms, Wallet, Bottom bar",
+});
+
 // Wordlight colour themes + ring button colour (Boss TG 39841/39851, card fc63a4ba)
 Object.assign(window.PP_FORD_SZOTAR.en, {
   "Színtéma": "Colour theme",
@@ -8343,4 +8358,202 @@ Object.assign(window.PP_FORD_SZOTAR.en, {
   "Interneten (jobb minőség)": "Online (better quality)",
   "Ennek a hangnak nincs letöltött változata a telefonon, ezért most a nyelv legjobb letöltött hangja szól. A hangadatot a telefon beállításaiban lehet letölteni (Szövegfelolvasás).": "This voice has no downloaded version on the phone, so the language's best downloaded voice is reading now. The voice data can be downloaded in the phone's settings (Text-to-speech).",
   "amerikai kiejtés": "American pronunciation",
+  "A telefon Ne zavarjanak módja most elnémítja ezt a hangot. Kapcsold ki, vagy engedélyezd benne a riasztásokat.": "The phone's Do Not Disturb mode is silencing this sound right now. Turn it off, or allow alarms in it.",
+});
+
+// Household page, variant B (Boss 'Ház B', TG 40179, card 06b279a5): the add cards and the 'what is missing' pieces on the cards and the summary line
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Háziállat hozzáadása": "Add pet",
+  "Jármű hozzáadása": "Add vehicle",
+  "telefonszám": "phone number",
+  "születési dátum": "date of birth",
+  "testsúly": "weight",
+  "helye a térképen": "map location",
+  "hiányos adatlap": "incomplete record",
+});
+
+// BEALL A PrepperPapa part (Boss TG 39923/39934): Funkciók beállításai links, Értesítések links, night switch, the shield's own-tiles editor (Csempe A)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Vörös éjszakai mód": "Red night mode",
+  "Riasztás": "Alarm",
+  "{n} ébresztő": "{n} alarms",
+  "bekapcsolva": "on",
+  "Nincs ébresztő": "No alarms",
+  "Morze: adás": "Morse: sending",
+  "Morze: vétel fénnyel": "Morse: receiving by light",
+  "Morze: vétel hanggal": "Morse: receiving by sound",
+  "Térkép: alaptérkép és rétegek": "Map: base map and layers",
+  "Barométer-riasztás": "Barometer alarm",
+  "Napelem": "Solar panel",
+  "Menetidő-ébresztő": "Trip time alarm",
+  "Token tárca: PIN és ujjlenyomat": "Token wallet: PIN and fingerprint",
+  "Irattárca: PIN és ujjlenyomat": "Document wallet: PIN and fingerprint",
+  "Bibliai ébresztők": "Bible alarms",
+  "Megvallás": "Confession",
+  "Bibliai játékok": "Bible games",
+  "Böjt": "Fasting",
+  "Irányítópult: hírek szűrése": "Dashboard: news filter",
+  "Noah reggeli összefoglalója": "Noah's morning summary",
+  "Kezdőlap és alsó sáv": "Home screen and bottom bar",
+  "Értesítés, Gerah-közösség, SOS: szobánként, a szoba fogaskerekénél": "Notifications, Gerah community, SOS: per room, at the room's gear",
+  "Név, kép, jelszó": "Name, picture, password",
+  "Modell, válaszhossz, Rólam, reggeli összefoglaló": "Model, answer length, About me, morning summary",
+  "Rétegválasztó a térkép jobb felső sarkában": "Layer picker in the map's top right corner",
+  "Helyszín, teljesítmény": "Location, output",
+  "Esés utáni SOS": "SOS after a fall",
+  "Frekvenciák": "Frequencies",
+  "Jelszó mentve": "Password saved",
+  "Nincs mentett jelszó": "No saved password",
+  "Közös PIN a két tárcához": "Shared PIN for both wallets",
+  "Név a szobákban, vészkártya": "Name in the rooms, emergency card",
+  "Normál tempó": "Normal tempo",
+  "Lassú tempó": "Slow tempo",
+  "Játékhang": "Game sound",
+  "Közös böjt, napló": "Shared fast, diary",
+  "Világhelyzet, imakérés-jelölők": "World situation, prayer request markers",
+  "Saját csempék a pajzs-menüben, alsó sáv": "Your own tiles in the shield menu, bottom bar",
+  "Terep és tájékozódás": "Terrain and orientation",
+  "Biztonság": "Safety",
+  "Biblia és ima": "Bible and prayer",
+  "Megjelenítés": "Display",
+  "A funkciók saját értesítései": "The features' own notifications",
+  "Lejáró készlet, Gerah, ima, barométer, szobák": "Expiring stock, Gerah, prayer, barometer, rooms",
+  "Saját csempék": "Your own tiles",
+  "A pajzs-menü utolsó sora. Az átrendezéshez húzd a sort a fogantyújánál, a mínusz kiveszi a csempét.": "The last row of the shield menu. To reorder, drag a row by its handle; the minus removes the tile.",
+  "Még nincs saját csempéd.": "You have no tiles of your own yet.",
+  "Alsó sáv: nyisd meg a pajzs-menüt, tartsd lenyomva bármelyik gombot, és húzd le az alsó sávra.": "Bottom bar: open the shield menu, press and hold any button, and drag it down onto the bottom bar.",
+  "Értesítés: szobánként, a szoba fogaskerekénél": "Notifications: per room, at the room's gear",
+  "Áthelyezés": "Move",
+});
+
+// BEALL A settings search (Boss TG 39923, spec 4A): the field's placeholder and the map layer group
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Keresés a beállításokban": "Search settings",
+  "Térkép rétegek": "Map layers",
+});
+
+// BEALL A content (Boss TG 39923/39926, card 39ff0365): the Olvasás live preview, the interface-size preview line
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Élő előnézet": "Live preview",
+  "Így néz ki a felület szövege.": "This is how the interface text looks.",
+});
+
+// PROTECTED NAMES (Boss TG 40303/40305/40307, card 9c9618c1): the refusal message ({app} = the brand of the flavour) and the official-account emblem label
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Az ingyenes változatban egy szobát hozhatsz létre.": "In the free version you can create one room.",
+  "Az ingyenes változatban három szobában lehetsz benne.": "In the free version you can be a member of three rooms.",
+  "Legfeljebb tíz saját szobád lehet.": "You can have at most ten rooms of your own.",
+  "Elérted az ingyenes változat korlátját.": "You have reached the limit of the free version.",
+  "Ez a név foglalt. A {app} név és a rendszert utánzó nevek (pl. Admin, Moderátor, Ügyfélszolgálat) nem választhatók.": "This name is taken. The names {app} and names that imitate the system (e.g. Admin, Moderator, Customer Support) cannot be chosen.",
+  "Hivatalos": "Official",
+});
+
+// PROTECTED ROOM NAMES (card 9c9618c1): the room-name refusal sentence
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Ez a szobanév foglalt: a {app} neve és a rendszert utánzó szobanevek (pl. Admin, Moderátor, Ügyfélszolgálat) nem választhatók.": "This room name is taken: the names {app} and room names that imitate the system (e.g. Admin, Moderator, Customer Support) cannot be chosen.",
+});
+
+// HOME TOUR on the dashboard (Boss 'Tura A', TG 40284): the guide steps of Settings > 'Csempék bemutatása' (PP_SUGO.home, PP_SUGO_SAV)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "A világ most: friss események a világból (földrengés, tűz, árvíz, háború), a hozzád legközelebbivel. A radarra koppintva a térkép nyílik, a sorokra koppintva a teljes lista.": "The world now: fresh events from around the world (earthquake, fire, flood, war), including the one nearest to you. Tap the radar to open the map, tap the rows for the full list.",
+  "Készültség: a helyszíneid egy-egy gyűrűn, színnel és szóval: rendben, kevés vagy kritikus. Koppintásra megnyílik a Kockázat.": "Readiness: your locations, one ring each, with a colour and a word: OK, low or critical. Tap to open Risk.",
+  "Nap · légnyomás: napkelte és napnyugta a helyeden, alatta a légnyomás a változás nyilával. A sorokra koppintva megnyílik a részlet.": "Sun · pressure: sunrise and sunset at your place, and below them the pressure with an arrow showing the change. Tap a row to open the details.",
+  "Készlet: hány nap múlva fogy el az első alapvető dolog (víz, élelem, fűtés vagy áram), és mi jár le hamarosan. Koppintásra megnyílik a készlet.": "Stock: in how many days the first essential runs out (water, food, heating or power), and what expires soon. Tap to open the stock.",
+  "A pajzs: ide koppintva megnyílik a menü az összes funkcióval. Bármelyik gombját lenyomva tartva az alsó sávra húzhatod.": "The shield: tap it to open the menu with every function. Hold any button and drag it to the bottom bar.",
+  "Szoba · üzenetek: a szobád legutóbbi üzenetei, a sürgős SOS-sel kiemelve. A szoba nevére koppintva másik szobát választasz, máshová koppintva megnyílik a szoba.": "Room · messages: the latest messages of your room, urgent ones marked SOS. Tap the room name to pick another room, tap elsewhere to open the room.",
+  "Tudástár · napi kártya: minden napra egy mondat a felkészülésről, egész nap ugyanaz. Koppintásra megnyílik a teljes cikk.": "Knowledge base · daily card: one sentence a day about preparedness, the same all day. Tap to open the full article.",
+  "Hirdetés: a PrepperPapa saját ajánlata, például egy akció. A Megnézem gomb megnyitja.": "Advertisement: PrepperPapa's own offer, for example a sale. The Take a look button opens it.",
+  "Gyorsgomb: a funkció egy koppintásra, bárhonnan.": "Quick button: the function one tap away, from anywhere.",
+  "Lámpa: zseblámpa egy koppintásra, bármelyik képernyőről.": "Light: a flashlight with one tap, from any screen.",
+  "SOS: villogó fény, éles sípolás, a 112 hívása és az újraélesztés üteme egy helyen.": "SOS: a flashing light, a loud whistle, calling 112 and the rhythm for resuscitation in one place.",
+  "Beállítások: nyelv, mentés és visszatöltés, súgó és az adataid kezelése.": "Settings: language, backup and restore, help, and managing your data.",
+});
+// THE DAILY WISDOM step of the yearly guided prayer (Boss TG 40222, card 94cb54d4)
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Napi bölcsesség": "Daily wisdom",
+});
+// CALCULATOR RESULTS AND THE EXPIRY NOTIFICATION (card 6333f2ec, Agnes 2026-11-15): the travel-time, power and heating results and the expiry notification are built at draw time with numbers
+// inside the sentence, so each key is the Hungarian TEMPLATE with {slots} (ppForditKitolt fills them after the lookup).
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "{tav} kilométer {seb} km/h-val, plusz {emel} méter emelkedés. Az emelkedés minden hatszáz métere egy órát ad hozzá. Most indulva {ido}-kor érnél oda.": "{tav} km at {seb} km/h, plus {emel} m of climb. Every 600 m of climb adds one hour. Setting off now, you would arrive at {ido}.",
+  "Napnyugta {nyugta}, tehát világosban odaérsz, {tartalek} tartalékkal.": "Sunset is at {nyugta}, so you arrive in daylight with {tartalek} to spare.",
+  "Napnyugta {nyugta}: ebből {sotet} már sötétben lenne. Vagy indulj hamarabb, vagy vigyél lámpát.": "Sunset is at {nyugta}: {sotet} of the trip would already be in the dark. Either set off earlier or take a light.",
+  "{kg} kg fa, ez körülbelül {m3} ömlesztett köbméter": "{kg} kg of wood, about {m3} loose m³",
+  "Napi {nap} kWh hőigénnyel, összesen {ossz} kWh. Légszáraz keményfával és 70 százalékos kályha-hatásfokkal számolva. Nedves fa ennek a felét adja, tehát kétszer annyi kell belőle.": "With a heat demand of {nap} kWh a day, {ossz} kWh in total. Calculated with air-dry hardwood and a stove efficiency of 70 percent. Wet wood gives half of that, so you need twice as much of it.",
+  "Napi {nap} kWh hőigénnyel, összesen {ossz} kWh.": "With a heat demand of {nap} kWh a day, {ossz} kWh in total.",
+  "{kg} kg gáz, ez {palack} darab 11,5 kilós palack": "{kg} kg of gas, that is {palack} × 11.5 kg cylinder",
+  "PB-gázt zárt térben égetni életveszélyes lehet.": "Burning LPG in a closed space can be deadly.",
+  "Szén-monoxid keletkezik, ami szagtalan, és álmodban öl meg. Kell mellé szén-monoxid-érzékelő, és kell folyamatos szellőzés — nem elég percenként kinyitni az ablakot.": "Carbon monoxide forms, which is odourless and kills you in your sleep. You need a carbon monoxide detector and continuous ventilation: opening the window briefly now and then is not enough.",
+  "Párát is termel:": "It also produces moisture:",
+  "minden elégetett kiló gázból másfél liter víz kerül a levegőbe. Ettől penészedik a fal, és hidegebbnek érzed a szobát.": "every kilogram of gas burned puts one and a half litres of water into the air. That makes the walls mouldy, and the room feels colder.",
+  "Ez nem fér el egyszerre.": "This is too much at once.",
+  "A felsorolt fogyasztók együtt {w} wattot kérnek, a gép {max} wattot tud leadni. Nem attól múlik, hogy mekkora a wattórája — ennyit egyszerre nem bír. Vagy nagyobb teljesítményű gép kell, vagy nem egyszerre kell működtetni őket.": "Together, the listed devices draw {w} W, and the unit can deliver {max} W. It does not depend on its watt-hour capacity: it simply cannot supply that much at once. You need either a more powerful unit or you must not run them all at the same time.",
+  "Az indulási áram kiviheti.": "The starting surge can trip it.",
+  "A folyamatos fogyasztás belefér, de a motoros készülék induláskor kb. {w} wattot húz pár másodpercig, a gép {max} wattos. Ilyenkor a gép lekapcsol, pedig „papíron belefért volna\".": "The continuous load fits, but a motorised appliance draws about {w} W for a few seconds when it starts, and the unit is rated {max} W. Then the unit shuts off, even though it “should have fit on paper”.",
+  "{napra} {wh} Wh valóban felhasználható energia kell": "For {napra} you need {wh} Wh of truly usable energy",
+  "(névlegesen kb. {nom} Wh, a veszteség miatt). A választott gép ezt tudja.": "(nominally about {nom} Wh, because of losses). The selected unit can do this.",
+  "(névlegesen kb. {nom} Wh, a veszteség miatt). A választott gép ehhez kevés.": "(nominally about {nom} Wh, because of losses). The selected unit is not enough for this.",
+  "Ezek elegendők lennének erre a listára: {lista}.": "These would be enough for this list: {lista}.",
+  "{n} ó": "{n} h",
+  "{db} × {w} W": "{db} × {w} W",
+  "{n} Wh": "{n} Wh",
+  "Napi fogyasztás: {n} Wh": "Daily consumption: {n} Wh",
+  "napelem: +{n} Wh": "solar: +{n} Wh",
+  "csúcsterhelés: {n} W": "peak load: {n} W",
+  "(a gép {n} W)": "(the unit: {n} W)",
+  "{wh} Wh névlegesből {h} Wh a valóban felhasználható.": "{wh} Wh nominal, of which {h} Wh is truly usable.",
+  "A napelem: {nev}, {evszak}, {ido}.": "The solar panel: {nev}, {evszak}, {ido}.",
+  "Ez nagyjából {psh} napfényórának felel meg, tehát napi kb. {wh} Wh jön be. A névleges teljesítmény 70 százalékával számolunk: az állásszög, a hő és a töltésvezérlő mind levesz belőle.": "That is roughly {psh} hours of full sun, so about {wh} Wh a day comes in. We count on 70 percent of the nominal output: the angle, the heat and the charge controller all take some away.",
+  "{az}{nev} teletöltése ilyen időben {ido}": "Fully charging {nev} in such weather takes {ido}",
+  ", ha közben nem használod.": ", if you do not use it in the meantime.",
+  "A napelem naponta {n} wattórával többet ad, mint amennyit elhasználsz. Ez így önfenntartó — de csak amíg süt: két borús nap {m} wattórát vinne el a tartalékból.": "The solar panel gives {n} Wh more per day than you use. That is self-sustaining, but only while the sun shines: two overcast days would take {m} Wh out of the reserve.",
+  "Ennyi ideig tart {az}{nev} ezzel a listával.": "This is how long {nev} lasts with this list.",
+  "{nev}: {wh} Wh tárolt energia, {w} W folyamatos kimenet": "{nev}: {wh} Wh of stored energy, {w} W continuous output",
+  "{nev}: {wh} Wh tárolt energia, a kimenet az inverteren múlik": "{nev}: {wh} Wh of stored energy, the output depends on the inverter",
+  "saját panel": "own panel",
+  "PrepperPapa · Lejáró készlet": "PrepperPapa · Expiring stock",
+  "{nev}: {nap} múlva lejár ({exp}).": "{nev}: expires in {nap} ({exp}).",
+  "{nev}: ma lejár.": "{nev}: expires today.",
+  "Egy tétel": "An item",
+  "Próba: így szól, ha egy élelmiszer vagy készlet-tétel hamarosan lejár.": "Test: this is how it alerts you when a food or stock item is about to expire.",
+  "{lejart} tétel lejárt, {m} hamarosan lejár": "Expired: {lejartSz}, expiring soon: {mSz}",
+  "{kozel} tétel hamarosan lejár": "Expiring soon: {kozelSz}",
+  "ALLPOWERS SP002 (21 W, akkus)": "ALLPOWERS SP002 (21 W, with battery)",
+});
+
+// FUN-001 / card de4582d9 "3a": the common "Gerah az olvasásért" reading consent, signed HU of the Boss (TG 40656, 2026-11-15) and the
+// translation of Istvan (docs/gerah-az-olvasasert-hozzajarulas-v2-en-2026-11-15.md, Part 1), values verbatim. The key is the HU text itself.
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Hozzájárulok, hogy a Gerah-jóváíráshoz a PrepperPapa a fiókomhoz kötve tárolja, mely napon mennyi ideig olvastam vagy hallgattam a Bibliát, mekkora volt a napi célom, és ha olvasási tervet követek, mely napon mely bibliai fejezetet olvastam. Ez vallási meggyőződésre utaló adat lehet. A hozzájárulás bármikor visszavonható a Beállításokban.": "I consent to PrepperPapa storing, linked to my account, for the Gerah credit, on which day and for how long I read or listened to the Bible, what my daily goal was, and, if I follow a reading plan, which Bible chapter I read on which day. This may be data revealing religious beliefs. The consent can be withdrawn at any time in Settings.",
+  "Gerah az olvasásért": "Gerah for reading",
+  "A Gerah-jóváíráshoz a telefon elküldi a szervernek, mely napon mennyi ideig olvastál vagy hallgattad a Bibliát, mekkora a napi célod, és ha olvasási tervet követsz, mely napon mely fejezetet olvastad. Ehhez a kifejezett hozzájárulásod kell. Hozzájárulás nélkül a napi cél és az olvasási terv ugyanúgy működik, csak Gerah-t nem ír jóvá.": "For the Gerah credit the phone sends the server on which day and for how long you read or listened to the Bible, what your daily goal is, and, if you follow a reading plan, which chapter you read on which day. This needs your explicit consent. Without consent the daily goal and the reading plan work the same, they just credit no Gerah.",
+  "Nincs hozzájárulás: a napi cél és az olvasási terv működik, de Gerah-t nem ír jóvá.": "No consent: the daily goal and the reading plan work, but no Gerah is credited.",
+  "Visszavonod a hozzájárulást? A szerveren tárolt napi olvasási és olvasásiterv-adataidat töröljük. A már jóváírt Gerah megmarad, a folyamatban lévő hét még jóvá nem írt Gerah-ja elvész.": "Withdraw your consent? Your daily reading and reading plan data stored on the server will be deleted. Gerah already credited stays; Gerah of the week in progress that has not yet been credited is lost.",
+  "Hozzájárulás visszavonva. A tárolt olvasási adataidat töröltük, a már jóváírt Gerah megmarad.": "Consent withdrawn. Your stored reading data has been deleted; Gerah already credited stays.",
+  "Az olvasásért járó Gerah-jóváírás ki van kapcsolva, mert nincs hozzájárulásod. Az olvasás ugyanúgy működik.": "The Gerah credit for reading is off because you have not given consent. Reading works the same.",
+  "Az olvasásért járó Gerah-hoz mostantól kifejezett hozzájárulás kell. Ha {datum}-ig nem adod meg, a szerveren tárolt napi olvasási adataidat (napi olvasási idő és napi cél) töröljük. A már jóváírt Gerah megmarad.": "Gerah for reading now needs explicit consent. If you do not give it by {datum}, your daily reading data stored on the server (daily reading time and daily goal) will be deleted. Gerah already credited stays.",
+});
+// RADIO RANGE CALCULATOR RESULT TEXTS (Marta 35261): the LoRa legal warning had no key and stayed Hungarian; every result sentence is a ppForditKitolt template (the Hungarian sentence with {slots} is the key). No markup inside a key: the bold is added by the code (the merge gate reads the literals markup-stripped).
+Object.assign(window.PP_FORD_SZOTAR.en, {
+  "Ez a teljesítmény PMR446-on nem legális.": "This power is not legal on PMR446.",
+  "A sávon maximum 0,5 watt engedélyezett, gyári antennával. A számot kiszámoltuk, de egy erősebb adóval a saját frekvenciádon te zavarod meg azokat, akikkel beszélni akarsz.": "On this band a maximum of 0.5 watts is allowed, with the factory antenna. We calculated the number, but with a stronger transmitter on your own frequency you are the one disturbing the very people you want to talk to.",
+  "Ez a teljesítmény LoRa-n nem legális.": "This power is not legal on LoRa.",
+  "A 868 MHz-es sávon legfeljebb 0,5 watt (a 869,4-869,65 MHz-es alsávon), máshol 25 mW engedélyezett.": "On the 868 MHz band at most 0.5 watts are allowed (on the 869.4-869.65 MHz sub-band), elsewhere 25 mW.",
+  "{sav} használatához vizsga és hívójel kell. A vizsga előre megszerezhető — és pont ez a lényeg: egy vészhelyzetben már késő elkezdeni.": "To use {sav} you need an exam and a call sign. The exam can be taken in advance — and that is exactly the point: in an emergency it is too late to start.",
+  "{also}–{felso} km": "{also}–{felso} km",
+  "Ennyire várható összeköttetés {sav}-on, {terep} terepen, {w} watttal, {h1} és {h2} méter antennamagassággal.": "Expected range on {sav}, terrain: {terep}, with {w} watts and antenna heights of {h1} and {h2} metres.",
+  "A rálátásod {ralatas} km, a terep és a teljesítmény {terep} km-t enged — a kettő közül a kisebbik számít.": "Your line of sight is {ralatas} km, and terrain and power allow {terep} km — the smaller of the two counts.",
+  "{cel} kilométerre ezen a sávon a teljesítmény nem elég — bármennyi.": "At {cel} kilometres on this band, power is not enough — no matter how much.",
+  "A rálátásod {ralatas} kilométer, és a Föld görbülete mögé a VHF/UHF jel nem hajlik be. Amin múlik: {mag} (menj fel egy dombra vagy tedd fel az antennát), {atj}, vagy {alsav} (CB vagy rövidhullám).": "Your line of sight is {ralatas} kilometres, and VHF/UHF signals do not bend behind the curvature of the Earth. What it depends on: {mag} (go up a hill or raise the antenna), a {atj}, or a {alsav} (CB or shortwave).",
+  "magasság": "height",
+  "átjátszó": "repeater",
+  "alacsonyabb sáv": "lower band",
+  "{cel} kilométerhez kb. {kw} watt kellene": "For {cel} kilometres you would need about {kw} watts",
+  "ezen a sávon és ezen a terepen — ami már nem kézirádió-kategória, és rendszerint olcsóbb feljebb vinni az antennát.": "on this band and this terrain — which is no longer handheld-radio territory, and it is usually cheaper to raise the antenna.",
+  "ezen a sávon és ezen a terepen.": "on this band and this terrain.",
+  "Amin most múlik: {korlat}.": "What it depends on now: {korlat}.",
+  "A watt a leggyengébb eszközöd.": "Watts are your weakest tool.",
+  "A távolság a teljesítmény negyedik gyökével nő: négyszer annyi watt másfélszer nagyobb távolság. Egy méterrel feljebb tett antenna rendszerint többet ad, mint a teljesítmény megduplázása — és nem fogyaszt.": "Range grows with the fourth root of the power: four times the watts gives one and a half times the distance. An antenna raised by one metre usually gives more than doubling the power — and it uses no energy.",
+  "Rövidhullámon ez a szám csak a talajhullám.": "On shortwave this number is only the ground wave.",
+  "A 7 és a 3,6 megahertzes sáv igazi hatótávját az ionoszféra adja: napszaktól és napfolt-tevékenységtől függően 100-tól több ezer kilométerig. Azt ez a kalkulátor nem modellezi — arra terjedési előrejelzés kell.": "The real range of the 7 and 3.6 megahertz bands comes from the ionosphere: from 100 to several thousand kilometres, depending on the time of day and sunspot activity. This calculator does not model that — you need a propagation forecast for it.",
 });
