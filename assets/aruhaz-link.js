@@ -25,8 +25,14 @@
         // the store page of a public app
         return 'intent://details?id=' + id + '#Intent;scheme=market;package=com.android.vending;' + fb;
       }
-      // anything else on Play (e.g. /apps/testing/<package>, the public-test opt-in page): the same address, handed to the Play app
-      return 'intent://' + u.host + u.pathname + u.search + '#Intent;scheme=https;package=com.android.vending;' + fb;
+      // /apps/testing/<package> (public-test opt-in page): the Play app does NOT handle that address (measured 11-17 on an
+      // emulator with Play: only Chrome resolves it -> always the web sign-in), so open the app's store page in the Play app
+      // instead (open testing can be joined there); the fallback stays the original opt-in web page
+      var m = u.pathname.match(/^\/apps\/testing\/([A-Za-z0-9._]+)\/?$/);
+      if (m) {
+        return 'intent://details?id=' + m[1] + '#Intent;scheme=market;package=com.android.vending;' + fb;
+      }
+      return null;   // any other Play address: unchanged
     }
     if (ios && u.hostname === 'apps.apple.com') {
       return 'itms-apps://' + u.host + u.pathname + u.search + u.hash;
