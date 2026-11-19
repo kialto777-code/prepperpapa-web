@@ -115,14 +115,18 @@
   .hamar{display:inline-block;background:var(--borostyan);color:#1b1407;margin:0 0 12px;
         font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
   .badge[aria-disabled="true"]{cursor:default}
-  .tfgomb{display:inline-flex;flex-direction:column;justify-content:center;height:52px;box-sizing:border-box;padding:0 16px;
-     border-radius:9px;border:1px solid rgba(255,179,64,.6);background:rgba(11,17,14,.85);color:var(--ink);text-decoration:none;
-     line-height:1.15;text-align:left}
-  .tfgomb:hover,.tfgomb:focus-visible{border-color:var(--borostyan)}
-  .tfgomb .tf1{font-size:11px;color:var(--muted)}
-  .tfgomb .tf2{font-size:19px;font-weight:700}
-  .tfmegj{font-size:14px;color:var(--muted);margin:12px 0 0;line-height:1.55}
-  .tfmegj a{color:var(--ink)}
+  .statusok{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+  .statusok .hamar{margin:0}
+  .allapot-most{display:inline-block;background:var(--zold);color:#0b140a;font-size:12px;font-weight:800;letter-spacing:.1em;
+     text-transform:uppercase;padding:4px 12px;border-radius:20px}
+  .tfgomb{display:inline-flex;align-items:center;gap:9px;height:52px;box-sizing:border-box;padding:0 16px 0 12px;
+     border-radius:9px;border:1px solid #a6a6a6;background:#000;color:#fff;text-decoration:none;line-height:1.05;text-align:left}
+  .tfgomb:hover,.tfgomb:focus-visible{border-color:#fff}
+  .tfgomb .tflogo{width:26px;height:26px;flex:none}
+  .tfgomb .tf1{display:block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .tfgomb .tf2{display:block;font-size:22px;font-weight:600;letter-spacing:-.01em}
+  .tfmegj{font-size:13px;color:var(--muted);margin:8px 0 0}
+  .tfgomb{height:46px;border-radius:8px}.tfgomb .tf2{font-size:20px}.tfgomb .tflogo{width:23px;height:23px}
   /* phone mockup */
   /* realistic upright phone frames around the real app screenshots (Boss 22:54 via Marveen 23822):
      Android with a punch-hole camera at the top of the page, iPhone with the Dynamic Island further down.
@@ -207,6 +211,7 @@
   #pp-ertesito-uzenet.hiba{color:#ff8a65}
   .letolt{display:block;min-height:auto;text-align:center}
   .letolt .badges{justify-content:center;margin:22px 0 8px}
+  .letolt .statusok{justify-content:center}
   .gyik{display:block;min-height:auto}
   .gyik .in{max-width:760px}
   /* premium tiles + comparison table */
@@ -278,7 +283,8 @@
     .hero .telhely .tel{width:min(190px,50vw)}
     .hero .telhely .herotel{width:min(232px,60vw);margin:0 auto -14px}
     .hero .in{padding-top:18px;gap:14px}
-    .hero .cta,.hero .badges{justify-content:center}
+    .hero .cta,.hero .badges,.hero .statusok{justify-content:center}
+    .hero .tfmegj{text-align:center}
     .hero .cta .btn{min-width:240px;text-align:center}
     .hero .hamar{display:table;margin:0 auto 12px}
     .dia{text-align:center}.dia p{margin:0 auto}
@@ -468,12 +474,12 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <h1 class="nagy">Preparedness in your pocket. <em>Even without internet.</em></h1>
 <p class="lead">Everything you need in a power cut, next to a broken-down car or on a woodland hike, in one place. The full version, map included, keeps working when the internet and the mobile signal are gone.</p>
 <div class="cta"><a class="btn amber" href="#buy">Notify me at launch</a><a class="btn ghost" href="#tour">See what it can do</a></div>
-<div class="hamar">Google Play: coming soon</div>
+<div class="statusok"><span class="allapot-most">iPhone: available now</span><span class="hamar">Google Play: coming soon</span></div>
 <div class="badges">
+<a class="tfgomb" id="pp-badge-appstore" href="https://testflight.apple.com/join/u7RSyhCP" rel="noopener" title="Public testing on TestFlight (iPhone)"><svg class="tflogo" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="#fff" stroke-width="1.8"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg><span><span class="tf1">Public test</span><span class="tf2">iPhone</span></span></a>
 <a class="badge play" id="pp-badge-play" aria-disabled="true" title="Coming soon to Google Play"><img src="/app/kepek/google-play-en.png" alt="Get it on Google Play (coming soon)" width="646" height="250"></a>
-<a class="tfgomb" id="pp-badge-appstore" href="https://testflight.apple.com/join/u7RSyhCP" rel="noopener" title="Public testing on TestFlight (iPhone)"><div class="tf1">iPhone: public testing</div><div class="tf2">TestFlight</div></a>
 </div>
-<p class="tfmegj">📱 iPhone: <a href="https://testflight.apple.com/join/u7RSyhCP" rel="noopener">https://testflight.apple.com/join/u7RSyhCP</a><br>First install Apple's free TestFlight app from the App Store, then open the link on your phone.</p>
+<p class="tfmegj">First you need the free TestFlight app.</p>
 </div>
 <div class="telhely rv lat"><img class="herotel" src="/en/app/kepek/hero-iphone.webp" alt="The PrepperPapa home screen" width="1062" height="2026"></div>
 </div><a class="lefele" href="#tour">Scroll &darr;</a></section>
@@ -626,12 +632,12 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <div class="kicsi">Download</div>
 <h2 class="nagy" style="font-size:clamp(30px,6vw,48px)">For Android and iPhone.</h2>
 <p class="lead" style="margin:0 auto"><b>Android:</b> coming soon to Google Play. Premium can also be bought inside Google Play.<br><b>iPhone:</b> in public testing, anyone can try it, free.</p>
-<div class="hamar">Google Play: coming soon</div>
+<div class="statusok"><span class="allapot-most">iPhone: available now</span><span class="hamar">Google Play: coming soon</span></div>
 <div class="badges">
+<a class="tfgomb" id="letolt-pp-badge-appstore" href="https://testflight.apple.com/join/u7RSyhCP" rel="noopener" title="Public testing on TestFlight (iPhone)"><svg class="tflogo" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="#fff" stroke-width="1.8"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg><span><span class="tf1">Public test</span><span class="tf2">iPhone</span></span></a>
 <a class="badge play" id="letolt-pp-badge-play" aria-disabled="true" title="Coming soon to Google Play"><img src="/app/kepek/google-play-en.png" alt="Get it on Google Play (coming soon)" width="646" height="250"></a>
-<a class="tfgomb" id="letolt-pp-badge-appstore" href="https://testflight.apple.com/join/u7RSyhCP" rel="noopener" title="Public testing on TestFlight (iPhone)"><div class="tf1">iPhone: public testing</div><div class="tf2">TestFlight</div></a>
 </div>
-<p class="tfmegj">📱 iPhone: <a href="https://testflight.apple.com/join/u7RSyhCP" rel="noopener">https://testflight.apple.com/join/u7RSyhCP</a><br>First install Apple's free TestFlight app from the App Store, then open the link on your phone.</p>
+<p class="tfmegj">First you need the free TestFlight app.</p>
 </div></section>
 
 <!-- TESZTELŐI VÉLEMÉNYEK: a tesztelési menet végén kérjük (26c3272b), engedéllyel.
