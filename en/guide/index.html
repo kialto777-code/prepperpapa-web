@@ -275,7 +275,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li><a href="#f16">Secret QR</a></li>
 <li><a href="#f17">Tools</a></li>
 <li><a href="#f18">Calculators</a></li>
-<li><a href="#f19">Wildlife and insect repeller</a></li>
+<li><a href="#f19">Tone generator</a></li>
 <li><a href="#f20">SOS (emergency)</a></li>
 <li><a href="#f21">Fall detection</a></li>
 <li><a href="#f22">Light</a></li>
@@ -292,17 +292,24 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <li><a href="#f33">Downloading the offline map</a></li>
 <li><a href="#f34">My devices</a></li>
 <li><a href="#f35">Air pressure and weather estimate</a></li>
+<li><a href="#f36">Shield menu and bottom bar</a></li>
+<li><a href="#f37">Practice</a></li>
+<li><a href="#f38">The world now</a></li>
+<li><a href="#f39">Solar panel setup</a></li>
+<li><a href="#f40">Sunrise, sunset</a></li>
+<li><a href="#f41">Noah, the offline assistant</a></li>
+<li><a href="#f42">LoRa room</a></li>
 </ol></nav>
 <section class="lap" id="f1"><h2><span class="sz">1.</span>Home screen</h2>
-<p class="hol"><b>Where:</b> the leftmost button in the bottom menu, <b>Home</b>.</p>
-<p><b>What it does:</b> at the top, the readiness of your locations as a percentage (home, holiday home, car); below them, tiles for every feature; at the very bottom, a daily Bible verse or a knowledge base thought.</p>
-<ol><li>On first launch, use the <b>Load demo data</b> button to try the app with a sample family.</li><li>Tap a location's circle to see what is missing there.</li><li>The tiles take you everywhere: Household, Stock, What to pack, Risk, Comms, Map, Compass, Emergency card, Knowledge base, Bible, Gathering, Tools, Document wallet, Secret QR, Token wallet, Assets.</li></ol>
-<p class="tipp"><b>Tip:</b> a green number is good; orange and red mean something needs restocking.</p>
-<div class="kepek egy"><figure><img src="/en/utmutato/kepek/01-kezdolap.jpg" alt="Home screen" loading="lazy" width="480"></figure></div></section>
+<p class="hol"><b>Where:</b> the app opens here on launch. From a feature, use the <b>Functions</b> button in the middle of the bottom bar, then the <b>Home</b> button to come back.</p>
+<p><b>What it does:</b> a dashboard with cards: <b>The world now</b>, <b>Readiness</b>, <b>Sun · pressure</b>, <b>Stock</b>, <b>Room · messages</b>, <b>Knowledge base · daily card</b>. The shield in the middle opens the menu of features.</p>
+<ol><li>On first launch the app asks: <b>Which home screen do you want?</b> <b>Prepper (default)</b> shows readiness; <b>Hiker</b> shows the route, the weather, the daylight and safety.</li><li>On the <b>Readiness</b> card, the <b>Load demo data</b> button lets you try the app with a sample family.</li><li>Tap a card: it opens the feature it belongs to.</li><li>Tap the shield to open the menu of features (see: Shield menu and bottom bar).</li></ol>
+<p class="tipp"><b>Tip:</b> readiness is shown in days, and one word tells you where you stand: <b>OK</b>, <b>Low</b> or <b>Critical</b>.</p>
+<div class="kepek"><figure><img src="/en/utmutato/kepek/01-kezdolap.jpg" alt="Home screen" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/46-kezdolap-valaszto.jpg" alt="Home screen" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f2"><h2><span class="sz">2.</span>Household</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Household</b> tile.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Household</b>.</p>
 <p><b>What it does:</b> this is where you enter who belongs to your household and where your locations are. Readiness, daily rations and the packing list are all calculated from it.</p>
-<ol><li>There are four sections: <b>Family members</b>, <b>Pets</b>, <b>Vehicles</b>, <b>Places</b>.</li><li>Tap any of them to see the list, and use the yellow <b>+</b> button to add a new one.</li><li>For places, you enter who arrives there and for how many days.</li></ol>
+<ol><li>At the top there are four tabs: <b>Family members</b>, <b>Pets</b>, <b>Vehicles</b>, <b>Places</b>. Below them, one line sums up how many people there are and how many profiles are incomplete.</li><li>Tap a tab to see the list; the round <b>+</b> button adds a new one. If something is missing from a profile, the row says so (for example "missing: phone number").</li><li>For places, you enter who arrives there and for how many days.</li></ol>
 <p class="tipp"><b>Tip:</b> the free version lets you add 2 family members; with a premium code, unlimited.</p>
 <div class="kepek"><figure><img src="/en/utmutato/kepek/02-haztartas.jpg" alt="Household" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/03-csaladtagok.jpg" alt="Household" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f3"><h2><span class="sz">3.</span>Family member profile</h2>
@@ -312,56 +319,56 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <p class="tipp"><b>Tip:</b> the card can be filled in for someone else too, so enter the owner's number and the emergency contact's number in separate fields.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/04-csaladtag-adatlap.jpg" alt="Family member profile" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f4"><h2><span class="sz">4.</span>Stock</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Stock</b> tile.</p>
-<p><b>What it does:</b> a record of your gear and food with expiry tracking. You see the number of items, the total weight and what expires within a month.</p>
-<ol><li>You can filter by category, place and stock.</li><li>Use the yellow <b>+</b> button to add a new item: name, quantity, category, expiry date, whose it is, where you keep it.</li><li>With the <b>Scan barcode / QR</b> button you can add it straight from the packaging.</li><li>The <b>What's missing?</b> button shows what is worth restocking.</li><li>The <b>72h kit</b> button puts together the basic 72-hour kit.</li></ol>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Stock</b>, or the <b>Stock</b> card on the home screen.</p>
+<p><b>What it does:</b> a record of your gear and food with expiry tracking. You see the number of items, the total weight and what expires within a month. At the top, a circle shows what percentage of the 72-hour basic stock you have.</p>
+<ol><li>You can filter by category, place and stock, or search in the <b>Search in stock</b> field.</li><li>Use the yellow <b>+</b> button to add a new item: name, quantity, category, expiry date, whose it is, where you keep it.</li><li>With the <b>Scan barcode / QR</b> button you can add it straight from the packaging.</li><li>The <b>What's missing?</b> button shows what is worth restocking.</li><li>The <b>72h kit</b> button puts together the basic 72-hour kit.</li></ol>
 <p class="tipp"><b>Tip:</b> the free version lets you add 50 items; with a premium code, unlimited.</p>
 <div class="kepek"><figure><img src="/en/utmutato/kepek/05-keszlet.jpg" alt="Stock" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/06-keszlet-uj-tetel.jpg" alt="Stock" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f5"><h2><span class="sz">5.</span>What to pack? (packing list)</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>What to pack</b> tile.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>What to pack</b>.</p>
 <p><b>What it does:</b> builds a personalised packing list based on who is going, how, on what kind of trip and for how many days.</p>
 <ol><li>Select who is going (pets can be selected too).</li><li>Choose how you are travelling (by car, on foot, with a backpack) and what kind of trip it is.</li><li>Enter how many days, and what water ration to plan with.</li><li>The app puts the list together, keeping to the weight limit.</li></ol>
 <p class="tipp"><b>Tip:</b> set the load capacity on the family members' profiles, and the list will also share out the load.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/07-mit-vigyek.jpg" alt="What to pack? (packing list)" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f6"><h2><span class="sz">6.</span>Risk analysis</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Risk</b> tile.</p>
-<p><b>What it does:</b> shows, for each location, who is arriving there, for how many days, and whether the water, food, heating and power there are enough.</p>
-<ol><li>Look at the location circles: the percentage shows the readiness.</li><li>A red row shows what is running low.</li><li>You can restock the shortfall in Stock and assign the item to that location.</li></ol>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Risk</b>.</p>
+<p><b>What it does:</b> shows, for each place, who is arriving there, for how many days, and for how many days the water, food, heating and power there will last.</p>
+<ol><li>Look at the circle for the place: the number shows how many days of supplies you have (for example "27 d.").</li><li>Below it, you see water, food, heating and power line by line. An orange or red number of days shows what is running low.</li><li>You can restock the shortfall in Stock and assign the item to that location.</li><li>At the bottom, the <b>Equipment at the locations</b> section shows what is at each place.</li></ol>
 <p class="tipp"><b>Tip:</b> the risk picture is only as accurate as your Household and Stock entries.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/08-kockazat.jpg" alt="Risk analysis" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f7"><h2><span class="sz">7.</span>Map</h2>
-<p class="hol"><b>Where:</b> the <b>Map</b> button in the bottom menu, or Home &gt; Map tile.</p>
-<p><b>What it does:</b> hiking trails, springs, wells, mountain huts, peaks, lookout towers and other points of interest with consistent, colourful icons. The readiness of your locations is shown on it too. You can search and plan routes.</p>
-<ol><li>Type what you are looking for into the search box at the top (trail, peak, spring, town).</li><li>The crosshair button at the bottom left jumps to your own position.</li><li>Use the <b>+</b> and <b>−</b> buttons to zoom, and the layers button to switch map views.</li><li>Route planning: enter where you are going from and to, and the app shows the distance, walking time, elevation gain and the trail markings to follow.</li></ol>
+<p class="hol"><b>Where:</b> the <b>Map</b> button on the bottom bar.</p>
+<p><b>What it does:</b> hiking trails, springs, wells, mountain huts, peaks, lookout towers and other points of interest with consistent, colourful icons. The readiness of your places is shown on it too. You can search, plan a route, and it guides you along the route all the way.</p>
+<ol><li>Type what you are looking for into the search box at the top (trail, peak, spring, town).</li><li>The crosshair button jumps to your own position.</li><li>Spread two fingers to zoom in, pinch to zoom out. The layers button switches the map view, and the <b>Legend</b> shows what the icons mean.</li><li>Press and hold a point on the map to add it. The menu also has: <b>Measure distance</b>, <b>Pin where I am</b>, <b>Send my position</b>, <b>Export points (GPX)</b>.</li><li>Route planning: enter where you are going from and to, and the app shows the distance, the travel time, the elevation gain and the trail marks to follow. The <b>Start</b> button starts the guidance, and the <b>GPX</b> button lets you export the route.</li></ol>
 <p class="dij"><b>Free and premium:</b> the online map and 2 route plans a week are free. With a premium code, route planning is unlimited and you can download offline maps (Hungarian regions and foreign countries) that work without internet.</p>
 <p class="tipp"><b>Tip:</b> in night mode the map icons turn red too, so they do not dazzle.</p>
 <div class="kepek"><figure><img src="/en/utmutato/kepek/09-terkep.jpg" alt="Map" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/10-terkep-nagyitva.jpg" alt="Map" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f8"><h2><span class="sz">8.</span>Compass</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Compass</b> tile.</p>
-<p><b>What it does:</b> compass with degrees and cardinal directions, bearing recording, audio guidance, sunrise, sunset and moon phase.</p>
-<ol><li>Face the direction you need to go and tap the <b>Record bearing</b> button.</li><li>Start <b>Audio guidance</b>: if you are heading the right way, a deep, slow tone plays; if you drift off course, it gets higher and faster.</li><li>Your phone can go in your pocket; the sound guides you.</li><li>In the <b>Sun and moon</b> section you can see sunrise, sunset and the moon phase.</li></ol>
-<p class="tipp"><b>Tip:</b> use the Delete button to record a new bearing. If your phone has no compass sensor, the sun and moon section still works.</p>
+<p class="hol"><b>Where:</b> the <b>Compass</b> button on the bottom bar.</p>
+<p><b>What it does:</b> a compass with degrees and cardinal directions, bearing recording and audio guidance.</p>
+<ol><li>Face the direction you need to go and tap the <b>Record bearing</b> button.</li><li>Start <b>Audio guidance</b>: if you are heading the right way, a deep, slow tone plays; if you drift off course, it gets higher and faster.</li><li>Your phone can go in your pocket; the sound guides you.</li></ol>
+<p class="tipp"><b>Tip:</b> use the <b>Delete</b> button to record a new bearing. Sunrise, sunset and the moon phase are among the Tools, and the air pressure is in the Barometer.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/11-tajolo.jpg" alt="Compass" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f9"><h2><span class="sz">9.</span>Emergency card</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Emergency card</b> tile, and also at the bottom of the SOS screen.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Emergency card</b>, and also at the bottom of the SOS screen.</p>
 <p><b>What it does:</b> your family members' emergency health details (blood type, allergies, medication, medical conditions, emergency contact) on one card, which paramedics can also read with a QR code. Works without internet.</p>
 <ol><li>The data comes from Household: fill in the family members' profiles there.</li><li>If someone's card shows “Missing: contact”, add the emergency contact on their profile.</li><li>Use the <b>Print</b> button to print one person's card, or <b>Print all</b> to print everyone's.</li><li>The <b>Family card (one QR)</b> puts the whole family into a single code.</li></ol>
 <p class="tipp"><b>Tip:</b> print it out and keep a copy in your wallet and in the car too.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/12-veszkartya.jpg" alt="Emergency card" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f10"><h2><span class="sz">10.</span>Knowledge base</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Knowledge base</b> tile.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Knowledge base</b>.</p>
 <p><b>What it does:</b> articles organised by topic, from the basics through food, water and health to urban survival and navigation. The basic and the life-saving articles are free, for everyone, and can be read without internet. The extended knowledge base is part of premium.</p>
 <ol><li>Tap a topic, for example <b>Basics</b>.</li><li>Choose an article from the list.</li><li>Use the search box at the top to search all articles.</li><li>Articles marked with a padlock (“locked”) are part of the extended knowledge base: they open once you redeem a premium code.</li></ol>
-<p class="tipp"><b>Tip:</b> a different knowledge base thought appears at the bottom of the home screen every day.</p>
+<p class="tipp"><b>Tip:</b> on the home screen, the <b>Knowledge base · daily card</b> shows a different thought every day.</p>
 <div class="kepek"><figure><img src="/en/utmutato/kepek/13-tudastar.jpg" alt="Knowledge base" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/14-tudastar-tema.jpg" alt="Knowledge base" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/15-tudastar-cikk.jpg" alt="Knowledge base" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f11"><h2><span class="sz">11.</span>Bible</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Bible</b> tile.</p>
-<p><b>What it does:</b> the King James Version with read-aloud, prayers, confessions, a reading plan, verses for emergencies, prophecies, highlights and your own comments.</p>
-<ol><li>Tap the <b>Bible</b> tile, and the first time use the <b>Download the Bible</b> button to put it on your phone. After that it stays on your phone.</li><li>Choose a book, chapter and verse.</li><li>Tap the speaker icon to have it read aloud.</li><li>The other tiles hold prayers, a reading plan and verses for emergencies.</li></ol>
-<p class="tipp"><b>Tip:</b> tap a verse to highlight it or add a note to it.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Bible</b>.</p>
+<p><b>What it does:</b> the Bible with read-aloud (in Hungarian the Károli translation, and other translations can be downloaded too), prayers and confessions, a fasting diary, a reading plan, verses for emergencies, prophecies, a verse memorizer, your own notes and games.</p>
+<ol><li>The first time, put it on your phone with the <b>Download the Bible</b> button. After that it stays on your phone.</li><li>At the top of the Bible home page is the <b>Daily time with the Word</b> bar, and below it the sections: <b>Bible</b>, <b>Prayers</b>, <b>Fasting diary</b>, <b>Reading plan</b>, <b>Verses for emergencies</b>, <b>Prophecies</b>, <b>Verse memorizer</b>, <b>My notes</b>, <b>Games</b>.</li><li>In the <b>Bible</b> section, choose a book, a chapter and a verse. The speaker icon lets you have it read aloud.</li><li>You will find the confessions under <b>Prayers</b>.</li></ol>
+<p class="tipp"><b>Tip:</b> tap a verse to highlight it or add a note to it. You will find your notes in the <b>My notes</b> section.</p>
 <div class="kepek"><figure><img src="/en/utmutato/kepek/16-biblia.jpg" alt="Bible" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/17-biblia-olvaso.jpg" alt="Bible" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f12"><h2><span class="sz">12.</span>Comms</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Comms</b> tile.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Comms</b>.</p>
 <p><b>What it does:</b> every way you can send a message when the mobile network cannot help, in one place.</p>
 <ol><li><b>Digital message:</b> Local room (text to people near you, over shared Wi-Fi, a hotspot or Bluetooth) and Rooms (closed groups over the internet, joining approved by the room's host).</li><li><b>Voice message:</b> Morse (a short message by sound or light) and Fax (sending a picture as sound, even over radio).</li></ol>
 <p class="tipp"><b>Tip:</b> even with no network at all, Morse and fax still work.</p>
@@ -382,64 +389,68 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <p class="hol"><b>Where:</b> Comms &gt; <b>Local room</b> or <b>Rooms</b>.</p>
 <p><b>What it does:</b> Local room carries text to people near you over shared Wi-Fi, a phone hotspot or Bluetooth, without an internet subscription. Rooms are closed groups over the internet.</p>
 <ol><li>First enter your name on the <b>Profile</b> screen (and a profile picture if you like): this is how others see you.</li><li>Local room: you need a shared network (a router or a phone's hotspot); everyone connects to it and opens the app.</li><li>Use the yellow <b>+</b> button to open a new room, or wait for a nearby room to appear.</li><li>Rooms: use the <b>+</b> button to create one, or join an existing one with a code. The room's host approves who joins.</li></ol>
+<p><b>Important:</b> messages in the Local room only arrive if the app is open.</p>
 <p class="dij"><b>Free and premium:</b> Local room is free for everyone. With Rooms, the free version lets you create 1 room of your own and be a member of 3 rooms; with a premium code you can create 10 rooms and be a member of any number of rooms.</p>
 <p class="tipp"><b>Tip:</b> long-press a message to save it, and you can find it later on the Profile screen.</p>
 <div class="kepek"><figure><img src="/en/utmutato/kepek/23-helyi-szobak.jpg" alt="Local rooms and Rooms" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/24-profil.jpg" alt="Local rooms and Rooms" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/25-szobak.jpg" alt="Local rooms and Rooms" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f16"><h2><span class="sz">16.</span>Secret QR</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Secret QR</b> tile.</p>
-<p><b>What it does:</b> puts a message, location, list or personal details into a QR code that only someone who knows your family password can read.</p>
-<ol><li>Set the <b>Family password</b> (at the top, if it still says “not set”).</li><li>Choose what to put in it and type the message.</li><li>Press the <b>Create QR</b> button.</li><li>Reading: <b>Scan with camera</b>, <b>Load from file</b>, or type in the string of characters if you received it by Morse or fax.</li></ol>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Secret QR</b>.</p>
+<p><b>What it does:</b> puts a message, a position, a list or personal data into a QR code that only someone who knows your family password can read. It has two tabs: <b>Create code</b> and <b>Scan code</b>.</p>
+<ol><li>Set the <b>Family password</b> (at the top, if it still says “not set”).</li><li>On the <b>Create code</b> tab, choose what goes into it and type the message.</li><li>Press the <b>Create QR</b> button.</li><li>On the <b>Scan code</b> tab: <b>Scan with camera</b>, <b>Load from file</b>, or type in the string of letters if you received it by Morse or fax.</li></ol>
 <p class="tipp"><b>Tip:</b> agree on the password in person beforehand, not in a message.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/26-titkos-qr.jpg" alt="Secret QR" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f17"><h2><span class="sz">17.</span>Tools</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Tools</b> tile.</p>
-<p><b>What it does:</b> Calculators, Metal detector (iron and steel in a wall or in the ground), Mirror (front camera with a light frame, for checking an injury), Wildlife and insect repeller.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Tools</b>.</p>
+<p><b>What it does:</b> at the top the <b>Calculators</b>, and below them in groups:</p>
+<ul><li><b>Measuring and navigation:</b> <b>Metal detector</b> (iron and steel in a wall or in the ground), <b>Barometer</b> (air pressure and storm warning).</li><li><b>Energy and time:</b> <b>Solar panel setup</b> (tilt angle, orientation, expected output), <b>Sunrise, sunset</b> (with the moon phase).</li><li><b>Sound and image:</b> <b>Mirror</b> (front camera with a light frame, for checking an injury), <b>Tone generator</b>.</li></ul>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/27-eszkozok.jpg" alt="Tools" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f18"><h2><span class="sz">18.</span>Calculators</h2>
 <p class="hol"><b>Where:</b> Tools &gt; <b>Calculators</b>.</p>
-<p><b>What it does:</b> Calculator (big buttons, tape, memory, usable with gloves and in the dark), Power (how long a power bank or battery lasts), Calories (how long the food lasts), Radio range, Heating (how much wood or gas you need), Rainwater (how much collects from the roof), Travel time (will you get there in daylight), Lightning (how far away the storm is), Water purification (how much bleach you need, how long to boil), Lamp runtime.</p>
+<p><b>What it does:</b> Calculator (big buttons, tape, memory, usable with gloves and in the dark), Power (how long a power bank or battery lasts), Calories (how long the food lasts), Radio range, Heating (how much wood or gas you need), Rainwater (how much collects from the roof), Travel time (will you arrive in daylight), Lightning (how far away the storm is), Water purification (how much chlorine to use, how long to boil), Lamp runtime, Fortiprep or canned food, Blood type.</p>
 <ol><li>Tap a calculator.</li><li>Enter the data and the result appears instantly.</li></ol>
 <p class="tipp"><b>Tip:</b> every step can be reviewed on the calculator's tape, so you will not lose track of your sums in the field.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/28-kalkulatorok.jpg" alt="Calculators" loading="lazy" width="480"></figure></div></section>
-<section class="lap" id="f19"><h2><span class="sz">19.</span>Wildlife and insect repeller</h2>
-<p class="hol"><b>Where:</b> Tools &gt; <b>Wildlife and insect repeller</b>.</p>
-<p><b>What it does:</b> plays a high-pitched tone to keep wildlife and mosquitoes away.</p>
-<ol><li>Choose: <b>Against wildlife</b> or <b>Against mosquitoes</b>.</li><li>Use the slider to adjust the frequency.</li><li>The <b>Test tone</b> button plays a short, clearly audible beep, so you can check that the speaker works. It does not stop a repeller that is running.</li></ol>
-<p class="tipp"><b>Tip:</b> the repeller tone is deliberately too high to hear. If you hear nothing, that is normal.</p>
-<div class="kepek egy"><figure><img src="/en/utmutato/kepek/29-riaszto.jpg" alt="Wildlife and insect repeller" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f19"><h2><span class="sz">19.</span>Tone generator</h2>
+<p class="hol"><b>Where:</b> Tools &gt; <b>Tone generator</b>.</p>
+<p><b>What it does:</b> the phone plays a high-pitched tone through its speaker, with an adjustable frequency.</p>
+<ol><li>Choose the mode: <b>Sweeping tone</b> or <b>Steady tone</b>.</li><li>Each mode has its own slider, which you use to set the frequency.</li><li>The <b>Test tone</b> button plays a short, clearly audible beep, so you can check that the speaker works. It does not stop a tone that is already running.</li></ol>
+<p class="tipp"><b>Tip:</b> the tone is deliberately very high, and most adults can no longer hear it. If you hear nothing, that is normal. At the bottom of the page, the <b>Good to know</b> section covers the volume, pets and protecting your ears.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/29-hanggenerator.jpg" alt="Tone generator" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f20"><h2><span class="sz">20.</span>SOS (emergency)</h2>
-<p class="hol"><b>Where:</b> the red <b>SOS</b> button in the middle of the bottom menu. Free, works without internet.</p>
-<p><b>What it does:</b> light SOS with the screen or the flash, a loud emergency whistle, CPR rhythm, calling the emergency number 112, fall detection and a quick emergency card.</p>
-<ol><li><b>Light SOS (screen)</b> or <b>Light SOS (flash)</b>: one tap starts it, another stops it.</li><li><b>Emergency whistle:</b> Whistle or Continuous, with adjustable pitch. Turn the volume up.</li><li><b>CPR rhythm:</b> a sound sets the pace, so you do not have to count in a panic.</li><li><b>Call emergency services (112 in the EU):</b> the single European emergency number.</li><li>At the very bottom, the <b>Quick emergency card</b>.</li></ol>
+<p class="hol"><b>Where:</b> on the home screen, the red <b>SOS</b> button in the middle of the bottom bar. Inside a feature, the <b>Functions</b> button is there instead: in that case SOS can be reached from the home screen. It is free and works without internet.</p>
+<p><b>What it does:</b> calling 112, a light SOS with the screen or the flash, a loud emergency whistle, a resuscitation beat, fall detection and a quick emergency card.</p>
+<ol><li>At the top is <b>Call emergency services (112 in the EU)</b>: it opens the phone dialler with the number entered, and you place the call yourself. 112 is the single European emergency number (ambulance, fire brigade, police).</li><li><b>Light SOS (screen)</b> or <b>Light SOS (flash)</b>: one tap starts it, another stops it.</li><li><b>Emergency whistle:</b> Whistle or Continuous, with adjustable pitch. Turn the volume up.</li><li><b>CPR rhythm:</b> when you tap <b>Start rhythm</b>, a voice dictates the beat (110 per minute), so you do not have to count in a panic.</li><li>At the bottom are <b>Fall detection</b> and the <b>Quick emergency card</b>.</li></ol>
+<p><b>Important:</b> this is not an emergency call. The SOS signal only sends a notification to your rooms, to the members there; it does not call the ambulance, the police or the fire brigade. In a real emergency, call 112.</p>
 <p class="tipp"><b>Tip:</b> the emergency whistle carries best at around 3-4 kHz, which is why rescuers can hear it from further away.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/30-sos.jpg" alt="SOS (emergency)" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f21"><h2><span class="sz">21.</span>Fall detection</h2>
 <p class="hol"><b>Where:</b> SOS screen &gt; <b>Fall detection</b>.</p>
-<p><b>What it does:</b> if the phone senses a hard impact and then does not move for a minute, it turns the screen on and counts down out loud. If you do not press the <b>I'm OK</b> button, it sends an SOS message with your location to your rooms and sounds the emergency whistle.</p>
-<ol><li>Tick <b>Automatic SOS after a fall</b>.</li><li>Grant the permission if the app asks for it.</li><li>If it goes off by mistake, press the big <b>I'm OK</b> button.</li></ol>
-<p class="tipp"><b>Tip:</b> the message needs a connection to your rooms; the countdown and the emergency whistle work without one.</p>
+<p><b>What it does:</b> if the phone feels a heavy impact and then does not move for a minute, it counts down 30 seconds with a loud beeping. If you do not press the <b>I'm OK</b> button, it sends an SOS message with your position to your rooms (wherever you allowed it in the room settings), and the emergency whistle sounds.</p>
+<ol><li>Read the warning and tick: <b>I have read and understood this.</b> Only after that can fall detection be switched on.</li><li>Switch on: <b>Automatic SOS after a fall</b>. In the Android app it is labelled <b>Fall detection during hiking navigation</b>: there it only watches while you have a hiking navigation running.</li><li>If you wish, tick: <b>Send my Emergency card data with the SOS too.</b> It is off by default.</li><li>Grant the permission if the app asks for it.</li><li>If it goes off by mistake, press the big <b>I'm OK</b> button.</li></ol>
+<p><b>Important:</b> on an iPhone, automatic SOS is only reliable if the app is open on the screen. Fall detection is not accurate. It may give a false alarm, and it may fail to detect a fall. It does not call the ambulance: if your life is in danger, call 112.</p>
+<p class="tipp"><b>Tip:</b> room by room, in the room settings, you can narrow down which room receives the SOS, and whether your position and blood type are visible in it. Sending the message needs a connection to your rooms; the countdown and the emergency whistle work without one.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/31-eses-erzekeles.jpg" alt="Fall detection" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f22"><h2><span class="sz">22.</span>Light</h2>
-<p class="hol"><b>Where:</b> the <b>Light</b> button in the bottom menu. Free, works without internet.</p>
+<p class="hol"><b>Where:</b> the <b>Light</b> button on the bottom bar (the leftmost by default; if you have rearranged the bottom bar, you will also find it in the shield menu). It is free and works without internet.</p>
 <p><b>What it does:</b> a torch using the flash or the screen, with adjustable colour and brightness, and a red night light.</p>
 <ol><li>Tap the <b>Light</b> button: the flash turns on and the screen stays dark.</li><li>Tap once more: only the flash stays lit.</li><li>For screen light, swipe: horizontally to change the colour, vertically to change the brightness. Tap to bring up the buttons.</li></ol>
 <p class="tipp"><b>Tip:</b> red light does not dazzle eyes that have adjusted to the dark.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/32-lampa.jpg" alt="Light" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f23"><h2><span class="sz">23.</span>Night mode</h2>
-<p class="hol"><b>Where:</b> the moon icon in the top bar.</p>
+<p class="hol"><b>Where:</b> on the home screen, the <b>Night mode</b> button at the top of the shield menu; on the other screens, the moon icon in the top bar.</p>
 <p><b>What it does:</b> the whole app turns red, so it does not dazzle you in the dark or spoil your night vision. The map and the light stay red too.</p>
-<ol><li>Tap the moon icon to turn it on, and tap again to turn it off.</li></ol>
+<ol><li>Tap the <b>Night mode</b> button or the moon icon to switch it on, and once more to switch it off.</li></ol>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/33-ejszakai-mod.jpg" alt="Night mode" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f24"><h2><span class="sz">24.</span>Settings</h2>
-<p class="hol"><b>Where:</b> the rightmost button in the bottom menu, <b>Settings</b>. Free.</p>
-<p><b>What it does:</b> notifications about expiring food and stock, vibration feedback, language, text size, help, privacy, redeeming a premium code.</p>
-<ol><li><b>Notifications:</b> tick the box and choose how far ahead to be reminded (3 days, 1 week, 2 weeks, 1 month). Try it with the <b>Test notification</b> button.</li><li><b>Language</b> and <b>Text size:</b> set them however suits you.</li><li><b>Help:</b> on every screen, the question mark in the header opens help too.</li></ol>
+<p class="hol"><b>Where:</b> the rightmost button on the bottom bar, <b>Settings</b>. Free.</p>
+<p><b>What it does:</b> the settings in groups: <b>General</b>, <b>Notifications</b>, <b>Bible</b>, <b>Feature settings</b>, <b>Account and premium</b>, <b>Sync and privacy</b>, <b>Data and backup</b>, <b>Support</b>, <b>Help and about</b>.</p>
+<ol><li><b>General:</b> here you find <b>Language</b> (eight languages) and <b>Interface size</b> (Small, Normal, Larger).</li><li><b>Notifications:</b> monitoring of expiring food and stock; choose how far ahead it should warn you (3 days, 1 week, 2 weeks, 1 month). You can try it with the <b>Test notification</b> button. Here you can also switch on the notifications for Gerah credits, the prayer reminder, the barometer alarm and the travel-time alarm.</li><li><b>Feature settings:</b> this is where <b>Home screen and bottom bar</b> is (see: Shield menu and bottom bar).</li><li><b>Data and backup:</b> <b>Full backup</b> and <b>Restore</b>: you can save your data to an encrypted file and move it to another phone too.</li><li><b>Help and about:</b> <b>Menu bar tour</b>, <b>Tile tour</b> (a guided tour), <b>User guide</b> (this page). On every screen, the question mark in the header also opens help.</li></ol>
 <p class="tipp"><b>Tip:</b> if notifications are blocked, the app tells you where to turn them on in your phone's settings.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/34-beallitasok.jpg" alt="Settings" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f25"><h2><span class="sz">25.</span>Redeeming a premium code</h2>
-<p class="hol"><b>Where:</b> Settings &gt; <b>Unlock</b>.</p>
+<p class="hol"><b>Where:</b> Settings &gt; <b>Account and premium</b> &gt; <b>Unblock</b>.</p>
 <p><b>What it does:</b> this is where you redeem your premium code.</p>
-<ol><li>Enter the code in the field.</li><li>Press the <b>Redeem code</b> button. Redeeming needs an internet connection.</li><li>After that, family members and stock are unlimited, the extended knowledge base opens, and map route planning becomes unlimited, with downloadable offline maps.</li></ol>
+<ol><li>Enter the code in the field.</li><li>Press the <b>Redeem code</b> button. Redeeming needs an internet connection.</li><li>After that the number of family members and the stock is unlimited, the extended knowledge base opens up, the route planning on the map is unlimited and works with downloadable offline maps, you can create 10 rooms of your own, and there are no pop-up ads.</li><li><b>Bible Premium</b> and <b>Assets</b> are separate products with their own unlocking: the PrepperPapa premium code does not unlock them.</li></ol>
 <p class="tipp"><b>Tip:</b> one code works on up to two of your devices.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/35-feloldas.jpg" alt="Redeeming a premium code" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f26"><h2><span class="sz">26.</span>If a permission is missing</h2>
@@ -448,52 +459,88 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <ol><li>Tap the <b>Ask for permission</b> button and choose Allow.</li><li>If no prompt appears, the <b>App settings</b> button opens your phone's settings with one tap.</li><li>Once you have granted it, come back: the app tries again by itself.</li></ol>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/36-engedely.jpg" alt="If a permission is missing" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f27"><h2><span class="sz">27.</span>Send feedback</h2>
-<p class="hol"><b>Where, in two places:</b></p>
-<ul><li>the <b>speech bubble icon</b> in the top bar (no label),</li><li>the <b>Send feedback</b> button on the <b>Who am I?</b> page.</li></ul>
-<p><b>What it does:</b> lets you send us a bug report or an idea, together with a screenshot.</p>
-<ol><li>Choose the type (bug or idea) and the part of the app it is about.</li><li>Describe what you did, what you saw and what you expected.</li><li>Attach a screenshot if needed.</li><li>Press the <b>Send</b> button.</li></ol>
-<p class="tipp"><b>Tip:</b> use the <b>My reports</b> button to look back at what you have sent, and the <b>What's new</b> button to see what has changed in the app.</p>
+<p class="hol"><b>Where:</b> sending feedback can be switched on for certain periods; while it is on:</p>
+<ul><li>on the home screen, the <b>Feedback</b> button at the top of the shield menu,</li><li>on the other screens, the <b>speech bubble icon</b> (with no label) in the top bar,</li><li>on the <b>About me</b> page (it opens when you tap the logo in the header), the <b>Send feedback</b> button.</li></ul>
+<p><b>What it does:</b> you can send us a bug, an idea or a question, together with a screenshot, and you can also tell us when something works well.</p>
+<ol><li>Choose the type (<b>Error</b>, <b>Idea</b>, <b>Question</b>, <b>Works</b>) and the part of the app it is about.</li><li>Describe what you did, what you saw and what you expected.</li><li>Attach a screenshot if needed.</li><li>Press the <b>Send</b> button.</li></ol>
+<p class="tipp"><b>Tip:</b> use the <b>My reports</b> button to look back at what you have sent.</p>
 <div class="kepek"><figure><img src="/en/utmutato/kepek/39-fejlec-visszajelzes-ikon.jpg" alt="Send feedback" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/37-rolam-visszajelzes.jpg" alt="Send feedback" loading="lazy" width="480"></figure><figure><img src="/en/utmutato/kepek/38-visszajelzes-urlap.jpg" alt="Send feedback" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f28"><h2><span class="sz">28.</span>Asset Manager</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Assets</b> tile.</p>
-<p>The Asset Manager is a separate product. In the app you can try it with up to 10 own items and 1 account, on both the free and the premium version; for full use you buy it separately on Google Play and the App Store. Once you buy it, it also works fully inside PrepperPapa.</p></section>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Assets</b>.</p>
+<p><b>What it does:</b> the Asset Manager is available to everyone in the app, with limits: you can use it free of charge for up to 10 items of your own and 1 account. With the <b>View sample household</b> button you can see what it does on a filled-in, read-only example.</p>
+<ol><li>A bar at the top shows how many items and accounts of the free limit you have used.</li><li>When you reach the limit, nothing is deleted: your existing data stays and can be edited, you just cannot add new entries.</li><li>For unlimited use you need the separate Asset Manager add-on: you can buy it on Google Play or in the App Store with the <b>Buy in the store</b> button on the bar.</li></ol>
+<p class="tipp"><b>Tip:</b> the PrepperPapa premium code does not unlock the Asset Manager, it is a separate product. Once you buy it, it also works fully inside PrepperPapa.</p></section>
 <section class="lap" id="f29"><h2><span class="sz">29.</span>Document wallet</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Document wallet</b> tile.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Documents</b>.</p>
 <p><b>What it does:</b> a PIN-protected store for photos or PDFs of your documents (ID card, driving licence, health insurance card, insurance, vehicle registration) and for hand-drawn notes. Free.</p>
 <ol><li>The first time, set a six-digit PIN and enter it once more.</li><li>Under <b>New document</b>, mark whose it is: a person, an animal or a vehicle. If you mark none, it is saved as shared.</li><li>With the <b>Choose file and save</b> button you add a photo or a PDF, and with <b>Draw a note</b> you can write or draw with your finger.</li><li>With the <b>Lock</b> button you lock it immediately.</li></ol>
 <p class="tipp"><b>Tip:</b> the documents exist only on this phone, encrypted with a key made from your PIN, and they are not included in the full backup either. Turn on fingerprint unlock and keep the recovery code: if you forget the PIN, you can set a new one with these.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/40-irattarca.jpg" alt="Document wallet" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f30"><h2><span class="sz">30.</span>Token wallet</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Token wallet</b> tile. The same PIN opens it as opens the Document wallet.</p>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Token wallet</b>. The same PIN opens it as the Document wallet.</p>
 <p><b>What it does:</b> it has two tabs. <a href="/en/gerah/"><b>Gerah</b></a> is a small community's settling-up among themselves (work done, eggs sold, a tool lent), with QR codes, even without internet. On the <b>Secret codes</b> tab you can keep passwords and recovery codes encrypted. It is not a bank and not a cryptocurrency. Free.</p>
 <ol><li>Paying: the other person shows their ID QR, and you scan it.</li><li>You enter the amount and what it is for, then <b>Create payment</b>: your phone signs it and shows a QR.</li><li>They scan this QR, and the amount is credited on their side.</li><li>To ask for money, use the <b>Request Gerah</b> button: you enter how much and why, they scan it, and they only need to approve it.</li></ol>
 <p class="tipp"><b>Tip:</b> the Secret codes are never included in the full backup, so keep a paper copy of important recovery codes too.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/41-token-tarca.jpg" alt="Token wallet" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f31"><h2><span class="sz">31.</span>Community forum</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Gathering</b> tile.</p>
-<p><b>What it does:</b> it opens the PrepperPapa community forum (Gyülekező, forum.prepperpapa.hu) in your browser. There you can ask questions and swap experience with other users. It needs internet.</p></section>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Community</b>.</p>
+<p><b>What it does:</b> opens the forum of the PrepperPapa community (forum.prepperpapa.hu). In the phone app it opens inside the app, in a browser on a separate tab. There you can ask questions and exchange experience with the other users. It needs internet.</p></section>
 <section class="lap" id="f32"><h2><span class="sz">32.</span>Reading plan and alarm</h2>
 <p class="hol"><b>Where:</b> Bible &gt; <b>Reading plan</b>.</p>
-<p><b>What it does:</b> it splits the Bible into daily or weekly portions and remembers where you are. You can choose from eight plans: the whole Bible in a year (in the order of the books or in chronological order of events), also in a weekly split, the whole Bible in 90 days, the New Testament in 90 days, the Gospels in 30 days, and the Psalms and Proverbs in 60 days.</p>
+<p><b>What it does:</b> splits the Bible into daily or weekly portions and remembers where you are. You can choose from eleven plans: the whole Bible in one year (in the order of the books or in chronological order), also split by week, the whole Bible in 90 days, the New Testament in 90 days, the Gospels in 30 days, the Psalms and Proverbs in 60 days, the Old and New Testament in parallel, the prophecies in 41 days and the parables of Jesus in 17 days.</p>
 <ol><li>Tap a plan and start it.</li><li>Every day it shows today's reading. When you have read it, press the <b>I have read it</b> button.</li><li>You can follow several plans at once, and each one remembers your place separately.</li><li><b>Alarm:</b> set the time and the days. In the morning it wakes the phone and reads out the plan's reading for today.</li></ol>
-<p class="tipp"><b>Tip:</b> the alarm works in the Android app. In a browser and on iPhone your setting is kept, but the website cannot wake a locked phone.</p>
+<p class="tipp"><b>Tip:</b> in the Android app the alarm wakes the locked phone and reads aloud. In the iPhone app the alarm comes as a notification (from iOS 26 also as a full-screen alarm), and the reading starts with the <b>Start</b> button. In a browser your setting is kept, but the website cannot wake a locked phone.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/42-olvasasi-terv.jpg" alt="Reading plan and alarm" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f33"><h2><span class="sz">33.</span>Downloading the offline map</h2>
 <p class="hol"><b>Where:</b> Map &gt; the function button &gt; <b>Offline map</b> group. Premium.</p>
 <p><b>What it does:</b> you download the map to your phone and can see where you are even without internet or signal. Hungary can be downloaded in 11 regions, and other countries whole or by province.</p>
-<ol><li>Choose the region, or open the <b>Maps of other countries</b> list and tap the country.</li><li>Every row has three separate downloads: <b>Base map</b>, <b>Hiking trails</b>, <b>Hiking points</b>. You see the size next to each.</li><li>For a large country, do not download all of it, only the province you are going to: it is smaller and stays more detailed.</li><li>What you no longer need, you can delete row by row, and the space is freed.</li></ol>
+<ol><li>Choose the region, or open the <b>Maps of other countries</b> list and tap the country.</li><li>Every row has three separate downloads: <b>Base map</b>, <b>Hiking trails</b>, <b>Hiking points</b>. You see the size next to each.</li><li>For a large country, do not download all of it, only the province you are going to: it is smaller and stays more detailed.</li><li>You can download several at once: after <b>Select for download</b>, mark the rows, then press the <b>Download selected</b> button.</li><li>What you no longer need, you can delete row by row, and the space is freed.</li></ol>
 <p class="tipp"><b>Tip:</b> download before you set off, on wifi. On the road the signal tends to run out exactly where you would need the map.</p></section>
 <section class="lap" id="f34"><h2><span class="sz">34.</span>My devices</h2>
-<p class="hol"><b>Where:</b> Settings &gt; <b>My devices</b>.</p>
+<p class="hol"><b>Where:</b> Settings &gt; <b>Account and premium</b> &gt; <b>My devices</b>.</p>
 <p><b>What it does:</b> it shows which of your devices your account works on. Premium runs on 2 devices at once, the free account on 1 device.</p>
 <ol><li>The list shows the names of the devices and when they last connected. The current one is marked “this device”.</li><li>For one you no longer need, press the <b>Disconnect</b> button, then once more to confirm. Its slot is freed.</li><li>You can disconnect once every 30 days.</li></ol>
 <p class="tipp"><b>Tip:</b> the list needs internet and signing in. The rest of the app, from stock to the map, works on every device.</p>
 <div class="kepek egy"><figure><img src="/en/utmutato/kepek/43-keszulekeim.jpg" alt="My devices" loading="lazy" width="480"></figure></div></section>
 <section class="lap" id="f35"><h2><span class="sz">35.</span>Air pressure and weather estimate</h2>
-<p class="hol"><b>Where:</b> Home &gt; <b>Compass</b>, on the air pressure card. It only shows on a phone that has a barometer.</p>
+<p class="hol"><b>Where:</b> Tools &gt; <b>Barometer</b> (<b>Air pressure and storm warning</b>). The <b>Sun · pressure</b> card on the home screen shows it too.</p>
 <p><b>What it does:</b> it shows the air pressure and its change over the past hours with an arrow, and with a small picture estimates what weather is coming (sunny, changeable, rain, storm). If the pressure drops fast, it gives a storm warning.</p>
-<ol><li>Open the Compass: it measures continuously there.</li><li>Otherwise the app measures once every quarter of an hour, which spares the battery, and it keeps the past 48 hours.</li></ol>
+<ol><li>If your phone has a pressure sensor, the app measures by itself and you have the past 48 hours. If not, you can also type a value by hand into the <b>Measured value (hPa)</b> field and save it with the <b>Record</b> button.</li><li>Under <b>Alert if it drops this much in 3 hours</b> you choose when it should warn you (3 hPa or 6 hPa), or <b>Do not alert</b>.</li><li>In the Android app you can switch on: <b>No alarm in a vehicle</b>.</li></ol>
 <p class="tipp"><b>Tip:</b> this is an estimate, not a weather forecast. In a car, a change in altitude also looks like a pressure change, so while driving the warning can be false.</p></section>
+<section class="lap" id="f36"><h2><span class="sz">36.</span>Shield menu and bottom bar</h2>
+<p class="hol"><b>Where:</b> on the home screen, tap the shield; inside a feature, use the <b>Functions</b> button in the middle of the bottom bar.</p>
+<p><b>What it does:</b> every feature in one large window, in two columns. At the top is the <b>Night mode</b> button (and, if feedback is switched on, the <b>Feedback</b> button). Inside a feature, the first button is <b>Home</b>: it takes you back to the home screen.</p>
+<ol><li>Tap a button: the feature opens.</li><li>The bottom bar has five places, and the middle one is fixed (<b>SOS</b> on the home screen, <b>Functions</b> inside a feature). By default: <b>Light</b>, <b>Compass</b>, <b>SOS</b>, <b>Map</b>, <b>Settings</b>.</li><li>Rearranging: open the shield menu, press and hold any button, and drag it down onto the bottom bar. What is on the bottom bar does not appear separately in the shield menu.</li><li>Your own tiles: Settings &gt; <b>Feature settings</b> &gt; <b>Home screen and bottom bar</b> &gt; <b>Your own tiles</b>, with the <b>Add tile</b> button. They go into the last row of the shield menu. Pressing and holding the shield also takes you there.</li></ol>
+<p class="tipp"><b>Tip:</b> under Help and about, the <b>Menu bar tour</b> and the <b>Tile tour</b> guide you through the menu.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/44-pajzs-menu.jpg" alt="Shield menu and bottom bar" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f37"><h2><span class="sz">37.</span>Practice</h2>
+<p class="hol"><b>Where:</b> shield menu &gt; <b>Practice</b>. Free.</p>
+<p><b>What it does:</b> preparedness quizzes by topic: questions with four possible answers, with a countdown.</p>
+<ol><li>Choose a topic.</li><li>For each question, tap the answer you think is correct. If time runs out, the app shows the correct answer.</li></ol>
+<p class="tipp"><b>Tip:</b> after the quizzes, it is worth reading the topic in the Knowledge base.</p>
+<div class="kepek egy"><figure><img src="/en/utmutato/kepek/45-gyakorloter.jpg" alt="Practice" loading="lazy" width="480"></figure></div></section>
+<section class="lap" id="f38"><h2><span class="sz">38.</span>The world now</h2>
+<p class="hol"><b>Where:</b> the <b>The world now</b> card on the home screen.</p>
+<p><b>What it does:</b> recent events from around the world (for example earthquake, fire, flood, war), and the one closest to you. It is not a complete news feed: it only picks from verified sources.</p>
+<ol><li>Tap the radar to open the map.</li><li>Tap the rows to open the full list.</li></ol>
+<p class="tipp"><b>Tip:</b> this needs internet.</p></section>
+<section class="lap" id="f39"><h2><span class="sz">39.</span>Solar panel setup</h2>
+<p class="hol"><b>Where:</b> Tools &gt; <b>Solar panel setup</b>.</p>
+<p><b>What it does:</b> tells you at what tilt angle and in which direction to set the solar panel, and how much it is expected to produce.</p>
+<ol><li>Under <b>Location</b>, the <b>Calculate for my position</b> button takes your position, or use <b>Enter by hand</b>.</li><li>Set the date: the <b>Recommended setting</b> shows the tilt angle and the orientation.</li><li>The <b>Align the panel with the compass</b> button helps you turn the panel in the right direction.</li></ol></section>
+<section class="lap" id="f40"><h2><span class="sz">40.</span>Sunrise, sunset</h2>
+<p class="hol"><b>Where:</b> Tools &gt; <b>Sunrise, sunset</b>.</p>
+<p><b>What it does:</b> the sunrise, the sunset and the moon phase for your position.</p>
+<ol><li>Press the <b>Calculate for my position</b> button. It needs location access.</li></ol></section>
+<section class="lap" id="f41"><h2><span class="sz">41.</span>Noah, the offline assistant</h2>
+<p class="hol"><b>Where:</b> only in the Android app installed on the phone. To switch it on: Settings &gt; <b>General</b> &gt; <b>Use the offline AI assistant</b>. After that it opens with the button in the header and with the <b>Noah</b> row at the top of the Knowledge base.</p>
+<p><b>What it does:</b> you can ask it about the knowledge base, the Bible or anything else. The phone downloads the language model once, and after that it answers locally, without internet. It is not available in a browser or on an iPhone.</p>
+<ol><li>Switch it on, open it, and download the model on the assistant's page.</li><li>Type your question on the <b>Ask</b> screen.</li><li>If an answer is offensive, dangerous or wrong, you can tell us with the <b>Report this answer</b> button under the answer. Only the text of the question and the answer reach us.</li></ol>
+<p class="tipp"><b>Tip:</b> Noah's answer can be wrong. In a life-threatening situation, do not rely on it: call 112.</p></section>
+<section class="lap" id="f42"><h2><span class="sz">42.</span>LoRa room</h2>
+<p class="hol"><b>Where:</b> Comms &gt; <b>Local room</b> &gt; <b>LoRa room</b>.</p>
+<p><b>What it does:</b> sending messages over LoRa radio, without internet and a phone network.</p>
+<ol><li>To use it you need a LoRa receiver unit, which the phone connects to over Bluetooth.</li></ol></section>
 <section class="lap"><h2>If you get stuck</h2>
 <p>Write to us from the app: the speech bubble icon in the top bar, or the “Send feedback” button on the “Who am I?” page. Tell us what you did, what you saw, and what phone you are using.</p></section>
 <script>
