@@ -579,7 +579,7 @@ function napelemInit(){
   $('neGps').onclick = async () => {
     $('neHely').textContent = T('Helymeghatározás…');
     try{ const p = await ppFrissHelyzet(); neHelyMent({ lat:p.lat, lng:p.lng, honnan:'a mostani helyzeted' }); napelemRajz(); }
-    catch(e){ $('neHely').textContent = T('Nem sikerült a helymeghatározás:') + ' ' + e.message; }
+    catch(e){ try{ console.warn('[pp] geolocation:', e); }catch(x){} $('neHely').textContent = T('Nem sikerült a helymeghatározás.'); }   // audit C E1
   };
   $('neKezi').onclick = () => { const d = $('neKeziDoboz'); d.hidden = !d.hidden; if(!d.hidden && neHelyAkt){ lat.value = neHelyAkt.lat.toFixed(4); lng.value = neHelyAkt.lng.toFixed(4); } };
   $('neKeziOk').onclick = () => {

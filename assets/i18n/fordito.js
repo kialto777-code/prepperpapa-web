@@ -4,6 +4,8 @@ function ppNyelv(){ return document.documentElement.getAttribute('lang') || 'hu'
 const PP_NYELVEK = { hu: 'Magyar', en: 'English', de: 'Deutsch', es: 'Español', pl: 'Polski', ro: 'Română', uk: 'Українська', ru: 'Русский' };
 const PP_FORD_EREDETI = new WeakMap();
 let ppFordFut = false;
+// The attributes the translator rewrites, and the ONLY ones its observer watches (attributeFilter) -- keep the two in step.
+const PP_FORD_ATTR = ['placeholder', 'title', 'aria-label'];
 // ============================================================================
 // A FORDITO HATARA -- EGY MONDAT, HAROM ELES ESET (2026-08-26, Thomas kerte, hogy ITT alljon)
 // ============================================================================
@@ -64,6 +66,12 @@ function ppSzovegForditas(gyoker) {
       // THE VERSE QUIZ / IGETANULÓ TEXT IS SCRIPTURE (Thomas 32280, 11-11): the first-letter hints split a verse into lone letters
       // and short pieces, and pl 'D' -> 'S', 'p' -> 'min' came from the UI dictionary. .bibtanul-vers holds only verse text.
       if (p.closest('.bibtanul-vers')) continue;
+      // THE QUIZ ANSWER LETTERS ARE LABELS, NOT WORDS (Boss TG 44500, tester Joe, WL 'Who said it?' EN: the 4th answer showed 'S'): the lone
+      // 'D' of kvizBetu() matched the compass entry D (Dél) -> 'S' / 'Ю' / 'Пд'. .kviz-betu holds only the A..H letter of every quiz game.
+      if (p.closest('.kviz-betu')) continue;
+      // THE MORSE LETTERS ARE SYMBOLS TOO (Márta 50026 lead, measured: en 'D' -> 'S', 'K' -> 'E'; ru 'Ю', 'В'): the help table (#sugoAbc), the
+      // practice choices (#gyakValasztek) and the tap-code grid (#kopRacs) hold lone A..Z / 0..9 symbols, never words.
+      if (p.closest('#sugoAbc, #gyakValasztek, #kopRacs')) continue;
       if (p.closest('.pp-nyb-szoveg, .kbc-c, .kbtitle, .kt, .kc, .kb2, .kbtorzs, .bibjegyzet-elem, .bibjegyzet-forras, .bibtalalat, .bibtm-cella, .bibtm-fejlec, .bibtm-forras, .bkp-szo, .biberedeti-forma, .biberedeti-hu, .biberedeti-sor > span + span, .biberedeti-szotar p, .bibjz-user, .irp-napok')) continue;   // .irp-napok: the week's day names come localized from Intl; the two-letter forms (es/ro "ma" = Tuesday) are Hungarian dictionary keys ("ma" = today)
       const eredeti = PP_FORD_EREDETI.has(cs) ? PP_FORD_EREDETI.get(cs) : cs.textContent;
       const kulcs = eredeti.replace(/\s+/g, ' ').trim();
@@ -154,7 +162,7 @@ function ppSzovegForditas(gyoker) {
       // egyezes, a TELJES csomopontot csereljuk, a koruloleo szokozt megtartva.
       // WRITE ONLY WHEN THE TEXT CHANGES (#28, 2026-11-07, measured: on an idle EN home screen this line rewrote "Install to
       // home screen" with the same text 7 times a second; every write is a DOM mutation that woke the translator's own
-      // observer and homeFit's, so the home grid was re-laid continuously under the user's finger)
+      // observer, so the home grid was re-laid continuously under the user's finger; the grid is gone, the rule stays)
       const kesz = (eredeti.indexOf(kulcs) >= 0) ? eredeti.replace(kulcs, uj)
         : (eredeti.match(/^\s*/) || [''])[0] + uj + (eredeti.match(/\s*$/) || [''])[0];
       if (cs.textContent !== kesz) cs.textContent = kesz;
@@ -165,24 +173,33 @@ function ppSzovegForditas(gyoker) {
     // `aria-label` NEM szoveg-csomopont, tehat a fenti bejaras SOSEM erte el oket --
     // Istvan merese szerint 62 ilyen hely van. A hangfelolvaso csak az `aria-label`-t
     // mondja ki, tehat ott a hiany nem is latszik, csak hallatszik.
-    const ATTRIBUTUMOK = ['placeholder', 'title', 'aria-label'];
+    const ATTRIBUTUMOK = PP_FORD_ATTR;
     const elemek = (gyoker || document.body).querySelectorAll('[placeholder], [title], [aria-label]');
     for (const e of elemek) {
       for (const a of ATTRIBUTUMOK) {
         if (!e.hasAttribute(a)) continue;
         const tarolo = 'ppFordEredeti_' + a.replace('-', '');
-        const eredetiErtek = (e.dataset[tarolo] != null) ? e.dataset[tarolo] : e.getAttribute(a);
+        const keszTarolo = 'ppFordKesz_' + a.replace('-', '');   // the translation THIS translator last wrote (see ppFordSajatAttr)
+        const aktualis = e.getAttribute(a);
+        // A VALUE SET BY SCRIPT AFTER WE TRANSLATED IS A NEW ORIGINAL (attribute observer, Marveen 37024): the stored original
+        // belongs to the old value, and using it would overwrite the script's new text with the old translation (or, in hu,
+        // restore the old Hungarian over the new one). Ours = the attribute still holds exactly what we wrote.
+        if (e.dataset[tarolo] != null && aktualis !== e.dataset[keszTarolo]) { delete e.dataset[tarolo]; delete e.dataset[keszTarolo]; }
+        const eredetiErtek = (e.dataset[tarolo] != null) ? e.dataset[tarolo] : aktualis;
         const k = String(eredetiErtek).replace(/\s+/g, ' ').trim();
         if (!k) continue;
         if (ny === 'hu') {
-          if (e.dataset[tarolo] != null) { e.setAttribute(a, e.dataset[tarolo]); delete e.dataset[tarolo]; }
+          if (e.dataset[tarolo] != null) { e.setAttribute(a, e.dataset[tarolo]); delete e.dataset[tarolo]; delete e.dataset[keszTarolo]; }
           continue;
         }
         const demoNy2 = (typeof PP_DEMO_NY === 'object' && PP_DEMO_NY[ny]) || {};
         const forditas = (window.PP_DEMO_ELSO && PP_DEMO_ELSO.has(k) && demoNy2[k]) || sz[k] || demoNy2[k] || (ny === 'en' && typeof PP_DEMO_EN === 'object' ? PP_DEMO_EN[k] : null);
         if (!forditas) continue;
         if (e.dataset[tarolo] == null) e.dataset[tarolo] = eredetiErtek;
-        e.setAttribute(a, forditas);
+        // WRITE ONLY WHEN THE VALUE CHANGES (no-loop guard, half 1): the observer now watches these attributes, and even a
+        // same-value setAttribute queues a record. Without this check every pass would wake the next one for ever.
+        if (aktualis !== forditas) e.setAttribute(a, forditas);
+        e.dataset[keszTarolo] = forditas;
       }
     }
   } finally { ppFordFut = false; }
@@ -229,10 +246,21 @@ function ppGerah(n, hu) {
 // Kept for the callers: the English plural ("1 gerahs" -> "1 gerah") is gone with the undeclined brand, so this is a no-op.
 function ppGerahEgyezes(s) { return s; }
 let ppFordTimer = null, ppFordElsoJel = 0, ppFordUjraKell = false;
+function ppFordSajatAttr(r) {
+  if (r.type !== 'attributes' || !r.attributeName) return false;
+  const t = r.target, kulcs = 'ppFordKesz_' + r.attributeName.replace('-', '');
+  return !!(t && t.dataset && t.dataset[kulcs] != null && t.getAttribute(r.attributeName) === t.dataset[kulcs]);
+}
 function ppFordFigyeloIndit() {
   if (window.__ppFordFigyelo) return;
-  window.__ppFordFigyelo = new MutationObserver(() => {
+  window.__ppFordFigyelo = new MutationObserver((rekordok) => {
     if (ppNyelv() === 'hu') return;
+    // NO-LOOP GUARD, half 2 (attribute watching, Marveen 37024): the records of OUR OWN attribute writes arrive after the pass
+    // ended; a batch made only of those needs no new pass. Ours = the attribute holds exactly the translation the pass stored
+    // (data-pp-ford-kesz-*); a script that writes anything else is a real change and is NOT filtered. Text records are never
+    // filtered (unchanged behaviour). Together with half 1 (no write when the value is equal) a pass can only wake one more
+    // pass when it really changed something, and that one writes nothing.
+    if (rekordok && rekordok.length && rekordok.every(ppFordSajatAttr)) return;
     // A SAJAT FUTASUNK ALATT ERKEZo VALTOZAST NEM SZABAD ELDOBNI (2026-08-23, merve).
     // Az elso valtozatom itt egyszeruen kilepett, ha epp mi irtunk -- csakhogy a lap
     // KoZBEN is ir (a tajolo statusz-sora epp a bejarasunk alatt cserelodott ki), es
@@ -256,7 +284,7 @@ function ppFordFigyeloIndit() {
     const varakozas = (most - ppFordElsoJel >= 600) ? 0 : 120;
     ppFordTimer = setTimeout(() => { ppFordElsoJel = 0; ppSzovegForditas(); }, varakozas);
   });
-  window.__ppFordFigyelo.observe(document.body, { childList: true, subtree: true, characterData: true });
+  window.__ppFordFigyelo.observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: PP_FORD_ATTR });
 }
 
 
